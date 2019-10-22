@@ -11,12 +11,12 @@ TextMagic’s application programming interface (API) provides the communication
 
 With go.mod:
 ```bash
-go get -u github.com/textmagic/textmagic-rest-go/v2@v
+go get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.666
 ```
 
 without go.mod:
 ```bash
-go get -u github.com/textmagic/textmagic-rest-go
+go get -u github.com/textmagic/textmagic-rest-go-v2
 ```
 
 ## Dependencies:
@@ -33,8 +33,8 @@ import (
     "fmt"
     "github.com/antihax/optional"
     // If you're using go.mod use line below to import our module
-    // 	tm "github.com/textmagic/textmagic-rest-go/v2"
-    tm "github.com/textmagic/textmagic-rest-go"
+    // 	tm "github.com/textmagic/textmagic-rest-go-v2/v2"
+    tm "github.com/textmagic/textmagic-rest-go-v2"
     "log"
 )
 
