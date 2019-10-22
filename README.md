@@ -11,7 +11,7 @@ TextMagic’s application programming interface (API) provides the communication
 
 With go.mod:
 ```bash
-go get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.666
+go get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.669
 ```
 
 without go.mod:
@@ -86,6 +86,7 @@ func main() {
 
 ## Limitations
 Due to the issue at https://github.com/swagger-api/swagger-codegen/issues/7311, the current version of Go SDK does not support any file uploading API calls.
+
 [comment]: <> (FOOTER)
 ## License
 The library is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
