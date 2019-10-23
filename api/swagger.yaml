@@ -17,8 +17,8 @@ tags:
     \ to the API: you cannot log in to TextMagic Online using the API key.\n\nYour\
     \ program\_sends the login credentials with each API request as HTTP headers:\
     \ **X-TM-Username** is your TextMagic username, while **X-TM-Key** is your API\
-    \ key.\n\nAnother way which is to send credentials using **BasicAuth** method.\
-    \ See (Basic access authentication)[https://en.wikipedia.org/wiki/Basic_access_authentication].\n\
+    \ key.\n\nAnother way is to send credentials using **BasicAuth** method. See [Basic\
+    \ access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication).\n\
     \nHow to obtain an API key:\n\n1.  [Log in](https://my.textmagic.com/login) to\
     \ TextMagic (or [start a free trial](https://my.textmagic.com/register/) if you\
     \ haven’t registered yet).\n2.  Go to the [API settings page](https://my.textmagic.com/online/api/rest-api/keys).\n\
@@ -562,7 +562,7 @@ tags:
     Install-Package Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp\
     \ versions later than 105.1.0 have a bug which causes file uploads to fail. See\
     \ [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\n## Installation\n\
-    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.697/).\n\
+    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.703/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -761,7 +761,7 @@ tags:
     Star imissyouso/textmagic-rest-go on GitHub\">Star</a>\n\nThis library provides\
     \ you with an easy way of sending SMS and receiving replies by integrating TextMagic\
     \ SMS Gateway into your Go application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-go)\n\
-    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.702\n\
+    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.703\n\
     ```\n\nwithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
