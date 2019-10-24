@@ -761,7 +761,7 @@ tags:
     Star imissyouso/textmagic-rest-go on GitHub\">Star</a>\n\nThis library provides\
     \ you with an easy way of sending SMS and receiving replies by integrating TextMagic\
     \ SMS Gateway into your Go application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-go)\n\
-    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.749\n\
+    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.762\n\
     ```\n\nwithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -9291,10 +9291,11 @@ paths:
           \    ->setPassword('YOUR_API_KEY');\n\n$api = new TextMagicApi(\n    new\
           \ GuzzleHttp\\Client(),\n    $config\n);\n\n$input = new UpdateCustomFieldValueInputObject();\n\
           \n// Optional parameters, you can skip these setters calls\n$input->setContactId(50315);\n\
-          $input->setValue(\"1983-08-31T00:00:00.000Z\");\n$id = 554;\n\ntry {\n \
-          \   // ResourceLinkResponse class object\n    $result = $api->updateCustomFieldValue($input$id);\n\
-          \    // ...\n} catch (Exception $e) {\n    echo 'Exception when calling\
-          \ TextMagicApi->updateCustomFieldValue: ', $e->getMessage(), PHP_EOL;\n}"
+          $input->setValue(\"Wed Aug 31 1983 00:00:00 GMT+0000 (Coordinated Universal\
+          \ Time)\");\n$id = 554;\n\ntry {\n    // ResourceLinkResponse class object\n\
+          \    $result = $api->updateCustomFieldValue($input$id);\n    // ...\n} catch\
+          \ (Exception $e) {\n    echo 'Exception when calling TextMagicApi->updateCustomFieldValue:\
+          \ ', $e->getMessage(), PHP_EOL;\n}"
       - lang: "Java"
         source: "import com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
           import com.textmagic.sdk.auth.*;\nimport com.textmagic.sdk.model.*;\n\n\
@@ -9307,11 +9308,12 @@ paths:
           \ = new TextMagicApi();\n\n        UpdateCustomFieldValueInputObject input\
           \ = new UpdateCustomFieldValueInputObject();\n\n        // Optional parameters,\
           \ you can skip these setters calls\n        input.setContactId(50315);\n\
-          \        input.setValue(\"1983-08-31T00:00:00.000Z\");\n        int id =\
-          \ 554;\n\n        try {\n            // ResourceLinkResponse class object\n\
-          \            ResourceLinkResponse obj = apiInstance.updateCustomFieldValue(inputid);\n\
-          \            // ...\n        } catch (ApiException e) {\n            System.err.println(\"\
-          Exception when calling updateCustomFieldValue\");\n            e.printStackTrace();\n\
+          \        input.setValue(\"Wed Aug 31 1983 00:00:00 GMT+0000 (Coordinated\
+          \ Universal Time)\");\n        int id = 554;\n\n        try {\n        \
+          \    // ResourceLinkResponse class object\n            ResourceLinkResponse\
+          \ obj = apiInstance.updateCustomFieldValue(inputid);\n            // ...\n\
+          \        } catch (ApiException e) {\n            System.err.println(\"Exception\
+          \ when calling updateCustomFieldValue\");\n            e.printStackTrace();\n\
           \        }\n    }\n}"
       - lang: "JavaScript"
         source: "const textmagicClient = require('textmagic-client');\n\nconst client\
@@ -9320,17 +9322,19 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    contactId: 50315,\n    value:\
-          \ \"1983-08-31T00:00:00.000Z\",\n}\nconst id = 554;\n\napi.updateCustomFieldValue(input,\
-          \ id).then(function (data) {\n    console.log(data);\n}).catch(function(err){\n\
-          \    console.error(err);\n});"
+          \ \"Wed Aug 31 1983 00:00:00 GMT+0000 (Coordinated Universal Time)\",\n\
+          }\nconst id = 554;\n\napi.updateCustomFieldValue(input, id).then(function\
+          \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
           \ from https://my.textmagic.com/online/api/rest-api/keys page.\nTextMagic.configure\
           \ do |config|\n    config.username = 'YOUR_USERNAME'\n    config.password\
           \ = 'YOUR_API_KEY'\nend\n\napi = TextMagic::TextMagicApi.new\n\nobj = new\
           \ TextMagic::UpdateCustomFieldValueInputObject.new\n# Optional parameters,\
-          \ you can skip them\nobj.contact_id = 50315\nobj.value = \"1983-08-31T00:00:00.000Z\"\
-          \nid = 554\n\nbegin\n    # ResourceLinkResponse object\n    result = api.update_custom_field_value(input,\
+          \ you can skip them\nobj.contact_id = 50315\nobj.value = \"Wed Aug 31 1983\
+          \ 00:00:00 GMT+0000 (Coordinated Universal Time)\"\nid = 554\n\nbegin\n\
+          \    # ResourceLinkResponse object\n    result = api.update_custom_field_value(input,\
           \ id)\n    # ...\nrescue TextMagic::ApiError => e\n    puts \"Exception\
           \ when calling TextMagicApi->update_custom_field_value: #{e}\"\nend"
       - lang: "C#"
@@ -9344,11 +9348,12 @@ paths:
           ;\n\n            var apiInstance = new TextMagicApi();\n\n            var\
           \ obj = new UpdateCustomFieldValueInputObject();\n\n            // Optional\
           \ parameters, you can skip these setters calls\n            obj.ContactId\
-          \ = 50315;\n            obj.Value = \"1983-08-31T00:00:00.000Z\";\n    \
-          \        int id = 554;\n\n            try {\n                // ResourceLinkResponse\
-          \ class object\n                var result = apiInstance.UpdateCustomFieldValue(objid);\n\
-          \                // ...\n            } catch (Exception e) {\n         \
-          \       Console.WriteLine(\"Exception when calling updateCustomFieldValue:\
+          \ = 50315;\n            obj.Value = \"Wed Aug 31 1983 00:00:00 GMT+0000\
+          \ (Coordinated Universal Time)\";\n            int id = 554;\n\n       \
+          \     try {\n                // ResourceLinkResponse class object\n    \
+          \            var result = apiInstance.UpdateCustomFieldValue(objid);\n \
+          \               // ...\n            } catch (Exception e) {\n          \
+          \      Console.WriteLine(\"Exception when calling updateCustomFieldValue:\
           \ \"+e.Message);\n            }\n        }\n    }\n}"
       - lang: "VB.Net"
         source: "Imports System\nImports System.IO\nImports TextMagicClient.Api\n\
@@ -9359,12 +9364,13 @@ paths:
           \ = \"YOUR_API_KEY\"\n        Configuration.Default.BasePath = \"https://rest.textmagic.com\"\
           \n\n        Dim apiInstance = New TextMagicApi()\n\n        Dim obj = New\
           \ UpdateCustomFieldValueInputObject With {\n            .ContactId = 50315,\n\
-          \            .Value = \"1983-08-31T00:00:00.000Z\"\n        }\n        Dim\
-          \ id As Integer = 554\n\n        Try\n            ' ResourceLinkResponse\
-          \ class object\n            Dim result = apiInstance.UpdateCustomFieldValue(objid)\n\
-          \            ' ...\n        Catch e As Exception\n            Console.WriteLine(\"\
-          Exception when calling updateCustomFieldValue: \" + e.Message)\n       \
-          \ End Try\n    End Sub\nEnd Module"
+          \            .Value = \"Wed Aug 31 1983 00:00:00 GMT+0000 (Coordinated Universal\
+          \ Time)\"\n        }\n        Dim id As Integer = 554\n\n        Try\n \
+          \           ' ResourceLinkResponse class object\n            Dim result\
+          \ = apiInstance.UpdateCustomFieldValue(objid)\n            ' ...\n     \
+          \   Catch e As Exception\n            Console.WriteLine(\"Exception when\
+          \ calling updateCustomFieldValue: \" + e.Message)\n        End Try\n   \
+          \ End Sub\nEnd Module"
       - lang: "Go"
         source: "package main\n\nimport (\n    \"context\"\n    \"fmt\"\n    \"github.com/antihax/optional\"\
           \n    // If you're using go.mod use line below to import our module\n  \
@@ -9376,11 +9382,11 @@ paths:
           \ tm.BasicAuth{\n        UserName: \"YOUR_USERNAME\",\n        Password:\
           \ \"YOUR_API_KEY\",\n    })\n\n    input := tm.SendMessageInputObject{\n\
           \        // Optional parameters, you can skip them\n        ContactId: 50315,\n\
-          \        Value: \"1983-08-31T00:00:00.000Z\",\n    }\n    // Required\n\
-          \    var id int32 = 554\n\n    // tm.ResourceLinkResponse struct\n    result,\
-          \ _, err := client.TextMagicApi.UpdateCustomFieldValue(auth, input, id)\n\
-          \n    if err != nil {\n        log.Fatal(err)\n    } else {\n        fmt.Printf(\"\
-          %+v\\n\", result)\n        // ...\n    }\n}\n"
+          \        Value: \"Wed Aug 31 1983 00:00:00 GMT+0000 (Coordinated Universal\
+          \ Time)\",\n    }\n    // Required\n    var id int32 = 554\n\n    // tm.ResourceLinkResponse\
+          \ struct\n    result, _, err := client.TextMagicApi.UpdateCustomFieldValue(auth,\
+          \ input, id)\n\n    if err != nil {\n        log.Fatal(err)\n    } else\
+          \ {\n        fmt.Printf(\"%+v\\n\", result)\n        // ...\n    }\n}\n"
       - lang: "Cpp"
         source: "#include <iostream>\n#include <fstream>\n// Change paths to directory\
           \ where SDK lib is installed. See C++ SDK installation instructions for\
@@ -9395,11 +9401,12 @@ paths:
           \n    TextMagicApi api(apiClient);\n\n    std::shared_ptr<UpdateCustomFieldValueInputObject>\
           \ input(new UpdateCustomFieldValueInputObject);\n    // Optional parameters,\
           \ you can skip them\n    input->setContactId(50315);\n    input->setValue(\"\
-          1983-08-31T00:00:00.000Z\");\n\n    int id = 554;\n\n    try {\n       \
-          \ pplx::task<std::shared_ptr<ResourceLinkResponse>> result = api.updateCustomFieldValue(input,\
-          \ id);\n        result.wait();\n        // put operations with result here...\n\
-          \    } catch(const std::exception& e) {\n        std::cout << \"updateCustomFieldValue()\
-          \ exception: \" << e.what() << '\\n';\n    }\n\n    return 0;\n}"
+          Wed Aug 31 1983 00:00:00 GMT+0000 (Coordinated Universal Time)\");\n\n \
+          \   int id = 554;\n\n    try {\n        pplx::task<std::shared_ptr<ResourceLinkResponse>>\
+          \ result = api.updateCustomFieldValue(input, id);\n        result.wait();\n\
+          \        // put operations with result here...\n    } catch(const std::exception&\
+          \ e) {\n        std::cout << \"updateCustomFieldValue() exception: \" <<\
+          \ e.what() << '\\n';\n    }\n\n    return 0;\n}"
       - lang: "Python"
         source: "import TextMagic\nfrom TextMagic.rest import ApiException\n\nconfiguration\
           \ = TextMagic.Configuration()\nconfiguration.host = \"https://rest.textmagic.com\"\
@@ -9408,8 +9415,9 @@ paths:
           \ = \"YOUR_API_KEY\"\n\n# create an instance of the API class\napi_instance\
           \ = TextMagic.TextMagicApi(TextMagic.ApiClient(configuration))\n\ninput\
           \ = TextMagic.UpdateCustomFieldValueInputObject()\n# Optional parameters,\
-          \ you can skip them\ninput.contact_id = 50315\ninput.value = \"1983-08-31T00:00:00.000Z\"\
-          \nid = 554\n\ntry:\n    # ResourceLinkResponse object\n    result = api_instance.update_custom_field_value(update_custom_field_value_input_object=input,\
+          \ you can skip them\ninput.contact_id = 50315\ninput.value = \"Wed Aug 31\
+          \ 1983 00:00:00 GMT+0000 (Coordinated Universal Time)\"\nid = 554\n\ntry:\n\
+          \    # ResourceLinkResponse object\n    result = api_instance.update_custom_field_value(update_custom_field_value_input_object=input,\
           \ id=id)\n    # ...\nexcept ApiException as e:\n    print(\"Exception when\
           \ calling TextMagicApi->update_custom_field_value: %s\\n\" % e)\n"
       - lang: "Perl"
@@ -9421,8 +9429,9 @@ paths:
           \  base_url  => 'https://rest.textmagic.com'\n);\n\nmy $api_instance = Net::Sms::TextMagicClient::TextMagicApi::->new($client);\n\
           \nmy $input = Net::Sms::TextMagicClient::Object::UpdateCustomFieldValueInputObject->new(\n\
           \    # Optional parameters, you can skip them\n    contactId => 50315,\n\
-          \    value => '1983-08-31T00:00:00.000Z',\n);\nmy $id = 554;\n\neval {\n\
-          \    # ResourceLinkResponse object\n    my $result = $api_instance->update_custom_field_value(update_custom_field_value_input_object\
+          \    value => 'Wed Aug 31 1983 00:00:00 GMT+0000 (Coordinated Universal\
+          \ Time)',\n);\nmy $id = 554;\n\neval {\n    # ResourceLinkResponse object\n\
+          \    my $result = $api_instance->update_custom_field_value(update_custom_field_value_input_object\
           \ => $input, id => $id);\n    # ...\n};\n\nif ($@) {\n    warn \"Exception\
           \ when calling TextMagicApi->update_custom_field_value: $@\\n\";\n}"
   /api/v2/lists:
