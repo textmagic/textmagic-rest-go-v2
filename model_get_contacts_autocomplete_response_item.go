@@ -20,6 +20,8 @@ type GetContactsAutocompleteResponseItem struct {
 	Label string `json:"label"`
 	// If contact or list was shared by another sub-account then name if this user will be shown.
 	SharedBy string `json:"sharedBy"`
+	// If contact or list was shared by another sub-account then `true` will be set.
+	IsShared bool `json:"isShared"`
 	// Contact avatar URI.
 	Avatar string `json:"avatar"`
 	// If contact has been marked as favorite.
