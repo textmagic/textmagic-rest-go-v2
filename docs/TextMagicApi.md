@@ -30,7 +30,7 @@ Method | HTTP request | Description
 [**DeleteContactsByIds**](TextMagicApi.md#DeleteContactsByIds) | **Post** /api/v2/contacts/delete | Delete contacts by IDs (bulk)
 [**DeleteContactsFromList**](TextMagicApi.md#DeleteContactsFromList) | **Delete** /api/v2/lists/{id}/contacts | Unassign contacts from a list
 [**DeleteCustomField**](TextMagicApi.md#DeleteCustomField) | **Delete** /api/v2/customfields/{id} | Delete a custom field
-[**DeleteDedicatedNumber**](TextMagicApi.md#DeleteDedicatedNumber) | **Delete** /api/v2/numbers/{id} | Cancel dedicated number subscription
+[**DeleteDedicatedNumber**](TextMagicApi.md#DeleteDedicatedNumber) | **Delete** /api/v2/numbers/{id} | Cancel a dedicated number subscription
 [**DeleteInboundMessage**](TextMagicApi.md#DeleteInboundMessage) | **Delete** /api/v2/replies/{id} | Delete a single inbound message
 [**DeleteInboundMessagesBulk**](TextMagicApi.md#DeleteInboundMessagesBulk) | **Post** /api/v2/replies/delete | Delete inbound messages (bulk)
 [**DeleteList**](TextMagicApi.md#DeleteList) | **Delete** /api/v2/lists/{id} | Delete a list
@@ -70,7 +70,7 @@ Method | HTTP request | Description
 [**GetContactIfBlocked**](TextMagicApi.md#GetContactIfBlocked) | **Get** /api/v2/contacts/block/phone | Check is that phone number blocked
 [**GetContactImportSessionProgress**](TextMagicApi.md#GetContactImportSessionProgress) | **Get** /api/v2/contacts/import/progress/{id} | Check import progress
 [**GetContactNote**](TextMagicApi.md#GetContactNote) | **Get** /api/v2/notes/{id} | Get a contact note
-[**GetContactNotes**](TextMagicApi.md#GetContactNotes) | **Get** /api/v2/contacts/{id}/notes | Fetch notes assigned to the given contact.
+[**GetContactNotes**](TextMagicApi.md#GetContactNotes) | **Get** /api/v2/contacts/{id}/notes | Fetch notes assigned to a given contact
 [**GetContacts**](TextMagicApi.md#GetContacts) | **Get** /api/v2/contacts | Get all contacts
 [**GetContactsAutocomplete**](TextMagicApi.md#GetContactsAutocomplete) | **Get** /api/v2/contacts/autocomplete | Get contacts autocomplete suggestions
 [**GetContactsByListId**](TextMagicApi.md#GetContactsByListId) | **Get** /api/v2/lists/{id}/contacts | Get all contacts in a list
@@ -869,7 +869,7 @@ Name | Type | Description  | Notes
 
 # **DeleteDedicatedNumber**
 > DeleteDedicatedNumber(ctx, id)
-Cancel dedicated number subscription
+Cancel a dedicated number subscription
 
 
 
@@ -1320,7 +1320,7 @@ Name | Type | Description  | Notes
 > DoCarrierLookupResponse DoCarrierLookup(ctx, phone, optional)
 Carrier Lookup
 
-This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  > Numbers can be checked one by one. You cannot check multiple numbers in one request.   
+This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  > Numbers must be checked one by one. You cannot check multiple numbers in one request.   
 
 ### Required Parameters
 
@@ -1336,7 +1336,7 @@ Optional parameters are passed through a pointer to a DoCarrierLookupOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **country** | **optional.String**| This option must be specified only if the phone number in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**.  | 
+ **country** | **optional.String**| This option must be specified only if the phone number is in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**.  | 
 
 ### Return type
 
@@ -1357,7 +1357,7 @@ Name | Type | Description  | Notes
 > DoEmailLookupResponse DoEmailLookup(ctx, email)
 Email Lookup
 
-To get more details about an email address or to check if it is a valid email, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  > Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
+To get more details about an email address or to check whether it is a valid email or not, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  > Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
 
 ### Required Parameters
 
@@ -1654,7 +1654,7 @@ Find dedicated numbers available for purchase
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **country** | **string**| Two-letter dedicated number country ISO code. | 
+  **country** | **string**| The 2-letter dedicated number country ISO code. | 
  **optional** | ***GetAvailableDedicatedNumbersOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -1663,7 +1663,7 @@ Optional parameters are passed through a pointer to a GetAvailableDedicatedNumbe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **prefix** | **optional.Int32**| Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. | 
+ **prefix** | **optional.Int32**| Desired number prefix. Should include the country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. | 
  **tollfree** | **optional.Int32**| Should we show only tollfree numbers (tollfree available only for US). | [default to 0]
 
 ### Return type
@@ -1685,7 +1685,7 @@ Name | Type | Description  | Notes
 > GetAvailableSenderSettingOptionsResponse GetAvailableSenderSettingOptions(ctx, optional)
 Get available sender settings
 
-Get all available sender setting options which could be used in \"from\" parameter of POST messages method.
+Get all available sender setting options which can be used in the \"from\" parameter of the POST messages method.
 
 ### Required Parameters
 
@@ -2106,7 +2106,7 @@ Name | Type | Description  | Notes
 
 # **GetContactNotes**
 > GetContactNotesPaginatedResponse GetContactNotes(ctx, id, optional)
-Fetch notes assigned to the given contact.
+Fetch notes assigned to a given contact
 
 
 
@@ -3104,7 +3104,7 @@ Optional parameters are passed through a pointer to a GetSenderSettingsOpts stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **country** | **optional.String**| Return sender settings enabled for sending to specified country. Two upper case characters | 
+ **country** | **optional.String**| Return sender settings enabled for sending to a specified country. Should be 2 upper-case characters. | 
 
 ### Return type
 
@@ -3432,7 +3432,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **surveyId** | **optional.Int32**| Fetch only that numbers which are ready for the survey | 
+ **surveyId** | **optional.Int32**| Fetch only those numbers that are ready for the survey. | 
 
 ### Return type
 
@@ -3565,7 +3565,7 @@ Name | Type | Description  | Notes
 > MuteChatsBulk(ctx, muteChatsBulkInputObject)
 Mute chats (bulk)
 
-Mute several chats by chat IDs or mute all chats
+Mute several chats by chat ids or mute all chats.
 
 ### Required Parameters
 
@@ -3673,7 +3673,7 @@ Name | Type | Description  | Notes
 > ResourceLinkResponse RequestSenderId(ctx, requestSenderIdInputObject)
 Apply for a new Sender ID
 
-> Sender IDs are shared between all of your sub-accounts.
+> Sender IDs are shared among all of your sub-accounts.
 
 ### Required Parameters
 
@@ -4203,7 +4203,7 @@ Name | Type | Description  | Notes
 > UnmuteChatsBulk(ctx, unmuteChatsBulkInputObject)
 Unmute chats (bulk)
 
-Unmute several chats by chat IDs or unmute all chats
+Unmute several chats by chat ids or unmute all chats.
 
 ### Required Parameters
 

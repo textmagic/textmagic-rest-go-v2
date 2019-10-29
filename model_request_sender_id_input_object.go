@@ -10,8 +10,8 @@
 package TextMagic
 
 type RequestSenderIdInputObject struct {
-	// Sender ID that you are applying for. *   11 characters maximum *   Only Latin based characters and digits are allowed *   Should contain at least one letter 
+	// The Sender ID that you are applying for. *   11 characters maximum; *   Only Latin based characters and digits are allowed; *   Should contain at least 1 letter. 
 	SenderId string `json:"senderId"`
-	// Explanation why do you need this Sender ID.
+	// Explanation of why you need this Sender ID.
 	Explanation string `json:"explanation"`
 }

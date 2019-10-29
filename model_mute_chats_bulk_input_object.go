@@ -14,6 +14,6 @@ type MuteChatsBulkInputObject struct {
 	Ids string `json:"ids,omitempty"`
 	// Entity ID(s), separated by comma
 	All bool `json:"all,omitempty"`
-	// Mute for N hours
+	// Mute for N hours.
 	For_ int32 `json:"for,omitempty"`
 }

@@ -10,7 +10,7 @@
 package TextMagic
 
 type SenderSettingsItem struct {
-	// The 2-letter ISO country code of the recipient phone number. 
+	// The 2-letter ISO country code of the recipient's phone number. 
 	Country string `json:"country"`
 	// Phone enabled for sending to specified country
 	Phone string `json:"phone"`

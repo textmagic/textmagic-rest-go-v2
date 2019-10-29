@@ -22,11 +22,11 @@ type DoEmailLookupResponse struct {
 	Risk string `json:"risk"`
 	// The email address type (domain) is `free` or `corporate`.
 	AddressType string `json:"addressType"`
-	// This is be `true` if the domain is in the list of disposable email addresses, otherwise returns as `false`.
+	// This is `true` if the domain is in the list of disposable email addresses; otherwise, it returns as `false`.
 	IsDisposableAddress bool `json:"isDisposableAddress"`
-	// Null if nothing is suggested, however, if there is a potential typo in the email address, the closest suggestion is provided.
+	// Null if nothing is suggested; however, if there is a potential typo in the email address, the closest suggestion is provided.
 	Suggestion string `json:"suggestion"`
-	// Checks the mailbox part of the email whether it matches a specific role type (‘admin’, ‘sales’, ‘webmaster’)
+	// Checks the mailbox part of the email to see whether it matches a specific role type (‘admin’, ‘sales’, ‘webmaster’)
 	EmailRole string `json:"emailRole"`
 	// The local part of the email address.
 	LocalPart string `json:"localPart"`
@@ -36,9 +36,9 @@ type DoEmailLookupResponse struct {
 	Exchange string `json:"exchange"`
 	// MX record preference.
 	Preference int32 `json:"preference"`
-	// `true` if the email address exists in TextMagic whitelist. 
+	// `true` if the email address exists in the TextMagic whitelist. 
 	IsInWhiteList bool `json:"isInWhiteList"`
-	// `true` if the email address exists in TextMagic blacklist. 
+	// `true` if the email address exists in the TextMagic blacklist. 
 	IsInBlackList bool `json:"isInBlackList"`
 	// `true` if the email address domain has an MX record. 
 	HasMx bool `json:"hasMx"`

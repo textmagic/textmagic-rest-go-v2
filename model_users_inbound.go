@@ -25,7 +25,7 @@ type UsersInbound struct {
 	PurchasedAt time.Time `json:"purchasedAt"`
 	// Dedicated number subscription expiration time.
 	ExpireAt time.Time `json:"expireAt"`
-	// Number status: *   **U** for Unused. No messages have been sent from (or received to) this number. *   **A** for Active. 
+	// Number status: *   **U** for Unused. No messages have been sent from (or received to) this number; *   **A** for Active. 
 	Status string `json:"status"`
 	Country *Country `json:"country"`
 }

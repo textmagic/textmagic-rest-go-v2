@@ -10,7 +10,7 @@
 package TextMagic
 
 type DoCarrierLookupResponse struct {
-	// Cost to check that one number is constant – 0.04 in your account currency.
+	// The cost to check that one number is constant – 0.04 in your account currency.
 	Cost float32 `json:"cost"`
 	// Phone number country.
 	Country *Country `json:"country,omitempty"`
@@ -22,6 +22,6 @@ type DoCarrierLookupResponse struct {
 	Carrier string `json:"carrier"`
 	// Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164).
 	Number164 string `json:"number164"`
-	// The field shows if entered phone number is valid or not.
+	// This field shows whether the entered phone number is valid or not.
 	Valid bool `json:"valid"`
 }

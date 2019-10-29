@@ -10,11 +10,11 @@
 package TextMagic
 
 type GetAvailableSenderSettingOptionsResponse struct {
-	// Array of dedicated numbers strings.
+	// Array of dedicated number strings.
 	Dedicated []string `json:"dedicated"`
 	// Array of verified account phone numbers (currently only one).
 	User []string `json:"user"`
-	// Array of shared numbers strings.
+	// Array of shared number strings.
 	Shared []string `json:"shared"`
 	// Array of alphanumeric sender IDs.
 	SenderIds []string `json:"senderIds"`

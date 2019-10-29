@@ -319,8 +319,8 @@ tags:
     and the recipient replied to that address, that reply will be sent to **charles@example.com**\
     \ by default. However, you can also nominate up to three additional email addresses\
     \ to receive a copy of that email. Add them into the **Forward incoming SMS to\
-    \ email 1**, **2** or **3** fields.\n\n## Incoming SMS email alert (an example)\n\
-    \nWhen someone replies to your message sent using\_**Email To SMS**, TextMagic\
+    \ email 1**, **2** or **3** fields.\n\n## Incoming SMS email alert (example)\n\
+    \nWhen someone replies to a message you sent using\_**Email To SMS**, TextMagic\
     \ will forward the reply to your email.\n\n| Variable | Value |\n|-------|-------|\n\
     | From: | 4912345678@textmagic.com |\n| Body: | Hi, I just received your message.\
     \ Phil. |\n"
@@ -336,8 +336,8 @@ tags:
     \  Go to [Distribution lists](https://my.textmagic.com/online/emailtosms/distribution-lists).\n\
     2.  Click **New distribution list**.\n3.  Give your list a name.\n4.  Add recipients\
     \ (phone numbers, contacts or lists).\n5.  Choose the content and message length\
-    \ settings.\n6.  6\\. Choose what phone number will be sent with the messages.\
-    \ Click here to learn more about [sender settings](https://support.textmagic.com/article/how-to-manage-sender-settings/).\n\
+    \ settings.\n6.  Choose what phone number will be sent with the messages. Click\
+    \ here to learn more about [sender settings](https://support.textmagic.com/article/how-to-manage-sender-settings/).\n\
     7.  Click **Continue**.\n\nNow you can set up forwarding in your email application\
     \ or send emails to the distribution address.\n\n> Anyone who knows the email\
     \ address associated with your distribution list could send an email to it. This\
@@ -365,7 +365,7 @@ tags:
     \ number | \n|---------|---------------------|------------------|------------------------|-------------------|\n\
     | Can receive replies | Yes | Yes | No | To mobile |\n| Is shared among sub-accounts\
     \ | Yes | No | Yes | No | \n| Monthly fee | FREE | From £2.40 | FREE | FREE\n\n\
-    \\* \_Even though the numbers are shared, every customer can only see their own\
+    \\* \_Even though the numbers are shared, each customer can see only their own\
     \ replies. [Read more](https://support.textmagic.com/faq/what-is-the-difference-between-dedicated-number-and-shared-number/)."
   x-displayName: "Overview"
 - name: "Sender IDs"
@@ -501,7 +501,7 @@ tags:
     \n```javascript\n{\n    \"repositories\": [\n        {\n            \"type\":\
     \ \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
     \n        }\n    ],\n    \"require\": {\n        \"textmagic/textmagic-rest-php-v2\"\
-    : \"dev-master#v2.0.814\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
+    : \"dev-master#v2.0.815\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
     \ Manual Installation\n\nDownload the files and include `autoload.php`:\n\n```php\n\
     require_once(__DIR__.'/vendor/autoload.php');\n```\n\n## Usage Example\n\nPlease\
     \ follow the [installation](#installation) instructions and execute the following\
@@ -530,7 +530,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Node.js application.\n\n[Get\
     \ it now on GitHub](https://github.com/textmagic/textmagic-rest-nodejs)\n## Installation\n\
-    \n```shell\nnpm install textmagic-client@2.0.814 --save\n```\n\n## Usage Example\n\
+    \n```shell\nnpm install textmagic-client@2.0.815 --save\n```\n\n## Usage Example\n\
     \nPlease follow the [installation](#installation) instructions and execute the\
     \ following JS code:\n\n```javascript\nconst textmagicClient = require('textmagic-client');\n\
     \nconst fs = require('fs');\nconst client = textmagicClient.ApiClient.instance;\n\
@@ -562,7 +562,7 @@ tags:
     Install-Package Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp\
     \ versions later than 105.1.0 have a bug which causes file uploads to fail. See\
     \ [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\n## Installation\n\
-    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.814/).\n\
+    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.815/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -625,22 +625,22 @@ tags:
     \ Requirements\n\n* CMake 2.8 and later (https://cmake.org/)\n* cpprest (https://github.com/microsoft/cpprestsdk)\n\
     \nUbuntu dependencies quick installation example:\n```shell\napt-get install build-essential\
     \ cmake libcpprest-dev\n```\n\n## Installation\n\nDownload and extract lib archive:\n\
-    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.814.tar.gz\
-    \ && \\\ntar zxf v2.0.814.tar.gz && \\\nrm -f v2.0.814.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.814\n\
+    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.815.tar.gz\
+    \ && \\\ntar zxf v2.0.815.tar.gz && \\\nrm -f v2.0.815.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.815\n\
     ```\nBuild using cmake\n```shell\ncmake . && cmake --build .\n```\nThe output\
-    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.814/lib` directory:\n\
+    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.815/lib` directory:\n\
     \n## Usage Example\nIn the example below, we assume that you moved the library\
-    \ sources `textmagic-rest-cpp-v2-2.0.814` directory to your test project root\
+    \ sources `textmagic-rest-cpp-v2-2.0.815` directory to your test project root\
     \ directory.\n\nConfigure your `CMakeLists.txt` as shown here:\n```shell\ncmake_minimum_required(VERSION\
     \ 2.8)\nproject(test)\n\nset(CMAKE_CXX_STANDARD 14)\n\nadd_executable(app main.cpp)\n\
     \nadd_library(textmagic_client SHARED IMPORTED)\nset_property(TARGET textmagic_client\
-    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.814/lib/libtextmagic_client.so\"\
-    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.814\
-    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.814/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.814/api)\n\
+    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.815/lib/libtextmagic_client.so\"\
+    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.815\
+    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.815/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.815/api)\n\
     target_link_libraries(app boost_system cpprest crypto textmagic_client )\n```\n\
     \n`main.cpp` file example:\n```cpp\n#include <iostream>\n#include <fstream>\n\
-    #include \"textmagic-rest-cpp-v2-2.0.814/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.814/ApiConfiguration.h\"\
-    \n#include \"textmagic-rest-cpp-v2-2.0.814/api/TextMagicApi.h\"\n\nusing namespace\
+    #include \"textmagic-rest-cpp-v2-2.0.815/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.815/ApiConfiguration.h\"\
+    \n#include \"textmagic-rest-cpp-v2-2.0.815/api/TextMagicApi.h\"\n\nusing namespace\
     \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
     \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
     \ ApiConfiguration);\n\n    apiConfig->setBaseUrl(\"https://rest.textmagic.com\"\
@@ -680,7 +680,7 @@ tags:
     \ SMS and receiving replies by integrating TextMagic SMS Gateway into your Python\
     \ application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-python)\n\
     ## Requirements\nPython 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install\
-    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.814\n```\n\
+    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.815\n```\n\
     \n## Usage Example\n\n```python\nimport TextMagic\nfrom TextMagic.rest import\
     \ ApiException\n\n# Configure HTTP basic authorization: BasicAuth\nconfiguration\
     \ = TextMagic.Configuration()\nconfiguration.username = 'YOUR_USERNAME'\nconfiguration.password\
@@ -705,8 +705,8 @@ tags:
     \ GitHub\">Star</a>\n\nThis library provides you with an easy way of sending SMS\
     \ and receiving replies by integrating TextMagic SMS Gateway into your Perl application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-perl)\n##\
-    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.814.tar.gz\
-    \ && \\\ntar zxf v2.0.814.tar.gz && \\\nrm -f v2.0.814.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.814\
+    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.815.tar.gz\
+    \ && \\\ntar zxf v2.0.815.tar.gz && \\\nrm -f v2.0.815.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.815\
     \ && \\\nperl Makefile.pl && \\\nmake && \\\nmake install && \\\ncpanm --installdeps\
     \ .\n```\\\n\n## Usage Example\n\nPlease follow the [installation](#installation)\
     \ instructions and execute the following Perl code:\n\n```perl\nuse 5.010;\nuse\
@@ -735,7 +735,7 @@ tags:
     \ and receiving replies by integrating TextMagic SMS Gateway into your Ruby application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-ruby)\n##\
     \ Installation\n\nAdd these lines into your Gemfile\n```ruby\ngem 'textmagic_rest_client',\
-    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.814'\n\
+    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.815'\n\
     ```\n\nRun the bundler install command\n``` shell\nbundle install\n```\n\n## Usage\
     \ Example\n\nCreate the test file `test.rb` and put the following code:\n```ruby\n\
     \ # Load the gem\nrequire 'textmagic_rest_client'\n\n # Setup authorization\n\
@@ -761,7 +761,7 @@ tags:
     Star imissyouso/textmagic-rest-go on GitHub\">Star</a>\n\nThis library provides\
     \ you with an easy way of sending SMS and receiving replies by integrating TextMagic\
     \ SMS Gateway into your Go application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-go)\n\
-    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.814\n\
+    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.815\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -848,9 +848,9 @@ tags:
   description: ""
   x-displayName: "Timezones and Countries"
 - name: "Lookup"
-  description: "To get more details about a number or to check if it is a valid number\
-    \ or not, you can use the Carrier Lookup command. To upload and check numbers\
-    \ in bulk – please use our [Web app](https://my.textmagic.com/online/carrier-lookup/)."
+  description: "To get more details about a number or to check whether it is a valid\
+    \ number or not, you can use the Carrier Lookup command. To upload and check numbers\
+    \ in bulk, please use our [Web app](https://my.textmagic.com/online/carrier-lookup/)."
 - name: "Contact Notes"
   description: ""
 schemes:
@@ -1169,7 +1169,7 @@ paths:
       summary: "Carrier Lookup"
       description: "This API call allows you to retrieve additional information about\
         \ a phone number: region-specific phone number formatting, carrier, phone\
-        \ type (landline/mobile) and country information.\n\n> Numbers can be checked\
+        \ type (landline/mobile) and country information.\n\n> Numbers must be checked\
         \ one by one. You cannot check multiple numbers in one request.\n \n"
       operationId: "doCarrierLookup"
       parameters:
@@ -1183,8 +1183,8 @@ paths:
         x-exportParamName: "Phone"
       - name: "country"
         in: "query"
-        description: "This option must be specified only if the phone number in a\
-          \ **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**.\n"
+        description: "This option must be specified only if the phone number is in\
+          \ a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**.\n"
         required: false
         type: "string"
         x-example: "GB"
@@ -1204,7 +1204,7 @@ paths:
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         429:
-          description: "Returned when number of queries per second too much"
+          description: "Returned when the number of queries per second is too high."
       x-code-samples:
       - lang: "PHP"
         source: "require_once(__DIR__ . '/vendor/autoload.php');\n\nuse TextMagic\\\
@@ -1933,8 +1933,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get available sender settings"
-      description: "Get all available sender setting options which could be used in\
-        \ \"from\" parameter of POST messages method."
+      description: "Get all available sender setting options which can be used in\
+        \ the \"from\" parameter of the POST messages method."
       operationId: "getAvailableSenderSettingOptions"
       parameters:
       - name: "country"
@@ -1948,7 +1948,7 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Available sender setting options returned with success"
+          description: "Available sender setting options returned with success."
           schema:
             $ref: "#/definitions/GetAvailableSenderSettingOptionsResponse"
         401:
@@ -2108,7 +2108,7 @@ paths:
         x-exportParamName: "UpdateSenderSettingInputObject"
       responses:
         204:
-          description: "Sender settings have been updated with success"
+          description: "Sender settings have been updated with success."
         400:
           description: "Bad request"
           schema:
@@ -2270,8 +2270,8 @@ paths:
       parameters:
       - name: "country"
         in: "query"
-        description: "Return sender settings enabled for sending to specified country.\
-          \ Two upper case characters"
+        description: "Return sender settings enabled for sending to a specified country.\
+          \ Should be 2 upper-case characters."
         required: false
         type: "string"
         x-example: "US"
@@ -2279,7 +2279,7 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Sender settings returned with success"
+          description: "Sender settings returned with success."
           schema:
             $ref: "#/definitions/GetSenderSettingsResponse"
         401:
@@ -2429,9 +2429,9 @@ paths:
       parameters:
       - name: "prefix"
         in: "query"
-        description: "Desired number prefix. Should include country code (i.e. 447\
-          \ for UK phone number format). Leave blank to get all the available numbers\
-          \ for the specified country."
+        description: "Desired number prefix. Should include the country code (i.e.\
+          \ 447 for UK phone number format). Leave blank to get all the available\
+          \ numbers for the specified country."
         required: false
         type: "integer"
         x-example: 447155
@@ -2451,14 +2451,14 @@ paths:
         x-optionalDataType: "Int32"
       - name: "country"
         in: "query"
-        description: "Two-letter dedicated number country ISO code."
+        description: "The 2-letter dedicated number country ISO code."
         required: true
         type: "string"
         x-example: "GB"
         x-exportParamName: "Country"
       responses:
         200:
-          description: "The list of available to buy dedicated numbers"
+          description: "The list of available to buy dedicated numbers."
           schema:
             $ref: "#/definitions/GetAvailableDedicatedNumbersResponse"
         400:
@@ -2645,14 +2645,14 @@ paths:
         x-optionalDataType: "Int32"
       - name: "surveyId"
         in: "query"
-        description: "Fetch only that numbers which are ready for the survey"
+        description: "Fetch only those numbers that are ready for the survey."
         required: false
         type: "integer"
         x-exportParamName: "SurveyId"
         x-optionalDataType: "Int32"
       responses:
         200:
-          description: "Requested data returned with success"
+          description: "Requested data returned with success."
           schema:
             $ref: "#/definitions/GetUserDedicatedNumbersPaginatedResponse"
         401:
@@ -2824,9 +2824,9 @@ paths:
         x-exportParamName: "BuyDedicatedNumberInputObject"
       responses:
         201:
-          description: "Number has been bought with success"
+          description: "Number has been bought with success."
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
@@ -2986,7 +2986,7 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Requested dedicated number data returned with success"
+          description: "Requested dedicated number data returned with success."
           schema:
             $ref: "#/definitions/UsersInbound"
         401:
@@ -3117,7 +3117,7 @@ paths:
     delete:
       tags:
       - "TextMagic"
-      summary: "Cancel dedicated number subscription"
+      summary: "Cancel a dedicated number subscription"
       description: ""
       operationId: "deleteDedicatedNumber"
       produces: []
@@ -3130,7 +3130,7 @@ paths:
         x-exportParamName: "Id"
       responses:
         204:
-          description: "Dedicated number has been deleted with success"
+          description: "The Dedicated number has been deleted with success."
         401:
           description: "Unauthorized request"
           schema:
@@ -3276,7 +3276,7 @@ paths:
         x-optionalDataType: "Int32"
       responses:
         200:
-          description: "Sender ids of current user returned with success"
+          description: "Sender IDs of the current user returned with success."
           schema:
             $ref: "#/definitions/GetSenderIdsPaginatedResponse"
         401:
@@ -3421,7 +3421,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Apply for a new Sender ID"
-      description: "> Sender IDs are shared between all of your sub-accounts."
+      description: "> Sender IDs are shared among all of your sub-accounts."
       operationId: "requestSenderId"
       parameters:
       - in: "body"
@@ -3432,7 +3432,7 @@ paths:
         x-exportParamName: "RequestSenderIdInputObject"
       responses:
         201:
-          description: "Sender ID request has been created with success"
+          description: "Sender ID request has been created with success."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
@@ -3600,7 +3600,7 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Sender Id data returned with success"
+          description: "Sender Id data returned with success."
           schema:
             $ref: "#/definitions/SenderId"
         401:
@@ -3889,7 +3889,7 @@ paths:
         x-optionalDataType: "Int32"
       responses:
         200:
-          description: "Subaccounts data returned with success"
+          description: "Subaccounts data returned with success."
           schema:
             $ref: "#/definitions/User"
         401:
@@ -4205,7 +4205,7 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Subaccount data returned with success"
+          description: "Subaccount data returned with success."
           schema:
             $ref: "#/definitions/User"
         401:
@@ -4488,7 +4488,7 @@ paths:
         x-exportParamName: "RequestNewSubaccountTokenInputObject"
       responses:
         200:
-          description: "Created Subaccount data returned with success"
+          description: "Created Subaccount data returned with success."
           schema:
             $ref: "#/definitions/User"
         400:
@@ -6837,7 +6837,7 @@ paths:
         x-exportParamName: "CreateContactInputObject"
       responses:
         201:
-          description: "Contact has been created with success"
+          description: "Contact has been created with success."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
@@ -7348,7 +7348,8 @@ paths:
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
-          description: "Returned when trying to delete contact shared to you"
+          description: "Returned when trying to delete a contact shared to a current\
+            \ user."
         404:
           description: "Request data not found"
           schema:
@@ -7486,7 +7487,7 @@ paths:
         x-exportParamName: "Id"
       responses:
         201:
-          description: "Contact has been created with success"
+          description: "Contact has been created with success."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
@@ -8162,7 +8163,7 @@ paths:
         x-exportParamName: "UnsubscribeContactInputObject"
       responses:
         201:
-          description: "Returned when updated with success"
+          description: "Returned when updated with success."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
@@ -8491,7 +8492,7 @@ paths:
         x-optionalDataType: "Int32"
       responses:
         200:
-          description: "Requested custom fields have been returned with success"
+          description: "Requested custom fields have been returned with success."
           schema:
             $ref: "#/definitions/GetCustomFieldsPaginatedResponse"
         401:
@@ -8648,7 +8649,7 @@ paths:
         x-exportParamName: "CreateCustomFieldInputObject"
       responses:
         201:
-          description: "Contact has been created with success"
+          description: "Contact has been created with success."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
@@ -8958,7 +8959,7 @@ paths:
         x-exportParamName: "Id"
       responses:
         201:
-          description: "Returned when updated with success"
+          description: "Returned when updated with success."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
@@ -9267,7 +9268,7 @@ paths:
         x-exportParamName: "Id"
       responses:
         201:
-          description: "Returned when updated with success"
+          description: "Returned when updated with success."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
@@ -10635,7 +10636,7 @@ paths:
         400:
           description: "Returned when the form has errors."
         403:
-          description: "Returned when trying to edit a list shared to you"
+          description: "Returned when trying to edit a list shared to a current user."
         404:
           description: "Returned when no list found."
       x-code-samples:
@@ -11954,7 +11955,7 @@ paths:
     get:
       tags:
       - "TextMagic"
-      summary: "Fetch notes assigned to the given contact."
+      summary: "Fetch notes assigned to a given contact"
       description: ""
       operationId: "getContactNotes"
       parameters:
@@ -12482,10 +12483,10 @@ paths:
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
-          description: "Returned when trying to edit contact note shared to current\
-            \ user"
+          description: "Returned when trying to edit a contact note shared to a current\
+            \ user."
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -12952,7 +12953,8 @@ paths:
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
-          description: "Returned when trying to edit contact shared to current user"
+          description: "Returned when trying to delete a contact shared to a current\
+            \ user."
         404:
           description: "Request data not found"
           schema:
@@ -13226,9 +13228,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Email Lookup"
-      description: "To get more details about an email address or to check if it is\
-        \ a valid email, you can use the Email Lookup command. To upload and check\
-        \ emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).\n\
+      description: "To get more details about an email address or to check whether\
+        \ it is a valid email or not, you can use the Email Lookup command. To upload\
+        \ and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).\n\
         \nThis API call allows you to retrieve additional information about an email\
         \ address, such as mailbox detection, syntax checks, DNS validation, deliverability\
         \ status, and many more helpful values (see the table below).\n\n> Emails\
@@ -13784,7 +13786,8 @@ paths:
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
-          description: "Returned when trying to edit a list shared to you."
+          description: "Returned when trying to edit a list shared to the current\
+            \ user."
         404:
           description: "Request data not found"
           schema:
@@ -13963,7 +13966,8 @@ paths:
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
-          description: "Returned when trying to edit a list shared to you."
+          description: "Returned when trying to edit a list shared to the current\
+            \ user."
         404:
           description: "Request data not found"
           schema:
@@ -14133,7 +14137,8 @@ paths:
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
-          description: "Returned when trying to edit a list shared to you."
+          description: "Returned when trying to edit a list shared to the current\
+            \ user."
         404:
           description: "Request data not found"
           schema:
@@ -23758,7 +23763,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Mute chats (bulk)"
-      description: "Mute several chats by chat IDs or mute all chats"
+      description: "Mute several chats by chat ids or mute all chats."
       operationId: "muteChatsBulk"
       produces: []
       parameters:
@@ -23915,7 +23920,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Unmute chats (bulk)"
-      description: "Unmute several chats by chat IDs or unmute all chats"
+      description: "Unmute several chats by chat ids or unmute all chats."
       operationId: "unmuteChatsBulk"
       produces: []
       parameters:
@@ -25775,13 +25780,13 @@ definitions:
     properties:
       status:
         type: "integer"
-        description: "Session status:\n* **1** if session has been initialized but\
-          \ not yet started\n* **3** if session is being processed\n* **4** if session\
-          \ has errors\n* **5** if session completed successfully\n"
+        description: "Session status:\n* **1** - if session has been initialized but\
+          \ not yet started;\n* **3** - if session is being processed;\n* **4** -\
+          \ if session has errors;\n* **5** - if session completed successfully.\n"
       processed:
         type: "integer"
         example: 67
-        description: "How many contacts have been imported."
+        description: "How many contacts have been imported?"
     example:
       processed: 67
       status: 0
@@ -25798,7 +25803,7 @@ definitions:
         example:
         - 447860021136
         - 447860021137
-        description: "Array of dedicated numbers strings."
+        description: "Array of dedicated number strings."
         items:
           type: "string"
       user:
@@ -25814,7 +25819,7 @@ definitions:
         example:
         - 447860021130
         - 447860021131
-        description: "Array of shared numbers strings."
+        description: "Array of shared number strings."
         items:
           type: "string"
       senderIds:
@@ -25970,8 +25975,8 @@ definitions:
       cost:
         type: "number"
         example: 0.04
-        description: "Cost to check that one number is constant – 0.04 in your account\
-          \ currency."
+        description: "The cost to check that one number is constant – 0.04 in your\
+          \ account currency."
       country:
         description: "Phone number country."
         $ref: "#/definitions/Country"
@@ -25998,7 +26003,8 @@ definitions:
       valid:
         type: "boolean"
         example: true
-        description: "The field shows if entered phone number is valid or not."
+        description: "This field shows whether the entered phone number is valid or\
+          \ not."
     example:
       valid: true
       country:
@@ -26182,19 +26188,19 @@ definitions:
       isDisposableAddress:
         type: "boolean"
         example: false
-        description: "This is be `true`\_if the domain is in the list of disposable\
-          \ email addresses, otherwise returns as `false`."
+        description: "This is `true`\_if the domain is in the list of disposable email\
+          \ addresses; otherwise, it returns as `false`."
       suggestion:
         type: "string"
         example: "john@sample.com"
-        description: "Null if nothing is suggested, however, if there is a potential\
+        description: "Null if nothing is suggested; however, if there is a potential\
           \ typo in the email address, the closest suggestion is provided."
         x-nullable: true
       emailRole:
         type: "string"
         example: "admin"
-        description: "Checks the mailbox part of the email whether it matches a specific\
-          \ role type (‘admin’, ‘sales’, ‘webmaster’)"
+        description: "Checks the mailbox part of the email to see whether it matches\
+          \ a specific role type (‘admin’, ‘sales’, ‘webmaster’)"
         x-nullable: true
       localPart:
         type: "string"
@@ -26217,11 +26223,11 @@ definitions:
       isInWhiteList:
         type: "boolean"
         example: false
-        description: "`true` if the email address exists in TextMagic whitelist.\n"
+        description: "`true` if the email address exists in the TextMagic whitelist.\n"
       isInBlackList:
         type: "boolean"
         example: false
-        description: "`true` if the email address exists in TextMagic blacklist.\n"
+        description: "`true` if the email address exists in the TextMagic blacklist.\n"
       hasMx:
         type: "boolean"
         example: true
@@ -26307,8 +26313,8 @@ definitions:
         type: "number"
         format: "float"
         example: 2.4
-        description: "Dedicated number monthly fee for this country. Returned in current\
-          \ [account](http://docs.textmagictesting.com/#tag/User) currency."
+        description: "Dedicated number monthly fee for this country. Returned in the\
+          \ current [account](http://docs.textmagictesting.com/#tag/User) currency."
     example:
       price: 2.4
       numbers:
@@ -27035,7 +27041,7 @@ definitions:
         type: "string"
         example: "U"
         description: "Number status:\n*   **U** for Unused. No messages have been\
-          \ sent from (or received to) this number.\n*   **A** for Active.\n"
+          \ sent from (or received to) this number;\n*   **A** for Active.\n"
         enum:
         - "U"
         - "A"
@@ -29157,7 +29163,7 @@ definitions:
       country:
         type: "string"
         example: "UK"
-        description: "The 2-letter ISO country code of the recipient phone number."
+        description: "The 2-letter ISO country code of the recipient's phone number."
   SenderSettingsItem:
     required:
     - "country"
@@ -29166,7 +29172,7 @@ definitions:
       country:
         type: "string"
         example: "US"
-        description: "The 2-letter ISO country code of the recipient phone number.\n"
+        description: "The 2-letter ISO country code of the recipient's phone number.\n"
       phone:
         type: "string"
         example: "+447937946700"
@@ -34533,13 +34539,13 @@ definitions:
       senderId:
         type: "string"
         example: "HotRod"
-        description: "Sender ID that you are applying for.\n*   11 characters maximum\n\
-          *   Only Latin based characters and digits are allowed\n*   Should contain\
-          \ at least one letter\n"
+        description: "The Sender ID that you are applying for.\n*   11 characters\
+          \ maximum;\n*   Only Latin based characters and digits are allowed;\n* \
+          \  Should contain at least 1 letter.\n"
       explanation:
         type: "string"
         example: "Because it equals to my company name."
-        description: "Explanation why do you need this Sender ID."
+        description: "Explanation of why you need this Sender ID."
     example:
       senderId: "HotRod"
       explanation: "Because it equals to my company name."
@@ -34931,12 +34937,12 @@ definitions:
       contactId:
         type: "integer"
         example: 50315
-        description: "Contact ID. See [Contact](http://docs.textmagictesting.com/#tag/Contacts)\n"
+        description: "Contact ID. See [Contact](http://docs.textmagictesting.com/#tag/Contacts).\n"
       value:
         type: "string"
         example: "1983-08-31T00:00:00.000Z"
         description: "Custom field value. Note that this value is not parsed in any\
-          \ way. It is stored and used in tags exactly as you send it."
+          \ way; it is stored and used in tags exactly as you send it."
     example:
       contactId: 50315
       value: "1983-08-31T00:00:00.000Z"
@@ -35387,7 +35393,7 @@ definitions:
       for:
         type: "integer"
         example: 1
-        description: "Mute for N hours"
+        description: "Mute for N hours."
     example:
       all: false
       for: 1
@@ -35603,8 +35609,8 @@ definitions:
           \ and the values are arrays with error messages for these parameters.\n"
         properties: {}
     description: "If it was a **POST** or **PUT** request (and the **message** returned\
-      \ is `Validation Failed`), this field may contain **errors\_**that describe\
-      \ the errors grouped by the input parameter name.\n"
+      \ is `Validation Failed`), this field may contain **errors** that describe the\
+      \ errors grouped by the input parameter name.\n"
   DoAuthResponse_minVersions:
     required:
     - "android"

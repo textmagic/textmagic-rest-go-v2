@@ -14,6 +14,6 @@ type MessagePriceItem struct {
 	Name string `json:"name"`
 	// Price to send message to desired country.
 	Price string `json:"price"`
-	// The 2-letter ISO country code of the recipient phone number.
+	// The 2-letter ISO country code of the recipient's phone number.
 	Country string `json:"country"`
 }

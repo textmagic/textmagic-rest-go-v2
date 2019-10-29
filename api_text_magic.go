@@ -2620,7 +2620,7 @@ func (a *TextMagicApiService) DeleteCustomField(ctx context.Context, id int32) (
 }
 
 /* 
-TextMagicApiService Cancel dedicated number subscription
+TextMagicApiService Cancel a dedicated number subscription
 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
@@ -4140,11 +4140,11 @@ func (a *TextMagicApiService) DeleteTemplatesBulk(ctx context.Context, deleteTem
 
 /* 
 TextMagicApiService Carrier Lookup
-This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  &gt; Numbers can be checked one by one. You cannot check multiple numbers in one request.   
+This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  &gt; Numbers must be checked one by one. You cannot check multiple numbers in one request.   
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param phone Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) or in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers). 
  * @param optional nil or *DoCarrierLookupOpts - Optional Parameters:
-     * @param "Country" (optional.String) -  This option must be specified only if the phone number in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**. 
+     * @param "Country" (optional.String) -  This option must be specified only if the phone number is in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**. 
 
 @return DoCarrierLookupResponse
 */
@@ -4261,7 +4261,7 @@ func (a *TextMagicApiService) DoCarrierLookup(ctx context.Context, phone string,
 
 /* 
 TextMagicApiService Email Lookup
-To get more details about an email address or to check if it is a valid email, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  &gt; Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
+To get more details about an email address or to check whether it is a valid email or not, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  &gt; Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param email Email address.
 
@@ -5237,9 +5237,9 @@ func (a *TextMagicApiService) GetAllTemplates(ctx context.Context, localVarOptio
 TextMagicApiService Find dedicated numbers available for purchase
 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param country Two-letter dedicated number country ISO code.
+ * @param country The 2-letter dedicated number country ISO code.
  * @param optional nil or *GetAvailableDedicatedNumbersOpts - Optional Parameters:
-     * @param "Prefix" (optional.Int32) -  Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country.
+     * @param "Prefix" (optional.Int32) -  Desired number prefix. Should include the country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country.
      * @param "Tollfree" (optional.Int32) -  Should we show only tollfree numbers (tollfree available only for US).
 
 @return GetAvailableDedicatedNumbersResponse
@@ -5372,7 +5372,7 @@ func (a *TextMagicApiService) GetAvailableDedicatedNumbers(ctx context.Context, 
 
 /* 
 TextMagicApiService Get available sender settings
-Get all available sender setting options which could be used in \&quot;from\&quot; parameter of POST messages method.
+Get all available sender setting options which can be used in the \&quot;from\&quot; parameter of the POST messages method.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetAvailableSenderSettingOptionsOpts - Optional Parameters:
      * @param "Country" (optional.String) -  The 2-letter ISO country ID. If not specified, it returns all the available sender settings.
@@ -6944,7 +6944,7 @@ func (a *TextMagicApiService) GetContactNote(ctx context.Context, id int32) (Con
 }
 
 /* 
-TextMagicApiService Fetch notes assigned to the given contact.
+TextMagicApiService Fetch notes assigned to a given contact
 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
@@ -10499,7 +10499,7 @@ TextMagicApiService Get current sender settings
 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetSenderSettingsOpts - Optional Parameters:
-     * @param "Country" (optional.String) -  Return sender settings enabled for sending to specified country. Two upper case characters
+     * @param "Country" (optional.String) -  Return sender settings enabled for sending to a specified country. Should be 2 upper-case characters.
 
 @return GetSenderSettingsResponse
 */
@@ -11646,7 +11646,7 @@ TextMagicApiService Get all your dedicated numbers
  * @param optional nil or *GetUserDedicatedNumbersOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "SurveyId" (optional.Int32) -  Fetch only that numbers which are ready for the survey
+     * @param "SurveyId" (optional.Int32) -  Fetch only those numbers that are ready for the survey.
 
 @return GetUserDedicatedNumbersPaginatedResponse
 */
@@ -12186,7 +12186,7 @@ func (a *TextMagicApiService) MuteChat(ctx context.Context, muteChatInputObject 
 
 /* 
 TextMagicApiService Mute chats (bulk)
-Mute several chats by chat IDs or mute all chats
+Mute several chats by chat ids or mute all chats.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param muteChatsBulkInputObject
 
@@ -12584,7 +12584,7 @@ func (a *TextMagicApiService) RequestNewSubaccountToken(ctx context.Context, req
 
 /* 
 TextMagicApiService Apply for a new Sender ID
-&gt; Sender IDs are shared between all of your sub-accounts.
+&gt; Sender IDs are shared among all of your sub-accounts.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param requestSenderIdInputObject
 
@@ -14493,7 +14493,7 @@ func (a *TextMagicApiService) UnblockContactsBulk(ctx context.Context, unblockCo
 
 /* 
 TextMagicApiService Unmute chats (bulk)
-Unmute several chats by chat IDs or unmute all chats
+Unmute several chats by chat ids or unmute all chats.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param unmuteChatsBulkInputObject
 
