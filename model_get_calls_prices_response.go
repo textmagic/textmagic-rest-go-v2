@@ -10,12 +10,12 @@
 package TextMagic
 
 type GetCallsPricesResponse struct {
-	// Price for outbound message
+	// Price for outbound message.
 	Outbound float32 `json:"outbound"`
-	// Price for inbound message
+	// Price for inbound message.
 	Inbound float32 `json:"inbound"`
-	// Price for forward
+	// Price for forward.
 	Forward float32 `json:"forward"`
-	// 2-letter ISO country code for local phone numbers, used when local is  set to true. Default is account country
+	// 2-letter ISO country code for local phone numbers, used when local is  set to true. Default is account country.
 	Country string `json:"country"`
 }
