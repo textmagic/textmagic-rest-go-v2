@@ -86,7 +86,7 @@ Method | HTTP request | Description
 [**GetList**](TextMagicApi.md#GetList) | **Get** /api/v2/lists/{id} | Get the details of a specific list
 [**GetListContactsIds**](TextMagicApi.md#GetListContactsIds) | **Get** /api/v2/lists/{id}/contacts/ids | Get all contacts IDs in a list
 [**GetLists**](TextMagicApi.md#GetLists) | **Get** /api/v2/lists | Get all lists
-[**GetListsOfContact**](TextMagicApi.md#GetListsOfContact) | **Get** /api/v2/contacts/{id}/lists | Get contact&#39;s lists
+[**GetListsOfContact**](TextMagicApi.md#GetListsOfContact) | **Get** /api/v2/contacts/{id}/lists | Get a contact&#39;s lists
 [**GetMessagePreview**](TextMagicApi.md#GetMessagePreview) | **Get** /api/v2/messages/preview | Preview message
 [**GetMessagePrice**](TextMagicApi.md#GetMessagePrice) | **Get** /api/v2/messages/price/normalized | Check message price
 [**GetMessageSession**](TextMagicApi.md#GetMessageSession) | **Get** /api/v2/sessions/{id} | Get a session&#x60;s details
@@ -2622,9 +2622,9 @@ Name | Type | Description  | Notes
 
 # **GetListsOfContact**
 > GetListsOfContactPaginatedResponse GetListsOfContact(ctx, id, optional)
-Get contact's lists
+Get a contact's lists
 
-Get all the lists in which the contact is included
+Get all the lists in which a contact is included.
 
 ### Required Parameters
 
@@ -3915,11 +3915,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **ids** | **optional.String**| Find lists by ID(s) | 
- **query** | **optional.String**| Find lists by specified search query | 
- **onlyMine** | **optional.Int32**| Return only current user lists | [default to 0]
- **onlyDefault** | **optional.Int32**| Return only default lists | [default to 0]
- **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
+ **ids** | **optional.String**| Find lists by IDs. | 
+ **query** | **optional.String**| Find lists by specified search query. | 
+ **onlyMine** | **optional.Int32**| Return only current user lists. | [default to 0]
+ **onlyDefault** | **optional.Int32**| Return only default lists. | [default to 0]
+ **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
  **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
 
 ### Return type

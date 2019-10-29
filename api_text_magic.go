@@ -8797,8 +8797,8 @@ func (a *TextMagicApiService) GetLists(ctx context.Context, localVarOptionals *G
 }
 
 /* 
-TextMagicApiService Get contact&#39;s lists
-Get all the lists in which the contact is included
+TextMagicApiService Get a contact&#39;s lists
+Get all the lists in which a contact is included.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
  * @param optional nil or *GetListsOfContactOpts - Optional Parameters:
@@ -13367,11 +13367,11 @@ TextMagicApiService Find lists by given criteria
  * @param optional nil or *SearchListsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "Ids" (optional.String) -  Find lists by ID(s)
-     * @param "Query" (optional.String) -  Find lists by specified search query
-     * @param "OnlyMine" (optional.Int32) -  Return only current user lists
-     * @param "OnlyDefault" (optional.Int32) -  Return only default lists
-     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
+     * @param "Ids" (optional.String) -  Find lists by IDs.
+     * @param "Query" (optional.String) -  Find lists by specified search query.
+     * @param "OnlyMine" (optional.Int32) -  Return only current user lists.
+     * @param "OnlyDefault" (optional.Int32) -  Return only default lists.
+     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
      * @param "Direction" (optional.String) -  Order direction. Default is desc.
 
 @return SearchListsPaginatedResponse

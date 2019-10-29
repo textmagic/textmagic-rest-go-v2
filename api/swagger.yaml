@@ -501,7 +501,7 @@ tags:
     \n```javascript\n{\n    \"repositories\": [\n        {\n            \"type\":\
     \ \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
     \n        }\n    ],\n    \"require\": {\n        \"textmagic/textmagic-rest-php-v2\"\
-    : \"dev-master#v2.0.812\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
+    : \"dev-master#v2.0.811\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
     \ Manual Installation\n\nDownload the files and include `autoload.php`:\n\n```php\n\
     require_once(__DIR__.'/vendor/autoload.php');\n```\n\n## Usage Example\n\nPlease\
     \ follow the [installation](#installation) instructions and execute the following\
@@ -530,7 +530,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Node.js application.\n\n[Get\
     \ it now on GitHub](https://github.com/textmagic/textmagic-rest-nodejs)\n## Installation\n\
-    \n```shell\nnpm install textmagic-client@2.0.812 --save\n```\n\n## Usage Example\n\
+    \n```shell\nnpm install textmagic-client@2.0.811 --save\n```\n\n## Usage Example\n\
     \nPlease follow the [installation](#installation) instructions and execute the\
     \ following JS code:\n\n```javascript\nconst textmagicClient = require('textmagic-client');\n\
     \nconst fs = require('fs');\nconst client = textmagicClient.ApiClient.instance;\n\
@@ -562,7 +562,7 @@ tags:
     Install-Package Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp\
     \ versions later than 105.1.0 have a bug which causes file uploads to fail. See\
     \ [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\n## Installation\n\
-    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.812/).\n\
+    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.811/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -625,22 +625,22 @@ tags:
     \ Requirements\n\n* CMake 2.8 and later (https://cmake.org/)\n* cpprest (https://github.com/microsoft/cpprestsdk)\n\
     \nUbuntu dependencies quick installation example:\n```shell\napt-get install build-essential\
     \ cmake libcpprest-dev\n```\n\n## Installation\n\nDownload and extract lib archive:\n\
-    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.812.tar.gz\
-    \ && \\\ntar zxf v2.0.812.tar.gz && \\\nrm -f v2.0.812.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.812\n\
+    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.811.tar.gz\
+    \ && \\\ntar zxf v2.0.811.tar.gz && \\\nrm -f v2.0.811.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.811\n\
     ```\nBuild using cmake\n```shell\ncmake . && cmake --build .\n```\nThe output\
-    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.812/lib` directory:\n\
+    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.811/lib` directory:\n\
     \n## Usage Example\nIn the example below, we assume that you moved the library\
-    \ sources `textmagic-rest-cpp-v2-2.0.812` directory to your test project root\
+    \ sources `textmagic-rest-cpp-v2-2.0.811` directory to your test project root\
     \ directory.\n\nConfigure your `CMakeLists.txt` as shown here:\n```shell\ncmake_minimum_required(VERSION\
     \ 2.8)\nproject(test)\n\nset(CMAKE_CXX_STANDARD 14)\n\nadd_executable(app main.cpp)\n\
     \nadd_library(textmagic_client SHARED IMPORTED)\nset_property(TARGET textmagic_client\
-    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.812/lib/libtextmagic_client.so\"\
-    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.812\
-    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.812/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.812/api)\n\
+    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.811/lib/libtextmagic_client.so\"\
+    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.811\
+    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.811/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.811/api)\n\
     target_link_libraries(app boost_system cpprest crypto textmagic_client )\n```\n\
     \n`main.cpp` file example:\n```cpp\n#include <iostream>\n#include <fstream>\n\
-    #include \"textmagic-rest-cpp-v2-2.0.812/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.812/ApiConfiguration.h\"\
-    \n#include \"textmagic-rest-cpp-v2-2.0.812/api/TextMagicApi.h\"\n\nusing namespace\
+    #include \"textmagic-rest-cpp-v2-2.0.811/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.811/ApiConfiguration.h\"\
+    \n#include \"textmagic-rest-cpp-v2-2.0.811/api/TextMagicApi.h\"\n\nusing namespace\
     \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
     \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
     \ ApiConfiguration);\n\n    apiConfig->setBaseUrl(\"https://rest.textmagic.com\"\
@@ -680,7 +680,7 @@ tags:
     \ SMS and receiving replies by integrating TextMagic SMS Gateway into your Python\
     \ application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-python)\n\
     ## Requirements\nPython 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install\
-    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.812\n```\n\
+    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.811\n```\n\
     \n## Usage Example\n\n```python\nimport TextMagic\nfrom TextMagic.rest import\
     \ ApiException\n\n# Configure HTTP basic authorization: BasicAuth\nconfiguration\
     \ = TextMagic.Configuration()\nconfiguration.username = 'YOUR_USERNAME'\nconfiguration.password\
@@ -705,8 +705,8 @@ tags:
     \ GitHub\">Star</a>\n\nThis library provides you with an easy way of sending SMS\
     \ and receiving replies by integrating TextMagic SMS Gateway into your Perl application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-perl)\n##\
-    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.812.tar.gz\
-    \ && \\\ntar zxf v2.0.812.tar.gz && \\\nrm -f v2.0.812.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.812\
+    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.811.tar.gz\
+    \ && \\\ntar zxf v2.0.811.tar.gz && \\\nrm -f v2.0.811.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.811\
     \ && \\\nperl Makefile.pl && \\\nmake && \\\nmake install && \\\ncpanm --installdeps\
     \ .\n```\\\n\n## Usage Example\n\nPlease follow the [installation](#installation)\
     \ instructions and execute the following Perl code:\n\n```perl\nuse 5.010;\nuse\
@@ -735,7 +735,7 @@ tags:
     \ and receiving replies by integrating TextMagic SMS Gateway into your Ruby application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-ruby)\n##\
     \ Installation\n\nAdd these lines into your Gemfile\n```ruby\ngem 'textmagic_rest_client',\
-    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.812'\n\
+    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.811'\n\
     ```\n\nRun the bundler install command\n``` shell\nbundle install\n```\n\n## Usage\
     \ Example\n\nCreate the test file `test.rb` and put the following code:\n```ruby\n\
     \ # Load the gem\nrequire 'textmagic_rest_client'\n\n # Setup authorization\n\
@@ -761,7 +761,7 @@ tags:
     Star imissyouso/textmagic-rest-go on GitHub\">Star</a>\n\nThis library provides\
     \ you with an easy way of sending SMS and receiving replies by integrating TextMagic\
     \ SMS Gateway into your Go application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-go)\n\
-    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.812\n\
+    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.811\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -9871,7 +9871,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "ids"
         in: "query"
-        description: "Find lists by ID(s)"
+        description: "Find lists by IDs."
         required: false
         type: "string"
         x-example: "1,2,3,4"
@@ -9879,7 +9879,7 @@ paths:
         x-optionalDataType: "String"
       - name: "query"
         in: "query"
-        description: "Find lists by specified search query"
+        description: "Find lists by specified search query."
         required: false
         type: "string"
         x-example: "A"
@@ -9887,7 +9887,7 @@ paths:
         x-optionalDataType: "String"
       - name: "onlyMine"
         in: "query"
-        description: "Return only current user lists"
+        description: "Return only current user lists."
         required: false
         type: "integer"
         default: 0
@@ -9898,7 +9898,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "onlyDefault"
         in: "query"
-        description: "Return only default lists"
+        description: "Return only default lists."
         required: false
         type: "integer"
         default: 0
@@ -9906,7 +9906,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "orderBy"
         in: "query"
-        description: "Order results by some field. Default is id"
+        description: "Order results by some field. Default is id."
         required: false
         type: "string"
         default: "id"
@@ -10109,8 +10109,8 @@ paths:
     get:
       tags:
       - "TextMagic"
-      summary: "Get contact's lists"
-      description: "Get all the lists in which the contact is included"
+      summary: "Get a contact's lists"
+      description: "Get all the lists in which a contact is included."
       operationId: "getListsOfContact"
       parameters:
       - name: "page"
@@ -10319,7 +10319,7 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Favorites entities have been returned with success"
+          description: "Favorite entities have been returned with success."
           schema:
             $ref: "#/definitions/GetFavoritesPaginatedResponse"
         401:
@@ -29100,12 +29100,12 @@ definitions:
       primaryLabel:
         type: "string"
         example: "Favorite contact name."
-        description: "Contact first name/last name if entityType is **contact**, List\
+        description: "Contact first name/last name if entityType is **contact** List\
           \ name if entity type is **list**."
       secondaryLabel:
         type: "string"
         example: "45"
-        description: "Phone number if entityType is **contact**, List contacts number\
+        description: "Phone number if entityType is **contact** List contacts number\
           \ if entity type is **list**."
       tertiaryLabel:
         type: "string"
@@ -34950,17 +34950,17 @@ definitions:
       shared:
         type: "boolean"
         example: false
-        description: "Should new list be **shared** among all the sub-accounts?"
+        description: "Should the new list be **shared** among all the sub-accounts?"
         default: false
       favorited:
         type: "boolean"
         example: false
-        description: "Is list favorited. Default is false."
+        description: "Is the list favorited? Default is false."
         default: false
       isDefault:
         type: "boolean"
         example: false
-        description: "Is list default for new contacts (web only)."
+        description: "Is the list default for new contacts (web only)?"
         default: false
     example:
       shared: false
