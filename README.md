@@ -1,7 +1,7 @@
 [comment]: <> (HEAD)
 # TextMagic Go SDK
 
-This library provides you with an easy way of sending SMS and receiving replies by integrating TextMagic SMS Gateway into your Go application.
+This library provides you with an easy way of sending SMS and receiving replies by integrating the TextMagic SMS Gateway into your Go application.
 
 ## What Is TextMagic?
 TextMagic’s application programming interface (API) provides the communication link between your application and TextMagic’s SMS Gateway, allowing you to send and receive text messages and to check the delivery status of text messages you’ve already sent.
@@ -11,7 +11,7 @@ TextMagic’s application programming interface (API) provides the communication
 
 With go.mod:
 ```bash
-go get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.806
+go get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.807
 ```
 
 without go.mod:
