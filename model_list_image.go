@@ -10,6 +10,6 @@
 package TextMagic
 
 type ListImage struct {
-	// URI of a list avatar.
+	// The URI of a list avatar.
 	Href string `json:"href"`
 }

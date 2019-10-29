@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Three-letter ISO currency ID. | [default to null]
+**Id** | **string** | The 3-letter ISO currency ID. | [default to null]
 **UnicodeSymbol** | **string** | Unicode-compatible currency symbol. | [default to null]
 **HtmlSymbol** | **string** | HTML-compatible currency symbol. | [default to null]
 

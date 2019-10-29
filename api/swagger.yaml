@@ -292,7 +292,7 @@ tags:
 - name: "Templates"
   description: "Templates can save time and effort when the same message format is\
     \ required. Furthermore, \nyour customers will receive personalized messages even\
-    \ when you’ve applied templates. \nAll you have to do is use the embed **tags**\
+    \ when you’ve applied templates. \nAll you have to do is insert the embed **tags**\
     \ into the template text.\n\n## Custom fields list (Merge tags)\n\nAll tags should\
     \ be inputted inside curly braces (e.g., `{First name}` for **First name**).\n\
     \n| Tag | Description |\n|-----|-------------|\n| **First name** | Contact first\
@@ -501,7 +501,7 @@ tags:
     \n```javascript\n{\n    \"repositories\": [\n        {\n            \"type\":\
     \ \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
     \n        }\n    ],\n    \"require\": {\n        \"textmagic/textmagic-rest-php-v2\"\
-    : \"dev-master#v2.0.809\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
+    : \"dev-master#v2.0.810\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
     \ Manual Installation\n\nDownload the files and include `autoload.php`:\n\n```php\n\
     require_once(__DIR__.'/vendor/autoload.php');\n```\n\n## Usage Example\n\nPlease\
     \ follow the [installation](#installation) instructions and execute the following\
@@ -530,7 +530,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Node.js application.\n\n[Get\
     \ it now on GitHub](https://github.com/textmagic/textmagic-rest-nodejs)\n## Installation\n\
-    \n```shell\nnpm install textmagic-client@2.0.809 --save\n```\n\n## Usage Example\n\
+    \n```shell\nnpm install textmagic-client@2.0.810 --save\n```\n\n## Usage Example\n\
     \nPlease follow the [installation](#installation) instructions and execute the\
     \ following JS code:\n\n```javascript\nconst textmagicClient = require('textmagic-client');\n\
     \nconst fs = require('fs');\nconst client = textmagicClient.ApiClient.instance;\n\
@@ -562,7 +562,7 @@ tags:
     Install-Package Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp\
     \ versions later than 105.1.0 have a bug which causes file uploads to fail. See\
     \ [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\n## Installation\n\
-    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.809/).\n\
+    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.810/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -625,22 +625,22 @@ tags:
     \ Requirements\n\n* CMake 2.8 and later (https://cmake.org/)\n* cpprest (https://github.com/microsoft/cpprestsdk)\n\
     \nUbuntu dependencies quick installation example:\n```shell\napt-get install build-essential\
     \ cmake libcpprest-dev\n```\n\n## Installation\n\nDownload and extract lib archive:\n\
-    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.809.tar.gz\
-    \ && \\\ntar zxf v2.0.809.tar.gz && \\\nrm -f v2.0.809.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.809\n\
+    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.810.tar.gz\
+    \ && \\\ntar zxf v2.0.810.tar.gz && \\\nrm -f v2.0.810.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.810\n\
     ```\nBuild using cmake\n```shell\ncmake . && cmake --build .\n```\nThe output\
-    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.809/lib` directory:\n\
+    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.810/lib` directory:\n\
     \n## Usage Example\nIn the example below, we assume that you moved the library\
-    \ sources `textmagic-rest-cpp-v2-2.0.809` directory to your test project root\
+    \ sources `textmagic-rest-cpp-v2-2.0.810` directory to your test project root\
     \ directory.\n\nConfigure your `CMakeLists.txt` as shown here:\n```shell\ncmake_minimum_required(VERSION\
     \ 2.8)\nproject(test)\n\nset(CMAKE_CXX_STANDARD 14)\n\nadd_executable(app main.cpp)\n\
     \nadd_library(textmagic_client SHARED IMPORTED)\nset_property(TARGET textmagic_client\
-    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.809/lib/libtextmagic_client.so\"\
-    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.809\
-    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.809/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.809/api)\n\
+    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.810/lib/libtextmagic_client.so\"\
+    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.810\
+    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.810/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.810/api)\n\
     target_link_libraries(app boost_system cpprest crypto textmagic_client )\n```\n\
     \n`main.cpp` file example:\n```cpp\n#include <iostream>\n#include <fstream>\n\
-    #include \"textmagic-rest-cpp-v2-2.0.809/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.809/ApiConfiguration.h\"\
-    \n#include \"textmagic-rest-cpp-v2-2.0.809/api/TextMagicApi.h\"\n\nusing namespace\
+    #include \"textmagic-rest-cpp-v2-2.0.810/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.810/ApiConfiguration.h\"\
+    \n#include \"textmagic-rest-cpp-v2-2.0.810/api/TextMagicApi.h\"\n\nusing namespace\
     \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
     \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
     \ ApiConfiguration);\n\n    apiConfig->setBaseUrl(\"https://rest.textmagic.com\"\
@@ -680,7 +680,7 @@ tags:
     \ SMS and receiving replies by integrating TextMagic SMS Gateway into your Python\
     \ application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-python)\n\
     ## Requirements\nPython 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install\
-    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.809\n```\n\
+    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.810\n```\n\
     \n## Usage Example\n\n```python\nimport TextMagic\nfrom TextMagic.rest import\
     \ ApiException\n\n# Configure HTTP basic authorization: BasicAuth\nconfiguration\
     \ = TextMagic.Configuration()\nconfiguration.username = 'YOUR_USERNAME'\nconfiguration.password\
@@ -705,8 +705,8 @@ tags:
     \ GitHub\">Star</a>\n\nThis library provides you with an easy way of sending SMS\
     \ and receiving replies by integrating TextMagic SMS Gateway into your Perl application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-perl)\n##\
-    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.809.tar.gz\
-    \ && \\\ntar zxf v2.0.809.tar.gz && \\\nrm -f v2.0.809.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.809\
+    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.810.tar.gz\
+    \ && \\\ntar zxf v2.0.810.tar.gz && \\\nrm -f v2.0.810.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.810\
     \ && \\\nperl Makefile.pl && \\\nmake && \\\nmake install && \\\ncpanm --installdeps\
     \ .\n```\\\n\n## Usage Example\n\nPlease follow the [installation](#installation)\
     \ instructions and execute the following Perl code:\n\n```perl\nuse 5.010;\nuse\
@@ -735,7 +735,7 @@ tags:
     \ and receiving replies by integrating TextMagic SMS Gateway into your Ruby application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-ruby)\n##\
     \ Installation\n\nAdd these lines into your Gemfile\n```ruby\ngem 'textmagic_rest_client',\
-    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.809'\n\
+    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.810'\n\
     ```\n\nRun the bundler install command\n``` shell\nbundle install\n```\n\n## Usage\
     \ Example\n\nCreate the test file `test.rb` and put the following code:\n```ruby\n\
     \ # Load the gem\nrequire 'textmagic_rest_client'\n\n # Setup authorization\n\
@@ -761,7 +761,7 @@ tags:
     Star imissyouso/textmagic-rest-go on GitHub\">Star</a>\n\nThis library provides\
     \ you with an easy way of sending SMS and receiving replies by integrating TextMagic\
     \ SMS Gateway into your Go application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-go)\n\
-    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.809\n\
+    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.810\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -9483,7 +9483,7 @@ paths:
         x-optionalDataType: "String"
       - name: "favoriteOnly"
         in: "query"
-        description: "Return only favorite lists"
+        description: "Return only favorited lists."
         required: false
         type: "integer"
         default: 0
@@ -9494,7 +9494,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "onlyMine"
         in: "query"
-        description: "Return only current user lists"
+        description: "Return only current user lists."
         required: false
         type: "integer"
         default: 0
@@ -14749,7 +14749,7 @@ paths:
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
-          description: "Returned when the form has errors"
+          description: "Returned when the form has errors."
         401:
           description: "Unauthorized request"
           schema:
@@ -14919,21 +14919,21 @@ paths:
         x-optionalDataType: "Int32"
       - name: "ids"
         in: "query"
-        description: "Find template by ID(s)"
+        description: "Find template by ID(s)."
         required: false
         type: "string"
         x-exportParamName: "Ids"
         x-optionalDataType: "String"
       - name: "name"
         in: "query"
-        description: "Find template by name"
+        description: "Find template by name."
         required: false
         type: "string"
         x-exportParamName: "Name"
         x-optionalDataType: "String"
       - name: "content"
         in: "query"
-        description: "Find template by content"
+        description: "Find template by content."
         required: false
         type: "string"
         x-exportParamName: "Content"
@@ -15103,7 +15103,7 @@ paths:
     get:
       tags:
       - "TextMagic"
-      summary: "Get a template details"
+      summary: "Get a template`s details"
       description: "Get a single template."
       operationId: "getTemplate"
       parameters:
@@ -15562,7 +15562,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete templates (bulk)"
-      description: "Delete template by given ID(s) or delete all templates."
+      description: "Delete templates by given IDs or delete all templates."
       operationId: "deleteTemplatesBulk"
       produces: []
       parameters:
@@ -18549,9 +18549,9 @@ paths:
     get:
       tags:
       - "TextMagic"
-      summary: "Get a session messages"
-      description: "A useful synonym for \"messages/search\" command with provided\
-        \ \"sessionId\" parameter."
+      summary: "Get a session`s messages"
+      description: "A useful synonym for the \"messages/search\" command with the\
+        \ provided \"sessionId\" parameter."
       operationId: "getMessagesBySessionId"
       parameters:
       - name: "page"
@@ -18572,7 +18572,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "statuses"
         in: "query"
-        description: "Find messages by status"
+        description: "Find messages by status."
         required: false
         type: "string"
         enum:
@@ -18593,7 +18593,7 @@ paths:
         x-optionalDataType: "String"
       - name: "includeDeleted"
         in: "query"
-        description: "Search also in deleted messages"
+        description: "Search also in deleted messages."
         required: false
         type: "integer"
         default: 0
@@ -18774,13 +18774,13 @@ paths:
     get:
       tags:
       - "TextMagic"
-      summary: "Get a session statistics"
+      summary: "Get a session`s statistics"
       description: ""
       operationId: "getMessageSessionStat"
       parameters:
       - name: "includeDeleted"
         in: "query"
-        description: "Search also in deleted messages"
+        description: "Search also in deleted messages."
         required: false
         type: "integer"
         default: 0
@@ -18949,13 +18949,13 @@ paths:
     get:
       tags:
       - "TextMagic"
-      summary: "Get a session details"
-      description: "Get a specific session’s details"
+      summary: "Get a session`s details"
+      description: "Get a specific session’s details."
       operationId: "getMessageSession"
       parameters:
       - name: "id"
         in: "path"
-        description: "a session ID"
+        description: "Session ID."
         required: true
         type: "integer"
         x-example: 1
@@ -19233,8 +19233,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete sessions (bulk)"
-      description: "Delete messages sessions, together with all nested messages, by\
-        \ given ID(s) or delete all messages sessions."
+      description: "Delete message sessions, together with all nested messages, by\
+        \ given ID(s) or delete all message sessions."
       operationId: "deleteMessageSessionsBulk"
       produces: []
       parameters:
@@ -23757,7 +23757,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Mute chats (bulk)"
-      description: "Mute several chats by chat ids or mute all chats"
+      description: "Mute several chats by chat IDs or mute all chats"
       operationId: "muteChatsBulk"
       produces: []
       parameters:
@@ -23914,7 +23914,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Unmute chats (bulk)"
-      description: "Unmute several chats by chat ids or unmute all chats"
+      description: "Unmute several chats by chat IDs or unmute all chats"
       operationId: "unmuteChatsBulk"
       produces: []
       parameters:
@@ -24069,7 +24069,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Mark chats as unread (bulk)"
-      description: "Mark several chats as UNread by chat ids or mark all chats as\
+      description: "Mark several chats as UNread by chat IDs or mark all chats as\
         \ UNread"
       operationId: "markChatsUnreadBulk"
       produces: []
@@ -24226,7 +24226,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Mark chats as read (bulk)"
-      description: "Mark several chats as read by chat ids or mark all chats as read"
+      description: "Mark several chats as read by chat IDs or mark all chats as read"
       operationId: "markChatsReadBulk"
       produces: []
       parameters:
@@ -24381,7 +24381,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Close chats (bulk)"
-      description: "Close chats by chat ids or close all chats"
+      description: "Close chats by chat IDs or close all chats"
       operationId: "closeChatsBulk"
       produces: []
       parameters:
@@ -24669,7 +24669,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Reopen chats (bulk)"
-      description: "Reopen chats by chat ids or reopen all chats"
+      description: "Reopen chats by chat IDs or reopen all chats"
       operationId: "reopenChatsBulk"
       produces: []
       parameters:
@@ -24824,7 +24824,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete chats (bulk)"
-      description: "Delete chats by given ID(s) or delete all chats."
+      description: "Delete chats by given IDs or delete all chats."
       operationId: "deleteChatsBulk"
       produces: []
       parameters:
@@ -24985,7 +24985,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete chat messages by ID(s)"
-      description: "Delete messages from chat by given messages ID(s)."
+      description: "Delete messages from chat by given message IDs."
       operationId: "deleteChatMessages"
       produces: []
       parameters:
@@ -26900,8 +26900,8 @@ definitions:
       displayTimeFormat:
         type: "string"
         example: "24h"
-        description: "User's prefered format of time display\n* *12h* - AM/PM format\n\
-          * *24h* - 24 hour clock format\n"
+        description: "User's preferred format of time display:\n* *12h* – AM/PM format;\n\
+          * *24h* – 24 hour clock format.\n"
         enum:
         - "12h"
         - "24h"
@@ -26924,7 +26924,7 @@ definitions:
       status:
         type: "string"
         example: "A"
-        description: "Current account status:\n* **A** for Active\n* **T** for Trial.\n"
+        description: "Current account status:\n* **A** for Active;\n* **T** for Trial.\n"
         enum:
         - "A"
         - "T"
@@ -26935,7 +26935,7 @@ definitions:
       phone:
         type: "string"
         example: "447860021130"
-        description: "User phone number"
+        description: "User`s phone number."
         x-nullable: true
       company:
         type: "string"
@@ -26951,8 +26951,8 @@ definitions:
       subaccountType:
         type: "string"
         example: "P"
-        description: "Type of account:\n* **P** for Parent User\n* **A** for Administrator\
-          \ Sub-Account\n* **U** for Regular User\n"
+        description: "Type of account:\n* **P** for Parent User;\n* **A** for Administrator\
+          \ Sub-Account;\n* **U** for Regular User\n"
         enum:
         - "P"
         - "A"
@@ -26960,11 +26960,11 @@ definitions:
       emailAccepted:
         type: "boolean"
         example: true
-        description: "Is account has confirmed Email."
+        description: "Does the account have a confirmed email?"
       phoneAccepted:
         type: "boolean"
         example: true
-        description: "Is account has confirmed Phone number."
+        description: "Does the account have a confirmed phone number?"
       avatar:
         $ref: "#/definitions/UserImage"
     example:
@@ -27488,7 +27488,7 @@ definitions:
       favorited:
         type: "boolean"
         example: false
-        description: "Is the List favourite? [Custom fields list](http://docs.textmagictesting.com/#operation/getFavourites)."
+        description: "Is the List favorited? See [Favorites list](http://docs.textmagictesting.com/#operation/getFavourites)."
       membersCount:
         type: "integer"
         example: 332
@@ -27507,8 +27507,8 @@ definitions:
         $ref: "#/definitions/ListImage"
       isDefault:
         type: "boolean"
-        description: "Indicates that List is used as a default. All new contacts that\
-          \ added via Web-app will be added in this List by default."
+        description: "Indicates that List is used as a default. All new contacts added\
+          \ via web app will be added in this List by default."
         x-nullable: true
     example:
       shared: false
@@ -27663,12 +27663,13 @@ definitions:
       content:
         type: "string"
         example: "Hello {First name}!"
-        description: "Template text. May contain the tags. See [Custom fields list](http://docs.textmagictesting.com/#section/Custom-fields-list-(Merge-tags))."
+        description: "Template text. May contain tags inside braces. See the [Custom\
+          \ fields list](http://docs.textmagictesting.com/#section/Custom-fields-list-(Merge-tags))."
       lastModified:
         type: "string"
         format: "date-time"
         example: "2014-09-11T08:12:01+0000"
-        description: "Time when template was last modified."
+        description: "Time when the template was last modified."
         x-nullable: true
     example:
       name: "Appointment reminder"
@@ -27704,7 +27705,7 @@ definitions:
       receiver:
         type: "string"
         example: "447860021130"
-        description: "Recipient phone number."
+        description: "Recipient`s phone number."
       text:
         type: "string"
         example: "I love TextMagic!"
@@ -27735,7 +27736,7 @@ definitions:
       sessionId:
         type: "integer"
         example: 3122
-        description: "Message Session ID of a Message."
+        description: "Message Session ID of a message."
         x-nullable: true
       messageTime:
         type: "string"
@@ -27782,7 +27783,7 @@ definitions:
       phone:
         type: "string"
         example: "447624800500"
-        description: "Receipent phone number."
+        description: "Receipent`s phone number."
         x-nullable: true
       price:
         type: "number"
@@ -27799,8 +27800,8 @@ definitions:
         type: "string"
         example: "test@email.com"
         description: "The user email which this message came from. For Email2SMS and\
-          \ Distribution Lists the message will come from an original email address;\
-          \ in other cases, it will come from an account email address."
+          \ Distribution Lists the messages, it is an original email address - in\
+          \ other cases, it is an account email address."
         x-nullable: true
       fromNumber:
         type: "string"
@@ -28069,9 +28070,9 @@ definitions:
       source:
         type: "string"
         example: "O"
-        description: "*   **O** – for TextMagic Online\n*   **A** – for API\n*   **M**\
-          \ – for TextMagic Messenger\n*   **E** – for [Email to SMS](http://docs.textmagictesting.com/#tag/Send-Email-to-SMS)\n\
-          *   **X** – for [Distribution Lists](http://docs.textmagictesting.com/#tag/Distribution-Lists)\n"
+        description: "*   **O** – for TextMagic Online;\n*   **A** – for API;\n* \
+          \  **M** – for TextMagic Messenger;\n*   **E** – for [Email to SMS](http://docs.textmagictesting.com/#tag/Send-Email-to-SMS);\n\
+          *   **X** – for [Distribution Lists](http://docs.textmagictesting.com/#tag/Distribution-Lists).\n"
         x-nullable: true
       referenceId:
         type: "string"
@@ -28092,8 +28093,8 @@ definitions:
       destination:
         type: "string"
         example: "t"
-        description: "Destination type of a Message Session:\n* **t** - text SMS\n\
-          * **s** - text-to-speech\n* **v** - voice broadcast\n"
+        description: "Destination type of a Message Session:\n* **t** – text SMS;\n\
+          * **s** – text-to-speech;\n* **v** – voice broadcast.\n"
         enum:
         - "t"
         - "s"
@@ -28727,7 +28728,7 @@ definitions:
       id:
         type: "string"
         example: "GBP"
-        description: "Three-letter ISO currency ID."
+        description: "The 3-letter ISO currency ID."
       unicodeSymbol:
         type: "string"
         example: "£"
@@ -28778,11 +28779,11 @@ definitions:
       dst:
         type: "integer"
         example: 1
-        description: "Is Daylight saving time used in this timezone?"
+        description: "Is daylight saving time used in this timezone?"
       offset:
         type: "integer"
         example: 10800
-        description: "Offset from UTC time in seconds. In this example it is 21600/60/60=6\
+        description: "Offset from UTC time in seconds. In this example, it is 21600/60/60=6\
           \ hours."
       timezone:
         type: "string"
@@ -28802,7 +28803,7 @@ definitions:
       href:
         type: "string"
         example: "avatars/lav5d8de21d89971646555094.png"
-        description: "URI of a user avatar."
+        description: "The URI of a user avatar."
     example:
       href: "avatars/lav5d8de21d89971646555094.png"
     x-nullable: true
@@ -28839,7 +28840,7 @@ definitions:
       href:
         type: "string"
         example: "avatars/lav5d8de21d89971646555094.png"
-        description: "URI of a list avatar."
+        description: "The URI of a list avatar."
     example:
       href: "avatars/lav5d8de21d89971646555094.png"
     x-nullable: true
@@ -35130,11 +35131,12 @@ definitions:
       name:
         type: "string"
         example: "New template name"
-        description: "Template name"
+        description: "Template name."
       content:
         type: "string"
         example: "New template content"
-        description: "Template text. May contain tags inside braces. See [Get timezones](http://docs.textmagictesting.com/#section/Custom-fields-list-(Merge-tags))."
+        description: "Template text. May contain tags inside braces. See [Custom fields\
+          \ list](http://docs.textmagictesting.com/#section/Custom-fields-list-(Merge-tags))."
     example:
       name: "New template name"
       content: "New template content"
@@ -35288,7 +35290,7 @@ definitions:
       all:
         type: "integer"
         example: 0
-        description: "Default is 0 (false). If set to 1 all the entities will be removed."
+        description: "Default is 0 (false). If set to 1, all entities will be removed."
     example:
       all: 0
       ids: "1,2,3"
@@ -35461,7 +35463,7 @@ definitions:
       status:
         type: "string"
         example: "a"
-        description: "Default is empty string. If set then all entities with specified\
+        description: "Default is empty string. If set, all entities with specified\
           \ status will be affected."
         enum:
         - "a"
@@ -35476,21 +35478,21 @@ definitions:
       inbound_ids:
         type: "string"
         example: "1,2,3,4"
-        description: "Inbound messages ID(s) to delete. Require when \"all\" equal\
+        description: "Inbound message IDs to delete. Require when \"all\" is equal\
           \ to 0 (false)."
       sent_ids:
         type: "string"
         example: "1,2,3,4"
-        description: "Sent messages ID(s) to delete. Require when \"all\" equal to\
+        description: "Sent message IDs to delete. Require when \"all\" is equal to\
           \ 0 (false)."
       calls_ids:
         type: "string"
         example: "1,2,3,4"
-        description: "Calls ID(s) to delete. Require when \"all\" equal to 0 (false)."
+        description: "Calls IDs to delete. Require when \"all\" is equal to 0 (false)."
       all:
         type: "boolean"
         example: false
-        description: "Default is 0 (false). If set to 1 all the entities will be removed."
+        description: "Default is 0 (false). If set to 1, all entities will be removed."
     example:
       sent_ids: "1,2,3,4"
       all: false

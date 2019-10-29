@@ -89,9 +89,9 @@ Method | HTTP request | Description
 [**GetListsOfContact**](TextMagicApi.md#GetListsOfContact) | **Get** /api/v2/contacts/{id}/lists | Get contact&#39;s lists
 [**GetMessagePreview**](TextMagicApi.md#GetMessagePreview) | **Get** /api/v2/messages/preview | Preview message
 [**GetMessagePrice**](TextMagicApi.md#GetMessagePrice) | **Get** /api/v2/messages/price/normalized | Check message price
-[**GetMessageSession**](TextMagicApi.md#GetMessageSession) | **Get** /api/v2/sessions/{id} | Get a session details
-[**GetMessageSessionStat**](TextMagicApi.md#GetMessageSessionStat) | **Get** /api/v2/sessions/{id}/stat | Get a session statistics
-[**GetMessagesBySessionId**](TextMagicApi.md#GetMessagesBySessionId) | **Get** /api/v2/sessions/{id}/messages | Get a session messages
+[**GetMessageSession**](TextMagicApi.md#GetMessageSession) | **Get** /api/v2/sessions/{id} | Get a session&#x60;s details
+[**GetMessageSessionStat**](TextMagicApi.md#GetMessageSessionStat) | **Get** /api/v2/sessions/{id}/stat | Get a session&#x60;s statistics
+[**GetMessagesBySessionId**](TextMagicApi.md#GetMessagesBySessionId) | **Get** /api/v2/sessions/{id}/messages | Get a session&#x60;s messages
 [**GetMessagingCounters**](TextMagicApi.md#GetMessagingCounters) | **Get** /api/v2/stats/messaging/data | Get sent/received messages counters values
 [**GetMessagingStat**](TextMagicApi.md#GetMessagingStat) | **Get** /api/v2/stats/messaging | Get messaging statistics
 [**GetOutboundMessage**](TextMagicApi.md#GetOutboundMessage) | **Get** /api/v2/messages/{id} | Get a single message
@@ -104,7 +104,7 @@ Method | HTTP request | Description
 [**GetSubaccount**](TextMagicApi.md#GetSubaccount) | **Get** /api/v2/subaccounts/{id} | Get sub-account information
 [**GetSubaccounts**](TextMagicApi.md#GetSubaccounts) | **Get** /api/v2/subaccounts | Get sub-accounts list
 [**GetSubaccountsWithTokens**](TextMagicApi.md#GetSubaccountsWithTokens) | **Post** /api/v2/subaccounts/tokens/list | Get all sub-accounts with their REST API tokens associated with app name
-[**GetTemplate**](TextMagicApi.md#GetTemplate) | **Get** /api/v2/templates/{id} | Get a template details
+[**GetTemplate**](TextMagicApi.md#GetTemplate) | **Get** /api/v2/templates/{id} | Get a template&#x60;s details
 [**GetTimezones**](TextMagicApi.md#GetTimezones) | **Get** /api/v2/timezones | Get timezones
 [**GetUnreadMessagesTotal**](TextMagicApi.md#GetUnreadMessagesTotal) | **Get** /api/v2/chats/unread/count | Get unread messages number
 [**GetUnsubscribedContact**](TextMagicApi.md#GetUnsubscribedContact) | **Get** /api/v2/unsubscribers/{id} | Get the details of a specific unsubscribed contact
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 > CloseChatsBulk(ctx, closeChatsBulkInputObject)
 Close chats (bulk)
 
-Close chats by chat ids or close all chats
+Close chats by chat IDs or close all chats
 
 ### Required Parameters
 
@@ -616,7 +616,7 @@ This endpoint does not need any parameter.
 > DeleteChatMessages(ctx, deleteChatMessagesBulkInputObject, id)
 Delete chat messages by ID(s)
 
-Delete messages from chat by given messages ID(s).
+Delete messages from chat by given message IDs.
 
 ### Required Parameters
 
@@ -645,7 +645,7 @@ Name | Type | Description  | Notes
 > DeleteChatsBulk(ctx, deleteChatsBulkInputObject)
 Delete chats (bulk)
 
-Delete chats by given ID(s) or delete all chats.
+Delete chats by given IDs or delete all chats.
 
 ### Required Parameters
 
@@ -1096,7 +1096,7 @@ Name | Type | Description  | Notes
 > DeleteMessageSessionsBulk(ctx, deleteMessageSessionsBulkInputObject)
 Delete sessions (bulk)
 
-Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
+Delete message sessions, together with all nested messages, by given ID(s) or delete all message sessions.
 
 ### Required Parameters
 
@@ -1292,7 +1292,7 @@ Name | Type | Description  | Notes
 > DeleteTemplatesBulk(ctx, deleteTemplatesBulkInputObject)
 Delete templates (bulk)
 
-Delete template by given ID(s) or delete all templates.
+Delete templates by given IDs or delete all templates.
 
 ### Required Parameters
 
@@ -2602,8 +2602,8 @@ Name | Type | Description  | Notes
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
  **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
  **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
- **favoriteOnly** | **optional.Int32**| Return only favorite lists | [default to 0]
- **onlyMine** | **optional.Int32**| Return only current user lists | [default to 0]
+ **favoriteOnly** | **optional.Int32**| Return only favorited lists. | [default to 0]
+ **onlyMine** | **optional.Int32**| Return only current user lists. | [default to 0]
 
 ### Return type
 
@@ -2763,16 +2763,16 @@ Name | Type | Description  | Notes
 
 # **GetMessageSession**
 > MessageSession GetMessageSession(ctx, id)
-Get a session details
+Get a session`s details
 
-Get a specific session’s details
+Get a specific session’s details.
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **id** | **int32**| a session ID | 
+  **id** | **int32**| Session ID. | 
 
 ### Return type
 
@@ -2791,7 +2791,7 @@ Name | Type | Description  | Notes
 
 # **GetMessageSessionStat**
 > GetMessageSessionStatResponse GetMessageSessionStat(ctx, id, optional)
-Get a session statistics
+Get a session`s statistics
 
 
 
@@ -2809,7 +2809,7 @@ Optional parameters are passed through a pointer to a GetMessageSessionStatOpts 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **includeDeleted** | **optional.Int32**| Search also in deleted messages | [default to 0]
+ **includeDeleted** | **optional.Int32**| Search also in deleted messages. | [default to 0]
 
 ### Return type
 
@@ -2828,9 +2828,9 @@ Name | Type | Description  | Notes
 
 # **GetMessagesBySessionId**
 > GetMessagesBySessionIdPaginatedResponse GetMessagesBySessionId(ctx, id, optional)
-Get a session messages
+Get a session`s messages
 
-A useful synonym for \"messages/search\" command with provided \"sessionId\" parameter.
+A useful synonym for the \"messages/search\" command with the provided \"sessionId\" parameter.
 
 ### Required Parameters
 
@@ -2848,8 +2848,8 @@ Name | Type | Description  | Notes
 
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **statuses** | **optional.String**| Find messages by status | 
- **includeDeleted** | **optional.Int32**| Search also in deleted messages | [default to 0]
+ **statuses** | **optional.String**| Find messages by status. | 
+ **includeDeleted** | **optional.Int32**| Search also in deleted messages. | [default to 0]
 
 ### Return type
 
@@ -3263,7 +3263,7 @@ Name | Type | Description  | Notes
 
 # **GetTemplate**
 > MessageTemplate GetTemplate(ctx, id)
-Get a template details
+Get a template`s details
 
 Get a single template.
 
@@ -3481,7 +3481,7 @@ Name | Type | Description  | Notes
 > MarkChatsReadBulk(ctx, markChatsReadBulkInputObject)
 Mark chats as read (bulk)
 
-Mark several chats as read by chat ids or mark all chats as read
+Mark several chats as read by chat IDs or mark all chats as read
 
 ### Required Parameters
 
@@ -3509,7 +3509,7 @@ Name | Type | Description  | Notes
 > MarkChatsUnreadBulk(ctx, markChatsUnreadBulkInputObject)
 Mark chats as unread (bulk)
 
-Mark several chats as UNread by chat ids or mark all chats as UNread
+Mark several chats as UNread by chat IDs or mark all chats as UNread
 
 ### Required Parameters
 
@@ -3565,7 +3565,7 @@ Name | Type | Description  | Notes
 > MuteChatsBulk(ctx, muteChatsBulkInputObject)
 Mute chats (bulk)
 
-Mute several chats by chat ids or mute all chats
+Mute several chats by chat IDs or mute all chats
 
 ### Required Parameters
 
@@ -3617,7 +3617,7 @@ This endpoint does not need any parameter.
 > ReopenChatsBulk(ctx, reopenChatsBulkInputObject)
 Reopen chats (bulk)
 
-Reopen chats by chat ids or reopen all chats
+Reopen chats by chat IDs or reopen all chats
 
 ### Required Parameters
 
@@ -4040,9 +4040,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **ids** | **optional.String**| Find template by ID(s) | 
- **name** | **optional.String**| Find template by name | 
- **content** | **optional.String**| Find template by content | 
+ **ids** | **optional.String**| Find template by ID(s). | 
+ **name** | **optional.String**| Find template by name. | 
+ **content** | **optional.String**| Find template by content. | 
 
 ### Return type
 
@@ -4203,7 +4203,7 @@ Name | Type | Description  | Notes
 > UnmuteChatsBulk(ctx, unmuteChatsBulkInputObject)
 Unmute chats (bulk)
 
-Unmute several chats by chat ids or unmute all chats
+Unmute several chats by chat IDs or unmute all chats
 
 ### Required Parameters
 

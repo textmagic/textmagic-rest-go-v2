@@ -10,6 +10,6 @@
 package TextMagic
 
 type UserImage struct {
-	// URI of a user avatar.
+	// The URI of a user avatar.
 	Href string `json:"href"`
 }

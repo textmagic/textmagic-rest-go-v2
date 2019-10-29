@@ -10,12 +10,12 @@
 package TextMagic
 
 type DeleteChatMessagesBulkInputObject struct {
-	// Inbound messages ID(s) to delete. Require when \"all\" equal to 0 (false).
+	// Inbound message IDs to delete. Require when \"all\" is equal to 0 (false).
 	InboundIds string `json:"inbound_ids,omitempty"`
-	// Sent messages ID(s) to delete. Require when \"all\" equal to 0 (false).
+	// Sent message IDs to delete. Require when \"all\" is equal to 0 (false).
 	SentIds string `json:"sent_ids,omitempty"`
-	// Calls ID(s) to delete. Require when \"all\" equal to 0 (false).
+	// Calls IDs to delete. Require when \"all\" is equal to 0 (false).
 	CallsIds string `json:"calls_ids,omitempty"`
-	// Default is 0 (false). If set to 1 all the entities will be removed.
+	// Default is 0 (false). If set to 1, all entities will be removed.
 	All bool `json:"all,omitempty"`
 }

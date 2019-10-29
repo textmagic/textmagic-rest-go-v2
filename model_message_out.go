@@ -18,14 +18,14 @@ type MessageOut struct {
 	Id int32 `json:"id"`
 	// Message sender (phone number or alphanumeric Sender ID).
 	Sender string `json:"sender,omitempty"`
-	// Recipient phone number.
+	// Recipient`s phone number.
 	Receiver string `json:"receiver,omitempty"`
 	Text string `json:"text"`
 	// Delivery status of the message. See [message delivery statuses](http://docs.textmagictesting.com/#section/Delivery-status-codes) for details. 
 	Status string `json:"status"`
 	// Recipient contact ID.
 	ContactId int32 `json:"contactId"`
-	// Message Session ID of a Message.
+	// Message Session ID of a message.
 	SessionId int32 `json:"sessionId"`
 	// Sending time.
 	MessageTime time.Time `json:"messageTime"`
@@ -42,13 +42,13 @@ type MessageOut struct {
 	LastName string `json:"lastName"`
 	// The 2-letter ISO country code of the recipient's phone number. 
 	Country string `json:"country"`
-	// Receipent phone number.
+	// Receipent`s phone number.
 	Phone string `json:"phone,omitempty"`
 	// Message price.
 	Price float32 `json:"price,omitempty"`
 	// Message parts (multiples of 160 characters) count.
 	PartsCount int32 `json:"partsCount"`
-	// The user email which this message came from. For Email2SMS and Distribution Lists the message will come from an original email address; in other cases, it will come from an account email address.
+	// The user email which this message came from. For Email2SMS and Distribution Lists the messages, it is an original email address - in other cases, it is an account email address.
 	FromEmail string `json:"fromEmail,omitempty"`
 	// The Phone number used to send the SMS.
 	FromNumber string `json:"fromNumber,omitempty"`

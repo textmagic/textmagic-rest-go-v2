@@ -16,7 +16,7 @@ type List struct {
 	Name string `json:"name"`
 	// Description of the list.
 	Description string `json:"description"`
-	// Is the List favourite? [Custom fields list](http://docs.textmagictesting.com/#operation/getFavourites).
+	// Is the List favorited? See [Favorites list](http://docs.textmagictesting.com/#operation/getFavourites).
 	Favorited bool `json:"favorited"`
 	// List members count.
 	MembersCount int32 `json:"membersCount"`
@@ -26,6 +26,6 @@ type List struct {
 	// Is the list **shared** among all sub-accounts?
 	Shared bool `json:"shared"`
 	Avatar *ListImage `json:"avatar"`
-	// Indicates that List is used as a default. All new contacts that added via Web-app will be added in this List by default.
+	// Indicates that List is used as a default. All new contacts added via web app will be added in this List by default.
 	IsDefault bool `json:"isDefault"`
 }

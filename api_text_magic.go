@@ -682,7 +682,7 @@ func (a *TextMagicApiService) ClearAndAssignContactsToList(ctx context.Context, 
 
 /* 
 TextMagicApiService Close chats (bulk)
-Close chats by chat ids or close all chats
+Close chats by chat IDs or close all chats
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param closeChatsBulkInputObject
 
@@ -1751,7 +1751,7 @@ func (a *TextMagicApiService) DeleteAvatar(ctx context.Context) (*http.Response,
 
 /* 
 TextMagicApiService Delete chat messages by ID(s)
-Delete messages from chat by given messages ID(s).
+Delete messages from chat by given message IDs.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteChatMessagesBulkInputObject
  * @param id
@@ -1847,7 +1847,7 @@ func (a *TextMagicApiService) DeleteChatMessages(ctx context.Context, deleteChat
 
 /* 
 TextMagicApiService Delete chats (bulk)
-Delete chats by given ID(s) or delete all chats.
+Delete chats by given IDs or delete all chats.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteChatsBulkInputObject
 
@@ -3392,7 +3392,7 @@ func (a *TextMagicApiService) DeleteMessageSession(ctx context.Context, id int32
 
 /* 
 TextMagicApiService Delete sessions (bulk)
-Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
+Delete message sessions, together with all nested messages, by given ID(s) or delete all message sessions.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteMessageSessionsBulkInputObject
 
@@ -4035,7 +4035,7 @@ func (a *TextMagicApiService) DeleteTemplate(ctx context.Context, id int32) (*ht
 
 /* 
 TextMagicApiService Delete templates (bulk)
-Delete template by given ID(s) or delete all templates.
+Delete templates by given IDs or delete all templates.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteTemplatesBulkInputObject
 
@@ -8661,8 +8661,8 @@ TextMagicApiService Get all lists
      * @param "Limit" (optional.Int32) -  The number of results per page.
      * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
      * @param "Direction" (optional.String) -  Order direction. Default is desc.
-     * @param "FavoriteOnly" (optional.Int32) -  Return only favorite lists
-     * @param "OnlyMine" (optional.Int32) -  Return only current user lists
+     * @param "FavoriteOnly" (optional.Int32) -  Return only favorited lists.
+     * @param "OnlyMine" (optional.Int32) -  Return only current user lists.
 
 @return GetListsPaginatedResponse
 */
@@ -9326,10 +9326,10 @@ func (a *TextMagicApiService) GetMessagePrice(ctx context.Context, localVarOptio
 }
 
 /* 
-TextMagicApiService Get a session details
-Get a specific session’s details
+TextMagicApiService Get a session&#x60;s details
+Get a specific session’s details.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param id a session ID
+ * @param id Session ID.
 
 @return MessageSession
 */
@@ -9437,12 +9437,12 @@ func (a *TextMagicApiService) GetMessageSession(ctx context.Context, id int32) (
 }
 
 /* 
-TextMagicApiService Get a session statistics
+TextMagicApiService Get a session&#x60;s statistics
 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
  * @param optional nil or *GetMessageSessionStatOpts - Optional Parameters:
-     * @param "IncludeDeleted" (optional.Int32) -  Search also in deleted messages
+     * @param "IncludeDeleted" (optional.Int32) -  Search also in deleted messages.
 
 @return GetMessageSessionStatResponse
 */
@@ -9558,15 +9558,15 @@ func (a *TextMagicApiService) GetMessageSessionStat(ctx context.Context, id int3
 }
 
 /* 
-TextMagicApiService Get a session messages
-A useful synonym for \&quot;messages/search\&quot; command with provided \&quot;sessionId\&quot; parameter.
+TextMagicApiService Get a session&#x60;s messages
+A useful synonym for the \&quot;messages/search\&quot; command with the provided \&quot;sessionId\&quot; parameter.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
  * @param optional nil or *GetMessagesBySessionIdOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "Statuses" (optional.String) -  Find messages by status
-     * @param "IncludeDeleted" (optional.Int32) -  Search also in deleted messages
+     * @param "Statuses" (optional.String) -  Find messages by status.
+     * @param "IncludeDeleted" (optional.Int32) -  Search also in deleted messages.
 
 @return GetMessagesBySessionIdPaginatedResponse
 */
@@ -11088,7 +11088,7 @@ func (a *TextMagicApiService) GetSubaccountsWithTokens(ctx context.Context, getS
 }
 
 /* 
-TextMagicApiService Get a template details
+TextMagicApiService Get a template&#x60;s details
 Get a single template.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
@@ -11875,7 +11875,7 @@ func (a *TextMagicApiService) InviteSubaccount(ctx context.Context, inviteSubacc
 
 /* 
 TextMagicApiService Mark chats as read (bulk)
-Mark several chats as read by chat ids or mark all chats as read
+Mark several chats as read by chat IDs or mark all chats as read
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param markChatsReadBulkInputObject
 
@@ -11969,7 +11969,7 @@ func (a *TextMagicApiService) MarkChatsReadBulk(ctx context.Context, markChatsRe
 
 /* 
 TextMagicApiService Mark chats as unread (bulk)
-Mark several chats as UNread by chat ids or mark all chats as UNread
+Mark several chats as UNread by chat IDs or mark all chats as UNread
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param markChatsUnreadBulkInputObject
 
@@ -12186,7 +12186,7 @@ func (a *TextMagicApiService) MuteChat(ctx context.Context, muteChatInputObject 
 
 /* 
 TextMagicApiService Mute chats (bulk)
-Mute several chats by chat ids or mute all chats
+Mute several chats by chat IDs or mute all chats
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param muteChatsBulkInputObject
 
@@ -12378,7 +12378,7 @@ func (a *TextMagicApiService) Ping(ctx context.Context) (PingResponse, *http.Res
 
 /* 
 TextMagicApiService Reopen chats (bulk)
-Reopen chats by chat ids or reopen all chats
+Reopen chats by chat IDs or reopen all chats
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param reopenChatsBulkInputObject
 
@@ -13824,9 +13824,9 @@ Find user templates by given parameters.
  * @param optional nil or *SearchTemplatesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "Ids" (optional.String) -  Find template by ID(s)
-     * @param "Name" (optional.String) -  Find template by name
-     * @param "Content" (optional.String) -  Find template by content
+     * @param "Ids" (optional.String) -  Find template by ID(s).
+     * @param "Name" (optional.String) -  Find template by name.
+     * @param "Content" (optional.String) -  Find template by content.
 
 @return SearchTemplatesPaginatedResponse
 */
@@ -14493,7 +14493,7 @@ func (a *TextMagicApiService) UnblockContactsBulk(ctx context.Context, unblockCo
 
 /* 
 TextMagicApiService Unmute chats (bulk)
-Unmute several chats by chat ids or unmute all chats
+Unmute several chats by chat IDs or unmute all chats
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param unmuteChatsBulkInputObject
 
