@@ -26,7 +26,7 @@ type Chat struct {
 	Unread int32 `json:"unread"`
 	// Time when the last incoming message arrived at this chat.
 	UpdatedAt time.Time `json:"updatedAt"`
-	// Chat status:   * **a** - Active   * **c** - Closed   * **d** - Deleted 
+	// Chat status:   * **a** - Active;   * **c** - Closed;   * **d** - Deleted. 
 	Status string `json:"status"`
 	// Indicates when the chat is muted.
 	Mute int32 `json:"mute"`

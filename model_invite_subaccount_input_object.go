@@ -12,6 +12,6 @@ package TextMagic
 type InviteSubaccountInputObject struct {
 	// Invitation email will be sent to this email address.
 	Email string `json:"email"`
-	// Type of account: *   **A** for Administrator sub-account *   **U** for Regular User 
+	// Type of account: *   **A** for Administrator sub-account; *   **U** for Regular User. 
 	Role string `json:"role"`
 }

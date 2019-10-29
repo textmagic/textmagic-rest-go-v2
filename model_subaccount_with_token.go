@@ -20,7 +20,7 @@ type SubaccountWithToken struct {
 	LastName string `json:"lastName"`
 	// Account Email address.
 	Email string `json:"email"`
-	// Current account status: * **A** for Active * **T** for Trial. 
+	// Current account status: * **A** for Active; * **T** for Trial. 
 	Status string `json:"status"`
 	// Account balance (in account currency).
 	Balance float64 `json:"balance"`
@@ -31,7 +31,7 @@ type SubaccountWithToken struct {
 	Currency *Currency `json:"currency"`
 	Country *Country `json:"country"`
 	Timezone *Timezone `json:"timezone"`
-	// Type of account: *   **A** for Administrator sub-account *   **U** for Regular User 
+	// Type of account: *   **A** for Administrator sub-account; *   **U** for Regular User. 
 	SubaccountType string `json:"subaccountType"`
 	// Does the account have a confirmed Email?.
 	EmailAccepted bool `json:"emailAccepted"`

@@ -11319,7 +11319,7 @@ func (a *TextMagicApiService) GetTimezones(ctx context.Context, localVarOptional
 
 /* 
 TextMagicApiService Get unread messages number
-Get total amount of unread messages in the current user chats.
+Get the total amount of unread messages in the current user chats.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return GetUnreadMessagesTotalResponse
@@ -12701,7 +12701,7 @@ TextMagicApiService Find chats by message text
  * @param optional nil or *SearchChatsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "Query" (optional.String) -  Find chats by specified search query
+     * @param "Query" (optional.String) -  Find chats by specified search query.
 
 @return SearchChatsPaginatedResponse
 */
@@ -12819,7 +12819,7 @@ TextMagicApiService Find chats (bulk)
  * @param optional nil or *SearchChatsByIdsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "Ids" (optional.String) -  Find chats by ID(s)
+     * @param "Ids" (optional.String) -  Find chats by ID(s).
 
 @return SearchChatsByIdsPaginatedResponse
 */
@@ -14171,7 +14171,7 @@ func (a *TextMagicApiService) SendPhoneVerificationCodeTFA(ctx context.Context, 
 
 /* 
 TextMagicApiService Change chat status
-Set status of the chat given by ID.
+Set the status of the chat given by ID.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param setChatStatusInputObject
 

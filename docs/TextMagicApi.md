@@ -3328,7 +3328,7 @@ Name | Type | Description  | Notes
 > GetUnreadMessagesTotalResponse GetUnreadMessagesTotal(ctx, )
 Get unread messages number
 
-Get total amount of unread messages in the current user chats.
+Get the total amount of unread messages in the current user chats.
 
 ### Required Parameters
 This endpoint does not need any parameter.
@@ -3717,7 +3717,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **query** | **optional.String**| Find chats by specified search query | 
+ **query** | **optional.String**| Find chats by specified search query. | 
 
 ### Return type
 
@@ -3754,7 +3754,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **ids** | **optional.String**| Find chats by ID(s) | 
+ **ids** | **optional.String**| Find chats by ID(s). | 
 
 ### Return type
 
@@ -4119,7 +4119,7 @@ Name | Type | Description  | Notes
 > ResourceLinkResponse SetChatStatus(ctx, setChatStatusInputObject)
 Change chat status
 
-Set status of the chat given by ID.
+Set the status of the chat given by ID.
 
 ### Required Parameters
 
