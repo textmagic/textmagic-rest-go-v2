@@ -2162,7 +2162,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **shared** | **optional.Int32**| Should shared contacts to be included | [default to 0]
+ **shared** | **optional.Int32**| Should shared contacts be included? | [default to 0]
  **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
  **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
 
@@ -2185,7 +2185,7 @@ Name | Type | Description  | Notes
 > GetContactsAutocompleteResponse GetContactsAutocomplete(ctx, query, optional)
 Get contacts autocomplete suggestions
 
-Get contacts autocomplete suggestions by given search term
+Get contacts autocomplete suggestions by given search terms.
 
 ### Required Parameters
 
@@ -2202,7 +2202,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **lists** | **optional.Int32**| Should lists be returned or not | [default to 0]
+ **lists** | **optional.Int32**| Should lists be returned or not? | [default to 0]
 
 ### Return type
 
@@ -3829,13 +3829,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **shared** | **optional.Int32**| Should shared contacts to be included | [default to 0]
- **ids** | **optional.String**| Find contact by ID(s) | 
- **listId** | **optional.Int32**| Find contact by List ID | 
- **includeBlocked** | **optional.Int32**| Should blocked contacts to be included | 
+ **shared** | **optional.Int32**| Should shared contacts be included? | [default to 0]
+ **ids** | **optional.String**| Find contacts by IDs. | 
+ **listId** | **optional.Int32**| Find contacts by List ID. | 
+ **includeBlocked** | **optional.Int32**| Should blocked contacts be included? | 
  **query** | **optional.String**| Find contacts by specified search query. | 
- **local** | **optional.Int32**| Treat phone number passed in &#39;query&#39; field as local. Default is 0 | [default to 0]
- **country** | **optional.String**| 2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country | 
+ **local** | **optional.Int32**| Treat phone number passed in the \&quot;query\&quot; field as local. Default is 0. | [default to 0]
+ **country** | **optional.String**| The 2-letter ISO country code for local phone numbers, used when \&quot;local\&quot; is set to true. Default is the account country. | 
  **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
  **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
 

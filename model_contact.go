@@ -14,7 +14,7 @@ type Contact struct {
 	Id int32 `json:"id"`
 	// Is the Contact favorite? [Custom fields list](http://docs.textmagictesting.com/#operation/getFavorites).
 	Favorited bool `json:"favorited"`
-	// Is the Contact blocked? [Custom fields list](http://docs.textmagictesting.com/#operation/getBlockedContacts).
+	// Is the Contact blocked? [Blocked contacts](http://docs.textmagictesting.com/#operation/getBlockedContacts).
 	Blocked bool `json:"blocked"`
 	// Contact first name.
 	FirstName string `json:"firstName"`

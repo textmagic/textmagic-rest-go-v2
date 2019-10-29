@@ -7076,7 +7076,7 @@ TextMagicApiService Get all contacts
  * @param optional nil or *GetContactsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "Shared" (optional.Int32) -  Should shared contacts to be included
+     * @param "Shared" (optional.Int32) -  Should shared contacts be included?
      * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
      * @param "Direction" (optional.String) -  Order direction. Default is desc.
 
@@ -7199,12 +7199,12 @@ func (a *TextMagicApiService) GetContacts(ctx context.Context, localVarOptionals
 
 /* 
 TextMagicApiService Get contacts autocomplete suggestions
-Get contacts autocomplete suggestions by given search term
+Get contacts autocomplete suggestions by given search terms.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param query Find recipients by specified search query.
  * @param optional nil or *GetContactsAutocompleteOpts - Optional Parameters:
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "Lists" (optional.Int32) -  Should lists be returned or not
+     * @param "Lists" (optional.Int32) -  Should lists be returned or not?
 
 @return GetContactsAutocompleteResponse
 */
@@ -13060,13 +13060,13 @@ TextMagicApiService Find contacts by given criteria
  * @param optional nil or *SearchContactsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "Shared" (optional.Int32) -  Should shared contacts to be included
-     * @param "Ids" (optional.String) -  Find contact by ID(s)
-     * @param "ListId" (optional.Int32) -  Find contact by List ID
-     * @param "IncludeBlocked" (optional.Int32) -  Should blocked contacts to be included
+     * @param "Shared" (optional.Int32) -  Should shared contacts be included?
+     * @param "Ids" (optional.String) -  Find contacts by IDs.
+     * @param "ListId" (optional.Int32) -  Find contacts by List ID.
+     * @param "IncludeBlocked" (optional.Int32) -  Should blocked contacts be included?
      * @param "Query" (optional.String) -  Find contacts by specified search query.
-     * @param "Local" (optional.Int32) -  Treat phone number passed in &#39;query&#39; field as local. Default is 0
-     * @param "Country" (optional.String) -  2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country
+     * @param "Local" (optional.Int32) -  Treat phone number passed in the \&quot;query\&quot; field as local. Default is 0.
+     * @param "Country" (optional.String) -  The 2-letter ISO country code for local phone numbers, used when \&quot;local\&quot; is set to true. Default is the account country.
      * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
      * @param "Direction" (optional.String) -  Order direction. Default is desc.
 

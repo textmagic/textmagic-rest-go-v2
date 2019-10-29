@@ -501,7 +501,7 @@ tags:
     \n```javascript\n{\n    \"repositories\": [\n        {\n            \"type\":\
     \ \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
     \n        }\n    ],\n    \"require\": {\n        \"textmagic/textmagic-rest-php-v2\"\
-    : \"dev-master#v2.0.815\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
+    : \"dev-master#v2.0.814\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
     \ Manual Installation\n\nDownload the files and include `autoload.php`:\n\n```php\n\
     require_once(__DIR__.'/vendor/autoload.php');\n```\n\n## Usage Example\n\nPlease\
     \ follow the [installation](#installation) instructions and execute the following\
@@ -530,7 +530,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Node.js application.\n\n[Get\
     \ it now on GitHub](https://github.com/textmagic/textmagic-rest-nodejs)\n## Installation\n\
-    \n```shell\nnpm install textmagic-client@2.0.815 --save\n```\n\n## Usage Example\n\
+    \n```shell\nnpm install textmagic-client@2.0.814 --save\n```\n\n## Usage Example\n\
     \nPlease follow the [installation](#installation) instructions and execute the\
     \ following JS code:\n\n```javascript\nconst textmagicClient = require('textmagic-client');\n\
     \nconst fs = require('fs');\nconst client = textmagicClient.ApiClient.instance;\n\
@@ -562,7 +562,7 @@ tags:
     Install-Package Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp\
     \ versions later than 105.1.0 have a bug which causes file uploads to fail. See\
     \ [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\n## Installation\n\
-    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.815/).\n\
+    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.814/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -625,22 +625,22 @@ tags:
     \ Requirements\n\n* CMake 2.8 and later (https://cmake.org/)\n* cpprest (https://github.com/microsoft/cpprestsdk)\n\
     \nUbuntu dependencies quick installation example:\n```shell\napt-get install build-essential\
     \ cmake libcpprest-dev\n```\n\n## Installation\n\nDownload and extract lib archive:\n\
-    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.815.tar.gz\
-    \ && \\\ntar zxf v2.0.815.tar.gz && \\\nrm -f v2.0.815.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.815\n\
+    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.816.tar.gz\
+    \ && \\\ntar zxf v2.0.816.tar.gz && \\\nrm -f v2.0.816.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.816\n\
     ```\nBuild using cmake\n```shell\ncmake . && cmake --build .\n```\nThe output\
-    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.815/lib` directory:\n\
+    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.816/lib` directory:\n\
     \n## Usage Example\nIn the example below, we assume that you moved the library\
-    \ sources `textmagic-rest-cpp-v2-2.0.815` directory to your test project root\
+    \ sources `textmagic-rest-cpp-v2-2.0.816` directory to your test project root\
     \ directory.\n\nConfigure your `CMakeLists.txt` as shown here:\n```shell\ncmake_minimum_required(VERSION\
     \ 2.8)\nproject(test)\n\nset(CMAKE_CXX_STANDARD 14)\n\nadd_executable(app main.cpp)\n\
     \nadd_library(textmagic_client SHARED IMPORTED)\nset_property(TARGET textmagic_client\
-    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.815/lib/libtextmagic_client.so\"\
-    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.815\
-    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.815/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.815/api)\n\
+    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.816/lib/libtextmagic_client.so\"\
+    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.816\
+    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.816/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.816/api)\n\
     target_link_libraries(app boost_system cpprest crypto textmagic_client )\n```\n\
     \n`main.cpp` file example:\n```cpp\n#include <iostream>\n#include <fstream>\n\
-    #include \"textmagic-rest-cpp-v2-2.0.815/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.815/ApiConfiguration.h\"\
-    \n#include \"textmagic-rest-cpp-v2-2.0.815/api/TextMagicApi.h\"\n\nusing namespace\
+    #include \"textmagic-rest-cpp-v2-2.0.816/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.816/ApiConfiguration.h\"\
+    \n#include \"textmagic-rest-cpp-v2-2.0.816/api/TextMagicApi.h\"\n\nusing namespace\
     \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
     \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
     \ ApiConfiguration);\n\n    apiConfig->setBaseUrl(\"https://rest.textmagic.com\"\
@@ -680,7 +680,7 @@ tags:
     \ SMS and receiving replies by integrating TextMagic SMS Gateway into your Python\
     \ application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-python)\n\
     ## Requirements\nPython 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install\
-    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.815\n```\n\
+    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.814\n```\n\
     \n## Usage Example\n\n```python\nimport TextMagic\nfrom TextMagic.rest import\
     \ ApiException\n\n# Configure HTTP basic authorization: BasicAuth\nconfiguration\
     \ = TextMagic.Configuration()\nconfiguration.username = 'YOUR_USERNAME'\nconfiguration.password\
@@ -705,8 +705,8 @@ tags:
     \ GitHub\">Star</a>\n\nThis library provides you with an easy way of sending SMS\
     \ and receiving replies by integrating TextMagic SMS Gateway into your Perl application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-perl)\n##\
-    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.815.tar.gz\
-    \ && \\\ntar zxf v2.0.815.tar.gz && \\\nrm -f v2.0.815.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.815\
+    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.814.tar.gz\
+    \ && \\\ntar zxf v2.0.814.tar.gz && \\\nrm -f v2.0.814.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.814\
     \ && \\\nperl Makefile.pl && \\\nmake && \\\nmake install && \\\ncpanm --installdeps\
     \ .\n```\\\n\n## Usage Example\n\nPlease follow the [installation](#installation)\
     \ instructions and execute the following Perl code:\n\n```perl\nuse 5.010;\nuse\
@@ -735,7 +735,7 @@ tags:
     \ and receiving replies by integrating TextMagic SMS Gateway into your Ruby application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-ruby)\n##\
     \ Installation\n\nAdd these lines into your Gemfile\n```ruby\ngem 'textmagic_rest_client',\
-    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.815'\n\
+    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.814'\n\
     ```\n\nRun the bundler install command\n``` shell\nbundle install\n```\n\n## Usage\
     \ Example\n\nCreate the test file `test.rb` and put the following code:\n```ruby\n\
     \ # Load the gem\nrequire 'textmagic_rest_client'\n\n # Setup authorization\n\
@@ -761,7 +761,7 @@ tags:
     Star imissyouso/textmagic-rest-go on GitHub\">Star</a>\n\nThis library provides\
     \ you with an easy way of sending SMS and receiving replies by integrating TextMagic\
     \ SMS Gateway into your Go application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-go)\n\
-    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.815\n\
+    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.816\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -6144,7 +6144,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "shared"
         in: "query"
-        description: "Should shared contacts to be included"
+        description: "Should shared contacts be included?"
         required: false
         type: "integer"
         default: 0
@@ -6155,7 +6155,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "ids"
         in: "query"
-        description: "Find contact by ID(s)"
+        description: "Find contacts by IDs."
         required: false
         type: "string"
         pattern: "[,\\d]+"
@@ -6163,14 +6163,14 @@ paths:
         x-optionalDataType: "String"
       - name: "listId"
         in: "query"
-        description: "Find contact by List ID"
+        description: "Find contacts by List ID."
         required: false
         type: "integer"
         x-exportParamName: "ListId"
         x-optionalDataType: "Int32"
       - name: "includeBlocked"
         in: "query"
-        description: "Should blocked contacts to be included"
+        description: "Should blocked contacts be included?"
         required: false
         type: "integer"
         enum:
@@ -6187,8 +6187,8 @@ paths:
         x-optionalDataType: "String"
       - name: "local"
         in: "query"
-        description: "Treat phone number passed in 'query' field as local. Default\
-          \ is 0"
+        description: "Treat phone number passed in the \"query\" field as local. Default\
+          \ is 0."
         required: false
         type: "integer"
         default: 0
@@ -6199,8 +6199,8 @@ paths:
         x-optionalDataType: "Int32"
       - name: "country"
         in: "query"
-        description: "2-letter ISO country code for local phone numbers, used when\
-          \ 'local' is set to true. Default is account country"
+        description: "The 2-letter ISO country code for local phone numbers, used\
+          \ when \"local\" is set to true. Default is the account country."
         required: false
         type: "string"
         x-exportParamName: "Country"
@@ -6230,7 +6230,7 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Found contacts have been returned with success"
+          description: "Found contacts have been returned with success."
           schema:
             $ref: "#/definitions/SearchContactsPaginatedResponse"
         401:
@@ -6424,7 +6424,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get contacts autocomplete suggestions"
-      description: "Get contacts autocomplete suggestions by given search term"
+      description: "Get contacts autocomplete suggestions by given search terms."
       operationId: "getContactsAutocomplete"
       parameters:
       - name: "limit"
@@ -6444,7 +6444,7 @@ paths:
         x-exportParamName: "Query"
       - name: "lists"
         in: "query"
-        description: "Should lists be returned or not"
+        description: "Should lists be returned or not?"
         required: false
         type: "integer"
         default: 0
@@ -6455,7 +6455,7 @@ paths:
         x-optionalDataType: "Int32"
       responses:
         200:
-          description: "Autocomplete data has been returned with success"
+          description: "Autocomplete data has been returned with success."
           schema:
             $ref: "#/definitions/GetContactsAutocompleteResponse"
         401:
@@ -6630,7 +6630,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "shared"
         in: "query"
-        description: "Should shared contacts to be included"
+        description: "Should shared contacts be included?"
         required: false
         type: "integer"
         default: 0
@@ -6664,7 +6664,7 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Requested contacts have been returned with success"
+          description: "Requested contacts have been returned with success."
           schema:
             $ref: "#/definitions/GetContactsPaginatedResponse"
         401:
@@ -26072,13 +26072,13 @@ definitions:
       entityId:
         type: "integer"
         example: 362
-        description: "Id of entity. 0 if object is a Reply"
+        description: "Id of entity. 0 if object is a reply."
       entityType:
         type: "string"
         example: "contact"
-        description: "Entry type:\n* **contact** if it is related to a contact\n*\
-          \ **list** if it is related to a contact list\n* **reply** if it is related\
-          \ to an incoming message\n"
+        description: "Entry type:\n* **contact** if it is related to a contact;\n\
+          * **list** if it is related to a contact list;\n* **reply** if it is related\
+          \ to an incoming message.\n"
         enum:
         - "reply"
         - "contact"
@@ -26086,8 +26086,8 @@ definitions:
       value:
         type: "string"
         example: "22"
-        description: "Id of contact/list if entityType is contact/list OR phone number\
-          \ if entityType is reply."
+        description: "ID of the contact/list if entityType is contact/list OR phone\
+          \ number if entityType is reply."
       label:
         type: "string"
         example: "Homer Simpson"
@@ -26096,8 +26096,8 @@ definitions:
       sharedBy:
         type: "string"
         example: "John Doe"
-        description: "If contact or list was shared by another sub-account then name\
-          \ if this user will be shown."
+        description: "If contact or list was shared by another sub-account, the name\
+          \ of this user will be shown."
       isShared:
         type: "boolean"
         example: true
@@ -26115,7 +26115,7 @@ definitions:
       userId:
         type: "integer"
         example: 33
-        description: "Owner id of the contact/list (if it was shared)."
+        description: "Owner ID of the contact/list (if it was shared)."
       countryName:
         type: "string"
         example: "Australia"
@@ -27182,7 +27182,7 @@ definitions:
       blocked:
         type: "boolean"
         example: true
-        description: "Is the Contact blocked? [Custom fields list](http://docs.textmagictesting.com/#operation/getBlockedContacts)."
+        description: "Is the Contact blocked? [Blocked contacts](http://docs.textmagictesting.com/#operation/getBlockedContacts)."
       firstName:
         type: "string"
         example: "Charles"
