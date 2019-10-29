@@ -16,7 +16,7 @@ import (
 type MessagingStatItem struct {
 	// The number of incoming messages divided by the number of total messages.
 	ReplyRate float32 `json:"replyRate"`
-	// Time interval start, empty if the **by** parameter was set to **off**. 
+	// Time interval start: empty if the **by** parameter was set to **off**. 
 	Date time.Time `json:"date"`
 	// Message delivery rate:the number of delivered messages divided by the number of total messages.
 	DeliveryRate float32 `json:"deliveryRate"`
@@ -26,11 +26,11 @@ type MessagingStatItem struct {
 	MessagesReceived int32 `json:"messagesReceived"`
 	// Delivered messages count. As messages are retried for up to 48 hours, this value could change.
 	MessagesSentDelivered int32 `json:"messagesSentDelivered"`
-	// Messages accepted for delivery (in queue), but not yet delivered.
+	// Messages accepted for delivery (in queue) but not yet delivered.
 	MessagesSentAccepted int32 `json:"messagesSentAccepted"`
 	// Messages buffered by endpoint cell phone operators.
 	MessagesSentBuffered int32 `json:"messagesSentBuffered"`
-	// Messages that have failed for whatever reason, e.g. the destination phone was switched off for 48 hours or the recipient phone account is out of service.
+	// Messages that have failed for whatever reason, e.g. the destination phone was switched off for 48 hours or the recipient's phone account is out of service.
 	MessagesSentFailed int32 `json:"messagesSentFailed"`
 	// Messages that were rejected: invalid Sender ID used (e.g. you cannot use the Sender ID or your own mobile number when sending to the United States and Canada.) 
 	MessagesSentRejected int32 `json:"messagesSentRejected"`

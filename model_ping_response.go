@@ -12,6 +12,6 @@ package TextMagic
 type PingResponse struct {
 	// Pong.
 	Ping string `json:"ping"`
-	// Current date time
+	// Current date and time.
 	UtcDateTime string `json:"utcDateTime"`
 }

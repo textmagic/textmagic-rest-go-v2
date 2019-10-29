@@ -12,11 +12,11 @@ package TextMagic
 type SenderId struct {
 	// Numeric sender ID.
 	Id int32 `json:"id"`
-	// Format for representation of time
+	// Format for representation of time.
 	DisplayTimeFormat string `json:"displayTimeFormat,omitempty"`
 	// Alphanumeric ID.
 	SenderId string `json:"senderId"`
 	User *User `json:"user"`
-	// *   **P** for Pending. This Sender ID is being reviewed by our support team. *   **R** for Rejected. Our support team rejected your application for this Sender ID. *   **A** for Active. 
+	// *   **P** for Pending - this Sender ID is being reviewed by our support team; *   **R** for Rejected - our support team rejected your application for this Sender ID; *   **A** for Active. 
 	Status string `json:"status"`
 }

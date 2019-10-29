@@ -10,8 +10,8 @@
 package TextMagic
 
 type GetSubaccountsWithTokensInputObject struct {
-	// Application name
+	// Application name.
 	AppName string `json:"appName"`
-	// Your account password
+	// Your account password.
 	Password string `json:"password"`
 }

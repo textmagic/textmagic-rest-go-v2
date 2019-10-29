@@ -373,7 +373,7 @@ tags:
     \ number.\n\n## What is an alphanumeric Sender ID?\nSender IDs allow you to send\
     \ personalized text messages that do not need a reply. You can apply for Sender\
     \ IDs that are closely connected to your business; for example, **HotPizza**,\
-    \ **ITDelivery**, **Insurance** This is the best solution for transactional SMSs\
+    \ **ITDelivery**, **Insurance**. This is the best solution for transactional SMSs\
     \ with order confirmations or temporary security codes.\n\n> All Sender IDs are\
     \ reviewed by our support team.\n \n> Note, in [several countries](https://support.textmagic.com/article/how-to-understand-sender-setting-restrictions/)\_\
     the sender ID feature is not supported. Please test before using it in real sending\
@@ -385,11 +385,11 @@ tags:
 - name: "User Subaccounts"
   description: "You can use the TextMagic SMS API to invite other people to become\
     \ sub-accounts. You can also manage them as and when needed.\n\n## Sub-account\
-    \ roles\n\nThere are two types of sub-accounts: regular user and administrator.\n\
+    \ roles\n\nThere are two types of sub-account: regular user and administrator.\n\
     \n*   A **regular** **user** sub-account allows the user to do everything except\
     \ buy SMS credit and manage other sub-accounts.\n*   An **administrator** sub-account\
-    \ has access to all features including buying SMS credit and managing other sub-accounts.\n\
-    \n> Only parent users and administrators can manage sub-accounts."
+    \ gives the user access to all features including buying SMS credit and managing\
+    \ other sub-accounts.\n\n> Only parent users and administrators can manage sub-accounts."
   x-displayName: "Sub-Accounts"
 - name: "Statistic"
   description: "You can get detailed sent messages reports and user statements for\
@@ -401,7 +401,7 @@ tags:
     \ view invoices."
   x-displayName: "Invoices"
 - name: "Response Codes"
-  description: "All the possible response codes that you can get from the TextMagic\
+  description: "All of the possible response codes you can get from the TextMagic\
     \ API are described on this page.\n\n## HTTP response codes\n\nWhen you make a\
     \ request to the TextMagic REST API, you will receive a response that represents\
     \ the new or modified object state (when you use\_**GET**/ **POST**/ **PUT**\_\
@@ -412,7 +412,7 @@ tags:
     \ A resource has been created or updated successfully.|\n| 202 Accepted| Request\
     \ accepted and is being processed.|\n| 204 No content| Resource deleted successfully.|\n\
     | 302 Found| Redirect. Your code should follow the address specified in the\_\
-    **Location**\_header.|\n| 400 Bad request| Invalid parameters specified, some\
+    **Location**\_header.|\n| 400 Bad request| Invalid parameters specified: some\
     \ required parameters are missing or malformed. Check the corresponding command\
     \ documentation.|\n| 401 Unauthorized| Current user has no rights to perform the\
     \ specified action. For example, regular users cannot view [Invoices](http://docs.textmagictesting.com/#tag/Billing)\
@@ -436,13 +436,12 @@ tags:
     \ instead of **070 4567 8945**). This restriction has been applied to ensure delivery\
     \ to the desired number without any accidental local-to-international phone transformations.\n\
     \n## Maximum “limit” parameter value\nCommands that return an array of resources\
-    \ (for example, GET /api/v2/messages) can take the **limit** parameter, which\
-    \ can be between `1` and `100`, otherwise it will be replaced with the default\
-    \ value of `10`.\n\n## API request frequency limit\nYou may not execute more than\
-    \ **20 requests per second**. If you do, a `429 Too Many Requests` error will\
-    \ be returned. Please note that you can use contacts, lists and templates for\
-    \ [sending multiple messages](/docs/api/send-sms/#send-bulk-text-messages) simultaneously\
-    \ per request."
+    \ (e.g. GET /api/v2/messages) can take the **limit** parameter, which can be between\
+    \ `1` and `100`, otherwise it will be replaced with the default value of `10`.\n\
+    \n## API request frequency limit\nYou may not execute more than **20 requests\
+    \ per second**. If you do, a `429 Too Many Requests` error will be returned. Please\
+    \ note that you can use contacts, lists and templates for [sending multiple messages](/docs/api/send-sms/#send-bulk-text-messages)\
+    \ simultaneously per request."
 - name: "Encoding"
   description: "The text-message parameters should be encoded in the UTF-8 character\
     \ set. All non-ASCII characters in command parameters should be [encoded](https://en.wikipedia.org/wiki/Percent-encoding).\
@@ -467,20 +466,20 @@ tags:
     \ message. Unicode character support also provides the capability to send a message\
     \ in Arabic, Japanese, Russian, Chinese and other alphabets.\n\n## Message length\n\
     \n### GSM 03.38 encoding\n\nSingle text messages are limited to 160 characters,\
-    \ including spaces. However, to get around this restriction, messages could be\
-    \ linked together (up to 6 parts) to form one long message.\n\nIn reality, each\
-    \ concatenated text message is limited to 153 characters rather than 160 due to\
-    \ the need for user-data header (UDH) information. This applies only to messages\
-    \ that contain the standard GSM 03.38 character set. Mobile phones use UDH information\
-    \ to enable them to link long messages together so that they appear as a single\
-    \ SMS message in the recipients’ inboxes.\n\n| Number of SMSs | Total number of\
-    \ characters in the linked message|\n|----------------|-------------------------------------------------|\n\
+    \ including spaces. However, to get around this restriction, messages can be linked\
+    \ together (up to 6 parts) to form one long message.\n\nIn reality, each concatenated\
+    \ text message is limited to 153 characters rather than 160 due to the need for\
+    \ user-data header (UDH) information. This applies only to messages that contain\
+    \ the standard GSM 03.38 character set. Mobile phones use UDH information to enable\
+    \ them to link long messages together so that they appear as a single SMS message\
+    \ in the recipients’ inboxes.\n\n| Number of SMSs | Total number of characters\
+    \ in the linked message|\n|----------------|-------------------------------------------------|\n\
     | 1| 160|\n| 2| 306|\n| 3| 459|\n| 4| 612|\n| 5| 765|\n| 6| 918|\n\n### Unicode\n\
     \nUsing Unicode (for Russian, Arabic and Chinese languages) restricts messages\
-    \ to a maximum of 70 characters per SMS. You can, however, send longer text messages,\
+    \ to a maximum of 70 characters per SMS. You can, however, send longer text messages\
     \ with our system by splitting them into two or at the most three separate text\
     \ messages. The table below gives the maximum lengths of two or more parts of\
-    \ a concatenated Unicode text messages.\n\n| Number of SMSs|Total number of characters\
+    \ a concatenated Unicode text message.\n\n| Number of SMSs|Total number of characters\
     \ in the linked message|\n|---------------|------------------------------------------------|\n\
     |1|70|\n|2|134|\n|3|201|\n|4|268|\n|5|335|\n|6|402|\n"
 - name: "SDKs"
@@ -501,7 +500,7 @@ tags:
     \n```javascript\n{\n    \"repositories\": [\n        {\n            \"type\":\
     \ \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
     \n        }\n    ],\n    \"require\": {\n        \"textmagic/textmagic-rest-php-v2\"\
-    : \"dev-master#v2.0.814\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
+    : \"dev-master#v2.0.817\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
     \ Manual Installation\n\nDownload the files and include `autoload.php`:\n\n```php\n\
     require_once(__DIR__.'/vendor/autoload.php');\n```\n\n## Usage Example\n\nPlease\
     \ follow the [installation](#installation) instructions and execute the following\
@@ -530,7 +529,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Node.js application.\n\n[Get\
     \ it now on GitHub](https://github.com/textmagic/textmagic-rest-nodejs)\n## Installation\n\
-    \n```shell\nnpm install textmagic-client@2.0.814 --save\n```\n\n## Usage Example\n\
+    \n```shell\nnpm install textmagic-client@2.0.817 --save\n```\n\n## Usage Example\n\
     \nPlease follow the [installation](#installation) instructions and execute the\
     \ following JS code:\n\n```javascript\nconst textmagicClient = require('textmagic-client');\n\
     \nconst fs = require('fs');\nconst client = textmagicClient.ApiClient.instance;\n\
@@ -562,7 +561,7 @@ tags:
     Install-Package Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp\
     \ versions later than 105.1.0 have a bug which causes file uploads to fail. See\
     \ [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\n## Installation\n\
-    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.814/).\n\
+    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.817/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -625,22 +624,22 @@ tags:
     \ Requirements\n\n* CMake 2.8 and later (https://cmake.org/)\n* cpprest (https://github.com/microsoft/cpprestsdk)\n\
     \nUbuntu dependencies quick installation example:\n```shell\napt-get install build-essential\
     \ cmake libcpprest-dev\n```\n\n## Installation\n\nDownload and extract lib archive:\n\
-    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.816.tar.gz\
-    \ && \\\ntar zxf v2.0.816.tar.gz && \\\nrm -f v2.0.816.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.816\n\
+    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.817.tar.gz\
+    \ && \\\ntar zxf v2.0.817.tar.gz && \\\nrm -f v2.0.817.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.817\n\
     ```\nBuild using cmake\n```shell\ncmake . && cmake --build .\n```\nThe output\
-    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.816/lib` directory:\n\
+    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.817/lib` directory:\n\
     \n## Usage Example\nIn the example below, we assume that you moved the library\
-    \ sources `textmagic-rest-cpp-v2-2.0.816` directory to your test project root\
+    \ sources `textmagic-rest-cpp-v2-2.0.817` directory to your test project root\
     \ directory.\n\nConfigure your `CMakeLists.txt` as shown here:\n```shell\ncmake_minimum_required(VERSION\
     \ 2.8)\nproject(test)\n\nset(CMAKE_CXX_STANDARD 14)\n\nadd_executable(app main.cpp)\n\
     \nadd_library(textmagic_client SHARED IMPORTED)\nset_property(TARGET textmagic_client\
-    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.816/lib/libtextmagic_client.so\"\
-    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.816\
-    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.816/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.816/api)\n\
+    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.817/lib/libtextmagic_client.so\"\
+    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.817\
+    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.817/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.817/api)\n\
     target_link_libraries(app boost_system cpprest crypto textmagic_client )\n```\n\
     \n`main.cpp` file example:\n```cpp\n#include <iostream>\n#include <fstream>\n\
-    #include \"textmagic-rest-cpp-v2-2.0.816/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.816/ApiConfiguration.h\"\
-    \n#include \"textmagic-rest-cpp-v2-2.0.816/api/TextMagicApi.h\"\n\nusing namespace\
+    #include \"textmagic-rest-cpp-v2-2.0.817/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.817/ApiConfiguration.h\"\
+    \n#include \"textmagic-rest-cpp-v2-2.0.817/api/TextMagicApi.h\"\n\nusing namespace\
     \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
     \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
     \ ApiConfiguration);\n\n    apiConfig->setBaseUrl(\"https://rest.textmagic.com\"\
@@ -680,7 +679,7 @@ tags:
     \ SMS and receiving replies by integrating TextMagic SMS Gateway into your Python\
     \ application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-python)\n\
     ## Requirements\nPython 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install\
-    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.814\n```\n\
+    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.817\n```\n\
     \n## Usage Example\n\n```python\nimport TextMagic\nfrom TextMagic.rest import\
     \ ApiException\n\n# Configure HTTP basic authorization: BasicAuth\nconfiguration\
     \ = TextMagic.Configuration()\nconfiguration.username = 'YOUR_USERNAME'\nconfiguration.password\
@@ -705,8 +704,8 @@ tags:
     \ GitHub\">Star</a>\n\nThis library provides you with an easy way of sending SMS\
     \ and receiving replies by integrating TextMagic SMS Gateway into your Perl application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-perl)\n##\
-    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.814.tar.gz\
-    \ && \\\ntar zxf v2.0.814.tar.gz && \\\nrm -f v2.0.814.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.814\
+    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.817.tar.gz\
+    \ && \\\ntar zxf v2.0.817.tar.gz && \\\nrm -f v2.0.817.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.817\
     \ && \\\nperl Makefile.pl && \\\nmake && \\\nmake install && \\\ncpanm --installdeps\
     \ .\n```\\\n\n## Usage Example\n\nPlease follow the [installation](#installation)\
     \ instructions and execute the following Perl code:\n\n```perl\nuse 5.010;\nuse\
@@ -735,7 +734,7 @@ tags:
     \ and receiving replies by integrating TextMagic SMS Gateway into your Ruby application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-ruby)\n##\
     \ Installation\n\nAdd these lines into your Gemfile\n```ruby\ngem 'textmagic_rest_client',\
-    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.814'\n\
+    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.817'\n\
     ```\n\nRun the bundler install command\n``` shell\nbundle install\n```\n\n## Usage\
     \ Example\n\nCreate the test file `test.rb` and put the following code:\n```ruby\n\
     \ # Load the gem\nrequire 'textmagic_rest_client'\n\n # Setup authorization\n\
@@ -761,7 +760,7 @@ tags:
     Star imissyouso/textmagic-rest-go on GitHub\">Star</a>\n\nThis library provides\
     \ you with an easy way of sending SMS and receiving replies by integrating TextMagic\
     \ SMS Gateway into your Go application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-go)\n\
-    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.816\n\
+    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.817\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -868,7 +867,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Ping"
-      description: "Make a simple ping request"
+      description: "Make a simple ping request."
       operationId: "ping"
       parameters: []
       responses:
@@ -1005,7 +1004,7 @@ paths:
       - name: "full"
         in: "query"
         description: "Return full info about timezones in array (0 or 1). Default\
-          \ is 0"
+          \ is 0."
         required: false
         type: "integer"
         default: 0
@@ -1813,7 +1812,7 @@ paths:
       parameters: []
       responses:
         204:
-          description: "Avatar has been deleted with success"
+          description: "Avatar deleted with success."
         401:
           description: "Unauthorized request"
           schema:
@@ -3600,7 +3599,7 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Sender Id data returned with success."
+          description: "Sender ID data returned with success."
           schema:
             $ref: "#/definitions/SenderId"
         401:
@@ -3743,7 +3742,7 @@ paths:
         x-exportParamName: "Id"
       responses:
         204:
-          description: "Successful delete chat"
+          description: "Successful delete chat."
         401:
           description: "Unauthorized request"
           schema:
@@ -3867,7 +3866,7 @@ paths:
     get:
       tags:
       - "TextMagic"
-      summary: "Get sub-accounts list"
+      summary: "Get a sub-accounts list"
       description: ""
       operationId: "getSubaccounts"
       parameters:
@@ -3889,7 +3888,7 @@ paths:
         x-optionalDataType: "Int32"
       responses:
         200:
-          description: "Subaccounts data returned with success."
+          description: "Sub-accounts data returned with success."
           schema:
             $ref: "#/definitions/User"
         401:
@@ -3897,7 +3896,7 @@ paths:
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
-          description: "Returned when current user is not allowed to manage subaccounts"
+          description: "Returned when the current user is not allowed to manage sub-accounts."
       x-code-samples:
       - lang: "PHP"
         source: "require_once(__DIR__ . '/vendor/autoload.php');\n\nuse TextMagic\\\
@@ -4205,7 +4204,7 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Subaccount data returned with success."
+          description: "Sub-account data returned with success."
           schema:
             $ref: "#/definitions/User"
         401:
@@ -4213,7 +4212,7 @@ paths:
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
-          description: "Returned when current user is not allowed to manage subaccounts"
+          description: "Returned when the current user is not allowed to manage sub-accounts."
         404:
           description: "Request data not found"
           schema:
@@ -4356,7 +4355,7 @@ paths:
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
-          description: "Returned when current user is not allowed to manage subaccounts"
+          description: "Returned when the current user is not allowed to manage sub-accounts."
         404:
           description: "Request data not found"
           schema:
@@ -4488,7 +4487,7 @@ paths:
         x-exportParamName: "RequestNewSubaccountTokenInputObject"
       responses:
         200:
-          description: "Created Subaccount data returned with success."
+          description: "Created Sub-account data returned with success."
           schema:
             $ref: "#/definitions/User"
         400:
@@ -4500,7 +4499,8 @@ paths:
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
-          description: "Returned when user has no enough rights to perform this action"
+          description: "Returned when the user does not have rights to perform this\
+            \ action."
       x-code-samples:
       - lang: "PHP"
         source: "require_once(__DIR__ . '/vendor/autoload.php');\n\nuse TextMagic\\\
@@ -4653,8 +4653,8 @@ paths:
     post:
       tags:
       - "TextMagic"
-      summary: "Get all sub-accounts with their REST API tokens associated with app\
-        \ name"
+      summary: "Get all sub-accounts with their REST API tokens associated with a\
+        \ specified app name"
       description: "Get all sub-accounts with their REST API tokens associated with\
         \ specified app name. When more than one token related to app name, last key\
         \ will be returned."
@@ -4684,7 +4684,7 @@ paths:
         x-optionalDataType: "Int32"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetSubaccountsWithTokensResponse"
         400:
@@ -10312,7 +10312,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "query"
         in: "query"
-        description: "Find contacts or lists by specified search query"
+        description: "Find contacts or lists by specified search query."
         required: false
         type: "string"
         x-example: "A"
@@ -21221,9 +21221,9 @@ paths:
       parameters:
       - name: "by"
         in: "query"
-        description: "*   **off** to get total values per specified time interval\n\
-          *   **day** to show values grouped by day\n*   **month** to show values\
-          \ grouped by month\n*   **year** to show values grouped by year\n"
+        description: "*   **off** - to get total values per specified time interval;\n\
+          *   **day** - to show values grouped by day;\n*   **month** - to show values\
+          \ grouped by month;\n*   **year** - to show values grouped by year.\n"
         required: false
         type: "string"
         default: "off"
@@ -21651,7 +21651,7 @@ paths:
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
-          description: "Returned when current user is not allowed to manage invoices"
+          description: "Returned when the current user is not allowed to manage invoices."
       x-code-samples:
       - lang: "PHP"
         source: "require_once(__DIR__ . '/vendor/autoload.php');\n\nuse TextMagic\\\
@@ -25769,7 +25769,7 @@ definitions:
       utcDateTime:
         type: "string"
         example: "2019-01-01T00:00:00.000Z"
-        description: "Current date time"
+        description: "Current date and time."
     example:
       ping: "pong"
       utcDateTime: "2019-01-01T00:00:00.000Z"
@@ -27020,7 +27020,7 @@ definitions:
       displayTimeFormat:
         type: "string"
         example: "24h"
-        description: "Format for representation of time"
+        description: "Format for representation of time."
       phone:
         type: "string"
         example: "447860021130"
@@ -27101,7 +27101,7 @@ definitions:
       displayTimeFormat:
         type: "string"
         example: "24h"
-        description: "Format for representation of time"
+        description: "Format for representation of time."
       senderId:
         type: "string"
         example: "HotRod"
@@ -27111,9 +27111,9 @@ definitions:
       status:
         type: "string"
         example: "A"
-        description: "*   **P** for Pending. This Sender ID is being reviewed by our\
-          \ support team.\n*   **R** for Rejected. Our support team rejected your\
-          \ application for this Sender ID.\n*   **A** for Active.\n"
+        description: "*   **P** for Pending - this Sender ID is being reviewed by\
+          \ our support team;\n*   **R** for Rejected - our support team rejected\
+          \ your application for this Sender ID;\n*   **A** for Active.\n"
         enum:
         - "A"
         - "R"
@@ -28222,16 +28222,16 @@ definitions:
         type: "string"
         example: "sms"
         description: "Type of statement (what you have been charged for):\n*   **sms**\
-          \ for sending SMS\n*   **number** for renewing a dedicated number\n*   **schedule**\
-          \ for scheduling text messages\n*   **topup** for adding credits to your\
-          \ account\n"
+          \ - for sending SMS\n*   **number** - for renewing a dedicated number;\n\
+          *   **schedule** - for scheduling text messages;\n*   **topup** - for adding\
+          \ credits to your account.\n"
       value:
         type: "string"
         example: "350"
         description: "Value differs by **type**:\n*   for **sms**,\_it is the sent\
-          \ messages amount\n*   for **number**,\_it is a dedicated phone number\n\
-          *   for **schedule**,\_it is a scheduled messages amount\n*   for **top-up**,\_\
-          it is an invoice ID\n"
+          \ messages amount;\n*   for **number**,\_it is a dedicated phone number;\n\
+          *   for **schedule**,\_it is a scheduled messages amount;\n*   for **top-up**,\_\
+          it is an invoice ID.\n"
         x-nullable: true
       comment:
         type: "string"
@@ -28263,11 +28263,11 @@ definitions:
       bundle:
         type: "integer"
         example: 200
-        description: "Top up amount."
+        description: "Top-up amount."
       currency:
         type: "string"
         example: "USD"
-        description: "Top up currency."
+        description: "Top-up currency."
       vat:
         type: "number"
         format: "float"
@@ -28919,7 +28919,7 @@ definitions:
         type: "string"
         format: "date-time"
         example: "2014-09-19T00:00:00+0000"
-        description: "Time interval start, empty if the **by** parameter was set to\
+        description: "Time interval start: empty if the **by** parameter was set to\
           \ **off**.\n"
         x-nullable: true
       deliveryRate:
@@ -28950,7 +28950,7 @@ definitions:
       messagesSentAccepted:
         type: "integer"
         example: 2
-        description: "Messages accepted for delivery (in queue), but not yet delivered."
+        description: "Messages accepted for delivery (in queue) but not yet delivered."
         x-nullable: true
       messagesSentBuffered:
         type: "integer"
@@ -28961,7 +28961,7 @@ definitions:
         type: "integer"
         example: 3
         description: "Messages that have failed for whatever reason, e.g. the destination\
-          \ phone was switched off for 48 hours or the recipient phone account is\
+          \ phone was switched off for 48 hours or the recipient's phone account is\
           \ out of service."
         x-nullable: true
       messagesSentRejected:
@@ -29176,7 +29176,7 @@ definitions:
       phone:
         type: "string"
         example: "+447937946700"
-        description: "Phone enabled for sending to specified country"
+        description: "Phone enabled for sending to a specified country"
     example:
       country: "US"
       phone: "+447937946700"
@@ -34476,7 +34476,7 @@ definitions:
       timezone:
         type: "integer"
         example: 2
-        description: "The timezome internal id. See [Get timezones](http://docs.textmagictesting.com/#operation/getTimezones)."
+        description: "The timezome internal ID. See [Get timezones](http://docs.textmagictesting.com/#operation/getTimezones)."
     example:
       firstName: "Charles"
       lastName: "Conway"
@@ -34558,7 +34558,7 @@ definitions:
         type: "string"
         format: "email"
         example: "john@example.com"
-        description: "Invitation email will be sent to this email address."
+        description: "The invitation email will be sent to this email address."
       role:
         type: "string"
         example: "U"
@@ -34578,15 +34578,15 @@ definitions:
       userId:
         type: "integer"
         example: 1
-        description: "Subaccount ID"
+        description: "Sub-account ID."
       password:
         type: "string"
         example: "strongPassword"
-        description: "Your account password"
+        description: "Your account password."
       appName:
         type: "string"
         example: "sample app"
-        description: "Application name"
+        description: "Application name."
     example:
       password: "strongPassword"
       appName: "sample app"
@@ -34599,11 +34599,11 @@ definitions:
       appName:
         type: "string"
         example: "sample app"
-        description: "Application name"
+        description: "Application name."
       password:
         type: "string"
         example: "strongPassword"
-        description: "Your account password"
+        description: "Your account password."
     example:
       password: "strongPassword"
       appName: "sample app"

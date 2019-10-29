@@ -7986,7 +7986,7 @@ TextMagicApiService Get favorite contacts and lists
  * @param optional nil or *GetFavoritesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "Query" (optional.String) -  Find contacts or lists by specified search query
+     * @param "Query" (optional.String) -  Find contacts or lists by specified search query.
 
 @return GetFavoritesPaginatedResponse
 */
@@ -9785,7 +9785,7 @@ TextMagicApiService Get messaging statistics
 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetMessagingStatOpts - Optional Parameters:
-     * @param "By" (optional.String) -  *   **off** to get total values per specified time interval *   **day** to show values grouped by day *   **month** to show values grouped by month *   **year** to show values grouped by year 
+     * @param "By" (optional.String) -  *   **off** - to get total values per specified time interval; *   **day** - to show values grouped by day; *   **month** - to show values grouped by month; *   **year** - to show values grouped by year. 
      * @param "Start" (optional.Int32) -  Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
      * @param "End" (optional.Int32) -  Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
 
@@ -10848,7 +10848,7 @@ func (a *TextMagicApiService) GetSubaccount(ctx context.Context, id int32) (User
 }
 
 /* 
-TextMagicApiService Get sub-accounts list
+TextMagicApiService Get a sub-accounts list
 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetSubaccountsOpts - Optional Parameters:
@@ -10961,7 +10961,7 @@ func (a *TextMagicApiService) GetSubaccounts(ctx context.Context, localVarOption
 }
 
 /* 
-TextMagicApiService Get all sub-accounts with their REST API tokens associated with app name
+TextMagicApiService Get all sub-accounts with their REST API tokens associated with a specified app name
 Get all sub-accounts with their REST API tokens associated with specified app name. When more than one token related to app name, last key will be returned.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param getSubaccountsWithTokensInputObject
@@ -11203,7 +11203,7 @@ TextMagicApiService Get timezones
 Return all available timezone IDs
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetTimezonesOpts - Optional Parameters:
-     * @param "Full" (optional.Int32) -  Return full info about timezones in array (0 or 1). Default is 0
+     * @param "Full" (optional.Int32) -  Return full info about timezones in array (0 or 1). Default is 0.
 
 @return GetTimezonesResponse
 */
@@ -12280,7 +12280,7 @@ func (a *TextMagicApiService) MuteChatsBulk(ctx context.Context, muteChatsBulkIn
 
 /* 
 TextMagicApiService Ping
-Make a simple ping request
+Make a simple ping request.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return PingResponse

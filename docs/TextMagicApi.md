@@ -102,8 +102,8 @@ Method | HTTP request | Description
 [**GetSenderSettings**](TextMagicApi.md#GetSenderSettings) | **Get** /api/v2/sender/settings/normalized | Get current sender settings
 [**GetSpendingStat**](TextMagicApi.md#GetSpendingStat) | **Get** /api/v2/stats/spending | Get spending statistics
 [**GetSubaccount**](TextMagicApi.md#GetSubaccount) | **Get** /api/v2/subaccounts/{id} | Get sub-account information
-[**GetSubaccounts**](TextMagicApi.md#GetSubaccounts) | **Get** /api/v2/subaccounts | Get sub-accounts list
-[**GetSubaccountsWithTokens**](TextMagicApi.md#GetSubaccountsWithTokens) | **Post** /api/v2/subaccounts/tokens/list | Get all sub-accounts with their REST API tokens associated with app name
+[**GetSubaccounts**](TextMagicApi.md#GetSubaccounts) | **Get** /api/v2/subaccounts | Get a sub-accounts list
+[**GetSubaccountsWithTokens**](TextMagicApi.md#GetSubaccountsWithTokens) | **Post** /api/v2/subaccounts/tokens/list | Get all sub-accounts with their REST API tokens associated with a specified app name
 [**GetTemplate**](TextMagicApi.md#GetTemplate) | **Get** /api/v2/templates/{id} | Get a template&#x60;s details
 [**GetTimezones**](TextMagicApi.md#GetTimezones) | **Get** /api/v2/timezones | Get timezones
 [**GetUnreadMessagesTotal**](TextMagicApi.md#GetUnreadMessagesTotal) | **Get** /api/v2/chats/unread/count | Get unread messages number
@@ -2419,7 +2419,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **query** | **optional.String**| Find contacts or lists by specified search query | 
+ **query** | **optional.String**| Find contacts or lists by specified search query. | 
 
 ### Return type
 
@@ -2908,7 +2908,7 @@ Optional parameters are passed through a pointer to a GetMessagingStatOpts struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **by** | **optional.String**| *   **off** to get total values per specified time interval *   **day** to show values grouped by day *   **month** to show values grouped by month *   **year** to show values grouped by year  | [default to off]
+ **by** | **optional.String**| *   **off** - to get total values per specified time interval; *   **day** - to show values grouped by day; *   **month** - to show values grouped by month; *   **year** - to show values grouped by year.  | [default to off]
  **start** | **optional.Int32**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior.  | 
  **end** | **optional.Int32**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today.  | 
 
@@ -3189,7 +3189,7 @@ Name | Type | Description  | Notes
 
 # **GetSubaccounts**
 > User GetSubaccounts(ctx, optional)
-Get sub-accounts list
+Get a sub-accounts list
 
 
 
@@ -3225,7 +3225,7 @@ Name | Type | Description  | Notes
 
 # **GetSubaccountsWithTokens**
 > GetSubaccountsWithTokensResponse GetSubaccountsWithTokens(ctx, getSubaccountsWithTokensInputObject, optional)
-Get all sub-accounts with their REST API tokens associated with app name
+Get all sub-accounts with their REST API tokens associated with a specified app name
 
 Get all sub-accounts with their REST API tokens associated with specified app name. When more than one token related to app name, last key will be returned.
 
@@ -3307,7 +3307,7 @@ Optional parameters are passed through a pointer to a GetTimezonesOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **full** | **optional.Int32**| Return full info about timezones in array (0 or 1). Default is 0 | [default to 0]
+ **full** | **optional.Int32**| Return full info about timezones in array (0 or 1). Default is 0. | [default to 0]
 
 ### Return type
 
@@ -3593,7 +3593,7 @@ Name | Type | Description  | Notes
 > PingResponse Ping(ctx, )
 Ping
 
-Make a simple ping request
+Make a simple ping request.
 
 ### Required Parameters
 This endpoint does not need any parameter.

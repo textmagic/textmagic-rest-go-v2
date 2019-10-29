@@ -10,10 +10,10 @@
 package TextMagic
 
 type RequestNewSubaccountTokenInputObject struct {
-	// Subaccount ID
+	// Sub-account ID.
 	UserId int32 `json:"userId"`
-	// Your account password
+	// Your account password.
 	Password string `json:"password"`
-	// Application name
+	// Application name.
 	AppName string `json:"appName,omitempty"`
 }
