@@ -152,8 +152,8 @@ func (a *TextMagicApiService) AssignContactsToList(ctx context.Context, assignCo
 }
 
 /* 
-TextMagicApiService Block contact by phone number
-Block contact from inbound and outbound communication by phone number.
+TextMagicApiService Block a contact by phone number
+Block a contact from inbound and outbound communication by phone number.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param blockContactInputObject
 
@@ -1941,7 +1941,7 @@ func (a *TextMagicApiService) DeleteChatsBulk(ctx context.Context, deleteChatsBu
 
 /* 
 TextMagicApiService Delete a contact
-&gt; This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, instead use the Contact assignment command in the Lists section rather than deleting the contact. 
+&gt; This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, use the Contact assignment command in the Lists section instead, rather than deleting the contact. 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -6392,7 +6392,7 @@ func (a *TextMagicApiService) GetChatMessages(ctx context.Context, id int32, loc
 TextMagicApiService Get the details of a specific contact
 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param id The contact id
+ * @param id Contact ID.
 
 @return Contact
 */
@@ -6611,10 +6611,10 @@ func (a *TextMagicApiService) GetContactByPhone(ctx context.Context, phone strin
 }
 
 /* 
-TextMagicApiService Check is that phone number blocked
+TextMagicApiService Check if a phone number is blocked
 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param phone Phone number to check
+ * @param phone Phone number to check.
 
 @return Contact
 */
@@ -11528,7 +11528,7 @@ func (a *TextMagicApiService) GetUnsubscribedContact(ctx context.Context, id int
 
 /* 
 TextMagicApiService Get all unsubscribed contacts
-When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed, use: 
+When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed status, use: 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUnsubscribersOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -14282,8 +14282,8 @@ func (a *TextMagicApiService) SetChatStatus(ctx context.Context, setChatStatusIn
 }
 
 /* 
-TextMagicApiService Unblock contact by phone number.
-
+TextMagicApiService Unblock a contact by phone number
+Unblock a contact by phone number
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param unblockContactInputObject
 
@@ -14388,7 +14388,7 @@ func (a *TextMagicApiService) UnblockContact(ctx context.Context, unblockContact
 
 /* 
 TextMagicApiService Unblock contacts (bulk)
-Unblock several contacts by blocked contact ids or unblock all contacts
+Unblock several contacts by blocked contact IDs or unblock all contacts.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param unblockContactsBulkInputObject
 

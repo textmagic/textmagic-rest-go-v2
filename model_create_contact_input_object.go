@@ -22,15 +22,15 @@ type CreateContactInputObject struct {
 	CompanyName string `json:"companyName,omitempty"`
 	// Contact [list](http://docs.textmagictesting.com/#tag/Lists) ID. Each contact must be assigned to at least one list.
 	Lists string `json:"lists"`
-	// Is contact marked as favorite.
+	// Is the contact marked as favorite?
 	Favorited bool `json:"favorited,omitempty"`
-	// Is contact blocked for outgoing and incoming messaging.
+	// Is the contact blocked for outgoing and incoming messaging?
 	Blocked bool `json:"blocked,omitempty"`
-	// Force type of phone. Possible values: 0 - landline, 1 - mobile. Default is -1 (auto detection).
+	// Force type of phone. Possible values: 0 is landline; 1 is mobile; default is -1 (auto-detection).
 	Type_ int32 `json:"type,omitempty"`
 	CustomFieldValues []CustomFieldListItem `json:"customFieldValues,omitempty"`
-	// Treat phone number passed in request body as local
+	// Treat phone numbers passed in the request body as local.
 	Local int32 `json:"local,omitempty"`
-	// 2-letter ISO country code for local phone numbers, used when local is  set to true. Default is account country
+	// The 2-letter ISO country code for local phone numbers, used when local is  set to true. Default is the account country.
 	Country string `json:"country,omitempty"`
 }

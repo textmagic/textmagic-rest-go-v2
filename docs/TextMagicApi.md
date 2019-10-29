@@ -5,7 +5,7 @@ All URIs are relative to *http://rest.textmagic.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AssignContactsToList**](TextMagicApi.md#AssignContactsToList) | **Put** /api/v2/lists/{id}/contacts | Assign contacts to a list
-[**BlockContact**](TextMagicApi.md#BlockContact) | **Post** /api/v2/contacts/block | Block contact by phone number
+[**BlockContact**](TextMagicApi.md#BlockContact) | **Post** /api/v2/contacts/block | Block a contact by phone number
 [**BuyDedicatedNumber**](TextMagicApi.md#BuyDedicatedNumber) | **Post** /api/v2/numbers | Buy a dedicated number
 [**CancelVerification**](TextMagicApi.md#CancelVerification) | **Delete** /api/v2/verify/{verifyId} | Cancel verification process
 [**CheckPhoneVerificationCodeTFA**](TextMagicApi.md#CheckPhoneVerificationCodeTFA) | **Put** /api/v2/verify | Step 2: Check the verification code 
@@ -67,7 +67,7 @@ Method | HTTP request | Description
 [**GetChatMessages**](TextMagicApi.md#GetChatMessages) | **Get** /api/v2/chats/{id}/message | Get chat messages
 [**GetContact**](TextMagicApi.md#GetContact) | **Get** /api/v2/contacts/{id} | Get the details of a specific contact
 [**GetContactByPhone**](TextMagicApi.md#GetContactByPhone) | **Get** /api/v2/contacts/phone/{phone} | Get the details of a specific contact by phone number
-[**GetContactIfBlocked**](TextMagicApi.md#GetContactIfBlocked) | **Get** /api/v2/contacts/block/phone | Check is that phone number blocked
+[**GetContactIfBlocked**](TextMagicApi.md#GetContactIfBlocked) | **Get** /api/v2/contacts/block/phone | Check if a phone number is blocked
 [**GetContactImportSessionProgress**](TextMagicApi.md#GetContactImportSessionProgress) | **Get** /api/v2/contacts/import/progress/{id} | Check import progress
 [**GetContactNote**](TextMagicApi.md#GetContactNote) | **Get** /api/v2/notes/{id} | Get a contact note
 [**GetContactNotes**](TextMagicApi.md#GetContactNotes) | **Get** /api/v2/contacts/{id}/notes | Fetch notes assigned to a given contact
@@ -131,7 +131,7 @@ Method | HTTP request | Description
 [**SendMessage**](TextMagicApi.md#SendMessage) | **Post** /api/v2/messages | Send message
 [**SendPhoneVerificationCodeTFA**](TextMagicApi.md#SendPhoneVerificationCodeTFA) | **Post** /api/v2/verify | Step 1: Send a verification code 
 [**SetChatStatus**](TextMagicApi.md#SetChatStatus) | **Post** /api/v2/chats/status | Change chat status
-[**UnblockContact**](TextMagicApi.md#UnblockContact) | **Post** /api/v2/contacts/unblock | Unblock contact by phone number.
+[**UnblockContact**](TextMagicApi.md#UnblockContact) | **Post** /api/v2/contacts/unblock | Unblock a contact by phone number
 [**UnblockContactsBulk**](TextMagicApi.md#UnblockContactsBulk) | **Post** /api/v2/contacts/unblock/bulk | Unblock contacts (bulk)
 [**UnmuteChatsBulk**](TextMagicApi.md#UnmuteChatsBulk) | **Post** /api/v2/chats/unmute/bulk | Unmute chats (bulk)
 [**UnsubscribeContact**](TextMagicApi.md#UnsubscribeContact) | **Post** /api/v2/unsubscribers | Manually unsubscribe a contact
@@ -180,9 +180,9 @@ Name | Type | Description  | Notes
 
 # **BlockContact**
 > ResourceLinkResponse BlockContact(ctx, blockContactInputObject)
-Block contact by phone number
+Block a contact by phone number
 
-Block contact from inbound and outbound communication by phone number.
+Block a contact from inbound and outbound communication by phone number.
 
 ### Required Parameters
 
@@ -673,7 +673,7 @@ Name | Type | Description  | Notes
 > DeleteContact(ctx, id)
 Delete a contact
 
-> This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, instead use the Contact assignment command in the Lists section rather than deleting the contact. 
+> This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, use the Contact assignment command in the Lists section instead, rather than deleting the contact. 
 
 ### Required Parameters
 
@@ -1975,7 +1975,7 @@ Get the details of a specific contact
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **id** | **int32**| The contact id | 
+  **id** | **int32**| Contact ID. | 
 
 ### Return type
 
@@ -2022,7 +2022,7 @@ Name | Type | Description  | Notes
 
 # **GetContactIfBlocked**
 > Contact GetContactIfBlocked(ctx, phone)
-Check is that phone number blocked
+Check if a phone number is blocked
 
 
 
@@ -2031,7 +2031,7 @@ Check is that phone number blocked
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **phone** | **string**| Phone number to check | 
+  **phone** | **string**| Phone number to check. | 
 
 ### Return type
 
@@ -3380,7 +3380,7 @@ Name | Type | Description  | Notes
 > GetUnsubscribersPaginatedResponse GetUnsubscribers(ctx, optional)
 Get all unsubscribed contacts
 
-When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed, use: 
+When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed status, use: 
 
 ### Required Parameters
 
@@ -4145,9 +4145,9 @@ Name | Type | Description  | Notes
 
 # **UnblockContact**
 > UnblockContact(ctx, unblockContactInputObject)
-Unblock contact by phone number.
+Unblock a contact by phone number
 
-
+Unblock a contact by phone number
 
 ### Required Parameters
 
@@ -4175,7 +4175,7 @@ Name | Type | Description  | Notes
 > UnblockContactsBulk(ctx, unblockContactsBulkInputObject)
 Unblock contacts (bulk)
 
-Unblock several contacts by blocked contact ids or unblock all contacts
+Unblock several contacts by blocked contact IDs or unblock all contacts.
 
 ### Required Parameters
 

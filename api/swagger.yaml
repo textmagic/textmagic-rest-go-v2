@@ -500,7 +500,7 @@ tags:
     \n```javascript\n{\n    \"repositories\": [\n        {\n            \"type\":\
     \ \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
     \n        }\n    ],\n    \"require\": {\n        \"textmagic/textmagic-rest-php-v2\"\
-    : \"dev-master#v2.0.817\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
+    : \"dev-master#v2.0.818\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
     \ Manual Installation\n\nDownload the files and include `autoload.php`:\n\n```php\n\
     require_once(__DIR__.'/vendor/autoload.php');\n```\n\n## Usage Example\n\nPlease\
     \ follow the [installation](#installation) instructions and execute the following\
@@ -529,7 +529,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Node.js application.\n\n[Get\
     \ it now on GitHub](https://github.com/textmagic/textmagic-rest-nodejs)\n## Installation\n\
-    \n```shell\nnpm install textmagic-client@2.0.817 --save\n```\n\n## Usage Example\n\
+    \n```shell\nnpm install textmagic-client@2.0.818 --save\n```\n\n## Usage Example\n\
     \nPlease follow the [installation](#installation) instructions and execute the\
     \ following JS code:\n\n```javascript\nconst textmagicClient = require('textmagic-client');\n\
     \nconst fs = require('fs');\nconst client = textmagicClient.ApiClient.instance;\n\
@@ -561,7 +561,7 @@ tags:
     Install-Package Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp\
     \ versions later than 105.1.0 have a bug which causes file uploads to fail. See\
     \ [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\n## Installation\n\
-    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.817/).\n\
+    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.818/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -624,22 +624,22 @@ tags:
     \ Requirements\n\n* CMake 2.8 and later (https://cmake.org/)\n* cpprest (https://github.com/microsoft/cpprestsdk)\n\
     \nUbuntu dependencies quick installation example:\n```shell\napt-get install build-essential\
     \ cmake libcpprest-dev\n```\n\n## Installation\n\nDownload and extract lib archive:\n\
-    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.817.tar.gz\
-    \ && \\\ntar zxf v2.0.817.tar.gz && \\\nrm -f v2.0.817.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.817\n\
+    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.818.tar.gz\
+    \ && \\\ntar zxf v2.0.818.tar.gz && \\\nrm -f v2.0.818.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.818\n\
     ```\nBuild using cmake\n```shell\ncmake . && cmake --build .\n```\nThe output\
-    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.817/lib` directory:\n\
+    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.818/lib` directory:\n\
     \n## Usage Example\nIn the example below, we assume that you moved the library\
-    \ sources `textmagic-rest-cpp-v2-2.0.817` directory to your test project root\
+    \ sources `textmagic-rest-cpp-v2-2.0.818` directory to your test project root\
     \ directory.\n\nConfigure your `CMakeLists.txt` as shown here:\n```shell\ncmake_minimum_required(VERSION\
     \ 2.8)\nproject(test)\n\nset(CMAKE_CXX_STANDARD 14)\n\nadd_executable(app main.cpp)\n\
     \nadd_library(textmagic_client SHARED IMPORTED)\nset_property(TARGET textmagic_client\
-    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.817/lib/libtextmagic_client.so\"\
-    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.817\
-    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.817/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.817/api)\n\
+    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.818/lib/libtextmagic_client.so\"\
+    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.818\
+    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.818/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.818/api)\n\
     target_link_libraries(app boost_system cpprest crypto textmagic_client )\n```\n\
     \n`main.cpp` file example:\n```cpp\n#include <iostream>\n#include <fstream>\n\
-    #include \"textmagic-rest-cpp-v2-2.0.817/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.817/ApiConfiguration.h\"\
-    \n#include \"textmagic-rest-cpp-v2-2.0.817/api/TextMagicApi.h\"\n\nusing namespace\
+    #include \"textmagic-rest-cpp-v2-2.0.818/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.818/ApiConfiguration.h\"\
+    \n#include \"textmagic-rest-cpp-v2-2.0.818/api/TextMagicApi.h\"\n\nusing namespace\
     \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
     \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
     \ ApiConfiguration);\n\n    apiConfig->setBaseUrl(\"https://rest.textmagic.com\"\
@@ -679,7 +679,7 @@ tags:
     \ SMS and receiving replies by integrating TextMagic SMS Gateway into your Python\
     \ application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-python)\n\
     ## Requirements\nPython 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install\
-    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.817\n```\n\
+    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.818\n```\n\
     \n## Usage Example\n\n```python\nimport TextMagic\nfrom TextMagic.rest import\
     \ ApiException\n\n# Configure HTTP basic authorization: BasicAuth\nconfiguration\
     \ = TextMagic.Configuration()\nconfiguration.username = 'YOUR_USERNAME'\nconfiguration.password\
@@ -704,8 +704,8 @@ tags:
     \ GitHub\">Star</a>\n\nThis library provides you with an easy way of sending SMS\
     \ and receiving replies by integrating TextMagic SMS Gateway into your Perl application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-perl)\n##\
-    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.817.tar.gz\
-    \ && \\\ntar zxf v2.0.817.tar.gz && \\\nrm -f v2.0.817.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.817\
+    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.818.tar.gz\
+    \ && \\\ntar zxf v2.0.818.tar.gz && \\\nrm -f v2.0.818.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.818\
     \ && \\\nperl Makefile.pl && \\\nmake && \\\nmake install && \\\ncpanm --installdeps\
     \ .\n```\\\n\n## Usage Example\n\nPlease follow the [installation](#installation)\
     \ instructions and execute the following Perl code:\n\n```perl\nuse 5.010;\nuse\
@@ -734,7 +734,7 @@ tags:
     \ and receiving replies by integrating TextMagic SMS Gateway into your Ruby application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-ruby)\n##\
     \ Installation\n\nAdd these lines into your Gemfile\n```ruby\ngem 'textmagic_rest_client',\
-    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.817'\n\
+    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.818'\n\
     ```\n\nRun the bundler install command\n``` shell\nbundle install\n```\n\n## Usage\
     \ Example\n\nCreate the test file `test.rb` and put the following code:\n```ruby\n\
     \ # Load the gem\nrequire 'textmagic_rest_client'\n\n # Setup authorization\n\
@@ -760,7 +760,7 @@ tags:
     Star imissyouso/textmagic-rest-go on GitHub\">Star</a>\n\nThis library provides\
     \ you with an easy way of sending SMS and receiving replies by integrating TextMagic\
     \ SMS Gateway into your Go application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-go)\n\
-    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.817\n\
+    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.818\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -7048,7 +7048,7 @@ paths:
         x-exportParamName: "Phone"
       responses:
         200:
-          description: "Contact data has been returned with success"
+          description: "Contact data has been returned with success."
           schema:
             $ref: "#/definitions/Contact"
         401:
@@ -7189,14 +7189,14 @@ paths:
       parameters:
       - name: "id"
         in: "path"
-        description: "The contact id"
+        description: "Contact ID."
         required: true
         type: "integer"
         x-example: 1
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Contact data received with success"
+          description: "Contact data received with success."
           schema:
             $ref: "#/definitions/Contact"
         401:
@@ -7329,8 +7329,8 @@ paths:
       summary: "Delete a contact"
       description: "> This command removes your contact completely. If it was assigned\
         \ or saved to a shared list, it will disappear from there too. If you only\
-        \ need to remove a contact from selected lists, instead use the Contact assignment\
-        \ command in the Lists section rather than deleting the contact.\n"
+        \ need to remove a contact from selected lists, use the Contact assignment\
+        \ command in the Lists section instead, rather than deleting the contact.\n"
       operationId: "deleteContact"
       produces: []
       parameters:
@@ -7487,7 +7487,7 @@ paths:
         x-exportParamName: "Id"
       responses:
         201:
-          description: "Contact has been created with success."
+          description: "The contact has been created with success."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
@@ -7984,7 +7984,7 @@ paths:
         \ the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will\
         \ be immediately opted-out of your send lists and their contact status will\
         \ change to an unsubscribed contact. To retrieve information on all contacts\
-        \ who have unsubscribed, use:\n"
+        \ who have unsubscribed status, use:\n"
       operationId: "getUnsubscribers"
       parameters:
       - name: "page"
@@ -11317,20 +11317,20 @@ paths:
     get:
       tags:
       - "TextMagic"
-      summary: "Check is that phone number blocked"
+      summary: "Check if a phone number is blocked"
       description: ""
       operationId: "getContactIfBlocked"
       parameters:
       - name: "phone"
         in: "query"
-        description: "Phone number to check"
+        description: "Phone number to check."
         required: true
         type: "string"
         x-example: "447860021130"
         x-exportParamName: "Phone"
       responses:
         200:
-          description: "Returned when contact is blocked"
+          description: "Returned when contact is blocked."
           schema:
             $ref: "#/definitions/Contact"
         400:
@@ -11342,7 +11342,7 @@ paths:
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "When contact is not blocked"
+          description: "When the contact is not blocked."
       x-code-samples:
       - lang: "PHP"
         source: "require_once(__DIR__ . '/vendor/autoload.php');\n\nuse TextMagic\\\
@@ -11469,8 +11469,8 @@ paths:
     post:
       tags:
       - "TextMagic"
-      summary: "Block contact by phone number"
-      description: "Block contact from inbound and outbound communication by phone\
+      summary: "Block a contact by phone number"
+      description: "Block a contact from inbound and outbound communication by phone\
         \ number."
       operationId: "blockContact"
       parameters:
@@ -11482,7 +11482,7 @@ paths:
         x-exportParamName: "BlockContactInputObject"
       responses:
         201:
-          description: "Returned when updated with success"
+          description: "Returned when updated with success."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
@@ -11637,8 +11637,8 @@ paths:
     post:
       tags:
       - "TextMagic"
-      summary: "Unblock contact by phone number."
-      description: ""
+      summary: "Unblock a contact by phone number"
+      description: "Unblock a contact by phone number"
       operationId: "unblockContact"
       produces: []
       parameters:
@@ -11796,8 +11796,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Unblock contacts (bulk)"
-      description: "Unblock several contacts by blocked contact ids or unblock all\
-        \ contacts"
+      description: "Unblock several contacts by blocked contact IDs or unblock all\
+        \ contacts."
       operationId: "unblockContactsBulk"
       produces: []
       parameters:
@@ -27178,7 +27178,7 @@ definitions:
       favorited:
         type: "boolean"
         example: true
-        description: "Is the Contact favorite? [Custom fields list](http://docs.textmagictesting.com/#operation/getFavorites)."
+        description: "Is the Contact favorite? [Favorite list](http://docs.textmagictesting.com/#operation/getFavorites)."
       blocked:
         type: "boolean"
         example: true
@@ -27578,7 +27578,7 @@ definitions:
         type: "string"
         format: "date-time"
         example: "2015-01-09T18:59:46+0000"
-        description: "Time when contact has been opted-out."
+        description: "Time when contact was opted-out."
       firstName:
         type: "string"
         example: "Charles"
@@ -34772,16 +34772,16 @@ definitions:
       favorited:
         type: "boolean"
         example: false
-        description: "Is contact marked as favorite."
+        description: "Is the contact marked as favorite?"
       blocked:
         type: "boolean"
         example: false
-        description: "Is contact blocked for outgoing and incoming messaging."
+        description: "Is the contact blocked for outgoing and incoming messaging?"
       type:
         type: "integer"
         example: 1
-        description: "Force type of phone. Possible values: 0 - landline, 1 - mobile.\
-          \ Default is -1 (auto detection)."
+        description: "Force type of phone. Possible values: 0 is landline; 1 is mobile;\
+          \ default is -1 (auto-detection)."
       customFieldValues:
         type: "array"
         items:
@@ -34789,12 +34789,12 @@ definitions:
       local:
         type: "integer"
         example: 0
-        description: "Treat phone number passed in request body as local"
+        description: "Treat phone numbers passed in the request body as local."
       country:
         type: "string"
         example: "US"
-        description: "2-letter ISO country code for local phone numbers, used when\
-          \ local is  set to true. Default is account country"
+        description: "The 2-letter ISO country code for local phone numbers, used\
+          \ when local is  set to true. Default is the account country."
     example:
       firstName: "Charles"
       lastName: "Conway"
@@ -34820,11 +34820,11 @@ definitions:
       firstName:
         type: "string"
         example: "Example first name"
-        description: "Contact first name"
+        description: "Contact first name."
       lastName:
         type: "string"
         example: "Example first name"
-        description: "Contact last name"
+        description: "Contact last name."
       phone:
         type: "string"
         example: "447860021130"
@@ -34837,7 +34837,7 @@ definitions:
       companyName:
         type: "string"
         example: "My pretty company"
-        description: "Contact company name"
+        description: "Contact company name."
       lists:
         type: "string"
         example: "10541,18599"
@@ -34846,16 +34846,16 @@ definitions:
       favorited:
         type: "boolean"
         example: false
-        description: "Is contact marked as favorite."
+        description: "Is the contact marked as favorite?"
       blocked:
         type: "boolean"
         example: false
-        description: "Is contact blocked for outgoing and incoming messaging."
+        description: "Is the contact blocked for outgoing and incoming messaging?"
       type:
         type: "integer"
         example: 1
-        description: "Force type of phone. Possible values: 0 - landline, 1 - mobile.\
-          \ Default is -1 (auto detection)."
+        description: "Force type of phone. Possible values: 0 is landline; 1 is mobile;\
+          \ default is -1 (auto-detection)."
       customFieldValues:
         type: "array"
         items:
@@ -34863,12 +34863,12 @@ definitions:
       local:
         type: "integer"
         example: 0
-        description: "Treat phone number passed in request body as **local**."
+        description: "Treat phone numbers passed in the request body as **local**."
       country:
         type: "string"
         example: "US"
-        description: "2-letter ISO country code for local phone numbers, used when\
-          \ **local** is set to true."
+        description: "The 2-letter ISO country code for local phone numbers, used\
+          \ when **local** is set to true."
     example:
       firstName: "Example first name"
       lastName: "Example first name"
@@ -34908,7 +34908,7 @@ definitions:
       blockIncoming:
         type: "integer"
         example: 0
-        description: "If set to 1 incoming messages from this number will be blocked."
+        description: "If set to 1, incoming messages from this number will be blocked."
     example:
       blockIncoming: 0
       phone: "447860021130"
@@ -35036,8 +35036,7 @@ definitions:
       all:
         type: "integer"
         example: 0
-        description: "Default is 0 (false). If set to 1, all the entities will be\
-          \ removed."
+        description: "Default is 0 (false). If set to 1, all entities will be removed."
     example:
       all: 0
       ids: "1,2,3"

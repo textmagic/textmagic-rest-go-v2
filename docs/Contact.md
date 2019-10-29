@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** | Contact ID. | [default to null]
-**Favorited** | **bool** | Is the Contact favorite? [Custom fields list](http://docs.textmagictesting.com/#operation/getFavorites). | [default to null]
+**Favorited** | **bool** | Is the Contact favorite? [Favorite list](http://docs.textmagictesting.com/#operation/getFavorites). | [default to null]
 **Blocked** | **bool** | Is the Contact blocked? [Blocked contacts](http://docs.textmagictesting.com/#operation/getBlockedContacts). | [default to null]
 **FirstName** | **string** | Contact first name. | [default to null]
 **LastName** | **string** | Contact last name. | [default to null]
