@@ -14,7 +14,7 @@ type DoEmailLookupResponse struct {
 	Address string `json:"address"`
 	// The email is `valid` or `invalid`.
 	Status string `json:"status"`
-	// The delivery status of the email address is`deliverable`, `undeliverable`  or `unknown`.
+	// The delivery status of the email address is`deliverable`, `undeliverable`. or `unknown`.
 	Deliverability string `json:"deliverability"`
 	// The reason why the checked email is invalid/undeliverable.
 	Reason string `json:"reason"`
@@ -26,7 +26,7 @@ type DoEmailLookupResponse struct {
 	IsDisposableAddress bool `json:"isDisposableAddress"`
 	// Null if nothing is suggested; however, if there is a potential typo in the email address, the closest suggestion is provided.
 	Suggestion string `json:"suggestion"`
-	// Checks the mailbox part of the email to see whether it matches a specific role type (‘admin’, ‘sales’, ‘webmaster’)
+	// Checks the mailbox part of the email to see whether it matches a specific role type (‘admin’, ‘sales’, ‘webmaster’).
 	EmailRole string `json:"emailRole"`
 	// The local part of the email address.
 	LocalPart string `json:"localPart"`

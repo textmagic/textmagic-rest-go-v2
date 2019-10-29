@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ids** | **string** | Entity ID(s), separated by comma | [optional] [default to null]
+**Ids** | **string** | Entity ID(s), separated by comma. | [optional] [default to null]
 **All** | **bool** | Entity ID(s), separated by comma | [optional] [default to null]
 **For_** | **int32** | Mute for N hours. | [optional] [default to null]
 

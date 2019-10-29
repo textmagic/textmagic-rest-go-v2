@@ -21,6 +21,6 @@ type UpdateCurrentUserResponse struct {
 	Phone string `json:"phone,omitempty"`
 	// Account company name.
 	Company string `json:"company,omitempty"`
-	// Internal timezone ID. See [Get timezones](http://docs.textmagictesting.com/#operation/getTimezones)
+	// Internal timezone ID. See [Get timezones](http://docs.textmagictesting.com/#operation/getTimezones).
 	Timezone int32 `json:"timezone,omitempty"`
 }

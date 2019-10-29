@@ -10,7 +10,7 @@
 package TextMagic
 
 type MuteChatsBulkInputObject struct {
-	// Entity ID(s), separated by comma
+	// Entity ID(s), separated by comma.
 	Ids string `json:"ids,omitempty"`
 	// Entity ID(s), separated by comma
 	All bool `json:"all,omitempty"`

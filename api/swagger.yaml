@@ -500,7 +500,7 @@ tags:
     \n```javascript\n{\n    \"repositories\": [\n        {\n            \"type\":\
     \ \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
     \n        }\n    ],\n    \"require\": {\n        \"textmagic/textmagic-rest-php-v2\"\
-    : \"dev-master#v2.0.819\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
+    : \"dev-master#v2.0.818\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
     \ Manual Installation\n\nDownload the files and include `autoload.php`:\n\n```php\n\
     require_once(__DIR__.'/vendor/autoload.php');\n```\n\n## Usage Example\n\nPlease\
     \ follow the [installation](#installation) instructions and execute the following\
@@ -529,7 +529,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Node.js application.\n\n[Get\
     \ it now on GitHub](https://github.com/textmagic/textmagic-rest-nodejs)\n## Installation\n\
-    \n```shell\nnpm install textmagic-client@2.0.819 --save\n```\n\n## Usage Example\n\
+    \n```shell\nnpm install textmagic-client@2.0.818 --save\n```\n\n## Usage Example\n\
     \nPlease follow the [installation](#installation) instructions and execute the\
     \ following JS code:\n\n```javascript\nconst textmagicClient = require('textmagic-client');\n\
     \nconst fs = require('fs');\nconst client = textmagicClient.ApiClient.instance;\n\
@@ -561,7 +561,7 @@ tags:
     Install-Package Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp\
     \ versions later than 105.1.0 have a bug which causes file uploads to fail. See\
     \ [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\n## Installation\n\
-    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.819/).\n\
+    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.818/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -624,22 +624,22 @@ tags:
     \ Requirements\n\n* CMake 2.8 and later (https://cmake.org/)\n* cpprest (https://github.com/microsoft/cpprestsdk)\n\
     \nUbuntu dependencies quick installation example:\n```shell\napt-get install build-essential\
     \ cmake libcpprest-dev\n```\n\n## Installation\n\nDownload and extract lib archive:\n\
-    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.819.tar.gz\
-    \ && \\\ntar zxf v2.0.819.tar.gz && \\\nrm -f v2.0.819.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.819\n\
+    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.824.tar.gz\
+    \ && \\\ntar zxf v2.0.824.tar.gz && \\\nrm -f v2.0.824.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.824\n\
     ```\nBuild using cmake\n```shell\ncmake . && cmake --build .\n```\nThe output\
-    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.819/lib` directory:\n\
+    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.824/lib` directory:\n\
     \n## Usage Example\nIn the example below, we assume that you moved the library\
-    \ sources `textmagic-rest-cpp-v2-2.0.819` directory to your test project root\
+    \ sources `textmagic-rest-cpp-v2-2.0.824` directory to your test project root\
     \ directory.\n\nConfigure your `CMakeLists.txt` as shown here:\n```shell\ncmake_minimum_required(VERSION\
     \ 2.8)\nproject(test)\n\nset(CMAKE_CXX_STANDARD 14)\n\nadd_executable(app main.cpp)\n\
     \nadd_library(textmagic_client SHARED IMPORTED)\nset_property(TARGET textmagic_client\
-    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.819/lib/libtextmagic_client.so\"\
-    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.819\
-    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.819/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.819/api)\n\
+    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.824/lib/libtextmagic_client.so\"\
+    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.824\
+    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.824/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.824/api)\n\
     target_link_libraries(app boost_system cpprest crypto textmagic_client )\n```\n\
     \n`main.cpp` file example:\n```cpp\n#include <iostream>\n#include <fstream>\n\
-    #include \"textmagic-rest-cpp-v2-2.0.819/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.819/ApiConfiguration.h\"\
-    \n#include \"textmagic-rest-cpp-v2-2.0.819/api/TextMagicApi.h\"\n\nusing namespace\
+    #include \"textmagic-rest-cpp-v2-2.0.824/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.824/ApiConfiguration.h\"\
+    \n#include \"textmagic-rest-cpp-v2-2.0.824/api/TextMagicApi.h\"\n\nusing namespace\
     \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
     \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
     \ ApiConfiguration);\n\n    apiConfig->setBaseUrl(\"https://rest.textmagic.com\"\
@@ -679,7 +679,7 @@ tags:
     \ SMS and receiving replies by integrating TextMagic SMS Gateway into your Python\
     \ application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-python)\n\
     ## Requirements\nPython 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install\
-    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.819\n```\n\
+    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.824\n```\n\
     \n## Usage Example\n\n```python\nimport TextMagic\nfrom TextMagic.rest import\
     \ ApiException\n\n# Configure HTTP basic authorization: BasicAuth\nconfiguration\
     \ = TextMagic.Configuration()\nconfiguration.username = 'YOUR_USERNAME'\nconfiguration.password\
@@ -704,8 +704,8 @@ tags:
     \ GitHub\">Star</a>\n\nThis library provides you with an easy way of sending SMS\
     \ and receiving replies by integrating TextMagic SMS Gateway into your Perl application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-perl)\n##\
-    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.819.tar.gz\
-    \ && \\\ntar zxf v2.0.819.tar.gz && \\\nrm -f v2.0.819.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.819\
+    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.818.tar.gz\
+    \ && \\\ntar zxf v2.0.818.tar.gz && \\\nrm -f v2.0.818.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.818\
     \ && \\\nperl Makefile.pl && \\\nmake && \\\nmake install && \\\ncpanm --installdeps\
     \ .\n```\\\n\n## Usage Example\n\nPlease follow the [installation](#installation)\
     \ instructions and execute the following Perl code:\n\n```perl\nuse 5.010;\nuse\
@@ -734,7 +734,7 @@ tags:
     \ and receiving replies by integrating TextMagic SMS Gateway into your Ruby application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-ruby)\n##\
     \ Installation\n\nAdd these lines into your Gemfile\n```ruby\ngem 'textmagic_rest_client',\
-    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.819'\n\
+    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.824'\n\
     ```\n\nRun the bundler install command\n``` shell\nbundle install\n```\n\n## Usage\
     \ Example\n\nCreate the test file `test.rb` and put the following code:\n```ruby\n\
     \ # Load the gem\nrequire 'textmagic_rest_client'\n\n # Setup authorization\n\
@@ -760,7 +760,7 @@ tags:
     Star imissyouso/textmagic-rest-go on GitHub\">Star</a>\n\nThis library provides\
     \ you with an easy way of sending SMS and receiving replies by integrating TextMagic\
     \ SMS Gateway into your Go application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-go)\n\
-    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.819\n\
+    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.824\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -1191,7 +1191,7 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/DoCarrierLookupResponse"
         400:
@@ -1199,7 +1199,7 @@ paths:
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         429:
@@ -1353,11 +1353,11 @@ paths:
       parameters: []
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetCountriesResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -1486,7 +1486,7 @@ paths:
       parameters: []
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/User"
         400:
@@ -1494,7 +1494,7 @@ paths:
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -1628,7 +1628,7 @@ paths:
         x-exportParamName: "UpdateCurrentUserInputObject"
       responses:
         201:
-          description: "Updated with success"
+          description: "Updated with success."
           schema:
             $ref: "#/definitions/UpdateCurrentUserResponse"
         400:
@@ -1636,7 +1636,7 @@ paths:
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -1814,7 +1814,7 @@ paths:
         204:
           description: "Avatar deleted with success."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -4349,7 +4349,7 @@ paths:
         x-exportParamName: "Id"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         401:
           description: "Unauthorized request."
           schema:
@@ -7491,15 +7491,15 @@ paths:
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -7704,7 +7704,7 @@ paths:
       parameters: []
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
       x-code-samples:
       - lang: "PHP"
         source: "require_once(__DIR__ . '/vendor/autoload.php');\n\nuse TextMagic\\\
@@ -7832,17 +7832,17 @@ paths:
         x-exportParamName: "DeleteContactsByIdsInputObject"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -8005,11 +8005,11 @@ paths:
         x-optionalDataType: "Int32"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetUnsubscribersPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -8167,15 +8167,15 @@ paths:
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -8335,15 +8335,15 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/UnsubscribedContact"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -8496,7 +8496,7 @@ paths:
           schema:
             $ref: "#/definitions/GetCustomFieldsPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -8653,15 +8653,15 @@ paths:
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -8812,11 +8812,11 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/UserCustomField"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -8963,11 +8963,11 @@ paths:
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
@@ -9126,13 +9126,13 @@ paths:
         x-exportParamName: "Id"
       responses:
         204:
-          description: "Returned when deleted with success"
+          description: "Returned when deleted with success."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -9272,15 +9272,15 @@ paths:
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -9506,15 +9506,15 @@ paths:
         x-optionalDataType: "Int32"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetListsPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -9686,15 +9686,15 @@ paths:
         x-exportParamName: "CreateListInputObject"
       responses:
         201:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -9930,15 +9930,15 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/SearchListsPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -10138,15 +10138,15 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetListsOfContactPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -10324,7 +10324,7 @@ paths:
           schema:
             $ref: "#/definitions/GetFavoritesPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -10482,15 +10482,15 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/List"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -10630,7 +10630,7 @@ paths:
         x-exportParamName: "Id"
       responses:
         201:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
@@ -10809,18 +10809,18 @@ paths:
         x-exportParamName: "Id"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         400:
           description: "Returned when trying to remove a list associated with a signup\
             \ form."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
           description: "Returned when trying to remove a list shared to you."
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -10950,17 +10950,17 @@ paths:
         x-exportParamName: "DeleteListsBulkInputObject"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -11148,15 +11148,15 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetBlockedContactsPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -11334,11 +11334,11 @@ paths:
           schema:
             $ref: "#/definitions/Contact"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
@@ -11486,15 +11486,15 @@ paths:
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -11650,17 +11650,17 @@ paths:
         x-exportParamName: "UnblockContactInputObject"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -11811,15 +11811,15 @@ paths:
         204:
           description: "Request executed with success"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -11983,15 +11983,15 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetContactNotesPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -12152,19 +12152,19 @@ paths:
         x-exportParamName: "Id"
       responses:
         201:
-          description: "Returned when created with success"
+          description: "Returned when created with success."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -12322,15 +12322,15 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/ContactNote"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -12471,15 +12471,15 @@ paths:
         x-exportParamName: "Id"
       responses:
         201:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
@@ -12640,13 +12640,13 @@ paths:
         x-exportParamName: "Id"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -12783,17 +12783,17 @@ paths:
         x-exportParamName: "DeleteContactNotesBulkInputObject"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -12947,16 +12947,16 @@ paths:
         x-exportParamName: "Id"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
           description: "Returned when trying to delete a contact shared to a current\
             \ user."
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -13087,15 +13087,15 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetContactImportSessionProgressResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -13248,19 +13248,19 @@ paths:
         x-exportParamName: "Email"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/DoEmailLookupResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -13403,15 +13403,15 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetListContactsIdsResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -13590,15 +13590,15 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetContactsByListIdPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -13774,22 +13774,22 @@ paths:
         x-exportParamName: "Id"
       responses:
         201:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
           description: "Returned when trying to edit a list shared to the current\
             \ user."
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -13954,22 +13954,22 @@ paths:
         x-exportParamName: "Id"
       responses:
         201:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
           description: "Returned when trying to edit a list shared to the current\
             \ user."
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -14131,16 +14131,16 @@ paths:
         x-exportParamName: "Id"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
           description: "Returned when trying to edit a list shared to the current\
             \ user."
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -14278,17 +14278,17 @@ paths:
         x-exportParamName: "Id"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -14444,14 +14444,14 @@ paths:
         204:
           description: "Avatar has been deleted with success."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
           description: "Returned when trying to edit a list shared to the current\
             \ user."
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -14591,11 +14591,11 @@ paths:
         x-optionalDataType: "Int32"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetAllTemplatesPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -14751,13 +14751,13 @@ paths:
         x-exportParamName: "CreateTemplateInputObject"
       responses:
         201:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
           description: "Returned when the form has errors."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -14946,11 +14946,11 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/SearchTemplatesPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -15121,15 +15121,15 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/MessageTemplate"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -15271,17 +15271,17 @@ paths:
         x-exportParamName: "Id"
       responses:
         201:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
-          description: "Returned when the form has errors"
+          description: "Returned when the form has errors."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -15443,13 +15443,13 @@ paths:
         x-exportParamName: "Id"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -15580,17 +15580,17 @@ paths:
         x-exportParamName: "DeleteTemplatesBulkInputObject"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -15750,22 +15750,22 @@ paths:
         in: "query"
         description: "Filter results by ID, selecting all values lesser than the specified\
           \ ID. Note that the \\'page\\' parameter is ignored when \\'lastId\\' is\
-          \ specified"
+          \ specified."
         required: false
         type: "integer"
         x-exportParamName: "LastId"
         x-optionalDataType: "Int32"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetAllOutboundMessagesPaginatedResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -15928,17 +15928,17 @@ paths:
         x-exportParamName: "SendMessageInputObject"
       responses:
         201:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/SendMessageResponse"
         202:
           description: "Returned when a bulk session has been created."
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -16342,15 +16342,15 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetMessagePriceResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -16768,15 +16768,15 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetMessagePreviewResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -17025,15 +17025,15 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/MessageOut"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -17169,13 +17169,13 @@ paths:
         x-exportParamName: "Id"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -17307,13 +17307,13 @@ paths:
         x-exportParamName: "DeleteOutboundMessagesBulkInputObject"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -17456,9 +17456,9 @@ paths:
       parameters: []
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -17600,7 +17600,7 @@ paths:
         in: "query"
         description: "Filter results by ID, selecting all values lesser than the specified\
           \ ID. Note that the \\'page\\' parameter is ignored when \\'lastId\\' is\
-          \ specified"
+          \ specified."
         required: false
         type: "integer"
         x-exportParamName: "LastId"
@@ -17662,15 +17662,15 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/SearchOutboundMessagesPaginatedResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -17871,14 +17871,14 @@ paths:
         x-optionalDataType: "Int32"
       - name: "query"
         in: "query"
-        description: "Find message by specified search query"
+        description: "Find message by specified search query."
         required: false
         type: "string"
         x-exportParamName: "Query"
         x-optionalDataType: "String"
       - name: "orderBy"
         in: "query"
-        description: "Order results by some field. Default is id"
+        description: "Order results by some field. Default is id."
         required: false
         type: "string"
         default: "id"
@@ -17904,15 +17904,15 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetOutboundMessagesHistoryPaginatedResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -18096,11 +18096,11 @@ paths:
         x-optionalDataType: "Int32"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetAllBulkSessionsPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -18254,15 +18254,15 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/BulkSession"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -18409,11 +18409,11 @@ paths:
         x-optionalDataType: "Int32"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetAllMessageSessionsPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -18616,11 +18616,11 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetMessagesBySessionIdPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -18803,15 +18803,15 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetMessageSessionStatResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -18968,15 +18968,15 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/MessageSession"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -19114,13 +19114,13 @@ paths:
         x-exportParamName: "Id"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -19252,9 +19252,9 @@ paths:
         x-exportParamName: "DeleteMessageSessionsBulkInputObject"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -19425,7 +19425,7 @@ paths:
         x-optionalDataType: "String"
       - name: "orderBy"
         in: "query"
-        description: "Order results by some field. Default is id"
+        description: "Order results by some field. Default is id."
         required: false
         type: "string"
         default: "id"
@@ -19448,11 +19448,11 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetAllScheduledMessagesPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -19635,14 +19635,14 @@ paths:
         x-optionalDataType: "Int32"
       - name: "query"
         in: "query"
-        description: "Find messages by specified search query"
+        description: "Find messages by specified search query."
         required: false
         type: "string"
         x-exportParamName: "Query"
         x-optionalDataType: "String"
       - name: "ids"
         in: "query"
-        description: "Find schedules by ID(s)"
+        description: "Find schedules by ID(s)."
         required: false
         type: "string"
         pattern: "[,\\d]+"
@@ -19686,15 +19686,15 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/SearchScheduledMessagesPaginatedResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -19880,15 +19880,15 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/MessagesIcs"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -20024,13 +20024,13 @@ paths:
         x-exportParamName: "Id"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -20162,13 +20162,13 @@ paths:
         x-exportParamName: "DeleteScheduledMessagesBulkInputObject"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -20359,11 +20359,11 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetAllInboundMessagesPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -20593,15 +20593,15 @@ paths:
         x-optionalDataType: "Int32"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/SearchInboundMessagesPaginatedResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -20787,15 +20787,15 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/MessageIn"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -20935,13 +20935,13 @@ paths:
         x-exportParamName: "Id"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -21073,13 +21073,13 @@ paths:
         x-exportParamName: "DeleteInboundMessagesBulkInputObject"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -21255,15 +21255,15 @@ paths:
         x-optionalDataType: "Int32"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetMessagingStatResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -21452,15 +21452,15 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetSpendingStatPaginatedResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -21639,15 +21639,15 @@ paths:
         x-optionalDataType: "Int32"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetInvoicesPaginatedResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
@@ -21797,11 +21797,11 @@ paths:
       parameters: []
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetMessagingCountersResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -21932,7 +21932,7 @@ paths:
       parameters:
       - name: "status"
         in: "query"
-        description: "Fetch only (a)ctive, (c)losed or (d)eleted chats"
+        description: "Fetch only (a)ctive, (c)losed or (d)eleted chats."
         required: false
         type: "string"
         enum:
@@ -21995,11 +21995,11 @@ paths:
         x-optionalDataType: "Int32"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetAllChatsPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -22169,11 +22169,11 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/Chat"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
@@ -22322,7 +22322,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "query"
         in: "query"
-        description: "Find messages by specified search query"
+        description: "Find messages by specified search query."
         required: false
         type: "string"
         x-exportParamName: "Query"
@@ -22572,11 +22572,11 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/SearchChatsPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -22756,7 +22756,7 @@ paths:
           schema:
             $ref: "#/definitions/SearchChatsByIdsPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -22927,7 +22927,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "query"
         in: "query"
-        description: "Find chats by specified search query"
+        description: "Find chats by specified search query."
         required: false
         type: "string"
         x-exportParamName: "Query"
@@ -22946,11 +22946,11 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/SearchChatsByReceipentPaginatedResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -23112,7 +23112,7 @@ paths:
       parameters:
       - name: "upsert"
         in: "query"
-        description: "Create a new chat if not found"
+        description: "Create a new chat if not found."
         required: false
         type: "integer"
         default: 0
@@ -23123,7 +23123,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "reopen"
         in: "query"
-        description: "Reopen chat if found or do not change status"
+        description: "Reopen chat if found or do not change status."
         required: false
         type: "integer"
         default: 0
@@ -23140,15 +23140,15 @@ paths:
         x-exportParamName: "Phone"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/Chat"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -23301,11 +23301,11 @@ paths:
       parameters: []
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetUnreadMessagesTotalResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -23442,15 +23442,15 @@ paths:
         x-exportParamName: "SetChatStatusInputObject"
       responses:
         201:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -23604,19 +23604,19 @@ paths:
         x-exportParamName: "MuteChatInputObject"
       responses:
         201:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         404:
-          description: "Request data not found"
+          description: "Request data not found."
           schema:
             $ref: "#/definitions/NotFoundResponse"
       x-code-samples:
@@ -23775,13 +23775,13 @@ paths:
         x-exportParamName: "MuteChatsBulkInputObject"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -23932,13 +23932,13 @@ paths:
         x-exportParamName: "UnmuteChatsBulkInputObject"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -24088,13 +24088,13 @@ paths:
         x-exportParamName: "MarkChatsUnreadBulkInputObject"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -24244,13 +24244,13 @@ paths:
         x-exportParamName: "MarkChatsReadBulkInputObject"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -24399,13 +24399,13 @@ paths:
         x-exportParamName: "CloseChatsBulkInputObject"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -24548,9 +24548,9 @@ paths:
       parameters: []
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -24687,13 +24687,13 @@ paths:
         x-exportParamName: "ReopenChatsBulkInputObject"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -24842,13 +24842,13 @@ paths:
         x-exportParamName: "DeleteChatsBulkInputObject"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -25009,13 +25009,13 @@ paths:
         x-exportParamName: "Id"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -25189,15 +25189,15 @@ paths:
         x-exportParamName: "SendPhoneVerificationCodeInputObject"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/SendPhoneVerificationCodeResponse"
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         409:
@@ -25384,13 +25384,13 @@ paths:
         x-exportParamName: "CheckPhoneVerificationCodeInputObject"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         400:
-          description: "Bad request"
+          description: "Bad request."
           schema:
             $ref: "#/definitions/BadRequestResponse"
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -25545,9 +25545,9 @@ paths:
         x-exportParamName: "VerifyId"
       responses:
         204:
-          description: "Request executed with success"
+          description: "Request executed with success."
         401:
-          description: "Unauthorized request"
+          description: "Unauthorized request."
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
@@ -25907,7 +25907,7 @@ definitions:
       format:
         type: "string"
         description: "Desired callback data format. m - multipart/form-data, u - application/x-www-form-urlencoded,\
-          \ j - application/json"
+          \ j - application/json."
         enum:
         - "m"
         - "u"
@@ -26045,7 +26045,7 @@ definitions:
       timezone:
         type: "integer"
         example: 13
-        description: "Internal timezone ID. See [Get timezones](http://docs.textmagictesting.com/#operation/getTimezones)"
+        description: "Internal timezone ID. See [Get timezones](http://docs.textmagictesting.com/#operation/getTimezones)."
     example:
       firstName: "Charles"
       lastName: "Conway"
@@ -26162,7 +26162,7 @@ definitions:
         type: "string"
         example: "undeliverable"
         description: "The delivery status of the email address is`deliverable`,\_\
-          `undeliverable`\_ or\_`unknown`."
+          `undeliverable`. or\_`unknown`."
       reason:
         type: "string"
         example: "No MX host found"
@@ -26200,7 +26200,7 @@ definitions:
         type: "string"
         example: "admin"
         description: "Checks the mailbox part of the email to see whether it matches\
-          \ a specific role type (‘admin’, ‘sales’, ‘webmaster’)"
+          \ a specific role type (‘admin’, ‘sales’, ‘webmaster’)."
         x-nullable: true
       localPart:
         type: "string"
@@ -26868,18 +26868,18 @@ definitions:
     properties:
       outbound:
         type: "number"
-        description: "Price for outbound message"
+        description: "Price for outbound message."
       inbound:
         type: "number"
-        description: "Price for inbound message"
+        description: "Price for inbound message."
       forward:
         type: "number"
-        description: "Price for forward"
+        description: "Price for forward."
       country:
         type: "string"
         example: "US"
         description: "The 2-letter ISO country code for local phone numbers, used\
-          \ when local is  set to true. Default is account country"
+          \ when local is  set to true. Default is account country."
   User:
     type: "object"
     required:
@@ -29176,7 +29176,7 @@ definitions:
       phone:
         type: "string"
         example: "+447937946700"
-        description: "Phone enabled for sending to a specified country"
+        description: "Phone enabled for sending to a specified country."
     example:
       country: "US"
       phone: "+447937946700"
@@ -29234,11 +29234,11 @@ definitions:
       country:
         type: "string"
         example: "US"
-        description: "The 2-letter ISO country code"
+        description: "The 2-letter ISO country code."
       userInboundId:
         type: "integer"
         example: 10
-        description: "User inbound phone ID"
+        description: "User inbound phone ID."
   GetTimezonesResponse:
     type: "object"
     example:
@@ -34891,11 +34891,11 @@ definitions:
       ids:
         type: "string"
         example: "1,2,3"
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
       all:
         type: "boolean"
         example: false
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
     example:
       all: false
       ids: "1,2,3"
@@ -35002,7 +35002,7 @@ definitions:
       ids:
         type: "string"
         example: "1,2,3"
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
       all:
         type: "integer"
         example: 0
@@ -35063,11 +35063,11 @@ definitions:
       ids:
         type: "string"
         example: "1,2,3"
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
       all:
         type: "boolean"
         example: true
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
     example:
       all: true
       ids: "1,2,3"
@@ -35107,7 +35107,7 @@ definitions:
       ids:
         type: "string"
         example: "1,2,3"
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
       all:
         type: "integer"
         example: 0
@@ -35153,11 +35153,11 @@ definitions:
       ids:
         type: "string"
         example: "1,2,3"
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
       all:
         type: "boolean"
         example: true
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
     example:
       all: true
       ids: "1,2,3"
@@ -35281,7 +35281,7 @@ definitions:
       ids:
         type: "string"
         example: "1,2,3"
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
       all:
         type: "integer"
         example: 1
@@ -35295,7 +35295,7 @@ definitions:
       ids:
         type: "string"
         example: "1,2,3"
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
       all:
         type: "integer"
         example: 0
@@ -35309,7 +35309,7 @@ definitions:
       ids:
         type: "string"
         example: "1,2,3"
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
       all:
         type: "integer"
         example: 0
@@ -35329,7 +35329,7 @@ definitions:
       ids:
         type: "string"
         example: "1,2,3"
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
       all:
         type: "integer"
         example: 0
@@ -35384,7 +35384,7 @@ definitions:
       ids:
         type: "string"
         example: "1,2,3"
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
       all:
         type: "boolean"
         example: false
@@ -35402,7 +35402,7 @@ definitions:
       ids:
         type: "string"
         example: "1,2,3"
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
       all:
         type: "boolean"
         example: false
@@ -35415,11 +35415,11 @@ definitions:
       ids:
         type: "string"
         example: "1,2,3"
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
       all:
         type: "boolean"
         example: false
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
     example:
       all: false
       ids: "1,2,3"
@@ -35428,11 +35428,11 @@ definitions:
       ids:
         type: "string"
         example: "1,2,3"
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
       all:
         type: "boolean"
         example: false
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
     example:
       all: false
       ids: "1,2,3"
@@ -35441,11 +35441,11 @@ definitions:
       ids:
         type: "string"
         example: "1,2,3"
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
       all:
         type: "boolean"
         example: false
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
     example:
       all: false
       ids: "1,2,3"
@@ -35454,11 +35454,11 @@ definitions:
       ids:
         type: "string"
         example: "1,2,3"
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
       all:
         type: "boolean"
         example: false
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
     example:
       all: false
       ids: "1,2,3"
@@ -35467,11 +35467,11 @@ definitions:
       ids:
         type: "string"
         example: "1,2,3"
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
       all:
         type: "boolean"
         example: false
-        description: "Entity ID(s), separated by comma"
+        description: "Entity ID(s), separated by comma."
       status:
         type: "string"
         example: "a"

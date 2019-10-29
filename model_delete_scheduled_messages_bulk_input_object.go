@@ -10,7 +10,7 @@
 package TextMagic
 
 type DeleteScheduledMessagesBulkInputObject struct {
-	// Entity ID(s), separated by comma
+	// Entity ID(s), separated by comma.
 	Ids string `json:"ids,omitempty"`
 	// Default is 0 (false). If set to 1, all the entities will be removed.
 	All int32 `json:"all,omitempty"`

@@ -1435,7 +1435,7 @@ Optional parameters are passed through a pointer to a GetAllChatsOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **optional.String**| Fetch only (a)ctive, (c)losed or (d)eleted chats | 
+ **status** | **optional.String**| Fetch only (a)ctive, (c)losed or (d)eleted chats. | 
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
  **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
@@ -1551,7 +1551,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **lastId** | **optional.Int32**| Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified | 
+ **lastId** | **optional.Int32**| Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified. | 
 
 ### Return type
 
@@ -1589,7 +1589,7 @@ Name | Type | Description  | Notes
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
  **status** | **optional.String**| Fetch schedules with a specific status: a - actual, c - completed, x - all. | [default to x]
- **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
+ **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
  **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
 
 ### Return type
@@ -1903,8 +1903,8 @@ Optional parameters are passed through a pointer to a GetChatByPhoneOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **upsert** | **optional.Int32**| Create a new chat if not found | [default to 0]
- **reopen** | **optional.Int32**| Reopen chat if found or do not change status | [default to 0]
+ **upsert** | **optional.Int32**| Create a new chat if not found. | [default to 0]
+ **reopen** | **optional.Int32**| Reopen chat if found or do not change status. | [default to 0]
 
 ### Return type
 
@@ -1943,7 +1943,7 @@ Name | Type | Description  | Notes
 
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **query** | **optional.String**| Find messages by specified search query | 
+ **query** | **optional.String**| Find messages by specified search query. | 
  **start** | **optional.Int32**| Return messages since specified timestamp only. | 
  **end** | **optional.Int32**| Return messages up to specified timestamp only. | 
  **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
@@ -2975,8 +2975,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
  **lastId** | **optional.Int32**| Filter results by ID, selecting all values lesser than the specified ID. | 
- **query** | **optional.String**| Find message by specified search query | 
- **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
+ **query** | **optional.String**| Find message by specified search query. | 
+ **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
  **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
 
 ### Return type
@@ -3791,7 +3791,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **query** | **optional.String**| Find chats by specified search query | 
+ **query** | **optional.String**| Find chats by specified search query. | 
  **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
 
 ### Return type
@@ -3957,7 +3957,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **lastId** | **optional.Int32**| Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified | 
+ **lastId** | **optional.Int32**| Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified. | 
  **ids** | **optional.String**| Find message by ID(s). | 
  **sessionId** | **optional.Int32**| Find messages by session ID. | 
  **statuses** | **optional.String**| Find messages by status. | 
@@ -3999,8 +3999,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **query** | **optional.String**| Find messages by specified search query | 
- **ids** | **optional.String**| Find schedules by ID(s) | 
+ **query** | **optional.String**| Find messages by specified search query. | 
+ **ids** | **optional.String**| Find schedules by ID(s). | 
  **status** | **optional.String**| Fetch schedules with a specific status: a - actual, c - completed, x - all. | [default to x]
  **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
  **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]

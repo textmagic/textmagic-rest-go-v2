@@ -10,9 +10,9 @@
 package TextMagic
 
 type DeleteChatsBulkInputObject struct {
-	// Entity ID(s), separated by comma
+	// Entity ID(s), separated by comma.
 	Ids string `json:"ids,omitempty"`
-	// Entity ID(s), separated by comma
+	// Entity ID(s), separated by comma.
 	All bool `json:"all,omitempty"`
 	// Default is an empty string. If set, all entities with specified status will be affected.
 	Status string `json:"status,omitempty"`

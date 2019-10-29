@@ -4499,7 +4499,7 @@ TextMagicApiService Get all chats
 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetAllChatsOpts - Optional Parameters:
-     * @param "Status" (optional.String) -  Fetch only (a)ctive, (c)losed or (d)eleted chats
+     * @param "Status" (optional.String) -  Fetch only (a)ctive, (c)losed or (d)eleted chats.
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
      * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
@@ -4870,7 +4870,7 @@ Get all user oubound messages.
  * @param optional nil or *GetAllOutboundMessagesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "LastId" (optional.Int32) -  Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
+     * @param "LastId" (optional.Int32) -  Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified.
 
 @return GetAllOutboundMessagesPaginatedResponse
 */
@@ -5000,7 +5000,7 @@ TextMagicApiService Get all scheduled messages
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
      * @param "Status" (optional.String) -  Fetch schedules with a specific status: a - actual, c - completed, x - all.
-     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
+     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
      * @param "Direction" (optional.String) -  Order direction. Default is desc.
 
 @return GetAllScheduledMessagesPaginatedResponse
@@ -6139,8 +6139,8 @@ TextMagicApiService Find chats by phone
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param phone
  * @param optional nil or *GetChatByPhoneOpts - Optional Parameters:
-     * @param "Upsert" (optional.Int32) -  Create a new chat if not found
-     * @param "Reopen" (optional.Int32) -  Reopen chat if found or do not change status
+     * @param "Upsert" (optional.Int32) -  Create a new chat if not found.
+     * @param "Reopen" (optional.Int32) -  Reopen chat if found or do not change status.
 
 @return Chat
 */
@@ -6267,7 +6267,7 @@ TextMagicApiService Get chat messages
  * @param optional nil or *GetChatMessagesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "Query" (optional.String) -  Find messages by specified search query
+     * @param "Query" (optional.String) -  Find messages by specified search query.
      * @param "Start" (optional.Int32) -  Return messages since specified timestamp only.
      * @param "End" (optional.Int32) -  Return messages up to specified timestamp only.
      * @param "Direction" (optional.String) -  Order direction. Default is desc.
@@ -10027,8 +10027,8 @@ Get the outbound messages history.
  * @param optional nil or *GetOutboundMessagesHistoryOpts - Optional Parameters:
      * @param "Limit" (optional.Int32) -  The number of results per page.
      * @param "LastId" (optional.Int32) -  Filter results by ID, selecting all values lesser than the specified ID.
-     * @param "Query" (optional.String) -  Find message by specified search query
-     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
+     * @param "Query" (optional.String) -  Find message by specified search query.
+     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
      * @param "Direction" (optional.String) -  Order direction. Default is desc.
 
 @return GetOutboundMessagesHistoryPaginatedResponse
@@ -12937,7 +12937,7 @@ Find chats by recipient (contact, list name or phone number).
  * @param optional nil or *SearchChatsByReceipentOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "Query" (optional.String) -  Find chats by specified search query
+     * @param "Query" (optional.String) -  Find chats by specified search query.
      * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
 
 @return SearchChatsByReceipentPaginatedResponse
@@ -13521,7 +13521,7 @@ Find outbound messages by given parameters.
  * @param optional nil or *SearchOutboundMessagesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "LastId" (optional.Int32) -  Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
+     * @param "LastId" (optional.Int32) -  Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified.
      * @param "Ids" (optional.String) -  Find message by ID(s).
      * @param "SessionId" (optional.Int32) -  Find messages by session ID.
      * @param "Statuses" (optional.String) -  Find messages by status.
@@ -13675,8 +13675,8 @@ TextMagicApiService Find scheduled messages
  * @param optional nil or *SearchScheduledMessagesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "Query" (optional.String) -  Find messages by specified search query
-     * @param "Ids" (optional.String) -  Find schedules by ID(s)
+     * @param "Query" (optional.String) -  Find messages by specified search query.
+     * @param "Ids" (optional.String) -  Find schedules by ID(s).
      * @param "Status" (optional.String) -  Fetch schedules with a specific status: a - actual, c - completed, x - all.
      * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
      * @param "Direction" (optional.String) -  Order direction. Default is desc.
