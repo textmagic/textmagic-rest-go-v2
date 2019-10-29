@@ -501,7 +501,7 @@ tags:
     \n```javascript\n{\n    \"repositories\": [\n        {\n            \"type\":\
     \ \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
     \n        }\n    ],\n    \"require\": {\n        \"textmagic/textmagic-rest-php-v2\"\
-    : \"dev-master#v2.0.811\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
+    : \"dev-master#v2.0.814\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
     \ Manual Installation\n\nDownload the files and include `autoload.php`:\n\n```php\n\
     require_once(__DIR__.'/vendor/autoload.php');\n```\n\n## Usage Example\n\nPlease\
     \ follow the [installation](#installation) instructions and execute the following\
@@ -530,7 +530,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Node.js application.\n\n[Get\
     \ it now on GitHub](https://github.com/textmagic/textmagic-rest-nodejs)\n## Installation\n\
-    \n```shell\nnpm install textmagic-client@2.0.811 --save\n```\n\n## Usage Example\n\
+    \n```shell\nnpm install textmagic-client@2.0.814 --save\n```\n\n## Usage Example\n\
     \nPlease follow the [installation](#installation) instructions and execute the\
     \ following JS code:\n\n```javascript\nconst textmagicClient = require('textmagic-client');\n\
     \nconst fs = require('fs');\nconst client = textmagicClient.ApiClient.instance;\n\
@@ -562,7 +562,7 @@ tags:
     Install-Package Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp\
     \ versions later than 105.1.0 have a bug which causes file uploads to fail. See\
     \ [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\n## Installation\n\
-    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.811/).\n\
+    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.814/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -625,22 +625,22 @@ tags:
     \ Requirements\n\n* CMake 2.8 and later (https://cmake.org/)\n* cpprest (https://github.com/microsoft/cpprestsdk)\n\
     \nUbuntu dependencies quick installation example:\n```shell\napt-get install build-essential\
     \ cmake libcpprest-dev\n```\n\n## Installation\n\nDownload and extract lib archive:\n\
-    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.811.tar.gz\
-    \ && \\\ntar zxf v2.0.811.tar.gz && \\\nrm -f v2.0.811.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.811\n\
+    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.814.tar.gz\
+    \ && \\\ntar zxf v2.0.814.tar.gz && \\\nrm -f v2.0.814.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.814\n\
     ```\nBuild using cmake\n```shell\ncmake . && cmake --build .\n```\nThe output\
-    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.811/lib` directory:\n\
+    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.814/lib` directory:\n\
     \n## Usage Example\nIn the example below, we assume that you moved the library\
-    \ sources `textmagic-rest-cpp-v2-2.0.811` directory to your test project root\
+    \ sources `textmagic-rest-cpp-v2-2.0.814` directory to your test project root\
     \ directory.\n\nConfigure your `CMakeLists.txt` as shown here:\n```shell\ncmake_minimum_required(VERSION\
     \ 2.8)\nproject(test)\n\nset(CMAKE_CXX_STANDARD 14)\n\nadd_executable(app main.cpp)\n\
     \nadd_library(textmagic_client SHARED IMPORTED)\nset_property(TARGET textmagic_client\
-    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.811/lib/libtextmagic_client.so\"\
-    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.811\
-    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.811/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.811/api)\n\
+    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.814/lib/libtextmagic_client.so\"\
+    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.814\
+    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.814/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.814/api)\n\
     target_link_libraries(app boost_system cpprest crypto textmagic_client )\n```\n\
     \n`main.cpp` file example:\n```cpp\n#include <iostream>\n#include <fstream>\n\
-    #include \"textmagic-rest-cpp-v2-2.0.811/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.811/ApiConfiguration.h\"\
-    \n#include \"textmagic-rest-cpp-v2-2.0.811/api/TextMagicApi.h\"\n\nusing namespace\
+    #include \"textmagic-rest-cpp-v2-2.0.814/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.814/ApiConfiguration.h\"\
+    \n#include \"textmagic-rest-cpp-v2-2.0.814/api/TextMagicApi.h\"\n\nusing namespace\
     \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
     \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
     \ ApiConfiguration);\n\n    apiConfig->setBaseUrl(\"https://rest.textmagic.com\"\
@@ -680,7 +680,7 @@ tags:
     \ SMS and receiving replies by integrating TextMagic SMS Gateway into your Python\
     \ application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-python)\n\
     ## Requirements\nPython 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install\
-    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.811\n```\n\
+    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.814\n```\n\
     \n## Usage Example\n\n```python\nimport TextMagic\nfrom TextMagic.rest import\
     \ ApiException\n\n# Configure HTTP basic authorization: BasicAuth\nconfiguration\
     \ = TextMagic.Configuration()\nconfiguration.username = 'YOUR_USERNAME'\nconfiguration.password\
@@ -705,8 +705,8 @@ tags:
     \ GitHub\">Star</a>\n\nThis library provides you with an easy way of sending SMS\
     \ and receiving replies by integrating TextMagic SMS Gateway into your Perl application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-perl)\n##\
-    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.811.tar.gz\
-    \ && \\\ntar zxf v2.0.811.tar.gz && \\\nrm -f v2.0.811.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.811\
+    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.814.tar.gz\
+    \ && \\\ntar zxf v2.0.814.tar.gz && \\\nrm -f v2.0.814.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.814\
     \ && \\\nperl Makefile.pl && \\\nmake && \\\nmake install && \\\ncpanm --installdeps\
     \ .\n```\\\n\n## Usage Example\n\nPlease follow the [installation](#installation)\
     \ instructions and execute the following Perl code:\n\n```perl\nuse 5.010;\nuse\
@@ -735,7 +735,7 @@ tags:
     \ and receiving replies by integrating TextMagic SMS Gateway into your Ruby application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-ruby)\n##\
     \ Installation\n\nAdd these lines into your Gemfile\n```ruby\ngem 'textmagic_rest_client',\
-    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.811'\n\
+    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.814'\n\
     ```\n\nRun the bundler install command\n``` shell\nbundle install\n```\n\n## Usage\
     \ Example\n\nCreate the test file `test.rb` and put the following code:\n```ruby\n\
     \ # Load the gem\nrequire 'textmagic_rest_client'\n\n # Setup authorization\n\
@@ -761,7 +761,7 @@ tags:
     Star imissyouso/textmagic-rest-go on GitHub\">Star</a>\n\nThis library provides\
     \ you with an easy way of sending SMS and receiving replies by integrating TextMagic\
     \ SMS Gateway into your Go application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-go)\n\
-    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.811\n\
+    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.814\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -10633,11 +10633,11 @@ paths:
           schema:
             $ref: "#/definitions/ResourceLinkResponse"
         400:
-          description: "Returned when the form has errors"
+          description: "Returned when the form has errors."
         403:
-          description: "Returned when trying to edit list shared to you"
+          description: "Returned when trying to edit a list shared to you"
         404:
-          description: "Returned when no list found"
+          description: "Returned when no list found."
       x-code-samples:
       - lang: "PHP"
         source: "require_once(__DIR__ . '/vendor/autoload.php');\n\nuse TextMagic\\\
@@ -10794,9 +10794,9 @@ paths:
       - "TextMagic"
       summary: "Delete a list"
       description: "This command has no parameters. If successful, this command will\
-        \ return the standard delete response (204 No Content), otherwise a standard\
+        \ return the standard delete response (204 No Content); otherwise, a standard\
         \ error response will be returned.\n\nWhen you delete a list, the contacts\
-        \ in it are deleted as well unless they were saved\_in other list."
+        \ in it are deleted as well, unless they were saved\_in another list."
       operationId: "deleteList"
       produces: []
       parameters:
@@ -10810,14 +10810,14 @@ paths:
         204:
           description: "Request executed with success"
         400:
-          description: "Returned when trying to remove list associated with signup\
-            \ form"
+          description: "Returned when trying to remove a list associated with a signup\
+            \ form."
         401:
           description: "Unauthorized request"
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
-          description: "Returned when trying to remove list shared to you"
+          description: "Returned when trying to remove a list shared to you."
         404:
           description: "Request data not found"
           schema:
@@ -13389,7 +13389,7 @@ paths:
     get:
       tags:
       - "TextMagic"
-      summary: "Get all contacts IDs in a list"
+      summary: "Get all contact IDs in a list"
       description: ""
       operationId: "getListContactsIds"
       parameters:
@@ -13536,8 +13536,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get all contacts in a list"
-      description: "A useful synonym for \"contacts/search\" command with provided\
-        \ \"listId\" parameter."
+      description: "A useful synonym for the \"contacts/search\" command with the\
+        \ provided \"listId\" parameter."
       operationId: "getContactsByListId"
       parameters:
       - name: "page"
@@ -13558,7 +13558,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "orderBy"
         in: "query"
-        description: "Order results by some field. Default is id"
+        description: "Order results by some field. Default is id."
         required: false
         type: "string"
         default: "id"
@@ -13581,7 +13581,7 @@ paths:
         x-optionalDataType: "String"
       - name: "id"
         in: "path"
-        description: "Given group Id."
+        description: "Given group ID."
         required: true
         type: "integer"
         x-example: 1
@@ -13784,7 +13784,7 @@ paths:
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
-          description: "Returned when trying to edit list shared to you"
+          description: "Returned when trying to edit a list shared to you."
         404:
           description: "Request data not found"
           schema:
@@ -13963,7 +13963,7 @@ paths:
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
-          description: "Returned when trying to edit list shared to you"
+          description: "Returned when trying to edit a list shared to you."
         404:
           description: "Request data not found"
           schema:
@@ -14133,7 +14133,7 @@ paths:
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
-          description: "Returned when trying to edit list shared to you"
+          description: "Returned when trying to edit a list shared to you."
         404:
           description: "Request data not found"
           schema:
@@ -14254,8 +14254,8 @@ paths:
     post:
       tags:
       - "TextMagic"
-      summary: "Delete contacts from list (bulk)"
-      description: ""
+      summary: "Delete contacts from a list (bulk)"
+      description: "Delete contacts from a list (bulk)"
       operationId: "deleteListContactsBulk"
       produces: []
       parameters:
@@ -14425,8 +14425,8 @@ paths:
     delete:
       tags:
       - "TextMagic"
-      summary: "Delete an avatar for the list"
-      description: ""
+      summary: "Delete an avatar for a list"
+      description: "Delete an avatar for a list"
       operationId: "deleteListAvatar"
       parameters:
       - name: "id"
@@ -14437,13 +14437,14 @@ paths:
         x-exportParamName: "Id"
       responses:
         204:
-          description: "Avatar has been deleted with success"
+          description: "Avatar has been deleted with success."
         401:
           description: "Unauthorized request"
           schema:
             $ref: "#/definitions/UnauthorizedResponse"
         403:
-          description: "Returned when trying to edit list shared to current user"
+          description: "Returned when trying to edit a list shared to the current\
+            \ user."
         404:
           description: "Request data not found"
           schema:
@@ -29100,17 +29101,17 @@ definitions:
       primaryLabel:
         type: "string"
         example: "Favorite contact name."
-        description: "Contact first name/last name if entityType is **contact** List\
+        description: "Contact first name/last name if entityType is **contact**; List\
           \ name if entity type is **list**."
       secondaryLabel:
         type: "string"
         example: "45"
-        description: "Phone number if entityType is **contact** List contacts number\
+        description: "Phone number if entityType is **contact**; List contacts number\
           \ if entity type is **list**."
       tertiaryLabel:
         type: "string"
         example: "Australia"
-        description: "Contact country if entityType is **contact** else null."
+        description: "Contact country if entityType is **contact**; else, null."
         x-nullable: true
       avatar:
         type: "string"
@@ -35083,8 +35084,8 @@ definitions:
       contacts:
         type: "string"
         example: "1,2"
-        description: "Contact ID(s), separated by comma or 'all' to add all contacts\
-          \ belonging to the current user"
+        description: "Contact ID(s), separated by a comma or \"all\" to add all contacts\
+          \ belonging to the current user."
     example:
       contacts: "1,2"
   deleteContacsFromListObject:
@@ -35105,8 +35106,7 @@ definitions:
       all:
         type: "integer"
         example: 0
-        description: "Default is 0 (false). If set to 1, all the entities will be\
-          \ removed."
+        description: "Default is 0 (false). If set to 1, all entities will be removed."
     example:
       all: 0
       ids: "1,2,3"

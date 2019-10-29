@@ -34,8 +34,8 @@ Method | HTTP request | Description
 [**DeleteInboundMessage**](TextMagicApi.md#DeleteInboundMessage) | **Delete** /api/v2/replies/{id} | Delete a single inbound message
 [**DeleteInboundMessagesBulk**](TextMagicApi.md#DeleteInboundMessagesBulk) | **Post** /api/v2/replies/delete | Delete inbound messages (bulk)
 [**DeleteList**](TextMagicApi.md#DeleteList) | **Delete** /api/v2/lists/{id} | Delete a list
-[**DeleteListAvatar**](TextMagicApi.md#DeleteListAvatar) | **Delete** /api/v2/lists/{id}/avatar | Delete an avatar for the list
-[**DeleteListContactsBulk**](TextMagicApi.md#DeleteListContactsBulk) | **Post** /api/v2/lists/{id}/contacts/delete | Delete contacts from list (bulk)
+[**DeleteListAvatar**](TextMagicApi.md#DeleteListAvatar) | **Delete** /api/v2/lists/{id}/avatar | Delete an avatar for a list
+[**DeleteListContactsBulk**](TextMagicApi.md#DeleteListContactsBulk) | **Post** /api/v2/lists/{id}/contacts/delete | Delete contacts from a list (bulk)
 [**DeleteListsBulk**](TextMagicApi.md#DeleteListsBulk) | **Post** /api/v2/lists/delete | Delete lists (bulk)
 [**DeleteMessageSession**](TextMagicApi.md#DeleteMessageSession) | **Delete** /api/v2/sessions/{id} | Delete a session
 [**DeleteMessageSessionsBulk**](TextMagicApi.md#DeleteMessageSessionsBulk) | **Post** /api/v2/sessions/delete | Delete sessions (bulk)
@@ -84,7 +84,7 @@ Method | HTTP request | Description
 [**GetInboundMessagesNotificationSettings**](TextMagicApi.md#GetInboundMessagesNotificationSettings) | **Get** /api/v2/user/notification/inbound | Get inbound messages notification settings
 [**GetInvoices**](TextMagicApi.md#GetInvoices) | **Get** /api/v2/invoices | Get all invoices
 [**GetList**](TextMagicApi.md#GetList) | **Get** /api/v2/lists/{id} | Get the details of a specific list
-[**GetListContactsIds**](TextMagicApi.md#GetListContactsIds) | **Get** /api/v2/lists/{id}/contacts/ids | Get all contacts IDs in a list
+[**GetListContactsIds**](TextMagicApi.md#GetListContactsIds) | **Get** /api/v2/lists/{id}/contacts/ids | Get all contact IDs in a list
 [**GetLists**](TextMagicApi.md#GetLists) | **Get** /api/v2/lists | Get all lists
 [**GetListsOfContact**](TextMagicApi.md#GetListsOfContact) | **Get** /api/v2/contacts/{id}/lists | Get a contact&#39;s lists
 [**GetMessagePreview**](TextMagicApi.md#GetMessagePreview) | **Get** /api/v2/messages/preview | Preview message
@@ -955,7 +955,7 @@ Name | Type | Description  | Notes
 > DeleteList(ctx, id)
 Delete a list
 
-This command has no parameters. If successful, this command will return the standard delete response (204 No Content), otherwise a standard error response will be returned.  When you delete a list, the contacts in it are deleted as well unless they were saved in other list.
+This command has no parameters. If successful, this command will return the standard delete response (204 No Content); otherwise, a standard error response will be returned.  When you delete a list, the contacts in it are deleted as well, unless they were saved in another list.
 
 ### Required Parameters
 
@@ -981,9 +981,9 @@ Name | Type | Description  | Notes
 
 # **DeleteListAvatar**
 > DeleteListAvatar(ctx, id)
-Delete an avatar for the list
+Delete an avatar for a list
 
-
+Delete an avatar for a list
 
 ### Required Parameters
 
@@ -1009,9 +1009,9 @@ Name | Type | Description  | Notes
 
 # **DeleteListContactsBulk**
 > DeleteListContactsBulk(ctx, deleteListContactsBulkInputObject, id)
-Delete contacts from list (bulk)
+Delete contacts from a list (bulk)
 
-
+Delete contacts from a list (bulk)
 
 ### Required Parameters
 
@@ -2223,14 +2223,14 @@ Name | Type | Description  | Notes
 > GetContactsByListIdPaginatedResponse GetContactsByListId(ctx, id, optional)
 Get all contacts in a list
 
-A useful synonym for \"contacts/search\" command with provided \"listId\" parameter.
+A useful synonym for the \"contacts/search\" command with the provided \"listId\" parameter.
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **id** | **int32**| Given group Id. | 
+  **id** | **int32**| Given group ID. | 
  **optional** | ***GetContactsByListIdOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -2241,7 +2241,7 @@ Name | Type | Description  | Notes
 
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
+ **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
  **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
 
 ### Return type
@@ -2554,7 +2554,7 @@ Name | Type | Description  | Notes
 
 # **GetListContactsIds**
 > GetListContactsIdsResponse GetListContactsIds(ctx, id)
-Get all contacts IDs in a list
+Get all contact IDs in a list
 
 
 

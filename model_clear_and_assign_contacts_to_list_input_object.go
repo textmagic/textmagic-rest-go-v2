@@ -10,6 +10,6 @@
 package TextMagic
 
 type ClearAndAssignContactsToListInputObject struct {
-	// Contact ID(s), separated by comma or 'all' to add all contacts belonging to the current user
+	// Contact ID(s), separated by a comma or \"all\" to add all contacts belonging to the current user.
 	Contacts string `json:"contacts"`
 }

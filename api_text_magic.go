@@ -2901,7 +2901,7 @@ func (a *TextMagicApiService) DeleteInboundMessagesBulk(ctx context.Context, del
 
 /* 
 TextMagicApiService Delete a list
-This command has no parameters. If successful, this command will return the standard delete response (204 No Content), otherwise a standard error response will be returned.  When you delete a list, the contacts in it are deleted as well unless they were saved in other list.
+This command has no parameters. If successful, this command will return the standard delete response (204 No Content); otherwise, a standard error response will be returned.  When you delete a list, the contacts in it are deleted as well, unless they were saved in another list.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -2993,8 +2993,8 @@ func (a *TextMagicApiService) DeleteList(ctx context.Context, id int32) (*http.R
 }
 
 /* 
-TextMagicApiService Delete an avatar for the list
-
+TextMagicApiService Delete an avatar for a list
+Delete an avatar for a list
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -3086,8 +3086,8 @@ func (a *TextMagicApiService) DeleteListAvatar(ctx context.Context, id int32) (*
 }
 
 /* 
-TextMagicApiService Delete contacts from list (bulk)
-
+TextMagicApiService Delete contacts from a list (bulk)
+Delete contacts from a list (bulk)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteListContactsBulkInputObject
  * @param id
@@ -7314,13 +7314,13 @@ func (a *TextMagicApiService) GetContactsAutocomplete(ctx context.Context, query
 
 /* 
 TextMagicApiService Get all contacts in a list
-A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;listId\&quot; parameter.
+A useful synonym for the \&quot;contacts/search\&quot; command with the provided \&quot;listId\&quot; parameter.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param id Given group Id.
+ * @param id Given group ID.
  * @param optional nil or *GetContactsByListIdOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
+     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
      * @param "Direction" (optional.String) -  Order direction. Default is desc.
 
 @return GetContactsByListIdPaginatedResponse
@@ -8542,7 +8542,7 @@ func (a *TextMagicApiService) GetList(ctx context.Context, id int32) (List, *htt
 }
 
 /* 
-TextMagicApiService Get all contacts IDs in a list
+TextMagicApiService Get all contact IDs in a list
 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
