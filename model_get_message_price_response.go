@@ -10,7 +10,7 @@
 package TextMagic
 
 type GetMessagePriceResponse struct {
-	// Total price of the mesasge.
+	// Total price of the message.
 	Total float32 `json:"total"`
 	// Message parts (multiples of 160 characters) count.
 	Parts int32 `json:"parts"`

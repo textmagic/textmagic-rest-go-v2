@@ -16,10 +16,10 @@ Name | Type | Description | Notes
 **ReferenceId** | **int32** | Custom message reference id which can be used in your application infrastructure. | [optional] [default to null]
 **From** | **string** | One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). | [optional] [default to null]
 **Rrule** | **string** | iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. | [optional] [default to null]
-**CreateChat** | **bool** | Should sending method try to create new Chat(if not exist) with specified recipients. | [optional] [default to null]
-**Tts** | **bool** | Send Text to Speech message. | [optional] [default to null]
-**Local** | **bool** | Treat phone numbers passed in \\&#39;phones\\&#39; field as local. | [optional] [default to null]
-**LocalCountry** | **string** | 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country. | [optional] [default to null]
+**CreateChat** | **bool** | Should sending method try to create new Chat (if not exist) with specified recipients? | [optional] [default to null]
+**Tts** | **bool** | Send a Text to Speech message. | [optional] [default to null]
+**Local** | **bool** | Treat phone numbers passed in the \\&#39;phones\\&#39; field as local. | [optional] [default to null]
+**LocalCountry** | **string** | The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

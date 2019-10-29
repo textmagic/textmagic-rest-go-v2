@@ -118,36 +118,36 @@ tags:
     \nYou will receive a result like this:\n\n|Parameter|Example|\n|---------|-------|\n\
     |**id**|`357122`|\n|**href**|`/api/v2/bulks/357122`|\n|**type**|`bulk`|\n|**sessionId**|`null`|\n\
     |**bulkId**|`357122`|\n|**messageId**|`null`|\n|**scheduleId**|`null`|\n\nAs you\
-    \ can see, the **session** has not been created yet, since it will be created\
-    \ after processing all the contacts you supplied during request.\n\n## How to\
-    \ send a text message using an SMS template\n\nNext, let’s try to send an SMS\
-    \ to a contact list using a message template instead of specifying the message\
-    \ text. An extra feature we can use is the\_[Custom fields](http://docs.textmagictesting.com/#tag/Custom-Fields)\
-    \ tags, which we can apply to send personalized texts to all recipients.\n\nAssuming\
-    \ you have these items:\n\n*   A contact list with ID 10541 (with two or more\
-    \ contacts). You can use test number 999 .\n*   The message template with ID 55313\
-    \ (with **First name** and **Last name** tags). When you sign up for a TextMagic\
-    \ account, you automatically receive several message templates, such as **Callback\
-    \ request** or **Booking confirmation.** You can use any of them.\n*   A sufficient\
-    \ balance in your account to send this SMS message to the contact list.\n\n> POST\
-    \ https://rest.textmagic.com/api/v2/messages\n\nwith the following parameters:\n\
-    \n|Parameter|Value|\n|---------|-----|\n|**templateId**|`10541`|\n|**lists**|`55313`|\n\
-    \nYou will receive a result like this:\n\n|Parameter|Example|\n|---------|-------|\n\
-    |**id**|`34436613`|\n|**href**|`/api/v2/sessions/34436613`|\n|**type**|`session`|\n\
-    |**sessionId**|`34436613`|\n|**bulkId**|`null`|\n|**messageId**|`null`|\n|**scheduleId**|`null`|\n\
-    \nThis is a sending session with more than one recipient (but less than 1,000);\_\
-    see the notes above about sending bulk messages. We cannot select just one message\
-    \ from this session, so the **messageId** is also empty. However, you can\_[get\
-    \ the session for the messages](http://docs.textmagictesting.com/#tag/Outbound-Message-Sessions)\
+    \ can see, the **session** has not been created yet; it will be created after\
+    \ processing all the contacts you supplied during the request.\n\n## How to send\
+    \ a text message using an SMS template\n\nNext, let’s try to send an SMS to a\
+    \ contact list using a message template instead of specifying the message text.\
+    \ An extra feature we can use is the\_[Custom fields](http://docs.textmagictesting.com/#tag/Custom-Fields)\
+    \ tags, which we can apply to send personalized texts to all recipients.\n\nLet’\
+    s assume that you have these items:\n\n*   a contact list with ID 10541 (with\
+    \ two or more contacts) – you can use test number 999;\n*   the message template\
+    \ with ID 55313 (with **First name** and **Last name** tags) – when you sign up\
+    \ for a TextMagic account, you automatically receive several message templates,\
+    \ such as **Callback request** or **Booking confirmation**, and you can use any\
+    \ of them;\n*   a sufficient balance in your account to send this SMS message\
+    \ to the contact list.\n\n> POST https://rest.textmagic.com/api/v2/messages\n\n\
+    with the following parameters:\n\n|Parameter|Value|\n|---------|-----|\n|**templateId**|`10541`|\n\
+    |**lists**|`55313`|\n\nYou will receive a result like this:\n\n|Parameter|Example|\n\
+    |---------|-------|\n|**id**|`34436613`|\n|**href**|`/api/v2/sessions/34436613`|\n\
+    |**type**|`session`|\n|**sessionId**|`34436613`|\n|**bulkId**|`null`|\n|**messageId**|`null`|\n\
+    |**scheduleId**|`null`|\n\nThis is a sending session with more than one recipient\
+    \ (but fewer than 1,000);\_see the notes above about sending bulk messages. We\
+    \ cannot select just one message from this session, so the **messageId** is also\
+    \ empty. However, you can\_[get the session for the messages](http://docs.textmagictesting.com/#tag/Outbound-Message-Sessions)\
     \ and then fetch the messages one by one.\n\n## How to send a text message with\
-    \ an attachment\n\nText messages can include only text symbols. And if you need\
-    \ to send a PDF document or an image you can upload it to some cloud storage service\
-    \ first and then insert a link to this document into your text message. TextMagic\
-    \ offers the Attachments feature which allows you to upload your document to TextMagic\
-    \ servers and get a relatively short download link. After that, you just need\
-    \ to insert this link into your message text.\n\nTo upload an attachment, use:\n\
-    \n> POST https://rest.textmagic.com/api/v2/messages/attachment\n\nwith a single\
-    \ parameter:\n\n|Parameter|Value|Description|\n|---------|-----|-----------|\n\
+    \ an attachment\n\nText messages can include only text symbols. If you need to\
+    \ send a PDF document or an image, you need to upload it to a cloud storage service\
+    \ first and then insert a link to this document it into your text message. TextMagic\
+    \ offers an Attachments feature which allows you to upload your document to the\
+    \ TextMagic servers and get a relatively short download link. After that, you\
+    \ just need to insert the link into your message text.\n\nTo upload an attachment,\
+    \ use:\n\n> POST https://rest.textmagic.com/api/v2/messages/attachment\n\nwith\
+    \ a single parameter:\n\n|Parameter|Value|Description|\n|---------|-----|-----------|\n\
     |**file**|`[multipart/form-data]`|Your request with attachment should be sent\
     \ in `multipart/form-data` format.**Note:** Only .jpg, .gif, .png, .pdf, .txt,\
     \ .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx & .vcf attachment files up to 10\
@@ -159,25 +159,25 @@ tags:
     \ it will save you 8 characters.|\n|**chars**|`/api/v2/sessions/11`|`href` field\
     \ characters count.|**name**|`screen.png`|Original file name that will be displayed\
     \ on the download/preview page.|\n|**size**|`1094`|Attachment size in bytes.|\n\
-    \nIt is as simple as that. Now you can send a text message with this link as described\
+    \nIt's as simple as that. Now you can send a text message with this link as described\
     \ above.\n\n# Delivery status callback\n\nA callback is a mechanism that posts\
     \ the JSON body of a sent message to the URL on a server that you specify. The\
     \ server application which receives the callback can check the message status\
-    \ and trigger some actions based on that data.\n\nHere is how to set up the delivery\
+    \ and trigger actions based on that data.\n\nHere is how to set up the delivery\
     \ status callback URL:\n\n1.  [Log in](https://my.textmagic.com/) to TextMagic\
     \ (or [start a free trial](https://my.textmagic.com/register/) if you haven’t\
     \ registered yet).\n2.  Go to the\_[API](https://my.textmagic.com/online/api/rest-api/keys)\
     \ page.\n3.  Enter your callback URL into the\_**Callback URL for delivery notifications**\
     \ field.\n4.  Click the\_**Test** button to test your URL.\n5.  If it’s successful,\
-    \ click **Save changes**.\n\nYour server should reply with a **200 OK** response\
+    \ click **Save changes**.\n\nYour server should reply with an **200 OK** response\
     \ at this URL. If it does not, your callback URL will be treated as invalid and\
     \ the inbound messages will not be passed to your application.\n\n### Call parameters\n\
-    \nYour callback URL will be triggered immediately when sent message status changes.\
-    \ The parameters are passed by the **POST** method and contain the following information\
-    \ (i.e. exact copy of the **message** resource plus custom **referenceId**, if\
-    \ you have specified it when sending message via **POST /api/v2/messages**). The\_\
-    Resource format is basically the format of the reply when making the request to\
-    \ the specific API resource.\n\n|Parameter|Example|Description|\n|---------|-------|-----------|\n\
+    \nYour callback URL will be triggered immediately when the sent message status\
+    \ changes. The parameters are passed by the **POST** method and contain the following\
+    \ information (i.e. exact copy of the **message** resource plus custom **referenceId**,\
+    \ if you have specified it when sending the message via **POST /api/v2/messages**).\
+    \ The\_Resource format is basically the format of the reply when making the request\
+    \ to the specific API resource.\n\n|Parameter|Example|Description|\n|---------|-------|-----------|\n\
     |**id**|`4991`|Message ID.|**sender**|\n|**sender**|`447624800500`|Message sender\
     \ (phone number or alphanumeric Sender ID).|\n|**receiver**|`447860021130`|\n\
     |Recipient phone number.|**text**|`Hello John!`|\n|Message text (after tags substitution,\
@@ -194,9 +194,9 @@ tags:
     \ ID. You can use your internal IDs to identify the DLRs more easily when doing\
     \ **POST /api/v2/messages**.|\n\n# Delivery status codes\n\nBelow you’ll find\
     \ several delivery statuses for sent messages, which are divided into two types:\n\
-    *   **Intermediate** – temporary statuses that can change as the messages are\
-    \ processed.\n*   **Final** – these statuses are final and will not change.\n\n\
-    | Delivery status | Type | Description |\n|-----------------|------|-------------|\n\
+    *   **intermediate** – temporary statuses that can change as the messages are\
+    \ processed;\n*   **final** – these statuses that are final and will not change.\n\
+    \n| Delivery status | Type | Description |\n|-----------------|------|-------------|\n\
     | **a** | intermediate | The mobile operator has acknowledged the message. |\n\
     | **b** | intermediate |The mobile operator has queued the message. |\n| **d**\
     \ | final | The message has been successfully delivered to the handset. |\n| **e**\
@@ -496,12 +496,12 @@ tags:
     \ GitHub\">Star</a>\n\nThis library provides you with an easy way of sending SMS\
     \ and receiving replies by integrating TextMagic SMS Gateway into your PHP application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-php)\n##\
-    \ Requirements\n\nPHP 5.5 and later\n\n## Installation\n### Composer\n\nTo install\
+    \ Requirements\n\nPHP 5.5 and later.\n\n## Installation\n### Composer\n\nTo install\
     \ the bindings via [Composer](http://getcomposer.org/), add the following to `composer.json`:\n\
     \n```javascript\n{\n    \"repositories\": [\n        {\n            \"type\":\
     \ \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
     \n        }\n    ],\n    \"require\": {\n        \"textmagic/textmagic-rest-php-v2\"\
-    : \"dev-master#v2.0.807\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
+    : \"dev-master#v2.0.808\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
     \ Manual Installation\n\nDownload the files and include `autoload.php`:\n\n```php\n\
     require_once(__DIR__.'/vendor/autoload.php');\n```\n\n## Usage Example\n\nPlease\
     \ follow the [installation](#installation) instructions and execute the following\
@@ -530,7 +530,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Node.js application.\n\n[Get\
     \ it now on GitHub](https://github.com/textmagic/textmagic-rest-nodejs)\n## Installation\n\
-    \n```shell\nnpm install textmagic-client@2.0.807 --save\n```\n\n## Usage Example\n\
+    \n```shell\nnpm install textmagic-client@2.0.808 --save\n```\n\n## Usage Example\n\
     \nPlease follow the [installation](#installation) instructions and execute the\
     \ following JS code:\n\n```javascript\nconst textmagicClient = require('textmagic-client');\n\
     \nconst fs = require('fs');\nconst client = textmagicClient.ApiClient.instance;\n\
@@ -562,7 +562,7 @@ tags:
     Install-Package Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp\
     \ versions later than 105.1.0 have a bug which causes file uploads to fail. See\
     \ [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\n## Installation\n\
-    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.807/).\n\
+    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.808/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -625,22 +625,22 @@ tags:
     \ Requirements\n\n* CMake 2.8 and later (https://cmake.org/)\n* cpprest (https://github.com/microsoft/cpprestsdk)\n\
     \nUbuntu dependencies quick installation example:\n```shell\napt-get install build-essential\
     \ cmake libcpprest-dev\n```\n\n## Installation\n\nDownload and extract lib archive:\n\
-    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.807.tar.gz\
-    \ && \\\ntar zxf v2.0.807.tar.gz && \\\nrm -f v2.0.807.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.807\n\
+    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.808.tar.gz\
+    \ && \\\ntar zxf v2.0.808.tar.gz && \\\nrm -f v2.0.808.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.808\n\
     ```\nBuild using cmake\n```shell\ncmake . && cmake --build .\n```\nThe output\
-    \ library file will be placed in `textmagic-rest-cpp-v2-2.0.807/lib` directory:\n\
+    \ library file will be placed in `textmagic-rest-cpp-v2-2.0.808/lib` directory:\n\
     \n## Usage Example\nIn the example below, we assume that you moved the library\
-    \ sources `textmagic-rest-cpp-v2-2.0.807` directory to your test project root\
+    \ sources `textmagic-rest-cpp-v2-2.0.808` directory to your test project root\
     \ directory.\n\nConfigure your `CMakeLists.txt` as shown here:\n```shell\ncmake_minimum_required(VERSION\
     \ 2.8)\nproject(test)\n\nset(CMAKE_CXX_STANDARD 14)\n\nadd_executable(app main.cpp)\n\
     \nadd_library(textmagic_client SHARED IMPORTED)\nset_property(TARGET textmagic_client\
-    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.807/lib/libtextmagic_client.so\"\
-    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.807\
-    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.807/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.807/api)\n\
+    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.808/lib/libtextmagic_client.so\"\
+    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.808\
+    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.808/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.808/api)\n\
     target_link_libraries(app boost_system cpprest crypto textmagic_client )\n```\n\
     \n`main.cpp` file example:\n```cpp\n#include <iostream>\n#include <fstream>\n\
-    #include \"textmagic-rest-cpp-v2-2.0.807/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.807/ApiConfiguration.h\"\
-    \n#include \"textmagic-rest-cpp-v2-2.0.807/api/TextMagicApi.h\"\n\nusing namespace\
+    #include \"textmagic-rest-cpp-v2-2.0.808/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.808/ApiConfiguration.h\"\
+    \n#include \"textmagic-rest-cpp-v2-2.0.808/api/TextMagicApi.h\"\n\nusing namespace\
     \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
     \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
     \ ApiConfiguration);\n\n    apiConfig->setBaseUrl(\"https://rest.textmagic.com\"\
@@ -680,7 +680,7 @@ tags:
     \ SMS and receiving replies by integrating TextMagic SMS Gateway into your Python\
     \ application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-python)\n\
     ## Requirements\nPython 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install\
-    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.807\n```\n\
+    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.808\n```\n\
     \n## Usage Example\n\n```python\nimport TextMagic\nfrom TextMagic.rest import\
     \ ApiException\n\n# Configure HTTP basic authorization: BasicAuth\nconfiguration\
     \ = TextMagic.Configuration()\nconfiguration.username = 'YOUR_USERNAME'\nconfiguration.password\
@@ -705,8 +705,8 @@ tags:
     \ GitHub\">Star</a>\n\nThis library provides you with an easy way of sending SMS\
     \ and receiving replies by integrating TextMagic SMS Gateway into your Perl application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-perl)\n##\
-    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.807.tar.gz\
-    \ && \\\ntar zxf v2.0.807.tar.gz && \\\nrm -f v2.0.807.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.807\
+    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.808.tar.gz\
+    \ && \\\ntar zxf v2.0.808.tar.gz && \\\nrm -f v2.0.808.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.808\
     \ && \\\nperl Makefile.pl && \\\nmake && \\\nmake install && \\\ncpanm --installdeps\
     \ .\n```\\\n\n## Usage Example\n\nPlease follow the [installation](#installation)\
     \ instructions and execute the following Perl code:\n\n```perl\nuse 5.010;\nuse\
@@ -735,7 +735,7 @@ tags:
     \ and receiving replies by integrating TextMagic SMS Gateway into your Ruby application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-ruby)\n##\
     \ Installation\n\nAdd these lines into your Gemfile\n```ruby\ngem 'textmagic_rest_client',\
-    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.807'\n\
+    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.808'\n\
     ```\n\nRun the bundler install command\n``` shell\nbundle install\n```\n\n## Usage\
     \ Example\n\nCreate the test file `test.rb` and put the following code:\n```ruby\n\
     \ # Load the gem\nrequire 'textmagic_rest_client'\n\n # Setup authorization\n\
@@ -761,7 +761,7 @@ tags:
     Star imissyouso/textmagic-rest-go on GitHub\">Star</a>\n\nThis library provides\
     \ you with an easy way of sending SMS and receiving replies by integrating TextMagic\
     \ SMS Gateway into your Go application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-go)\n\
-    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.807\n\
+    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.808\n\
     ```\n\nwithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -1939,7 +1939,7 @@ paths:
       parameters:
       - name: "country"
         in: "query"
-        description: "Two-letter ISO country ID. If not specified, it returns all\
+        description: "The 2-letter ISO country ID. If not specified, it returns all\
           \ the available sender settings."
         required: false
         type: "string"
@@ -15743,7 +15743,8 @@ paths:
       - name: "lastId"
         in: "query"
         description: "Filter results by ID, selecting all values lesser than the specified\
-          \ ID. Note that \\'page\\' parameter is ignored when \\'lastId\\' is specified"
+          \ ID. Note that the \\'page\\' parameter is ignored when \\'lastId\\' is\
+          \ specified"
         required: false
         type: "integer"
         x-exportParamName: "LastId"
@@ -15909,8 +15910,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Send message"
-      description: "The main entrypoint to send messages. See examples above for the\
-        \ reference."
+      description: "This is the main entrypoint to send messages. See the examples\
+        \ above for the reference."
       operationId: "sendMessage"
       parameters:
       - in: "body"
@@ -15925,7 +15926,7 @@ paths:
           schema:
             $ref: "#/definitions/SendMessageResponse"
         202:
-          description: "Returned when bulk session has been created"
+          description: "Returned when a bulk session has been created."
         400:
           description: "Bad request"
           schema:
@@ -16155,7 +16156,7 @@ paths:
       parameters:
       - name: "includeBlocked"
         in: "query"
-        description: "Should we show pricing for the blocked contacts."
+        description: "Should we show the pricing for blocked contacts?"
         required: false
         type: "integer"
         default: 0
@@ -16166,7 +16167,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "text"
         in: "query"
-        description: "Message text. Required if **template_id** is not set."
+        description: "Message text. Required if the **template_id** is not set."
         required: false
         type: "string"
         x-example: "Test message test"
@@ -16174,7 +16175,7 @@ paths:
         x-optionalDataType: "String"
       - name: "templateId"
         in: "query"
-        description: "Template used instead of message text. Required if **text**\
+        description: "Template used instead of message text. Required if the **text**\
           \ is not set."
         required: false
         type: "integer"
@@ -16183,9 +16184,9 @@ paths:
         x-optionalDataType: "Int32"
       - name: "sendingTime"
         in: "query"
-        description: "DEPRECATED, consider using sendingDateTime and sendingTimezone\
-          \ parameters instead: Optional (required with rrule set). Message sending\
-          \ time in unix timestamp format. Default is now."
+        description: "DEPRECATED, consider using the sendingDateTime and sendingTimezone\
+          \ parameters instead: optional (required with rrule set). Message sending\
+          \ time is in unix timestamp format. Default is now."
         required: false
         type: "integer"
         x-example: 1565606455
@@ -16193,8 +16194,8 @@ paths:
         x-optionalDataType: "Int32"
       - name: "sendingDateTime"
         in: "query"
-        description: "Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33).\
-          \ This time is relative to sendingTimezone."
+        description: "Sending time is in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33).\
+          \ This time is relative to the sendingTimezone."
         required: false
         type: "string"
         x-example: "2020-05-27 13:02:33"
@@ -16202,11 +16203,11 @@ paths:
         x-optionalDataType: "String"
       - name: "sendingTimezone"
         in: "query"
-        description: "ID or ISO-name of timezone used for sending when sendingDateTime\
-          \ parameter is set. E.g. if you specify sendingDateTime = \\\"2016-05-27\
+        description: "The ID or ISO-name of the timezone used for sending when sendingDateTime\
+          \ parameter is set, e.g. if you specify sendingDateTime = \\\"2016-05-27\
           \ 13:02:33\\\" and sendingTimezone = \\\"America/Buenos_Aires\\\", your\
-          \ message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33\
-          \ UTC. Default is account timezone."
+          \ message will be sent on May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33\
+          \ UTC. Default is the account timezone."
         required: false
         type: "string"
         x-example: "America/Buenos_Aires"
@@ -16214,7 +16215,7 @@ paths:
         x-optionalDataType: "String"
       - name: "contacts"
         in: "query"
-        description: "Comma separated array of contact resources id message will be\
+        description: "Comma-separated array of contact resources id message will be\
           \ sent to."
         required: false
         type: "string"
@@ -16223,7 +16224,7 @@ paths:
         x-optionalDataType: "String"
       - name: "lists"
         in: "query"
-        description: "Comma separated array of list resources id message will be sent\
+        description: "Comma-separated array of list resources id message will be sent\
           \ to."
         required: false
         type: "string"
@@ -16232,7 +16233,7 @@ paths:
         x-optionalDataType: "String"
       - name: "phones"
         in: "query"
-        description: "Comma separated array of E.164 phone numbers message will be\
+        description: "Comma-separated array of E.164 phone numbers message will be\
           \ sent to."
         required: false
         type: "string"
@@ -16271,9 +16272,10 @@ paths:
         x-optionalDataType: "Int32"
       - name: "from"
         in: "query"
-        description: "One of allowed Sender ID (phone number or alphanumeric sender\
-          \ ID). If specified Sender ID is not allowed for some destinations, a fallback\
-          \ default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs)."
+        description: "One of the allowed Sender ID (phone number or alphanumeric sender\
+          \ ID). If the specified Sender ID is not allowed for some destinations,\
+          \ a fallback default Sender ID will be used to ensure delivery. See [Get\
+          \ timezones](http://docs.textmagictesting.com/#tag/Sender-IDs)."
         required: false
         type: "string"
         x-example: "Test Sender ID"
@@ -16281,9 +16283,9 @@ paths:
         x-optionalDataType: "String"
       - name: "rule"
         in: "query"
-        description: "iCal RRULE parameter to create recurrent scheduled messages.\
-          \ When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator\
-          \ for format details."
+        description: "An iCal RRULE parameter to create recurrent scheduled messages.\
+          \ When used, sendingTime is mandatory as the start point of sending. See\
+          \ https://www.textmagic.com/free-tools/rrule-generator for format details."
         required: false
         type: "string"
         x-example: "FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1"
@@ -16291,8 +16293,8 @@ paths:
         x-optionalDataType: "String"
       - name: "createChat"
         in: "query"
-        description: "Should sending method try to create new Chat(if not exist) with\
-          \ specified recipients."
+        description: "Should the sending method try to create new Chat (if not exist)\
+          \ with specified recipients?"
         required: false
         type: "integer"
         default: 0
@@ -16303,7 +16305,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "tts"
         in: "query"
-        description: "Send Text to Speech message."
+        description: "Send a Text to Speech message."
         required: false
         type: "integer"
         default: 0
@@ -16314,7 +16316,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "local"
         in: "query"
-        description: "Treat phone numbers passed in \\'phones\\' field as local."
+        description: "Treat phone numbers passed in the \\'phones\\' field as local."
         required: false
         type: "integer"
         default: 0
@@ -16325,8 +16327,8 @@ paths:
         x-optionalDataType: "Int32"
       - name: "localCountry"
         in: "query"
-        description: "2-letter ISO country code for local phone numbers, used when\
-          \ \\'local\\' is set to true. Default is account country."
+        description: "The 2-letter ISO country code for local phone numbers, used\
+          \ when \\'local\\' is set to true. Default is the account country."
         required: false
         type: "string"
         x-example: "US"
@@ -16610,7 +16612,7 @@ paths:
         in: "query"
         description: "DEPRECATED, consider using sendingDateTime and sendingTimezone\
           \ parameters instead: Optional (required with rrule set). Message sending\
-          \ time in unix timestamp format. Default is now."
+          \ time is in unix timestamp format. Default is now."
         required: false
         type: "integer"
         x-example: 1565606455
@@ -16618,8 +16620,8 @@ paths:
         x-optionalDataType: "Int32"
       - name: "sendingDateTime"
         in: "query"
-        description: "Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33).\
-          \ This time is relative to sendingTimezone."
+        description: "Sending time is in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33).\
+          \ This time is relative to the sendingTimezone."
         required: false
         type: "string"
         x-example: "2020-05-27 13:02:33"
@@ -16627,11 +16629,11 @@ paths:
         x-optionalDataType: "String"
       - name: "sendingTimezone"
         in: "query"
-        description: "ID or ISO-name of timezone used for sending when sendingDateTime\
-          \ parameter is set. E.g. if you specify sendingDateTime = \\\"2016-05-27\
-          \ 13:02:33\\\" and sendingTimezone = \\\"America/Buenos_Aires\\\", your\
-          \ message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33\
-          \ UTC. Default is account timezone."
+        description: "The ID or ISO-name of the timezone used for sending when the\
+          \ sendingDateTime parameter is set, e.g. if you specify sendingDateTime\
+          \ = \\\"2016-05-27 13:02:33\\\" and sendingTimezone = \\\"America/Buenos_Aires\\\
+          \", your message will be sent on May 27, 2016 13:02:33 Buenos Aires time,\
+          \ or 16:02:33 UTC. Default is the account timezone."
         required: false
         type: "string"
         x-example: "America/Buenos_Aires"
@@ -16639,7 +16641,7 @@ paths:
         x-optionalDataType: "String"
       - name: "contacts"
         in: "query"
-        description: "Comma separated array of contact resources id message will be\
+        description: "Comma-separated array of contact resources id message will be\
           \ sent to."
         required: false
         type: "string"
@@ -16648,7 +16650,7 @@ paths:
         x-optionalDataType: "String"
       - name: "lists"
         in: "query"
-        description: "Comma separated array of list resources id message will be sent\
+        description: "Comma-separated array of list resources id message will be sent\
           \ to."
         required: false
         type: "string"
@@ -16657,7 +16659,7 @@ paths:
         x-optionalDataType: "String"
       - name: "phones"
         in: "query"
-        description: "Comma separated array of E.164 phone numbers message will be\
+        description: "Comma-separated array of E.164 phone numbers message will be\
           \ sent to."
         required: false
         type: "string"
@@ -16678,8 +16680,8 @@ paths:
         x-optionalDataType: "Int32"
       - name: "partsCount"
         in: "query"
-        description: "Maximum message parts count (TextMagic allows sending 1 to 6\
-          \ message parts)."
+        description: "Maximum message parts count (TextMagic allows sending of 1 to\
+          \ 6 message parts)."
         required: false
         type: "integer"
         default: 6
@@ -16696,9 +16698,10 @@ paths:
         x-optionalDataType: "Int32"
       - name: "from"
         in: "query"
-        description: "One of allowed Sender ID (phone number or alphanumeric sender\
-          \ ID). If specified Sender ID is not allowed for some destinations, a fallback\
-          \ default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs)."
+        description: "One of the allowed Sender ID (phone number or alphanumeric sender\
+          \ ID). If the specified Sender ID is not allowed for some destinations,\
+          \ a fallback default Sender ID will be used to ensure delivery. See [Get\
+          \ timezones](http://docs.textmagictesting.com/#tag/Sender-IDs)."
         required: false
         type: "string"
         x-example: "Test Sender ID"
@@ -16706,9 +16709,9 @@ paths:
         x-optionalDataType: "String"
       - name: "rule"
         in: "query"
-        description: "iCal RRULE parameter to create recurrent scheduled messages.\
-          \ When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator\
-          \ for format details."
+        description: "An iCal RRULE parameter to create recurrent scheduled messages.\
+          \ When used, sendingTime is mandatory as the start point of sending. See\
+          \ https://www.textmagic.com/free-tools/rrule-generator for format details."
         required: false
         type: "string"
         x-example: "FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1"
@@ -16716,8 +16719,8 @@ paths:
         x-optionalDataType: "String"
       - name: "createChat"
         in: "query"
-        description: "Should sending method try to create new Chat(if not exist) with\
-          \ specified recipients."
+        description: "Should the sending method try to create new Chat(if not exist)\
+          \ with specified recipients?"
         required: false
         type: "integer"
         default: 0
@@ -16739,7 +16742,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "local"
         in: "query"
-        description: "Treat phone numbers passed in \\'phones\\' field as local."
+        description: "Treat phone numbers passed in the \\'phones\\' field as local."
         required: false
         type: "integer"
         default: 0
@@ -16750,8 +16753,8 @@ paths:
         x-optionalDataType: "Int32"
       - name: "localCountry"
         in: "query"
-        description: "2-letter ISO country code for local phone numbers, used when\
-          \ \\'local\\' is set to true. Default is account country."
+        description: "The 2-letter ISO country code for local phone numbers, used\
+          \ when \\'local\\' is set to true. Default is the account country."
         required: false
         type: "string"
         x-example: "US"
@@ -25692,7 +25695,7 @@ definitions:
       message:
         type: "string"
         example: "Resource does not exist."
-        description: "Brief error message. You could display this message to your\
+        description: "A Brief error message. You could display this message to your\
           \ user or save it in a log."
     description: "Returned when requested entity was not found."
   UnauthorizedResponse:
@@ -26438,7 +26441,7 @@ definitions:
       total:
         type: "number"
         example: 0.08
-        description: "Total price of the mesasge."
+        description: "Total price of the message."
       parts:
         type: "integer"
         example: 6
@@ -26532,16 +26535,16 @@ definitions:
       href:
         type: "string"
         example: "/api/v2/sessions/10489"
-        description: "URI of message session."
+        description: "URI of the message session."
       type:
         type: "string"
         example: "session"
-        description: "Message response type:\n* **message** when message sent to a\
-          \ single recipient\n* **session** when message sent to multiple recipients\n\
-          * **schedule** when message has been scheduled for sending\n* **bulk** when\
-          \ message sent to multiple recipient and the number of recipients requires\
-          \ asynchronous processiong See [Sending more than 1,000 messages in one\
-          \ session](http://docs.textmagictesting.com/#section/Tutorials/Sending-more-than-1000-messages-in-one-session).\n"
+        description: "Message response type:\n* **message** – when the message is\
+          \ sent to a single recipient.\n* **session** – when the message is sent\
+          \ is to multiple recipients.\n* **schedule** - when the message is scheduled\
+          \ for sending.\n* **bulk** - when the message is sent to multiple recipients\
+          \ and the number of recipients requires asynchronous processing See [Sending\
+          \ more than 1,000 messages in one session](http://docs.textmagictesting.com/#section/Tutorials/Sending-more-than-1000-messages-in-one-session).\n"
         enum:
         - "message"
         - "session"
@@ -26866,8 +26869,8 @@ definitions:
       country:
         type: "string"
         example: "US"
-        description: "2-letter ISO country code for local phone numbers, used when\
-          \ local is  set to true. Default is account country"
+        description: "The 2-letter ISO country code for local phone numbers, used\
+          \ when local is  set to true. Default is account country"
   User:
     type: "object"
     required:
@@ -27744,25 +27747,25 @@ definitions:
       deleted:
         type: "boolean"
         example: false
-        description: "Indicates that message has been deleted."
+        description: "Indicates that the message has been deleted."
       charset:
         type: "string"
         example: "ISO-8859-1"
         description: "Message charset. Could be:\n*   **ISO-8859-1** for plaintext\
-          \ SMS\n*   **UTF-16BE** for Unicode SMS\n"
+          \ SMS;\n*   **UTF-16BE** for Unicode SMS.\n"
         x-nullable: true
       charsetLabel:
         type: "string"
         example: "ISO-8859-1"
         description: "Human-readable message charset label. Could be:\n*   **ISO-8859-1**\
-          \ for plaintext SMS\n*   **UTF-16BE** for Unicode SMS\n*   **Voice** for\
-          \ voice services (Text-to-Speech or Voice Broadcast) messages\n"
+          \ for plaintext SMS;\n*   **UTF-16BE** for Unicode SMS;\n*   **Voice** for\
+          \ voice services (Text-to-Speech or Voice Broadcast) messages.\n"
         x-nullable: true
       firstName:
         type: "string"
         example: "John"
         description: "Contact first name. Could be substituted from your [Contacts](http://docs.textmagictesting.com/#tag/Contacts)\
-          \ (even if you submitted phone number instead of contact ID).\n"
+          \ (even if you submitted the phone number instead of the contact ID).\n"
         x-nullable: true
       lastName:
         type: "string"
@@ -27772,7 +27775,7 @@ definitions:
       country:
         type: "string"
         example: "US"
-        description: "Two-letter ISO country code of the recipient phone number.\n"
+        description: "The 2-letter ISO country code of the recipient's phone number.\n"
         x-nullable: true
       phone:
         type: "string"
@@ -27793,14 +27796,14 @@ definitions:
       fromEmail:
         type: "string"
         example: "test@email.com"
-        description: "User email which this message came from. For Email2SMS and Distribution\
-          \ Lists messages it will be an original email address, in other cases it\
-          \ is an account email address."
+        description: "The user email which this message came from. For Email2SMS and\
+          \ Distribution Lists the message will come from an original email address;\
+          \ in other cases, it will come from an account email address."
         x-nullable: true
       fromNumber:
         type: "string"
         example: "447624800500"
-        description: "Phone number which is used to send SMS."
+        description: "Phone number used to send the SMS."
         x-nullable: true
     example:
       messageTime: "2019-08-12T11:43:37+0000"
@@ -28711,6 +28714,7 @@ definitions:
       allowDedicated:
         type: "boolean"
         example: true
+        description: "Is allowed to use a dedicated number?"
   Currency:
     type: "object"
     required:
@@ -28743,7 +28747,7 @@ definitions:
       id:
         type: "string"
         example: "US"
-        description: "Two-letter ISO country ID."
+        description: "The 2-letter ISO country ID."
       name:
         type: "string"
         example: "India"
@@ -29149,7 +29153,7 @@ definitions:
       country:
         type: "string"
         example: "UK"
-        description: "Two-letter ISO country code of the recipient phone number."
+        description: "The 2-letter ISO country code of the recipient phone number."
   SenderSettingsItem:
     required:
     - "country"
@@ -29158,7 +29162,7 @@ definitions:
       country:
         type: "string"
         example: "US"
-        description: "Two-letter ISO country code of the recipient phone number.\n"
+        description: "The 2-letter ISO country code of the recipient phone number.\n"
       phone:
         type: "string"
         example: "+447937946700"
@@ -29179,31 +29183,31 @@ definitions:
       country:
         type: "string"
         example: "US"
-        description: "Two-letter ISO country code"
+        description: "The 2-letter ISO country code."
       countryName:
         type: "string"
         example: "United State"
-        description: "Country name"
+        description: "Country name."
       allowDedicated:
         type: "boolean"
         example: true
-        description: "Is allow to use dedicated number"
+        description: "Is allowed to use a dedicated number?"
       count:
         type: "number"
         example: 1.0
-        description: "Parts count to send"
+        description: "Parts count to send."
       max:
         type: "number"
         example: 6.0
-        description: "Maximum parts to send"
+        description: "Maximum parts to send."
       sum:
         type: "string"
         example: "1"
-        description: "Total price to send"
+        description: "Total price to send."
       landline:
         type: "number"
         example: 0.0
-        description: "Is this landline number?"
+        description: "Is this a landline number?"
     example:
       country: "US"
       max: 6.0
@@ -29220,7 +29224,7 @@ definitions:
       country:
         type: "string"
         example: "US"
-        description: "Two-letter ISO country code"
+        description: "The 2-letter ISO country code"
       userInboundId:
         type: "integer"
         example: 10
@@ -35224,24 +35228,24 @@ definitions:
       createChat:
         type: "boolean"
         example: false
-        description: "Should sending method try to create new Chat(if not exist) with\
-          \ specified recipients."
+        description: "Should sending method try to create new Chat (if not exist)\
+          \ with specified recipients?"
         default: false
       tts:
         type: "boolean"
         example: false
-        description: "Send Text to Speech message."
+        description: "Send a Text to Speech message."
         default: false
       local:
         type: "boolean"
         example: false
-        description: "Treat phone numbers passed in \\'phones\\' field as local."
+        description: "Treat phone numbers passed in the \\'phones\\' field as local."
         default: false
       localCountry:
         type: "string"
         example: "US"
-        description: "2-letter ISO country code for local phone numbers, used when\
-          \ \\'local\\' is set to true. Default is account country."
+        description: "The 2-letter ISO country code for local phone numbers, used\
+          \ when \\'local\\' is set to true. Default is the account country."
     example:
       createChat: false
       partsCount: 6
@@ -35570,7 +35574,7 @@ definitions:
         - "Common error message 1"
         - "Common error message 2"
         description: "Array of messages with errors related to the entire request.\
-          \ For example, you did not specify either the **text**\_or **templateId**\
+          \ For example, you did not specify either the **text**\_or the **templateId**\
           \ when [sending the message](http://docs.textmagictesting.com/#tag/Outbound-Messages).\n"
         items:
           type: "string"
@@ -35583,7 +35587,7 @@ definitions:
           fieldName2:
           - "Error message 3"
           - "Error message 4"
-        description: "Associative array. The keys are the POST/PUT parameters names\
+        description: "Associative array. The keys are the POST/PUT parameter names\
           \ and the values are arrays with error messages for these parameters.\n"
         properties: {}
     description: "If it was a **POST** or **PUT** request (and the **message** returned\
@@ -35700,7 +35704,7 @@ definitions:
         items:
           type: "string"
           example: "US"
-          description: "Two-letter ISO country ID."
+          description: "The 2-letter ISO country ID."
         x-nullable: true
       charsetLabel:
         type: "string"

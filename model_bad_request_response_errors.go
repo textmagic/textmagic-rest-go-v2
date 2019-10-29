@@ -11,8 +11,8 @@ package TextMagic
 
 // If it was a **POST** or **PUT** request (and the **message** returned is `Validation Failed`), this field may contain **errors **that describe the errors grouped by the input parameter name. 
 type BadRequestResponseErrors struct {
-	// Array of messages with errors related to the entire request. For example, you did not specify either the **text** or **templateId** when [sending the message](http://docs.textmagictesting.com/#tag/Outbound-Messages). 
+	// Array of messages with errors related to the entire request. For example, you did not specify either the **text** or the **templateId** when [sending the message](http://docs.textmagictesting.com/#tag/Outbound-Messages). 
 	Common []string `json:"common,omitempty"`
-	// Associative array. The keys are the POST/PUT parameters names and the values are arrays with error messages for these parameters. 
+	// Associative array. The keys are the POST/PUT parameter names and the values are arrays with error messages for these parameters. 
 	Fields *interface{} `json:"fields,omitempty"`
 }

@@ -30,17 +30,17 @@ type MessageOut struct {
 	// Sending time.
 	MessageTime time.Time `json:"messageTime"`
 	Avatar string `json:"avatar"`
-	// Indicates that message has been deleted.
+	// Indicates that the message has been deleted.
 	Deleted bool `json:"deleted,omitempty"`
-	// Message charset. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS 
+	// Message charset. Could be: *   **ISO-8859-1** for plaintext SMS; *   **UTF-16BE** for Unicode SMS. 
 	Charset string `json:"charset"`
-	// Human-readable message charset label. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS *   **Voice** for voice services (Text-to-Speech or Voice Broadcast) messages 
+	// Human-readable message charset label. Could be: *   **ISO-8859-1** for plaintext SMS; *   **UTF-16BE** for Unicode SMS; *   **Voice** for voice services (Text-to-Speech or Voice Broadcast) messages. 
 	CharsetLabel string `json:"charsetLabel"`
-	// Contact first name. Could be substituted from your [Contacts](http://docs.textmagictesting.com/#tag/Contacts) (even if you submitted phone number instead of contact ID). 
+	// Contact first name. Could be substituted from your [Contacts](http://docs.textmagictesting.com/#tag/Contacts) (even if you submitted the phone number instead of the contact ID). 
 	FirstName string `json:"firstName"`
 	// Contact last name.
 	LastName string `json:"lastName"`
-	// Two-letter ISO country code of the recipient phone number. 
+	// The 2-letter ISO country code of the recipient's phone number. 
 	Country string `json:"country"`
 	// Receipent phone number.
 	Phone string `json:"phone,omitempty"`
@@ -48,8 +48,8 @@ type MessageOut struct {
 	Price float32 `json:"price,omitempty"`
 	// Message parts (multiples of 160 characters) count.
 	PartsCount int32 `json:"partsCount"`
-	// User email which this message came from. For Email2SMS and Distribution Lists messages it will be an original email address, in other cases it is an account email address.
+	// The user email which this message came from. For Email2SMS and Distribution Lists the message will come from an original email address; in other cases, it will come from an account email address.
 	FromEmail string `json:"fromEmail,omitempty"`
-	// Phone number which is used to send SMS.
+	// Phone number used to send the SMS.
 	FromNumber string `json:"fromNumber,omitempty"`
 }

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Total** | **float32** | Total price of the mesasge. | [default to null]
+**Total** | **float32** | Total price of the message. | [default to null]
 **Parts** | **int32** | Message parts (multiples of 160 characters) count. | [default to null]
 **Countries** | [**[]GetMessagePriceResponseCountriesItem**](GetMessagePriceResponseCountriesItem.md) |  | [default to null]
 

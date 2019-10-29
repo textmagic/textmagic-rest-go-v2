@@ -16,6 +16,6 @@ type CallPriceResponse struct {
 	Inbound float32 `json:"inbound"`
 	// Price for forward
 	Forward float32 `json:"forward"`
-	// 2-letter ISO country code for local phone numbers, used when local is  set to true. Default is account country
+	// The 2-letter ISO country code for local phone numbers, used when local is  set to true. Default is account country
 	Country string `json:"country"`
 }

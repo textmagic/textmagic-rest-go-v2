@@ -1551,7 +1551,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **lastId** | **optional.Int32**| Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified | 
+ **lastId** | **optional.Int32**| Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified | 
 
 ### Return type
 
@@ -1699,7 +1699,7 @@ Optional parameters are passed through a pointer to a GetAvailableSenderSettingO
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **country** | **optional.String**| Two-letter ISO country ID. If not specified, it returns all the available sender settings. | 
+ **country** | **optional.String**| The 2-letter ISO country ID. If not specified, it returns all the available sender settings. | 
 
 ### Return type
 
@@ -2678,21 +2678,21 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **text** | **optional.String**| Message text. Required if **template_id** is not set. | 
  **templateId** | **optional.Int32**| Template used instead of message text. Required if **text** is not set. | 
- **sendingTime** | **optional.Int32**| DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now. | 
- **sendingDateTime** | **optional.String**| Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone. | 
- **sendingTimezone** | **optional.String**| ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone. | 
- **contacts** | **optional.String**| Comma separated array of contact resources id message will be sent to. | 
- **lists** | **optional.String**| Comma separated array of list resources id message will be sent to. | 
- **phones** | **optional.String**| Comma separated array of E.164 phone numbers message will be sent to. | 
+ **sendingTime** | **optional.Int32**| DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time is in unix timestamp format. Default is now. | 
+ **sendingDateTime** | **optional.String**| Sending time is in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to the sendingTimezone. | 
+ **sendingTimezone** | **optional.String**| The ID or ISO-name of the timezone used for sending when the sendingDateTime parameter is set, e.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent on May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is the account timezone. | 
+ **contacts** | **optional.String**| Comma-separated array of contact resources id message will be sent to. | 
+ **lists** | **optional.String**| Comma-separated array of list resources id message will be sent to. | 
+ **phones** | **optional.String**| Comma-separated array of E.164 phone numbers message will be sent to. | 
  **cutExtra** | **optional.Int32**| Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. | [default to 0]
- **partsCount** | **optional.Int32**| Maximum message parts count (TextMagic allows sending 1 to 6 message parts). | [default to 6]
+ **partsCount** | **optional.Int32**| Maximum message parts count (TextMagic allows sending of 1 to 6 message parts). | [default to 6]
  **referenceId** | **optional.Int32**| Custom message reference id which can be used in your application infrastructure. | 
- **from** | **optional.String**| One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). | 
- **rule** | **optional.String**| iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. | 
- **createChat** | **optional.Int32**| Should sending method try to create new Chat(if not exist) with specified recipients. | [default to 0]
+ **from** | **optional.String**| One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). | 
+ **rule** | **optional.String**| An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. | 
+ **createChat** | **optional.Int32**| Should the sending method try to create new Chat(if not exist) with specified recipients? | [default to 0]
  **tts** | **optional.Int32**| Send Text to Speech message. | [default to 0]
- **local** | **optional.Int32**| Treat phone numbers passed in \\&#39;phones\\&#39; field as local. | [default to 0]
- **localCountry** | **optional.String**| 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country. | 
+ **local** | **optional.Int32**| Treat phone numbers passed in the \\&#39;phones\\&#39; field as local. | [default to 0]
+ **localCountry** | **optional.String**| The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country. | 
 
 ### Return type
 
@@ -2727,24 +2727,24 @@ Optional parameters are passed through a pointer to a GetMessagePriceOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **includeBlocked** | **optional.Int32**| Should we show pricing for the blocked contacts. | [default to 0]
- **text** | **optional.String**| Message text. Required if **template_id** is not set. | 
- **templateId** | **optional.Int32**| Template used instead of message text. Required if **text** is not set. | 
- **sendingTime** | **optional.Int32**| DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now. | 
- **sendingDateTime** | **optional.String**| Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone. | 
- **sendingTimezone** | **optional.String**| ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone. | 
- **contacts** | **optional.String**| Comma separated array of contact resources id message will be sent to. | 
- **lists** | **optional.String**| Comma separated array of list resources id message will be sent to. | 
- **phones** | **optional.String**| Comma separated array of E.164 phone numbers message will be sent to. | 
+ **includeBlocked** | **optional.Int32**| Should we show the pricing for blocked contacts? | [default to 0]
+ **text** | **optional.String**| Message text. Required if the **template_id** is not set. | 
+ **templateId** | **optional.Int32**| Template used instead of message text. Required if the **text** is not set. | 
+ **sendingTime** | **optional.Int32**| DEPRECATED, consider using the sendingDateTime and sendingTimezone parameters instead: optional (required with rrule set). Message sending time is in unix timestamp format. Default is now. | 
+ **sendingDateTime** | **optional.String**| Sending time is in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to the sendingTimezone. | 
+ **sendingTimezone** | **optional.String**| The ID or ISO-name of the timezone used for sending when sendingDateTime parameter is set, e.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent on May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is the account timezone. | 
+ **contacts** | **optional.String**| Comma-separated array of contact resources id message will be sent to. | 
+ **lists** | **optional.String**| Comma-separated array of list resources id message will be sent to. | 
+ **phones** | **optional.String**| Comma-separated array of E.164 phone numbers message will be sent to. | 
  **cutExtra** | **optional.Int32**| Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. | [default to 0]
  **partsCount** | **optional.Int32**| Maximum message parts count (TextMagic allows sending 1 to 6 message parts). | [default to 6]
  **referenceId** | **optional.Int32**| Custom message reference id which can be used in your application infrastructure. | 
- **from** | **optional.String**| One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). | 
- **rule** | **optional.String**| iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. | 
- **createChat** | **optional.Int32**| Should sending method try to create new Chat(if not exist) with specified recipients. | [default to 0]
- **tts** | **optional.Int32**| Send Text to Speech message. | [default to 0]
- **local** | **optional.Int32**| Treat phone numbers passed in \\&#39;phones\\&#39; field as local. | [default to 0]
- **localCountry** | **optional.String**| 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country. | 
+ **from** | **optional.String**| One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). | 
+ **rule** | **optional.String**| An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. | 
+ **createChat** | **optional.Int32**| Should the sending method try to create new Chat (if not exist) with specified recipients? | [default to 0]
+ **tts** | **optional.Int32**| Send a Text to Speech message. | [default to 0]
+ **local** | **optional.Int32**| Treat phone numbers passed in the \\&#39;phones\\&#39; field as local. | [default to 0]
+ **localCountry** | **optional.String**| The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country. | 
 
 ### Return type
 
@@ -4063,7 +4063,7 @@ Name | Type | Description  | Notes
 > SendMessageResponse SendMessage(ctx, sendMessageInputObject)
 Send message
 
-The main entrypoint to send messages. See examples above for the reference.
+This is the main entrypoint to send messages. See the examples above for the reference.
 
 ### Required Parameters
 

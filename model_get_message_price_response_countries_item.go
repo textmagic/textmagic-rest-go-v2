@@ -10,18 +10,18 @@
 package TextMagic
 
 type GetMessagePriceResponseCountriesItem struct {
-	// Two-letter ISO country code
+	// The 2-letter ISO country code.
 	Country string `json:"country"`
-	// Country name
+	// Country name.
 	CountryName string `json:"countryName"`
-	// Is allow to use dedicated number
+	// Is allowed to use a dedicated number?
 	AllowDedicated bool `json:"allowDedicated"`
-	// Parts count to send
+	// Parts count to send.
 	Count float32 `json:"count"`
-	// Maximum parts to send
+	// Maximum parts to send.
 	Max float32 `json:"max"`
-	// Total price to send
+	// Total price to send.
 	Sum string `json:"sum"`
-	// Is this landline number?
+	// Is this a landline number?
 	Landline float32 `json:"landline"`
 }

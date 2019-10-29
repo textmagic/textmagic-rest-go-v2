@@ -10,7 +10,7 @@
 package TextMagic
 
 type Country struct {
-	// Two-letter ISO country ID.
+	// The 2-letter ISO country ID.
 	Id string `json:"id"`
 	// Full country name.
 	Name string `json:"name"`

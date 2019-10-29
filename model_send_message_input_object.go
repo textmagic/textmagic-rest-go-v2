@@ -36,12 +36,12 @@ type SendMessageInputObject struct {
 	From string `json:"from,omitempty"`
 	// iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
 	Rrule string `json:"rrule,omitempty"`
-	// Should sending method try to create new Chat(if not exist) with specified recipients.
+	// Should sending method try to create new Chat (if not exist) with specified recipients?
 	CreateChat bool `json:"createChat,omitempty"`
-	// Send Text to Speech message.
+	// Send a Text to Speech message.
 	Tts bool `json:"tts,omitempty"`
-	// Treat phone numbers passed in \\'phones\\' field as local.
+	// Treat phone numbers passed in the \\'phones\\' field as local.
 	Local bool `json:"local,omitempty"`
-	// 2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is account country.
+	// The 2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is the account country.
 	LocalCountry string `json:"localCountry,omitempty"`
 }

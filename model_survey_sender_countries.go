@@ -13,5 +13,6 @@ type SurveySenderCountries struct {
 	Id int32 `json:"id"`
 	CountryName string `json:"countryName"`
 	FromNumber string `json:"fromNumber"`
+	// Is allowed to use a dedicated number?
 	AllowDedicated bool `json:"allowDedicated"`
 }

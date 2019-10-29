@@ -10,7 +10,7 @@
 package TextMagic
 
 type UpdateSurveyCountryItem struct {
-	// Two-letter ISO country code
+	// The 2-letter ISO country code
 	Country string `json:"country"`
 	// User inbound phone ID
 	UserInboundId int32 `json:"userInboundId"`
