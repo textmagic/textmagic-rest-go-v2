@@ -1152,7 +1152,7 @@ Name | Type | Description  | Notes
 > DeleteOutboundMessagesBulk(ctx, deleteOutboundMessagesBulkInputObject)
 Delete messages (bulk)
 
-Delete outbound messages by given ID(s) or delete all outbound messages.
+Delete outbound messages by the given ID(s) or delete all outbound messages.
 
 ### Required Parameters
 
@@ -1478,7 +1478,7 @@ Name | Type | Description  | Notes
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
  **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
- **direction** | **optional.String**| Order direction. Default is desc | [default to desc]
+ **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
 
 ### Return type
 
@@ -1590,7 +1590,7 @@ Name | Type | Description  | Notes
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
  **status** | **optional.String**| Fetch schedules with the specific status: a - actual, c - completed, x - all | [default to x]
  **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
- **direction** | **optional.String**| Order direction. Default is desc | [default to desc]
+ **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
 
 ### Return type
 
@@ -1784,9 +1784,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **query** | **optional.String**| Find blocked contacts by specified search query | 
- **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
- **direction** | **optional.String**| Order direction. Default is desc | [default to desc]
+ **query** | **optional.String**| Find blocked contacts by specified search query. | 
+ **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
+ **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
 
 ### Return type
 
@@ -1946,7 +1946,7 @@ Name | Type | Description  | Notes
  **query** | **optional.String**| Find messages by specified search query | 
  **start** | **optional.Int32**| Return messages since specified timestamp only | 
  **end** | **optional.Int32**| Return messages up to specified timestamp only | 
- **direction** | **optional.String**| Order direction. Default is desc | [default to desc]
+ **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
  **voice** | **optional.Int32**| Fetch results with voice calls | [default to 0]
 
 ### Return type
@@ -2163,8 +2163,8 @@ Name | Type | Description  | Notes
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
  **shared** | **optional.Int32**| Should shared contacts to be included | [default to 0]
- **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
- **direction** | **optional.String**| Order direction. Default is desc | [default to desc]
+ **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
+ **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
 
 ### Return type
 
@@ -2192,7 +2192,7 @@ Get contacts autocomplete suggestions by given search term
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **query** | **string**| Find recipients by specified search query | 
+  **query** | **string**| Find recipients by specified search query. | 
  **optional** | ***GetContactsAutocompleteOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -2242,7 +2242,7 @@ Name | Type | Description  | Notes
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
  **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
- **direction** | **optional.String**| Order direction. Default is desc | [default to desc]
+ **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
 
 ### Return type
 
@@ -2600,8 +2600,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| The current fetched page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
- **direction** | **optional.String**| Order direction. Default is desc | [default to desc]
+ **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
+ **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
  **favoriteOnly** | **optional.Int32**| Return only favorite lists | [default to 0]
  **onlyMine** | **optional.Int32**| Return only current user lists | [default to 0]
 
@@ -2662,7 +2662,7 @@ Name | Type | Description  | Notes
 > GetMessagePreviewResponse GetMessagePreview(ctx, optional)
 Preview message
 
-Get messages preview (with tags merged) up to 100 messages per session.
+Get a messages preview (with tags merged) of up to 100 messages per session.
 
 ### Required Parameters
 
@@ -2690,7 +2690,7 @@ Name | Type | Description  | Notes
  **from** | **optional.String**| One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). | 
  **rule** | **optional.String**| An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. | 
  **createChat** | **optional.Int32**| Should the sending method try to create new Chat(if not exist) with specified recipients? | [default to 0]
- **tts** | **optional.Int32**| Send Text to Speech message. | [default to 0]
+ **tts** | **optional.Int32**| Send Text-to-Speech message. | [default to 0]
  **local** | **optional.Int32**| Treat phone numbers passed in the \\&#39;phones\\&#39; field as local. | [default to 0]
  **localCountry** | **optional.String**| The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country. | 
 
@@ -2742,7 +2742,7 @@ Name | Type | Description  | Notes
  **from** | **optional.String**| One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). | 
  **rule** | **optional.String**| An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. | 
  **createChat** | **optional.Int32**| Should the sending method try to create new Chat (if not exist) with specified recipients? | [default to 0]
- **tts** | **optional.Int32**| Send a Text to Speech message. | [default to 0]
+ **tts** | **optional.Int32**| Send a Text-to-Speech message. | [default to 0]
  **local** | **optional.Int32**| Treat phone numbers passed in the \\&#39;phones\\&#39; field as local. | [default to 0]
  **localCountry** | **optional.String**| The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country. | 
 
@@ -2959,7 +2959,7 @@ Name | Type | Description  | Notes
 > GetOutboundMessagesHistoryPaginatedResponse GetOutboundMessagesHistory(ctx, optional)
 Get history
 
-Get outbound messages history.
+Get the outbound messages history.
 
 ### Required Parameters
 
@@ -2977,7 +2977,7 @@ Name | Type | Description  | Notes
  **lastId** | **optional.Int32**| Filter results by ID, selecting all values lesser than the specified ID. | 
  **query** | **optional.String**| Find message by specified search query | 
  **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
- **direction** | **optional.String**| Order direction. Default is desc | [default to desc]
+ **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
 
 ### Return type
 
@@ -3836,8 +3836,8 @@ Name | Type | Description  | Notes
  **query** | **optional.String**| Find contacts by specified search query | 
  **local** | **optional.Int32**| Treat phone number passed in &#39;query&#39; field as local. Default is 0 | [default to 0]
  **country** | **optional.String**| 2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country | 
- **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
- **direction** | **optional.String**| Order direction. Default is desc | [default to desc]
+ **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
+ **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
 
 ### Return type
 
@@ -3874,11 +3874,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **ids** | **optional.String**| Find message by ID(s) | 
- **query** | **optional.String**| Find recipients by specified search query | 
+ **ids** | **optional.String**| Find message by ID(s). | 
+ **query** | **optional.String**| Find recipients by specified search query. | 
  **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
- **direction** | **optional.String**| Order direction. Default is desc | [default to desc]
- **expand** | **optional.Int32**| Expand by adding firstName, lastName and contactId | [default to 0]
+ **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
+ **expand** | **optional.Int32**| Expand by adding firstName, lastName and contactId. | [default to 0]
 
 ### Return type
 
@@ -3920,7 +3920,7 @@ Name | Type | Description  | Notes
  **onlyMine** | **optional.Int32**| Return only current user lists | [default to 0]
  **onlyDefault** | **optional.Int32**| Return only default lists | [default to 0]
  **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
- **direction** | **optional.String**| Order direction. Default is desc | [default to desc]
+ **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
 
 ### Return type
 
@@ -3957,12 +3957,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **lastId** | **optional.Int32**| Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified | 
- **ids** | **optional.String**| Find message by ID(s) | 
- **sessionId** | **optional.Int32**| Find messages by session ID | 
- **statuses** | **optional.String**| Find messages by status | 
- **includeDeleted** | **optional.Int32**| Search also in deleted messages | [default to 0]
- **query** | **optional.String**| Find messages by specified search query | 
+ **lastId** | **optional.Int32**| Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified | 
+ **ids** | **optional.String**| Find message by ID(s). | 
+ **sessionId** | **optional.Int32**| Find messages by session ID. | 
+ **statuses** | **optional.String**| Find messages by status. | 
+ **includeDeleted** | **optional.Int32**| Search also in deleted messages. | [default to 0]
+ **query** | **optional.String**| Find messages by specified search query. | 
 
 ### Return type
 
@@ -4003,7 +4003,7 @@ Name | Type | Description  | Notes
  **ids** | **optional.String**| Find schedules by ID(s) | 
  **status** | **optional.String**| Fetch schedules with the specific status: a - actual, c - completed, x - all | [default to x]
  **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
- **direction** | **optional.String**| Order direction. Default is desc | [default to desc]
+ **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
 
 ### Return type
 

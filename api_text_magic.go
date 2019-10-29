@@ -3568,7 +3568,7 @@ func (a *TextMagicApiService) DeleteOutboundMessage(ctx context.Context, id int3
 
 /* 
 TextMagicApiService Delete messages (bulk)
-Delete outbound messages by given ID(s) or delete all outbound messages.
+Delete outbound messages by the given ID(s) or delete all outbound messages.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteOutboundMessagesBulkInputObject
 
@@ -4635,7 +4635,7 @@ TextMagicApiService Get all inbound messages
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
      * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
-     * @param "Direction" (optional.String) -  Order direction. Default is desc
+     * @param "Direction" (optional.String) -  Order direction. Default is desc.
 
 @return GetAllInboundMessagesPaginatedResponse
 */
@@ -5001,7 +5001,7 @@ TextMagicApiService Get all scheduled messages
      * @param "Limit" (optional.Int32) -  The number of results per page.
      * @param "Status" (optional.String) -  Fetch schedules with the specific status: a - actual, c - completed, x - all
      * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
-     * @param "Direction" (optional.String) -  Order direction. Default is desc
+     * @param "Direction" (optional.String) -  Order direction. Default is desc.
 
 @return GetAllScheduledMessagesPaginatedResponse
 */
@@ -5681,9 +5681,9 @@ TextMagicApiService Get blocked contacts
  * @param optional nil or *GetBlockedContactsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "Query" (optional.String) -  Find blocked contacts by specified search query
-     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
-     * @param "Direction" (optional.String) -  Order direction. Default is desc
+     * @param "Query" (optional.String) -  Find blocked contacts by specified search query.
+     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
+     * @param "Direction" (optional.String) -  Order direction. Default is desc.
 
 @return GetBlockedContactsPaginatedResponse
 */
@@ -6270,7 +6270,7 @@ TextMagicApiService Get chat messages
      * @param "Query" (optional.String) -  Find messages by specified search query
      * @param "Start" (optional.Int32) -  Return messages since specified timestamp only
      * @param "End" (optional.Int32) -  Return messages up to specified timestamp only
-     * @param "Direction" (optional.String) -  Order direction. Default is desc
+     * @param "Direction" (optional.String) -  Order direction. Default is desc.
      * @param "Voice" (optional.Int32) -  Fetch results with voice calls
 
 @return GetChatMessagesPaginatedResponse
@@ -7077,8 +7077,8 @@ TextMagicApiService Get all contacts
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
      * @param "Shared" (optional.Int32) -  Should shared contacts to be included
-     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
-     * @param "Direction" (optional.String) -  Order direction. Default is desc
+     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
+     * @param "Direction" (optional.String) -  Order direction. Default is desc.
 
 @return GetContactsPaginatedResponse
 */
@@ -7201,7 +7201,7 @@ func (a *TextMagicApiService) GetContacts(ctx context.Context, localVarOptionals
 TextMagicApiService Get contacts autocomplete suggestions
 Get contacts autocomplete suggestions by given search term
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param query Find recipients by specified search query
+ * @param query Find recipients by specified search query.
  * @param optional nil or *GetContactsAutocompleteOpts - Optional Parameters:
      * @param "Limit" (optional.Int32) -  The number of results per page.
      * @param "Lists" (optional.Int32) -  Should lists be returned or not
@@ -7321,7 +7321,7 @@ A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
      * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
-     * @param "Direction" (optional.String) -  Order direction. Default is desc
+     * @param "Direction" (optional.String) -  Order direction. Default is desc.
 
 @return GetContactsByListIdPaginatedResponse
 */
@@ -8659,8 +8659,8 @@ TextMagicApiService Get all lists
  * @param optional nil or *GetListsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  The current fetched page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
-     * @param "Direction" (optional.String) -  Order direction. Default is desc
+     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
+     * @param "Direction" (optional.String) -  Order direction. Default is desc.
      * @param "FavoriteOnly" (optional.Int32) -  Return only favorite lists
      * @param "OnlyMine" (optional.Int32) -  Return only current user lists
 
@@ -8924,7 +8924,7 @@ func (a *TextMagicApiService) GetListsOfContact(ctx context.Context, id int32, l
 
 /* 
 TextMagicApiService Preview message
-Get messages preview (with tags merged) up to 100 messages per session.
+Get a messages preview (with tags merged) of up to 100 messages per session.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetMessagePreviewOpts - Optional Parameters:
      * @param "Text" (optional.String) -  Message text. Required if **template_id** is not set.
@@ -8941,7 +8941,7 @@ Get messages preview (with tags merged) up to 100 messages per session.
      * @param "From" (optional.String) -  One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
      * @param "Rule" (optional.String) -  An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
      * @param "CreateChat" (optional.Int32) -  Should the sending method try to create new Chat(if not exist) with specified recipients?
-     * @param "Tts" (optional.Int32) -  Send Text to Speech message.
+     * @param "Tts" (optional.Int32) -  Send Text-to-Speech message.
      * @param "Local" (optional.Int32) -  Treat phone numbers passed in the \\&#39;phones\\&#39; field as local.
      * @param "LocalCountry" (optional.String) -  The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country.
 
@@ -9141,7 +9141,7 @@ Check pricing for a new outbound message.
      * @param "From" (optional.String) -  One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
      * @param "Rule" (optional.String) -  An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
      * @param "CreateChat" (optional.Int32) -  Should the sending method try to create new Chat (if not exist) with specified recipients?
-     * @param "Tts" (optional.Int32) -  Send a Text to Speech message.
+     * @param "Tts" (optional.Int32) -  Send a Text-to-Speech message.
      * @param "Local" (optional.Int32) -  Treat phone numbers passed in the \\&#39;phones\\&#39; field as local.
      * @param "LocalCountry" (optional.String) -  The 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is the account country.
 
@@ -10022,14 +10022,14 @@ func (a *TextMagicApiService) GetOutboundMessage(ctx context.Context, id int32) 
 
 /* 
 TextMagicApiService Get history
-Get outbound messages history.
+Get the outbound messages history.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetOutboundMessagesHistoryOpts - Optional Parameters:
      * @param "Limit" (optional.Int32) -  The number of results per page.
      * @param "LastId" (optional.Int32) -  Filter results by ID, selecting all values lesser than the specified ID.
      * @param "Query" (optional.String) -  Find message by specified search query
      * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
-     * @param "Direction" (optional.String) -  Order direction. Default is desc
+     * @param "Direction" (optional.String) -  Order direction. Default is desc.
 
 @return GetOutboundMessagesHistoryPaginatedResponse
 */
@@ -13067,8 +13067,8 @@ TextMagicApiService Find contacts by given criteria
      * @param "Query" (optional.String) -  Find contacts by specified search query
      * @param "Local" (optional.Int32) -  Treat phone number passed in &#39;query&#39; field as local. Default is 0
      * @param "Country" (optional.String) -  2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country
-     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
-     * @param "Direction" (optional.String) -  Order direction. Default is desc
+     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
+     * @param "Direction" (optional.String) -  Order direction. Default is desc.
 
 @return SearchContactsPaginatedResponse
 */
@@ -13218,11 +13218,11 @@ Find inbound messages by given parameters.
  * @param optional nil or *SearchInboundMessagesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "Ids" (optional.String) -  Find message by ID(s)
-     * @param "Query" (optional.String) -  Find recipients by specified search query
+     * @param "Ids" (optional.String) -  Find message by ID(s).
+     * @param "Query" (optional.String) -  Find recipients by specified search query.
      * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
-     * @param "Direction" (optional.String) -  Order direction. Default is desc
-     * @param "Expand" (optional.Int32) -  Expand by adding firstName, lastName and contactId
+     * @param "Direction" (optional.String) -  Order direction. Default is desc.
+     * @param "Expand" (optional.Int32) -  Expand by adding firstName, lastName and contactId.
 
 @return SearchInboundMessagesPaginatedResponse
 */
@@ -13372,7 +13372,7 @@ TextMagicApiService Find lists by given criteria
      * @param "OnlyMine" (optional.Int32) -  Return only current user lists
      * @param "OnlyDefault" (optional.Int32) -  Return only default lists
      * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
-     * @param "Direction" (optional.String) -  Order direction. Default is desc
+     * @param "Direction" (optional.String) -  Order direction. Default is desc.
 
 @return SearchListsPaginatedResponse
 */
@@ -13521,12 +13521,12 @@ Find outbound messages by given parameters.
  * @param optional nil or *SearchOutboundMessagesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "LastId" (optional.Int32) -  Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
-     * @param "Ids" (optional.String) -  Find message by ID(s)
-     * @param "SessionId" (optional.Int32) -  Find messages by session ID
-     * @param "Statuses" (optional.String) -  Find messages by status
-     * @param "IncludeDeleted" (optional.Int32) -  Search also in deleted messages
-     * @param "Query" (optional.String) -  Find messages by specified search query
+     * @param "LastId" (optional.Int32) -  Filter results by ID, selecting all values lesser than the specified ID. Note that the \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified
+     * @param "Ids" (optional.String) -  Find message by ID(s).
+     * @param "SessionId" (optional.Int32) -  Find messages by session ID.
+     * @param "Statuses" (optional.String) -  Find messages by status.
+     * @param "IncludeDeleted" (optional.Int32) -  Search also in deleted messages.
+     * @param "Query" (optional.String) -  Find messages by specified search query.
 
 @return SearchOutboundMessagesPaginatedResponse
 */
@@ -13679,7 +13679,7 @@ TextMagicApiService Find scheduled messages
      * @param "Ids" (optional.String) -  Find schedules by ID(s)
      * @param "Status" (optional.String) -  Fetch schedules with the specific status: a - actual, c - completed, x - all
      * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
-     * @param "Direction" (optional.String) -  Order direction. Default is desc
+     * @param "Direction" (optional.String) -  Order direction. Default is desc.
 
 @return SearchScheduledMessagesPaginatedResponse
 */

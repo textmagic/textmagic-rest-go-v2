@@ -16,9 +16,9 @@ import (
 type BulkSession struct {
 	// Bulk Session ID.
 	Id int32 `json:"id"`
-	// * **n** - bulk session is just created * **w** - work in progress * **f** - failed * **c** - completed with success * **s** - suspended 
+	// * **n** – bulk session is just created * **w** - work in progress * **f** - failed * **c** - completed with success * **s** - suspended 
 	Status string `json:"status"`
-	// Amount of messages which is already processed.
+	// Amount of messages already processed.
 	ItemsProcessed int32 `json:"itemsProcessed"`
 	// Total amount of messages to be processed.
 	ItemsTotal int32 `json:"itemsTotal"`

@@ -219,12 +219,12 @@ tags:
     \ yet).\n2.  Go to the\_[API](https://my.textmagic.com/online/api/settings) page.\n\
     3.  Enter your callback URL into the\_**Callback URL for incoming messages** field.\n\
     4.  Click the\_**Test** button to test your URL.\n5.  If it’s successful, click\
-    \ **Save changes**.\n\nYour server should reply with a **200 OK** response at\
+    \ **Save changes**.\n\nYour server should reply with an **200 OK** response at\
     \ this URL. If it does not, your callback URL will be treated as invalid and the\
     \ inbound messages will not be passed to\nyour application.\n\n### Call parameters\n\
     \nYour callback URL will be triggered immediately after a message reaches the\
     \ TextMagic server. The parameters are passed by the **POST** method and contain\
-    \ the following\ninformation (i.e. exact copy of the **reply** resource). The\_\
+    \ the following\ninformation (i.e. an exact copy of the **reply** resource). The\_\
     Resource format is basically the format of the reply when making the request to\
     \ the specific API resource.\n\n| Parameter | Example | Description |\n| ---------\
     \ | ------- | ----------- |\n| **id**    | `1782832`| Inbound message ID. |\n\
@@ -501,7 +501,7 @@ tags:
     \n```javascript\n{\n    \"repositories\": [\n        {\n            \"type\":\
     \ \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
     \n        }\n    ],\n    \"require\": {\n        \"textmagic/textmagic-rest-php-v2\"\
-    : \"dev-master#v2.0.808\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
+    : \"dev-master#v2.0.809\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
     \ Manual Installation\n\nDownload the files and include `autoload.php`:\n\n```php\n\
     require_once(__DIR__.'/vendor/autoload.php');\n```\n\n## Usage Example\n\nPlease\
     \ follow the [installation](#installation) instructions and execute the following\
@@ -530,7 +530,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Node.js application.\n\n[Get\
     \ it now on GitHub](https://github.com/textmagic/textmagic-rest-nodejs)\n## Installation\n\
-    \n```shell\nnpm install textmagic-client@2.0.808 --save\n```\n\n## Usage Example\n\
+    \n```shell\nnpm install textmagic-client@2.0.809 --save\n```\n\n## Usage Example\n\
     \nPlease follow the [installation](#installation) instructions and execute the\
     \ following JS code:\n\n```javascript\nconst textmagicClient = require('textmagic-client');\n\
     \nconst fs = require('fs');\nconst client = textmagicClient.ApiClient.instance;\n\
@@ -562,7 +562,7 @@ tags:
     Install-Package Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp\
     \ versions later than 105.1.0 have a bug which causes file uploads to fail. See\
     \ [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\n## Installation\n\
-    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.808/).\n\
+    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.809/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -625,22 +625,22 @@ tags:
     \ Requirements\n\n* CMake 2.8 and later (https://cmake.org/)\n* cpprest (https://github.com/microsoft/cpprestsdk)\n\
     \nUbuntu dependencies quick installation example:\n```shell\napt-get install build-essential\
     \ cmake libcpprest-dev\n```\n\n## Installation\n\nDownload and extract lib archive:\n\
-    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.808.tar.gz\
-    \ && \\\ntar zxf v2.0.808.tar.gz && \\\nrm -f v2.0.808.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.808\n\
+    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.809.tar.gz\
+    \ && \\\ntar zxf v2.0.809.tar.gz && \\\nrm -f v2.0.809.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.809\n\
     ```\nBuild using cmake\n```shell\ncmake . && cmake --build .\n```\nThe output\
-    \ library file will be placed in `textmagic-rest-cpp-v2-2.0.808/lib` directory:\n\
+    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.809/lib` directory:\n\
     \n## Usage Example\nIn the example below, we assume that you moved the library\
-    \ sources `textmagic-rest-cpp-v2-2.0.808` directory to your test project root\
+    \ sources `textmagic-rest-cpp-v2-2.0.809` directory to your test project root\
     \ directory.\n\nConfigure your `CMakeLists.txt` as shown here:\n```shell\ncmake_minimum_required(VERSION\
     \ 2.8)\nproject(test)\n\nset(CMAKE_CXX_STANDARD 14)\n\nadd_executable(app main.cpp)\n\
     \nadd_library(textmagic_client SHARED IMPORTED)\nset_property(TARGET textmagic_client\
-    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.808/lib/libtextmagic_client.so\"\
-    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.808\
-    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.808/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.808/api)\n\
+    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.809/lib/libtextmagic_client.so\"\
+    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.809\
+    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.809/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.809/api)\n\
     target_link_libraries(app boost_system cpprest crypto textmagic_client )\n```\n\
     \n`main.cpp` file example:\n```cpp\n#include <iostream>\n#include <fstream>\n\
-    #include \"textmagic-rest-cpp-v2-2.0.808/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.808/ApiConfiguration.h\"\
-    \n#include \"textmagic-rest-cpp-v2-2.0.808/api/TextMagicApi.h\"\n\nusing namespace\
+    #include \"textmagic-rest-cpp-v2-2.0.809/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.809/ApiConfiguration.h\"\
+    \n#include \"textmagic-rest-cpp-v2-2.0.809/api/TextMagicApi.h\"\n\nusing namespace\
     \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
     \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
     \ ApiConfiguration);\n\n    apiConfig->setBaseUrl(\"https://rest.textmagic.com\"\
@@ -680,7 +680,7 @@ tags:
     \ SMS and receiving replies by integrating TextMagic SMS Gateway into your Python\
     \ application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-python)\n\
     ## Requirements\nPython 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install\
-    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.808\n```\n\
+    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.809\n```\n\
     \n## Usage Example\n\n```python\nimport TextMagic\nfrom TextMagic.rest import\
     \ ApiException\n\n# Configure HTTP basic authorization: BasicAuth\nconfiguration\
     \ = TextMagic.Configuration()\nconfiguration.username = 'YOUR_USERNAME'\nconfiguration.password\
@@ -705,8 +705,8 @@ tags:
     \ GitHub\">Star</a>\n\nThis library provides you with an easy way of sending SMS\
     \ and receiving replies by integrating TextMagic SMS Gateway into your Perl application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-perl)\n##\
-    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.808.tar.gz\
-    \ && \\\ntar zxf v2.0.808.tar.gz && \\\nrm -f v2.0.808.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.808\
+    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.809.tar.gz\
+    \ && \\\ntar zxf v2.0.809.tar.gz && \\\nrm -f v2.0.809.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.809\
     \ && \\\nperl Makefile.pl && \\\nmake && \\\nmake install && \\\ncpanm --installdeps\
     \ .\n```\\\n\n## Usage Example\n\nPlease follow the [installation](#installation)\
     \ instructions and execute the following Perl code:\n\n```perl\nuse 5.010;\nuse\
@@ -735,7 +735,7 @@ tags:
     \ and receiving replies by integrating TextMagic SMS Gateway into your Ruby application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-ruby)\n##\
     \ Installation\n\nAdd these lines into your Gemfile\n```ruby\ngem 'textmagic_rest_client',\
-    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.808'\n\
+    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.809'\n\
     ```\n\nRun the bundler install command\n``` shell\nbundle install\n```\n\n## Usage\
     \ Example\n\nCreate the test file `test.rb` and put the following code:\n```ruby\n\
     \ # Load the gem\nrequire 'textmagic_rest_client'\n\n # Setup authorization\n\
@@ -761,8 +761,8 @@ tags:
     Star imissyouso/textmagic-rest-go on GitHub\">Star</a>\n\nThis library provides\
     \ you with an easy way of sending SMS and receiving replies by integrating TextMagic\
     \ SMS Gateway into your Go application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-go)\n\
-    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.808\n\
-    ```\n\nwithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
+    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.809\n\
+    ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
     \ call example below.\n\n## Usage Example\n\n```go\npackage main\n\nimport (\n\
@@ -6207,7 +6207,7 @@ paths:
         x-optionalDataType: "String"
       - name: "orderBy"
         in: "query"
-        description: "Order results by some field. Default is id"
+        description: "Order results by some field. Default is id."
         required: false
         type: "string"
         default: "id"
@@ -6219,7 +6219,7 @@ paths:
         x-optionalDataType: "String"
       - name: "direction"
         in: "query"
-        description: "Order direction. Default is desc"
+        description: "Order direction. Default is desc."
         required: false
         type: "string"
         default: "desc"
@@ -6437,7 +6437,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "query"
         in: "query"
-        description: "Find recipients by specified search query"
+        description: "Find recipients by specified search query."
         required: true
         type: "string"
         x-example: "A"
@@ -6641,7 +6641,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "orderBy"
         in: "query"
-        description: "Order results by some field. Default is id"
+        description: "Order results by some field. Default is id."
         required: false
         type: "string"
         default: "id"
@@ -6653,7 +6653,7 @@ paths:
         x-optionalDataType: "String"
       - name: "direction"
         in: "query"
-        description: "Order direction. Default is desc"
+        description: "Order direction. Default is desc."
         required: false
         type: "string"
         default: "desc"
@@ -9460,7 +9460,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "orderBy"
         in: "query"
-        description: "Order results by some field. Default is id"
+        description: "Order results by some field. Default is id."
         required: false
         type: "string"
         default: "id"
@@ -9472,7 +9472,7 @@ paths:
         x-optionalDataType: "String"
       - name: "direction"
         in: "query"
-        description: "Order direction. Default is desc"
+        description: "Order direction. Default is desc."
         required: false
         type: "string"
         default: "desc"
@@ -9918,7 +9918,7 @@ paths:
         x-optionalDataType: "String"
       - name: "direction"
         in: "query"
-        description: "Order direction. Default is desc"
+        description: "Order direction. Default is desc."
         required: false
         type: "string"
         default: "desc"
@@ -11117,14 +11117,14 @@ paths:
         x-optionalDataType: "Int32"
       - name: "query"
         in: "query"
-        description: "Find blocked contacts by specified search query"
+        description: "Find blocked contacts by specified search query."
         required: false
         type: "string"
         x-exportParamName: "Query"
         x-optionalDataType: "String"
       - name: "orderBy"
         in: "query"
-        description: "Order results by some field. Default is id"
+        description: "Order results by some field. Default is id."
         required: false
         type: "string"
         default: "id"
@@ -11136,7 +11136,7 @@ paths:
         x-optionalDataType: "String"
       - name: "direction"
         in: "query"
-        description: "Order direction. Default is desc"
+        description: "Order direction. Default is desc."
         required: false
         type: "string"
         default: "desc"
@@ -13570,7 +13570,7 @@ paths:
         x-optionalDataType: "String"
       - name: "direction"
         in: "query"
-        description: "Order direction. Default is desc"
+        description: "Order direction. Default is desc."
         required: false
         type: "string"
         default: "desc"
@@ -16305,7 +16305,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "tts"
         in: "query"
-        description: "Send a Text to Speech message."
+        description: "Send a Text-to-Speech message."
         required: false
         type: "integer"
         default: 0
@@ -16587,8 +16587,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Preview message"
-      description: "Get messages preview (with tags merged) up to 100 messages per\
-        \ session."
+      description: "Get a messages preview (with tags merged) of up to 100 messages\
+        \ per session."
       operationId: "getMessagePreview"
       parameters:
       - name: "text"
@@ -16731,7 +16731,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "tts"
         in: "query"
-        description: "Send Text to Speech message."
+        description: "Send Text-to-Speech message."
         required: false
         type: "integer"
         default: 0
@@ -17288,7 +17288,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete messages (bulk)"
-      description: "Delete outbound messages by given ID(s) or delete all outbound\
+      description: "Delete outbound messages by the given ID(s) or delete all outbound\
         \ messages."
       operationId: "deleteOutboundMessagesBulk"
       produces: []
@@ -17593,14 +17593,15 @@ paths:
       - name: "lastId"
         in: "query"
         description: "Filter results by ID, selecting all values lesser than the specified\
-          \ ID. Note that \\'page\\' parameter is ignored when \\'lastId\\' is specified"
+          \ ID. Note that the \\'page\\' parameter is ignored when \\'lastId\\' is\
+          \ specified"
         required: false
         type: "integer"
         x-exportParamName: "LastId"
         x-optionalDataType: "Int32"
       - name: "ids"
         in: "query"
-        description: "Find message by ID(s)"
+        description: "Find message by ID(s)."
         required: false
         type: "string"
         pattern: "[,\\d]+"
@@ -17608,14 +17609,14 @@ paths:
         x-optionalDataType: "String"
       - name: "sessionId"
         in: "query"
-        description: "Find messages by session ID"
+        description: "Find messages by session ID."
         required: false
         type: "integer"
         x-exportParamName: "SessionId"
         x-optionalDataType: "Int32"
       - name: "statuses"
         in: "query"
-        description: "Find messages by status"
+        description: "Find messages by status."
         required: false
         type: "string"
         enum:
@@ -17637,7 +17638,7 @@ paths:
         x-optionalDataType: "String"
       - name: "includeDeleted"
         in: "query"
-        description: "Search also in deleted messages"
+        description: "Search also in deleted messages."
         required: false
         type: "integer"
         default: 0
@@ -17648,7 +17649,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "query"
         in: "query"
-        description: "Find messages by specified search query"
+        description: "Find messages by specified search query."
         required: false
         type: "string"
         x-exportParamName: "Query"
@@ -17843,7 +17844,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get history"
-      description: "Get outbound messages history."
+      description: "Get the outbound messages history."
       operationId: "getOutboundMessagesHistory"
       parameters:
       - name: "limit"
@@ -17886,7 +17887,7 @@ paths:
         x-optionalDataType: "String"
       - name: "direction"
         in: "query"
-        description: "Order direction. Default is desc"
+        description: "Order direction. Default is desc."
         required: false
         type: "string"
         default: "desc"
@@ -19430,7 +19431,7 @@ paths:
         x-optionalDataType: "String"
       - name: "direction"
         in: "query"
-        description: "Order direction. Default is desc"
+        description: "Order direction. Default is desc."
         required: false
         type: "string"
         default: "desc"
@@ -19668,7 +19669,7 @@ paths:
         x-optionalDataType: "String"
       - name: "direction"
         in: "query"
-        description: "Order direction. Default is desc"
+        description: "Order direction. Default is desc."
         required: false
         type: "string"
         default: "desc"
@@ -20341,7 +20342,7 @@ paths:
         x-optionalDataType: "String"
       - name: "direction"
         in: "query"
-        description: "Order direction. Default is desc"
+        description: "Order direction. Default is desc."
         required: false
         type: "string"
         default: "desc"
@@ -20534,7 +20535,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "ids"
         in: "query"
-        description: "Find message by ID(s)"
+        description: "Find message by ID(s)."
         required: false
         type: "string"
         pattern: "[,\\d]+"
@@ -20542,7 +20543,7 @@ paths:
         x-optionalDataType: "String"
       - name: "query"
         in: "query"
-        description: "Find recipients by specified search query"
+        description: "Find recipients by specified search query."
         required: false
         type: "string"
         x-exportParamName: "Query"
@@ -20564,7 +20565,7 @@ paths:
         x-optionalDataType: "String"
       - name: "direction"
         in: "query"
-        description: "Order direction. Default is desc"
+        description: "Order direction. Default is desc."
         required: false
         type: "string"
         default: "desc"
@@ -20575,7 +20576,7 @@ paths:
         x-optionalDataType: "String"
       - name: "expand"
         in: "query"
-        description: "Expand by adding firstName, lastName and contactId"
+        description: "Expand by adding firstName, lastName and contactId."
         required: false
         type: "integer"
         default: 0
@@ -22336,7 +22337,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "direction"
         in: "query"
-        description: "Order direction. Default is desc"
+        description: "Order direction. Default is desc."
         required: false
         type: "string"
         default: "desc"
@@ -26680,12 +26681,13 @@ definitions:
         description: "This is a relative link to your file. To construct a full link,\
           \ just add “[https://my.textmagic.com/”](https://my.textmagic.com/%E2%80%9D)\
           \ to the beginning (like this: [https://my.textmagic.com/click/Zwcj9](https://my.textmagic.com/click/Zwcj9)).\
-          \ For most modern devices, you can omit “https://” part and write just [my.textmagic.com/click/Zwcj9](https://my.textmagic.com/click/Zwcj9),\
-          \ it will save you 8 characters.\n"
+          \ For most modern devices, you can omit the “https://” part and write just\
+          \ [my.textmagic.com/click/Zwcj9](https://my.textmagic.com/click/Zwcj9),\
+          \ which will save you 8 characters.\n"
       name:
         type: "string"
         example: "test.pdf"
-        description: "File name of uploaded file.\n"
+        description: "File name of the uploaded file.\n"
       size:
         type: "integer"
         example: 1094
@@ -27803,7 +27805,7 @@ definitions:
       fromNumber:
         type: "string"
         example: "447624800500"
-        description: "Phone number used to send the SMS."
+        description: "The Phone number used to send the SMS."
         x-nullable: true
     example:
       messageTime: "2019-08-12T11:43:37+0000"
@@ -28067,9 +28069,9 @@ definitions:
       source:
         type: "string"
         example: "O"
-        description: "*   **O** for TextMagic Online\n*   **A** for API\n*   **M**\
-          \ for TextMagic Messenger\n*   **E** for [Email to SMS](http://docs.textmagictesting.com/#tag/Send-Email-to-SMS)\n\
-          *   **X** for [Distribution lists](http://docs.textmagictesting.com/#tag/Distribution-Lists)\n"
+        description: "*   **O** – for TextMagic Online\n*   **A** – for API\n*   **M**\
+          \ – for TextMagic Messenger\n*   **E** – for [Email to SMS](http://docs.textmagictesting.com/#tag/Send-Email-to-SMS)\n\
+          *   **X** – for [Distribution Lists](http://docs.textmagictesting.com/#tag/Distribution-Lists)\n"
         x-nullable: true
       referenceId:
         type: "string"
@@ -28091,7 +28093,7 @@ definitions:
         type: "string"
         example: "t"
         description: "Destination type of a Message Session:\n* **t** - text SMS\n\
-          * **s** - text to speech\n* **v** - voice broadcast\n"
+          * **s** - text-to-speech\n* **v** - voice broadcast\n"
         enum:
         - "t"
         - "s"
@@ -28125,7 +28127,7 @@ definitions:
       status:
         type: "string"
         example: "n"
-        description: "* **n** - bulk session is just created\n* **w** - work in progress\n\
+        description: "* **n** – bulk session is just created\n* **w** - work in progress\n\
           * **f** - failed\n* **c** - completed with success\n* **s** - suspended\n"
         enum:
         - "n"
@@ -28136,7 +28138,7 @@ definitions:
       itemsProcessed:
         type: "integer"
         example: 564
-        description: "Amount of messages which is already processed."
+        description: "Amount of messages already processed."
         x-nullable: true
       itemsTotal:
         type: "integer"
@@ -35157,11 +35159,11 @@ definitions:
       text:
         type: "string"
         example: "Hello, how are you?"
-        description: "Message text. Required if **template_id** is not set."
+        description: "Message text. Required if the **template_id** is not set."
       templateId:
         type: "integer"
         example: 1
-        description: "Template used instead of message text. Required if **text**\
+        description: "Template used instead of message text. Required if the **text**\
           \ is not set."
       sendingTime:
         type: "integer"
@@ -35234,7 +35236,7 @@ definitions:
       tts:
         type: "boolean"
         example: false
-        description: "Send a Text to Speech message."
+        description: "Send a Text-to-Speech message."
         default: false
       local:
         type: "boolean"

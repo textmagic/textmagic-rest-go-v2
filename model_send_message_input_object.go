@@ -10,9 +10,9 @@
 package TextMagic
 
 type SendMessageInputObject struct {
-	// Message text. Required if **template_id** is not set.
+	// Message text. Required if the **template_id** is not set.
 	Text string `json:"text"`
-	// Template used instead of message text. Required if **text** is not set.
+	// Template used instead of message text. Required if the **text** is not set.
 	TemplateId int32 `json:"templateId,omitempty"`
 	// DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now.
 	SendingTime int32 `json:"sendingTime,omitempty"`
@@ -38,7 +38,7 @@ type SendMessageInputObject struct {
 	Rrule string `json:"rrule,omitempty"`
 	// Should sending method try to create new Chat (if not exist) with specified recipients?
 	CreateChat bool `json:"createChat,omitempty"`
-	// Send a Text to Speech message.
+	// Send a Text-to-Speech message.
 	Tts bool `json:"tts,omitempty"`
 	// Treat phone numbers passed in the \\'phones\\' field as local.
 	Local bool `json:"local,omitempty"`

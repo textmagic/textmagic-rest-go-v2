@@ -50,6 +50,6 @@ type MessageOut struct {
 	PartsCount int32 `json:"partsCount"`
 	// The user email which this message came from. For Email2SMS and Distribution Lists the message will come from an original email address; in other cases, it will come from an account email address.
 	FromEmail string `json:"fromEmail,omitempty"`
-	// Phone number used to send the SMS.
+	// The Phone number used to send the SMS.
 	FromNumber string `json:"fromNumber,omitempty"`
 }
