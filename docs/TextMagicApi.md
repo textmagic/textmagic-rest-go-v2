@@ -79,7 +79,7 @@ Method | HTTP request | Description
 [**GetCustomField**](TextMagicApi.md#GetCustomField) | **Get** /api/v2/customfields/{id} | Get the details of a specific custom field
 [**GetCustomFields**](TextMagicApi.md#GetCustomFields) | **Get** /api/v2/customfields | Get all custom fields
 [**GetDedicatedNumber**](TextMagicApi.md#GetDedicatedNumber) | **Get** /api/v2/numbers/{id} | Get the details of a specific dedicated number
-[**GetFavourites**](TextMagicApi.md#GetFavourites) | **Get** /api/v2/contacts/favorite | Get favorite contacts and lists
+[**GetFavorites**](TextMagicApi.md#GetFavorites) | **Get** /api/v2/contacts/favorite | Get favorite contacts and lists
 [**GetInboundMessage**](TextMagicApi.md#GetInboundMessage) | **Get** /api/v2/replies/{id} | Get a single inbound message
 [**GetInboundMessagesNotificationSettings**](TextMagicApi.md#GetInboundMessagesNotificationSettings) | **Get** /api/v2/user/notification/inbound | Get inbound messages notification settings
 [**GetInvoices**](TextMagicApi.md#GetInvoices) | **Get** /api/v2/invoices | Get all invoices
@@ -245,7 +245,7 @@ You can cancel the verification not earlier than 30 seconds after the initial re
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **verifyId** | **string**| the verifyId that you received in Step 1. | 
+  **verifyId** | **string**| The verifyId that you received in Step 1. | 
 
 ### Return type
 
@@ -899,7 +899,7 @@ Name | Type | Description  | Notes
 > DeleteInboundMessage(ctx, id)
 Delete a single inbound message
 
-> Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
+> Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
 
 ### Required Parameters
 
@@ -927,7 +927,7 @@ Name | Type | Description  | Notes
 > DeleteInboundMessagesBulk(ctx, deleteInboundMessagesBulkInputObject)
 Delete inbound messages (bulk)
 
-> Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
+> Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
 
 ### Required Parameters
 
@@ -1438,9 +1438,9 @@ Name | Type | Description  | Notes
  **status** | **optional.String**| Fetch only (a)ctive, (c)losed or (d)eleted chats | 
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
- **voice** | **optional.Int32**| Fetch results with voice calls | [default to 0]
- **flat** | **optional.Int32**| Should additional contact info be included | [default to 0]
+ **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
+ **voice** | **optional.Int32**| Fetch results with voice calls. | [default to 0]
+ **flat** | **optional.Int32**| Should additional contact info be included? | [default to 0]
 
 ### Return type
 
@@ -1477,7 +1477,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
+ **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
  **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
 
 ### Return type
@@ -1588,7 +1588,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
- **status** | **optional.String**| Fetch schedules with the specific status: a - actual, c - completed, x - all | [default to x]
+ **status** | **optional.String**| Fetch schedules with a specific status: a - actual, c - completed, x - all. | [default to x]
  **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
  **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
 
@@ -1944,10 +1944,10 @@ Name | Type | Description  | Notes
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
  **query** | **optional.String**| Find messages by specified search query | 
- **start** | **optional.Int32**| Return messages since specified timestamp only | 
- **end** | **optional.Int32**| Return messages up to specified timestamp only | 
+ **start** | **optional.Int32**| Return messages since specified timestamp only. | 
+ **end** | **optional.Int32**| Return messages up to specified timestamp only. | 
  **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
- **voice** | **optional.Int32**| Fetch results with voice calls | [default to 0]
+ **voice** | **optional.Int32**| Fetch results with voice calls. | [default to 0]
 
 ### Return type
 
@@ -2399,8 +2399,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **GetFavourites**
-> GetFavouritesPaginatedResponse GetFavourites(ctx, optional)
+# **GetFavorites**
+> GetFavoritesPaginatedResponse GetFavorites(ctx, optional)
 Get favorite contacts and lists
 
 
@@ -2410,10 +2410,10 @@ Get favorite contacts and lists
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***GetFavouritesOpts** | optional parameters | nil if no parameters
+ **optional** | ***GetFavoritesOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
-Optional parameters are passed through a pointer to a GetFavouritesOpts struct
+Optional parameters are passed through a pointer to a GetFavoritesOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2423,7 +2423,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetFavouritesPaginatedResponse**](GetFavouritesPaginatedResponse.md)
+[**GetFavoritesPaginatedResponse**](GetFavoritesPaginatedResponse.md)
 
 ### Authorization
 
@@ -3792,7 +3792,7 @@ Name | Type | Description  | Notes
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
  **query** | **optional.String**| Find chats by specified search query | 
- **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
+ **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
 
 ### Return type
 
@@ -3833,7 +3833,7 @@ Name | Type | Description  | Notes
  **ids** | **optional.String**| Find contact by ID(s) | 
  **listId** | **optional.Int32**| Find contact by List ID | 
  **includeBlocked** | **optional.Int32**| Should blocked contacts to be included | 
- **query** | **optional.String**| Find contacts by specified search query | 
+ **query** | **optional.String**| Find contacts by specified search query. | 
  **local** | **optional.Int32**| Treat phone number passed in &#39;query&#39; field as local. Default is 0 | [default to 0]
  **country** | **optional.String**| 2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country | 
  **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
@@ -3876,7 +3876,7 @@ Name | Type | Description  | Notes
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
  **ids** | **optional.String**| Find message by ID(s). | 
  **query** | **optional.String**| Find recipients by specified search query. | 
- **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
+ **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
  **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
  **expand** | **optional.Int32**| Expand by adding firstName, lastName and contactId. | [default to 0]
 
@@ -4001,8 +4001,8 @@ Name | Type | Description  | Notes
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
  **query** | **optional.String**| Find messages by specified search query | 
  **ids** | **optional.String**| Find schedules by ID(s) | 
- **status** | **optional.String**| Fetch schedules with the specific status: a - actual, c - completed, x - all | [default to x]
- **orderBy** | **optional.String**| Order results by some field. Default is id | [default to id]
+ **status** | **optional.String**| Fetch schedules with a specific status: a - actual, c - completed, x - all. | [default to x]
+ **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
  **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
 
 ### Return type
@@ -4091,7 +4091,7 @@ Name | Type | Description  | Notes
 > SendPhoneVerificationCodeResponse SendPhoneVerificationCodeTFA(ctx, sendPhoneVerificationCodeInputObject)
 Step 1: Send a verification code 
 
-Sends verification code to specified phone number.
+Sends a verification code to a specified phone number.
 
 ### Required Parameters
 

@@ -9,7 +9,7 @@
 
 package TextMagic
 
-type GetFavouritesPaginatedResponse struct {
+type GetFavoritesPaginatedResponse struct {
 	Page int32 `json:"page"`
 	// The total number of pages.
 	PageCount int32 `json:"pageCount"`

@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **Country** | [***Country**](Country.md) |  | [default to null]
 **Timezone** | [***Timezone**](Timezone.md) |  | [default to null]
 **SubaccountType** | **string** | Type of account: *   **A** for Administrator sub-account *   **U** for Regular User  | [default to null]
-**EmailAccepted** | **bool** | Is account has confirmed Email. | [default to null]
-**PhoneAccepted** | **bool** | Is account has confirmed Phone number. | [default to null]
+**EmailAccepted** | **bool** | Does the account have a confirmed Email?. | [default to null]
+**PhoneAccepted** | **bool** | Does the account have a confirmed Phone Number?. | [default to null]
 **Avatar** | [***UserImage**](UserImage.md) |  | [default to null]
 **Token** | **string** | Access token of account. | [default to null]
 

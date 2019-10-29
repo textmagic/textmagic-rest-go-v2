@@ -10,7 +10,7 @@
 package TextMagic
 
 type CheckPhoneVerificationCodeInputObject struct {
-	// Verification code that was received by the user and entered into the form field.
+	// Verification code received by the user and entered into the form field.
 	Code int32 `json:"code"`
 	// VerifyId from Step 1 to match both requests together.
 	VerifyId string `json:"verifyId"`

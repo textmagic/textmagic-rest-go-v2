@@ -33,9 +33,9 @@ type SubaccountWithToken struct {
 	Timezone *Timezone `json:"timezone"`
 	// Type of account: *   **A** for Administrator sub-account *   **U** for Regular User 
 	SubaccountType string `json:"subaccountType"`
-	// Is account has confirmed Email.
+	// Does the account have a confirmed Email?.
 	EmailAccepted bool `json:"emailAccepted"`
-	// Is account has confirmed Phone number.
+	// Does the account have a confirmed Phone Number?.
 	PhoneAccepted bool `json:"phoneAccepted"`
 	Avatar *UserImage `json:"avatar"`
 	// Access token of account.

@@ -12,8 +12,8 @@ package TextMagic
 type DeleteScheduledMessagesBulkInputObject struct {
 	// Entity ID(s), separated by comma
 	Ids string `json:"ids,omitempty"`
-	// Default is 0 (false). If set to 1 all the entities will be removed.
+	// Default is 0 (false). If set to 1, all the entities will be removed.
 	All int32 `json:"all,omitempty"`
-	// Default is empty string (false). If set then all entities with specified status will be affected.
+	// Default is an empty string (false). If set, all entities with specified status will be affected.
 	Status string `json:"status,omitempty"`
 }

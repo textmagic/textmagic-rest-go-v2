@@ -235,8 +235,8 @@ tags:
   x-displayName: "Messages: Receive\n"
 - name: "Scheduled Messages"
   description: "You can schedule text messages to be sent at a later date or time,\
-    \ or can create recurring text message sessions with TextMagic API. Below is a\
-    \ detailed overview of how to do both.\n"
+    \ or you can create recurring text message sessions with TextMagic API. Below\
+    \ is a detailed overview of how to do both.\n"
   x-displayName: "Messages: Schedule\n"
 - name: "Lists"
   description: "With the Lists API, you can arrange your database contacts into different\
@@ -252,10 +252,10 @@ tags:
   description: "You can easily verify your customers using their phone numbers with\
     \ the help of 2FA (better known as two-factor authentication) and protect against\
     \ fraud, build trust, and increase conversions. There is a simple way to do this\
-    \ with an API call to a TextMagic endpoint. With the help of TextMagic API you\
-    \ can:\n\n*   Send two-factor authentication messages (2FA)\n*   Send one-time\
-    \ passwords (OTP)\n*   Integrate passwordless login into your app\n*   Protect\
-    \ your app from fraud\n\n## How does it work?\n\n* **Step 1:** Your server makes\
+    \ with an API call to a TextMagic endpoint. With the help of TextMagic API, you\
+    \ can:\n\n*   Send two-factor authentication messages (2FA);\n*   Send one-time\
+    \ passwords (OTP);\n*   Integrate passwordless login into your app;\n*   Protect\
+    \ your app from fraud.\n\n## How does it work?\n\n* **Step 1:** Your server makes\
     \ an API call to the TextMagic endpoint, and we send a text message (and later,\
     \ as a fallback, a generate a text-to-speech voice call) with a verification code\
     \ to the phone number supplied in the initial request.\n\n* **Step 2:** Once the\
@@ -270,11 +270,11 @@ tags:
     3.  If the correct code was not supplied, send **the first text-to-speech**\_\
     voice call.\n4.  _Wait for 60 seconds._\n5.  If the code was not supplied, send\
     \ **the second text-to-speech**\_voice call.\n6.  _Wait for the verification._\
-    \ The verification code is **valid for 5 minutes** since the initial request.\n\
-    \n> **Please note:**\_Submitting another verification request for the same phone\
-    \ number before the original code has expired will result in a 409 error code.\
-    \ The new verification request can be submitted only once the previous code has\
-    \ expired (after 5 minutes) or canceled.\n"
+    \ The verification code is **valid for 5 minutes** from the time of the initial\
+    \ request.\n\n> **Please note:**\_Submitting another verification request for\
+    \ the same phone number before the original code has expired will result in a\
+    \ 409 error code. The new verification request can be submitted only once the\
+    \ previous code has expired (after 5 minutes) or canceled.\n"
   x-displayName: "Two-factor authentication"
 - name: "Chats"
   description: "In TextMagic, an SMS chat is a convenient grouping of inbound and\
@@ -501,7 +501,7 @@ tags:
     \n```javascript\n{\n    \"repositories\": [\n        {\n            \"type\":\
     \ \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
     \n        }\n    ],\n    \"require\": {\n        \"textmagic/textmagic-rest-php-v2\"\
-    : \"dev-master#v2.0.810\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
+    : \"dev-master#v2.0.811\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
     \ Manual Installation\n\nDownload the files and include `autoload.php`:\n\n```php\n\
     require_once(__DIR__.'/vendor/autoload.php');\n```\n\n## Usage Example\n\nPlease\
     \ follow the [installation](#installation) instructions and execute the following\
@@ -530,7 +530,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Node.js application.\n\n[Get\
     \ it now on GitHub](https://github.com/textmagic/textmagic-rest-nodejs)\n## Installation\n\
-    \n```shell\nnpm install textmagic-client@2.0.810 --save\n```\n\n## Usage Example\n\
+    \n```shell\nnpm install textmagic-client@2.0.811 --save\n```\n\n## Usage Example\n\
     \nPlease follow the [installation](#installation) instructions and execute the\
     \ following JS code:\n\n```javascript\nconst textmagicClient = require('textmagic-client');\n\
     \nconst fs = require('fs');\nconst client = textmagicClient.ApiClient.instance;\n\
@@ -562,7 +562,7 @@ tags:
     Install-Package Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp\
     \ versions later than 105.1.0 have a bug which causes file uploads to fail. See\
     \ [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\n## Installation\n\
-    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.810/).\n\
+    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.811/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -625,22 +625,22 @@ tags:
     \ Requirements\n\n* CMake 2.8 and later (https://cmake.org/)\n* cpprest (https://github.com/microsoft/cpprestsdk)\n\
     \nUbuntu dependencies quick installation example:\n```shell\napt-get install build-essential\
     \ cmake libcpprest-dev\n```\n\n## Installation\n\nDownload and extract lib archive:\n\
-    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.810.tar.gz\
-    \ && \\\ntar zxf v2.0.810.tar.gz && \\\nrm -f v2.0.810.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.810\n\
+    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.811.tar.gz\
+    \ && \\\ntar zxf v2.0.811.tar.gz && \\\nrm -f v2.0.811.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.811\n\
     ```\nBuild using cmake\n```shell\ncmake . && cmake --build .\n```\nThe output\
-    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.810/lib` directory:\n\
+    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.811/lib` directory:\n\
     \n## Usage Example\nIn the example below, we assume that you moved the library\
-    \ sources `textmagic-rest-cpp-v2-2.0.810` directory to your test project root\
+    \ sources `textmagic-rest-cpp-v2-2.0.811` directory to your test project root\
     \ directory.\n\nConfigure your `CMakeLists.txt` as shown here:\n```shell\ncmake_minimum_required(VERSION\
     \ 2.8)\nproject(test)\n\nset(CMAKE_CXX_STANDARD 14)\n\nadd_executable(app main.cpp)\n\
     \nadd_library(textmagic_client SHARED IMPORTED)\nset_property(TARGET textmagic_client\
-    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.810/lib/libtextmagic_client.so\"\
-    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.810\
-    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.810/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.810/api)\n\
+    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.811/lib/libtextmagic_client.so\"\
+    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.811\
+    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.811/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.811/api)\n\
     target_link_libraries(app boost_system cpprest crypto textmagic_client )\n```\n\
     \n`main.cpp` file example:\n```cpp\n#include <iostream>\n#include <fstream>\n\
-    #include \"textmagic-rest-cpp-v2-2.0.810/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.810/ApiConfiguration.h\"\
-    \n#include \"textmagic-rest-cpp-v2-2.0.810/api/TextMagicApi.h\"\n\nusing namespace\
+    #include \"textmagic-rest-cpp-v2-2.0.811/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.811/ApiConfiguration.h\"\
+    \n#include \"textmagic-rest-cpp-v2-2.0.811/api/TextMagicApi.h\"\n\nusing namespace\
     \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
     \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
     \ ApiConfiguration);\n\n    apiConfig->setBaseUrl(\"https://rest.textmagic.com\"\
@@ -680,7 +680,7 @@ tags:
     \ SMS and receiving replies by integrating TextMagic SMS Gateway into your Python\
     \ application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-python)\n\
     ## Requirements\nPython 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install\
-    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.810\n```\n\
+    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.811\n```\n\
     \n## Usage Example\n\n```python\nimport TextMagic\nfrom TextMagic.rest import\
     \ ApiException\n\n# Configure HTTP basic authorization: BasicAuth\nconfiguration\
     \ = TextMagic.Configuration()\nconfiguration.username = 'YOUR_USERNAME'\nconfiguration.password\
@@ -705,8 +705,8 @@ tags:
     \ GitHub\">Star</a>\n\nThis library provides you with an easy way of sending SMS\
     \ and receiving replies by integrating TextMagic SMS Gateway into your Perl application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-perl)\n##\
-    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.810.tar.gz\
-    \ && \\\ntar zxf v2.0.810.tar.gz && \\\nrm -f v2.0.810.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.810\
+    \ Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.811.tar.gz\
+    \ && \\\ntar zxf v2.0.811.tar.gz && \\\nrm -f v2.0.811.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.811\
     \ && \\\nperl Makefile.pl && \\\nmake && \\\nmake install && \\\ncpanm --installdeps\
     \ .\n```\\\n\n## Usage Example\n\nPlease follow the [installation](#installation)\
     \ instructions and execute the following Perl code:\n\n```perl\nuse 5.010;\nuse\
@@ -735,7 +735,7 @@ tags:
     \ and receiving replies by integrating TextMagic SMS Gateway into your Ruby application.\n\
     \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-ruby)\n##\
     \ Installation\n\nAdd these lines into your Gemfile\n```ruby\ngem 'textmagic_rest_client',\
-    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.810'\n\
+    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.811'\n\
     ```\n\nRun the bundler install command\n``` shell\nbundle install\n```\n\n## Usage\
     \ Example\n\nCreate the test file `test.rb` and put the following code:\n```ruby\n\
     \ # Load the gem\nrequire 'textmagic_rest_client'\n\n # Setup authorization\n\
@@ -761,7 +761,7 @@ tags:
     Star imissyouso/textmagic-rest-go on GitHub\">Star</a>\n\nThis library provides\
     \ you with an easy way of sending SMS and receiving replies by integrating TextMagic\
     \ SMS Gateway into your Go application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-go)\n\
-    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.810\n\
+    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.811\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -6180,7 +6180,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "query"
         in: "query"
-        description: "Find contacts by specified search query"
+        description: "Find contacts by specified search query."
         required: false
         type: "string"
         x-exportParamName: "Query"
@@ -10291,7 +10291,7 @@ paths:
       - "TextMagic"
       summary: "Get favorite contacts and lists"
       description: ""
-      operationId: "getFavourites"
+      operationId: "getFavorites"
       parameters:
       - name: "page"
         in: "query"
@@ -10319,9 +10319,9 @@ paths:
         x-optionalDataType: "String"
       responses:
         200:
-          description: "Favourites entities have been returned with success"
+          description: "Favorites entities have been returned with success"
           schema:
-            $ref: "#/definitions/GetFavouritesPaginatedResponse"
+            $ref: "#/definitions/GetFavoritesPaginatedResponse"
         401:
           description: "Unauthorized request"
           schema:
@@ -10334,11 +10334,11 @@ paths:
           $config = Configuration::getDefaultConfiguration()\n    ->setUsername('YOUR_USERNAME')\n\
           \    ->setPassword('YOUR_API_KEY');\n\n$api = new TextMagicApi(\n    new\
           \ GuzzleHttp\\Client(),\n    $config\n);\n\n// Optional, you can pass them\
-          \ as null values to getFavourites method below, default values will be used\n\
-          $page = 1;\n$limit = 10;\n$query = \"A\";\n\ntry {\n    // GetFavouritesPaginatedResponse\
-          \ class object\n    $result = $api->getFavourites($page, $limit, $query);\n\
+          \ as null values to getFavorites method below, default values will be used\n\
+          $page = 1;\n$limit = 10;\n$query = \"A\";\n\ntry {\n    // GetFavoritesPaginatedResponse\
+          \ class object\n    $result = $api->getFavorites($page, $limit, $query);\n\
           \    // ...\n} catch (Exception $e) {\n    echo 'Exception when calling\
-          \ TextMagicApi->getFavourites: ', $e->getMessage(), PHP_EOL;\n}"
+          \ TextMagicApi->getFavorites: ', $e->getMessage(), PHP_EOL;\n}"
       - lang: "Java"
         source: "import com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
           import com.textmagic.sdk.auth.*;\nimport com.textmagic.sdk.model.*;\n\n\
@@ -10349,12 +10349,12 @@ paths:
           BasicAuth\");\n        BasicAuth.setUsername(\"YOUR_USERNAME\");\n     \
           \   BasicAuth.setPassword(\"YOUR_API_KEY\");\n\n        TextMagicApi apiInstance\
           \ = new TextMagicApi();\n\n        // Optional, you can pass them as null\
-          \ values to getFavourites method below, default values will be used\n  \
-          \      int page = 1;\n        int limit = 10;\n        String query = \"\
-          A\";\n\n        try {\n            // GetFavouritesPaginatedResponse class\
-          \ object\n            GetFavouritesPaginatedResponse obj = apiInstance.getFavourites(page,\
+          \ values to getFavorites method below, default values will be used\n   \
+          \     int page = 1;\n        int limit = 10;\n        String query = \"\
+          A\";\n\n        try {\n            // GetFavoritesPaginatedResponse class\
+          \ object\n            GetFavoritesPaginatedResponse obj = apiInstance.getFavorites(page,\
           \ limit, query);\n            // ...\n        } catch (ApiException e) {\n\
-          \            System.err.println(\"Exception when calling getFavourites\"\
+          \            System.err.println(\"Exception when calling getFavorites\"\
           );\n            e.printStackTrace();\n        }\n    }\n}"
       - lang: "JavaScript"
         source: "const textmagicClient = require('textmagic-client');\n\nconst client\
@@ -10363,7 +10363,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nparams\
           \ = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n    query:\
-          \ \"A\",\n}\n\napi.getFavourites().then(function (data) {\n    console.log(data);\n\
+          \ \"A\",\n}\n\napi.getFavorites().then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -10371,9 +10371,9 @@ paths:
           \ do |config|\n    config.username = 'YOUR_USERNAME'\n    config.password\
           \ = 'YOUR_API_KEY'\nend\n\napi = TextMagic::TextMagicApi.new\n\nparams =\
           \ {\n  # Optional parameters\n  page: 1,\n  limit: 10,\n  query: 'A',\n\
-          }\n\nbegin\n    # GetFavouritesPaginatedResponse object\n    result = api.get_favourites(params)\n\
+          }\n\nbegin\n    # GetFavoritesPaginatedResponse object\n    result = api.get_favorites(params)\n\
           \    # ...\nrescue TextMagic::ApiError => e\n    puts \"Exception when calling\
-          \ TextMagicApi->get_favourites: #{e}\"\nend"
+          \ TextMagicApi->get_favorites: #{e}\"\nend"
       - lang: "C#"
         source: "using System;\nusing System.IO;\nusing TextMagicClient.Api;\nusing\
           \ TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
@@ -10383,13 +10383,13 @@ paths:
           ;\n            Configuration.Default.Password = \"YOUR_API_KEY\";\n    \
           \        Configuration.Default.BasePath = \"https://rest.textmagic.com\"\
           ;\n\n            var apiInstance = new TextMagicApi();\n\n            //\
-          \ Optional, you can pass them as null values to getFavourites method below,\
+          \ Optional, you can pass them as null values to getFavorites method below,\
           \ default values will be used\n            int page = 1;\n            int\
           \ limit = 10;\n            string query = \"A\";\n\n            try {\n\
-          \                // GetFavouritesPaginatedResponse class object\n      \
-          \          var result = apiInstance.GetFavourites(page, limit, query);\n\
-          \                // ...\n            } catch (Exception e) {\n         \
-          \       Console.WriteLine(\"Exception when calling getFavourites: \"+e.Message);\n\
+          \                // GetFavoritesPaginatedResponse class object\n       \
+          \         var result = apiInstance.GetFavorites(page, limit, query);\n \
+          \               // ...\n            } catch (Exception e) {\n          \
+          \      Console.WriteLine(\"Exception when calling getFavorites: \"+e.Message);\n\
           \            }\n        }\n    }\n}"
       - lang: "VB.Net"
         source: "Imports System\nImports System.IO\nImports TextMagicClient.Api\n\
@@ -10399,14 +10399,14 @@ paths:
           \        Configuration.Default.Username = \"YOUR_USERNAME\"\n        Configuration.Default.Password\
           \ = \"YOUR_API_KEY\"\n        Configuration.Default.BasePath = \"https://rest.textmagic.com\"\
           \n\n        Dim apiInstance = New TextMagicApi()\n\n        ' Optional,\
-          \ you can pass them as null values to getFavourites method below, default\
+          \ you can pass them as null values to getFavorites method below, default\
           \ values will be used\n        Dim page As Integer = 1\n        Dim limit\
           \ As Integer = 10\n        Dim query As String = \"A\"\n\n        Try\n\
-          \            ' GetFavouritesPaginatedResponse class object\n           \
-          \ Dim result = apiInstance.GetFavourites(page, limit, query)\n         \
-          \   ' ...\n        Catch e As Exception\n            Console.WriteLine(\"\
-          Exception when calling getFavourites: \" + e.Message)\n        End Try\n\
-          \    End Sub\nEnd Module"
+          \            ' GetFavoritesPaginatedResponse class object\n            Dim\
+          \ result = apiInstance.GetFavorites(page, limit, query)\n            ' ...\n\
+          \        Catch e As Exception\n            Console.WriteLine(\"Exception\
+          \ when calling getFavorites: \" + e.Message)\n        End Try\n    End Sub\n\
+          End Module"
       - lang: "Go"
         source: "package main\n\nimport (\n    \"context\"\n    \"fmt\"\n    \"github.com/antihax/optional\"\
           \n    // If you're using go.mod use line below to import our module\n  \
@@ -10416,11 +10416,11 @@ paths:
           \n    // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
           \ page.\n    auth := context.WithValue(context.Background(), tm.ContextBasicAuth,\
           \ tm.BasicAuth{\n        UserName: \"YOUR_USERNAME\",\n        Password:\
-          \ \"YOUR_API_KEY\",\n    })\n\n    opts := tm.GetFavouritesOpts{\n     \
-          \   // Optional parameters\n        Page: optional.NewInt32(1),\n      \
-          \  Limit: optional.NewInt32(10),\n        Query: optional.NewString(\"A\"\
-          ),\n    }\n\n    // tm.GetFavouritesPaginatedResponse struct\n    result,\
-          \ _, err := client.TextMagicApi.GetFavourites(auth, &opts)\n\n    if err\
+          \ \"YOUR_API_KEY\",\n    })\n\n    opts := tm.GetFavoritesOpts{\n      \
+          \  // Optional parameters\n        Page: optional.NewInt32(1),\n       \
+          \ Limit: optional.NewInt32(10),\n        Query: optional.NewString(\"A\"\
+          ),\n    }\n\n    // tm.GetFavoritesPaginatedResponse struct\n    result,\
+          \ _, err := client.TextMagicApi.GetFavorites(auth, &opts)\n\n    if err\
           \ != nil {\n        log.Fatal(err)\n    } else {\n        fmt.Printf(\"\
           %+v\\n\", result)\n        // ...\n    }\n}\n"
       - lang: "Cpp"
@@ -10437,10 +10437,10 @@ paths:
           \n    TextMagicApi api(apiClient);\n\n    // Optional parameters. Important:\
           \ if you want to use default value then pass boost::none value\n    int\
           \ page = 1;\n    int limit = 10;\n    std::string query = \"A\";\n\n   \
-          \ try {\n        pplx::task<std::shared_ptr<GetFavouritesPaginatedResponse>>\
-          \ result = api.getFavourites(page, limit, query);\n        result.wait();\n\
+          \ try {\n        pplx::task<std::shared_ptr<GetFavoritesPaginatedResponse>>\
+          \ result = api.getFavorites(page, limit, query);\n        result.wait();\n\
           \        // put operations with result here...\n    } catch(const std::exception&\
-          \ e) {\n        std::cout << \"getFavourites() exception: \" << e.what()\
+          \ e) {\n        std::cout << \"getFavorites() exception: \" << e.what()\
           \ << '\\n';\n    }\n\n    return 0;\n}"
       - lang: "Python"
         source: "import TextMagic\nfrom TextMagic.rest import ApiException\n\nconfiguration\
@@ -10450,9 +10450,9 @@ paths:
           \ = \"YOUR_API_KEY\"\n\n# create an instance of the API class\napi_instance\
           \ = TextMagic.TextMagicApi(TextMagic.ApiClient(configuration))\n\n# Optional\
           \ params, you can skip them\npage = 1\nlimit = 10\nquery = \"A\"\n\ntry:\n\
-          \    # GetFavouritesPaginatedResponse object\n    result = api_instance.get_favourites(page=page,\
+          \    # GetFavoritesPaginatedResponse object\n    result = api_instance.get_favorites(page=page,\
           \ limit=limit, query=query)\n    # ...\nexcept ApiException as e:\n    print(\"\
-          Exception when calling TextMagicApi->get_favourites: %s\\n\" % e)\n"
+          Exception when calling TextMagicApi->get_favorites: %s\\n\" % e)\n"
       - lang: "Perl"
         source: "use 5.010;\nuse strict;\nuse warnings;\nuse Net::Sms::TextMagicClient::ApiClient;\n\
           use Net::Sms::TextMagicClient::TextMagicApi;\n\n# put your Username and\
@@ -10461,10 +10461,10 @@ paths:
           \   => 'YOUR_USERNAME',\n    password   => 'YOUR_API_KEY',\n    base_url\
           \  => 'https://rest.textmagic.com'\n);\n\nmy $api_instance = Net::Sms::TextMagicClient::TextMagicApi::->new($client);\n\
           \n# Optional params, you can skip them\nmy $page = 1;\nmy $limit = 10;\n\
-          my $query = 'A';\n\neval {\n    # GetFavouritesPaginatedResponse object\n\
-          \    my $result = $api_instance->get_favourites(page => $page, limit =>\
-          \ $limit, query => $query);\n    # ...\n};\n\nif ($@) {\n    warn \"Exception\
-          \ when calling TextMagicApi->get_favourites: $@\\n\";\n}"
+          my $query = 'A';\n\neval {\n    # GetFavoritesPaginatedResponse object\n\
+          \    my $result = $api_instance->get_favorites(page => $page, limit => $limit,\
+          \ query => $query);\n    # ...\n};\n\nif ($@) {\n    warn \"Exception when\
+          \ calling TextMagicApi->get_favorites: $@\\n\";\n}"
   /api/v2/lists/{id}:
     get:
       tags:
@@ -19406,8 +19406,8 @@ paths:
         x-optionalDataType: "Int32"
       - name: "status"
         in: "query"
-        description: "Fetch schedules with the specific status: a - actual, c - completed,\
-          \ x - all"
+        description: "Fetch schedules with a specific status: a - actual, c - completed,\
+          \ x - all."
         required: false
         type: "string"
         default: "x"
@@ -19644,8 +19644,8 @@ paths:
         x-optionalDataType: "String"
       - name: "status"
         in: "query"
-        description: "Fetch schedules with the specific status: a - actual, c - completed,\
-          \ x - all"
+        description: "Fetch schedules with a specific status: a - actual, c - completed,\
+          \ x - all."
         required: false
         type: "string"
         default: "x"
@@ -19657,7 +19657,7 @@ paths:
         x-optionalDataType: "String"
       - name: "orderBy"
         in: "query"
-        description: "Order results by some field. Default is id"
+        description: "Order results by some field. Default is id."
         required: false
         type: "string"
         default: "id"
@@ -20327,7 +20327,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "orderBy"
         in: "query"
-        description: "Order results by some field. Default is id"
+        description: "Order results by some field. Default is id."
         required: false
         type: "string"
         default: "id"
@@ -20550,7 +20550,7 @@ paths:
         x-optionalDataType: "String"
       - name: "orderBy"
         in: "query"
-        description: "Order results by some field. Default is id"
+        description: "Order results by some field. Default is id."
         required: false
         type: "string"
         default: "id"
@@ -20915,7 +20915,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete a single inbound message"
-      description: "> Note, deleted inbound message will disappear from TextMagic\
+      description: "> Note: deleted inbound messages will disappear from TextMagic\
         \ Online, chats, and any other place they are referenced.  So, be careful!\n"
       operationId: "deleteInboundMessage"
       produces: []
@@ -21054,7 +21054,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete inbound messages (bulk)"
-      description: "> Note, deleted inbound message will disappear from TextMagic\
+      description: "> Note: deleted inbound messages will disappear from TextMagic\
         \ Online, chats, and any other place they are referenced.  So, be careful!\n"
       operationId: "deleteInboundMessagesBulk"
       produces: []
@@ -21954,7 +21954,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "orderBy"
         in: "query"
-        description: "Order results by some field. Default is id"
+        description: "Order results by some field. Default is id."
         required: false
         type: "string"
         default: "id"
@@ -21966,7 +21966,7 @@ paths:
         x-optionalDataType: "String"
       - name: "voice"
         in: "query"
-        description: "Fetch results with voice calls"
+        description: "Fetch results with voice calls."
         required: false
         type: "integer"
         default: 0
@@ -21977,7 +21977,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "flat"
         in: "query"
-        description: "Should additional contact info be included"
+        description: "Should additional contact info be included?"
         required: false
         type: "integer"
         default: 0
@@ -22323,14 +22323,14 @@ paths:
         x-optionalDataType: "String"
       - name: "start"
         in: "query"
-        description: "Return messages since specified timestamp only"
+        description: "Return messages since specified timestamp only."
         required: false
         type: "integer"
         x-exportParamName: "Start"
         x-optionalDataType: "Int32"
       - name: "end"
         in: "query"
-        description: "Return messages up to specified timestamp only"
+        description: "Return messages up to specified timestamp only."
         required: false
         type: "integer"
         x-exportParamName: "End"
@@ -22348,7 +22348,7 @@ paths:
         x-optionalDataType: "String"
       - name: "voice"
         in: "query"
-        description: "Fetch results with voice calls"
+        description: "Fetch results with voice calls."
         required: false
         type: "integer"
         default: 0
@@ -22365,11 +22365,11 @@ paths:
         x-exportParamName: "Id"
       responses:
         200:
-          description: "Returned when successful"
+          description: "Returned when successful."
           schema:
             $ref: "#/definitions/GetChatMessagesPaginatedResponse"
         400:
-          description: "Returned when invalid phone number specified"
+          description: "Returned when invalid phone number specified."
       x-code-samples:
       - lang: "PHP"
         source: "require_once(__DIR__ . '/vendor/autoload.php');\n\nuse TextMagic\\\
@@ -22928,7 +22928,7 @@ paths:
         x-optionalDataType: "String"
       - name: "orderBy"
         in: "query"
-        description: "Order results by some field. Default is id"
+        description: "Order results by some field. Default is id."
         required: false
         type: "string"
         default: "id"
@@ -25172,7 +25172,7 @@ paths:
       tags:
       - "TextMagic"
       summary: "Step 1: Send a verification code\n"
-      description: "Sends verification code to specified phone number."
+      description: "Sends a verification code to a specified phone number."
       operationId: "sendPhoneVerificationCodeTFA"
       parameters:
       - in: "body"
@@ -25532,7 +25532,7 @@ paths:
       parameters:
       - name: "verifyId"
         in: "path"
-        description: "the verifyId that you received in Step 1."
+        description: "The verifyId that you received in Step 1."
         required: true
         type: "string"
         x-example: "123e4567-e89b-12d3-a456-426655440000"
@@ -25745,8 +25745,8 @@ definitions:
       price:
         type: "number"
         example: 0.05
-        description: "Amount of credit which will be deducted from your account balance\
-          \ when this verification is successfully completed."
+        description: "An amount of credit which will be deducted from your account\
+          \ balance when this verification is successfully completed."
     example:
       verifyId: "123e4567-e89b-12d3-a456-426655440000"
       price: 0.05
@@ -25969,7 +25969,7 @@ definitions:
       cost:
         type: "number"
         example: 0.04
-        description: "Cost to check one number is constant – 0.04 in your account\
+        description: "Cost to check that one number is constant – 0.04 in your account\
           \ currency."
       country:
         description: "Phone number country."
@@ -26900,8 +26900,8 @@ definitions:
       displayTimeFormat:
         type: "string"
         example: "24h"
-        description: "User's preferred format of time display:\n* *12h* – AM/PM format;\n\
-          * *24h* – 24 hour clock format.\n"
+        description: "User's preferred format of time display:\n* *12h* - AM/PM format;\n\
+          * *24h* - 24-hour clock format.\n"
         enum:
         - "12h"
         - "24h"
@@ -26935,7 +26935,7 @@ definitions:
       phone:
         type: "string"
         example: "447860021130"
-        description: "User`s phone number."
+        description: "User's phone number."
         x-nullable: true
       company:
         type: "string"
@@ -26952,7 +26952,7 @@ definitions:
         type: "string"
         example: "P"
         description: "Type of account:\n* **P** for Parent User;\n* **A** for Administrator\
-          \ Sub-Account;\n* **U** for Regular User\n"
+          \ Sub-Account;\n* **U** for Regular User.\n"
         enum:
         - "P"
         - "A"
@@ -27171,7 +27171,7 @@ definitions:
       favorited:
         type: "boolean"
         example: true
-        description: "Is the Contact favourite? [Custom fields list](http://docs.textmagictesting.com/#operation/getFavourites)."
+        description: "Is the Contact favorite? [Custom fields list](http://docs.textmagictesting.com/#operation/getFavorites)."
       blocked:
         type: "boolean"
         example: true
@@ -27207,7 +27207,7 @@ definitions:
         $ref: "#/definitions/Country"
       customFields:
         type: "array"
-        description: "See [Custom Fields](http://docs.textmagictesting.com/#tag/Custom-Fields)\
+        description: "See the [Custom Fields](http://docs.textmagictesting.com/#tag/Custom-Fields)\
           \ section."
         items:
           $ref: "#/definitions/ContactCustomField"
@@ -27224,7 +27224,7 @@ definitions:
           \ distingush between fixed-line or mobile);\n* **3** if it is toll-free;\n\
           * **4** if it is a premium rate phone;\n* **5** if it is a shared cost phone;\n\
           * **6** if it is a VoIP;\n* **7** if it is a [Personal Number]();\n* **8**\
-          \ if it is a pager;\n* **9** if it is an Universal Access Number;\n* **10**\
+          \ if it is a pager;\n* **9** if it is a Universal Access Number;\n* **10**\
           \ if the phone type is unknown;\n* **-1** if the phone type is not yet processed\
           \ or cannot be determined.\n"
         x-nullable: true
@@ -27508,7 +27508,7 @@ definitions:
       isDefault:
         type: "boolean"
         description: "Indicates that List is used as a default. All new contacts added\
-          \ via web app will be added in this List by default."
+          \ via the Web-app will be added in this List by default."
         x-nullable: true
     example:
       shared: false
@@ -27858,7 +27858,7 @@ definitions:
         type: "string"
         format: "date-time"
         example: "2014-10-13T05:00:00+0000"
-        description: "Next send date in [ISO 8601](https://en.wikipedia.org/?title=ISO_8601)\
+        description: "The next send date in [ISO 8601](https://en.wikipedia.org/?title=ISO_8601)\
           \ format.\n"
       rrule:
         type: "string"
@@ -27871,14 +27871,14 @@ definitions:
         type: "string"
         format: "date-time"
         example: "2015-06-19T09:48:24+0000"
-        description: "Date and time when last message has been sent."
+        description: "The date and time when the last message was sent."
         x-nullable: true
       contactName:
         type: "string"
         example: "15 recipients"
-        description: "Aggregated contact information. If the message scheduled to\
-          \ be sent to a single contact, a full name will be returned here. Otherwise,\
-          \ a total amount contacts will be returned."
+        description: "Aggregated contact information. If the message was scheduled\
+          \ to be sent to a single contact, a full name will be returned here. Otherwise,\
+          \ a total amount of contacts will be returned."
       parameters:
         $ref: "#/definitions/MessagesIcs_parameters"
       type:
@@ -27921,7 +27921,7 @@ definitions:
       completed:
         type: "boolean"
         example: true
-        description: "Indicates that schedling has been completed."
+        description: "Indicates that scheduling has been completed."
       avatar:
         type: "string"
         example: "avatars/dummy_avatar.png"
@@ -28307,14 +28307,14 @@ definitions:
       phone:
         type: "string"
         example: "447860021130"
-        description: "Chat partner phone number."
+        description: "Chat partner's phone number."
       contact:
         $ref: "#/definitions/Contact"
       unsubscribedContactId:
         type: "integer"
         example: 546
-        description: "If this field has a value then it means that chat phone number\
-          \ has been unsubscribed from you and this value is a ID of a Unsubscribed\
+        description: "If this field has a value, it means that the chat phone number\
+          \ has been unsubscribed from you and this value is an ID of an Unsubscribed\
           \ contact entity. See [Get all unsubscribed contacts](http://docs.textmagictesting.com/#operation/getUnsubscribers)."
         x-nullable: true
       unread:
@@ -28325,7 +28325,7 @@ definitions:
         type: "string"
         format: "date-time"
         example: "2015-01-08T06:13:21+0000"
-        description: "Time when last incoming message arrived at this chat."
+        description: "Time when the last incoming message arrived at this chat."
       status:
         type: "string"
         description: "Chat status:\n  * **a** - Active\n  * **c** - Closed\n  * **d**\
@@ -28337,7 +28337,7 @@ definitions:
       mute:
         type: "integer"
         example: 0
-        description: "Indicates when chat is muted."
+        description: "Indicates when the chat is muted."
       lastMessage:
         type: "string"
         example: "Hello world!"
@@ -28345,8 +28345,8 @@ definitions:
         x-nullable: true
       direction:
         type: "string"
-        description: "Last message type:\n* **ci** - incoming call\n* **co** - outgoing\
-          \ call\n* **i** - incoming message\n* **o** - outgoing message\n"
+        description: "Last message type:\n* **ci** - incoming call;\n* **co** - outgoing\
+          \ call;\n* **i** - incoming message;\n* **o** - outgoing message.\n"
         enum:
         - "ci"
         - "co"
@@ -28356,19 +28356,19 @@ definitions:
       from:
         type: "string"
         example: "447860021130"
-        description: "If filled then value will be used as a sender number for all\
+        description: "If filled, the value will be used as a sender number for all\
           \ outgoing messages of a chat."
         x-nullable: true
       mutedUntil:
         type: "string"
         format: "date-time"
         example: "2019-10-10T14:44:00+0000"
-        description: "Date and time until chat will be mutted."
+        description: "Date and time until the chat will be muted."
         x-nullable: true
       timeLeftMute:
         type: "integer"
         example: 17988
-        description: "Time left till chat will be unmutted (seconds)."
+        description: "Time left untill the chat will be unmuted (seconds)."
       country:
         $ref: "#/definitions/Country"
     example:
@@ -28622,7 +28622,7 @@ definitions:
         type: "string"
         format: "date-time"
         example: "2012-11-28T18:38:28+0000"
-        description: "Time when message arrived at TextMagic."
+        description: "Time when  the message arrived at TextMagic."
       text:
         type: "string"
         example: "This is a sample message"
@@ -28630,7 +28630,7 @@ definitions:
       receiver:
         type: "string"
         example: "447624800500"
-        description: "Receiver phone number."
+        description: "Receiver's phone number."
       status:
         type: "string"
         example: "d"
@@ -28828,7 +28828,7 @@ definitions:
       href:
         type: "string"
         example: "avatars/lav5d8de21d89971646555094.png"
-        description: "URI of a contact avatar."
+        description: "The URI of a contact avatar."
     example:
       href: "avatars/lav5d8de21d89971646555094.png"
     x-nullable: true
@@ -29066,11 +29066,11 @@ definitions:
       emailAccepted:
         type: "boolean"
         example: true
-        description: "Is account has confirmed Email."
+        description: "Does the account have a confirmed Email?."
       phoneAccepted:
         type: "boolean"
         example: true
-        description: "Is account has confirmed Phone number."
+        description: "Does the account have a confirmed Phone Number?."
       avatar:
         $ref: "#/definitions/UserImage"
       token:
@@ -29093,7 +29093,7 @@ definitions:
       entityType:
         type: "string"
         example: "contact"
-        description: "Entity type which should be marked as **favourite**."
+        description: "Entity type which should be marked as **favorite**."
         enum:
         - "list"
         - "contact"
@@ -30732,7 +30732,7 @@ definitions:
           status: "A"
         favorited: false
       page: 1
-  GetFavouritesPaginatedResponse:
+  GetFavoritesPaginatedResponse:
     required:
     - "limit"
     - "page"
@@ -34999,7 +34999,8 @@ definitions:
       all:
         type: "integer"
         example: 0
-        description: "Default is 0 (false). If set to 1 all the entities will be removed."
+        description: "Default is 0 (false). If set to 1, all the entities will be\
+          \ removed."
     example:
       all: 0
       ids: "1,2,3"
@@ -35028,7 +35029,8 @@ definitions:
       all:
         type: "integer"
         example: 0
-        description: "Default is 0 (false). If set to 1 all the entities will be removed."
+        description: "Default is 0 (false). If set to 1, all the entities will be\
+          \ removed."
     example:
       all: 0
       ids: "1,2,3"
@@ -35103,7 +35105,8 @@ definitions:
       all:
         type: "integer"
         example: 0
-        description: "Default is 0 (false). If set to 1 all the entities will be removed."
+        description: "Default is 0 (false). If set to 1, all the entities will be\
+          \ removed."
     example:
       all: 0
       ids: "1,2,3"
@@ -35277,7 +35280,8 @@ definitions:
       all:
         type: "integer"
         example: 1
-        description: "Default is 0 (false). If set to 1 all the entities will be removed."
+        description: "Default is 0 (false). If set to 1, all the entities will be\
+          \ removed."
     example:
       all: 1
       ids: "1,2,3"
@@ -35290,7 +35294,8 @@ definitions:
       all:
         type: "integer"
         example: 0
-        description: "Default is 0 (false). If set to 1, all entities will be removed."
+        description: "Default is 0 (false). If set to 1, all the entities will be\
+          \ removed."
     example:
       all: 0
       ids: "1,2,3"
@@ -35303,10 +35308,11 @@ definitions:
       all:
         type: "integer"
         example: 0
-        description: "Default is 0 (false). If set to 1 all the entities will be removed."
+        description: "Default is 0 (false). If set to 1, all the entities will be\
+          \ removed."
       status:
         type: "string"
-        description: "Default is empty string (false). If set then all entities with\
+        description: "Default is an empty string (false). If set, all entities with\
           \ specified status will be affected."
         default: ""
     example:
@@ -35322,7 +35328,8 @@ definitions:
       all:
         type: "integer"
         example: 0
-        description: "Default is 0 (false). If set to 1 all the entities will be removed."
+        description: "Default is 0 (false). If set to 1, all the entities will be\
+          \ removed."
     example:
       all: 0
       ids: "1,2,3"
@@ -35337,8 +35344,8 @@ definitions:
         description: "Chat ID."
       status:
         type: "string"
-        description: "Chat status:\n  * **a** - Active\n  * **c** - Closed\n  * **d**\
-          \ - Deleted\n"
+        description: "Chat status:\n  * **a** - Active;\n  * **c** - Closed;\n  *\
+          \ **d** - Deleted.\n"
         enum:
         - "a"
         - "c"
@@ -35463,7 +35470,7 @@ definitions:
       status:
         type: "string"
         example: "a"
-        description: "Default is empty string. If set, all entities with specified\
+        description: "Default is an empty string. If set, all entities with specified\
           \ status will be affected."
         enum:
         - "a"
@@ -35492,7 +35499,8 @@ definitions:
       all:
         type: "boolean"
         example: false
-        description: "Default is 0 (false). If set to 1, all entities will be removed."
+        description: "Default is 0 (false). If set to 1, all the entities will be\
+          \ removed."
     example:
       sent_ids: "1,2,3,4"
       all: false
@@ -35507,8 +35515,8 @@ definitions:
       code:
         type: "integer"
         example: 1234
-        description: "Verification code that was received by the user and entered\
-          \ into the form field."
+        description: "Verification code received by the user and entered into the\
+          \ form field."
       verifyId:
         type: "string"
         example: "123e4567-e89b-12d3-a456-426655440000"
@@ -35526,13 +35534,13 @@ definitions:
         type: "string"
         example: "447860021130"
         description: "Use the phone number in international E.164 format. If you need\
-          \ to pass phone numbers in the local format, please use them with the **country**\
+          \ to pass a phone number in the local format, please use it with the **country**\
           \ parameter to specify the origin country\nof the phone number.\n"
       brand:
         type: "string"
         example: "TextMagic"
-        description: "Alphanumeric string with up to 18 characters you can use to\
-          \ personalize the verification text message body, to help users identify\
+        description: "An alphanumeric string with up to 18 characters you can use\
+          \ to personalize the verification text message body, to help users identify\
           \ your company or application name. For example: “Your TextMagic PIN is\
           \ …”\n"
       codeLength:
@@ -35547,22 +35555,22 @@ definitions:
           \ generated in the locale that matches the number. For example, the text\
           \ message or TTS message for\na 33\\* number is sent in French. Use this\
           \ parameter to explicitly control the language, accent, and gender used\
-          \ for the verification request.Can be one of\nthe following: `de-de`, `en-au`,\
-          \ `en-gb`, `en-us`, `en-in`, `es-es`, `es-mx`, `es-us`, `fr-ca`, `fr-fr`,\
-          \ `is-is`, `it-it`, `ja-jp`, `ko-kr`, `nl-nl`, `pl-pl`,\n`pt-pt`, `pt-br`,\
-          \ `ro-ro`, `ru-ru`, `sv-se`, `tr-tr`, `zh-cn` or `zh-tw`.\n"
+          \ for the verification request. Choosing one of\nthe following: `de-de`,\
+          \ `en-au`, `en-gb`, `en-us`, `en-in`, `es-es`, `es-mx`, `es-us`, `fr-ca`,\
+          \ `fr-fr`, `is-is`, `it-it`, `ja-jp`, `ko-kr`, `nl-nl`, `pl-pl`,\n`pt-pt`,\
+          \ `pt-br`, `ro-ro`, `ru-ru`, `sv-se`, `tr-tr`, `zh-cn` or `zh-tw`.\n"
       senderId:
         type: "string"
         example: "TextMagic"
         description: "One of the available [sender settings](https://my.textmagic.com/online/reply-options/)\
-          \ on your TextMagic account. If specified sender setting type is not allowed\
-          \ for some destinations, a fallback default sender will be used to ensure\
-          \ the message delivery. More info about known restrictions can be found\
-          \ [here](https://support.textmagic.com/article/how-to-understand-sender-setting-restrictions/).\n"
+          \ on your TextMagic account. If the specified sender setting type is not\
+          \ allowed for some destinations, a fallback default sender will be used\
+          \ to ensure message delivery. More info about known restrictions can be\
+          \ found [here](https://support.textmagic.com/article/how-to-understand-sender-setting-restrictions/).\n"
       country:
         type: "string"
         example: "US"
-        description: "2-letter ISO country code for local phone number."
+        description: "The 2-letter ISO country code for the local phone number."
     example:
       country: "US"
       senderId: "TextMagic"
@@ -35681,7 +35689,7 @@ definitions:
       cost:
         type: "number"
         example: 0.04
-        description: "Cost to check one number is constant – 0.04 in your account\
+        description: "Cost to check that one number is constant – 0.04 in your account\
           \ currency."
         x-nullable: true
       parts:
@@ -35697,8 +35705,8 @@ definitions:
       encoding:
         type: "string"
         example: "ISO-8859-1"
-        description: "Message charset. Could be:\n* **ISO-8859-1** for plaintext SMS\n\
-          * **UTF-16BE** for Unicode SMS\n"
+        description: "Message charset. Could be:\n* **ISO-8859-1** – for plaintext\
+          \ SMS;\n* **UTF-16BE** – for Unicode SMS.\n"
         enum:
         - "ISO-8859-1"
         - "UTF-16BE"
@@ -35714,8 +35722,8 @@ definitions:
         type: "string"
         example: "ISO-8859-1"
         description: "Human-readable message charset label. Could be:\n*   **ISO-8859-1**\
-          \ for plaintext SMS\n*   **UTF-16BE** for Unicode SMS\n*   **Voice** for\
-          \ voice services (Text-to-Speech or Voice Broadcast) messages\n"
+          \ for plaintext SMS;\n*   **UTF-16BE** for Unicode SMS;\n*   **Voice** for\
+          \ voice services (Text-to-Speech or Voice Broadcast) messages.\n"
         x-nullable: true
     example:
       cost: 0.04

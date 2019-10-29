@@ -16,14 +16,14 @@ import (
 type MessagesIcs struct {
 	// Schedule ID.
 	Id int32 `json:"id"`
-	// Next send date in [ISO 8601](https://en.wikipedia.org/?title=ISO_8601) format. 
+	// The next send date in [ISO 8601](https://en.wikipedia.org/?title=ISO_8601) format. 
 	NextSend time.Time `json:"nextSend"`
 	// [iCal RRULE](http://www.kanzaki.com/docs/ical/rrule.html) string. 
 	Rrule string `json:"rrule"`
 	Session *MessageSession `json:"session"`
-	// Date and time when last message has been sent.
+	// The date and time when the last message was sent.
 	LastSent time.Time `json:"lastSent"`
-	// Aggregated contact information. If the message scheduled to be sent to a single contact, a full name will be returned here. Otherwise, a total amount contacts will be returned.
+	// Aggregated contact information. If the message was scheduled to be sent to a single contact, a full name will be returned here. Otherwise, a total amount of contacts will be returned.
 	ContactName string `json:"contactName"`
 	Parameters *MessagesIcsParameters `json:"parameters"`
 	Type_ string `json:"type"`
@@ -38,7 +38,7 @@ type MessagesIcs struct {
 	RecipientsCount int32 `json:"recipientsCount"`
 	// User-friendly timezone name (with spaces replaced by underscores).
 	Timezone string `json:"timezone"`
-	// Indicates that schedling has been completed.
+	// Indicates that scheduling has been completed.
 	Completed bool `json:"completed"`
 	// A relative link to the contact avatar.
 	Avatar string `json:"avatar"`

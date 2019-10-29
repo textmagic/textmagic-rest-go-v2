@@ -14,6 +14,6 @@ type DeleteChatsBulkInputObject struct {
 	Ids string `json:"ids,omitempty"`
 	// Entity ID(s), separated by comma
 	All bool `json:"all,omitempty"`
-	// Default is empty string. If set, all entities with specified status will be affected.
+	// Default is an empty string. If set, all entities with specified status will be affected.
 	Status string `json:"status,omitempty"`
 }

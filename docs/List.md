@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Service** | **bool** | Internal service field. | [default to null]
 **Shared** | **bool** | Is the list **shared** among all sub-accounts? | [default to null]
 **Avatar** | [***ListImage**](ListImage.md) |  | [default to null]
-**IsDefault** | **bool** | Indicates that List is used as a default. All new contacts added via web app will be added in this List by default. | [default to null]
+**IsDefault** | **bool** | Indicates that List is used as a default. All new contacts added via the Web-app will be added in this List by default. | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

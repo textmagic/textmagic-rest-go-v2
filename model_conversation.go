@@ -19,11 +19,11 @@ type Conversation struct {
 	Direction string `json:"direction"`
 	// Sender phone number.
 	Sender string `json:"sender"`
-	// Time when message arrived at TextMagic.
+	// Time when  the message arrived at TextMagic.
 	MessageTime time.Time `json:"messageTime"`
 	// Message text.
 	Text string `json:"text"`
-	// Receiver phone number.
+	// Receiver's phone number.
 	Receiver string `json:"receiver"`
 	// Message status (for chats outbound only). See [message delivery statuses](http://docs.textmagictesting.com/#section/Delivery-status-codes) for details.
 	Status string `json:"status"`

@@ -16,6 +16,6 @@ type DeleteChatMessagesBulkInputObject struct {
 	SentIds string `json:"sent_ids,omitempty"`
 	// Calls IDs to delete. Require when \"all\" is equal to 0 (false).
 	CallsIds string `json:"calls_ids,omitempty"`
-	// Default is 0 (false). If set to 1, all entities will be removed.
+	// Default is 0 (false). If set to 1, all the entities will be removed.
 	All bool `json:"all,omitempty"`
 }

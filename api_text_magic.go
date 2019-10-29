@@ -383,7 +383,7 @@ func (a *TextMagicApiService) BuyDedicatedNumber(ctx context.Context, buyDedicat
 TextMagicApiService Cancel verification process
 You can cancel the verification not earlier than 30 seconds after the initial request.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param verifyId the verifyId that you received in Step 1.
+ * @param verifyId The verifyId that you received in Step 1.
 
 
 */
@@ -2714,7 +2714,7 @@ func (a *TextMagicApiService) DeleteDedicatedNumber(ctx context.Context, id int3
 
 /* 
 TextMagicApiService Delete a single inbound message
-&gt; Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
+&gt; Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id The unique numeric ID for the inbound message.
 
@@ -2807,7 +2807,7 @@ func (a *TextMagicApiService) DeleteInboundMessage(ctx context.Context, id int32
 
 /* 
 TextMagicApiService Delete inbound messages (bulk)
-&gt; Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
+&gt; Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteInboundMessagesBulkInputObject
 
@@ -4502,9 +4502,9 @@ TextMagicApiService Get all chats
      * @param "Status" (optional.String) -  Fetch only (a)ctive, (c)losed or (d)eleted chats
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
-     * @param "Voice" (optional.Int32) -  Fetch results with voice calls
-     * @param "Flat" (optional.Int32) -  Should additional contact info be included
+     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
+     * @param "Voice" (optional.Int32) -  Fetch results with voice calls.
+     * @param "Flat" (optional.Int32) -  Should additional contact info be included?
 
 @return GetAllChatsPaginatedResponse
 */
@@ -4634,7 +4634,7 @@ TextMagicApiService Get all inbound messages
  * @param optional nil or *GetAllInboundMessagesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
+     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
      * @param "Direction" (optional.String) -  Order direction. Default is desc.
 
 @return GetAllInboundMessagesPaginatedResponse
@@ -4999,7 +4999,7 @@ TextMagicApiService Get all scheduled messages
  * @param optional nil or *GetAllScheduledMessagesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
-     * @param "Status" (optional.String) -  Fetch schedules with the specific status: a - actual, c - completed, x - all
+     * @param "Status" (optional.String) -  Fetch schedules with a specific status: a - actual, c - completed, x - all.
      * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
      * @param "Direction" (optional.String) -  Order direction. Default is desc.
 
@@ -6268,10 +6268,10 @@ TextMagicApiService Get chat messages
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
      * @param "Query" (optional.String) -  Find messages by specified search query
-     * @param "Start" (optional.Int32) -  Return messages since specified timestamp only
-     * @param "End" (optional.Int32) -  Return messages up to specified timestamp only
+     * @param "Start" (optional.Int32) -  Return messages since specified timestamp only.
+     * @param "End" (optional.Int32) -  Return messages up to specified timestamp only.
      * @param "Direction" (optional.String) -  Order direction. Default is desc.
-     * @param "Voice" (optional.Int32) -  Fetch results with voice calls
+     * @param "Voice" (optional.Int32) -  Fetch results with voice calls.
 
 @return GetChatMessagesPaginatedResponse
 */
@@ -7983,27 +7983,27 @@ func (a *TextMagicApiService) GetDedicatedNumber(ctx context.Context, id int32) 
 TextMagicApiService Get favorite contacts and lists
 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *GetFavouritesOpts - Optional Parameters:
+ * @param optional nil or *GetFavoritesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
      * @param "Query" (optional.String) -  Find contacts or lists by specified search query
 
-@return GetFavouritesPaginatedResponse
+@return GetFavoritesPaginatedResponse
 */
 
-type GetFavouritesOpts struct { 
+type GetFavoritesOpts struct { 
 	Page optional.Int32
 	Limit optional.Int32
 	Query optional.String
 }
 
-func (a *TextMagicApiService) GetFavourites(ctx context.Context, localVarOptionals *GetFavouritesOpts) (GetFavouritesPaginatedResponse, *http.Response, error) {
+func (a *TextMagicApiService) GetFavorites(ctx context.Context, localVarOptionals *GetFavoritesOpts) (GetFavoritesPaginatedResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue GetFavouritesPaginatedResponse
+		localVarReturnValue GetFavoritesPaginatedResponse
 	)
 
 	// create path and map variables
@@ -8070,7 +8070,7 @@ func (a *TextMagicApiService) GetFavourites(ctx context.Context, localVarOptiona
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v GetFavouritesPaginatedResponse
+			var v GetFavoritesPaginatedResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -12938,7 +12938,7 @@ Find chats by recipient (contact, list name or phone number).
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
      * @param "Query" (optional.String) -  Find chats by specified search query
-     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
+     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
 
 @return SearchChatsByReceipentPaginatedResponse
 */
@@ -13064,7 +13064,7 @@ TextMagicApiService Find contacts by given criteria
      * @param "Ids" (optional.String) -  Find contact by ID(s)
      * @param "ListId" (optional.Int32) -  Find contact by List ID
      * @param "IncludeBlocked" (optional.Int32) -  Should blocked contacts to be included
-     * @param "Query" (optional.String) -  Find contacts by specified search query
+     * @param "Query" (optional.String) -  Find contacts by specified search query.
      * @param "Local" (optional.Int32) -  Treat phone number passed in &#39;query&#39; field as local. Default is 0
      * @param "Country" (optional.String) -  2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country
      * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
@@ -13220,7 +13220,7 @@ Find inbound messages by given parameters.
      * @param "Limit" (optional.Int32) -  The number of results per page.
      * @param "Ids" (optional.String) -  Find message by ID(s).
      * @param "Query" (optional.String) -  Find recipients by specified search query.
-     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
+     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
      * @param "Direction" (optional.String) -  Order direction. Default is desc.
      * @param "Expand" (optional.Int32) -  Expand by adding firstName, lastName and contactId.
 
@@ -13677,8 +13677,8 @@ TextMagicApiService Find scheduled messages
      * @param "Limit" (optional.Int32) -  The number of results per page.
      * @param "Query" (optional.String) -  Find messages by specified search query
      * @param "Ids" (optional.String) -  Find schedules by ID(s)
-     * @param "Status" (optional.String) -  Fetch schedules with the specific status: a - actual, c - completed, x - all
-     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id
+     * @param "Status" (optional.String) -  Fetch schedules with a specific status: a - actual, c - completed, x - all.
+     * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
      * @param "Direction" (optional.String) -  Order direction. Default is desc.
 
 @return SearchScheduledMessagesPaginatedResponse
@@ -14059,7 +14059,7 @@ func (a *TextMagicApiService) SendMessage(ctx context.Context, sendMessageInputO
 
 /* 
 TextMagicApiService Step 1: Send a verification code 
-Sends verification code to specified phone number.
+Sends a verification code to a specified phone number.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param sendPhoneVerificationCodeInputObject
 

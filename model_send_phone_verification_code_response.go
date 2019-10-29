@@ -12,6 +12,6 @@ package TextMagic
 type SendPhoneVerificationCodeResponse struct {
 	// The ID of a verification request. This is required to finish the verification request in the next step.
 	VerifyId string `json:"verifyId"`
-	// Amount of credit which will be deducted from your account balance when this verification is successfully completed.
+	// An amount of credit which will be deducted from your account balance when this verification is successfully completed.
 	Price float32 `json:"price"`
 }

@@ -12,7 +12,7 @@ package TextMagic
 type FavoriteContact struct {
 	// List or Contact ID.
 	EntityId int32 `json:"entityId"`
-	// Entity type which should be marked as **favourite**.
+	// Entity type which should be marked as **favorite**.
 	EntityType string `json:"entityType"`
 	// Contact first name/last name if entityType is **contact**, List name if entity type is **list**.
 	PrimaryLabel string `json:"primaryLabel"`
