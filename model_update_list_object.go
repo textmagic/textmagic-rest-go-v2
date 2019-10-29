@@ -11,7 +11,7 @@ package TextMagic
 
 type UpdateListObject struct {
 	// List name.
-	Name string `json:"name"`
+	Name string `json:"name,omitempty"`
 	// Make this list shared or not?
 	Shared bool `json:"shared,omitempty"`
 	// Is list favorited.

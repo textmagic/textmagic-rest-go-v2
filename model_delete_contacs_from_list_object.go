@@ -11,5 +11,5 @@ package TextMagic
 
 type DeleteContacsFromListObject struct {
 	// Comma-separated array of [Contacts](http://docs.textmagictesting.com/#tag/Contacts) IDs. 
-	Contacts string `json:"contacts"`
+	Contacts string `json:"contacts,omitempty"`
 }

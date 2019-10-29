@@ -13,7 +13,7 @@ type UpdateBalanceNotificationSettingsInputObject struct {
 	// Should user receive low balance notification.
 	LowBalanceNotification bool `json:"lowBalanceNotification,omitempty"`
 	// If balance is below this value, user receive low balance notification.
-	AlertBalance string `json:"alertBalance"`
+	AlertBalance string `json:"alertBalance,omitempty"`
 	// Low balance notification phone number.
 	AlertPhone string `json:"alertPhone,omitempty"`
 	// Low balance notification email 1.

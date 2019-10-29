@@ -11,9 +11,9 @@ package TextMagic
 
 type UpdateSenderSettingInputObject struct {
 	// Available phone number in international E.164 format or senderid.
-	Value string `json:"value"`
+	Value string `json:"value,omitempty"`
 	// Country for which the setting will be set.
-	Country string `json:"country"`
+	Country string `json:"country,omitempty"`
 	// Set sender setting for specified chat only.
 	ChatId int32 `json:"chatId,omitempty"`
 }

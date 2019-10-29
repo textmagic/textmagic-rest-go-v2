@@ -11,7 +11,7 @@ package TextMagic
 
 type CreateListInputObject struct {
 	// List name.
-	Name string `json:"name"`
+	Name string `json:"name,omitempty"`
 	// Should the new list be **shared** among all the sub-accounts?
 	Shared bool `json:"shared,omitempty"`
 	// Is the list favorited? Default is false.

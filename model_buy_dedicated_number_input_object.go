@@ -11,9 +11,9 @@ package TextMagic
 
 type BuyDedicatedNumberInputObject struct {
 	// Dedicated phone number.
-	Phone string `json:"phone"`
+	Phone string `json:"phone,omitempty"`
 	// Country code phone number.
-	Country string `json:"country"`
+	Country string `json:"country,omitempty"`
 	// Assigned dedicated number. This number will be available for this account only. You cannot transfer numbers between sub-accounts. 
-	UserId int32 `json:"userId"`
+	UserId int32 `json:"userId,omitempty"`
 }

@@ -11,7 +11,7 @@ package TextMagic
 
 type SendMessageInputObject struct {
 	// Message text. Required if the **template_id** is not set.
-	Text string `json:"text"`
+	Text string `json:"text,omitempty"`
 	// Template used instead of message text. Required if the **text** is not set.
 	TemplateId int32 `json:"templateId,omitempty"`
 	// DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now.
@@ -25,7 +25,7 @@ type SendMessageInputObject struct {
 	// Comma separated array of list resources id message will be sent to.
 	Lists string `json:"lists,omitempty"`
 	// Comma separated array of E.164 phone numbers message will be sent to.
-	Phones string `json:"phones"`
+	Phones string `json:"phones,omitempty"`
 	// Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead.
 	CutExtra bool `json:"cutExtra,omitempty"`
 	// Maximum message parts count (TextMagic allows sending 1 to 6 message parts).

@@ -11,9 +11,9 @@ package TextMagic
 
 type RequestNewSubaccountTokenInputObject struct {
 	// Sub-account ID.
-	UserId int32 `json:"userId"`
+	UserId int32 `json:"userId,omitempty"`
 	// Your account password.
-	Password string `json:"password"`
+	Password string `json:"password,omitempty"`
 	// Application name.
 	AppName string `json:"appName,omitempty"`
 }

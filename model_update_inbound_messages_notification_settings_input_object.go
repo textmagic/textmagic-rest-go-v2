@@ -11,11 +11,11 @@ package TextMagic
 
 type UpdateInboundMessagesNotificationSettingsInputObject struct {
 	// Should user receive notification about new incoming messages.
-	InboundMessageNotification bool `json:"inboundMessageNotification"`
+	InboundMessageNotification bool `json:"inboundMessageNotification,omitempty"`
 	// Include SMS history into notification Email.
-	IncludeSmsHistory bool `json:"includeSmsHistory"`
+	IncludeSmsHistory bool `json:"includeSmsHistory,omitempty"`
 	// Send Email notification in HTML format.
-	SendInHtmlFormat bool `json:"sendInHtmlFormat"`
+	SendInHtmlFormat bool `json:"sendInHtmlFormat,omitempty"`
 	// New message notification email 2.
 	AlertEmail1 string `json:"alertEmail1,omitempty"`
 	// New message notification email 2.

@@ -11,9 +11,9 @@ package TextMagic
 
 type UpdateCallbackSettingsInputObject struct {
 	// This URL is used to push message delivery status updates to your application.
-	OutUrl string `json:"outUrl"`
+	OutUrl string `json:"outUrl,omitempty"`
 	// This URL is used to push incoming SMS to your application.
-	InUrl string `json:"inUrl"`
+	InUrl string `json:"inUrl,omitempty"`
 	// Desired callback data format. m - multipart/form-data, u - application/x-www-form-urlencoded, j - application/json
-	Format string `json:"format"`
+	Format string `json:"format,omitempty"`
 }

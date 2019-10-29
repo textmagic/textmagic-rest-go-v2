@@ -15,13 +15,13 @@ type CreateContactInputObject struct {
 	// Contact last name.
 	LastName string `json:"lastName,omitempty"`
 	// Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164).
-	Phone string `json:"phone"`
+	Phone string `json:"phone,omitempty"`
 	// Contact email address.
 	Email string `json:"email,omitempty"`
 	// Company name.
 	CompanyName string `json:"companyName,omitempty"`
 	// Contact [list](http://docs.textmagictesting.com/#tag/Lists) ID. Each contact must be assigned to at least one list.
-	Lists string `json:"lists"`
+	Lists string `json:"lists,omitempty"`
 	// Is the contact marked as favorite?
 	Favorited bool `json:"favorited,omitempty"`
 	// Is the contact blocked for outgoing and incoming messaging?

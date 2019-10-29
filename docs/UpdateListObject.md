@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | List name. | [default to null]
+**Name** | **string** | List name. | [optional] [default to null]
 **Shared** | **bool** | Make this list shared or not? | [optional] [default to null]
 **Favorited** | **bool** | Is list favorited. | [optional] [default to null]
 **IsDefault** | **bool** | Is list default for new contacts (web only). | [optional] [default to null]

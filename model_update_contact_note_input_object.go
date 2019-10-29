@@ -11,5 +11,5 @@ package TextMagic
 
 type UpdateContactNoteInputObject struct {
 	// Contact Note text.
-	Note string `json:"note"`
+	Note string `json:"note,omitempty"`
 }
