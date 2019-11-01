@@ -800,7 +800,7 @@ tags:
     Star textmagic/textmagic-rest-go-v2 on GitHub\">Star</a>\n\nThis library provides\
     \ you with an easy way of sending SMS and receiving replies by integrating TextMagic\
     \ SMS Gateway into your Go application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n\
-    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.844\n\
+    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.865\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -893,7 +893,7 @@ tags:
 - name: "Contact Notes"
   description: ""
 schemes:
-- "http"
+- "https"
 consumes:
 - "application/json"
 produces:
@@ -949,7 +949,7 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\n\
           api.ping().then(function (data) {\n    console.log(data);\n}).catch(function(err){\n\
           \    console.error(err);\n});"
       - lang: "Ruby"
@@ -1100,8 +1100,8 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    full: 0,\n}\n\napi.getTimezones(params).then(function\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    full: 0,\n};\n\napi.getTimezones(opts).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -1281,8 +1281,8 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ phone = \"447860021130\";\nconst params = {\n// Optional parameters\n\
-          \    country: \"GB\",\n}\n\napi.doCarrierLookup(phone, params).then(function\
+          \ phone = \"447860021130\";\n\n// Optional parameters\nconst opts = {\n\
+          \    country: \"GB\",\n};\n\napi.doCarrierLookup(phone, opts).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -1430,7 +1430,7 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\n\
           api.getCountries().then(function (data) {\n    console.log(data);\n}).catch(function(err){\n\
           \    console.error(err);\n});"
       - lang: "Ruby"
@@ -1567,7 +1567,7 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\n\
           api.getCurrentUser().then(function (data) {\n    console.log(data);\n}).catch(function(err){\n\
           \    console.error(err);\n});"
       - lang: "Ruby"
@@ -1723,7 +1723,7 @@ paths:
           \ input = {\n    // Optional parameters\n    username: \"Test\",\n    firstName:\
           \ \"Charles\",\n    lastName: \"Conway\",\n    email: \"charles@example.com\"\
           ,\n    phone: \"447860021130\",\n    company: \"Example Ltd.\",\n    timezone:\
-          \ 2,\n}\n\napi.updateCurrentUser(input).then(function (data) {\n    console.log(data);\n\
+          \ 2,\n}\n\n\napi.updateCurrentUser(input).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -1885,7 +1885,7 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\n\
           api.deleteAvatar().then(function (data) {\n    console.log(data);\n}).catch(function(err){\n\
           \    console.error(err);\n});"
       - lang: "Ruby"
@@ -2030,8 +2030,8 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    country: \"US\",\n}\n\napi.getAvailableSenderSettingOptions(params).then(function\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    country: \"US\",\n};\n\napi.getAvailableSenderSettingOptions(opts).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -2197,7 +2197,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    value: \"447624800500\",\n    country: \"AF\",\n    //\
-          \ Optional parameters\n    chatId: 344,\n}\n\napi.updateSenderSetting(input).then(function\
+          \ Optional parameters\n    chatId: 344,\n}\n\n\napi.updateSenderSetting(input).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -2359,8 +2359,8 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    country: \"US\",\n}\n\napi.getSenderSettings(params).then(function\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    country: \"US\",\n};\n\napi.getSenderSettings(opts).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -2550,10 +2550,10 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n    country: \"GB\",\n// Optional parameters\n    prefix:\
-          \ 447155,\n    tollfree: 0,\n}\n\napi.getAvailableDedicatedNumbers(params).then(function\
-          \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
-          });"
+          \ country = \"GB\";\n\n// Optional parameters\nconst opts = {\n    prefix:\
+          \ 447155,\n    tollfree: 0,\n};\n\napi.getAvailableDedicatedNumbers(country,\
+          \ opts).then(function (data) {\n    console.log(data);\n}).catch(function(err){\n\
+          \    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
           \ from https://my.textmagic.com/online/api/rest-api/keys page.\nTextMagic.configure\
@@ -2739,10 +2739,10 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n   \
-          \ surveyId: 1,\n}\n\napi.getUserDedicatedNumbers(params).then(function (data)\
-          \ {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n \
+          \   surveyId: 1,\n};\n\napi.getUserDedicatedNumbers(opts).then(function\
+          \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -2912,8 +2912,8 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    phone: \"447860021130\",\n    country: \"AU\",\n    userId:\
-          \ 5501,\n}\n\napi.buyDedicatedNumber(input).then(function (data) {\n   \
-          \ console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          \ 5501,\n}\n\n\napi.buyDedicatedNumber(input).then(function (data) {\n \
+          \   console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -3068,7 +3068,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.getDedicatedNumber(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.getDedicatedNumber(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -3208,8 +3208,9 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.deleteDedicatedNumber(id).then(function (data) {\n    console.log(data);\n\
-          }).catch(function(err){\n    console.error(err);\n});"
+          \ id = 1;\n\n\napi.deleteDedicatedNumber(id).then(function (data) {\n  \
+          \  console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
           \ from https://my.textmagic.com/online/api/rest-api/keys page.\nTextMagic.configure\
@@ -3358,9 +3359,9 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n}\n\n\
-          api.getSenderIds(params).then(function (data) {\n    console.log(data);\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n};\n\
+          \napi.getSenderIds(opts).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -3520,7 +3521,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    senderId: \"HotRod\",\n    explanation: \"Because it equals\
-          \ to my company name.\",\n}\n\napi.requestSenderId(input).then(function\
+          \ to my company name.\",\n}\n\n\napi.requestSenderId(input).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -3682,7 +3683,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.getSenderId(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.getSenderId(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -3821,7 +3822,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.deleteSenderId(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.deleteSenderId(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -3972,9 +3973,9 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n}\n\n\
-          api.getSubaccounts(params).then(function (data) {\n    console.log(data);\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n};\n\
+          \napi.getSubaccounts(opts).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -4134,9 +4135,9 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ input = {\n    email: \"john@example.com\",\n    role: \"U\",\n}\n\napi.inviteSubaccount(input).then(function\
-          \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
-          });"
+          \ input = {\n    email: \"john@example.com\",\n    role: \"U\",\n}\n\n\n\
+          api.inviteSubaccount(input).then(function (data) {\n    console.log(data);\n\
+          }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
           \ from https://my.textmagic.com/online/api/rest-api/keys page.\nTextMagic.configure\
@@ -4289,7 +4290,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.getSubaccount(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.getSubaccount(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -4430,7 +4431,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.closeSubaccount(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.closeSubaccount(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -4581,7 +4582,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    userId: 1,\n    password: \"strongPassword\",\n    // Optional\
-          \ parameters\n    appName: \"sample app\",\n}\n\napi.requestNewSubaccountToken(input).then(function\
+          \ parameters\n    appName: \"sample app\",\n}\n\n\napi.requestNewSubaccountToken(input).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -4780,8 +4781,8 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    appName: \"sample app\",\n    password: \"strongPassword\"\
-          ,\n}\nconst params = {\n// Optional parameters\n    page: 1,\n    limit:\
-          \ 10,\n}\n\napi.getSubaccountsWithTokens(input, params).then(function (data)\
+          ,\n}\n\n// Optional parameters\nconst opts = {\n    page: 1,\n    limit:\
+          \ 10,\n};\n\napi.getSubaccountsWithTokens(input, opts).then(function (data)\
           \ {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -4949,7 +4950,7 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\n\
           api.getBalanceNotificationOptions().then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
@@ -5086,7 +5087,7 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\n\
           api.getBalanceNotificationSettings().then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
@@ -5243,7 +5244,7 @@ paths:
           \ input = {\n    alertBalance: \"50\",\n    // Optional parameters\n   \
           \ lowBalanceNotification: true,\n    alertPhone: \"15417543010\",\n    alertEmail1:\
           \ \"test@test.com\",\n    alertEmail2: \"test@test.com\",\n    alertEmail3:\
-          \ \"test@test.com\",\n}\n\napi.updateBalanceNotificationSettings(input).then(function\
+          \ \"test@test.com\",\n}\n\n\napi.updateBalanceNotificationSettings(input).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -5410,7 +5411,7 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\n\
           api.getInboundMessagesNotificationSettings().then(function (data) {\n  \
           \  console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
@@ -5570,7 +5571,7 @@ paths:
           \ input = {\n    inboundMessageNotification: true,\n    includeSmsHistory:\
           \ true,\n    sendInHtmlFormat: true,\n    // Optional parameters\n    alertEmail1:\
           \ \"test@test.com\",\n    alertEmail2: \"test@test.com\",\n    alertEmail3:\
-          \ \"test@test.com\",\n}\n\napi.updateInboundMessagesNotificationSettings(input).then(function\
+          \ \"test@test.com\",\n}\n\n\napi.updateInboundMessagesNotificationSettings(input).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -5751,7 +5752,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    playSound: false,\n    showNotifications: false,\n    //\
-          \ Optional parameters\n    showText: true,\n    soundId: 23,\n}\n\napi.updateChatDesktopNotificationSettings(input).then(function\
+          \ Optional parameters\n    showText: true,\n    soundId: 23,\n}\n\n\napi.updateChatDesktopNotificationSettings(input).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -5904,7 +5905,7 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\n\
           api.getCallbackSettings().then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
@@ -6053,7 +6054,7 @@ paths:
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    outUrl: \"http://www.mysite.com/delivery-callback.php\"\
           ,\n    inUrl: \"http://www.mysite.com/incoming-sms-callback.php\",\n   \
-          \ format: \"undefined\",\n}\n\napi.updateCallbackSettings(input).then(function\
+          \ format: \"undefined\",\n}\n\n\napi.updateCallbackSettings(input).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -6323,11 +6324,11 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n   \
-          \ shared: 0,\n    ids: \"sampleValue\",\n    listId: 1,\n    includeBlocked:\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n \
+          \   shared: 0,\n    ids: \"sampleValue\",\n    listId: 1,\n    includeBlocked:\
           \ 1,\n    query: \"sampleValue\",\n    local: 0,\n    country: \"sampleValue\"\
-          ,\n    orderBy: \"id\",\n    direction: \"desc\",\n}\n\napi.searchContacts(params).then(function\
+          ,\n    orderBy: \"id\",\n    direction: \"desc\",\n};\n\napi.searchContacts(opts).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -6541,9 +6542,9 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n    query: \"A\",\n// Optional parameters\n    limit: 10,\n\
-          \    lists: 0,\n}\n\napi.getContactsAutocomplete(params).then(function (data)\
-          \ {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          \ query = \"A\";\n\n// Optional parameters\nconst opts = {\n    limit: 10,\n\
+          \    lists: 0,\n};\n\napi.getContactsAutocomplete(query, opts).then(function\
+          \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -6751,9 +6752,9 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n   \
-          \ shared: 0,\n    orderBy: \"id\",\n    direction: \"desc\",\n}\n\napi.getContacts(params).then(function\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n \
+          \   shared: 0,\n    orderBy: \"id\",\n    direction: \"desc\",\n};\n\napi.getContacts(opts).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -6941,9 +6942,9 @@ paths:
           \    // Optional parameters\n    firstName: \"Charles\",\n    lastName:\
           \ \"Conway\",\n    email: \"charles@example.com\",\n    companyName: \"\
           Example Ltd.\",\n    favorited: false,\n    blocked: false,\n    type: 1,\n\
-          \    customFieldValues: ,\n    local: 0,\n    country: \"US\",\n}\n\napi.createContact(input).then(function\
-          \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
-          });"
+          \    customFieldValues: ,\n    local: 0,\n    country: \"US\",\n}\n\n\n\
+          api.createContact(input).then(function (data) {\n    console.log(data);\n\
+          }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
           \ from https://my.textmagic.com/online/api/rest-api/keys page.\nTextMagic.configure\
@@ -7134,7 +7135,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ phone = \"447860021130\";\n\napi.getContactByPhone(phone).then(function\
+          \ phone = \"447860021130\";\n\n\napi.getContactByPhone(phone).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -7281,7 +7282,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.getContact(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.getContact(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -7426,7 +7427,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.deleteContact(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.deleteContact(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -7597,7 +7598,7 @@ paths:
           \  lastName: \"Example first name\",\n    email: \"charles@example.com\"\
           ,\n    companyName: \"My pretty company\",\n    favorited: false,\n    blocked:\
           \ false,\n    type: 1,\n    customFieldValues: ,\n    local: 0,\n    country:\
-          \ \"US\",\n}\nconst id = 1;\n\napi.updateContact(input, id).then(function\
+          \ \"US\",\n}\nconst id = 1;\n\n\napi.updateContact(input, id).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -7776,7 +7777,7 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\n\
           api.deleteAllContacts().then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
@@ -7923,7 +7924,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    ids: \"1,2,3\",\n    all: false,\n\
-          }\n\napi.deleteContactsByIds(input).then(function (data) {\n    console.log(data);\n\
+          }\n\n\napi.deleteContactsByIds(input).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -8090,9 +8091,9 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n}\n\n\
-          api.getUnsubscribers(params).then(function (data) {\n    console.log(data);\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n};\n\
+          \napi.getUnsubscribers(opts).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -8259,7 +8260,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    phone: \"447860021130\",\n\
-          \    blockIncoming: 0,\n}\n\napi.unsubscribeContact(input).then(function\
+          \    blockIncoming: 0,\n}\n\n\napi.unsubscribeContact(input).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -8421,8 +8422,8 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.getUnsubscribedContact(id).then(function (data) {\n   \
-          \ console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          \ id = 1;\n\n\napi.getUnsubscribedContact(id).then(function (data) {\n \
+          \   console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -8577,9 +8578,9 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n}\n\n\
-          api.getCustomFields(params).then(function (data) {\n    console.log(data);\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n};\n\
+          \napi.getCustomFields(opts).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -8741,7 +8742,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ input = {\n    name: \"DOB\",\n}\n\napi.createCustomField(input).then(function\
+          \ input = {\n    name: \"DOB\",\n}\n\n\napi.createCustomField(input).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -8894,7 +8895,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.getCustomField(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.getCustomField(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -9052,7 +9053,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ input = {\n    name: \"DOB\",\n}\nconst id = 1;\n\napi.updateCustomField(input,\
+          \ input = {\n    name: \"DOB\",\n}\nconst id = 1;\n\n\napi.updateCustomField(input,\
           \ id).then(function (data) {\n    console.log(data);\n}).catch(function(err){\n\
           \    console.error(err);\n});"
       - lang: "Ruby"
@@ -9207,7 +9208,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.deleteCustomField(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.deleteCustomField(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -9367,7 +9368,7 @@ paths:
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    contactId: 50315,\n    value:\
           \ \"Wed Aug 31 1983 00:00:00 GMT+0000 (Coordinated Universal Time)\",\n\
-          }\nconst id = 554;\n\napi.updateCustomFieldValue(input, id).then(function\
+          }\nconst id = 554;\n\n\napi.updateCustomFieldValue(input, id).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -9599,10 +9600,10 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n   \
-          \ orderBy: \"id\",\n    direction: \"desc\",\n    favoriteOnly: 0,\n   \
-          \ onlyMine: 0,\n}\n\napi.getLists(params).then(function (data) {\n    console.log(data);\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n \
+          \   orderBy: \"id\",\n    direction: \"desc\",\n    favoriteOnly: 0,\n \
+          \   onlyMine: 0,\n};\n\napi.getLists(opts).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -9779,7 +9780,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    name: \"Private list\",\n    // Optional parameters\n \
-          \   shared: false,\n    favorited: false,\n    isDefault: false,\n}\n\n\
+          \   shared: false,\n    favorited: false,\n    isDefault: false,\n}\n\n\n\
           api.createList(input).then(function (data) {\n    console.log(data);\n}).catch(function(err){\n\
           \    console.error(err);\n});"
       - lang: "Ruby"
@@ -10024,10 +10025,10 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n   \
-          \ ids: \"1,2,3,4\",\n    query: \"A\",\n    onlyMine: 0,\n    onlyDefault:\
-          \ 0,\n    orderBy: \"id\",\n    direction: \"desc\",\n}\n\napi.searchLists(params).then(function\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n \
+          \   ids: \"1,2,3,4\",\n    query: \"A\",\n    onlyMine: 0,\n    onlyDefault:\
+          \ 0,\n    orderBy: \"id\",\n    direction: \"desc\",\n};\n\napi.searchLists(opts).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -10228,9 +10229,9 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\nconst params = {\n// Optional parameters\n    page: 1,\n    limit:\
-          \ 10,\n}\n\napi.getListsOfContact(id, params).then(function (data) {\n \
-          \   console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          \ id = 1;\n\n// Optional parameters\nconst opts = {\n    page: 1,\n    limit:\
+          \ 10,\n};\n\napi.getListsOfContact(id, opts).then(function (data) {\n  \
+          \  console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -10406,9 +10407,9 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n   \
-          \ query: \"A\",\n}\n\napi.getFavorites(params).then(function (data) {\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n \
+          \   query: \"A\",\n};\n\napi.getFavorites(opts).then(function (data) {\n\
           \    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -10569,7 +10570,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.getList(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.getList(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -10725,7 +10726,7 @@ paths:
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    name: \"Private list\",\n    // Optional parameters\n \
           \   shared: true,\n    favorited: true,\n    isDefault: true,\n}\nconst\
-          \ id = 1;\n\napi.updateList(input, id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.updateList(input, id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -10897,7 +10898,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.deleteList(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.deleteList(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -11043,7 +11044,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    ids: \"1,2,3\",\n    all: 0,\n\
-          }\n\napi.deleteListsBulk(input).then(function (data) {\n    console.log(data);\n\
+          }\n\n\napi.deleteListsBulk(input).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -11243,10 +11244,10 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n   \
-          \ query: \"sampleValue\",\n    orderBy: \"id\",\n    direction: \"desc\"\
-          ,\n}\n\napi.getBlockedContacts(params).then(function (data) {\n    console.log(data);\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n \
+          \   query: \"sampleValue\",\n    orderBy: \"id\",\n    direction: \"desc\"\
+          ,\n};\n\napi.getBlockedContacts(opts).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -11420,7 +11421,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n    phone: \"447860021130\",\n}\n\napi.getContactIfBlocked(params).then(function\
+          \ phone = \"447860021130\";\n\n\napi.getContactIfBlocked(phone).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -11579,7 +11580,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    phone: \"447860021130\",\n\
-          }\n\napi.blockContact(input).then(function (data) {\n    console.log(data);\n\
+          }\n\n\napi.blockContact(input).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -11743,7 +11744,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    phone: \"447860021130\",\n\
-          }\n\napi.unblockContact(input).then(function (data) {\n    console.log(data);\n\
+          }\n\n\napi.unblockContact(input).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -11902,7 +11903,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    ids: \"1,2,3\",\n    all: 0,\n\
-          }\n\napi.unblockContactsBulk(input).then(function (data) {\n    console.log(data);\n\
+          }\n\n\napi.unblockContactsBulk(input).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -12075,10 +12076,9 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\nconst params = {\n// Optional parameters\n    page: 1,\n    limit:\
-          \ 10,\n}\n\napi.getContactNotes(id, params).then(function (data) {\n   \
-          \ console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
-          });"
+          \ id = 1;\n\n// Optional parameters\nconst opts = {\n    page: 1,\n    limit:\
+          \ 10,\n};\n\napi.getContactNotes(id, opts).then(function (data) {\n    console.log(data);\n\
+          }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
           \ from https://my.textmagic.com/online/api/rest-api/keys page.\nTextMagic.configure\
@@ -12250,8 +12250,8 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    note: \"My new note\",\n}\n\
-          const id = 1;\n\napi.createContactNote(input, id).then(function (data) {\n\
-          \    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          const id = 1;\n\n\napi.createContactNote(input, id).then(function (data)\
+          \ {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -12410,7 +12410,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.getContactNote(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.getContactNote(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -12570,7 +12570,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ input = {\n    note: \"My new note\",\n}\nconst id = 1;\n\napi.updateContactNote(input,\
+          \ input = {\n    note: \"My new note\",\n}\nconst id = 1;\n\n\napi.updateContactNote(input,\
           \ id).then(function (data) {\n    console.log(data);\n}).catch(function(err){\n\
           \    console.error(err);\n});"
       - lang: "Ruby"
@@ -12724,7 +12724,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.deleteContactNote(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.deleteContactNote(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -12877,7 +12877,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    ids: \"1,2,3\",\n    all: true,\n\
-          }\nconst id = 1;\n\napi.deleteContactNotesBulk(input, id).then(function\
+          }\nconst id = 1;\n\n\napi.deleteContactNotesBulk(input, id).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -13034,7 +13034,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.deleteContactAvatar(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.deleteContactAvatar(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -13177,7 +13177,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.getContactImportSessionProgress(id).then(function (data)\
+          \ id = 1;\n\n\napi.getContactImportSessionProgress(id).then(function (data)\
           \ {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -13341,7 +13341,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ email = \"john@sample.com\";\n\napi.doEmailLookup(email).then(function\
+          \ email = \"john@sample.com\";\n\n\napi.doEmailLookup(email).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -13492,7 +13492,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.getListContactsIds(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.getListContactsIds(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -13687,9 +13687,9 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\nconst params = {\n// Optional parameters\n    page: 1,\n    limit:\
-          \ 10,\n    orderBy: \"id\",\n    direction: \"desc\",\n}\n\napi.getContactsByListId(id,\
-          \ params).then(function (data) {\n    console.log(data);\n}).catch(function(err){\n\
+          \ id = 1;\n\n// Optional parameters\nconst opts = {\n    page: 1,\n    limit:\
+          \ 10,\n    orderBy: \"id\",\n    direction: \"desc\",\n};\n\napi.getContactsByListId(id,\
+          \ opts).then(function (data) {\n    console.log(data);\n}).catch(function(err){\n\
           \    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -13874,7 +13874,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ input = {\n    contacts: \"1,2\",\n}\nconst id = 1;\n\napi.clearAndAssignContactsToList(input,\
+          \ input = {\n    contacts: \"1,2\",\n}\nconst id = 1;\n\n\napi.clearAndAssignContactsToList(input,\
           \ id).then(function (data) {\n    console.log(data);\n}).catch(function(err){\n\
           \    console.error(err);\n});"
       - lang: "Ruby"
@@ -14053,7 +14053,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ input = {\n    contacts: \"318,454,30091\",\n}\nconst id = 1;\n\napi.assignContactsToList(input,\
+          \ input = {\n    contacts: \"318,454,30091\",\n}\nconst id = 1;\n\n\napi.assignContactsToList(input,\
           \ id).then(function (data) {\n    console.log(data);\n}).catch(function(err){\n\
           \    console.error(err);\n});"
       - lang: "Ruby"
@@ -14218,8 +14218,8 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.deleteContactsFromList(id).then(function (data) {\n   \
-          \ console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          \ id = 1;\n\n\napi.deleteContactsFromList(id).then(function (data) {\n \
+          \   console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -14372,7 +14372,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    ids: \"1,2,3\",\n    all: 0,\n\
-          }\nconst id = 1;\n\napi.deleteListContactsBulk(input, id).then(function\
+          }\nconst id = 1;\n\n\napi.deleteListContactsBulk(input, id).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -14529,7 +14529,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.deleteListAvatar(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.deleteListAvatar(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -14679,9 +14679,9 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n}\n\n\
-          api.getAllTemplates(params).then(function (data) {\n    console.log(data);\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n};\n\
+          \napi.getAllTemplates(opts).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -14843,8 +14843,8 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    name: \"New template name\",\n    content: \"New template\
-          \ content\",\n}\n\napi.createTemplate(input).then(function (data) {\n  \
-          \  console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          \ content\",\n}\n\n\napi.createTemplate(input).then(function (data) {\n\
+          \    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -15037,10 +15037,10 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n   \
-          \ ids: \"sampleValue\",\n    name: \"sampleValue\",\n    content: \"sampleValue\"\
-          ,\n}\n\napi.searchTemplates(params).then(function (data) {\n    console.log(data);\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n \
+          \   ids: \"sampleValue\",\n    name: \"sampleValue\",\n    content: \"sampleValue\"\
+          ,\n};\n\napi.searchTemplates(opts).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -15209,7 +15209,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.getTemplate(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.getTemplate(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -15368,7 +15368,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    name: \"New template name\",\n    content: \"New template\
-          \ content\",\n}\nconst id = 1;\n\napi.updateTemplate(input, id).then(function\
+          \ content\",\n}\nconst id = 1;\n\n\napi.updateTemplate(input, id).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -15527,7 +15527,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.deleteTemplate(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.deleteTemplate(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -15674,7 +15674,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    ids: \"1,2,3\",\n    all: true,\n\
-          }\n\napi.deleteTemplatesBulk(input).then(function (data) {\n    console.log(data);\n\
+          }\n\n\napi.deleteTemplatesBulk(input).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -15851,9 +15851,9 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n   \
-          \ lastId: 1,\n}\n\napi.getAllOutboundMessages(params).then(function (data)\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n \
+          \   lastId: 1,\n};\n\napi.getAllOutboundMessages(opts).then(function (data)\
           \ {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -16047,7 +16047,7 @@ paths:
           ,\n    cutExtra: true,\n    partsCount: 6,\n    referenceId: 1,\n    from:\
           \ \"Test sender id\",\n    rrule: \"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"\
           ,\n    createChat: false,\n    tts: false,\n    local: false,\n    localCountry:\
-          \ \"US\",\n}\n\napi.sendMessage(input).then(function (data) {\n    console.log(data);\n\
+          \ \"US\",\n}\n\n\napi.sendMessage(input).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -16455,15 +16455,15 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    includeBlocked: 0,\n    text:\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    includeBlocked: 0,\n    text:\
           \ \"Test message test\",\n    templateId: 1,\n    sendingTime: 1565606455,\n\
           \    sendingDateTime: \"2020-05-27 13:02:33\",\n    sendingTimezone: \"\
           America/Buenos_Aires\",\n    contacts: \"1,2,3,4\",\n    lists: \"1,2,3,4\"\
           ,\n    phones: \"447860021130,447860021131\",\n    cutExtra: 0,\n    partsCount:\
           \ 6,\n    referenceId: 1,\n    from: \"Test Sender ID\",\n    rule: \"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"\
           ,\n    createChat: 0,\n    tts: 0,\n    local: 0,\n    localCountry: \"\
-          US\",\n}\n\napi.getMessagePrice(params).then(function (data) {\n    console.log(data);\n\
+          US\",\n};\n\napi.getMessagePrice(opts).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -16879,15 +16879,15 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    text: \"Test message test\",\n\
-          \    templateId: 1,\n    sendingTime: 1565606455,\n    sendingDateTime:\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    text: \"Test message test\"\
+          ,\n    templateId: 1,\n    sendingTime: 1565606455,\n    sendingDateTime:\
           \ \"2020-05-27 13:02:33\",\n    sendingTimezone: \"America/Buenos_Aires\"\
           ,\n    contacts: \"1,2,3,4\",\n    lists: \"1,2,3,4\",\n    phones: \"447860021130,447860021131\"\
           ,\n    cutExtra: 0,\n    partsCount: 6,\n    referenceId: 1,\n    from:\
           \ \"Test Sender ID\",\n    rule: \"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"\
           ,\n    createChat: 0,\n    tts: 0,\n    local: 0,\n    localCountry: \"\
-          US\",\n}\n\napi.getMessagePreview(params).then(function (data) {\n    console.log(data);\n\
+          US\",\n};\n\napi.getMessagePreview(opts).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -17114,7 +17114,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.getOutboundMessage(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.getOutboundMessage(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -17254,8 +17254,9 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.deleteOutboundMessage(id).then(function (data) {\n    console.log(data);\n\
-          }).catch(function(err){\n    console.error(err);\n});"
+          \ id = 1;\n\n\napi.deleteOutboundMessage(id).then(function (data) {\n  \
+          \  console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
           \ from https://my.textmagic.com/online/api/rest-api/keys page.\nTextMagic.configure\
@@ -17398,8 +17399,9 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    ids: \"1,2,3\",\n    all: 1,\n\
-          }\n\napi.deleteOutboundMessagesBulk(input).then(function (data) {\n    console.log(data);\n\
-          }).catch(function(err){\n    console.error(err);\n});"
+          }\n\n\napi.deleteOutboundMessagesBulk(input).then(function (data) {\n  \
+          \  console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
           \ from https://my.textmagic.com/online/api/rest-api/keys page.\nTextMagic.configure\
@@ -17536,7 +17538,7 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\n\
           api.deleteAllOutboundMessages().then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
@@ -17762,10 +17764,10 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n   \
-          \ lastId: 1,\n    ids: \"sampleValue\",\n    sessionId: 1,\n    statuses:\
-          \ \"q\",\n    includeDeleted: 0,\n    query: \"sampleValue\",\n}\n\napi.searchOutboundMessages(params).then(function\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n \
+          \   lastId: 1,\n    ids: \"sampleValue\",\n    sessionId: 1,\n    statuses:\
+          \ \"q\",\n    includeDeleted: 0,\n    query: \"sampleValue\",\n};\n\napi.searchOutboundMessages(opts).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -18001,11 +18003,11 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    limit: 10,\n    lastId: 1,\n \
-          \   query: \"sampleValue\",\n    orderBy: \"id\",\n    direction: \"desc\"\
-          ,\n}\n\napi.getOutboundMessagesHistory(params).then(function (data) {\n\
-          \    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    limit: 10,\n    lastId: 1,\n\
+          \    query: \"sampleValue\",\n    orderBy: \"id\",\n    direction: \"desc\"\
+          ,\n};\n\napi.getOutboundMessagesHistory(opts).then(function (data) {\n \
+          \   console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -18186,9 +18188,9 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n}\n\n\
-          api.getAllBulkSessions(params).then(function (data) {\n    console.log(data);\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n};\n\
+          \napi.getAllBulkSessions(opts).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -18344,7 +18346,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.getBulkSession(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.getBulkSession(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -18499,9 +18501,9 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n}\n\n\
-          api.getAllMessageSessions(params).then(function (data) {\n    console.log(data);\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n};\n\
+          \napi.getAllMessageSessions(opts).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -18711,9 +18713,9 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\nconst params = {\n// Optional parameters\n    page: 1,\n    limit:\
-          \ 10,\n    statuses: \"sampleValue\",\n    includeDeleted: 0,\n}\n\napi.getMessagesBySessionId(id,\
-          \ params).then(function (data) {\n    console.log(data);\n}).catch(function(err){\n\
+          \ id = 1;\n\n// Optional parameters\nconst opts = {\n    page: 1,\n    limit:\
+          \ 10,\n    statuses: \"sampleValue\",\n    includeDeleted: 0,\n};\n\napi.getMessagesBySessionId(id,\
+          \ opts).then(function (data) {\n    console.log(data);\n}).catch(function(err){\n\
           \    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -18898,8 +18900,8 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\nconst params = {\n// Optional parameters\n    includeDeleted:\
-          \ 0,\n}\n\napi.getMessageSessionStat(id, params).then(function (data) {\n\
+          \ id = 1;\n\n// Optional parameters\nconst opts = {\n    includeDeleted:\
+          \ 0,\n};\n\napi.getMessageSessionStat(id, opts).then(function (data) {\n\
           \    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -19060,7 +19062,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.getMessageSession(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.getMessageSession(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -19201,8 +19203,9 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.deleteMessageSession(id).then(function (data) {\n    console.log(data);\n\
-          }).catch(function(err){\n    console.error(err);\n});"
+          \ id = 1;\n\n\napi.deleteMessageSession(id).then(function (data) {\n   \
+          \ console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
           \ from https://my.textmagic.com/online/api/rest-api/keys page.\nTextMagic.configure\
@@ -19341,8 +19344,9 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    ids: \"1,2,3\",\n    all: 0,\n\
-          }\n\napi.deleteMessageSessionsBulk(input).then(function (data) {\n    console.log(data);\n\
-          }).catch(function(err){\n    console.error(err);\n});"
+          }\n\n\napi.deleteMessageSessionsBulk(input).then(function (data) {\n   \
+          \ console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
           \ from https://my.textmagic.com/online/api/rest-api/keys page.\nTextMagic.configure\
@@ -19543,10 +19547,10 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n   \
-          \ status: \"x\",\n    orderBy: \"id\",\n    direction: \"desc\",\n}\n\n\
-          api.getAllScheduledMessages(params).then(function (data) {\n    console.log(data);\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n \
+          \   status: \"x\",\n    orderBy: \"id\",\n    direction: \"desc\",\n};\n\
+          \napi.getAllScheduledMessages(opts).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -19787,10 +19791,10 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n   \
-          \ query: \"sampleValue\",\n    ids: \"sampleValue\",\n    status: \"x\"\
-          ,\n    orderBy: \"id\",\n    direction: \"desc\",\n}\n\napi.searchScheduledMessages(params).then(function\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n \
+          \   query: \"sampleValue\",\n    ids: \"sampleValue\",\n    status: \"x\"\
+          ,\n    orderBy: \"id\",\n    direction: \"desc\",\n};\n\napi.searchScheduledMessages(opts).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -19971,7 +19975,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.getScheduledMessage(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.getScheduledMessage(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -20111,8 +20115,8 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.deleteScheduledMessage(id).then(function (data) {\n   \
-          \ console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          \ id = 1;\n\n\napi.deleteScheduledMessage(id).then(function (data) {\n \
+          \   console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -20257,7 +20261,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    ids: \"1,2,3\",\n    all: 0,\n\
-          \    status: \"undefined\",\n}\n\napi.deleteScheduledMessagesBulk(input).then(function\
+          \    status: \"undefined\",\n}\n\n\napi.deleteScheduledMessagesBulk(input).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -20452,9 +20456,9 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n   \
-          \ orderBy: \"id\",\n    direction: \"desc\",\n}\n\napi.getAllInboundMessages(params).then(function\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n \
+          \   orderBy: \"id\",\n    direction: \"desc\",\n};\n\napi.getAllInboundMessages(opts).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -20694,10 +20698,10 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n   \
-          \ ids: \"sampleValue\",\n    query: \"sampleValue\",\n    orderBy: \"id\"\
-          ,\n    direction: \"desc\",\n    expand: 0,\n}\n\napi.searchInboundMessages(params).then(function\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n \
+          \   ids: \"sampleValue\",\n    query: \"sampleValue\",\n    orderBy: \"\
+          id\",\n    direction: \"desc\",\n    expand: 0,\n};\n\napi.searchInboundMessages(opts).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -20878,8 +20882,8 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1782832;\n\napi.getInboundMessage(id).then(function (data) {\n  \
-          \  console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          \ id = 1782832;\n\n\napi.getInboundMessage(id).then(function (data) {\n\
+          \    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -21022,8 +21026,9 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.deleteInboundMessage(id).then(function (data) {\n    console.log(data);\n\
-          }).catch(function(err){\n    console.error(err);\n});"
+          \ id = 1;\n\n\napi.deleteInboundMessage(id).then(function (data) {\n   \
+          \ console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
           \ from https://my.textmagic.com/online/api/rest-api/keys page.\nTextMagic.configure\
@@ -21166,8 +21171,9 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    ids: \"1,2,3\",\n    all: 0,\n\
-          }\n\napi.deleteInboundMessagesBulk(input).then(function (data) {\n    console.log(data);\n\
-          }).catch(function(err){\n    console.error(err);\n});"
+          }\n\n\napi.deleteInboundMessagesBulk(input).then(function (data) {\n   \
+          \ console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
           \ from https://my.textmagic.com/online/api/rest-api/keys page.\nTextMagic.configure\
@@ -21351,9 +21357,9 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    by: \"off\",\n    start: 1430438400,\n\
-          \    end: 1431648000,\n}\n\napi.getMessagingStat(params).then(function (data)\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    by: \"off\",\n    start: 1430438400,\n\
+          \    end: 1431648000,\n};\n\napi.getMessagingStat(opts).then(function (data)\
           \ {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -21550,11 +21556,11 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n   \
-          \ start: \"2018-11-11 11:11\",\n    end: \"2019-11-11 11:11\",\n}\n\napi.getSpendingStat(params).then(function\
-          \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
-          });"
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n \
+          \   start: \"2018-11-11 11:11\",\n    end: \"2019-11-11 11:11\",\n};\n\n\
+          api.getSpendingStat(opts).then(function (data) {\n    console.log(data);\n\
+          }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
           \ from https://my.textmagic.com/online/api/rest-api/keys page.\nTextMagic.configure\
@@ -21736,9 +21742,9 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n}\n\n\
-          api.getInvoices(params).then(function (data) {\n    console.log(data);\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n};\n\
+          \napi.getInvoices(opts).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -21883,7 +21889,7 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\n\
           api.getMessagingCounters().then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
@@ -22088,10 +22094,10 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    status: \"a\",\n    page: 1,\n\
-          \    limit: 10,\n    orderBy: \"id\",\n    voice: 0,\n    flat: 1,\n}\n\n\
-          api.getAllChats(params).then(function (data) {\n    console.log(data);\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    status: \"a\",\n    page: 1,\n\
+          \    limit: 10,\n    orderBy: \"id\",\n    voice: 0,\n    flat: 1,\n};\n\
+          \napi.getAllChats(opts).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -22260,7 +22266,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\n\napi.getChat(id).then(function (data) {\n    console.log(data);\n\
+          \ id = 1;\n\n\napi.getChat(id).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -22466,9 +22472,9 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ id = 1;\nconst params = {\n// Optional parameters\n    page: 1,\n    limit:\
+          \ id = 1;\n\n// Optional parameters\nconst opts = {\n    page: 1,\n    limit:\
           \ 10,\n    query: \"sampleValue\",\n    start: 1,\n    end: 1,\n    direction:\
-          \ \"desc\",\n    voice: 0,\n}\n\napi.getChatMessages(id, params).then(function\
+          \ \"desc\",\n    voice: 0,\n};\n\napi.getChatMessages(id, opts).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -22663,9 +22669,9 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n   \
-          \ query: \"sampleValue\",\n}\n\napi.searchChats(params).then(function (data)\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n \
+          \   query: \"sampleValue\",\n};\n\napi.searchChats(opts).then(function (data)\
           \ {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -22845,9 +22851,9 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n   \
-          \ ids: \"sampleValue\",\n}\n\napi.searchChatsByIds(params).then(function\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n \
+          \   ids: \"sampleValue\",\n};\n\napi.searchChatsByIds(opts).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -23041,9 +23047,9 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ params = {\n// Optional parameters\n    page: 1,\n    limit: 10,\n   \
-          \ query: \"sampleValue\",\n    orderBy: \"id\",\n}\n\napi.searchChatsByReceipent(params).then(function\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          // Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n \
+          \   query: \"sampleValue\",\n    orderBy: \"id\",\n};\n\napi.searchChatsByReceipent(opts).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -23237,8 +23243,8 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ phone = \"447860021130\";\nconst params = {\n// Optional parameters\n\
-          \    upsert: 0,\n    reopen: 0,\n}\n\napi.getChatByPhone(phone, params).then(function\
+          \ phone = \"447860021130\";\n\n// Optional parameters\nconst opts = {\n\
+          \    upsert: 0,\n    reopen: 0,\n};\n\napi.getChatByPhone(phone, opts).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -23388,7 +23394,7 @@ paths:
           \ = textmagicClient.ApiClient.instance;\nconst auth = client.authentications['BasicAuth'];\n\
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\
+          auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\n\n\n\
           api.getUnreadMessagesTotal().then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
@@ -23538,7 +23544,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ input = {\n    id: 543,\n    status: \"undefined\",\n}\n\napi.setChatStatus(input).then(function\
+          \ input = {\n    id: 543,\n    status: \"undefined\",\n}\n\n\napi.setChatStatus(input).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -23706,7 +23712,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    id: 542,\n    mute: true,\n    // Optional parameters\n\
-          \    for: 5,\n}\n\napi.muteChat(input).then(function (data) {\n    console.log(data);\n\
+          \    for: 5,\n}\n\n\napi.muteChat(input).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -23869,8 +23875,8 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    ids: \"1,2,3\",\n    all: false,\n\
-          \    for: 1,\n}\n\napi.muteChatsBulk(input).then(function (data) {\n   \
-          \ console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          \    for: 1,\n}\n\n\napi.muteChatsBulk(input).then(function (data) {\n \
+          \   console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -24026,7 +24032,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    ids: \"1,2,3\",\n    all: false,\n\
-          }\n\napi.unmuteChatsBulk(input).then(function (data) {\n    console.log(data);\n\
+          }\n\n\napi.unmuteChatsBulk(input).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -24182,7 +24188,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    ids: \"1,2,3\",\n    all: false,\n\
-          }\n\napi.markChatsUnreadBulk(input).then(function (data) {\n    console.log(data);\n\
+          }\n\n\napi.markChatsUnreadBulk(input).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -24338,7 +24344,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    ids: \"1,2,3\",\n    all: false,\n\
-          }\n\napi.markChatsReadBulk(input).then(function (data) {\n    console.log(data);\n\
+          }\n\n\napi.markChatsReadBulk(input).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -24493,7 +24499,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    ids: \"1,2,3\",\n    all: false,\n\
-          }\n\napi.closeChatsBulk(input).then(function (data) {\n    console.log(data);\n\
+          }\n\n\napi.closeChatsBulk(input).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -24634,8 +24640,8 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ input = {\n}\n\napi.closeReadChats(input).then(function (data) {\n   \
-          \ console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          \ input = {\n}\n\n\napi.closeReadChats(input).then(function (data) {\n \
+          \   console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -24781,7 +24787,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    ids: \"1,2,3\",\n    all: false,\n\
-          }\n\napi.reopenChatsBulk(input).then(function (data) {\n    console.log(data);\n\
+          }\n\n\napi.reopenChatsBulk(input).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -24937,7 +24943,7 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    ids: \"1,2,3\",\n    all: false,\n\
-          \    status: \"a\",\n}\n\napi.deleteChatsBulk(input).then(function (data)\
+          \    status: \"a\",\n}\n\n\napi.deleteChatsBulk(input).then(function (data)\
           \ {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -25107,7 +25113,7 @@ paths:
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    // Optional parameters\n    inbound_ids: \"1,2,3,4\",\n\
           \    sent_ids: \"1,2,3,4\",\n    calls_ids: \"1,2,3,4\",\n    all: false,\n\
-          }\nconst id = 1;\n\napi.deleteChatMessages(input, id).then(function (data)\
+          }\nconst id = 1;\n\n\napi.deleteChatMessages(input, id).then(function (data)\
           \ {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -25299,7 +25305,7 @@ paths:
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    phone: \"447860021130\",\n    brand: \"TextMagic\",\n \
           \   codeLength: 4,\n    // Optional parameters\n    language: \"en-gb\"\
-          ,\n    senderId: \"TextMagic\",\n    country: \"US\",\n}\n\napi.sendPhoneVerificationCodeTFA(input).then(function\
+          ,\n    senderId: \"TextMagic\",\n    country: \"US\",\n}\n\n\napi.sendPhoneVerificationCodeTFA(input).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -25478,8 +25484,8 @@ paths:
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
           \ input = {\n    code: 1234,\n    verifyId: \"123e4567-e89b-12d3-a456-426655440000\"\
-          ,\n}\n\napi.checkPhoneVerificationCodeTFA(input).then(function (data) {\n\
-          \    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          ,\n}\n\n\napi.checkPhoneVerificationCodeTFA(input).then(function (data)\
+          \ {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
         source: "require 'textmagic_rest_client'\n\n# put your Username and API Key\
@@ -25631,7 +25637,7 @@ paths:
           const api = new textmagicClient.TextMagicApi();\n\n// put your Username\
           \ and API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
           auth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\nconst\
-          \ verifyId = \"123e4567-e89b-12d3-a456-426655440000\";\n\napi.cancelVerification(verifyId).then(function\
+          \ verifyId = \"123e4567-e89b-12d3-a456-426655440000\";\n\n\napi.cancelVerification(verifyId).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -35715,7 +35721,7 @@ definitions:
       chars: 125
 externalDocs:
   description: "API documentation"
-  url: "http://docs.textmagictesting.com/"
+  url: "https://docs.textmagictesting.com/"
 x-ignoredHeaderParameters:
 - "X-Ignore-Null-Values"
 x-tagGroups:
