@@ -47,6 +47,7 @@ tags:
     \ contact)\n> *   **DELETE** /api/v2/contacts/{id} (delete an existing contact)\n\
     It’s that simple! In fact, that’s all you need to do to manage the contacts in\
     \ your TextMagic account!"
+  x-virtual: true
 - name: "Sandbox"
   description: "Sandbox is a tool to test TextMagic REST API requests without the\
     \ need to install any applications or write any code.\n\n<a href=\"http://sandbox.textmagictesting.com\"\
@@ -81,6 +82,7 @@ tags:
     \ command. Open it, enter the **template id** you obtained in the previous step\
     \ and click **Execute**.\n\n<img srcset=\"images/sandbox_try_4_x1.png 1x, images/sandbox_try_4_x2.png\
     \ 2x\">"
+  x-virtual: true
 - name: "Outbound Messages"
   description: "The primary reason for using the TextMagic API is to send SMS text\
     \ messages. \n\n# Tutorials\n\n## How to send a single text message\n\nTo send\
@@ -238,6 +240,12 @@ tags:
     \ or you can create recurring text message sessions with TextMagic API. Below\
     \ is a detailed overview of how to do both.\n"
   x-displayName: "Messages: Schedule\n"
+- name: "Outbound Message Sessions"
+  description: "When you send an SMS to more than one recipient, it is collected as\
+    \ one **message session**. However, the text in your messages (in one session)\
+    \ \nmay vary and you can send personalized texts using [Templates](http://docs.textmagictesting.com/#tag/Templates).\
+    \ But first, let’s learn how to manage SMS sessions \nvia the TextMagic API."
+  x-displayName: "Sessions"
 - name: "Lists"
   description: "With the Lists API, you can arrange your database contacts into different\
     \ lists for sending targeted bulk text messages."
@@ -248,6 +256,11 @@ tags:
     \ available from any location. This page shows how to create, edit and delete\
     \ contacts."
   x-displayName: "Contacts"
+- name: "Custom Fields"
+  description: "With custom fields, you can store custom data in contacts and use\
+    \ the data with\_[Templates](http://docs.textmagictesting.com/#tag/Templates)."
+- name: "Contact Notes"
+  description: ""
 - name: "Two Factor auth"
   description: "You can easily verify your customers using their phone numbers with\
     \ the help of 2FA (better known as two-factor authentication) and protect against\
@@ -283,12 +296,6 @@ tags:
     \ feature in TextMagic Online. Under the hood, this feature is represented by\
     \ the **chat** resource.\n"
   x-displayName: "Chats"
-- name: "Outbound Message Sessions"
-  description: "When you send an SMS to more than one recipient, it is collected as\
-    \ one **message session**. However, the text in your messages (in one session)\
-    \ \nmay vary and you can send personalized texts using [Templates](http://docs.textmagictesting.com/#tag/Templates).\
-    \ But first, let’s learn how to manage SMS sessions \nvia the TextMagic API."
-  x-displayName: "Sessions"
 - name: "Templates"
   description: "Templates can save time and effort when the same message format is\
     \ required. Furthermore, \nyour customers will receive personalized messages even\
@@ -303,6 +310,7 @@ tags:
   x-displayName: "Templates"
 - name: "Send Email to SMS"
   description: ""
+  x-virtual: true
 - name: "Receive SMS to Email"
   description: "When someone replies to an SMS you’ve sent via email to the SMS service,\
     \ the reply will be sent to the originating email address. This means that you\
@@ -324,6 +332,7 @@ tags:
     \ will forward the reply to your email.\n\n| Variable | Value |\n|-------|-------|\n\
     | From: | 4912345678@textmagic.com |\n| Body: | Hi, I just received your message.\
     \ Phil. |\n"
+  x-virtual: true
 - name: "Distribution Lists"
   description: "In this section, you’ll learn how to forward your emails as text messages\
     \ to one or even to hundreds of people and learn how to never miss another alert\
@@ -355,6 +364,7 @@ tags:
     \ issue.\n\n> You can also include TextMagic contact **lists** and separate **contacts**\
     \ in the distribution list’s recipients field to avoid having to add numbers one\
     \ by one."
+  x-virtual: true
 - name: "Sender Settings"
   description: "In this section, you’ll learn about the different sender settings\
     \ and how to set the reply number in messages.\n\n## The differences among sender\
@@ -428,6 +438,7 @@ tags:
     \ schemaRef=\"#/components/schemas/ResourceLinkResponse\" />\n\n## Delete responses\n\
     When you delete something, a delete response will be returned. The response body\
     \ will be empty and the HTTP code will show\_**204 No Content**."
+  x-virtual: true
 - name: "Restrictions and Limits"
   description: "The TextMagic SMS API has only one restriction and two limitations.\
     \ Learn more about them below. \n\n## Number format restriction\nYou must use\
@@ -442,6 +453,7 @@ tags:
     \ per second**. If you do, a `429 Too Many Requests` error will be returned. Please\
     \ note that you can use contacts, lists and templates for [sending multiple messages](/docs/api/send-sms/#send-bulk-text-messages)\
     \ simultaneously per request."
+  x-virtual: true
 - name: "Encoding"
   description: "The text-message parameters should be encoded in the UTF-8 character\
     \ set. All non-ASCII characters in command parameters should be [encoded](https://en.wikipedia.org/wiki/Percent-encoding).\
@@ -482,6 +494,7 @@ tags:
     \ a concatenated Unicode text message.\n\n| Number of SMSs|Total number of characters\
     \ in the linked message|\n|---------------|------------------------------------------------|\n\
     |1|70|\n|2|134|\n|3|201|\n|4|268|\n|5|335|\n|6|402|\n"
+  x-virtual: true
 - name: "SDKs"
   description: "The TextMagic SMS API PHP wrapper can save you a lot of time, as it\
     \ includes all the necessary API commands and tests. It only takes a few seconds\
@@ -800,7 +813,7 @@ tags:
     Star textmagic/textmagic-rest-go-v2 on GitHub\">Star</a>\n\nThis library provides\
     \ you with an easy way of sending SMS and receiving replies by integrating TextMagic\
     \ SMS Gateway into your Go application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n\
-    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.873\n\
+    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.929\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -879,10 +892,8 @@ tags:
     \ 3 or newer.\n\n## Send SMS via Shell (an example)\nRun this in your command\
     \ prompt or execute in script:\n```bash\ntm.sh send --text=\"Hello from TextMagic\"\
     \ --phones=447860021130\n```\n\n"
+  x-virtual: true
   x-displayName: "SDK"
-- name: "Custom Fields"
-  description: "With custom fields, you can store custom data in contacts and use\
-    \ the data with\_[Templates](http://docs.textmagictesting.com/#tag/Templates)."
 - name: "Common"
   description: ""
   x-displayName: "Timezones and Countries"
@@ -890,8 +901,6 @@ tags:
   description: "To get more details about a number or to check whether it is a valid\
     \ number or not, you can use the Carrier Lookup command. To upload and check numbers\
     \ in bulk, please use our [Web app](https://my.textmagic.com/online/carrier-lookup/)."
-- name: "Contact Notes"
-  description: ""
 schemes:
 - "https"
 consumes:
@@ -907,7 +916,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Ping"
-      description: "Make a simple ping request."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Timezones%20and%20Countries/ping\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Make a simple ping request."
       operationId: "ping"
       parameters: []
       responses:
@@ -1033,7 +1043,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get timezones"
-      description: "Return all available timezone IDs"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Timezones%20and%20Countries/getTimezones\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Return all available timezone IDs"
       operationId: "getTimezones"
       parameters:
       - name: "full"
@@ -1198,10 +1209,12 @@ paths:
       tags:
       - "TextMagic"
       summary: "Carrier Lookup"
-      description: "This API call allows you to retrieve additional information about\
-        \ a phone number: region-specific phone number formatting, carrier, phone\
-        \ type (landline/mobile) and country information.\n\n> Numbers must be checked\
-        \ one by one. You cannot check multiple numbers in one request.\n \n"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lookup/doCarrierLookup\"\
+        \ target=\"_blank\">Try in sandbox</a><br>This API call allows you to retrieve\
+        \ additional information about a phone number: region-specific phone number\
+        \ formatting, carrier, phone type (landline/mobile) and country information.\n\
+        \n> Numbers must be checked one by one. You cannot check multiple numbers\
+        \ in one request.\n \n"
       operationId: "doCarrierLookup"
       parameters:
       - name: "phone"
@@ -1377,7 +1390,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get countries"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Timezones%20and%20Countries/getCountries\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getCountries"
       parameters: []
       responses:
@@ -1507,7 +1521,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get current account information"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Account/getCurrentUser\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getCurrentUser"
       parameters: []
       responses:
@@ -1637,7 +1652,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Edit current account info"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Account/updateCurrentUser\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "updateCurrentUser"
       parameters:
       - in: "body"
@@ -1822,7 +1838,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete an avatar"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Account/deleteAvatar\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "deleteAvatar"
       produces: []
       parameters: []
@@ -1945,8 +1962,10 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get available sender settings"
-      description: "Get all available sender setting options which can be used in\
-        \ the \"from\" parameter of the POST messages method."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Overview/getAvailableSenderSettingOptions\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Get all available sender setting\
+        \ options which can be used in the \"from\" parameter of the POST messages\
+        \ method."
       operationId: "getAvailableSenderSettingOptions"
       parameters:
       - name: "country"
@@ -2103,7 +2122,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Change sender settings"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Overview/updateSenderSetting\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "updateSenderSetting"
       produces: []
       parameters:
@@ -2268,7 +2288,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get current sender settings"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Overview/getSenderSettings\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getSenderSettings"
       parameters:
       - name: "country"
@@ -2422,7 +2443,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Find dedicated numbers available for purchase"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/getAvailableDedicatedNumbers\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getAvailableDedicatedNumbers"
       parameters:
       - name: "prefix"
@@ -2618,7 +2640,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get all your dedicated numbers"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/getUserDedicatedNumbers\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getUserDedicatedNumbers"
       parameters:
       - name: "page"
@@ -2801,9 +2824,10 @@ paths:
       tags:
       - "TextMagic"
       summary: "Buy a dedicated number"
-      description: "To buy a dedicated number, you first need to find an available\
-        \ number matching your criteria using the `/api/v2/numbers/available` command\
-        \ described above."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/buyDedicatedNumber\"\
+        \ target=\"_blank\">Try in sandbox</a><br>To buy a dedicated number, you first\
+        \ need to find an available number matching your criteria using the `/api/v2/numbers/available`\
+        \ command described above."
       operationId: "buyDedicatedNumber"
       parameters:
       - in: "body"
@@ -2961,7 +2985,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get the details of a specific dedicated number"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/getDedicatedNumber\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getDedicatedNumber"
       parameters:
       - name: "id"
@@ -3100,7 +3125,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Cancel a dedicated number subscription"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/deleteDedicatedNumber\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "deleteDedicatedNumber"
       produces: []
       parameters:
@@ -3234,7 +3260,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get all your approved Sender IDs"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sender%20IDs/getSenderIds\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getSenderIds"
       parameters:
       - name: "page"
@@ -3396,7 +3423,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Apply for a new Sender ID"
-      description: "> Sender IDs are shared among all of your sub-accounts."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sender%20IDs/requestSenderId\"\
+        \ target=\"_blank\">Try in sandbox</a><br>> Sender IDs are shared among all\
+        \ of your sub-accounts."
       operationId: "requestSenderId"
       parameters:
       - in: "body"
@@ -3560,7 +3589,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get the details of a specific Sender ID"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sender%20IDs/getSenderId\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getSenderId"
       parameters:
       - name: "id"
@@ -3699,7 +3729,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete a Sender ID"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sender%20IDs/deleteSenderId\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "deleteSenderId"
       produces: []
       parameters:
@@ -3832,7 +3863,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get a sub-accounts list"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sub-Accounts/getSubaccounts\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getSubaccounts"
       parameters:
       - name: "page"
@@ -3994,7 +4026,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Invite a new sub-account"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sub-Accounts/inviteSubaccount\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "inviteSubaccount"
       produces: []
       parameters:
@@ -4150,7 +4183,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get sub-account information"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sub-Accounts/getSubaccount\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getSubaccount"
       parameters:
       - name: "id"
@@ -4291,7 +4325,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Close sub-account"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sub-Accounts/closeSubaccount\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "closeSubaccount"
       produces: []
       parameters:
@@ -4426,7 +4461,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Request a new REST API token for sub-account"
-      description: "Returning user object, key and app name."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sub-Accounts/requestNewSubaccountToken\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Returning user object, key and app\
+        \ name."
       operationId: "requestNewSubaccountToken"
       parameters:
       - in: "body"
@@ -4600,9 +4637,10 @@ paths:
       - "TextMagic"
       summary: "Get all sub-accounts with their REST API tokens associated with a\
         \ specified app name"
-      description: "Get all sub-accounts with their REST API tokens associated with\
-        \ specified app name. When more than one token related to app name, last key\
-        \ will be returned."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sub-Accounts/getSubaccountsWithTokens\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Get all sub-accounts with their\
+        \ REST API tokens associated with specified app name. When more than one token\
+        \ related to app name, last key will be returned."
       operationId: "getSubaccountsWithTokens"
       parameters:
       - in: "body"
@@ -4805,7 +4843,8 @@ paths:
       summary: "Returns the list of available balance options which can be used as\
         \ a bound to determine when to send email to user with low balance notification.\
         \ See https://my.textmagic.com/online/account/notifications/balance"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/getBalanceNotificationOptions\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getBalanceNotificationOptions"
       parameters: []
       responses:
@@ -4937,7 +4976,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get balance notification settings"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/getBalanceNotificationSettings\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getBalanceNotificationSettings"
       parameters: []
       responses:
@@ -5068,7 +5108,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Update balance notification settings"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/updateBalanceNotificationSettings\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "updateBalanceNotificationSettings"
       produces: []
       parameters:
@@ -5253,7 +5294,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get inbound messages notification settings"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/getInboundMessagesNotificationSettings\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getInboundMessagesNotificationSettings"
       parameters: []
       responses:
@@ -5388,7 +5430,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Update inbound messages notification settings"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/updateInboundMessagesNotificationSettings\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "updateInboundMessagesNotificationSettings"
       produces: []
       parameters:
@@ -5572,7 +5615,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Update chat desktop notification settings"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/updateChatDesktopNotificationSettings\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "updateChatDesktopNotificationSettings"
       parameters:
       - in: "body"
@@ -5737,7 +5781,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Fetch callback URL settings"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/getCallbackSettings\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getCallbackSettings"
       parameters: []
       responses:
@@ -5866,7 +5911,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Update callback URL settings"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/undefined/updateCallbackSettings\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "updateCallbackSettings"
       parameters:
       - in: "body"
@@ -6033,7 +6079,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Find contacts by given criteria"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/searchContacts\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "searchContacts"
       parameters:
       - name: "page"
@@ -6331,7 +6378,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get contacts autocomplete suggestions"
-      description: "Get contacts autocomplete suggestions by given search terms."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/getContactsAutocomplete\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Get contacts autocomplete suggestions\
+        \ by given search terms."
       operationId: "getContactsAutocomplete"
       parameters:
       - name: "limit"
@@ -6512,7 +6561,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get all contacts"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/getContacts\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getContacts"
       parameters:
       - name: "page"
@@ -6724,7 +6774,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Add a new contact"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/createContact\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "createContact"
       parameters:
       - in: "body"
@@ -6930,7 +6981,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get the details of a specific contact by phone number"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/getContactByPhone\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getContactByPhone"
       parameters:
       - name: "phone"
@@ -7072,7 +7124,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get the details of a specific contact"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/getContact\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getContact"
       parameters:
       - name: "id"
@@ -7212,10 +7265,12 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete a contact"
-      description: "> This command removes your contact completely. If it was assigned\
-        \ or saved to a shared list, it will disappear from there too. If you only\
-        \ need to remove a contact from selected lists, use the Contact assignment\
-        \ command in the Lists section instead, rather than deleting the contact.\n"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/deleteContact\"\
+        \ target=\"_blank\">Try in sandbox</a><br>> This command removes your contact\
+        \ completely. If it was assigned or saved to a shared list, it will disappear\
+        \ from there too. If you only need to remove a contact from selected lists,\
+        \ use the Contact assignment command in the Lists section instead, rather\
+        \ than deleting the contact.\n"
       operationId: "deleteContact"
       produces: []
       parameters:
@@ -7351,7 +7406,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Edit a contact"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/updateContact\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "updateContact"
       parameters:
       - in: "body"
@@ -7574,7 +7630,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete contacts (bulk)"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/deleteAllContacts\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "deleteAllContacts"
       produces: []
       parameters: []
@@ -7690,7 +7747,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete contacts by IDs (bulk)"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/deleteContactsByIds\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "deleteContactsByIds"
       produces: []
       parameters:
@@ -7847,11 +7905,12 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get all unsubscribed contacts"
-      description: "When one of your message recipients sends a request with one of\
-        \ the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will\
-        \ be immediately opted-out of your send lists and their contact status will\
-        \ change to an unsubscribed contact. To retrieve information on all contacts\
-        \ who have unsubscribed status, use:\n"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/getUnsubscribers\"\
+        \ target=\"_blank\">Try in sandbox</a><br>When one of your message recipients\
+        \ sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/),\
+        \ they will be immediately opted-out of your send lists and their contact\
+        \ status will change to an unsubscribed contact. To retrieve information on\
+        \ all contacts who have unsubscribed status, use:\n"
       operationId: "getUnsubscribers"
       parameters:
       - name: "page"
@@ -8013,8 +8072,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Manually unsubscribe a contact"
-      description: "> Please note, if you unsubscribe a contact, this action cannot\
-        \ be reversed.\n"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/unsubscribeContact\"\
+        \ target=\"_blank\">Try in sandbox</a><br>> Please note, if you unsubscribe\
+        \ a contact, this action cannot be reversed.\n"
       operationId: "unsubscribeContact"
       parameters:
       - in: "body"
@@ -8183,7 +8243,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get the details of a specific unsubscribed contact"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/getUnsubscribedContact\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getUnsubscribedContact"
       parameters:
       - name: "id"
@@ -8325,7 +8386,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get all custom fields"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Custom%20Fields/getCustomFields\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getCustomFields"
       parameters:
       - name: "page"
@@ -8487,7 +8549,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Add a new custom field"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Custom%20Fields/createCustomField\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "createCustomField"
       parameters:
       - in: "body"
@@ -8646,7 +8709,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get the details of a specific custom field"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Custom%20Fields/getCustomField\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getCustomField"
       parameters:
       - name: "id"
@@ -8782,7 +8846,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Edit a custom field"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Custom%20Fields/updateCustomField\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "updateCustomField"
       parameters:
       - in: "body"
@@ -8950,8 +9015,10 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete a custom field"
-      description: "> When a custom field is deleted, all the information that was\
-        \ added to contacts under this custom field will also be lost.\n"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Custom%20Fields/deleteCustomField\"\
+        \ target=\"_blank\">Try in sandbox</a><br>> When a custom field is deleted,\
+        \ all the information that was added to contacts under this custom field will\
+        \ also be lost.\n"
       operationId: "deleteCustomField"
       produces: []
       parameters:
@@ -9084,7 +9151,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Edit the custom field value of a specified contact"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Custom%20Fields/updateCustomFieldValue\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "updateCustomFieldValue"
       parameters:
       - in: "body"
@@ -9269,7 +9337,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get all lists"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/getLists\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getLists"
       parameters:
       - name: "page"
@@ -9501,7 +9570,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Create a new list"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/createList\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "createList"
       parameters:
       - in: "body"
@@ -9673,7 +9743,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Find lists by given criteria"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/searchLists\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "searchLists"
       parameters:
       - name: "page"
@@ -9929,7 +10000,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get a contact's lists"
-      description: "Get all the lists in which a contact is included."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/getListsOfContact\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Get all the lists in which a contact\
+        \ is included."
       operationId: "getListsOfContact"
       parameters:
       - name: "page"
@@ -10105,7 +10178,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get favorite contacts and lists"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/getFavorites\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getFavorites"
       parameters:
       - name: "page"
@@ -10281,7 +10355,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get the details of a specific list"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/getList\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getList"
       parameters:
       - name: "id"
@@ -10420,7 +10495,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Edit a list"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/updateList\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "updateList"
       parameters:
       - in: "body"
@@ -10597,10 +10673,12 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete a list"
-      description: "This command has no parameters. If successful, this command will\
-        \ return the standard delete response (204 No Content); otherwise, a standard\
-        \ error response will be returned.\n\nWhen you delete a list, the contacts\
-        \ in it are deleted as well, unless they were saved\_in another list."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/deleteList\"\
+        \ target=\"_blank\">Try in sandbox</a><br>This command has no parameters.\
+        \ If successful, this command will return the standard delete response (204\
+        \ No Content); otherwise, a standard error response will be returned.\n\n\
+        When you delete a list, the contacts in it are deleted as well, unless they\
+        \ were saved\_in another list."
       operationId: "deleteList"
       produces: []
       parameters:
@@ -10737,7 +10815,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete lists (bulk)"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/deleteListsBulk\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "deleteListsBulk"
       produces: []
       parameters:
@@ -10892,7 +10971,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get blocked contacts"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/getBlockedContacts\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getBlockedContacts"
       parameters:
       - name: "page"
@@ -11107,7 +11187,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Check if a phone number is blocked"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/getContactIfBlocked\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getContactIfBlocked"
       parameters:
       - name: "phone"
@@ -11254,8 +11335,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Block a contact by phone number"
-      description: "Block a contact from inbound and outbound communication by phone\
-        \ number."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/blockContact\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Block a contact from inbound and\
+        \ outbound communication by phone number."
       operationId: "blockContact"
       parameters:
       - in: "body"
@@ -11417,7 +11499,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Unblock a contact by phone number"
-      description: "Unblock a contact by phone number"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/unblockContact\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Unblock a contact by phone number"
       operationId: "unblockContact"
       produces: []
       parameters:
@@ -11570,8 +11653,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Unblock contacts (bulk)"
-      description: "Unblock several contacts by blocked contact IDs or unblock all\
-        \ contacts."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/unblockContactsBulk\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Unblock several contacts by blocked\
+        \ contact IDs or unblock all contacts."
       operationId: "unblockContactsBulk"
       produces: []
       parameters:
@@ -11727,7 +11811,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Fetch notes assigned to a given contact"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contact%20Notes/getContactNotes\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getContactNotes"
       parameters:
       - name: "page"
@@ -11901,7 +11986,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Create a new contact note"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contact%20Notes/createContactNote\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "createContactNote"
       parameters:
       - in: "body"
@@ -12074,7 +12160,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get a contact note"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contact%20Notes/getContactNote\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getContactNote"
       parameters:
       - name: "id"
@@ -12213,7 +12300,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Update a contact note"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contact%20Notes/updateContactNote\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "updateContactNote"
       parameters:
       - in: "body"
@@ -12384,7 +12472,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete a contact note"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contact%20Notes/deleteContactNote\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "deleteContactNote"
       produces: []
       parameters:
@@ -12517,7 +12606,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete contact notes (bulk)"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contact%20Notes/deleteContactNotesBulk\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "deleteContactNotesBulk"
       produces: []
       parameters:
@@ -12683,7 +12773,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete an avatar"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/deleteContactAvatar\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "deleteContactAvatar"
       parameters:
       - name: "id"
@@ -12819,7 +12910,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Check import progress"
-      description: "Get contact import session progress."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Contacts/getContactImportSessionProgress\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Get contact import session progress."
       operationId: "getContactImportSessionProgress"
       parameters:
       - name: "id"
@@ -12966,14 +13058,16 @@ paths:
       tags:
       - "TextMagic"
       summary: "Email Lookup"
-      description: "To get more details about an email address or to check whether\
-        \ it is a valid email or not, you can use the Email Lookup command. To upload\
-        \ and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).\n\
-        \nThis API call allows you to retrieve additional information about an email\
-        \ address, such as mailbox detection, syntax checks, DNS validation, deliverability\
-        \ status, and many more helpful values (see the table below).\n\n> Emails\
-        \ must be checked one by one. You cannot check multiple emails in one request.\_\
-        To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/)."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lookup/doEmailLookup\"\
+        \ target=\"_blank\">Try in sandbox</a><br>To get more details about an email\
+        \ address or to check whether it is a valid email or not, you can use the\
+        \ Email Lookup command. To upload and check emails in bulk, please use our\
+        \ [Web app](https://my.textmagic.com/online/email-lookup/).\n\nThis API call\
+        \ allows you to retrieve additional information about an email address, such\
+        \ as mailbox detection, syntax checks, DNS validation, deliverability status,\
+        \ and many more helpful values (see the table below).\n\n> Emails must be\
+        \ checked one by one. You cannot check multiple emails in one request.\_To\
+        \ upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/)."
       operationId: "doEmailLookup"
       parameters:
       - name: "email"
@@ -13125,7 +13219,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get all contact IDs in a list"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/getListContactsIds\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getListContactsIds"
       parameters:
       - name: "id"
@@ -13267,8 +13362,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get all contacts in a list"
-      description: "A useful synonym for the \"contacts/search\" command with the\
-        \ provided \"listId\" parameter."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/getContactsByListId\"\
+        \ target=\"_blank\">Try in sandbox</a><br>A useful synonym for the \"contacts/search\"\
+        \ command with the provided \"listId\" parameter."
       operationId: "getContactsByListId"
       parameters:
       - name: "page"
@@ -13481,7 +13577,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Reset list members to the specified contacts"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/clearAndAssignContactsToList\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "clearAndAssignContactsToList"
       parameters:
       - in: "body"
@@ -13654,10 +13751,11 @@ paths:
       tags:
       - "TextMagic"
       summary: "Assign contacts to a list"
-      description: "> Unlike all other PUT requests, this command does not need old\
-        \ contact IDs to be submitted. For example, if you have a list with contacts\
-        \ 150, 151 and 152 and you want to add contact ID 153, you only need to submit\
-        \ 153 as a parameter of PUT /api/v2/lists/{id}/contacts.\n"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/assignContactsToList\"\
+        \ target=\"_blank\">Try in sandbox</a><br>> Unlike all other PUT requests,\
+        \ this command does not need old contact IDs to be submitted. For example,\
+        \ if you have a list with contacts 150, 151 and 152 and you want to add contact\
+        \ ID 153, you only need to submit 153 as a parameter of PUT /api/v2/lists/{id}/contacts.\n"
       operationId: "assignContactsToList"
       parameters:
       - in: "body"
@@ -13829,8 +13927,10 @@ paths:
       tags:
       - "TextMagic"
       summary: "Unassign contacts from a list"
-      description: "> When you remove contacts from a specific list, they will be\
-        \ deleted permanently, unless they are first saved in another list.\n"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/deleteContactsFromList\"\
+        \ target=\"_blank\">Try in sandbox</a><br>> When you remove contacts from\
+        \ a specific list, they will be deleted permanently, unless they are first\
+        \ saved in another list.\n"
       operationId: "deleteContactsFromList"
       produces: []
       parameters:
@@ -13973,7 +14073,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete contacts from a list (bulk)"
-      description: "Delete contacts from a list (bulk)"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/deleteListContactsBulk\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Delete contacts from a list (bulk)"
       operationId: "deleteListContactsBulk"
       produces: []
       parameters:
@@ -14139,7 +14240,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete an avatar for a list"
-      description: "Delete an avatar for a list"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Lists/deleteListAvatar\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Delete an avatar for a list"
       operationId: "deleteListAvatar"
       parameters:
       - name: "id"
@@ -14274,7 +14376,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get all templates"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Templates/getAllTemplates\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getAllTemplates"
       parameters:
       - name: "page"
@@ -14436,10 +14539,11 @@ paths:
       tags:
       - "TextMagic"
       summary: "Create a template"
-      description: "There are times when creating a new template makes sense (such\
-        \ as when targeting specific clients or improving your business strategies).\
-        \ \nYou can create new SMS templates for marketing purposes or SMS templates\
-        \ for business campaigns.\n"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Templates/createTemplate\"\
+        \ target=\"_blank\">Try in sandbox</a><br>There are times when creating a\
+        \ new template makes sense (such as when targeting specific clients or improving\
+        \ your business strategies). \nYou can create new SMS templates for marketing\
+        \ purposes or SMS templates for business campaigns.\n"
       operationId: "createTemplate"
       parameters:
       - in: "body"
@@ -14600,7 +14704,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Find templates by criteria"
-      description: "Find user templates by given parameters."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Templates/searchTemplates\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Find user templates by given parameters."
       operationId: "searchTemplates"
       parameters:
       - name: "page"
@@ -14801,7 +14906,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get a template`s details"
-      description: "Get a single template."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Templates/getTemplate\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Get a single template."
       operationId: "getTemplate"
       parameters:
       - name: "id"
@@ -14940,7 +15046,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Update a template"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Templates/updateTemplate\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "updateTemplate"
       parameters:
       - in: "body"
@@ -15112,7 +15219,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete a template"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Templates/deleteTemplate\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "deleteTemplate"
       produces: []
       parameters:
@@ -15245,7 +15353,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete templates (bulk)"
-      description: "Delete templates by given IDs or delete all templates."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Templates/deleteTemplatesBulk\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Delete templates by given IDs or\
+        \ delete all templates."
       operationId: "deleteTemplatesBulk"
       produces: []
       parameters:
@@ -15401,7 +15511,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get all messages"
-      description: "Get all user oubound messages."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getAllOutboundMessages\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Get all user oubound messages."
       operationId: "getAllOutboundMessages"
       parameters:
       - name: "page"
@@ -15586,8 +15697,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Send message"
-      description: "This is the main entrypoint to send messages. See the examples\
-        \ above for the reference."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/sendMessage\"\
+        \ target=\"_blank\">Try in sandbox</a><br>This is the main entrypoint to send\
+        \ messages. See the examples above for the reference."
       operationId: "sendMessage"
       parameters:
       - in: "body"
@@ -15824,7 +15936,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Check message price"
-      description: "Check pricing for a new outbound message."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getMessagePrice\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Check pricing for a new outbound\
+        \ message."
       operationId: "getMessagePrice"
       parameters:
       - name: "includeBlocked"
@@ -16256,8 +16370,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Preview message"
-      description: "Get a messages preview (with tags merged) of up to 100 messages\
-        \ per session."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getMessagePreview\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Get a messages preview (with tags\
+        \ merged) of up to 100 messages per session."
       operationId: "getMessagePreview"
       parameters:
       - name: "text"
@@ -16674,7 +16789,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get a single message"
-      description: "Get a single outgoing message."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getOutboundMessage\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Get a single outgoing message."
       operationId: "getOutboundMessage"
       parameters:
       - name: "id"
@@ -16813,7 +16929,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete message"
-      description: "Delete a single message."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/deleteOutboundMessage\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Delete a single message."
       operationId: "deleteOutboundMessage"
       produces: []
       parameters:
@@ -16947,8 +17064,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete messages (bulk)"
-      description: "Delete outbound messages by the given ID(s) or delete all outbound\
-        \ messages."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/deleteOutboundMessagesBulk\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Delete outbound messages by the\
+        \ given ID(s) or delete all outbound messages."
       operationId: "deleteOutboundMessagesBulk"
       produces: []
       parameters:
@@ -17101,7 +17219,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete all messages"
-      description: "Delete all messages."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/deleteAllOutboundMessages\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Delete all messages."
       operationId: "deleteAllOutboundMessages"
       produces: []
       parameters: []
@@ -17224,7 +17343,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Find messages"
-      description: "Find outbound messages by given parameters."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/searchOutboundMessages\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Find outbound messages by given\
+        \ parameters."
       operationId: "searchOutboundMessages"
       parameters:
       - name: "page"
@@ -17492,7 +17613,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get history"
-      description: "Get the outbound messages history."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getOutboundMessagesHistory\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Get the outbound messages history."
       operationId: "getOutboundMessagesHistory"
       parameters:
       - name: "limit"
@@ -17714,7 +17836,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get all bulk sessions"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getAllBulkSessions\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getAllBulkSessions"
       parameters:
       - name: "page"
@@ -17877,7 +18000,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get bulk session status"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getBulkSession\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getBulkSession"
       parameters:
       - name: "id"
@@ -18017,8 +18141,10 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get all sessions"
-      description: "Get all message sending sessions.\n> This list contains all of\
-        \ your sessions, including those which were sent but not via API\n"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sessions/getAllMessageSessions\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Get all message sending sessions.\n\
+        > This list contains all of your sessions, including those which were sent\
+        \ but not via API\n"
       operationId: "getAllMessageSessions"
       parameters:
       - name: "page"
@@ -18181,8 +18307,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get a session`s messages"
-      description: "A useful synonym for the \"messages/search\" command with the\
-        \ provided \"sessionId\" parameter."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sessions/getMessagesBySessionId\"\
+        \ target=\"_blank\">Try in sandbox</a><br>A useful synonym for the \"messages/search\"\
+        \ command with the provided \"sessionId\" parameter."
       operationId: "getMessagesBySessionId"
       parameters:
       - name: "page"
@@ -18402,7 +18529,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get a session`s statistics"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sessions/getMessageSessionStat\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getMessageSessionStat"
       parameters:
       - name: "includeDeleted"
@@ -18574,7 +18702,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get a session`s details"
-      description: "Get a specific session’s details."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sessions/getMessageSession\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Get a specific session’s details."
       operationId: "getMessageSession"
       parameters:
       - name: "id"
@@ -18715,8 +18844,10 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete a session"
-      description: "Delete a message session, together with all nested messages.\n\
-        > You will not be refunded for any deleted sent sessions.\n"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sessions/deleteMessageSession\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Delete a message session, together\
+        \ with all nested messages.\n> You will not be refunded for any deleted sent\
+        \ sessions.\n"
       operationId: "deleteMessageSession"
       produces: []
       parameters:
@@ -18850,8 +18981,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete sessions (bulk)"
-      description: "Delete message sessions, together with all nested messages, by\
-        \ given ID(s) or delete all message sessions."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Sessions/deleteMessageSessionsBulk\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Delete message sessions, together\
+        \ with all nested messages, by given ID(s) or delete all message sessions."
       operationId: "deleteMessageSessionsBulk"
       produces: []
       parameters:
@@ -19000,7 +19132,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get all scheduled messages"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/getAllScheduledMessages\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getAllScheduledMessages"
       parameters:
       - name: "page"
@@ -19218,7 +19351,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Find scheduled messages"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/searchScheduledMessages\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "searchScheduledMessages"
       parameters:
       - name: "page"
@@ -19468,7 +19602,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get a single scheduled message"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/getScheduledMessage\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getScheduledMessage"
       parameters:
       - name: "id"
@@ -19607,7 +19742,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete a single scheduled message"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/deleteScheduledMessage\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "deleteScheduledMessage"
       produces: []
       parameters:
@@ -19741,7 +19877,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete scheduled messages (bulk)"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/deleteScheduledMessagesBulk\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "deleteScheduledMessagesBulk"
       produces: []
       parameters:
@@ -19899,7 +20036,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get all inbound messages"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/getAllInboundMessages\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getAllInboundMessages"
       parameters:
       - name: "page"
@@ -20102,7 +20240,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Find inbound messages"
-      description: "Find inbound messages by given parameters."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/searchInboundMessages\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Find inbound messages by given parameters."
       operationId: "searchInboundMessages"
       parameters:
       - name: "page"
@@ -20353,7 +20492,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get a single inbound message"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/getInboundMessage\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getInboundMessage"
       parameters:
       - name: "id"
@@ -20494,8 +20634,10 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete a single inbound message"
-      description: "> Note: deleted inbound messages will disappear from TextMagic\
-        \ Online, chats, and any other place they are referenced.  So, be careful!\n"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/deleteInboundMessage\"\
+        \ target=\"_blank\">Try in sandbox</a><br>> Note: deleted inbound messages\
+        \ will disappear from TextMagic Online, chats, and any other place they are\
+        \ referenced.  So, be careful!\n"
       operationId: "deleteInboundMessage"
       produces: []
       parameters:
@@ -20630,8 +20772,10 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete inbound messages (bulk)"
-      description: "> Note: deleted inbound messages will disappear from TextMagic\
-        \ Online, chats, and any other place they are referenced.  So, be careful!\n"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/deleteInboundMessagesBulk\"\
+        \ target=\"_blank\">Try in sandbox</a><br>> Note: deleted inbound messages\
+        \ will disappear from TextMagic Online, chats, and any other place they are\
+        \ referenced.  So, be careful!\n"
       operationId: "deleteInboundMessagesBulk"
       produces: []
       parameters:
@@ -20784,7 +20928,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get messaging statistics"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Statistics/getMessagingStat\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getMessagingStat"
       parameters:
       - name: "by"
@@ -20976,7 +21121,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get spending statistics"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Statistics/getSpendingStat\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getSpendingStat"
       parameters:
       - name: "page"
@@ -21174,8 +21320,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get all invoices"
-      description: "With the TextMagic API, you can check the invoices and transactions\
-        \ for your account."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Invoices/getInvoices\"\
+        \ target=\"_blank\">Try in sandbox</a><br>With the TextMagic API, you can\
+        \ check the invoices and transactions for your account."
       operationId: "getInvoices"
       parameters:
       - name: "page"
@@ -21344,8 +21491,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get sent/received messages counters values"
-      description: "Get total contacts, sent messages and received messages counters\
-        \ values."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Statistics/getMessagingCounters\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Get total contacts, sent messages\
+        \ and received messages counters values."
       operationId: "getMessagingCounters"
       parameters: []
       responses:
@@ -21475,7 +21623,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get all chats"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/getAllChats\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getAllChats"
       parameters:
       - name: "status"
@@ -21701,7 +21850,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get a single chat"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/getChat\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getChat"
       parameters:
       - name: "id"
@@ -21841,7 +21991,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get chat messages"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/getChatMessages\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getChatMessages"
       parameters:
       - name: "page"
@@ -22080,7 +22231,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Find chats by message text"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/searchChats\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "searchChats"
       parameters:
       - name: "page"
@@ -22255,7 +22407,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Find chats (bulk)"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/searchChatsByIds\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "searchChatsByIds"
       parameters:
       - name: "page"
@@ -22433,7 +22586,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Find chats by recipient"
-      description: "Find chats by recipient (contact, list name or phone number)."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/searchChatsByReceipent\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Find chats by recipient (contact,\
+        \ list name or phone number)."
       operationId: "searchChatsByReceipent"
       parameters:
       - name: "page"
@@ -22629,7 +22784,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Find chats by phone"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/getChatByPhone\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "getChatByPhone"
       parameters:
       - name: "upsert"
@@ -22814,7 +22970,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Get unread messages number"
-      description: "Get the total amount of unread messages in the current user chats."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/getUnreadMessagesTotal\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Get the total amount of unread messages\
+        \ in the current user chats."
       operationId: "getUnreadMessagesTotal"
       parameters: []
       responses:
@@ -22944,7 +23102,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Change chat status"
-      description: "Set the status of the chat given by ID."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/setChatStatus\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Set the status of the chat given\
+        \ by ID."
       operationId: "setChatStatus"
       parameters:
       - in: "body"
@@ -23101,7 +23261,8 @@ paths:
       tags:
       - "TextMagic"
       summary: "Mute chat sounds"
-      description: ""
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/muteChat\"\
+        \ target=\"_blank\">Try in sandbox</a><br>"
       operationId: "muteChat"
       parameters:
       - in: "body"
@@ -23267,7 +23428,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Mute chats (bulk)"
-      description: "Mute several chats by chat ids or mute all chats."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/muteChatsBulk\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Mute several chats by chat ids or\
+        \ mute all chats."
       operationId: "muteChatsBulk"
       produces: []
       parameters:
@@ -23421,7 +23584,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Unmute chats (bulk)"
-      description: "Unmute several chats by chat ids or unmute all chats."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/unmuteChatsBulk\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Unmute several chats by chat ids\
+        \ or unmute all chats."
       operationId: "unmuteChatsBulk"
       produces: []
       parameters:
@@ -23572,8 +23737,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Mark chats as unread (bulk)"
-      description: "Mark several chats as UNread by chat IDs or mark all chats as\
-        \ UNread"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/markChatsUnreadBulk\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Mark several chats as UNread by\
+        \ chat IDs or mark all chats as UNread"
       operationId: "markChatsUnreadBulk"
       produces: []
       parameters:
@@ -23726,7 +23892,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Mark chats as read (bulk)"
-      description: "Mark several chats as read by chat IDs or mark all chats as read"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/markChatsReadBulk\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Mark several chats as read by chat\
+        \ IDs or mark all chats as read"
       operationId: "markChatsReadBulk"
       produces: []
       parameters:
@@ -23878,7 +24046,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Close chats (bulk)"
-      description: "Close chats by chat IDs or close all chats"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/closeChatsBulk\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Close chats by chat IDs or close\
+        \ all chats"
       operationId: "closeChatsBulk"
       produces: []
       parameters:
@@ -24029,7 +24199,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Close read chats"
-      description: "Close all chats that have no unread messages."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/closeReadChats\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Close all chats that have no unread\
+        \ messages."
       operationId: "closeReadChats"
       produces: []
       parameters: []
@@ -24158,7 +24330,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Reopen chats (bulk)"
-      description: "Reopen chats by chat IDs or reopen all chats"
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/reopenChatsBulk\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Reopen chats by chat IDs or reopen\
+        \ all chats"
       operationId: "reopenChatsBulk"
       produces: []
       parameters:
@@ -24309,7 +24483,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete chats (bulk)"
-      description: "Delete chats by given IDs or delete all chats."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/deleteChatsBulk\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Delete chats by given IDs or delete\
+        \ all chats."
       operationId: "deleteChatsBulk"
       produces: []
       parameters:
@@ -24466,7 +24642,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Delete chat messages by ID(s)"
-      description: "Delete messages from chat by given message IDs."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Chats/deleteChatMessages\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Delete messages from chat by given\
+        \ message IDs."
       operationId: "deleteChatMessages"
       produces: []
       parameters:
@@ -24648,7 +24826,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Step 1: Send a verification code\n"
-      description: "Sends a verification code to a specified phone number."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Two-factor%20authentication/sendPhoneVerificationCodeTFA\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Sends a verification code to a specified\
+        \ phone number."
       operationId: "sendPhoneVerificationCodeTFA"
       parameters:
       - in: "body"
@@ -24837,8 +25017,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Step 2: Check the verification code\n"
-      description: "Check received code from user with the code which was actually\
-        \ sent."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Two-factor%20authentication/checkPhoneVerificationCodeTFA\"\
+        \ target=\"_blank\">Try in sandbox</a><br>Check received code from user with\
+        \ the code which was actually sent."
       operationId: "checkPhoneVerificationCodeTFA"
       parameters:
       - in: "body"
@@ -24993,8 +25174,9 @@ paths:
       tags:
       - "TextMagic"
       summary: "Cancel verification process"
-      description: "You can cancel the verification not earlier than 30 seconds after\
-        \ the initial request."
+      description: "<a class=\"try-sandbox-link\" href=\"http://sandbox.textmagictesting.com/#/Two-factor%20authentication/cancelVerification\"\
+        \ target=\"_blank\">Try in sandbox</a><br>You can cancel the verification\
+        \ not earlier than 30 seconds after the initial request."
       operationId: "cancelVerification"
       parameters:
       - name: "verifyId"

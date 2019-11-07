@@ -28,7 +28,7 @@ type TextMagicApiService service
 
 /* 
 TextMagicApiService Assign contacts to a list
-&gt; Unlike all other PUT requests, this command does not need old contact IDs to be submitted. For example, if you have a list with contacts 150, 151 and 152 and you want to add contact ID 153, you only need to submit 153 as a parameter of PUT /api/v2/lists/{id}/contacts. 
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/assignContactsToList\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;&gt; Unlike all other PUT requests, this command does not need old contact IDs to be submitted. For example, if you have a list with contacts 150, 151 and 152 and you want to add contact ID 153, you only need to submit 153 as a parameter of PUT /api/v2/lists/{id}/contacts. 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param assignContactsToListInputObject
  * @param id
@@ -153,7 +153,7 @@ func (a *TextMagicApiService) AssignContactsToList(ctx context.Context, assignCo
 
 /* 
 TextMagicApiService Block a contact by phone number
-Block a contact from inbound and outbound communication by phone number.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/blockContact\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Block a contact from inbound and outbound communication by phone number.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param blockContactInputObject
 
@@ -276,7 +276,7 @@ func (a *TextMagicApiService) BlockContact(ctx context.Context, blockContactInpu
 
 /* 
 TextMagicApiService Buy a dedicated number
-To buy a dedicated number, you first need to find an available number matching your criteria using the &#x60;/api/v2/numbers/available&#x60; command described above.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/buyDedicatedNumber\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;To buy a dedicated number, you first need to find an available number matching your criteria using the &#x60;/api/v2/numbers/available&#x60; command described above.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param buyDedicatedNumberInputObject
 
@@ -381,7 +381,7 @@ func (a *TextMagicApiService) BuyDedicatedNumber(ctx context.Context, buyDedicat
 
 /* 
 TextMagicApiService Cancel verification process
-You can cancel the verification not earlier than 30 seconds after the initial request.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Two-factor%20authentication/cancelVerification\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;You can cancel the verification not earlier than 30 seconds after the initial request.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param verifyId The verifyId that you received in Step 1.
 
@@ -463,7 +463,7 @@ func (a *TextMagicApiService) CancelVerification(ctx context.Context, verifyId s
 
 /* 
 TextMagicApiService Step 2: Check the verification code 
-Check received code from user with the code which was actually sent.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Two-factor%20authentication/checkPhoneVerificationCodeTFA\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Check received code from user with the code which was actually sent.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param checkPhoneVerificationCodeInputObject
 
@@ -557,7 +557,7 @@ func (a *TextMagicApiService) CheckPhoneVerificationCodeTFA(ctx context.Context,
 
 /* 
 TextMagicApiService Reset list members to the specified contacts
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/clearAndAssignContactsToList\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param clearAndAssignContactsToListInputObject
  * @param id
@@ -682,7 +682,7 @@ func (a *TextMagicApiService) ClearAndAssignContactsToList(ctx context.Context, 
 
 /* 
 TextMagicApiService Close chats (bulk)
-Close chats by chat IDs or close all chats
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/closeChatsBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Close chats by chat IDs or close all chats
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param closeChatsBulkInputObject
 
@@ -776,7 +776,7 @@ func (a *TextMagicApiService) CloseChatsBulk(ctx context.Context, closeChatsBulk
 
 /* 
 TextMagicApiService Close read chats
-Close all chats that have no unread messages.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/closeReadChats\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Close all chats that have no unread messages.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 
@@ -856,7 +856,7 @@ func (a *TextMagicApiService) CloseReadChats(ctx context.Context) (*http.Respons
 
 /* 
 TextMagicApiService Close sub-account
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sub-Accounts/closeSubaccount\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -949,7 +949,7 @@ func (a *TextMagicApiService) CloseSubaccount(ctx context.Context, id int32) (*h
 
 /* 
 TextMagicApiService Add a new contact
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/createContact\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param createContactInputObject
 
@@ -1061,7 +1061,7 @@ func (a *TextMagicApiService) CreateContact(ctx context.Context, createContactIn
 
 /* 
 TextMagicApiService Create a new contact note
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contact%20Notes/createContactNote\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param createContactNoteInputObject
  * @param id
@@ -1186,7 +1186,7 @@ func (a *TextMagicApiService) CreateContactNote(ctx context.Context, createConta
 
 /* 
 TextMagicApiService Add a new custom field
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Custom%20Fields/createCustomField\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param createCustomFieldInputObject
 
@@ -1309,7 +1309,7 @@ func (a *TextMagicApiService) CreateCustomField(ctx context.Context, createCusto
 
 /* 
 TextMagicApiService Create a new list
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/createList\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param createListInputObject
 
@@ -1421,7 +1421,7 @@ func (a *TextMagicApiService) CreateList(ctx context.Context, createListInputObj
 
 /* 
 TextMagicApiService Create a template
-There are times when creating a new template makes sense (such as when targeting specific clients or improving your business strategies).  You can create new SMS templates for marketing purposes or SMS templates for business campaigns. 
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Templates/createTemplate\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;There are times when creating a new template makes sense (such as when targeting specific clients or improving your business strategies).  You can create new SMS templates for marketing purposes or SMS templates for business campaigns. 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param createTemplateInputObject
 
@@ -1522,7 +1522,7 @@ func (a *TextMagicApiService) CreateTemplate(ctx context.Context, createTemplate
 
 /* 
 TextMagicApiService Delete contacts (bulk)
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/deleteAllContacts\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 
@@ -1591,7 +1591,7 @@ func (a *TextMagicApiService) DeleteAllContacts(ctx context.Context) (*http.Resp
 
 /* 
 TextMagicApiService Delete all messages
-Delete all messages.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/deleteAllOutboundMessages\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete all messages.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 
@@ -1671,7 +1671,7 @@ func (a *TextMagicApiService) DeleteAllOutboundMessages(ctx context.Context) (*h
 
 /* 
 TextMagicApiService Delete an avatar
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Account/deleteAvatar\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 
@@ -1751,7 +1751,7 @@ func (a *TextMagicApiService) DeleteAvatar(ctx context.Context) (*http.Response,
 
 /* 
 TextMagicApiService Delete chat messages by ID(s)
-Delete messages from chat by given message IDs.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/deleteChatMessages\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete messages from chat by given message IDs.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteChatMessagesBulkInputObject
  * @param id
@@ -1847,7 +1847,7 @@ func (a *TextMagicApiService) DeleteChatMessages(ctx context.Context, deleteChat
 
 /* 
 TextMagicApiService Delete chats (bulk)
-Delete chats by given IDs or delete all chats.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/deleteChatsBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete chats by given IDs or delete all chats.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteChatsBulkInputObject
 
@@ -1941,7 +1941,7 @@ func (a *TextMagicApiService) DeleteChatsBulk(ctx context.Context, deleteChatsBu
 
 /* 
 TextMagicApiService Delete a contact
-&gt; This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, use the Contact assignment command in the Lists section instead, rather than deleting the contact. 
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/deleteContact\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;&gt; This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, use the Contact assignment command in the Lists section instead, rather than deleting the contact. 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -2034,7 +2034,7 @@ func (a *TextMagicApiService) DeleteContact(ctx context.Context, id int32) (*htt
 
 /* 
 TextMagicApiService Delete an avatar
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/deleteContactAvatar\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -2127,7 +2127,7 @@ func (a *TextMagicApiService) DeleteContactAvatar(ctx context.Context, id int32)
 
 /* 
 TextMagicApiService Delete a contact note
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contact%20Notes/deleteContactNote\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -2220,7 +2220,7 @@ func (a *TextMagicApiService) DeleteContactNote(ctx context.Context, id int32) (
 
 /* 
 TextMagicApiService Delete contact notes (bulk)
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contact%20Notes/deleteContactNotesBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
  * @param deleteContactNotesBulkInputObject
@@ -2327,7 +2327,7 @@ func (a *TextMagicApiService) DeleteContactNotesBulk(ctx context.Context, id int
 
 /* 
 TextMagicApiService Delete contacts by IDs (bulk)
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/deleteContactsByIds\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteContactsByIdsInputObject
 
@@ -2432,7 +2432,7 @@ func (a *TextMagicApiService) DeleteContactsByIds(ctx context.Context, deleteCon
 
 /* 
 TextMagicApiService Unassign contacts from a list
-&gt; When you remove contacts from a specific list, they will be deleted permanently, unless they are first saved in another list. 
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/deleteContactsFromList\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;&gt; When you remove contacts from a specific list, they will be deleted permanently, unless they are first saved in another list. 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteContacsFromListObject
  * @param id
@@ -2528,7 +2528,7 @@ func (a *TextMagicApiService) DeleteContactsFromList(ctx context.Context, delete
 
 /* 
 TextMagicApiService Delete a custom field
-&gt; When a custom field is deleted, all the information that was added to contacts under this custom field will also be lost. 
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Custom%20Fields/deleteCustomField\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;&gt; When a custom field is deleted, all the information that was added to contacts under this custom field will also be lost. 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -2621,7 +2621,7 @@ func (a *TextMagicApiService) DeleteCustomField(ctx context.Context, id int32) (
 
 /* 
 TextMagicApiService Cancel a dedicated number subscription
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/deleteDedicatedNumber\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -2714,7 +2714,7 @@ func (a *TextMagicApiService) DeleteDedicatedNumber(ctx context.Context, id int3
 
 /* 
 TextMagicApiService Delete a single inbound message
-&gt; Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/deleteInboundMessage\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;&gt; Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id The unique numeric ID for the inbound message.
 
@@ -2807,7 +2807,7 @@ func (a *TextMagicApiService) DeleteInboundMessage(ctx context.Context, id int32
 
 /* 
 TextMagicApiService Delete inbound messages (bulk)
-&gt; Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/deleteInboundMessagesBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;&gt; Note: deleted inbound messages will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteInboundMessagesBulkInputObject
 
@@ -2901,7 +2901,7 @@ func (a *TextMagicApiService) DeleteInboundMessagesBulk(ctx context.Context, del
 
 /* 
 TextMagicApiService Delete a list
-This command has no parameters. If successful, this command will return the standard delete response (204 No Content); otherwise, a standard error response will be returned.  When you delete a list, the contacts in it are deleted as well, unless they were saved in another list.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/deleteList\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;This command has no parameters. If successful, this command will return the standard delete response (204 No Content); otherwise, a standard error response will be returned.  When you delete a list, the contacts in it are deleted as well, unless they were saved in another list.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -2994,7 +2994,7 @@ func (a *TextMagicApiService) DeleteList(ctx context.Context, id int32) (*http.R
 
 /* 
 TextMagicApiService Delete an avatar for a list
-Delete an avatar for a list
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/deleteListAvatar\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete an avatar for a list
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -3087,7 +3087,7 @@ func (a *TextMagicApiService) DeleteListAvatar(ctx context.Context, id int32) (*
 
 /* 
 TextMagicApiService Delete contacts from a list (bulk)
-Delete contacts from a list (bulk)
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/deleteListContactsBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete contacts from a list (bulk)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteListContactsBulkInputObject
  * @param id
@@ -3194,7 +3194,7 @@ func (a *TextMagicApiService) DeleteListContactsBulk(ctx context.Context, delete
 
 /* 
 TextMagicApiService Delete lists (bulk)
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/deleteListsBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteListsBulkInputObject
 
@@ -3299,7 +3299,7 @@ func (a *TextMagicApiService) DeleteListsBulk(ctx context.Context, deleteListsBu
 
 /* 
 TextMagicApiService Delete a session
-Delete a message session, together with all nested messages. &gt; You will not be refunded for any deleted sent sessions. 
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sessions/deleteMessageSession\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete a message session, together with all nested messages. &gt; You will not be refunded for any deleted sent sessions. 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -3392,7 +3392,7 @@ func (a *TextMagicApiService) DeleteMessageSession(ctx context.Context, id int32
 
 /* 
 TextMagicApiService Delete sessions (bulk)
-Delete message sessions, together with all nested messages, by given ID(s) or delete all message sessions.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sessions/deleteMessageSessionsBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete message sessions, together with all nested messages, by given ID(s) or delete all message sessions.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteMessageSessionsBulkInputObject
 
@@ -3475,7 +3475,7 @@ func (a *TextMagicApiService) DeleteMessageSessionsBulk(ctx context.Context, del
 
 /* 
 TextMagicApiService Delete message
-Delete a single message.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/deleteOutboundMessage\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete a single message.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -3568,7 +3568,7 @@ func (a *TextMagicApiService) DeleteOutboundMessage(ctx context.Context, id int3
 
 /* 
 TextMagicApiService Delete messages (bulk)
-Delete outbound messages by the given ID(s) or delete all outbound messages.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/deleteOutboundMessagesBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete outbound messages by the given ID(s) or delete all outbound messages.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteOutboundMessagesBulkInputObject
 
@@ -3662,7 +3662,7 @@ func (a *TextMagicApiService) DeleteOutboundMessagesBulk(ctx context.Context, de
 
 /* 
 TextMagicApiService Delete a single scheduled message
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/deleteScheduledMessage\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -3755,7 +3755,7 @@ func (a *TextMagicApiService) DeleteScheduledMessage(ctx context.Context, id int
 
 /* 
 TextMagicApiService Delete scheduled messages (bulk)
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/deleteScheduledMessagesBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteScheduledMessagesBulkInputObject
 
@@ -3849,7 +3849,7 @@ func (a *TextMagicApiService) DeleteScheduledMessagesBulk(ctx context.Context, d
 
 /* 
 TextMagicApiService Delete a Sender ID
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sender%20IDs/deleteSenderId\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -3942,7 +3942,7 @@ func (a *TextMagicApiService) DeleteSenderId(ctx context.Context, id int32) (*ht
 
 /* 
 TextMagicApiService Delete a template
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Templates/deleteTemplate\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -4035,7 +4035,7 @@ func (a *TextMagicApiService) DeleteTemplate(ctx context.Context, id int32) (*ht
 
 /* 
 TextMagicApiService Delete templates (bulk)
-Delete templates by given IDs or delete all templates.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Templates/deleteTemplatesBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Delete templates by given IDs or delete all templates.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteTemplatesBulkInputObject
 
@@ -4140,7 +4140,7 @@ func (a *TextMagicApiService) DeleteTemplatesBulk(ctx context.Context, deleteTem
 
 /* 
 TextMagicApiService Carrier Lookup
-This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  &gt; Numbers must be checked one by one. You cannot check multiple numbers in one request.   
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lookup/doCarrierLookup\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  &gt; Numbers must be checked one by one. You cannot check multiple numbers in one request.   
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param phone Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) or in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers). 
  * @param optional nil or *DoCarrierLookupOpts - Optional Parameters:
@@ -4261,7 +4261,7 @@ func (a *TextMagicApiService) DoCarrierLookup(ctx context.Context, phone string,
 
 /* 
 TextMagicApiService Email Lookup
-To get more details about an email address or to check whether it is a valid email or not, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  &gt; Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lookup/doEmailLookup\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;To get more details about an email address or to check whether it is a valid email or not, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  &gt; Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param email Email address.
 
@@ -4383,7 +4383,7 @@ func (a *TextMagicApiService) DoEmailLookup(ctx context.Context, email string) (
 
 /* 
 TextMagicApiService Get all bulk sessions
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getAllBulkSessions\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetAllBulkSessionsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -4496,7 +4496,7 @@ func (a *TextMagicApiService) GetAllBulkSessions(ctx context.Context, localVarOp
 
 /* 
 TextMagicApiService Get all chats
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/getAllChats\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetAllChatsOpts - Optional Parameters:
      * @param "Status" (optional.String) -  Fetch only (a)ctive, (c)losed or (d)eleted chats.
@@ -4629,7 +4629,7 @@ func (a *TextMagicApiService) GetAllChats(ctx context.Context, localVarOptionals
 
 /* 
 TextMagicApiService Get all inbound messages
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/getAllInboundMessages\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetAllInboundMessagesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -4752,7 +4752,7 @@ func (a *TextMagicApiService) GetAllInboundMessages(ctx context.Context, localVa
 
 /* 
 TextMagicApiService Get all sessions
-Get all message sending sessions. &gt; This list contains all of your sessions, including those which were sent but not via API 
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sessions/getAllMessageSessions\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get all message sending sessions. &gt; This list contains all of your sessions, including those which were sent but not via API 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetAllMessageSessionsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -4865,7 +4865,7 @@ func (a *TextMagicApiService) GetAllMessageSessions(ctx context.Context, localVa
 
 /* 
 TextMagicApiService Get all messages
-Get all user oubound messages.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getAllOutboundMessages\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get all user oubound messages.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetAllOutboundMessagesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -4994,7 +4994,7 @@ func (a *TextMagicApiService) GetAllOutboundMessages(ctx context.Context, localV
 
 /* 
 TextMagicApiService Get all scheduled messages
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/getAllScheduledMessages\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetAllScheduledMessagesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -5122,7 +5122,7 @@ func (a *TextMagicApiService) GetAllScheduledMessages(ctx context.Context, local
 
 /* 
 TextMagicApiService Get all templates
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Templates/getAllTemplates\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetAllTemplatesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -5235,7 +5235,7 @@ func (a *TextMagicApiService) GetAllTemplates(ctx context.Context, localVarOptio
 
 /* 
 TextMagicApiService Find dedicated numbers available for purchase
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/getAvailableDedicatedNumbers\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param country The 2-letter dedicated number country ISO code.
  * @param optional nil or *GetAvailableDedicatedNumbersOpts - Optional Parameters:
@@ -5372,7 +5372,7 @@ func (a *TextMagicApiService) GetAvailableDedicatedNumbers(ctx context.Context, 
 
 /* 
 TextMagicApiService Get available sender settings
-Get all available sender setting options which can be used in the \&quot;from\&quot; parameter of the POST messages method.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Overview/getAvailableSenderSettingOptions\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get all available sender setting options which can be used in the \&quot;from\&quot; parameter of the POST messages method.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetAvailableSenderSettingOptionsOpts - Optional Parameters:
      * @param "Country" (optional.String) -  The 2-letter ISO country ID. If not specified, it returns all the available sender settings.
@@ -5480,7 +5480,7 @@ func (a *TextMagicApiService) GetAvailableSenderSettingOptions(ctx context.Conte
 
 /* 
 TextMagicApiService Returns the list of available balance options which can be used as a bound to determine when to send email to user with low balance notification. See https://my.textmagic.com/online/account/notifications/balance
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/getBalanceNotificationOptions\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return GetBalanceNotificationOptionsResponse
@@ -5578,7 +5578,7 @@ func (a *TextMagicApiService) GetBalanceNotificationOptions(ctx context.Context)
 
 /* 
 TextMagicApiService Get balance notification settings
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/getBalanceNotificationSettings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return GetBalanceNotificationSettingsResponse
@@ -5676,7 +5676,7 @@ func (a *TextMagicApiService) GetBalanceNotificationSettings(ctx context.Context
 
 /* 
 TextMagicApiService Get blocked contacts
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/getBlockedContacts\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetBlockedContactsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -5815,7 +5815,7 @@ func (a *TextMagicApiService) GetBlockedContacts(ctx context.Context, localVarOp
 
 /* 
 TextMagicApiService Get bulk session status
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getBulkSession\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -5926,7 +5926,7 @@ func (a *TextMagicApiService) GetBulkSession(ctx context.Context, id int32) (Bul
 
 /* 
 TextMagicApiService Fetch callback URL settings
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/getCallbackSettings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return GetCallbackSettingsResponse
@@ -6024,7 +6024,7 @@ func (a *TextMagicApiService) GetCallbackSettings(ctx context.Context) (GetCallb
 
 /* 
 TextMagicApiService Get a single chat
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/getChat\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -6135,7 +6135,7 @@ func (a *TextMagicApiService) GetChat(ctx context.Context, id int32) (Chat, *htt
 
 /* 
 TextMagicApiService Find chats by phone
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/getChatByPhone\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param phone
  * @param optional nil or *GetChatByPhoneOpts - Optional Parameters:
@@ -6261,7 +6261,7 @@ func (a *TextMagicApiService) GetChatByPhone(ctx context.Context, phone string, 
 
 /* 
 TextMagicApiService Get chat messages
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/getChatMessages\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
  * @param optional nil or *GetChatMessagesOpts - Optional Parameters:
@@ -6390,7 +6390,7 @@ func (a *TextMagicApiService) GetChatMessages(ctx context.Context, id int32, loc
 
 /* 
 TextMagicApiService Get the details of a specific contact
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/getContact\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id Contact ID.
 
@@ -6501,7 +6501,7 @@ func (a *TextMagicApiService) GetContact(ctx context.Context, id int32) (Contact
 
 /* 
 TextMagicApiService Get the details of a specific contact by phone number
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/getContactByPhone\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param phone
 
@@ -6612,7 +6612,7 @@ func (a *TextMagicApiService) GetContactByPhone(ctx context.Context, phone strin
 
 /* 
 TextMagicApiService Check if a phone number is blocked
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/getContactIfBlocked\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param phone Phone number to check.
 
@@ -6723,7 +6723,7 @@ func (a *TextMagicApiService) GetContactIfBlocked(ctx context.Context, phone str
 
 /* 
 TextMagicApiService Check import progress
-Get contact import session progress.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/getContactImportSessionProgress\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get contact import session progress.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -6834,7 +6834,7 @@ func (a *TextMagicApiService) GetContactImportSessionProgress(ctx context.Contex
 
 /* 
 TextMagicApiService Get a contact note
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contact%20Notes/getContactNote\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -6945,7 +6945,7 @@ func (a *TextMagicApiService) GetContactNote(ctx context.Context, id int32) (Con
 
 /* 
 TextMagicApiService Fetch notes assigned to a given contact
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contact%20Notes/getContactNotes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
  * @param optional nil or *GetContactNotesOpts - Optional Parameters:
@@ -7071,7 +7071,7 @@ func (a *TextMagicApiService) GetContactNotes(ctx context.Context, id int32, loc
 
 /* 
 TextMagicApiService Get all contacts
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/getContacts\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetContactsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -7199,7 +7199,7 @@ func (a *TextMagicApiService) GetContacts(ctx context.Context, localVarOptionals
 
 /* 
 TextMagicApiService Get contacts autocomplete suggestions
-Get contacts autocomplete suggestions by given search terms.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/getContactsAutocomplete\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get contacts autocomplete suggestions by given search terms.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param query Find recipients by specified search query.
  * @param optional nil or *GetContactsAutocompleteOpts - Optional Parameters:
@@ -7314,7 +7314,7 @@ func (a *TextMagicApiService) GetContactsAutocomplete(ctx context.Context, query
 
 /* 
 TextMagicApiService Get all contacts in a list
-A useful synonym for the \&quot;contacts/search\&quot; command with the provided \&quot;listId\&quot; parameter.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/getContactsByListId\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;A useful synonym for the \&quot;contacts/search\&quot; command with the provided \&quot;listId\&quot; parameter.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id Given group ID.
  * @param optional nil or *GetContactsByListIdOpts - Optional Parameters:
@@ -7450,7 +7450,7 @@ func (a *TextMagicApiService) GetContactsByListId(ctx context.Context, id int32,
 
 /* 
 TextMagicApiService Get countries
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Timezones%20and%20Countries/getCountries\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return GetCountriesResponse
@@ -7548,7 +7548,7 @@ func (a *TextMagicApiService) GetCountries(ctx context.Context) (GetCountriesRes
 
 /* 
 TextMagicApiService Get current account information
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Account/getCurrentUser\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return User
@@ -7657,7 +7657,7 @@ func (a *TextMagicApiService) GetCurrentUser(ctx context.Context) (User, *http.R
 
 /* 
 TextMagicApiService Get the details of a specific custom field
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Custom%20Fields/getCustomField\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -7757,7 +7757,7 @@ func (a *TextMagicApiService) GetCustomField(ctx context.Context, id int32) (Use
 
 /* 
 TextMagicApiService Get all custom fields
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Custom%20Fields/getCustomFields\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetCustomFieldsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -7870,7 +7870,7 @@ func (a *TextMagicApiService) GetCustomFields(ctx context.Context, localVarOptio
 
 /* 
 TextMagicApiService Get the details of a specific dedicated number
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/getDedicatedNumber\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -7981,7 +7981,7 @@ func (a *TextMagicApiService) GetDedicatedNumber(ctx context.Context, id int32) 
 
 /* 
 TextMagicApiService Get favorite contacts and lists
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/getFavorites\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetFavoritesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -8099,7 +8099,7 @@ func (a *TextMagicApiService) GetFavorites(ctx context.Context, localVarOptional
 
 /* 
 TextMagicApiService Get a single inbound message
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/getInboundMessage\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id The unique numeric ID for the inbound message.
 
@@ -8210,7 +8210,7 @@ func (a *TextMagicApiService) GetInboundMessage(ctx context.Context, id int32) (
 
 /* 
 TextMagicApiService Get inbound messages notification settings
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/getInboundMessagesNotificationSettings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return GetInboundMessagesNotificationSettingsResponse
@@ -8308,7 +8308,7 @@ func (a *TextMagicApiService) GetInboundMessagesNotificationSettings(ctx context
 
 /* 
 TextMagicApiService Get all invoices
-With the TextMagic API, you can check the invoices and transactions for your account.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Invoices/getInvoices\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;With the TextMagic API, you can check the invoices and transactions for your account.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetInvoicesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -8432,7 +8432,7 @@ func (a *TextMagicApiService) GetInvoices(ctx context.Context, localVarOptionals
 
 /* 
 TextMagicApiService Get the details of a specific list
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/getList\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -8543,7 +8543,7 @@ func (a *TextMagicApiService) GetList(ctx context.Context, id int32) (List, *htt
 
 /* 
 TextMagicApiService Get all contact IDs in a list
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/getListContactsIds\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -8654,7 +8654,7 @@ func (a *TextMagicApiService) GetListContactsIds(ctx context.Context, id int32) 
 
 /* 
 TextMagicApiService Get all lists
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/getLists\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetListsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  The current fetched page.
@@ -8798,7 +8798,7 @@ func (a *TextMagicApiService) GetLists(ctx context.Context, localVarOptionals *G
 
 /* 
 TextMagicApiService Get a contact&#39;s lists
-Get all the lists in which a contact is included.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/getListsOfContact\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get all the lists in which a contact is included.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
  * @param optional nil or *GetListsOfContactOpts - Optional Parameters:
@@ -8924,7 +8924,7 @@ func (a *TextMagicApiService) GetListsOfContact(ctx context.Context, id int32, l
 
 /* 
 TextMagicApiService Preview message
-Get a messages preview (with tags merged) of up to 100 messages per session.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getMessagePreview\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get a messages preview (with tags merged) of up to 100 messages per session.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetMessagePreviewOpts - Optional Parameters:
      * @param "Text" (optional.String) -  Message text. Required if **template_id** is not set.
@@ -9123,7 +9123,7 @@ func (a *TextMagicApiService) GetMessagePreview(ctx context.Context, localVarOpt
 
 /* 
 TextMagicApiService Check message price
-Check pricing for a new outbound message.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getMessagePrice\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Check pricing for a new outbound message.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetMessagePriceOpts - Optional Parameters:
      * @param "IncludeBlocked" (optional.Int32) -  Should we show the pricing for blocked contacts?
@@ -9327,7 +9327,7 @@ func (a *TextMagicApiService) GetMessagePrice(ctx context.Context, localVarOptio
 
 /* 
 TextMagicApiService Get a session&#x60;s details
-Get a specific session’s details.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sessions/getMessageSession\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get a specific session’s details.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id Session ID.
 
@@ -9438,7 +9438,7 @@ func (a *TextMagicApiService) GetMessageSession(ctx context.Context, id int32) (
 
 /* 
 TextMagicApiService Get a session&#x60;s statistics
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sessions/getMessageSessionStat\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
  * @param optional nil or *GetMessageSessionStatOpts - Optional Parameters:
@@ -9559,7 +9559,7 @@ func (a *TextMagicApiService) GetMessageSessionStat(ctx context.Context, id int3
 
 /* 
 TextMagicApiService Get a session&#x60;s messages
-A useful synonym for the \&quot;messages/search\&quot; command with the provided \&quot;sessionId\&quot; parameter.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sessions/getMessagesBySessionId\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;A useful synonym for the \&quot;messages/search\&quot; command with the provided \&quot;sessionId\&quot; parameter.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
  * @param optional nil or *GetMessagesBySessionIdOpts - Optional Parameters:
@@ -9684,7 +9684,7 @@ func (a *TextMagicApiService) GetMessagesBySessionId(ctx context.Context, id int
 
 /* 
 TextMagicApiService Get sent/received messages counters values
-Get total contacts, sent messages and received messages counters values.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Statistics/getMessagingCounters\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get total contacts, sent messages and received messages counters values.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return GetMessagingCountersResponse
@@ -9782,7 +9782,7 @@ func (a *TextMagicApiService) GetMessagingCounters(ctx context.Context) (GetMess
 
 /* 
 TextMagicApiService Get messaging statistics
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Statistics/getMessagingStat\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetMessagingStatOpts - Optional Parameters:
      * @param "By" (optional.String) -  *   **off** - to get total values per specified time interval; *   **day** - to show values grouped by day; *   **month** - to show values grouped by month; *   **year** - to show values grouped by year. 
@@ -9911,7 +9911,7 @@ func (a *TextMagicApiService) GetMessagingStat(ctx context.Context, localVarOpti
 
 /* 
 TextMagicApiService Get a single message
-Get a single outgoing message.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getOutboundMessage\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get a single outgoing message.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -10022,7 +10022,7 @@ func (a *TextMagicApiService) GetOutboundMessage(ctx context.Context, id int32) 
 
 /* 
 TextMagicApiService Get history
-Get the outbound messages history.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/getOutboundMessagesHistory\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get the outbound messages history.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetOutboundMessagesHistoryOpts - Optional Parameters:
      * @param "Limit" (optional.Int32) -  The number of results per page.
@@ -10161,7 +10161,7 @@ func (a *TextMagicApiService) GetOutboundMessagesHistory(ctx context.Context, lo
 
 /* 
 TextMagicApiService Get a single scheduled message
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/getScheduledMessage\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -10272,7 +10272,7 @@ func (a *TextMagicApiService) GetScheduledMessage(ctx context.Context, id int32)
 
 /* 
 TextMagicApiService Get the details of a specific Sender ID
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sender%20IDs/getSenderId\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -10383,7 +10383,7 @@ func (a *TextMagicApiService) GetSenderId(ctx context.Context, id int32) (Sender
 
 /* 
 TextMagicApiService Get all your approved Sender IDs
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sender%20IDs/getSenderIds\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetSenderIdsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -10496,7 +10496,7 @@ func (a *TextMagicApiService) GetSenderIds(ctx context.Context, localVarOptional
 
 /* 
 TextMagicApiService Get current sender settings
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Overview/getSenderSettings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetSenderSettingsOpts - Optional Parameters:
      * @param "Country" (optional.String) -  Return sender settings enabled for sending to a specified country. Should be 2 upper-case characters.
@@ -10604,7 +10604,7 @@ func (a *TextMagicApiService) GetSenderSettings(ctx context.Context, localVarOpt
 
 /* 
 TextMagicApiService Get spending statistics
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Statistics/getSpendingStat\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetSpendingStatOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -10738,7 +10738,7 @@ func (a *TextMagicApiService) GetSpendingStat(ctx context.Context, localVarOptio
 
 /* 
 TextMagicApiService Get sub-account information
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sub-Accounts/getSubaccount\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -10849,7 +10849,7 @@ func (a *TextMagicApiService) GetSubaccount(ctx context.Context, id int32) (User
 
 /* 
 TextMagicApiService Get a sub-accounts list
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sub-Accounts/getSubaccounts\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetSubaccountsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -10962,7 +10962,7 @@ func (a *TextMagicApiService) GetSubaccounts(ctx context.Context, localVarOption
 
 /* 
 TextMagicApiService Get all sub-accounts with their REST API tokens associated with a specified app name
-Get all sub-accounts with their REST API tokens associated with specified app name. When more than one token related to app name, last key will be returned.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sub-Accounts/getSubaccountsWithTokens\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get all sub-accounts with their REST API tokens associated with specified app name. When more than one token related to app name, last key will be returned.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param getSubaccountsWithTokensInputObject
  * @param optional nil or *GetSubaccountsWithTokensOpts - Optional Parameters:
@@ -11089,7 +11089,7 @@ func (a *TextMagicApiService) GetSubaccountsWithTokens(ctx context.Context, getS
 
 /* 
 TextMagicApiService Get a template&#x60;s details
-Get a single template.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Templates/getTemplate\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get a single template.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -11200,7 +11200,7 @@ func (a *TextMagicApiService) GetTemplate(ctx context.Context, id int32) (Messag
 
 /* 
 TextMagicApiService Get timezones
-Return all available timezone IDs
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Timezones%20and%20Countries/getTimezones\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Return all available timezone IDs
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetTimezonesOpts - Optional Parameters:
      * @param "Full" (optional.Int32) -  Return full info about timezones in array (0 or 1). Default is 0.
@@ -11319,7 +11319,7 @@ func (a *TextMagicApiService) GetTimezones(ctx context.Context, localVarOptional
 
 /* 
 TextMagicApiService Get unread messages number
-Get the total amount of unread messages in the current user chats.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/getUnreadMessagesTotal\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Get the total amount of unread messages in the current user chats.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return GetUnreadMessagesTotalResponse
@@ -11417,7 +11417,7 @@ func (a *TextMagicApiService) GetUnreadMessagesTotal(ctx context.Context) (GetUn
 
 /* 
 TextMagicApiService Get the details of a specific unsubscribed contact
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/getUnsubscribedContact\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
 
@@ -11528,7 +11528,7 @@ func (a *TextMagicApiService) GetUnsubscribedContact(ctx context.Context, id int
 
 /* 
 TextMagicApiService Get all unsubscribed contacts
-When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed status, use: 
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/getUnsubscribers\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;When one of your message recipients sends a request with one of the [STOP-words](https://www.textmagic.com/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed status, use: 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUnsubscribersOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -11641,7 +11641,7 @@ func (a *TextMagicApiService) GetUnsubscribers(ctx context.Context, localVarOpti
 
 /* 
 TextMagicApiService Get all your dedicated numbers
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/getUserDedicatedNumbers\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *GetUserDedicatedNumbersOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -11770,7 +11770,7 @@ func (a *TextMagicApiService) GetUserDedicatedNumbers(ctx context.Context, local
 
 /* 
 TextMagicApiService Invite a new sub-account
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sub-Accounts/inviteSubaccount\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param inviteSubaccountInputObject
 
@@ -11875,7 +11875,7 @@ func (a *TextMagicApiService) InviteSubaccount(ctx context.Context, inviteSubacc
 
 /* 
 TextMagicApiService Mark chats as read (bulk)
-Mark several chats as read by chat IDs or mark all chats as read
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/markChatsReadBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Mark several chats as read by chat IDs or mark all chats as read
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param markChatsReadBulkInputObject
 
@@ -11969,7 +11969,7 @@ func (a *TextMagicApiService) MarkChatsReadBulk(ctx context.Context, markChatsRe
 
 /* 
 TextMagicApiService Mark chats as unread (bulk)
-Mark several chats as UNread by chat IDs or mark all chats as UNread
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/markChatsUnreadBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Mark several chats as UNread by chat IDs or mark all chats as UNread
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param markChatsUnreadBulkInputObject
 
@@ -12063,7 +12063,7 @@ func (a *TextMagicApiService) MarkChatsUnreadBulk(ctx context.Context, markChats
 
 /* 
 TextMagicApiService Mute chat sounds
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/muteChat\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param muteChatInputObject
 
@@ -12186,7 +12186,7 @@ func (a *TextMagicApiService) MuteChat(ctx context.Context, muteChatInputObject 
 
 /* 
 TextMagicApiService Mute chats (bulk)
-Mute several chats by chat ids or mute all chats.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/muteChatsBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Mute several chats by chat ids or mute all chats.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param muteChatsBulkInputObject
 
@@ -12280,7 +12280,7 @@ func (a *TextMagicApiService) MuteChatsBulk(ctx context.Context, muteChatsBulkIn
 
 /* 
 TextMagicApiService Ping
-Make a simple ping request.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Timezones%20and%20Countries/ping\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Make a simple ping request.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return PingResponse
@@ -12378,7 +12378,7 @@ func (a *TextMagicApiService) Ping(ctx context.Context) (PingResponse, *http.Res
 
 /* 
 TextMagicApiService Reopen chats (bulk)
-Reopen chats by chat IDs or reopen all chats
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/reopenChatsBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Reopen chats by chat IDs or reopen all chats
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param reopenChatsBulkInputObject
 
@@ -12472,7 +12472,7 @@ func (a *TextMagicApiService) ReopenChatsBulk(ctx context.Context, reopenChatsBu
 
 /* 
 TextMagicApiService Request a new REST API token for sub-account
-Returning user object, key and app name.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sub-Accounts/requestNewSubaccountToken\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Returning user object, key and app name.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param requestNewSubaccountTokenInputObject
 
@@ -12584,7 +12584,7 @@ func (a *TextMagicApiService) RequestNewSubaccountToken(ctx context.Context, req
 
 /* 
 TextMagicApiService Apply for a new Sender ID
-&gt; Sender IDs are shared among all of your sub-accounts.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Sender%20IDs/requestSenderId\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;&gt; Sender IDs are shared among all of your sub-accounts.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param requestSenderIdInputObject
 
@@ -12696,7 +12696,7 @@ func (a *TextMagicApiService) RequestSenderId(ctx context.Context, requestSender
 
 /* 
 TextMagicApiService Find chats by message text
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/searchChats\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *SearchChatsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -12814,7 +12814,7 @@ func (a *TextMagicApiService) SearchChats(ctx context.Context, localVarOptionals
 
 /* 
 TextMagicApiService Find chats (bulk)
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/searchChatsByIds\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *SearchChatsByIdsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -12932,7 +12932,7 @@ func (a *TextMagicApiService) SearchChatsByIds(ctx context.Context, localVarOpti
 
 /* 
 TextMagicApiService Find chats by recipient
-Find chats by recipient (contact, list name or phone number).
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/searchChatsByReceipent\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Find chats by recipient (contact, list name or phone number).
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *SearchChatsByReceipentOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -13055,7 +13055,7 @@ func (a *TextMagicApiService) SearchChatsByReceipent(ctx context.Context, localV
 
 /* 
 TextMagicApiService Find contacts by given criteria
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/searchContacts\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *SearchContactsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -13213,7 +13213,7 @@ func (a *TextMagicApiService) SearchContacts(ctx context.Context, localVarOption
 
 /* 
 TextMagicApiService Find inbound messages
-Find inbound messages by given parameters.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Receive%0A/searchInboundMessages\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Find inbound messages by given parameters.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *SearchInboundMessagesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -13362,7 +13362,7 @@ func (a *TextMagicApiService) SearchInboundMessages(ctx context.Context, localVa
 
 /* 
 TextMagicApiService Find lists by given criteria
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/searchLists\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *SearchListsOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -13516,7 +13516,7 @@ func (a *TextMagicApiService) SearchLists(ctx context.Context, localVarOptionals
 
 /* 
 TextMagicApiService Find messages
-Find outbound messages by given parameters.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/searchOutboundMessages\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Find outbound messages by given parameters.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *SearchOutboundMessagesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -13670,7 +13670,7 @@ func (a *TextMagicApiService) SearchOutboundMessages(ctx context.Context, localV
 
 /* 
 TextMagicApiService Find scheduled messages
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Schedule%0A/searchScheduledMessages\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *SearchScheduledMessagesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -13819,7 +13819,7 @@ func (a *TextMagicApiService) SearchScheduledMessages(ctx context.Context, local
 
 /* 
 TextMagicApiService Find templates by criteria
-Find user templates by given parameters.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Templates/searchTemplates\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Find user templates by given parameters.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *SearchTemplatesOpts - Optional Parameters:
      * @param "Page" (optional.Int32) -  Fetch specified results page.
@@ -13947,7 +13947,7 @@ func (a *TextMagicApiService) SearchTemplates(ctx context.Context, localVarOptio
 
 /* 
 TextMagicApiService Send message
-This is the main entrypoint to send messages. See the examples above for the reference.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Messages%3A%20Send%0A/sendMessage\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;This is the main entrypoint to send messages. See the examples above for the reference.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param sendMessageInputObject
 
@@ -14059,7 +14059,7 @@ func (a *TextMagicApiService) SendMessage(ctx context.Context, sendMessageInputO
 
 /* 
 TextMagicApiService Step 1: Send a verification code 
-Sends a verification code to a specified phone number.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Two-factor%20authentication/sendPhoneVerificationCodeTFA\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Sends a verification code to a specified phone number.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param sendPhoneVerificationCodeInputObject
 
@@ -14171,7 +14171,7 @@ func (a *TextMagicApiService) SendPhoneVerificationCodeTFA(ctx context.Context, 
 
 /* 
 TextMagicApiService Change chat status
-Set the status of the chat given by ID.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/setChatStatus\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Set the status of the chat given by ID.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param setChatStatusInputObject
 
@@ -14283,7 +14283,7 @@ func (a *TextMagicApiService) SetChatStatus(ctx context.Context, setChatStatusIn
 
 /* 
 TextMagicApiService Unblock a contact by phone number
-Unblock a contact by phone number
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/unblockContact\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Unblock a contact by phone number
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param unblockContactInputObject
 
@@ -14388,7 +14388,7 @@ func (a *TextMagicApiService) UnblockContact(ctx context.Context, unblockContact
 
 /* 
 TextMagicApiService Unblock contacts (bulk)
-Unblock several contacts by blocked contact IDs or unblock all contacts.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/unblockContactsBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Unblock several contacts by blocked contact IDs or unblock all contacts.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param unblockContactsBulkInputObject
 
@@ -14493,7 +14493,7 @@ func (a *TextMagicApiService) UnblockContactsBulk(ctx context.Context, unblockCo
 
 /* 
 TextMagicApiService Unmute chats (bulk)
-Unmute several chats by chat ids or unmute all chats.
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Chats/unmuteChatsBulk\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;Unmute several chats by chat ids or unmute all chats.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param unmuteChatsBulkInputObject
 
@@ -14587,7 +14587,7 @@ func (a *TextMagicApiService) UnmuteChatsBulk(ctx context.Context, unmuteChatsBu
 
 /* 
 TextMagicApiService Manually unsubscribe a contact
-&gt; Please note, if you unsubscribe a contact, this action cannot be reversed. 
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/unsubscribeContact\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;&gt; Please note, if you unsubscribe a contact, this action cannot be reversed. 
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param unsubscribeContactInputObject
 
@@ -14710,7 +14710,7 @@ func (a *TextMagicApiService) UnsubscribeContact(ctx context.Context, unsubscrib
 
 /* 
 TextMagicApiService Update balance notification settings
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/updateBalanceNotificationSettings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param updateBalanceNotificationSettingsInputObject
 
@@ -14804,7 +14804,7 @@ func (a *TextMagicApiService) UpdateBalanceNotificationSettings(ctx context.Cont
 
 /* 
 TextMagicApiService Update callback URL settings
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/updateCallbackSettings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param updateCallbackSettingsInputObject
 
@@ -14898,7 +14898,7 @@ func (a *TextMagicApiService) UpdateCallbackSettings(ctx context.Context, update
 
 /* 
 TextMagicApiService Update chat desktop notification settings
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/updateChatDesktopNotificationSettings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param updateChatDesktopNotificationSettingsInputObject
 
@@ -14992,7 +14992,7 @@ func (a *TextMagicApiService) UpdateChatDesktopNotificationSettings(ctx context.
 
 /* 
 TextMagicApiService Edit a contact
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contacts/updateContact\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param updateContactInputObject
  * @param id
@@ -15117,7 +15117,7 @@ func (a *TextMagicApiService) UpdateContact(ctx context.Context, updateContactIn
 
 /* 
 TextMagicApiService Update a contact note
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Contact%20Notes/updateContactNote\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param updateContactNoteInputObject
  * @param id
@@ -15242,7 +15242,7 @@ func (a *TextMagicApiService) UpdateContactNote(ctx context.Context, updateConta
 
 /* 
 TextMagicApiService Edit current account info
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Account/updateCurrentUser\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param updateCurrentUserInputObject
 
@@ -15354,7 +15354,7 @@ func (a *TextMagicApiService) UpdateCurrentUser(ctx context.Context, updateCurre
 
 /* 
 TextMagicApiService Edit a custom field
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Custom%20Fields/updateCustomField\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param updateCustomFieldInputObject
  * @param id
@@ -15479,7 +15479,7 @@ func (a *TextMagicApiService) UpdateCustomField(ctx context.Context, updateCusto
 
 /* 
 TextMagicApiService Edit the custom field value of a specified contact
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Custom%20Fields/updateCustomFieldValue\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param updateCustomFieldValueInputObject
  * @param id
@@ -15604,7 +15604,7 @@ func (a *TextMagicApiService) UpdateCustomFieldValue(ctx context.Context, update
 
 /* 
 TextMagicApiService Update inbound messages notification settings
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/undefined/updateInboundMessagesNotificationSettings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param updateInboundMessagesNotificationSettingsInputObject
 
@@ -15698,7 +15698,7 @@ func (a *TextMagicApiService) UpdateInboundMessagesNotificationSettings(ctx cont
 
 /* 
 TextMagicApiService Edit a list
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Lists/updateList\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id
  * @param optional nil or *UpdateListOpts - Optional Parameters:
@@ -15803,7 +15803,7 @@ func (a *TextMagicApiService) UpdateList(ctx context.Context, id int32, localVar
 
 /* 
 TextMagicApiService Change sender settings
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Overview/updateSenderSetting\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param updateSenderSettingInputObject
 
@@ -15908,7 +15908,7 @@ func (a *TextMagicApiService) UpdateSenderSetting(ctx context.Context, updateSen
 
 /* 
 TextMagicApiService Update a template
-
+&lt;a class&#x3D;\&quot;try-sandbox-link\&quot; href&#x3D;\&quot;http://sandbox.textmagictesting.com/#/Templates/updateTemplate\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Try in sandbox&lt;/a&gt;&lt;br&gt;
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param updateTemplateInputObject
  * @param id
