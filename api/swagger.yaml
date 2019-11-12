@@ -813,7 +813,7 @@ tags:
     Star textmagic/textmagic-rest-go-v2 on GitHub\">Star</a>\n\nThis library provides\
     \ you with an easy way of sending SMS and receiving replies by integrating TextMagic\
     \ SMS Gateway into your Go application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n\
-    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.958\n\
+    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.968\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -27500,6 +27500,11 @@ definitions:
         type: "string"
         example: "avatars/dummy_avatar.png"
         x-nullable: true
+      email:
+        type: "string"
+        example: "charles@example.com"
+        description: "Sender email."
+        x-nullable: true
     example:
       messageTime: "2012-11-28T18:38:28+0000"
       firstName: "Charles"
@@ -27510,6 +27515,7 @@ definitions:
       id: 1782832
       text: "I Love TextMagic!"
       avatar: "avatars/dummy_avatar.png"
+      email: "charles@example.com"
   MessageSession:
     type: "object"
     required:
@@ -31882,6 +31888,7 @@ definitions:
         id: 1782832
         text: "I Love TextMagic!"
         avatar: "avatars/dummy_avatar.png"
+        email: "charles@example.com"
       - messageTime: "2012-11-28T18:38:28+0000"
         firstName: "Charles"
         lastName: "Conway"
@@ -31891,6 +31898,7 @@ definitions:
         id: 1782832
         text: "I Love TextMagic!"
         avatar: "avatars/dummy_avatar.png"
+        email: "charles@example.com"
       page: 1
   SearchInboundMessagesPaginatedResponse:
     required:
@@ -31927,6 +31935,7 @@ definitions:
         id: 1782832
         text: "I Love TextMagic!"
         avatar: "avatars/dummy_avatar.png"
+        email: "charles@example.com"
       - messageTime: "2012-11-28T18:38:28+0000"
         firstName: "Charles"
         lastName: "Conway"
@@ -31936,6 +31945,7 @@ definitions:
         id: 1782832
         text: "I Love TextMagic!"
         avatar: "avatars/dummy_avatar.png"
+        email: "charles@example.com"
       page: 1
   GetSpendingStatPaginatedResponse:
     required:

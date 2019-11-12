@@ -31,4 +31,6 @@ type MessageIn struct {
 	// Sender contact last name.
 	LastName string `json:"lastName,omitempty"`
 	Avatar string `json:"avatar"`
+	// Sender email.
+	Email string `json:"email,omitempty"`
 }
