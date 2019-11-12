@@ -16,7 +16,7 @@ type List struct {
 	Name string `json:"name"`
 	// Description of the list.
 	Description string `json:"description"`
-	// Is the List favorited? See [Favorites list](http://docs.textmagictesting.com/#operation/getFavourites).
+	// Is the List favorited? See [Favorites list](https://docs.textmagic.com/#operation/getFavourites).
 	Favorited bool `json:"favorited"`
 	// List members count.
 	MembersCount int32 `json:"membersCount"`

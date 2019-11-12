@@ -19,6 +19,6 @@ type UpdateCurrentUserInputObject struct {
 	Phone string `json:"phone,omitempty"`
 	// Account company name.
 	Company string `json:"company,omitempty"`
-	// The timezome internal ID. See [Get timezones](http://docs.textmagictesting.com/#operation/getTimezones).
+	// The timezome internal ID. See [Get timezones](https://docs.textmagic.com/#operation/getTimezones).
 	Timezone int32 `json:"timezone,omitempty"`
 }

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **Id** | **int32** | List ID. | [default to null]
 **Name** | **string** | List name. | [default to null]
 **Description** | **string** | Description of the list. | [default to null]
-**Favorited** | **bool** | Is the List favorited? See [Favorites list](http://docs.textmagictesting.com/#operation/getFavourites). | [default to null]
+**Favorited** | **bool** | Is the List favorited? See [Favorites list](https://docs.textmagic.com/#operation/getFavourites). | [default to null]
 **MembersCount** | **int32** | List members count. | [default to null]
 **User** | [***User**](User.md) |  | [default to null]
 **Service** | **bool** | Internal service field. | [default to null]

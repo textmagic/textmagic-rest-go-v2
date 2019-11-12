@@ -21,7 +21,7 @@ type MessageOut struct {
 	// Recipient`s phone number.
 	Receiver string `json:"receiver,omitempty"`
 	Text string `json:"text"`
-	// Delivery status of the message. See [message delivery statuses](http://docs.textmagictesting.com/#section/Delivery-status-codes) for details. 
+	// Delivery status of the message. See [message delivery statuses](https://docs.textmagic.com/#section/Delivery-status-codes) for details. 
 	Status string `json:"status"`
 	// Recipient contact ID.
 	ContactId int32 `json:"contactId"`
@@ -36,7 +36,7 @@ type MessageOut struct {
 	Charset string `json:"charset"`
 	// Human-readable message charset label. Could be: *   **ISO-8859-1** for plaintext SMS; *   **UTF-16BE** for Unicode SMS; *   **Voice** for voice services (Text-to-Speech or Voice Broadcast) messages. 
 	CharsetLabel string `json:"charsetLabel"`
-	// Contact first name. Could be substituted from your [Contacts](http://docs.textmagictesting.com/#tag/Contacts) (even if you submitted the phone number instead of the contact ID). 
+	// Contact first name. Could be substituted from your [Contacts](https://docs.textmagic.com/#tag/Contacts) (even if you submitted the phone number instead of the contact ID). 
 	FirstName string `json:"firstName"`
 	// Contact last name.
 	LastName string `json:"lastName"`

@@ -20,7 +20,7 @@ type UpdateContactInputObject struct {
 	Email string `json:"email,omitempty"`
 	// Contact company name.
 	CompanyName string `json:"companyName,omitempty"`
-	// Comma-separated [list](http://docs.textmagictesting.com/#section/Lists) ID. Each contact must be assigned to at least one list.
+	// Comma-separated [list](https://docs.textmagic.com/#section/Lists) ID. Each contact must be assigned to at least one list.
 	Lists string `json:"lists,omitempty"`
 	// Is the contact marked as favorite?
 	Favorited bool `json:"favorited,omitempty"`

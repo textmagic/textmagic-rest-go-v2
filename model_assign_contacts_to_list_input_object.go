@@ -10,6 +10,6 @@
 package TextMagic
 
 type AssignContactsToListInputObject struct {
-	// Comma-separated array of [Contacts](http://docs.textmagictesting.com/#tag/Contacts) IDs.
+	// Comma-separated array of [Contacts](https://docs.textmagic.com/#tag/Contacts) IDs.
 	Contacts string `json:"contacts,omitempty"`
 }

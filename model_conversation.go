@@ -25,12 +25,12 @@ type Conversation struct {
 	Text string `json:"text"`
 	// Receiver's phone number.
 	Receiver string `json:"receiver"`
-	// Message status (for chats outbound only). See [message delivery statuses](http://docs.textmagictesting.com/#section/Delivery-status-codes) for details.
+	// Message status (for chats outbound only). See [message delivery statuses](https://docs.textmagic.com/#section/Delivery-status-codes) for details.
 	Status string `json:"status"`
 	// Contact first name.
 	FirstName string `json:"firstName"`
 	// Contact last name.
 	LastName string `json:"lastName"`
-	// Session ID of a message. See [message sessions](http://docs.textmagictesting.com/#tag/Outbound-Message-Sessions) for details.
+	// Session ID of a message. See [message sessions](https://docs.textmagic.com/#tag/Outbound-Message-Sessions) for details.
 	SessionId int32 `json:"sessionId"`
 }

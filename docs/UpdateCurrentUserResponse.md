@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Email** | **string** | User email address. | [optional] [default to null]
 **Phone** | **string** |  | [optional] [default to null]
 **Company** | **string** | Account company name. | [optional] [default to null]
-**Timezone** | **int32** | Internal timezone ID. See [Get timezones](http://docs.textmagictesting.com/#operation/getTimezones). | [optional] [default to null]
+**Timezone** | **int32** | Internal timezone ID. See [Get timezones](https://docs.textmagic.com/#operation/getTimezones). | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

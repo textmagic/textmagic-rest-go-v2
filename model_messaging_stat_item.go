@@ -20,7 +20,7 @@ type MessagingStatItem struct {
 	Date time.Time `json:"date"`
 	// Message delivery rate:the number of delivered messages divided by the number of total messages.
 	DeliveryRate float32 `json:"deliveryRate"`
-	// Cost for sent messages during this period. The costs are in the [Account](http://docs.textmagictesting.com/#tag/User) currency. 
+	// Cost for sent messages during this period. The costs are in the [Account](https://docs.textmagic.com/#tag/User) currency. 
 	Costs float32 `json:"costs"`
 	// Total received messages count.
 	MessagesReceived int32 `json:"messagesReceived"`

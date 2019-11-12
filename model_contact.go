@@ -12,9 +12,9 @@ package TextMagic
 type Contact struct {
 	// Contact ID.
 	Id int32 `json:"id"`
-	// Is the Contact favorite? [Favorite list](http://docs.textmagictesting.com/#operation/getFavorites).
+	// Is the Contact favorite? [Favorite list](https://docs.textmagic.com/#operation/getFavorites).
 	Favorited bool `json:"favorited"`
-	// Is the Contact blocked? [Blocked contacts](http://docs.textmagictesting.com/#operation/getBlockedContacts).
+	// Is the Contact blocked? [Blocked contacts](https://docs.textmagic.com/#operation/getBlockedContacts).
 	Blocked bool `json:"blocked"`
 	// Contact first name.
 	FirstName string `json:"firstName"`
@@ -28,7 +28,7 @@ type Contact struct {
 	Email string `json:"email"`
 	// Contact country.
 	Country *Country `json:"country"`
-	// See the [Custom Fields](http://docs.textmagictesting.com/#tag/Custom-Fields) section.
+	// See the [Custom Fields](https://docs.textmagic.com/#tag/Custom-Fields) section.
 	CustomFields []ContactCustomField `json:"customFields"`
 	User *User `json:"user"`
 	Lists []List `json:"lists"`

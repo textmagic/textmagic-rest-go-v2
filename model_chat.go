@@ -20,7 +20,7 @@ type Chat struct {
 	// Chat partner's phone number.
 	Phone string `json:"phone"`
 	Contact *Contact `json:"contact"`
-	// If this field has a value, it means that the chat phone number has been unsubscribed from you and this value is an ID of an Unsubscribed contact entity. See [Get all unsubscribed contacts](http://docs.textmagictesting.com/#operation/getUnsubscribers).
+	// If this field has a value, it means that the chat phone number has been unsubscribed from you and this value is an ID of an Unsubscribed contact entity. See [Get all unsubscribed contacts](https://docs.textmagic.com/#operation/getUnsubscribers).
 	UnsubscribedContactId int32 `json:"unsubscribedContactId"`
 	// Total unread incoming messages.
 	Unread int32 `json:"unread"`
