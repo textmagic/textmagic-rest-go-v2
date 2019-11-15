@@ -309,7 +309,35 @@ tags:
     \ field values. |"
   x-displayName: "Templates"
 - name: "Send Email to SMS"
-  description: ""
+  description: "Mobile marketing (for product promotion) is a very powerful tool for\
+    \ your business – and this is where sending SMS messages using email stands out.\n\
+    \nYou can set up a two-way communication without needing to write even one line\
+    \ of code: all you need is an email client and a TextMagic account. With this\
+    \ system, you can send ordinary emails, and your recipients will receive SMS messages\
+    \ (and vice versa, when they reply to you, you will receive their text through\
+    \ email).\n\n## Getting started\n\nTo start sending text messages from your email,\
+    \ you first need to configure your Email to SMS settings.\n\nTo add email addresses\
+    \ for sending an SMS:\n\n1.  [Log in](https://my.textmagic.com/) to TextMagic\
+    \ (or [start a free trial](https://my.textmagic.com/register/) if you haven’t\
+    \ registered yet).\n2.  Go to [Allowed emails](https://my.textmagic.com/online/emailtosms/emails).\
+    \    \n3.  Add the email addresses that you own or control, one per line.\n4.\
+    \  Click **Save**.\n\n> Please note, if an email address does not belong to you,\
+    \ we recommend you use a [Distribution List](https://docs.textmagic.com/#tag/Distribution-Lists).\n\
+    \n## Send SMS from an email\n\nThe following example email will send **The Free\
+    \ Encyclopedia** in an SMS to the two mobile phones with the numbers listed.\n\
+    \n| Variable | Value |\n|-------|-------|\n|From:|`your_registered_email@yourdomain.com`\
+    \ ([Add your allowed emails](https://www.textmagic.com/app/wt/messages/esms)).|\n\
+    |To: |`4412345678@textmagic.com, 4912345678@textmagic.com` |\n|Subject: |You can\
+    \ leave the subject blank. |\n|Body: |`The Free Encyclopedia` |\n\nThe recipients\
+    \ (+4412345678 and +4912345678) will receive this email as an SMS.\n\n## Send\
+    \ and Receive Settings\n\nThe **Send and Receive Settings** lets you control the\
+    \ amount of each email you send as an SMS. They also limit the number of texts\
+    \ per message. These settings will help you control your budget.\n\n1.  [Log in](https://my.textmagic.com/)\
+    \ to TextMagic (or [start a free trial](https://my.textmagic.com/register/) if\
+    \ you haven’t registered yet).\n2.  Go to [Send & Receive Settings](https://my.textmagic.com/online/emailtosms/settings).\n\
+    3.  Edit your message content and length settings as needed.\n4.  Click **Save**.\n\
+    \n> Please note, you are charged according to [the length of the text message](https://support.textmagic.com/faq/how-many-characters-can-i-include-in-a-text-message/)\
+    \ you send.\n\nYou’re now ready to send and receive SMS messages via email.\n"
   x-virtual: true
 - name: "Receive SMS to Email"
   description: "When someone replies to an SMS you’ve sent via email to the SMS service,\
@@ -503,13 +531,13 @@ tags:
     These SDK libraries are available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).\n\
     \n### Support\nIf you need help with the wrapper or if you have any suggestions\
     \ for improvements, please contact us by emailing\_[support@textmagic.com](mailto:support@textmagic.com).\n\
-    # PHP\n\n<a class=\"github-button\" href=\"https://github.com/textmagic/textmagic-rest-php-v2\"\
-    \ data-show-count=\"true\" aria-label=\"Star textmagic/textmagic-rest-php-v2 on\
-    \ GitHub\">Star</a>\n\nThis library provides you with an easy way of sending SMS\
-    \ and receiving replies by integrating TextMagic SMS Gateway into your PHP application.\n\
-    \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-php-v2)\n\
-    ## Requirements\n\nPHP 5.5 and later.\n\n## Installation\n### Composer\n\nTo install\
-    \ the bindings via [Composer](http://getcomposer.org/), add the following to `composer.json`:\n\
+    # PHP\n\n<iframe src=\"https://ghbtns.com/github-btn.html?user=textmagic&repo=textmagic-rest-php-v2&type=star&count=true\"\
+    \ frameborder=\"0\" scrolling=\"0\" width=\"170px\" height=\"20px\"></iframe>\n\
+    \nThis library provides you with an easy way of sending SMS and receiving replies\
+    \ by integrating TextMagic SMS Gateway into your PHP application.\n\n[Get it now\
+    \ on GitHub](https://github.com/textmagic/textmagic-rest-php-v2)\n## Requirements\n\
+    \nPHP 5.5 and later.\n\n## Installation\n### Composer\n\nTo install the bindings\
+    \ via [Composer](http://getcomposer.org/), add the following to `composer.json`:\n\
     \n```javascript\n{\n    \"repositories\": [\n        {\n            \"type\":\
     \ \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
     \n        }\n    ],\n    \"require\": {\n        \"textmagic/textmagic-rest-php-v2\"\
@@ -536,9 +564,8 @@ tags:
     \ it is sample list ID\ntry {\n    $file = new SplFileObject(\"test.jpg\");\n\
     \    $result = $api->uploadListAvatar($file, 3223);\n    print_r($result);\n}\
     \ catch (Exception $e) {\n    echo 'Exception when calling TextMagicApi->uploadListAvatar:\
-    \ ', $e->getMessage(), PHP_EOL;\n}\n\n```\n# Node.js\n\n<a class=\"github-button\"\
-    \ href=\"https://github.com/textmagic/textmagic-rest-nodejs-v2\" data-show-count=\"\
-    true\" aria-label=\"Star textmagic/textmagic-rest-nodejs-v2 on GitHub\">Star</a>\n\
+    \ ', $e->getMessage(), PHP_EOL;\n}\n\n```\n# Node.js\n\n<iframe src=\"https://ghbtns.com/github-btn.html?user=textmagic&repo=textmagic-rest-nodejs-v2&type=star&count=true\"\
+    \ frameborder=\"0\" scrolling=\"0\" width=\"170px\" height=\"20px\"></iframe>\n\
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Node.js application.\n\n[Get\
     \ it now on GitHub](https://github.com/textmagic/textmagic-rest-nodejs-v2)\n##\
@@ -558,10 +585,9 @@ tags:
     \    console.error(err);\n});\n\n// Upload new avatar for contacts list (group)\
     \ with Id 3223 example\nlet stream = new fs.ReadStream('test.jpg');\napi.uploadListAvatar(stream,\
     \ 3223).then(function (data) {\n    console.log(data.id);\n}).catch(function(err){\n\
-    \    console.error(err);\n});\n```\n# Java\n\n<a class=\"github-button\" href=\"\
-    https://github.com/textmagic/textmagic-rest-java-v2\" data-show-count=\"true\"\
-    \ aria-label=\"Star textmagic/textmagic-rest-java-v2 on GitHub\">Star</a>\n\n\
-    This library provides you with an easy way of sending SMS and receiving replies\
+    \    console.error(err);\n});\n```\n# Java\n\n<iframe src=\"https://ghbtns.com/github-btn.html?user=textmagic&repo=textmagic-rest-java-v2&type=star&count=true\"\
+    \ frameborder=\"0\" scrolling=\"0\" width=\"170px\" height=\"20px\"></iframe>\n\
+    \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Java application.\n\n[Get it\
     \ now on GitHub](https://github.com/textmagic/textmagic-rest-java-v2)\n\n\n##\
     \ Requirements\n\n1. Java 1.7+\n2. Maven/Gradle\n\n## Installation\n\n### Maven\n\
@@ -599,11 +625,11 @@ tags:
     \            System.out.println(response.getId());\n        } catch (ApiException\
     \ e) {\n            System.err.println(\"Exception when calling uploadListAvatar\"\
     );\n            e.printStackTrace();\n        }\n    }\n}\n```\n# C# / VB.NET\n\
-    \n<a class=\"github-button\" href=\"https://github.com/textmagic/textmagic-rest-csharp-v2\"\
-    \ data-show-count=\"true\" aria-label=\"Star textmagic/textmagic-rest-csharp-v2\
-    \ on GitHub\">Star</a>\n\nThis library provides you with an easy way of sending\
-    \ SMS and receiving replies by integrating TextMagic SMS Gateway into your C#\
-    \ / VB.NET application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-csharp-v2)\n\
+    \n<iframe src=\"https://ghbtns.com/github-btn.html?user=textmagic&repo=textmagic-rest-csharp-v2&type=star&count=true\"\
+    \ frameborder=\"0\" scrolling=\"0\" width=\"170px\" height=\"20px\"></iframe>\n\
+    \nThis library provides you with an easy way of sending SMS and receiving replies\
+    \ by integrating TextMagic SMS Gateway into your C# / VB.NET application.\n\n\
+    [Get it now on GitHub](https://github.com/textmagic/textmagic-rest-csharp-v2)\n\
     \n## Frameworks supported\n- .NET 4.0 or later\n- Windows Phone 7.1 (Mango)\n\n\
     ## Dependencies\n- [RestSharp](https://www.nuget.org/packages/RestSharp) - 105.1.0\
     \ or later\n- [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/) - 7.0.0\
@@ -669,12 +695,12 @@ tags:
     \ 3223)\n            Console.WriteLine(result.Href)\n        Catch e As Exception\n\
     \            Console.WriteLine(\"Exception when calling TextMagicApi.UploadListAvatar:\
     \ \" & e.Message)\n        End Try\n    End Sub\nEnd Module\n\n```\n# C++\n\n\
-    <a class=\"github-button\" href=\"https://github.com/textmagic/textmagic-rest-cpp-v2\"\
-    \ data-show-count=\"true\" aria-label=\"Star textmagic/textmagic-rest-cpp-v2 on\
-    \ GitHub\">Star</a>\n\nThis library provides you with an easy way of sending SMS\
-    \ and receiving replies by integrating TextMagic SMS Gateway into your C++ application.\n\
-    \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-cpp-v2)\n\
-    ## Requirements\n\n* CMake 2.8 and later (https://cmake.org/)\n* cpprest (https://github.com/microsoft/cpprestsdk)\n\
+    <iframe src=\"https://ghbtns.com/github-btn.html?user=textmagic&repo=textmagic-rest-cpp-v2&type=star&count=true\"\
+    \ frameborder=\"0\" scrolling=\"0\" width=\"170px\" height=\"20px\"></iframe>\n\
+    \nThis library provides you with an easy way of sending SMS and receiving replies\
+    \ by integrating TextMagic SMS Gateway into your C++ application.\n\n[Get it now\
+    \ on GitHub](https://github.com/textmagic/textmagic-rest-cpp-v2)\n## Requirements\n\
+    \n* CMake 2.8 and later (https://cmake.org/)\n* cpprest (https://github.com/microsoft/cpprestsdk)\n\
     \nUbuntu dependencies quick installation example:\n```shell\napt-get install build-essential\
     \ cmake libcpprest-dev\n```\n\n## Installation\n\nDownload and extract lib archive:\n\
     ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.968.tar.gz\
@@ -726,14 +752,13 @@ tags:
     \    } catch(const std::exception& e) {\n        std::cout << \"getId() exception:\
     \ \" << e.what() << '\\n';\n    }\n\n    return 0;\n}\n```\nBuild your test project:\n\
     ```shell\ncmake . && cmake --build .\n```\nRun:\n```shell\n./app\n```\n\n# Python\n\
-    \n<a class=\"github-button\" href=\"https://github.com/textmagic/textmagic-rest-python-v2\"\
-    \ data-show-count=\"true\" aria-label=\"Star textmagic/textmagic-rest-python-v2\
-    \ on GitHub\">Star</a>\n\nThis library provides you with an easy way of sending\
-    \ SMS and receiving replies by integrating TextMagic SMS Gateway into your Python\
-    \ application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-python-v2)\n\
-    ## Requirements\nPython 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install\
-    \ git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.968\n```\n\
-    \n## Usage Example\n\n```python\nimport TextMagic\nfrom TextMagic.rest import\
+    \n<iframe src=\"https://ghbtns.com/github-btn.html?user=textmagic&repo=textmagic-rest-python-v2&type=star&count=true\"\
+    \ frameborder=\"0\" scrolling=\"0\" width=\"170px\" height=\"20px\"></iframe>\n\
+    \nThis library provides you with an easy way of sending SMS and receiving replies\
+    \ by integrating TextMagic SMS Gateway into your Python application.\n\n[Get it\
+    \ now on GitHub](https://github.com/textmagic/textmagic-rest-python-v2)\n## Requirements\n\
+    Python 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.968\n\
+    ```\n\n## Usage Example\n\n```python\nimport TextMagic\nfrom TextMagic.rest import\
     \ ApiException\n\n# Configure HTTP basic authorization: BasicAuth\nconfiguration\
     \ = TextMagic.Configuration()\nconfiguration.username = 'YOUR_USERNAME'\nconfiguration.password\
     \ = 'YOUR_PASSWORD'\n\n# create an instance of the API class\napi_instance = TextMagic.TextMagicApi(TextMagic.ApiClient(configuration))\n\
@@ -752,13 +777,13 @@ tags:
     \ here is a test list id\ntry:\n    response = api_instance.upload_list_avatar('test.png',\
     \ 3223)\n    print(response.id)\nexcept ApiException as e:\n    print(\"Exception\
     \ when calling TextMagicApi->upload_list_avatar: %s\\n\" % e)\n\n```\n\n# Perl\n\
-    \n<a class=\"github-button\" href=\"https://github.com/textmagic/textmagic-rest-perl-v2\"\
-    \ data-show-count=\"true\" aria-label=\"Star textmagic/textmagic-rest-perl-v2\
-    \ on GitHub\">Star</a>\n\nThis library provides you with an easy way of sending\
-    \ SMS and receiving replies by integrating TextMagic SMS Gateway into your Perl\
-    \ application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-perl-v2)\n\
-    ## Installation\n\n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.972.tar.gz\
-    \ && \\\ntar zxf v2.0.972.tar.gz && \\\nrm -f v2.0.972.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.972\
+    \n<iframe src=\"https://ghbtns.com/github-btn.html?user=textmagic&repo=textmagic-rest-perl-v2&type=star&count=true\"\
+    \ frameborder=\"0\" scrolling=\"0\" width=\"170px\" height=\"20px\"></iframe>\n\
+    \nThis library provides you with an easy way of sending SMS and receiving replies\
+    \ by integrating TextMagic SMS Gateway into your Perl application.\n\n[Get it\
+    \ now on GitHub](https://github.com/textmagic/textmagic-rest-perl-v2)\n## Installation\n\
+    \n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.970.tar.gz\
+    \ && \\\ntar zxf v2.0.970.tar.gz && \\\nrm -f v2.0.970.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.970\
     \ && \\\nperl Makefile.pl && \\\nmake && \\\nmake install && \\\ncpanm --installdeps\
     \ .\n```\\\n\n## Usage Example\n\nPlease follow the [installation](#installation)\
     \ instructions and execute the following Perl code:\n\n```perl\nuse 5.010;\nuse\
@@ -781,13 +806,13 @@ tags:
     \ request example (3223 it is sample list ID)\neval {\n    my $result = $api_instance->upload_list_avatar(image\
     \ => \"test.jpg\", id => 3223);\n    print $result->id;\n};\n\nif ($@) {\n   \
     \ warn \"Exception when calling TextMagicApi->upload_list_avatar: $@\\n\";\n}\n\
-    \n```\n# Ruby\n\n<a class=\"github-button\" href=\"https://github.com/textmagic/textmagic-rest-ruby-v2\"\
-    \ data-show-count=\"true\" aria-label=\"Star textmagic/textmagic-rest-ruby-v2\
-    \ on GitHub\">Star</a>\n\nThis library provides you with an easy way of sending\
-    \ SMS and receiving replies by integrating TextMagic SMS Gateway into your Ruby\
-    \ application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-ruby-v2)\n\
-    ## Installation\n\nAdd these lines into your Gemfile\n```ruby\ngem 'textmagic_rest_client',\
-    \ :git => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.968'\n\
+    \n```\n# Ruby\n\n<iframe src=\"https://ghbtns.com/github-btn.html?user=textmagic&repo=textmagic-rest-ruby-v2&type=star&count=true\"\
+    \ frameborder=\"0\" scrolling=\"0\" width=\"170px\" height=\"20px\"></iframe>\n\
+    \nThis library provides you with an easy way of sending SMS and receiving replies\
+    \ by integrating TextMagic SMS Gateway into your Ruby application.\n\n[Get it\
+    \ now on GitHub](https://github.com/textmagic/textmagic-rest-ruby-v2)\n## Installation\n\
+    \nAdd these lines into your Gemfile\n```ruby\ngem 'textmagic_rest_client', :git\
+    \ => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.968'\n\
     ```\n\nRun the bundler install command\n``` shell\nbundle install\n```\n\n## Usage\
     \ Example\n\nCreate the test file `test.rb` and put the following code:\n```ruby\n\
     \ # Load the gem\nrequire 'textmagic_rest_client'\n\n # Setup authorization\n\
@@ -808,12 +833,12 @@ tags:
     file = File.open('test.png', 'r')\nbegin\n    result = api_instance.upload_list_avatar(file,\
     \ 3223)\n    puts result.id\nrescue TextMagic::ApiError => e\n    puts \"Exception\
     \ when calling TextMagicApi->upload_list_avatar: #{e}\"\nend\n```\n\nRun the script:\n\
-    ```\nbundle exec ruby test.rb\n```\n\n# Go\n\n<a class=\"github-button\" href=\"\
-    https://github.com/textmagic/textmagic-rest-go-v2\" data-show-count=\"true\" aria-label=\"\
-    Star textmagic/textmagic-rest-go-v2 on GitHub\">Star</a>\n\nThis library provides\
-    \ you with an easy way of sending SMS and receiving replies by integrating TextMagic\
-    \ SMS Gateway into your Go application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n\
-    ## Installation\n\nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.972\n\
+    ```\nbundle exec ruby test.rb\n```\n\n# Go\n\n<iframe src=\"https://ghbtns.com/github-btn.html?user=textmagic&repo=textmagic-rest-go-v2&type=star&count=true\"\
+    \ frameborder=\"0\" scrolling=\"0\" width=\"170px\" height=\"20px\"></iframe>\n\
+    \nThis library provides you with an easy way of sending SMS and receiving replies\
+    \ by integrating TextMagic SMS Gateway into your Go application.\n\n[Get it now\
+    \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n## Installation\n\
+    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1003\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -839,12 +864,12 @@ tags:
     \ fmt.Println(getAllOutboundMessageResponse.Resources[0].Id)\n    }\n}\n```\n\n\
     ## Limitations\nDue to the issue at https://github.com/swagger-api/swagger-codegen/issues/7311,\
     \ the current version of Go SDK does not support any file uploading API calls.\n\
-    \n# Delphi\n\n<a class=\"github-button\" href=\"https://github.com/textmagic/textmagic-rest-object-pascal\"\
-    \ data-show-count=\"true\" aria-label=\"Star textmagic/textmagic-rest-object-pascal\
-    \ on GitHub\">Star</a>\n\nThis library provides you with an easy way of sending\
-    \ SMS and receiving replies by integrating TextMagic SMS Gateway into your Delphi\
-    \ application.\n\n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-object-pascal)\n\
-    \n## How to Install\nYou can clone the repo in your location of choice by using\
+    \n# Delphi\n\n<iframe src=\"https://ghbtns.com/github-btn.html?user=textmagic&repo=textmagic-rest-object-pascal&type=star&count=true\"\
+    \ frameborder=\"0\" scrolling=\"0\" width=\"170px\" height=\"20px\"></iframe>\n\
+    \nThis library provides you with an easy way of sending SMS and receiving replies\
+    \ by integrating TextMagic SMS Gateway into your Delphi application.\n\n[Get it\
+    \ now on GitHub](https://github.com/textmagic/textmagic-rest-object-pascal)\n\n\
+    ## How to Install\nYou can clone the repo in your location of choice by using\
     \ :\n```sh\ngit clone https://github.com/textmagic/textmagic-rest-object-pascal.git\n\
     ```\nYou can also manually clone the project, or simply download the files.\n\
     ## Getting it running\nYou'll need to make sure these 3 files are accessible by\
@@ -880,12 +905,12 @@ tags:
     ...\nMR:=TMC.CreateMessage('My SMS message',null,null,MY_CONTACT_ID,null,null,null,null,null,null,null);\n\
     MR.free;\n```\nSending a message to a list of contacts:\n```Pascal\nvar MR:TTMMessageResult;\n\
     ...\nMR:=TMC.CreateMessage('My SMS message',null,null,null,MY_LIST_ID,null,null,null,null,null,null);\n\
-    MR.free;\n```\n\n# Bash\n\n<a class=\"github-button\" href=\"https://github.com/textmagic/textmagic-rest-bash\"\
-    \ data-show-count=\"true\" aria-label=\"Star textmagic/textmagic-rest-bash on\
-    \ GitHub\">Star</a>\n\nThis library provides you with an easy way of sending SMS\
-    \ and receiving replies by integrating TextMagic SMS Gateway into your Bash application.\n\
-    \n[Get it now on GitHub](https://github.com/textmagic/textmagic-rest-bash)\n\n\
-    ## Installation Instructions\n1.  [Download](https://github.com/textmagic/textmagic-rest-bash)\
+    MR.free;\n```\n\n# Bash\n\n<iframe src=\"https://ghbtns.com/github-btn.html?user=textmagic&repo=textmagic-rest-bash&type=star&count=true\"\
+    \ frameborder=\"0\" scrolling=\"0\" width=\"170px\" height=\"20px\"></iframe>\n\
+    \nThis library provides you with an easy way of sending SMS and receiving replies\
+    \ by integrating TextMagic SMS Gateway into your Bash application.\n\n[Get it\
+    \ now on GitHub](https://github.com/textmagic/textmagic-rest-bash)\n\n## Installation\
+    \ Instructions\n1.  [Download](https://github.com/textmagic/textmagic-rest-bash)\
     \ the latest version of the wrapper from GitHub.\n2.  Put **tm.sh** into any folder\
     \ or into PATH, if you want to use it globally.\n\n## Requirements\nThe Shell\
     \ wrapper for the TextMagic API has the following requirement:\n*   Bash version\
