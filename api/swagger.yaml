@@ -569,7 +569,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Node.js application.\n\n[Get\
     \ it now on GitHub](https://github.com/textmagic/textmagic-rest-nodejs-v2)\n##\
-    \ Installation\n\n```shell\nnpm install textmagic-client@2.0.968 --save\n```\n\
+    \ Installation\n\n```shell\nnpm install textmagic-client@2.0.1029 --save\n```\n\
     \n## Usage Example\n\nPlease follow the [installation](#installation) instructions\
     \ and execute the following JS code:\n\n```javascript\nconst textmagicClient =\
     \ require('textmagic-client');\n\nconst fs = require('fs');\nconst client = textmagicClient.ApiClient.instance;\n\
@@ -838,7 +838,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Go application.\n\n[Get it now\
     \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n## Installation\n\
-    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1003\n\
+    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1067\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -25974,11 +25974,11 @@ paths:
       operationId: "sendPhoneVerificationCodeTFA"
       parameters:
       - in: "body"
-        name: "SendPhoneVerificationCodeInputObject"
+        name: "SendPhoneVerificationCodeTFAInputObject"
         required: true
         schema:
-          $ref: "#/definitions/SendPhoneVerificationCodeInputObject"
-        x-exportParamName: "SendPhoneVerificationCodeInputObject"
+          $ref: "#/definitions/SendPhoneVerificationCodeTFAInputObject"
+        x-exportParamName: "SendPhoneVerificationCodeTFAInputObject"
       responses:
         200:
           description: "Returned when successful."
@@ -26173,11 +26173,11 @@ paths:
       operationId: "checkPhoneVerificationCodeTFA"
       parameters:
       - in: "body"
-        name: "CheckPhoneVerificationCodeInputObject"
+        name: "CheckPhoneVerificationCodeTFAInputObject"
         required: true
         schema:
-          $ref: "#/definitions/CheckPhoneVerificationCodeInputObject"
-        x-exportParamName: "CheckPhoneVerificationCodeInputObject"
+          $ref: "#/definitions/CheckPhoneVerificationCodeTFAInputObject"
+        x-exportParamName: "CheckPhoneVerificationCodeTFAInputObject"
       responses:
         204:
           description: "Request executed with success."
@@ -36256,7 +36256,7 @@ definitions:
       all: false
       calls_ids: "1,2,3,4"
       inbound_ids: "1,2,3,4"
-  CheckPhoneVerificationCodeInputObject:
+  CheckPhoneVerificationCodeTFAInputObject:
     type: "object"
     properties:
       code:
@@ -36268,10 +36268,7 @@ definitions:
         type: "string"
         example: "123e4567-e89b-12d3-a456-426655440000"
         description: "VerifyId from Step 1 to match both requests together."
-    example:
-      code: 1234
-      verifyId: "123e4567-e89b-12d3-a456-426655440000"
-  SendPhoneVerificationCodeInputObject:
+  SendPhoneVerificationCodeTFAInputObject:
     properties:
       phone:
         type: "string"
@@ -36314,13 +36311,6 @@ definitions:
         type: "string"
         example: "US"
         description: "The 2-letter ISO country code for the local phone number."
-    example:
-      country: "US"
-      senderId: "TextMagic"
-      codeLength: 4
-      phone: "447860021130"
-      language: "en-gb"
-      brand: "TextMagic"
   BadRequestResponse_errors:
     properties:
       common:

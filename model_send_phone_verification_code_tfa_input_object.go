@@ -9,7 +9,7 @@
 
 package TextMagic
 
-type SendPhoneVerificationCodeInputObject struct {
+type SendPhoneVerificationCodeTfaInputObject struct {
 	// Use the phone number in international E.164 format. If you need to pass a phone number in the local format, please use it with the **country** parameter to specify the origin country of the phone number. 
 	Phone string `json:"phone,omitempty"`
 	// An alphanumeric string with up to 18 characters you can use to personalize the verification text message body, to help users identify your company or application name. For example: “Your TextMagic PIN is …” 

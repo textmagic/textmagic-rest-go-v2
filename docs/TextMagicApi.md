@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CheckPhoneVerificationCodeTFA**
-> CheckPhoneVerificationCodeTFA(ctx, checkPhoneVerificationCodeInputObject)
+> CheckPhoneVerificationCodeTFA(ctx, checkPhoneVerificationCodeTFAInputObject)
 Step 2: Check the verification code 
 
 Check received code from user with the code which was actually sent.
@@ -273,7 +273,7 @@ Check received code from user with the code which was actually sent.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **checkPhoneVerificationCodeInputObject** | [**CheckPhoneVerificationCodeInputObject**](CheckPhoneVerificationCodeInputObject.md)|  | 
+  **checkPhoneVerificationCodeTFAInputObject** | [**CheckPhoneVerificationCodeTfaInputObject**](CheckPhoneVerificationCodeTfaInputObject.md)|  | 
 
 ### Return type
 
@@ -4088,7 +4088,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SendPhoneVerificationCodeTFA**
-> SendPhoneVerificationCodeResponse SendPhoneVerificationCodeTFA(ctx, sendPhoneVerificationCodeInputObject)
+> SendPhoneVerificationCodeResponse SendPhoneVerificationCodeTFA(ctx, sendPhoneVerificationCodeTFAInputObject)
 Step 1: Send a verification code 
 
 Sends a verification code to a specified phone number.
@@ -4098,7 +4098,7 @@ Sends a verification code to a specified phone number.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **sendPhoneVerificationCodeInputObject** | [**SendPhoneVerificationCodeInputObject**](SendPhoneVerificationCodeInputObject.md)|  | 
+  **sendPhoneVerificationCodeTFAInputObject** | [**SendPhoneVerificationCodeTfaInputObject**](SendPhoneVerificationCodeTfaInputObject.md)|  | 
 
 ### Return type
 

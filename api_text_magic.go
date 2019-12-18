@@ -465,11 +465,11 @@ func (a *TextMagicApiService) CancelVerification(ctx context.Context, verifyId s
 TextMagicApiService Step 2: Check the verification code 
 Check received code from user with the code which was actually sent.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param checkPhoneVerificationCodeInputObject
+ * @param checkPhoneVerificationCodeTFAInputObject
 
 
 */
-func (a *TextMagicApiService) CheckPhoneVerificationCodeTFA(ctx context.Context, checkPhoneVerificationCodeInputObject CheckPhoneVerificationCodeInputObject) (*http.Response, error) {
+func (a *TextMagicApiService) CheckPhoneVerificationCodeTFA(ctx context.Context, checkPhoneVerificationCodeTFAInputObject CheckPhoneVerificationCodeTfaInputObject) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -503,7 +503,7 @@ func (a *TextMagicApiService) CheckPhoneVerificationCodeTFA(ctx context.Context,
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &checkPhoneVerificationCodeInputObject
+	localVarPostBody = &checkPhoneVerificationCodeTFAInputObject
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
@@ -14061,11 +14061,11 @@ func (a *TextMagicApiService) SendMessage(ctx context.Context, sendMessageInputO
 TextMagicApiService Step 1: Send a verification code 
 Sends a verification code to a specified phone number.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param sendPhoneVerificationCodeInputObject
+ * @param sendPhoneVerificationCodeTFAInputObject
 
 @return SendPhoneVerificationCodeResponse
 */
-func (a *TextMagicApiService) SendPhoneVerificationCodeTFA(ctx context.Context, sendPhoneVerificationCodeInputObject SendPhoneVerificationCodeInputObject) (SendPhoneVerificationCodeResponse, *http.Response, error) {
+func (a *TextMagicApiService) SendPhoneVerificationCodeTFA(ctx context.Context, sendPhoneVerificationCodeTFAInputObject SendPhoneVerificationCodeTfaInputObject) (SendPhoneVerificationCodeResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -14099,7 +14099,7 @@ func (a *TextMagicApiService) SendPhoneVerificationCodeTFA(ctx context.Context, 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &sendPhoneVerificationCodeInputObject
+	localVarPostBody = &sendPhoneVerificationCodeTFAInputObject
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
