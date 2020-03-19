@@ -838,7 +838,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Go application.\n\n[Get it now\
     \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n## Installation\n\
-    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1073\n\
+    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1307\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -1536,21 +1536,7 @@ paths:
           \    log.Fatal(err)\n    } else {\n        fmt.Printf(\"%+v\\n\", result)\n\
           \        // ...\n    }\n}\n"
       - lang: "Cpp"
-        source: "// How to install SDK see here https://docs.textmagic.com/#section/C++\n\
-          #include <iostream>\n#include <fstream>\n// Change paths to directory where\
-          \ SDK lib is installed. See C++ SDK installation instructions for more details\n\
-          #include \"textmagic-rest-cpp/ApiClient.h\"\n#include \"textmagic-rest-cpp/ApiConfiguration.h\"\
-          \n#include \"textmagic-rest-cpp/api/TextMagicApi.h\"\n\nusing namespace\
-          \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
-          \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
-          \ ApiConfiguration);\n\n    // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
-          \ page.\n    apiConfig->getHttpConfig().set_credentials(web::credentials(\"\
-          YOUR_NAME\", \"YOUR_API_KEY\"));\n    apiClient->setConfiguration(apiConfig);\n\
-          \n    TextMagicApi api(apiClient);\n\n    try {\n        pplx::task<std::shared_ptr<GetCountriesResponse>>\
-          \ result = api.getCountries();\n        result.wait();\n        // put operations\
-          \ with result here...\n    } catch(const std::exception& e) {\n        std::cout\
-          \ << \"getCountries() exception: \" << e.what() << '\\n';\n    }\n\n   \
-          \ return 0;\n}"
+        source: "Not supported yet."
       - lang: "Python"
         source: "# How to install SDK see here https://docs.textmagic.com/#section/Python\n\
           import TextMagic\nfrom TextMagic.rest import ApiException\n\nconfiguration\
@@ -6442,6 +6428,17 @@ paths:
         - 1
         x-exportParamName: "Local"
         x-optionalDataType: "Int32"
+      - name: "exactMatch"
+        in: "query"
+        description: "Return only exactly matching contacts. Default is 0."
+        required: false
+        type: "integer"
+        default: 0
+        enum:
+        - 0
+        - 1
+        x-exportParamName: "ExactMatch"
+        x-optionalDataType: "Int32"
       - name: "country"
         in: "query"
         description: "The 2-letter ISO country code for local phone numbers, used\
@@ -6494,12 +6491,13 @@ paths:
           \ as null values to searchContacts method below, default values will be\
           \ used\n$page = 1;\n$limit = 10;\n$shared = 0;\n$ids = \"sampleValue\";\n\
           $listId = 1;\n$includeBlocked = 1;\n$query = \"sampleValue\";\n$local =\
-          \ 0;\n$country = \"sampleValue\";\n$orderBy = \"id\";\n$direction = \"desc\"\
-          ;\n\ntry {\n    // SearchContactsPaginatedResponse class object\n    $result\
-          \ = $api->searchContacts($page, $limit, $shared, $ids, $listId, $includeBlocked,\
-          \ $query, $local, $country, $orderBy, $direction);\n    // ...\n} catch\
-          \ (Exception $e) {\n    echo 'Exception when calling TextMagicApi->searchContacts:\
-          \ ', $e->getMessage(), PHP_EOL;\n}"
+          \ 0;\n$exactMatch = 0;\n$country = \"sampleValue\";\n$orderBy = \"id\";\n\
+          $direction = \"desc\";\n\ntry {\n    // SearchContactsPaginatedResponse\
+          \ class object\n    $result = $api->searchContacts($page, $limit, $shared,\
+          \ $ids, $listId, $includeBlocked, $query, $local, $exactMatch, $country,\
+          \ $orderBy, $direction);\n    // ...\n} catch (Exception $e) {\n    echo\
+          \ 'Exception when calling TextMagicApi->searchContacts: ', $e->getMessage(),\
+          \ PHP_EOL;\n}"
       - lang: "Java"
         source: "// How to install SDK see here https://docs.textmagic.com/#section/Java\n\
           import com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
@@ -6515,13 +6513,13 @@ paths:
           \       int page = 1;\n        int limit = 10;\n        int shared = 0;\n\
           \        String ids = \"sampleValue\";\n        int listId = 1;\n      \
           \  int includeBlocked = 1;\n        String query = \"sampleValue\";\n  \
-          \      int local = 0;\n        String country = \"sampleValue\";\n     \
-          \   String orderBy = \"id\";\n        String direction = \"desc\";\n\n \
-          \       try {\n            // SearchContactsPaginatedResponse class object\n\
-          \            SearchContactsPaginatedResponse obj = apiInstance.searchContacts(page,\
-          \ limit, shared, ids, listId, includeBlocked, query, local, country, orderBy,\
-          \ direction);\n            // ...\n        } catch (ApiException e) {\n\
-          \            System.err.println(\"Exception when calling searchContacts\"\
+          \      int local = 0;\n        int exactMatch = 0;\n        String country\
+          \ = \"sampleValue\";\n        String orderBy = \"id\";\n        String direction\
+          \ = \"desc\";\n\n        try {\n            // SearchContactsPaginatedResponse\
+          \ class object\n            SearchContactsPaginatedResponse obj = apiInstance.searchContacts(page,\
+          \ limit, shared, ids, listId, includeBlocked, query, local, exactMatch,\
+          \ country, orderBy, direction);\n            // ...\n        } catch (ApiException\
+          \ e) {\n            System.err.println(\"Exception when calling searchContacts\"\
           );\n            e.printStackTrace();\n        }\n    }\n}"
       - lang: "JavaScript"
         source: "// How to install SDK see here https://docs.textmagic.com/#section/Node.js\n\
@@ -6531,10 +6529,10 @@ paths:
           \ page.\nauth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\
           \n\n// Optional parameters\nconst opts = {\n    page: 1,\n    limit: 10,\n\
           \    shared: 0,\n    ids: \"sampleValue\",\n    listId: 1,\n    includeBlocked:\
-          \ 1,\n    query: \"sampleValue\",\n    local: 0,\n    country: \"sampleValue\"\
-          ,\n    orderBy: \"id\",\n    direction: \"desc\",\n};\n\napi.searchContacts(opts).then(function\
-          \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
-          });"
+          \ 1,\n    query: \"sampleValue\",\n    local: 0,\n    exactMatch: 0,\n \
+          \   country: \"sampleValue\",\n    orderBy: \"id\",\n    direction: \"desc\"\
+          ,\n};\n\napi.searchContacts(opts).then(function (data) {\n    console.log(data);\n\
+          }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "# How to install SDK see here https://docs.textmagic.com/#section/Ruby\n\
           require 'textmagic_rest_client'\n\n# put your Username and API Key from\
@@ -6543,9 +6541,9 @@ paths:
           \ = 'YOUR_API_KEY'\nend\n\napi = TextMagic::TextMagicApi.new\n\nparams =\
           \ {\n  # Optional parameters\n  page: 1,\n  limit: 10,\n  shared: 0,\n \
           \ ids: 'sampleValue',\n  list_id: 1,\n  include_blocked: 1,\n  query: 'sampleValue',\n\
-          \  local: 0,\n  country: 'sampleValue',\n  order_by: 'id',\n  direction:\
-          \ 'desc',\n}\n\nbegin\n    # SearchContactsPaginatedResponse object\n  \
-          \  result = api.search_contacts(params)\n    # ...\nrescue TextMagic::ApiError\
+          \  local: 0,\n  exact_match: 0,\n  country: 'sampleValue',\n  order_by:\
+          \ 'id',\n  direction: 'desc',\n}\n\nbegin\n    # SearchContactsPaginatedResponse\
+          \ object\n    result = api.search_contacts(params)\n    # ...\nrescue TextMagic::ApiError\
           \ => e\n    puts \"Exception when calling TextMagicApi->search_contacts:\
           \ #{e}\"\nend"
       - lang: "C#"
@@ -6562,14 +6560,14 @@ paths:
           \ = 10;\n            int shared = 0;\n            string ids = \"sampleValue\"\
           ;\n            int listId = 1;\n            int includeBlocked = 1;\n  \
           \          string query = \"sampleValue\";\n            int local = 0;\n\
-          \            string country = \"sampleValue\";\n            string orderBy\
-          \ = \"id\";\n            string direction = \"desc\";\n\n            try\
-          \ {\n                // SearchContactsPaginatedResponse class object\n \
-          \               var result = apiInstance.SearchContacts(page, limit, shared,\
-          \ ids, listId, includeBlocked, query, local, country, orderBy, direction);\n\
-          \                // ...\n            } catch (Exception e) {\n         \
-          \       Console.WriteLine(\"Exception when calling searchContacts: \"+e.Message);\n\
-          \            }\n        }\n    }\n}"
+          \            int exactMatch = 0;\n            string country = \"sampleValue\"\
+          ;\n            string orderBy = \"id\";\n            string direction =\
+          \ \"desc\";\n\n            try {\n                // SearchContactsPaginatedResponse\
+          \ class object\n                var result = apiInstance.SearchContacts(page,\
+          \ limit, shared, ids, listId, includeBlocked, query, local, exactMatch,\
+          \ country, orderBy, direction);\n                // ...\n            } catch\
+          \ (Exception e) {\n                Console.WriteLine(\"Exception when calling\
+          \ searchContacts: \"+e.Message);\n            }\n        }\n    }\n}"
       - lang: "VB.Net"
         source: "' How to install SDK see here https://docs.textmagic.com/#section/C-VB.NET\n\
           Imports System\nImports System.IO\nImports TextMagicClient.Api\nImports\
@@ -6584,14 +6582,14 @@ paths:
           \ = 0\n        Dim ids As String = \"sampleValue\"\n        Dim listId As\
           \ Integer = 1\n        Dim includeBlocked As Integer = 1\n        Dim query\
           \ As String = \"sampleValue\"\n        Dim local As Integer = 0\n      \
-          \  Dim country As String = \"sampleValue\"\n        Dim orderBy As String\
-          \ = \"id\"\n        Dim direction As String = \"desc\"\n\n        Try\n\
-          \            ' SearchContactsPaginatedResponse class object\n          \
-          \  Dim result = apiInstance.SearchContacts(page, limit, shared, ids, listId,\
-          \ includeBlocked, query, local, country, orderBy, direction)\n         \
-          \   ' ...\n        Catch e As Exception\n            Console.WriteLine(\"\
-          Exception when calling searchContacts: \" + e.Message)\n        End Try\n\
-          \    End Sub\nEnd Module"
+          \  Dim exactMatch As Integer = 0\n        Dim country As String = \"sampleValue\"\
+          \n        Dim orderBy As String = \"id\"\n        Dim direction As String\
+          \ = \"desc\"\n\n        Try\n            ' SearchContactsPaginatedResponse\
+          \ class object\n            Dim result = apiInstance.SearchContacts(page,\
+          \ limit, shared, ids, listId, includeBlocked, query, local, exactMatch,\
+          \ country, orderBy, direction)\n            ' ...\n        Catch e As Exception\n\
+          \            Console.WriteLine(\"Exception when calling searchContacts:\
+          \ \" + e.Message)\n        End Try\n    End Sub\nEnd Module"
       - lang: "Go"
         source: "// How to install SDK see here https://docs.textmagic.com/#section/Go\n\
           package main\n\nimport (\n    \"context\"\n    \"fmt\"\n    \"github.com/antihax/optional\"\
@@ -6607,12 +6605,13 @@ paths:
           \        Shared: optional.NewInt32(0),\n        Ids: optional.NewString(\"\
           sampleValue\"),\n        ListId: optional.NewInt32(1),\n        IncludeBlocked:\
           \ optional.NewInt32(1),\n        Query: optional.NewString(\"sampleValue\"\
-          ),\n        Local: optional.NewInt32(0),\n        Country: optional.NewString(\"\
-          sampleValue\"),\n        OrderBy: optional.NewString(\"id\"),\n        Direction:\
-          \ optional.NewString(\"desc\"),\n    }\n\n    // tm.SearchContactsPaginatedResponse\
-          \ struct\n    result, _, err := client.TextMagicApi.SearchContacts(auth,\
-          \ &opts)\n\n    if err != nil {\n        log.Fatal(err)\n    } else {\n\
-          \        fmt.Printf(\"%+v\\n\", result)\n        // ...\n    }\n}\n"
+          ),\n        Local: optional.NewInt32(0),\n        ExactMatch: optional.NewInt32(0),\n\
+          \        Country: optional.NewString(\"sampleValue\"),\n        OrderBy:\
+          \ optional.NewString(\"id\"),\n        Direction: optional.NewString(\"\
+          desc\"),\n    }\n\n    // tm.SearchContactsPaginatedResponse struct\n  \
+          \  result, _, err := client.TextMagicApi.SearchContacts(auth, &opts)\n\n\
+          \    if err != nil {\n        log.Fatal(err)\n    } else {\n        fmt.Printf(\"\
+          %+v\\n\", result)\n        // ...\n    }\n}\n"
       - lang: "Cpp"
         source: "// How to install SDK see here https://docs.textmagic.com/#section/C++\n\
           #include <iostream>\n#include <fstream>\n// Change paths to directory where\
@@ -6628,11 +6627,12 @@ paths:
           \ if you want to use default value then pass boost::none value\n    int\
           \ page = 1;\n    int limit = 10;\n    int shared = 0;\n    std::string ids\
           \ = \"sampleValue\";\n    int listId = 1;\n    int includeBlocked = 1;\n\
-          \    std::string query = \"sampleValue\";\n    int local = 0;\n    std::string\
-          \ country = \"sampleValue\";\n    std::string orderBy = \"id\";\n    std::string\
-          \ direction = \"desc\";\n\n    try {\n        pplx::task<std::shared_ptr<SearchContactsPaginatedResponse>>\
-          \ result = api.searchContacts(page, limit, shared, ids, listId, includeBlocked,\
-          \ query, local, country, orderBy, direction);\n        result.wait();\n\
+          \    std::string query = \"sampleValue\";\n    int local = 0;\n    int exactMatch\
+          \ = 0;\n    std::string country = \"sampleValue\";\n    std::string orderBy\
+          \ = \"id\";\n    std::string direction = \"desc\";\n\n    try {\n      \
+          \  pplx::task<std::shared_ptr<SearchContactsPaginatedResponse>> result =\
+          \ api.searchContacts(page, limit, shared, ids, listId, includeBlocked, query,\
+          \ local, exactMatch, country, orderBy, direction);\n        result.wait();\n\
           \        // put operations with result here...\n    } catch(const std::exception&\
           \ e) {\n        std::cout << \"searchContacts() exception: \" << e.what()\
           \ << '\\n';\n    }\n\n    return 0;\n}"
@@ -6645,13 +6645,13 @@ paths:
           \ = TextMagic.TextMagicApi(TextMagic.ApiClient(configuration))\n\n# Optional\
           \ params, you can skip them\npage = 1\nlimit = 10\nshared = 0\nids = \"\
           sampleValue\"\nlist_id = 1\ninclude_blocked = 1\nquery = \"sampleValue\"\
-          \nlocal = 0\ncountry = \"sampleValue\"\norder_by = \"id\"\ndirection = \"\
-          desc\"\n\ntry:\n    # SearchContactsPaginatedResponse object\n    result\
-          \ = api_instance.search_contacts(page=page, limit=limit, shared=shared,\
+          \nlocal = 0\nexact_match = 0\ncountry = \"sampleValue\"\norder_by = \"id\"\
+          \ndirection = \"desc\"\n\ntry:\n    # SearchContactsPaginatedResponse object\n\
+          \    result = api_instance.search_contacts(page=page, limit=limit, shared=shared,\
           \ ids=ids, list_id=list_id, include_blocked=include_blocked, query=query,\
-          \ local=local, country=country, order_by=order_by, direction=direction)\n\
-          \    # ...\nexcept ApiException as e:\n    print(\"Exception when calling\
-          \ TextMagicApi->search_contacts: %s\\n\" % e)\n"
+          \ local=local, exact_match=exact_match, country=country, order_by=order_by,\
+          \ direction=direction)\n    # ...\nexcept ApiException as e:\n    print(\"\
+          Exception when calling TextMagicApi->search_contacts: %s\\n\" % e)\n"
       - lang: "Perl"
         source: "# How to install SDK see here https://docs.textmagic.com/#section/Perl\n\
           use 5.010;\nuse strict;\nuse warnings;\nuse Net::Sms::TextMagicClient::ApiClient;\n\
@@ -6662,14 +6662,15 @@ paths:
           \ = Net::Sms::TextMagicClient::TextMagicApi::->new($client);\n\n# Optional\
           \ params, you can skip them\nmy $page = 1;\nmy $limit = 10;\nmy $shared\
           \ = 0;\nmy $ids = 'sampleValue';\nmy $listId = 1;\nmy $includeBlocked =\
-          \ 1;\nmy $query = 'sampleValue';\nmy $local = 0;\nmy $country = 'sampleValue';\n\
-          my $orderBy = 'id';\nmy $direction = 'desc';\n\neval {\n    # SearchContactsPaginatedResponse\
-          \ object\n    my $result = $api_instance->search_contacts(page => $page,\
-          \ limit => $limit, shared => $shared, ids => $ids, listId => $listId, includeBlocked\
-          \ => $includeBlocked, query => $query, local => $local, country => $country,\
-          \ orderBy => $orderBy, direction => $direction);\n    # ...\n};\n\nif ($@)\
-          \ {\n    warn \"Exception when calling TextMagicApi->search_contacts: $@\\\
-          n\";\n}"
+          \ 1;\nmy $query = 'sampleValue';\nmy $local = 0;\nmy $exactMatch = 0;\n\
+          my $country = 'sampleValue';\nmy $orderBy = 'id';\nmy $direction = 'desc';\n\
+          \neval {\n    # SearchContactsPaginatedResponse object\n    my $result =\
+          \ $api_instance->search_contacts(page => $page, limit => $limit, shared\
+          \ => $shared, ids => $ids, listId => $listId, includeBlocked => $includeBlocked,\
+          \ query => $query, local => $local, exactMatch => $exactMatch, country =>\
+          \ $country, orderBy => $orderBy, direction => $direction);\n    # ...\n\
+          };\n\nif ($@) {\n    warn \"Exception when calling TextMagicApi->search_contacts:\
+          \ $@\\n\";\n}"
   /api/v2/contacts/autocomplete:
     get:
       tags:
@@ -6817,24 +6818,7 @@ paths:
           \    if err != nil {\n        log.Fatal(err)\n    } else {\n        fmt.Printf(\"\
           %+v\\n\", result)\n        // ...\n    }\n}\n"
       - lang: "Cpp"
-        source: "// How to install SDK see here https://docs.textmagic.com/#section/C++\n\
-          #include <iostream>\n#include <fstream>\n// Change paths to directory where\
-          \ SDK lib is installed. See C++ SDK installation instructions for more details\n\
-          #include \"textmagic-rest-cpp/ApiClient.h\"\n#include \"textmagic-rest-cpp/ApiConfiguration.h\"\
-          \n#include \"textmagic-rest-cpp/api/TextMagicApi.h\"\n\nusing namespace\
-          \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
-          \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
-          \ ApiConfiguration);\n\n    // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
-          \ page.\n    apiConfig->getHttpConfig().set_credentials(web::credentials(\"\
-          YOUR_NAME\", \"YOUR_API_KEY\"));\n    apiClient->setConfiguration(apiConfig);\n\
-          \n    TextMagicApi api(apiClient);\n\n    std::string query = \"A\";\n \
-          \   // Optional parameters. Important: if you want to use default value\
-          \ then pass boost::none value\n    int limit = 10;\n    int lists = 0;\n\
-          \n    try {\n        pplx::task<std::shared_ptr<GetContactsAutocompleteResponse>>\
-          \ result = api.getContactsAutocomplete(query, limit, lists);\n        result.wait();\n\
-          \        // put operations with result here...\n    } catch(const std::exception&\
-          \ e) {\n        std::cout << \"getContactsAutocomplete() exception: \" <<\
-          \ e.what() << '\\n';\n    }\n\n    return 0;\n}"
+        source: "Not supported yet."
       - lang: "Python"
         source: "# How to install SDK see here https://docs.textmagic.com/#section/Python\n\
           import TextMagic\nfrom TextMagic.rest import ApiException\n\nconfiguration\
@@ -26548,7 +26532,6 @@ definitions:
     properties:
       verifyId:
         type: "string"
-        format: "uuid"
         example: "123e4567-e89b-12d3-a456-426655440000"
         description: "The ID of a verification request. This is required to finish\
           \ the verification request in the next step."
@@ -26564,8 +26547,13 @@ definitions:
     type: "object"
     required:
     - "ping"
+    - "userId"
     - "utcDateTime"
     properties:
+      userId:
+        type: "integer"
+        example: 123
+        description: "Current user Id."
       ping:
         type: "string"
         example: "pong"
@@ -26577,6 +26565,7 @@ definitions:
     example:
       ping: "pong"
       utcDateTime: "2019-01-01T00:00:00.000Z"
+      userId: 123
   GetContactImportSessionProgressResponse:
     required:
     - "processed"

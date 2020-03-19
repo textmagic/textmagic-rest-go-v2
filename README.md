@@ -11,7 +11,7 @@ TextMagic’s application programming interface (API) provides the communication
 
 With go.mod:
 ```bash
-go get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1073
+go get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1307
 ```
 
 Without go.mod:
@@ -44,9 +44,10 @@ func main() {
     cfg.BasePath = "https://rest.textmagic.com"
     client := tm.NewAPIClient(cfg)
 
+    // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys page.
     auth := context.WithValue(context.Background(), tm.ContextBasicAuth, tm.BasicAuth{
         UserName: "YOUR_USERNAME",
-        Password: "YOUR_PASSWORD",
+        Password: "YOUR_API_KEY",
     })
 
     // Simple ping request example

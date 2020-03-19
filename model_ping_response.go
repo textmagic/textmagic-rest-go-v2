@@ -10,6 +10,8 @@
 package TextMagic
 
 type PingResponse struct {
+	// Current user Id.
+	UserId int32 `json:"userId"`
 	// Pong.
 	Ping string `json:"ping"`
 	// Current date and time.

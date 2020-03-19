@@ -13066,6 +13066,7 @@ TextMagicApiService Find contacts by given criteria
      * @param "IncludeBlocked" (optional.Int32) -  Should blocked contacts be included?
      * @param "Query" (optional.String) -  Find contacts by specified search query.
      * @param "Local" (optional.Int32) -  Treat phone number passed in the \&quot;query\&quot; field as local. Default is 0.
+     * @param "ExactMatch" (optional.Int32) -  Return only exactly matching contacts. Default is 0.
      * @param "Country" (optional.String) -  The 2-letter ISO country code for local phone numbers, used when \&quot;local\&quot; is set to true. Default is the account country.
      * @param "OrderBy" (optional.String) -  Order results by some field. Default is id.
      * @param "Direction" (optional.String) -  Order direction. Default is desc.
@@ -13082,6 +13083,7 @@ type SearchContactsOpts struct {
 	IncludeBlocked optional.Int32
 	Query optional.String
 	Local optional.Int32
+	ExactMatch optional.Int32
 	Country optional.String
 	OrderBy optional.String
 	Direction optional.String
@@ -13126,6 +13128,9 @@ func (a *TextMagicApiService) SearchContacts(ctx context.Context, localVarOption
 	}
 	if localVarOptionals != nil && localVarOptionals.Local.IsSet() {
 		localVarQueryParams.Add("local", parameterToString(localVarOptionals.Local.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.ExactMatch.IsSet() {
+		localVarQueryParams.Add("exactMatch", parameterToString(localVarOptionals.ExactMatch.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Country.IsSet() {
 		localVarQueryParams.Add("country", parameterToString(localVarOptionals.Country.Value(), ""))

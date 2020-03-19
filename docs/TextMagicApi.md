@@ -3835,6 +3835,7 @@ Name | Type | Description  | Notes
  **includeBlocked** | **optional.Int32**| Should blocked contacts be included? | 
  **query** | **optional.String**| Find contacts by specified search query. | 
  **local** | **optional.Int32**| Treat phone number passed in the \&quot;query\&quot; field as local. Default is 0. | [default to 0]
+ **exactMatch** | **optional.Int32**| Return only exactly matching contacts. Default is 0. | [default to 0]
  **country** | **optional.String**| The 2-letter ISO country code for local phone numbers, used when \&quot;local\&quot; is set to true. Default is the account country. | 
  **orderBy** | **optional.String**| Order results by some field. Default is id. | [default to id]
  **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]

@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**UserId** | **int32** | Current user Id. | [default to null]
 **Ping** | **string** | Pong. | [default to null]
 **UtcDateTime** | **string** | Current date and time. | [default to null]
 
