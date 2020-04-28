@@ -277,17 +277,16 @@ tags:
     \ the server will respond with the correct response code. This way, you can ensure\
     \ that the recipient really owns the phone number entered into your app or form.\n\
     \n## Verification workflow\n\nTextMagic verification API sends a PIN code by text\
-    \ message and follows up with two subsequent voice calls if the request wasn’\
-    t completed or canceled. Below you will find the description of the default workflow.\n\
-    \n1.  Send **a text message** with a verification code.\n2.  _Wait for 60 seconds._\n\
-    3.  If the correct code was not supplied, send **the first text-to-speech**\_\
-    voice call.\n4.  _Wait for 60 seconds._\n5.  If the code was not supplied, send\
-    \ **the second text-to-speech**\_voice call.\n6.  _Wait for the verification._\
-    \ The verification code is **valid for 5 minutes** from the time of the initial\
-    \ request.\n\n> **Please note:**\_Submitting another verification request for\
-    \ the same phone number before the original code has expired will result in a\
-    \ 409 error code. The new verification request can be submitted only once the\
-    \ previous code has expired (after 5 minutes) or canceled.\n"
+    \ messages or voice calls. Below you will find the description of the default\
+    \ workflow.\n\n1.  Send **a text message** with a verification code.\n2.  _Wait\
+    \ for 60 seconds._\n3.  If the correct code was not supplied, send **the first\
+    \ text-to-speech**\_voice call.\n4.  _Wait for 60 seconds._\n5.  If the code was\
+    \ not supplied, send **the second text-to-speech**\_voice call.\n6.  _Wait for\
+    \ the verification._ The verification code is **valid for 5 minutes** from the\
+    \ time of the initial request.\n\n> **Please note:**\_Submitting another verification\
+    \ request for the same phone number before the original code has expired will\
+    \ result in a 409 error code. The new verification request can be submitted only\
+    \ once the previous code has expired (after 5 minutes) or canceled.\n"
   x-displayName: "Two-factor authentication"
 - name: "Chats"
   description: "In TextMagic, an SMS chat is a convenient grouping of inbound and\
@@ -845,7 +844,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Go application.\n\n[Get it now\
     \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n## Installation\n\
-    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1313\n\
+    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1421\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -26000,12 +25999,12 @@ paths:
           \ GuzzleHttp\\Client(),\n    $config\n);\n\n$input = new SendPhoneVerificationCodeTFAInputObject();\n\
           \n// Required parameters\n$input->setPhone(\"447860021130\");\n$input->setBrand(\"\
           TextMagic\");\n$input->setCodeLength(4);\n\n// Optional parameters, you\
-          \ can skip these setters calls\n$input->setLanguage(\"en-gb\");\n$input->setSenderId(\"\
-          TextMagic\");\n$input->setCountry(\"US\");\n\ntry {\n    // SendPhoneVerificationCodeResponse\
-          \ class object\n    $result = $api->sendPhoneVerificationCodeTFA($input);\n\
-          \    // ...\n} catch (Exception $e) {\n    echo 'Exception when calling\
-          \ TextMagicApi->sendPhoneVerificationCodeTFA: ', $e->getMessage(), PHP_EOL;\n\
-          }"
+          \ can skip these setters calls\n$input->setWorkflowId(\"6\");\n$input->setLanguage(\"\
+          en-gb\");\n$input->setSenderId(\"TextMagic\");\n$input->setCountry(\"US\"\
+          );\n\ntry {\n    // SendPhoneVerificationCodeResponse class object\n   \
+          \ $result = $api->sendPhoneVerificationCodeTFA($input);\n    // ...\n} catch\
+          \ (Exception $e) {\n    echo 'Exception when calling TextMagicApi->sendPhoneVerificationCodeTFA:\
+          \ ', $e->getMessage(), PHP_EOL;\n}"
       - lang: "Java"
         source: "// How to install SDK see here https://docs.textmagic.com/#section/Java\n\
           import com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
@@ -26020,9 +26019,9 @@ paths:
           \ input = new SendPhoneVerificationCodeTFAInputObject();\n\n        // Required\
           \ parameters\n        input.setPhone(\"447860021130\");\n        input.setBrand(\"\
           TextMagic\");\n        input.setCodeLength(4);\n\n        // Optional parameters,\
-          \ you can skip these setters calls\n        input.setLanguage(\"en-gb\"\
-          );\n        input.setSenderId(\"TextMagic\");\n        input.setCountry(\"\
-          US\");\n\n        try {\n            // SendPhoneVerificationCodeResponse\
+          \ you can skip these setters calls\n        input.setWorkflowId(\"6\");\n\
+          \        input.setLanguage(\"en-gb\");\n        input.setSenderId(\"TextMagic\"\
+          );\n        input.setCountry(\"US\");\n\n        try {\n            // SendPhoneVerificationCodeResponse\
           \ class object\n            SendPhoneVerificationCodeResponse obj = apiInstance.sendPhoneVerificationCodeTFA(input);\n\
           \            // ...\n        } catch (ApiException e) {\n            System.err.println(\"\
           Exception when calling sendPhoneVerificationCodeTFA\");\n            e.printStackTrace();\n\
@@ -26034,8 +26033,9 @@ paths:
           \n// put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
           \ page.\nauth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\
           \nconst input = {\n    phone: \"447860021130\",\n    brand: \"TextMagic\"\
-          ,\n    codeLength: 4,\n    // Optional parameters\n    language: \"en-gb\"\
-          ,\n    senderId: \"TextMagic\",\n    country: \"US\",\n}\n\n\napi.sendPhoneVerificationCodeTFA(input).then(function\
+          ,\n    codeLength: 4,\n    // Optional parameters\n    workflowId: \"6\"\
+          ,\n    language: \"en-gb\",\n    senderId: \"TextMagic\",\n    country:\
+          \ \"US\",\n}\n\n\napi.sendPhoneVerificationCodeTFA(input).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
@@ -26046,11 +26046,12 @@ paths:
           \ = 'YOUR_API_KEY'\nend\n\napi = TextMagic::TextMagicApi.new\n\nobj = new\
           \ TextMagic::SendPhoneVerificationCodeTFAInputObject.new\n\n# Required parameters\n\
           obj.phone = \"447860021130\"\nobj.brand = \"TextMagic\"\nobj.code_length\
-          \ = 4\n# Optional parameters, you can skip them\nobj.language = \"en-gb\"\
-          \nobj.sender_id = \"TextMagic\"\nobj.country = \"US\"\n\nbegin\n    # SendPhoneVerificationCodeResponse\
-          \ object\n    result = api.send_phone_verification_code_t_f_a(input)\n \
-          \   # ...\nrescue TextMagic::ApiError => e\n    puts \"Exception when calling\
-          \ TextMagicApi->send_phone_verification_code_t_f_a: #{e}\"\nend"
+          \ = 4\n# Optional parameters, you can skip them\nobj.workflow_id = \"6\"\
+          \nobj.language = \"en-gb\"\nobj.sender_id = \"TextMagic\"\nobj.country =\
+          \ \"US\"\n\nbegin\n    # SendPhoneVerificationCodeResponse object\n    result\
+          \ = api.send_phone_verification_code_t_f_a(input)\n    # ...\nrescue TextMagic::ApiError\
+          \ => e\n    puts \"Exception when calling TextMagicApi->send_phone_verification_code_t_f_a:\
+          \ #{e}\"\nend"
       - lang: "C#"
         source: "// How to install SDK see here https://docs.textmagic.com/#section/C-VB.NET\n\
           using System;\nusing System.IO;\nusing TextMagicClient.Api;\nusing TextMagicClient.Client;\n\
@@ -26063,10 +26064,11 @@ paths:
           \ = new SendPhoneVerificationCodeTFAInputObject();\n\n            // Required\
           \ parameters\n            obj.Phone = \"447860021130\";\n            obj.Brand\
           \ = \"TextMagic\";\n            obj.CodeLength = 4;\n\n            // Optional\
-          \ parameters, you can skip these setters calls\n            obj.Language\
-          \ = \"en-gb\";\n            obj.SenderId = \"TextMagic\";\n            obj.Country\
-          \ = \"US\";\n\n            try {\n                // SendPhoneVerificationCodeResponse\
-          \ class object\n                var result = apiInstance.SendPhoneVerificationCodeTFA(obj);\n\
+          \ parameters, you can skip these setters calls\n            obj.WorkflowId\
+          \ = \"6\";\n            obj.Language = \"en-gb\";\n            obj.SenderId\
+          \ = \"TextMagic\";\n            obj.Country = \"US\";\n\n            try\
+          \ {\n                // SendPhoneVerificationCodeResponse class object\n\
+          \                var result = apiInstance.SendPhoneVerificationCodeTFA(obj);\n\
           \                // ...\n            } catch (Exception e) {\n         \
           \       Console.WriteLine(\"Exception when calling sendPhoneVerificationCodeTFA:\
           \ \"+e.Message);\n            }\n        }\n    }\n}"
@@ -26079,14 +26081,15 @@ paths:
           \ Configuration.Default.Username = \"YOUR_USERNAME\"\n        Configuration.Default.Password\
           \ = \"YOUR_API_KEY\"\n\n        Dim apiInstance = New TextMagicApi()\n\n\
           \        Dim obj = New SendPhoneVerificationCodeTFAInputObject With {\n\
-          \            .Phone = \"447860021130\",\n            .Brand = \"TextMagic\"\
-          ,\n            .CodeLength = 4,\n            .Language = \"en-gb\",\n  \
-          \          .SenderId = \"TextMagic\",\n            .Country = \"US\"\n \
-          \       }\n\n        Try\n            ' SendPhoneVerificationCodeResponse\
-          \ class object\n            Dim result = apiInstance.SendPhoneVerificationCodeTFA(obj)\n\
-          \            ' ...\n        Catch e As Exception\n            Console.WriteLine(\"\
-          Exception when calling sendPhoneVerificationCodeTFA: \" + e.Message)\n \
-          \       End Try\n    End Sub\nEnd Module"
+          \            .Phone = \"447860021130\",\n            .WorkflowId = \"6\"\
+          ,\n            .Brand = \"TextMagic\",\n            .CodeLength = 4,\n \
+          \           .Language = \"en-gb\",\n            .SenderId = \"TextMagic\"\
+          ,\n            .Country = \"US\"\n        }\n\n        Try\n           \
+          \ ' SendPhoneVerificationCodeResponse class object\n            Dim result\
+          \ = apiInstance.SendPhoneVerificationCodeTFA(obj)\n            ' ...\n \
+          \       Catch e As Exception\n            Console.WriteLine(\"Exception\
+          \ when calling sendPhoneVerificationCodeTFA: \" + e.Message)\n        End\
+          \ Try\n    End Sub\nEnd Module"
       - lang: "Go"
         source: "// How to install SDK see here https://docs.textmagic.com/#section/Go\n\
           package main\n\nimport (\n    \"context\"\n    \"fmt\"\n    \"github.com/antihax/optional\"\
@@ -26100,9 +26103,9 @@ paths:
           ,\n    })\n\n    input := tm.SendMessageInputObject{\n        // Required\
           \ parameters\n        Phone: \"447860021130\",\n        Brand: \"TextMagic\"\
           ,\n        CodeLength: 4,\n        // Optional parameters, you can skip\
-          \ them\n        Language: \"en-gb\",\n        SenderId: \"TextMagic\",\n\
-          \        Country: \"US\",\n    }\n\n    // tm.SendPhoneVerificationCodeResponse\
-          \ struct\n    result, _, err := client.TextMagicApi.SendPhoneVerificationCodeTFA(auth,\
+          \ them\n        WorkflowId: \"6\",\n        Language: \"en-gb\",\n     \
+          \   SenderId: \"TextMagic\",\n        Country: \"US\",\n    }\n\n    //\
+          \ tm.SendPhoneVerificationCodeResponse struct\n    result, _, err := client.TextMagicApi.SendPhoneVerificationCodeTFA(auth,\
           \ input)\n\n    if err != nil {\n        log.Fatal(err)\n    } else {\n\
           \        fmt.Printf(\"%+v\\n\", result)\n        // ...\n    }\n}\n"
       - lang: "Cpp"
@@ -26120,8 +26123,9 @@ paths:
           \ input(new SendPhoneVerificationCodeTFAInputObject);\n    // Required parameters\n\
           \    input->setPhone(\"447860021130\");\n    input->setBrand(\"TextMagic\"\
           );\n    input->setCodeLength(4);\n    // Optional parameters, you can skip\
-          \ them\n    input->setLanguage(\"en-gb\");\n    input->setSenderId(\"TextMagic\"\
-          );\n    input->setCountry(\"US\");\n\n    try {\n        pplx::task<std::shared_ptr<SendPhoneVerificationCodeResponse>>\
+          \ them\n    input->setWorkflowId(\"6\");\n    input->setLanguage(\"en-gb\"\
+          );\n    input->setSenderId(\"TextMagic\");\n    input->setCountry(\"US\"\
+          );\n\n    try {\n        pplx::task<std::shared_ptr<SendPhoneVerificationCodeResponse>>\
           \ result = api.sendPhoneVerificationCodeTFA(input);\n        result.wait();\n\
           \        // put operations with result here...\n    } catch(const std::exception&\
           \ e) {\n        std::cout << \"sendPhoneVerificationCodeTFA() exception:\
@@ -26135,9 +26139,10 @@ paths:
           \ = TextMagic.TextMagicApi(TextMagic.ApiClient(configuration))\n\ninput\
           \ = TextMagic.SendPhoneVerificationCodeTFAInputObject()\n\n# Required parameters\n\
           input.phone = \"447860021130\"\ninput.brand = \"TextMagic\"\ninput.code_length\
-          \ = 4\n# Optional parameters, you can skip them\ninput.language = \"en-gb\"\
-          \ninput.sender_id = \"TextMagic\"\ninput.country = \"US\"\n\ntry:\n    #\
-          \ SendPhoneVerificationCodeResponse object\n    result = api_instance.send_phone_verification_code_t_f_a(send_phone_verification_code_t_f_a_input_object=input)\n\
+          \ = 4\n# Optional parameters, you can skip them\ninput.workflow_id = \"\
+          6\"\ninput.language = \"en-gb\"\ninput.sender_id = \"TextMagic\"\ninput.country\
+          \ = \"US\"\n\ntry:\n    # SendPhoneVerificationCodeResponse object\n   \
+          \ result = api_instance.send_phone_verification_code_t_f_a(send_phone_verification_code_t_f_a_input_object=input)\n\
           \    # ...\nexcept ApiException as e:\n    print(\"Exception when calling\
           \ TextMagicApi->send_phone_verification_code_t_f_a: %s\\n\" % e)\n"
       - lang: "Perl"
@@ -26151,9 +26156,9 @@ paths:
           \nmy $input = Net::Sms::TextMagicClient::Object::SendPhoneVerificationCodeTFAInputObject->new(\n\
           \    # Required parameters\n    phone => '447860021130',\n    brand => 'TextMagic',\n\
           \    codeLength => 4,\n    # Optional parameters, you can skip them\n  \
-          \  language => 'en-gb',\n    senderId => 'TextMagic',\n    country => 'US',\n\
-          );\n\neval {\n    # SendPhoneVerificationCodeResponse object\n    my $result\
-          \ = $api_instance->send_phone_verification_code_t_f_a(send_phone_verification_code_t_f_a_input_object\
+          \  workflowId => '6',\n    language => 'en-gb',\n    senderId => 'TextMagic',\n\
+          \    country => 'US',\n);\n\neval {\n    # SendPhoneVerificationCodeResponse\
+          \ object\n    my $result = $api_instance->send_phone_verification_code_t_f_a(send_phone_verification_code_t_f_a_input_object\
           \ => $input);\n    # ...\n};\n\nif ($@) {\n    warn \"Exception when calling\
           \ TextMagicApi->send_phone_verification_code_t_f_a: $@\\n\";\n}"
     put:
@@ -27510,8 +27515,10 @@ definitions:
     - "chatDeleted"
     - "chatMarkedAsRead"
     - "chatMuted"
+    - "chatPinned"
     - "chatReopened"
     - "chatUnmuted"
+    - "chatUnpinned"
     - "contactAdded"
     - "contactCacheClear"
     - "contactDeleted"
@@ -27613,6 +27620,12 @@ definitions:
         type: "integer"
         example: 1
       chatUnmuted:
+        type: "integer"
+        example: 1
+      chatPinned:
+        type: "integer"
+        example: 1
+      chatUnpinned:
         type: "integer"
         example: 1
       chatDeleted:
@@ -29104,6 +29117,7 @@ definitions:
     - "mutedUntil"
     - "originalId"
     - "phone"
+    - "pinned"
     - "status"
     - "timeLeftMute"
     - "unread"
@@ -29185,10 +29199,16 @@ definitions:
         description: "Time left untill the chat will be unmuted (seconds)."
       country:
         $ref: "#/definitions/Country"
+      pinned:
+        type: "boolean"
+        example: true
+        description: "Indicates when the chat is pinned."
+        x-nullable: true
     example:
       country:
         name: "India"
         id: "US"
+      pinned: true
       unread: 5
       unsubscribedContactId: 546
       lastMessage: "Hello world!"
@@ -33393,6 +33413,7 @@ definitions:
       - country:
           name: "India"
           id: "US"
+        pinned: true
         unread: 5
         unsubscribedContactId: 546
         lastMessage: "Hello world!"
@@ -33608,6 +33629,7 @@ definitions:
       - country:
           name: "India"
           id: "US"
+        pinned: true
         unread: 5
         unsubscribedContactId: 546
         lastMessage: "Hello world!"
@@ -33897,6 +33919,7 @@ definitions:
       - country:
           name: "India"
           id: "US"
+        pinned: true
         unread: 5
         unsubscribedContactId: 546
         lastMessage: "Hello world!"
@@ -34112,6 +34135,7 @@ definitions:
       - country:
           name: "India"
           id: "US"
+        pinned: true
         unread: 5
         unsubscribedContactId: 546
         lastMessage: "Hello world!"
@@ -34354,6 +34378,7 @@ definitions:
       - country:
           name: "India"
           id: "US"
+        pinned: true
         unread: 5
         unsubscribedContactId: 546
         lastMessage: "Hello world!"
@@ -34569,6 +34594,7 @@ definitions:
       - country:
           name: "India"
           id: "US"
+        pinned: true
         unread: 5
         unsubscribedContactId: 546
         lastMessage: "Hello world!"
@@ -34811,6 +34837,7 @@ definitions:
       - country:
           name: "India"
           id: "US"
+        pinned: true
         unread: 5
         unsubscribedContactId: 546
         lastMessage: "Hello world!"
@@ -35026,6 +35053,7 @@ definitions:
       - country:
           name: "India"
           id: "US"
+        pinned: true
         unread: 5
         unsubscribedContactId: 546
         lastMessage: "Hello world!"
@@ -36273,6 +36301,42 @@ definitions:
         description: "Use the phone number in international E.164 format. If you need\
           \ to pass a phone number in the local format, please use it with the **country**\
           \ parameter to specify the origin country\nof the phone number.\n"
+      workflowId:
+        type: "string"
+        example: "6"
+        description: "**Workflows**\n\nThe Verify API allows you to select the best\
+          \ workflow for your use case. This might depend on the type of verification\
+          \ taking place, your users' preference, or their geographical location.\
+          \ You can specify which workflow to use for each Verify API request by setting\
+          \ the workflowId field to an integer value 1-7. The details of each of these\
+          \ preset workflows are detailed below.\n\n<br />\n\n**Workflow 1 (Default\
+          \ Workflow): SMS -> TTS -> TTS**\n\n<br />\n\nSend PIN code by text message,\
+          \ follow up with two subsequent voice calls if the request wasn't already\
+          \ verified.\n\nSend SMS to user with PIN code\nWait for 60 seconds\nCall\
+          \ user and give TTS PIN code\nWait for 60 seconds\nCall user and give TTS\
+          \ PIN code\n\nRequest expires after 300 seconds\n\n<br />\n\n**Workflow\
+          \ 2: SMS -> SMS -> TTS**\n\n<br />\n\n\n\nSend PIN code by text message,\
+          \ follow up with a second text message and finally a voice call if the request\
+          \ has not been verified.\n\nSend SMS to user with PIN code\nWait for 60\
+          \ seconds\nSend SMS to user with PIN code\nWait for 60 seconds\nCall user\
+          \ and give TTS PIN code\n\nRequest expires after 300 seconds\n\n<br />\n\
+          \n**Workflow 3: TTS -> TTS**\n\n<br />\n\n\nCall the user and speak a PIN\
+          \ code, follow up with a second call if the request wasn't already verified.\n\
+          \nCall user and give TTS PIN code\nWait for 60 seconds\nCall user and give\
+          \ TTS PIN code\n\nRequest expires after 300 seconds\n\n<br />\n\n**Workflow\
+          \ 4: SMS -> SMS**\n\n<br />\n\n\n\nSend PIN code by text message, follow\
+          \ up with a second text message if the code hasn't been verified.\n\nSend\
+          \ SMS to user with PIN code\nWait for 60 seconds\nSend SMS to user with\
+          \ PIN code\nWait for 60 seconds\n\nRequest expires after 300 seconds\n\n\
+          <br />\n\n**Workflow 5: SMS -> TTS**\n\n<br />\n\n\nSend PIN code by text\
+          \ message, follow up with a voice call if the code hasn't been verified.\n\
+          \nSend SMS to user with PIN code\nWait for 60 seconds\nCall user and give\
+          \ TTS PIN code\nWait for 60 seconds\n\nRequest expires after 300 seconds\n\
+          \n<br />\n\n**Workflow 6: SMS**\n\n<br />\n\n\nSend PIN code by text message\
+          \ once only.\n\nSend SMS to user with PIN code\nRequest expires after 300\
+          \ seconds\n\n<br />\n\n**Workflow 7: TTS**\n\n<br />\n\nCall the user and\
+          \ speak a PIN code once only.\n\nCall user and give TTS PIN code\n\nRequest\
+          \ expires after 300 seconds\n"
       brand:
         type: "string"
         example: "TextMagic"

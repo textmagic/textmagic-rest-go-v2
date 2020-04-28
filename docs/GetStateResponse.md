@@ -27,6 +27,8 @@ Name | Type | Description | Notes
 **ChatMarkedAsRead** | **int32** |  | [default to null]
 **ChatMuted** | **int32** |  | [default to null]
 **ChatUnmuted** | **int32** |  | [default to null]
+**ChatPinned** | **int32** |  | [default to null]
+**ChatUnpinned** | **int32** |  | [default to null]
 **ChatDeleted** | **int32** |  | [default to null]
 **ChatClosed** | **int32** |  | [default to null]
 **ChatReopened** | **int32** |  | [default to null]

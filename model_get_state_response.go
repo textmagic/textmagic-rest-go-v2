@@ -34,6 +34,8 @@ type GetStateResponse struct {
 	ChatMarkedAsRead int32 `json:"chatMarkedAsRead"`
 	ChatMuted int32 `json:"chatMuted"`
 	ChatUnmuted int32 `json:"chatUnmuted"`
+	ChatPinned int32 `json:"chatPinned"`
+	ChatUnpinned int32 `json:"chatUnpinned"`
 	ChatDeleted int32 `json:"chatDeleted"`
 	ChatClosed int32 `json:"chatClosed"`
 	ChatReopened int32 `json:"chatReopened"`

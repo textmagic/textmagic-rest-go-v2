@@ -41,4 +41,6 @@ type Chat struct {
 	// Time left untill the chat will be unmuted (seconds).
 	TimeLeftMute int32 `json:"timeLeftMute"`
 	Country *Country `json:"country"`
+	// Indicates when the chat is pinned.
+	Pinned bool `json:"pinned"`
 }
