@@ -162,13 +162,33 @@ tags:
     \ characters count.|**name**|`screen.png`|Original file name that will be displayed\
     \ on the download/preview page.|\n|**size**|`1094`|Attachment size in bytes.|\n\
     \nIt's as simple as that. Now you can send a text message with this link as described\
-    \ above.\n\n# Delivery status callback\n\nA callback is a mechanism that posts\
-    \ the JSON body of a sent message to the URL on a server that you specify. The\
-    \ server application which receives the callback can check the message status\
-    \ and trigger actions based on that data.\n\nHere is how to set up the delivery\
-    \ status callback URL:\n\n1.  [Log in](https://my.textmagic.com/) to TextMagic\
-    \ (or [start a free trial](https://my.textmagic.com/register/) if you haven’t\
-    \ registered yet).\n2.  Go to the\_[API](https://my.textmagic.com/online/api/rest-api/keys)\
+    \ above.\n\n## How to send a MMS message \n\nText messages can include only text\
+    \ symbols. TextMagic offers an MMS feature that allows you to upload your document\
+    \ or picture to the TextMagic servers and get a short resource name to use it.\
+    \ To send MMS you just need to pass the resource name into special param in sending\
+    \ request [see more](https://docs.textmagic.com/#operation/sendMessage).\n\nTo\
+    \ upload an mms attachment, use:\n\n> POST https://rest.textmagic.com/api/v2/messages/mms/attachment\n\
+    \nwith a single parameter:\n\n|Parameter|Value|Description|\n|---------|-----|-----------|\n\
+    |**file**|`[multipart/form-data]`|Your request with attachment should be sent\
+    \ in `multipart/form-data` format.**Note:** Only .jpg, .gif, .png, .pdf, .txt,\
+    \ .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx & .vcf attachment files up to 10\
+    \ MB are supported.|\n\nYou will receive a result like this:\n\n|Parameter|Example|Description|\n\
+    |---------|-------|-----------|\n|**href**|`click/Zwcj9`|This is a relative link\
+    \ to your file. To construct a full link, just add “https://my.textmagic.com/”\
+    \ to the beginning (like this: [https://my.textmagic.com/click/Zwcj9](https://my.textmagic.com/click/Zwcj9)).\
+    \ For most modern devices, you can omit “https://” part and write just [my.textmagic.com/click/Zwcj9](https://my.textmagic.com/click/Zwcj9),\
+    \ it will save you 8 characters.|\n|**chars**|`/api/v2/sessions/11`|`href` field\
+    \ characters count.|**name**|`screen.png`|Original file name that will be displayed\
+    \ on the download/preview page.|\n|**size**|`1094`|Attachment size in bytes.|\n\
+    |**resource**|`dasgfdsgdfdfgdfgdf.jpeg`|Internal file name will use in message\
+    \ sending request [see more](https://docs.textmagic.com/#operation/sendMessage).\n\
+    \nIt's as simple as that. Now you can send an MMS message.\n\n# Delivery status\
+    \ callback\n\nA callback is a mechanism that posts the JSON body of a sent message\
+    \ to the URL on a server that you specify. The server application which receives\
+    \ the callback can check the message status and trigger actions based on that\
+    \ data.\n\nHere is how to set up the delivery status callback URL:\n\n1.  [Log\
+    \ in](https://my.textmagic.com/) to TextMagic (or [start a free trial](https://my.textmagic.com/register/)\
+    \ if you haven’t registered yet).\n2.  Go to the\_[API](https://my.textmagic.com/online/api/rest-api/keys)\
     \ page.\n3.  Enter your callback URL into the\_**Callback URL for delivery notifications**\
     \ field.\n4.  Click the\_**Test** button to test your URL.\n5.  If it’s successful,\
     \ click **Save changes**.\n\nYour server should reply with an **200 OK** response\
@@ -540,7 +560,7 @@ tags:
     \n```javascript\n{\n    \"repositories\": [\n        {\n            \"type\":\
     \ \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
     \n        }\n    ],\n    \"require\": {\n        \"textmagic/textmagic-rest-php-v2\"\
-    : \"dev-master#v2.0.1423\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
+    : \"dev-master#v2.0.1484\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
     \ Manual Installation\n\nDownload the files and include `autoload.php`:\n\n```php\n\
     require_once(__DIR__.'/vendor/autoload.php');\n```\n\n## Usage Example\n\nPlease\
     \ follow the [installation](#installation) instructions and execute the following\
@@ -569,7 +589,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Node.js application.\n\n[Get\
     \ it now on GitHub](https://github.com/textmagic/textmagic-rest-nodejs-v2)\n##\
-    \ Installation\n\n```shell\nnpm install textmagic-client@2.0.1423 --save\n```\n\
+    \ Installation\n\n```shell\nnpm install textmagic-client@2.0.1484 --save\n```\n\
     \n## Usage Example\n\nPlease follow the [installation](#installation) instructions\
     \ and execute the following JS code:\n\n```javascript\nconst textmagicClient =\
     \ require('textmagic-client');\n\nconst fs = require('fs');\nconst client = textmagicClient.ApiClient.instance;\n\
@@ -594,9 +614,9 @@ tags:
     \ Requirements\n\n1. Java 1.7+\n2. Maven/Gradle\n\n## Installation\n\n### Maven\n\
     \nAdd this dependency to your project's POM:\n```xml\n<dependencies>\n    <dependency>\n\
     \        <groupId>com.textmagic.sdk</groupId>\n        <artifactId>textmagic-java-sdk</artifactId>\n\
-    \        <version>2.0.1423</version>\n    </dependency>\n</dependencies>\n```\n\
+    \        <version>2.0.1484</version>\n    </dependency>\n</dependencies>\n```\n\
     \n### Gradle\n\nAdd this dependency to your project’s build file:\n```groovy\n\
-    compile \"com.textmagic.sdk:textmagic-java-sdk:2.0.1423\"\n```\n\n## Usage Example\n\
+    compile \"com.textmagic.sdk:textmagic-java-sdk:2.0.1484\"\n```\n\n## Usage Example\n\
     \n```java\nimport com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
     import com.textmagic.sdk.auth.*;\nimport com.textmagic.sdk.model.*;\n\npublic\
     \ class App {\n\n    public static void main(String[] args) {\n        ApiClient\
@@ -642,7 +662,7 @@ tags:
     Install-Package Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp\
     \ versions later than 105.1.0 have a bug which causes file uploads to fail. See\
     \ [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\n## Installation\n\
-    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.1423/).\n\
+    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.1484/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -707,22 +727,22 @@ tags:
     \n* CMake 2.8 and later (https://cmake.org/)\n* cpprest (https://github.com/microsoft/cpprestsdk)\n\
     \nUbuntu dependencies quick installation example:\n```shell\napt-get install build-essential\
     \ cmake libcpprest-dev\n```\n\n## Installation\n\nDownload and extract lib archive:\n\
-    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.1423.tar.gz\
-    \ && \\\ntar zxf v2.0.1423.tar.gz && \\\nrm -f v2.0.1423.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.1423\n\
+    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.1484.tar.gz\
+    \ && \\\ntar zxf v2.0.1484.tar.gz && \\\nrm -f v2.0.1484.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.1484\n\
     ```\nBuild using cmake\n```shell\ncmake . && cmake --build .\n```\nThe output\
-    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.1423/lib` directory:\n\
+    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.1484/lib` directory:\n\
     \n## Usage Example\nIn the example below, we assume that you moved the library\
-    \ sources `textmagic-rest-cpp-v2-2.0.1423` directory to your test project root\
+    \ sources `textmagic-rest-cpp-v2-2.0.1484` directory to your test project root\
     \ directory.\n\nConfigure your `CMakeLists.txt` as shown here:\n```shell\ncmake_minimum_required(VERSION\
     \ 2.8)\nproject(test)\n\nset(CMAKE_CXX_STANDARD 14)\n\nadd_executable(app main.cpp)\n\
     \nadd_library(textmagic_client SHARED IMPORTED)\nset_property(TARGET textmagic_client\
-    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.1423/lib/libtextmagic_client.so\"\
-    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.1423\
-    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.1423/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.1423/api)\n\
+    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.1484/lib/libtextmagic_client.so\"\
+    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.1484\
+    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.1484/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.1484/api)\n\
     target_link_libraries(app boost_system cpprest crypto textmagic_client )\n```\n\
     \n`main.cpp` file example:\n```cpp\n#include <iostream>\n#include <fstream>\n\
-    #include \"textmagic-rest-cpp-v2-2.0.1423/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.1423/ApiConfiguration.h\"\
-    \n#include \"textmagic-rest-cpp-v2-2.0.1423/api/TextMagicApi.h\"\n\nusing namespace\
+    #include \"textmagic-rest-cpp-v2-2.0.1484/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.1484/ApiConfiguration.h\"\
+    \n#include \"textmagic-rest-cpp-v2-2.0.1484/api/TextMagicApi.h\"\n\nusing namespace\
     \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
     \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
     \ ApiConfiguration);\n\n    // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
@@ -762,7 +782,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Python application.\n\n[Get it\
     \ now on GitHub](https://github.com/textmagic/textmagic-rest-python-v2)\n## Requirements\n\
-    Python 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.1423\n\
+    Python 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.1484\n\
     ```\n\n## Usage Example\n\n```python\nimport TextMagic\nfrom TextMagic.rest import\
     \ ApiException\n\n# put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
     \ page.\nconfiguration = TextMagic.Configuration()\nconfiguration.username = 'YOUR_USERNAME'\n\
@@ -787,8 +807,8 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Perl application.\n\n[Get it\
     \ now on GitHub](https://github.com/textmagic/textmagic-rest-perl-v2)\n## Installation\n\
-    \n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.1423.tar.gz\
-    \ && \\\ntar zxf v2.0.1423.tar.gz && \\\nrm -f v2.0.1423.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.1423\
+    \n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.1484.tar.gz\
+    \ && \\\ntar zxf v2.0.1484.tar.gz && \\\nrm -f v2.0.1484.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.1484\
     \ && \\\nperl Makefile.pl && \\\nmake && \\\nmake install && \\\ncpanm --installdeps\
     \ .\n```\\\n\n## Usage Example\n\nPlease follow the [installation](#installation)\
     \ instructions and execute the following Perl code:\n\n```perl\nuse 5.010;\nuse\
@@ -818,7 +838,7 @@ tags:
     \ by integrating TextMagic SMS Gateway into your Ruby application.\n\n[Get it\
     \ now on GitHub](https://github.com/textmagic/textmagic-rest-ruby-v2)\n## Installation\n\
     \nAdd these lines into your Gemfile\n```ruby\ngem 'textmagic_rest_client', :git\
-    \ => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.1423'\n\
+    \ => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.1484'\n\
     ```\n\nRun the bundler install command\n``` shell\nbundle install\n```\n\n## Usage\
     \ Example\n\nCreate the test file `test.rb` and put the following code:\n```ruby\n\
     \ # Load the gem\nrequire 'textmagic_rest_client'\n\n # Setup authorization\n\
@@ -844,7 +864,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Go application.\n\n[Get it now\
     \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n## Installation\n\
-    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1423\n\
+    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1484\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -16482,9 +16502,10 @@ paths:
           1,2,3,4\");\n$input->setCutExtra(true);\n$input->setPartsCount(6);\n$input->setReferenceId(1);\n\
           $input->setFrom(\"Test sender id\");\n$input->setRrule(\"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"\
           );\n$input->setCreateChat(false);\n$input->setTts(false);\n$input->setLocal(false);\n\
-          $input->setLocalCountry(\"US\");\n\ntry {\n    // SendMessageResponse class\
-          \ object\n    $result = $api->sendMessage($input);\n    // ...\n} catch\
-          \ (Exception $e) {\n    echo 'Exception when calling TextMagicApi->sendMessage:\
+          $input->setLocalCountry(\"US\");\n$input->setDestination(\"mms\");\n$input->setResources(\"\
+          tmauKcSmwflB77kLQ15904023426649.jpg\");\n\ntry {\n    // SendMessageResponse\
+          \ class object\n    $result = $api->sendMessage($input);\n    // ...\n}\
+          \ catch (Exception $e) {\n    echo 'Exception when calling TextMagicApi->sendMessage:\
           \ ', $e->getMessage(), PHP_EOL;\n}"
       - lang: "Java"
         source: "// How to install SDK see here https://docs.textmagic.com/#section/Java\n\
@@ -16508,9 +16529,10 @@ paths:
           \   input.setFrom(\"Test sender id\");\n        input.setRrule(\"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"\
           );\n        input.setCreateChat(false);\n        input.setTts(false);\n\
           \        input.setLocal(false);\n        input.setLocalCountry(\"US\");\n\
-          \n        try {\n            // SendMessageResponse class object\n     \
-          \       SendMessageResponse obj = apiInstance.sendMessage(input);\n    \
-          \        // ...\n        } catch (ApiException e) {\n            System.err.println(\"\
+          \        input.setDestination(\"mms\");\n        input.setResources(\"tmauKcSmwflB77kLQ15904023426649.jpg\"\
+          );\n\n        try {\n            // SendMessageResponse class object\n \
+          \           SendMessageResponse obj = apiInstance.sendMessage(input);\n\
+          \            // ...\n        } catch (ApiException e) {\n            System.err.println(\"\
           Exception when calling sendMessage\");\n            e.printStackTrace();\n\
           \        }\n    }\n}"
       - lang: "JavaScript"
@@ -16526,7 +16548,8 @@ paths:
           ,\n    cutExtra: true,\n    partsCount: 6,\n    referenceId: 1,\n    from:\
           \ \"Test sender id\",\n    rrule: \"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"\
           ,\n    createChat: false,\n    tts: false,\n    local: false,\n    localCountry:\
-          \ \"US\",\n}\n\n\napi.sendMessage(input).then(function (data) {\n    console.log(data);\n\
+          \ \"US\",\n    destination: \"mms\",\n    resources: \"tmauKcSmwflB77kLQ15904023426649.jpg\"\
+          ,\n}\n\n\napi.sendMessage(input).then(function (data) {\n    console.log(data);\n\
           }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "# How to install SDK see here https://docs.textmagic.com/#section/Ruby\n\
@@ -16542,7 +16565,8 @@ paths:
           1,2,3,4\"\nobj.cut_extra = true\nobj.parts_count = 6\nobj.reference_id =\
           \ 1\nobj.from = \"Test sender id\"\nobj.rrule = \"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"\
           \nobj.create_chat = false\nobj.tts = false\nobj.local = false\nobj.local_country\
-          \ = \"US\"\n\nbegin\n    # SendMessageResponse object\n    result = api.send_message(input)\n\
+          \ = \"US\"\nobj.destination = \"mms\"\nobj.resources = \"tmauKcSmwflB77kLQ15904023426649.jpg\"\
+          \n\nbegin\n    # SendMessageResponse object\n    result = api.send_message(input)\n\
           \    # ...\nrescue TextMagic::ApiError => e\n    puts \"Exception when calling\
           \ TextMagicApi->send_message: #{e}\"\nend"
       - lang: "C#"
@@ -16566,11 +16590,12 @@ paths:
           ;\n            obj.Rrule = \"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"\
           ;\n            obj.CreateChat = false;\n            obj.Tts = false;\n \
           \           obj.Local = false;\n            obj.LocalCountry = \"US\";\n\
-          \n            try {\n                // SendMessageResponse class object\n\
-          \                var result = apiInstance.SendMessage(obj);\n          \
-          \      // ...\n            } catch (Exception e) {\n                Console.WriteLine(\"\
-          Exception when calling sendMessage: \"+e.Message);\n            }\n    \
-          \    }\n    }\n}"
+          \            obj.Destination = \"mms\";\n            obj.Resources = \"\
+          tmauKcSmwflB77kLQ15904023426649.jpg\";\n\n            try {\n          \
+          \      // SendMessageResponse class object\n                var result =\
+          \ apiInstance.SendMessage(obj);\n                // ...\n            } catch\
+          \ (Exception e) {\n                Console.WriteLine(\"Exception when calling\
+          \ sendMessage: \"+e.Message);\n            }\n        }\n    }\n}"
       - lang: "VB.Net"
         source: "' How to install SDK see here https://docs.textmagic.com/#section/C-VB.NET\n\
           Imports System\nImports System.IO\nImports TextMagicClient.Api\nImports\
@@ -16588,12 +16613,13 @@ paths:
           \ = true,\n            .PartsCount = 6,\n            .ReferenceId = 1,\n\
           \            .From = \"Test sender id\",\n            .Rrule = \"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"\
           ,\n            .CreateChat = false,\n            .Tts = false,\n       \
-          \     .Local = false,\n            .LocalCountry = \"US\"\n        }\n\n\
-          \        Try\n            ' SendMessageResponse class object\n         \
-          \   Dim result = apiInstance.SendMessage(obj)\n            ' ...\n     \
-          \   Catch e As Exception\n            Console.WriteLine(\"Exception when\
-          \ calling sendMessage: \" + e.Message)\n        End Try\n    End Sub\nEnd\
-          \ Module"
+          \     .Local = false,\n            .LocalCountry = \"US\",\n           \
+          \ .Destination = \"mms\",\n            .Resources = \"tmauKcSmwflB77kLQ15904023426649.jpg\"\
+          \n        }\n\n        Try\n            ' SendMessageResponse class object\n\
+          \            Dim result = apiInstance.SendMessage(obj)\n            ' ...\n\
+          \        Catch e As Exception\n            Console.WriteLine(\"Exception\
+          \ when calling sendMessage: \" + e.Message)\n        End Try\n    End Sub\n\
+          End Module"
       - lang: "Go"
         source: "// How to install SDK see here https://docs.textmagic.com/#section/Go\n\
           package main\n\nimport (\n    \"context\"\n    \"fmt\"\n    \"github.com/antihax/optional\"\
@@ -16614,6 +16640,7 @@ paths:
           \  ReferenceId: 1,\n        From: \"Test sender id\",\n        Rrule: \"\
           FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\",\n        CreateChat: false,\n\
           \        Tts: false,\n        Local: false,\n        LocalCountry: \"US\"\
+          ,\n        Destination: \"mms\",\n        Resources: \"tmauKcSmwflB77kLQ15904023426649.jpg\"\
           ,\n    }\n\n    // tm.SendMessageResponse struct\n    result, _, err :=\
           \ client.TextMagicApi.SendMessage(auth, input)\n\n    if err != nil {\n\
           \        log.Fatal(err)\n    } else {\n        fmt.Printf(\"%+v\\n\", result)\n\
@@ -16639,11 +16666,13 @@ paths:
           );\n    input->setCutExtra(true);\n    input->setPartsCount(6);\n    input->setReferenceId(1);\n\
           \    input->setFrom(\"Test sender id\");\n    input->setRrule(\"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"\
           );\n    input->setCreateChat(false);\n    input->setTts(false);\n    input->setLocal(false);\n\
-          \    input->setLocalCountry(\"US\");\n\n    try {\n        pplx::task<std::shared_ptr<SendMessageResponse>>\
-          \ result = api.sendMessage(input);\n        result.wait();\n        // put\
-          \ operations with result here...\n    } catch(const std::exception& e) {\n\
-          \        std::cout << \"sendMessage() exception: \" << e.what() << '\\n';\n\
-          \    }\n\n    return 0;\n}"
+          \    input->setLocalCountry(\"US\");\n    input->setDestination(\"mms\"\
+          );\n    input->setResources(\"tmauKcSmwflB77kLQ15904023426649.jpg\");\n\n\
+          \    try {\n        pplx::task<std::shared_ptr<SendMessageResponse>> result\
+          \ = api.sendMessage(input);\n        result.wait();\n        // put operations\
+          \ with result here...\n    } catch(const std::exception& e) {\n        std::cout\
+          \ << \"sendMessage() exception: \" << e.what() << '\\n';\n    }\n\n    return\
+          \ 0;\n}"
       - lang: "Python"
         source: "# How to install SDK see here https://docs.textmagic.com/#section/Python\n\
           import TextMagic\nfrom TextMagic.rest import ApiException\n\nconfiguration\
@@ -16657,9 +16686,10 @@ paths:
           \ = 1565606455\ninput.sending_date_time = \"2020-05-27 13:02:33\"\ninput.sending_timezone\
           \ = \"America/Buenos_Aires\"\ninput.contacts = \"1,2,3,4\"\ninput.lists\
           \ = \"1,2,3,4\"\ninput.cut_extra = true\ninput.parts_count = 6\ninput.reference_id\
-          \ = 1\ninput.from = \"Test sender id\"\ninput.rrule = \"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"\
+          \ = 1\ninput._from = \"Test sender id\"\ninput.rrule = \"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"\
           \ninput.create_chat = false\ninput.tts = false\ninput.local = false\ninput.local_country\
-          \ = \"US\"\n\ntry:\n    # SendMessageResponse object\n    result = api_instance.send_message(send_message_input_object=input)\n\
+          \ = \"US\"\ninput.destination = \"mms\"\ninput.resources = \"tmauKcSmwflB77kLQ15904023426649.jpg\"\
+          \n\ntry:\n    # SendMessageResponse object\n    result = api_instance.send_message(send_message_input_object=input)\n\
           \    # ...\nexcept ApiException as e:\n    print(\"Exception when calling\
           \ TextMagicApi->send_message: %s\\n\" % e)\n"
       - lang: "Perl"
@@ -16678,8 +16708,9 @@ paths:
           \    contacts => '1,2,3,4',\n    lists => '1,2,3,4',\n    cutExtra => 1,\n\
           \    partsCount => 6,\n    referenceId => 1,\n    from => 'Test sender id',\n\
           \    rrule => 'FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1',\n    createChat\
-          \ => 0,\n    tts => 0,\n    local => 0,\n    localCountry => 'US',\n);\n\
-          \neval {\n    # SendMessageResponse object\n    my $result = $api_instance->send_message(send_message_input_object\
+          \ => 0,\n    tts => 0,\n    local => 0,\n    localCountry => 'US',\n   \
+          \ destination => 'mms',\n    resources => 'tmauKcSmwflB77kLQ15904023426649.jpg',\n\
+          );\n\neval {\n    # SendMessageResponse object\n    my $result = $api_instance->send_message(send_message_input_object\
           \ => $input);\n    # ...\n};\n\nif ($@) {\n    warn \"Exception when calling\
           \ TextMagicApi->send_message: $@\\n\";\n}"
   /api/v2/messages/price/normalized:
@@ -17089,16 +17120,17 @@ paths:
           \ test\"\ntemplate_id = 1\nsending_time = 1565606455\nsending_date_time\
           \ = \"2020-05-27 13:02:33\"\nsending_timezone = \"America/Buenos_Aires\"\
           \ncontacts = \"1,2,3,4\"\nlists = \"1,2,3,4\"\nphones = \"447860021130,447860021131\"\
-          \ncut_extra = 0\nparts_count = 6\nreference_id = 1\nfrom = \"Test Sender\
+          \ncut_extra = 0\nparts_count = 6\nreference_id = 1\n_from = \"Test Sender\
           \ ID\"\nrule = \"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"\ncreate_chat\
           \ = 0\ntts = 0\nlocal = 0\nlocal_country = \"US\"\n\ntry:\n    # GetMessagePriceResponse\
           \ object\n    result = api_instance.get_message_price(include_blocked=include_blocked,\
           \ text=text, template_id=template_id, sending_time=sending_time, sending_date_time=sending_date_time,\
           \ sending_timezone=sending_timezone, contacts=contacts, lists=lists, phones=phones,\
           \ cut_extra=cut_extra, parts_count=parts_count, reference_id=reference_id,\
-          \ from=from, rule=rule, create_chat=create_chat, tts=tts, local=local, local_country=local_country)\n\
-          \    # ...\nexcept ApiException as e:\n    print(\"Exception when calling\
-          \ TextMagicApi->get_message_price: %s\\n\" % e)\n"
+          \ _from=_from, rule=rule, create_chat=create_chat, tts=tts, local=local,\
+          \ local_country=local_country)\n    # ...\nexcept ApiException as e:\n \
+          \   print(\"Exception when calling TextMagicApi->get_message_price: %s\\\
+          n\" % e)\n"
       - lang: "Perl"
         source: "# How to install SDK see here https://docs.textmagic.com/#section/Perl\n\
           use 5.010;\nuse strict;\nuse warnings;\nuse Net::Sms::TextMagicClient::ApiClient;\n\
@@ -17516,13 +17548,13 @@ paths:
           \ 1\nsending_time = 1565606455\nsending_date_time = \"2020-05-27 13:02:33\"\
           \nsending_timezone = \"America/Buenos_Aires\"\ncontacts = \"1,2,3,4\"\n\
           lists = \"1,2,3,4\"\nphones = \"447860021130,447860021131\"\ncut_extra =\
-          \ 0\nparts_count = 6\nreference_id = 1\nfrom = \"Test Sender ID\"\nrule\
+          \ 0\nparts_count = 6\nreference_id = 1\n_from = \"Test Sender ID\"\nrule\
           \ = \"FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1\"\ncreate_chat = 0\ntts\
           \ = 0\nlocal = 0\nlocal_country = \"US\"\n\ntry:\n    # GetMessagePreviewResponse\
           \ object\n    result = api_instance.get_message_preview(text=text, template_id=template_id,\
           \ sending_time=sending_time, sending_date_time=sending_date_time, sending_timezone=sending_timezone,\
           \ contacts=contacts, lists=lists, phones=phones, cut_extra=cut_extra, parts_count=parts_count,\
-          \ reference_id=reference_id, from=from, rule=rule, create_chat=create_chat,\
+          \ reference_id=reference_id, _from=_from, rule=rule, create_chat=create_chat,\
           \ tts=tts, local=local, local_country=local_country)\n    # ...\nexcept\
           \ ApiException as e:\n    print(\"Exception when calling TextMagicApi->get_message_preview:\
           \ %s\\n\" % e)\n"
@@ -18413,6 +18445,7 @@ paths:
           \ query => $query);\n    # ...\n};\n\nif ($@) {\n    warn \"Exception when\
           \ calling TextMagicApi->search_outbound_messages: $@\\n\";\n}"
   /api/v2/messages/attachment: {}
+  /api/v2/messages/mms/attachment: {}
   /api/v2/messages/prices/normalized: {}
   /api/v2/history:
     get:
@@ -27482,6 +27515,7 @@ definitions:
     - "chars"
     - "href"
     - "name"
+    - "resource"
     - "size"
     properties:
       chars:
@@ -27505,6 +27539,10 @@ definitions:
         type: "integer"
         example: 1094
         description: "Attachment size in bytes."
+      resource:
+        type: "string"
+        example: "tmfGSR8ShMSDMy8Aa15904809817838.jpg"
+        description: "Internal file name"
   GetMessagePricesResponse: {}
   GetStateResponse:
     required:
@@ -36034,11 +36072,22 @@ definitions:
         example: "US"
         description: "The 2-letter ISO country code for local phone numbers, used\
           \ when \\'local\\' is set to true. Default is the account country."
+      destination:
+        type: "string"
+        example: "mms"
+        description: "Messsage destination type allowed [mms, tts]."
+        default: "false"
+      resources:
+        type: "string"
+        example: "tmauKcSmwflB77kLQ15904023426649.jpg"
+        description: "File name from mms attachment response (named as resource)"
     example:
       createChat: false
       partsCount: 6
+      destination: "mms"
       sendingDateTime: "2020-05-27 13:02:33"
       phones: "447860021130,447860021131"
+      resources: "tmauKcSmwflB77kLQ15904023426649.jpg"
       cutExtra: true
       templateId: 1
       sendingTime: 1565606455
@@ -36312,30 +36361,31 @@ definitions:
           \ preset workflows are detailed below.\n\n<br />\n\n**Workflow 1 (Default\
           \ Workflow): SMS -> TTS -> TTS**\n\nSend PIN code by text message, follow\
           \ up with two subsequent voice calls if the request wasn't already verified.\n\
-          \nSend SMS to user with PIN code\nWait for 60 seconds\nCall user and give\
-          \ TTS PIN code\nWait for 60 seconds\nCall user and give TTS PIN code\n\n\
-          Request expires after 300 seconds\n\n<br />\n\n**Workflow 2: SMS -> SMS\
-          \ -> TTS**\n\n\nSend PIN code by text message, follow up with a second text\
-          \ message and finally a voice call if the request has not been verified.\n\
-          \nSend SMS to user with PIN code\nWait for 60 seconds\nSend SMS to user\
-          \ with PIN code\nWait for 60 seconds\nCall user and give TTS PIN code\n\n\
-          Request expires after 300 seconds\n\n<br />\n\n**Workflow 3: TTS -> TTS**\n\
-          \nCall the user and speak a PIN code, follow up with a second call if the\
-          \ request wasn't already verified.\n\nCall user and give TTS PIN code\n\
-          Wait for 60 seconds\nCall user and give TTS PIN code\n\nRequest expires\
-          \ after 300 seconds\n\n<br />\n\n**Workflow 4: SMS -> SMS**\n\n\nSend PIN\
-          \ code by text message, follow up with a second text message if the code\
-          \ hasn't been verified.\n\nSend SMS to user with PIN code\nWait for 60 seconds\n\
-          Send SMS to user with PIN code\nWait for 60 seconds\n\nRequest expires after\
+          \nSend SMS to user with PIN code<br />\nWait for 60 seconds<br />\nCall\
+          \ user and give TTS PIN code<br />\nWait for 60 seconds<br />\nCall user\
+          \ and give TTS PIN code\n\nRequest expires after 300 seconds\n\n<br />\n\
+          \n**Workflow 2: SMS -> SMS -> TTS**\n\n\nSend PIN code by text message,\
+          \ follow up with a second text message and finally a voice call if the request\
+          \ has not been verified.\n\nSend SMS to user with PIN code<br />\nWait for\
+          \ 60 seconds<br />\nSend SMS to user with PIN code<br />\nWait for 60 seconds<br\
+          \ />\nCall user and give TTS PIN code\n\nRequest expires after 300 seconds\n\
+          \n<br />\n\n**Workflow 3: TTS -> TTS**\n\nCall the user and speak a PIN\
+          \ code, follow up with a second call if the request wasn't already verified.\n\
+          \nCall user and give TTS PIN code<br />\nWait for 60 seconds<br />\nCall\
+          \ user and give TTS PIN code\n\nRequest expires after 300 seconds\n\n<br\
+          \ />\n\n**Workflow 4: SMS -> SMS**\n\n\nSend PIN code by text message, follow\
+          \ up with a second text message if the code hasn't been verified.\n\nSend\
+          \ SMS to user with PIN code<br />\nWait for 60 seconds<br />\nSend SMS to\
+          \ user with PIN code<br />\nWait for 60 seconds\n\nRequest expires after\
           \ 300 seconds\n\n<br />\n\n**Workflow 5: SMS -> TTS**\n\n\nSend PIN code\
           \ by text message, follow up with a voice call if the code hasn't been verified.\n\
-          \nSend SMS to user with PIN code\nWait for 60 seconds\nCall user and give\
-          \ TTS PIN code\nWait for 60 seconds\n\nRequest expires after 300 seconds\n\
-          \n<br />\n\n**Workflow 6: SMS**\n\n\nSend PIN code by text message once\
-          \ only.\n\nSend SMS to user with PIN code\nRequest expires after 300 seconds\n\
-          \n<br />\n\n**Workflow 7: TTS**\n\nCall the user and speak a PIN code once\
-          \ only.\n\nCall user and give TTS PIN code\n\nRequest expires after 300\
-          \ seconds\n"
+          \nSend SMS to user with PIN code<br />\nWait for 60 seconds<br />\nCall\
+          \ user and give TTS PIN code<br />\nWait for 60 seconds\n\nRequest expires\
+          \ after 300 seconds\n\n<br />\n\n**Workflow 6: SMS**\n\n\nSend PIN code\
+          \ by text message once only.\n\nSend SMS to user with PIN code\n\nRequest\
+          \ expires after 300 seconds\n\n<br />\n\n**Workflow 7: TTS**\n\nCall the\
+          \ user and speak a PIN code once only.\n\nCall user and give TTS PIN code\n\
+          \nRequest expires after 300 seconds\n"
       brand:
         type: "string"
         example: "TextMagic"

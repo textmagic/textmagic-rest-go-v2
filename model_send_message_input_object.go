@@ -44,4 +44,8 @@ type SendMessageInputObject struct {
 	Local bool `json:"local,omitempty"`
 	// The 2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is the account country.
 	LocalCountry string `json:"localCountry,omitempty"`
+	// Messsage destination type allowed [mms, tts].
+	Destination string `json:"destination,omitempty"`
+	// File name from mms attachment response (named as resource)
+	Resources string `json:"resources,omitempty"`
 }

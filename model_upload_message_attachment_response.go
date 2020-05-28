@@ -18,4 +18,6 @@ type UploadMessageAttachmentResponse struct {
 	Name string `json:"name"`
 	// Attachment size in bytes.
 	Size int32 `json:"size"`
+	// Internal file name
+	Resource string `json:"resource"`
 }
