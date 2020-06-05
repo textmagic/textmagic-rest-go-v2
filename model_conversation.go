@@ -9,10 +9,6 @@
 
 package TextMagic
 
-import (
-	"time"
-)
-
 type Conversation struct {
 	Id int32 `json:"id"`
 	// Message type: inbound or outbound. 
@@ -20,7 +16,7 @@ type Conversation struct {
 	// Sender phone number.
 	Sender string `json:"sender"`
 	// Time when  the message arrived at TextMagic.
-	MessageTime time.Time `json:"messageTime"`
+	MessageTime string `json:"messageTime"`
 	// Message text.
 	Text string `json:"text"`
 	// Receiver's phone number.

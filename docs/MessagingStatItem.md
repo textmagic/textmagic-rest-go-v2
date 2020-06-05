@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ReplyRate** | **float32** | The number of incoming messages divided by the number of total messages. | [default to null]
-**Date** | [**time.Time**](time.Time.md) | Time interval start: empty if the **by** parameter was set to **off**.  | [default to null]
+**Date** | **string** | Time interval start: empty if the **by** parameter was set to **off**.  | [default to null]
 **DeliveryRate** | **float32** | Message delivery rate:the number of delivered messages divided by the number of total messages. | [default to null]
 **Costs** | **float32** | Cost for sent messages during this period. The costs are in the [Account](https://docs.textmagic.com/#tag/User) currency.  | [default to null]
 **MessagesReceived** | **int32** | Total received messages count. | [default to null]

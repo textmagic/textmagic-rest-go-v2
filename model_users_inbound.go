@@ -9,10 +9,6 @@
 
 package TextMagic
 
-import (
-	"time"
-)
-
 type UsersInbound struct {
 	// Dedicated number ID.
 	Id int32 `json:"id"`
@@ -22,9 +18,9 @@ type UsersInbound struct {
 	Phone string `json:"phone,omitempty"`
 	User *User `json:"user"`
 	// Time when the dedicated number was purchased.
-	PurchasedAt time.Time `json:"purchasedAt"`
+	PurchasedAt string `json:"purchasedAt"`
 	// Dedicated number subscription expiration time.
-	ExpireAt time.Time `json:"expireAt"`
+	ExpireAt string `json:"expireAt"`
 	// Number status: *   **U** for Unused. No messages have been sent from (or received to) this number; *   **A** for Active. 
 	Status string `json:"status"`
 	Country *Country `json:"country"`

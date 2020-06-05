@@ -9,15 +9,11 @@
 
 package TextMagic
 
-import (
-	"time"
-)
-
 type ContactNote struct {
 	// Contact note ID.
 	Id int32 `json:"id"`
 	// Contact note creation time.
-	CreatedAt time.Time `json:"createdAt"`
+	CreatedAt string `json:"createdAt"`
 	// Contact note text.
 	Note string `json:"note"`
 	User *User `json:"user"`

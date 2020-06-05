@@ -9,16 +9,12 @@
 
 package TextMagic
 
-import (
-	"time"
-)
-
 type Survey struct {
 	Id int32 `json:"id"`
 	Name string `json:"name"`
 	Status string `json:"status"`
-	CreatedAt time.Time `json:"createdAt"`
-	UpdatedAt time.Time `json:"updatedAt"`
+	CreatedAt string `json:"createdAt"`
+	UpdatedAt string `json:"updatedAt"`
 	Receipents []SurveyRecipient `json:"receipents,omitempty"`
 	Countries []SurveySenderCountries `json:"countries,omitempty"`
 }

@@ -9,10 +9,6 @@
 
 package TextMagic
 
-import (
-	"time"
-)
-
 type Chat struct {
 	// Chat ID.
 	Id int32 `json:"id"`
@@ -25,7 +21,7 @@ type Chat struct {
 	// Total unread incoming messages.
 	Unread int32 `json:"unread"`
 	// Time when the last incoming message arrived at this chat.
-	UpdatedAt time.Time `json:"updatedAt"`
+	UpdatedAt string `json:"updatedAt"`
 	// Chat status:   * **a** - Active;   * **c** - Closed;   * **d** - Deleted. 
 	Status string `json:"status"`
 	// Indicates when the chat is muted.
@@ -37,7 +33,7 @@ type Chat struct {
 	// If filled, the value will be used as a sender number for all outgoing messages of a chat.
 	From string `json:"from"`
 	// Date and time until the chat will be muted.
-	MutedUntil time.Time `json:"mutedUntil"`
+	MutedUntil string `json:"mutedUntil"`
 	// Time left untill the chat will be unmuted (seconds).
 	TimeLeftMute int32 `json:"timeLeftMute"`
 	Country *Country `json:"country"`

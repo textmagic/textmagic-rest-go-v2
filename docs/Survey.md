@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [default to null]
 **Name** | **string** |  | [default to null]
 **Status** | **string** |  | [default to null]
-**CreatedAt** | [**time.Time**](time.Time.md) |  | [default to null]
-**UpdatedAt** | [**time.Time**](time.Time.md) |  | [default to null]
+**CreatedAt** | **string** |  | [default to null]
+**UpdatedAt** | **string** |  | [default to null]
 **Receipents** | [**[]SurveyRecipient**](SurveyRecipient.md) |  | [optional] [default to null]
 **Countries** | [**[]SurveySenderCountries**](SurveySenderCountries.md) |  | [optional] [default to null]
 

@@ -9,15 +9,11 @@
 
 package TextMagic
 
-import (
-	"time"
-)
-
 type MessagingStatItem struct {
 	// The number of incoming messages divided by the number of total messages.
 	ReplyRate float32 `json:"replyRate"`
 	// Time interval start: empty if the **by** parameter was set to **off**. 
-	Date time.Time `json:"date"`
+	Date string `json:"date"`
 	// Message delivery rate:the number of delivered messages divided by the number of total messages.
 	DeliveryRate float32 `json:"deliveryRate"`
 	// Cost for sent messages during this period. The costs are in the [Account](https://docs.textmagic.com/#tag/User) currency. 

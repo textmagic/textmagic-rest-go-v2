@@ -9,10 +9,6 @@
 
 package TextMagic
 
-import (
-	"time"
-)
-
 type BulkSession struct {
 	// Bulk Session ID.
 	Id int32 `json:"id"`
@@ -23,7 +19,7 @@ type BulkSession struct {
 	// Total amount of messages to be processed.
 	ItemsTotal int32 `json:"itemsTotal"`
 	// Creation date and time of a Bulk Session.
-	CreatedAt time.Time `json:"createdAt"`
+	CreatedAt string `json:"createdAt"`
 	Session *MessageSession `json:"session"`
 	// Message text of a Bulk Session.
 	Text string `json:"text"`

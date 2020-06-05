@@ -9,14 +9,10 @@
 
 package TextMagic
 
-import (
-	"time"
-)
-
 type DoAuthResponse struct {
 	Username string `json:"username"`
 	Token string `json:"token"`
-	Expires time.Time `json:"expires"`
+	Expires string `json:"expires"`
 	MinVersions *DoAuthResponseMinVersions `json:"minVersions"`
 	DisallowedRules []string `json:"disallowedRules"`
 }

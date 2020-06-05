@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Status** | **string** | Delivery status of the message. See [message delivery statuses](https://docs.textmagic.com/#section/Delivery-status-codes) for details.  | [default to null]
 **ContactId** | **int32** | Recipient contact ID. | [default to null]
 **SessionId** | **int32** | Message Session ID of a message. | [default to null]
-**MessageTime** | [**time.Time**](time.Time.md) | Sending time. | [default to null]
+**MessageTime** | **string** | Sending time. | [default to null]
 **Avatar** | **string** |  | [default to null]
 **Deleted** | **bool** | Indicates that the message has been deleted. | [optional] [default to null]
 **Charset** | **string** | Message charset. Could be: *   **ISO-8859-1** for plaintext SMS; *   **UTF-16BE** for Unicode SMS.  | [default to null]

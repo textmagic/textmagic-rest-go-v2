@@ -9,10 +9,6 @@
 
 package TextMagic
 
-import (
-	"time"
-)
-
 type MessageOut struct {
 	// Message ID.
 	Id int32 `json:"id"`
@@ -28,7 +24,7 @@ type MessageOut struct {
 	// Message Session ID of a message.
 	SessionId int32 `json:"sessionId"`
 	// Sending time.
-	MessageTime time.Time `json:"messageTime"`
+	MessageTime string `json:"messageTime"`
 	Avatar string `json:"avatar"`
 	// Indicates that the message has been deleted.
 	Deleted bool `json:"deleted,omitempty"`

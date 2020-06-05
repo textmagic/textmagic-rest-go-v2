@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** | Contact note ID. | [default to null]
-**CreatedAt** | [**time.Time**](time.Time.md) | Contact note creation time. | [default to null]
+**CreatedAt** | **string** | Contact note creation time. | [default to null]
 **Note** | **string** | Contact note text. | [default to null]
 **User** | [***User**](User.md) |  | [default to null]
 

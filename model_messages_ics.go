@@ -9,20 +9,16 @@
 
 package TextMagic
 
-import (
-	"time"
-)
-
 type MessagesIcs struct {
 	// Schedule ID.
 	Id int32 `json:"id"`
 	// The next send date in [ISO 8601](https://en.wikipedia.org/?title=ISO_8601) format. 
-	NextSend time.Time `json:"nextSend"`
+	NextSend string `json:"nextSend"`
 	// [iCal RRULE](http://www.kanzaki.com/docs/ical/rrule.html) string. 
 	Rrule string `json:"rrule"`
 	Session *MessageSession `json:"session"`
 	// The date and time when the last message was sent.
-	LastSent time.Time `json:"lastSent"`
+	LastSent string `json:"lastSent"`
 	// Aggregated contact information. If the message was scheduled to be sent to a single contact, a full name will be returned here. Otherwise, a total amount of contacts will be returned.
 	ContactName string `json:"contactName"`
 	Parameters *MessagesIcsParameters `json:"parameters"`
@@ -31,9 +27,9 @@ type MessagesIcs struct {
 	Summary string `json:"summary"`
 	TextParameters *MessagesIcsTextParameters `json:"textParameters"`
 	// First occurence date.
-	FirstOccurrence time.Time `json:"firstOccurrence"`
+	FirstOccurrence string `json:"firstOccurrence"`
 	// Last occurence date (could be `null` if the schedule is endless).
-	LastOccurrence time.Time `json:"lastOccurrence"`
+	LastOccurrence string `json:"lastOccurrence"`
 	// Amount of actual recipients.
 	RecipientsCount int32 `json:"recipientsCount"`
 	// User-friendly timezone name (with spaces replaced by underscores).
@@ -43,5 +39,5 @@ type MessagesIcs struct {
 	// A relative link to the contact avatar.
 	Avatar string `json:"avatar"`
 	// Scheduling creation time.
-	CreatedAt time.Time `json:"createdAt"`
+	CreatedAt string `json:"createdAt"`
 }

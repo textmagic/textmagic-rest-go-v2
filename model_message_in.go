@@ -9,10 +9,6 @@
 
 package TextMagic
 
-import (
-	"time"
-)
-
 type MessageIn struct {
 	// The ID of the inbound message.
 	Id int32 `json:"id"`
@@ -21,7 +17,7 @@ type MessageIn struct {
 	// The receiver’s phone number (i.e. your dedicated or shared reply number).
 	Receiver string `json:"receiver"`
 	// The time when the message reached the TextMagic API endpoint.
-	MessageTime time.Time `json:"messageTime"`
+	MessageTime string `json:"messageTime"`
 	// The text from the received message.
 	Text string `json:"text"`
 	// Sender contact ID.

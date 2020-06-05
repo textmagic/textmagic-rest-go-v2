@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** | User statement ID. | [default to null]
 **UserId** | **int32** | User ID. | [default to null]
-**Date** | [**time.Time**](time.Time.md) | User statement date. | [default to null]
+**Date** | **string** | User statement date. | [default to null]
 **Balance** | **float64** |  | [default to null]
 **Delta** | **float32** | Balance change amount. | [default to null]
 **Type_** | **string** | Type of statement (what you have been charged for): *   **sms** - for sending SMS *   **number** - for renewing a dedicated number; *   **schedule** - for scheduling text messages; *   **topup** - for adding credits to your account.  | [default to null]
