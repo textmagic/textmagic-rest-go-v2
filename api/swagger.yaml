@@ -864,7 +864,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Go application.\n\n[Get it now\
     \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n## Installation\n\
-    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1494\n\
+    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1530\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -1563,7 +1563,21 @@ paths:
           \    log.Fatal(err)\n    } else {\n        fmt.Printf(\"%+v\\n\", result)\n\
           \        // ...\n    }\n}\n"
       - lang: "Cpp"
-        source: "Not supported yet."
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/C++\n\
+          #include <iostream>\n#include <fstream>\n// Change paths to directory where\
+          \ SDK lib is installed. See C++ SDK installation instructions for more details\n\
+          #include \"textmagic-rest-cpp/ApiClient.h\"\n#include \"textmagic-rest-cpp/ApiConfiguration.h\"\
+          \n#include \"textmagic-rest-cpp/api/TextMagicApi.h\"\n\nusing namespace\
+          \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
+          \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
+          \ ApiConfiguration);\n\n    // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\n    apiConfig->getHttpConfig().set_credentials(web::credentials(\"\
+          YOUR_NAME\", \"YOUR_API_KEY\"));\n    apiClient->setConfiguration(apiConfig);\n\
+          \n    TextMagicApi api(apiClient);\n\n    try {\n        pplx::task<std::shared_ptr<GetCountriesResponse>>\
+          \ result = api.getCountries();\n        result.wait();\n        // put operations\
+          \ with result here...\n    } catch(const std::exception& e) {\n        std::cout\
+          \ << \"getCountries() exception: \" << e.what() << '\\n';\n    }\n\n   \
+          \ return 0;\n}"
       - lang: "Python"
         source: "# How to install SDK see here https://docs.textmagic.com/#section/Python\n\
           import TextMagic\nfrom TextMagic.rest import ApiException\n\nconfiguration\
@@ -6845,7 +6859,24 @@ paths:
           \    if err != nil {\n        log.Fatal(err)\n    } else {\n        fmt.Printf(\"\
           %+v\\n\", result)\n        // ...\n    }\n}\n"
       - lang: "Cpp"
-        source: "Not supported yet."
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/C++\n\
+          #include <iostream>\n#include <fstream>\n// Change paths to directory where\
+          \ SDK lib is installed. See C++ SDK installation instructions for more details\n\
+          #include \"textmagic-rest-cpp/ApiClient.h\"\n#include \"textmagic-rest-cpp/ApiConfiguration.h\"\
+          \n#include \"textmagic-rest-cpp/api/TextMagicApi.h\"\n\nusing namespace\
+          \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
+          \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
+          \ ApiConfiguration);\n\n    // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\n    apiConfig->getHttpConfig().set_credentials(web::credentials(\"\
+          YOUR_NAME\", \"YOUR_API_KEY\"));\n    apiClient->setConfiguration(apiConfig);\n\
+          \n    TextMagicApi api(apiClient);\n\n    std::string query = \"A\";\n \
+          \   // Optional parameters. Important: if you want to use default value\
+          \ then pass boost::none value\n    int limit = 10;\n    int lists = 0;\n\
+          \n    try {\n        pplx::task<std::shared_ptr<GetContactsAutocompleteResponse>>\
+          \ result = api.getContactsAutocomplete(query, limit, lists);\n        result.wait();\n\
+          \        // put operations with result here...\n    } catch(const std::exception&\
+          \ e) {\n        std::cout << \"getContactsAutocomplete() exception: \" <<\
+          \ e.what() << '\\n';\n    }\n\n    return 0;\n}"
       - lang: "Python"
         source: "# How to install SDK see here https://docs.textmagic.com/#section/Python\n\
           import TextMagic\nfrom TextMagic.rest import ApiException\n\nconfiguration\
