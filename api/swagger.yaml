@@ -560,7 +560,7 @@ tags:
     \n```javascript\n{\n    \"repositories\": [\n        {\n            \"type\":\
     \ \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
     \n        }\n    ],\n    \"require\": {\n        \"textmagic/textmagic-rest-php-v2\"\
-    : \"dev-master#v2.0.1484\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
+    : \"dev-master#v2.0.1534\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
     \ Manual Installation\n\nDownload the files and include `autoload.php`:\n\n```php\n\
     require_once(__DIR__.'/vendor/autoload.php');\n```\n\n## Usage Example\n\nPlease\
     \ follow the [installation](#installation) instructions and execute the following\
@@ -614,9 +614,9 @@ tags:
     \ Requirements\n\n1. Java 1.7+\n2. Maven/Gradle\n\n## Installation\n\n### Maven\n\
     \nAdd this dependency to your project's POM:\n```xml\n<dependencies>\n    <dependency>\n\
     \        <groupId>com.textmagic.sdk</groupId>\n        <artifactId>textmagic-java-sdk</artifactId>\n\
-    \        <version>2.0.1484</version>\n    </dependency>\n</dependencies>\n```\n\
+    \        <version>2.0.1534</version>\n    </dependency>\n</dependencies>\n```\n\
     \n### Gradle\n\nAdd this dependency to your project’s build file:\n```groovy\n\
-    compile \"com.textmagic.sdk:textmagic-java-sdk:2.0.1484\"\n```\n\n## Usage Example\n\
+    compile \"com.textmagic.sdk:textmagic-java-sdk:2.0.1534\"\n```\n\n## Usage Example\n\
     \n```java\nimport com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
     import com.textmagic.sdk.auth.*;\nimport com.textmagic.sdk.model.*;\n\npublic\
     \ class App {\n\n    public static void main(String[] args) {\n        ApiClient\
@@ -662,7 +662,7 @@ tags:
     Install-Package Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp\
     \ versions later than 105.1.0 have a bug which causes file uploads to fail. See\
     \ [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\n## Installation\n\
-    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.1484/).\n\
+    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.1534/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -782,7 +782,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Python application.\n\n[Get it\
     \ now on GitHub](https://github.com/textmagic/textmagic-rest-python-v2)\n## Requirements\n\
-    Python 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.1484\n\
+    Python 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.1534\n\
     ```\n\n## Usage Example\n\n```python\nimport TextMagic\nfrom TextMagic.rest import\
     \ ApiException\n\n# put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
     \ page.\nconfiguration = TextMagic.Configuration()\nconfiguration.username = 'YOUR_USERNAME'\n\
@@ -807,8 +807,8 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Perl application.\n\n[Get it\
     \ now on GitHub](https://github.com/textmagic/textmagic-rest-perl-v2)\n## Installation\n\
-    \n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.1484.tar.gz\
-    \ && \\\ntar zxf v2.0.1484.tar.gz && \\\nrm -f v2.0.1484.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.1484\
+    \n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.1534.tar.gz\
+    \ && \\\ntar zxf v2.0.1534.tar.gz && \\\nrm -f v2.0.1534.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.1534\
     \ && \\\nperl Makefile.pl && \\\nmake && \\\nmake install && \\\ncpanm --installdeps\
     \ .\n```\\\n\n## Usage Example\n\nPlease follow the [installation](#installation)\
     \ instructions and execute the following Perl code:\n\n```perl\nuse 5.010;\nuse\
@@ -838,7 +838,7 @@ tags:
     \ by integrating TextMagic SMS Gateway into your Ruby application.\n\n[Get it\
     \ now on GitHub](https://github.com/textmagic/textmagic-rest-ruby-v2)\n## Installation\n\
     \nAdd these lines into your Gemfile\n```ruby\ngem 'textmagic_rest_client', :git\
-    \ => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.1484'\n\
+    \ => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.1534'\n\
     ```\n\nRun the bundler install command\n``` shell\nbundle install\n```\n\n## Usage\
     \ Example\n\nCreate the test file `test.rb` and put the following code:\n```ruby\n\
     \ # Load the gem\nrequire 'textmagic_rest_client'\n\n # Setup authorization\n\
@@ -864,7 +864,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Go application.\n\n[Get it now\
     \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n## Installation\n\
-    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1530\n\
+    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1534\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -1133,18 +1133,7 @@ paths:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
       - lang: "PHP"
-        source: "// How to install SDK see here https://docs.textmagic.com/#section/PHP\n\
-          require_once(__DIR__ . '/vendor/autoload.php');\n\nuse TextMagic\\Api\\\
-          TextMagicApi;\nuse TextMagic\\Configuration;\n\n// put your Username and\
-          \ API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          $config = Configuration::getDefaultConfiguration()\n    ->setUsername('YOUR_USERNAME')\n\
-          \    ->setPassword('YOUR_API_KEY');\n\n$api = new TextMagicApi(\n    new\
-          \ GuzzleHttp\\Client(),\n    $config\n);\n\n// Optional, you can pass them\
-          \ as null values to getTimezones method below, default values will be used\n\
-          $full = 0;\n\ntry {\n    // GetTimezonesResponse class object\n    $result\
-          \ = $api->getTimezones($full);\n    // ...\n} catch (Exception $e) {\n \
-          \   echo 'Exception when calling TextMagicApi->getTimezones: ', $e->getMessage(),\
-          \ PHP_EOL;\n}"
+        source: "Not supported yet."
       - lang: "Java"
         source: "// How to install SDK see here https://docs.textmagic.com/#section/Java\n\
           import com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
@@ -1479,16 +1468,7 @@ paths:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
       - lang: "PHP"
-        source: "// How to install SDK see here https://docs.textmagic.com/#section/PHP\n\
-          require_once(__DIR__ . '/vendor/autoload.php');\n\nuse TextMagic\\Api\\\
-          TextMagicApi;\nuse TextMagic\\Configuration;\n\n// put your Username and\
-          \ API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          $config = Configuration::getDefaultConfiguration()\n    ->setUsername('YOUR_USERNAME')\n\
-          \    ->setPassword('YOUR_API_KEY');\n\n$api = new TextMagicApi(\n    new\
-          \ GuzzleHttp\\Client(),\n    $config\n);\n\n\ntry {\n    // GetCountriesResponse\
-          \ class object\n    $result = $api->getCountries();\n    // ...\n} catch\
-          \ (Exception $e) {\n    echo 'Exception when calling TextMagicApi->getCountries:\
-          \ ', $e->getMessage(), PHP_EOL;\n}"
+        source: "Not supported yet."
       - lang: "Java"
         source: "// How to install SDK see here https://docs.textmagic.com/#section/Java\n\
           import com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
@@ -1563,21 +1543,7 @@ paths:
           \    log.Fatal(err)\n    } else {\n        fmt.Printf(\"%+v\\n\", result)\n\
           \        // ...\n    }\n}\n"
       - lang: "Cpp"
-        source: "// How to install SDK see here https://docs.textmagic.com/#section/C++\n\
-          #include <iostream>\n#include <fstream>\n// Change paths to directory where\
-          \ SDK lib is installed. See C++ SDK installation instructions for more details\n\
-          #include \"textmagic-rest-cpp/ApiClient.h\"\n#include \"textmagic-rest-cpp/ApiConfiguration.h\"\
-          \n#include \"textmagic-rest-cpp/api/TextMagicApi.h\"\n\nusing namespace\
-          \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
-          \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
-          \ ApiConfiguration);\n\n    // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
-          \ page.\n    apiConfig->getHttpConfig().set_credentials(web::credentials(\"\
-          YOUR_NAME\", \"YOUR_API_KEY\"));\n    apiClient->setConfiguration(apiConfig);\n\
-          \n    TextMagicApi api(apiClient);\n\n    try {\n        pplx::task<std::shared_ptr<GetCountriesResponse>>\
-          \ result = api.getCountries();\n        result.wait();\n        // put operations\
-          \ with result here...\n    } catch(const std::exception& e) {\n        std::cout\
-          \ << \"getCountries() exception: \" << e.what() << '\\n';\n    }\n\n   \
-          \ return 0;\n}"
+        source: "Not supported yet."
       - lang: "Python"
         source: "# How to install SDK see here https://docs.textmagic.com/#section/Python\n\
           import TextMagic\nfrom TextMagic.rest import ApiException\n\nconfiguration\
@@ -6757,19 +6723,7 @@ paths:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
       - lang: "PHP"
-        source: "// How to install SDK see here https://docs.textmagic.com/#section/PHP\n\
-          require_once(__DIR__ . '/vendor/autoload.php');\n\nuse TextMagic\\Api\\\
-          TextMagicApi;\nuse TextMagic\\Configuration;\n\n// put your Username and\
-          \ API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          $config = Configuration::getDefaultConfiguration()\n    ->setUsername('YOUR_USERNAME')\n\
-          \    ->setPassword('YOUR_API_KEY');\n\n$api = new TextMagicApi(\n    new\
-          \ GuzzleHttp\\Client(),\n    $config\n);\n\n$query = \"A\";\n// Optional,\
-          \ you can pass them as null values to getContactsAutocomplete method below,\
-          \ default values will be used\n$limit = 10;\n$lists = 0;\n\ntry {\n    //\
-          \ GetContactsAutocompleteResponse class object\n    $result = $api->getContactsAutocomplete($query,\
-          \ $limit, $lists);\n    // ...\n} catch (Exception $e) {\n    echo 'Exception\
-          \ when calling TextMagicApi->getContactsAutocomplete: ', $e->getMessage(),\
-          \ PHP_EOL;\n}"
+        source: "Not supported yet."
       - lang: "Java"
         source: "// How to install SDK see here https://docs.textmagic.com/#section/Java\n\
           import com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
@@ -6859,24 +6813,7 @@ paths:
           \    if err != nil {\n        log.Fatal(err)\n    } else {\n        fmt.Printf(\"\
           %+v\\n\", result)\n        // ...\n    }\n}\n"
       - lang: "Cpp"
-        source: "// How to install SDK see here https://docs.textmagic.com/#section/C++\n\
-          #include <iostream>\n#include <fstream>\n// Change paths to directory where\
-          \ SDK lib is installed. See C++ SDK installation instructions for more details\n\
-          #include \"textmagic-rest-cpp/ApiClient.h\"\n#include \"textmagic-rest-cpp/ApiConfiguration.h\"\
-          \n#include \"textmagic-rest-cpp/api/TextMagicApi.h\"\n\nusing namespace\
-          \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
-          \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
-          \ ApiConfiguration);\n\n    // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
-          \ page.\n    apiConfig->getHttpConfig().set_credentials(web::credentials(\"\
-          YOUR_NAME\", \"YOUR_API_KEY\"));\n    apiClient->setConfiguration(apiConfig);\n\
-          \n    TextMagicApi api(apiClient);\n\n    std::string query = \"A\";\n \
-          \   // Optional parameters. Important: if you want to use default value\
-          \ then pass boost::none value\n    int limit = 10;\n    int lists = 0;\n\
-          \n    try {\n        pplx::task<std::shared_ptr<GetContactsAutocompleteResponse>>\
-          \ result = api.getContactsAutocomplete(query, limit, lists);\n        result.wait();\n\
-          \        // put operations with result here...\n    } catch(const std::exception&\
-          \ e) {\n        std::cout << \"getContactsAutocomplete() exception: \" <<\
-          \ e.what() << '\\n';\n    }\n\n    return 0;\n}"
+        source: "Not supported yet."
       - lang: "Python"
         source: "# How to install SDK see here https://docs.textmagic.com/#section/Python\n\
           import TextMagic\nfrom TextMagic.rest import ApiException\n\nconfiguration\
@@ -22001,19 +21938,7 @@ paths:
             $ref: "#/definitions/UnauthorizedResponse"
       x-code-samples:
       - lang: "PHP"
-        source: "// How to install SDK see here https://docs.textmagic.com/#section/PHP\n\
-          require_once(__DIR__ . '/vendor/autoload.php');\n\nuse TextMagic\\Api\\\
-          TextMagicApi;\nuse TextMagic\\Configuration;\n\n// put your Username and\
-          \ API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
-          $config = Configuration::getDefaultConfiguration()\n    ->setUsername('YOUR_USERNAME')\n\
-          \    ->setPassword('YOUR_API_KEY');\n\n$api = new TextMagicApi(\n    new\
-          \ GuzzleHttp\\Client(),\n    $config\n);\n\n// Optional, you can pass them\
-          \ as null values to getMessagingStat method below, default values will be\
-          \ used\n$by = \"off\";\n$start = 1430438400;\n$end = 1431648000;\n\ntry\
-          \ {\n    // GetMessagingStatResponse class object\n    $result = $api->getMessagingStat($by,\
-          \ $start, $end);\n    // ...\n} catch (Exception $e) {\n    echo 'Exception\
-          \ when calling TextMagicApi->getMessagingStat: ', $e->getMessage(), PHP_EOL;\n\
-          }"
+        source: "Not supported yet."
       - lang: "Java"
         source: "// How to install SDK see here https://docs.textmagic.com/#section/Java\n\
           import com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
@@ -36085,7 +36010,6 @@ definitions:
         type: "string"
         example: "mms"
         description: "Messsage destination type allowed [mms, tts]."
-        default: "false"
       resources:
         type: "string"
         example: "tmauKcSmwflB77kLQ15904023426649.jpg"
