@@ -6268,8 +6268,8 @@ TextMagicApiService Get chat messages
      * @param "Page" (optional.Int32) -  Fetch specified results page.
      * @param "Limit" (optional.Int32) -  The number of results per page.
      * @param "Query" (optional.String) -  Find messages by specified search query.
-     * @param "Start" (optional.Int32) -  Return messages since specified timestamp only.
-     * @param "End" (optional.Int32) -  Return messages up to specified timestamp only.
+     * @param "Start" (optional.String) -  Return messages since specified timestamp only. Required when &#x60;end&#x60; parameter specified.
+     * @param "End" (optional.String) -  Return messages up to specified timestamp only. Required when &#x60;start&#x60; parameter specified.
      * @param "Direction" (optional.String) -  Order direction. Default is desc.
      * @param "Voice" (optional.Int32) -  Fetch results with voice calls.
 
@@ -6280,8 +6280,8 @@ type GetChatMessagesOpts struct {
 	Page optional.Int32
 	Limit optional.Int32
 	Query optional.String
-	Start optional.Int32
-	End optional.Int32
+	Start optional.String
+	End optional.String
 	Direction optional.String
 	Voice optional.Int32
 }

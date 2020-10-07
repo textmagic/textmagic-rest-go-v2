@@ -1944,8 +1944,8 @@ Name | Type | Description  | Notes
  **page** | **optional.Int32**| Fetch specified results page. | [default to 1]
  **limit** | **optional.Int32**| The number of results per page. | [default to 10]
  **query** | **optional.String**| Find messages by specified search query. | 
- **start** | **optional.Int32**| Return messages since specified timestamp only. | 
- **end** | **optional.Int32**| Return messages up to specified timestamp only. | 
+ **start** | **optional.String**| Return messages since specified timestamp only. Required when &#x60;end&#x60; parameter specified. | 
+ **end** | **optional.String**| Return messages up to specified timestamp only. Required when &#x60;start&#x60; parameter specified. | 
  **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
  **voice** | **optional.Int32**| Fetch results with voice calls. | [default to 0]
 

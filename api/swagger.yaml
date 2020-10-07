@@ -560,7 +560,7 @@ tags:
     \n```javascript\n{\n    \"repositories\": [\n        {\n            \"type\":\
     \ \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
     \n        }\n    ],\n    \"require\": {\n        \"textmagic/textmagic-rest-php-v2\"\
-    : \"dev-master#v2.0.1534\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
+    : \"dev-master#v2.0.1588\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
     \ Manual Installation\n\nDownload the files and include `autoload.php`:\n\n```php\n\
     require_once(__DIR__.'/vendor/autoload.php');\n```\n\n## Usage Example\n\nPlease\
     \ follow the [installation](#installation) instructions and execute the following\
@@ -589,7 +589,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Node.js application.\n\n[Get\
     \ it now on GitHub](https://github.com/textmagic/textmagic-rest-nodejs-v2)\n##\
-    \ Installation\n\n```shell\nnpm install textmagic-client@2.0.1484 --save\n```\n\
+    \ Installation\n\n```shell\nnpm install textmagic-client@2.0.1588 --save\n```\n\
     \n## Usage Example\n\nPlease follow the [installation](#installation) instructions\
     \ and execute the following JS code:\n\n```javascript\nconst textmagicClient =\
     \ require('textmagic-client');\n\nconst fs = require('fs');\nconst client = textmagicClient.ApiClient.instance;\n\
@@ -614,9 +614,9 @@ tags:
     \ Requirements\n\n1. Java 1.7+\n2. Maven/Gradle\n\n## Installation\n\n### Maven\n\
     \nAdd this dependency to your project's POM:\n```xml\n<dependencies>\n    <dependency>\n\
     \        <groupId>com.textmagic.sdk</groupId>\n        <artifactId>textmagic-java-sdk</artifactId>\n\
-    \        <version>2.0.1534</version>\n    </dependency>\n</dependencies>\n```\n\
+    \        <version>2.0.1588</version>\n    </dependency>\n</dependencies>\n```\n\
     \n### Gradle\n\nAdd this dependency to your project’s build file:\n```groovy\n\
-    compile \"com.textmagic.sdk:textmagic-java-sdk:2.0.1534\"\n```\n\n## Usage Example\n\
+    compile \"com.textmagic.sdk:textmagic-java-sdk:2.0.1588\"\n```\n\n## Usage Example\n\
     \n```java\nimport com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
     import com.textmagic.sdk.auth.*;\nimport com.textmagic.sdk.model.*;\n\npublic\
     \ class App {\n\n    public static void main(String[] args) {\n        ApiClient\
@@ -662,7 +662,7 @@ tags:
     Install-Package Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp\
     \ versions later than 105.1.0 have a bug which causes file uploads to fail. See\
     \ [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\n## Installation\n\
-    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.1534/).\n\
+    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.1588/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -782,7 +782,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Python application.\n\n[Get it\
     \ now on GitHub](https://github.com/textmagic/textmagic-rest-python-v2)\n## Requirements\n\
-    Python 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.1534\n\
+    Python 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.1588\n\
     ```\n\n## Usage Example\n\n```python\nimport TextMagic\nfrom TextMagic.rest import\
     \ ApiException\n\n# put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
     \ page.\nconfiguration = TextMagic.Configuration()\nconfiguration.username = 'YOUR_USERNAME'\n\
@@ -807,8 +807,8 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Perl application.\n\n[Get it\
     \ now on GitHub](https://github.com/textmagic/textmagic-rest-perl-v2)\n## Installation\n\
-    \n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.1534.tar.gz\
-    \ && \\\ntar zxf v2.0.1534.tar.gz && \\\nrm -f v2.0.1534.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.1534\
+    \n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.1588.tar.gz\
+    \ && \\\ntar zxf v2.0.1588.tar.gz && \\\nrm -f v2.0.1588.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.1588\
     \ && \\\nperl Makefile.pl && \\\nmake && \\\nmake install && \\\ncpanm --installdeps\
     \ .\n```\\\n\n## Usage Example\n\nPlease follow the [installation](#installation)\
     \ instructions and execute the following Perl code:\n\n```perl\nuse 5.010;\nuse\
@@ -838,7 +838,7 @@ tags:
     \ by integrating TextMagic SMS Gateway into your Ruby application.\n\n[Get it\
     \ now on GitHub](https://github.com/textmagic/textmagic-rest-ruby-v2)\n## Installation\n\
     \nAdd these lines into your Gemfile\n```ruby\ngem 'textmagic_rest_client', :git\
-    \ => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.1534'\n\
+    \ => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.1588'\n\
     ```\n\nRun the bundler install command\n``` shell\nbundle install\n```\n\n## Usage\
     \ Example\n\nCreate the test file `test.rb` and put the following code:\n```ruby\n\
     \ # Load the gem\nrequire 'textmagic_rest_client'\n\n # Setup authorization\n\
@@ -864,7 +864,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Go application.\n\n[Get it now\
     \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n## Installation\n\
-    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1534\n\
+    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1588\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -23013,18 +23013,20 @@ paths:
         x-optionalDataType: "String"
       - name: "start"
         in: "query"
-        description: "Return messages since specified timestamp only."
+        description: "Return messages since specified timestamp only. Required when\
+          \ `end` parameter specified."
         required: false
-        type: "integer"
+        type: "string"
         x-exportParamName: "Start"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "String"
       - name: "end"
         in: "query"
-        description: "Return messages up to specified timestamp only."
+        description: "Return messages up to specified timestamp only. Required when\
+          \ `start` parameter specified."
         required: false
-        type: "integer"
+        type: "string"
         x-exportParamName: "End"
-        x-optionalDataType: "Int32"
+        x-optionalDataType: "String"
       - name: "direction"
         in: "query"
         description: "Order direction. Default is desc."
@@ -23071,11 +23073,12 @@ paths:
           \ GuzzleHttp\\Client(),\n    $config\n);\n\n$id = 1;\n// Optional, you can\
           \ pass them as null values to getChatMessages method below, default values\
           \ will be used\n$page = 1;\n$limit = 10;\n$query = \"sampleValue\";\n$start\
-          \ = 1;\n$end = 1;\n$direction = \"desc\";\n$voice = 0;\n\ntry {\n    //\
-          \ GetChatMessagesPaginatedResponse class object\n    $result = $api->getChatMessages($id,\
-          \ $page, $limit, $query, $start, $end, $direction, $voice);\n    // ...\n\
-          } catch (Exception $e) {\n    echo 'Exception when calling TextMagicApi->getChatMessages:\
-          \ ', $e->getMessage(), PHP_EOL;\n}"
+          \ = \"sampleValue\";\n$end = \"sampleValue\";\n$direction = \"desc\";\n\
+          $voice = 0;\n\ntry {\n    // GetChatMessagesPaginatedResponse class object\n\
+          \    $result = $api->getChatMessages($id, $page, $limit, $query, $start,\
+          \ $end, $direction, $voice);\n    // ...\n} catch (Exception $e) {\n   \
+          \ echo 'Exception when calling TextMagicApi->getChatMessages: ', $e->getMessage(),\
+          \ PHP_EOL;\n}"
       - lang: "Java"
         source: "// How to install SDK see here https://docs.textmagic.com/#section/Java\n\
           import com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
@@ -23089,9 +23092,9 @@ paths:
           \ = new TextMagicApi();\n\n        int id = 1;\n        // Optional, you\
           \ can pass them as null values to getChatMessages method below, default\
           \ values will be used\n        int page = 1;\n        int limit = 10;\n\
-          \        String query = \"sampleValue\";\n        int start = 1;\n     \
-          \   int end = 1;\n        String direction = \"desc\";\n        int voice\
-          \ = 0;\n\n        try {\n            // GetChatMessagesPaginatedResponse\
+          \        String query = \"sampleValue\";\n        String start = \"sampleValue\"\
+          ;\n        String end = \"sampleValue\";\n        String direction = \"\
+          desc\";\n        int voice = 0;\n\n        try {\n            // GetChatMessagesPaginatedResponse\
           \ class object\n            GetChatMessagesPaginatedResponse obj = apiInstance.getChatMessages(id,\
           \ page, limit, query, start, end, direction, voice);\n            // ...\n\
           \        } catch (ApiException e) {\n            System.err.println(\"Exception\
@@ -23104,10 +23107,10 @@ paths:
           \n// put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
           \ page.\nauth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\
           \nconst id = 1;\n\n// Optional parameters\nconst opts = {\n    page: 1,\n\
-          \    limit: 10,\n    query: \"sampleValue\",\n    start: 1,\n    end: 1,\n\
-          \    direction: \"desc\",\n    voice: 0,\n};\n\napi.getChatMessages(id,\
-          \ opts).then(function (data) {\n    console.log(data);\n}).catch(function(err){\n\
-          \    console.error(err);\n});"
+          \    limit: 10,\n    query: \"sampleValue\",\n    start: \"sampleValue\"\
+          ,\n    end: \"sampleValue\",\n    direction: \"desc\",\n    voice: 0,\n\
+          };\n\napi.getChatMessages(id, opts).then(function (data) {\n    console.log(data);\n\
+          }).catch(function(err){\n    console.error(err);\n});"
       - lang: "Ruby"
         source: "# How to install SDK see here https://docs.textmagic.com/#section/Ruby\n\
           require 'textmagic_rest_client'\n\n# put your Username and API Key from\
@@ -23115,10 +23118,10 @@ paths:
           \ do |config|\n    config.username = 'YOUR_USERNAME'\n    config.password\
           \ = 'YOUR_API_KEY'\nend\n\napi = TextMagic::TextMagicApi.new\n\nid = 1\n\
           params = {\n  # Optional parameters\n  page: 1,\n  limit: 10,\n  query:\
-          \ 'sampleValue',\n  start: 1,\n  end: 1,\n  direction: 'desc',\n  voice:\
-          \ 0,\n}\n\nbegin\n    # GetChatMessagesPaginatedResponse object\n    result\
-          \ = api.get_chat_messages(id, params)\n    # ...\nrescue TextMagic::ApiError\
-          \ => e\n    puts \"Exception when calling TextMagicApi->get_chat_messages:\
+          \ 'sampleValue',\n  start: 'sampleValue',\n  end: 'sampleValue',\n  direction:\
+          \ 'desc',\n  voice: 0,\n}\n\nbegin\n    # GetChatMessagesPaginatedResponse\
+          \ object\n    result = api.get_chat_messages(id, params)\n    # ...\nrescue\
+          \ TextMagic::ApiError => e\n    puts \"Exception when calling TextMagicApi->get_chat_messages:\
           \ #{e}\"\nend"
       - lang: "C#"
         source: "// How to install SDK see here https://docs.textmagic.com/#section/C-VB.NET\n\
@@ -23132,14 +23135,14 @@ paths:
           \ 1;\n            // Optional, you can pass them as null values to getChatMessages\
           \ method below, default values will be used\n            int page = 1;\n\
           \            int limit = 10;\n            string query = \"sampleValue\"\
-          ;\n            int start = 1;\n            int end = 1;\n            string\
-          \ direction = \"desc\";\n            int voice = 0;\n\n            try {\n\
-          \                // GetChatMessagesPaginatedResponse class object\n    \
-          \            var result = apiInstance.GetChatMessages(id, page, limit, query,\
-          \ start, end, direction, voice);\n                // ...\n            }\
-          \ catch (Exception e) {\n                Console.WriteLine(\"Exception when\
-          \ calling getChatMessages: \"+e.Message);\n            }\n        }\n  \
-          \  }\n}"
+          ;\n            string start = \"sampleValue\";\n            string end =\
+          \ \"sampleValue\";\n            string direction = \"desc\";\n         \
+          \   int voice = 0;\n\n            try {\n                // GetChatMessagesPaginatedResponse\
+          \ class object\n                var result = apiInstance.GetChatMessages(id,\
+          \ page, limit, query, start, end, direction, voice);\n                //\
+          \ ...\n            } catch (Exception e) {\n                Console.WriteLine(\"\
+          Exception when calling getChatMessages: \"+e.Message);\n            }\n\
+          \        }\n    }\n}"
       - lang: "VB.Net"
         source: "' How to install SDK see here https://docs.textmagic.com/#section/C-VB.NET\n\
           Imports System\nImports System.IO\nImports TextMagicClient.Api\nImports\
@@ -23151,14 +23154,14 @@ paths:
           \        Dim id As Integer = 1\n        ' Optional, you can pass them as\
           \ null values to getChatMessages method below, default values will be used\n\
           \        Dim page As Integer = 1\n        Dim limit As Integer = 10\n  \
-          \      Dim query As String = \"sampleValue\"\n        Dim start As Integer\
-          \ = 1\n        Dim end As Integer = 1\n        Dim direction As String =\
-          \ \"desc\"\n        Dim voice As Integer = 0\n\n        Try\n          \
-          \  ' GetChatMessagesPaginatedResponse class object\n            Dim result\
-          \ = apiInstance.GetChatMessages(id, page, limit, query, start, end, direction,\
-          \ voice)\n            ' ...\n        Catch e As Exception\n            Console.WriteLine(\"\
-          Exception when calling getChatMessages: \" + e.Message)\n        End Try\n\
-          \    End Sub\nEnd Module"
+          \      Dim query As String = \"sampleValue\"\n        Dim start As String\
+          \ = \"sampleValue\"\n        Dim end As String = \"sampleValue\"\n     \
+          \   Dim direction As String = \"desc\"\n        Dim voice As Integer = 0\n\
+          \n        Try\n            ' GetChatMessagesPaginatedResponse class object\n\
+          \            Dim result = apiInstance.GetChatMessages(id, page, limit, query,\
+          \ start, end, direction, voice)\n            ' ...\n        Catch e As Exception\n\
+          \            Console.WriteLine(\"Exception when calling getChatMessages:\
+          \ \" + e.Message)\n        End Try\n    End Sub\nEnd Module"
       - lang: "Go"
         source: "// How to install SDK see here https://docs.textmagic.com/#section/Go\n\
           package main\n\nimport (\n    \"context\"\n    \"fmt\"\n    \"github.com/antihax/optional\"\
@@ -23172,12 +23175,12 @@ paths:
           ,\n    })\n    // Required\n    var id int32 = 1\n\n    opts := tm.GetChatMessagesOpts{\n\
           \        // Optional parameters\n        Page: optional.NewInt32(1),\n \
           \       Limit: optional.NewInt32(10),\n        Query: optional.NewString(\"\
-          sampleValue\"),\n        Start: optional.NewInt32(1),\n        End: optional.NewInt32(1),\n\
-          \        Direction: optional.NewString(\"desc\"),\n        Voice: optional.NewInt32(0),\n\
-          \    }\n\n    // tm.GetChatMessagesPaginatedResponse struct\n    result,\
-          \ _, err := client.TextMagicApi.GetChatMessages(auth, id, &opts)\n\n   \
-          \ if err != nil {\n        log.Fatal(err)\n    } else {\n        fmt.Printf(\"\
-          %+v\\n\", result)\n        // ...\n    }\n}\n"
+          sampleValue\"),\n        Start: optional.NewString(\"sampleValue\"),\n \
+          \       End: optional.NewString(\"sampleValue\"),\n        Direction: optional.NewString(\"\
+          desc\"),\n        Voice: optional.NewInt32(0),\n    }\n\n    // tm.GetChatMessagesPaginatedResponse\
+          \ struct\n    result, _, err := client.TextMagicApi.GetChatMessages(auth,\
+          \ id, &opts)\n\n    if err != nil {\n        log.Fatal(err)\n    } else\
+          \ {\n        fmt.Printf(\"%+v\\n\", result)\n        // ...\n    }\n}\n"
       - lang: "Cpp"
         source: "// How to install SDK see here https://docs.textmagic.com/#section/C++\n\
           #include <iostream>\n#include <fstream>\n// Change paths to directory where\
@@ -23192,8 +23195,9 @@ paths:
           \n    TextMagicApi api(apiClient);\n\n    int id = 1;\n    // Optional parameters.\
           \ Important: if you want to use default value then pass boost::none value\n\
           \    int page = 1;\n    int limit = 10;\n    std::string query = \"sampleValue\"\
-          ;\n    int start = 1;\n    int end = 1;\n    std::string direction = \"\
-          desc\";\n    int voice = 0;\n\n    try {\n        pplx::task<std::shared_ptr<GetChatMessagesPaginatedResponse>>\
+          ;\n    std::string start = \"sampleValue\";\n    std::string end = \"sampleValue\"\
+          ;\n    std::string direction = \"desc\";\n    int voice = 0;\n\n    try\
+          \ {\n        pplx::task<std::shared_ptr<GetChatMessagesPaginatedResponse>>\
           \ result = api.getChatMessages(id, page, limit, query, start, end, direction,\
           \ voice);\n        result.wait();\n        // put operations with result\
           \ here...\n    } catch(const std::exception& e) {\n        std::cout <<\
@@ -23207,11 +23211,12 @@ paths:
           \ = \"YOUR_API_KEY\"\n\n# create an instance of the API class\napi_instance\
           \ = TextMagic.TextMagicApi(TextMagic.ApiClient(configuration))\n\nid = 1\n\
           # Optional params, you can skip them\npage = 1\nlimit = 10\nquery = \"sampleValue\"\
-          \nstart = 1\nend = 1\ndirection = \"desc\"\nvoice = 0\n\ntry:\n    # GetChatMessagesPaginatedResponse\
-          \ object\n    result = api_instance.get_chat_messages(id=id, page=page,\
-          \ limit=limit, query=query, start=start, end=end, direction=direction, voice=voice)\n\
-          \    # ...\nexcept ApiException as e:\n    print(\"Exception when calling\
-          \ TextMagicApi->get_chat_messages: %s\\n\" % e)\n"
+          \nstart = \"sampleValue\"\nend = \"sampleValue\"\ndirection = \"desc\"\n\
+          voice = 0\n\ntry:\n    # GetChatMessagesPaginatedResponse object\n    result\
+          \ = api_instance.get_chat_messages(id=id, page=page, limit=limit, query=query,\
+          \ start=start, end=end, direction=direction, voice=voice)\n    # ...\nexcept\
+          \ ApiException as e:\n    print(\"Exception when calling TextMagicApi->get_chat_messages:\
+          \ %s\\n\" % e)\n"
       - lang: "Perl"
         source: "# How to install SDK see here https://docs.textmagic.com/#section/Perl\n\
           use 5.010;\nuse strict;\nuse warnings;\nuse Net::Sms::TextMagicClient::ApiClient;\n\
@@ -23221,8 +23226,8 @@ paths:
           \   => 'YOUR_USERNAME',\n    password   => 'YOUR_API_KEY'\n);\n\nmy $api_instance\
           \ = Net::Sms::TextMagicClient::TextMagicApi::->new($client);\n\nmy $id =\
           \ 1;\n# Optional params, you can skip them\nmy $page = 1;\nmy $limit = 10;\n\
-          my $query = 'sampleValue';\nmy $start = 1;\nmy $end = 1;\nmy $direction\
-          \ = 'desc';\nmy $voice = 0;\n\neval {\n    # GetChatMessagesPaginatedResponse\
+          my $query = 'sampleValue';\nmy $start = 'sampleValue';\nmy $end = 'sampleValue';\n\
+          my $direction = 'desc';\nmy $voice = 0;\n\neval {\n    # GetChatMessagesPaginatedResponse\
           \ object\n    my $result = $api_instance->get_chat_messages(id => $id, page\
           \ => $page, limit => $limit, query => $query, start => $start, end => $end,\
           \ direction => $direction, voice => $voice);\n    # ...\n};\n\nif ($@) {\n\
