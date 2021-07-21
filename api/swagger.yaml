@@ -186,9 +186,12 @@ tags:
     \ callback\n\nA callback is a mechanism that posts the JSON body of a sent message\
     \ to the URL on a server that you specify. The server application which receives\
     \ the callback can check the message status and trigger actions based on that\
-    \ data.\n\nHere is how to set up the delivery status callback URL:\n\n1.  [Log\
-    \ in](https://my.textmagic.com/) to TextMagic (or [start a free trial](https://my.textmagic.com/register/)\
-    \ if you haven’t registered yet).\n2.  Go to the\_[API](https://my.textmagic.com/online/api/rest-api/keys)\
+    \ data.\n\nDelivery status callback is triggered when SMS receives a final status.\
+    \ This is a complete list of final statuses:\n* **d** - delivered;\n* **f** -\
+    \ failed;\n* **j** - rejected;\n* **u** - unknown.\n\nHere is how to set up the\
+    \ delivery status callback URL:\n\n1.  [Log in](https://my.textmagic.com/) to\
+    \ TextMagic (or [start a free trial](https://my.textmagic.com/register/) if you\
+    \ haven’t registered yet).\n2.  Go to the\_[API](https://my.textmagic.com/online/api/rest-api/keys)\
     \ page.\n3.  Enter your callback URL into the\_**Callback URL for delivery notifications**\
     \ field.\n4.  Click the\_**Test** button to test your URL.\n5.  If it’s successful,\
     \ click **Save changes**.\n\nYour server should reply with an **200 OK** response\
@@ -864,7 +867,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Go application.\n\n[Get it now\
     \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n## Installation\n\
-    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1781\n\
+    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1816\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
