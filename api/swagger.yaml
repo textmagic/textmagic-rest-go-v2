@@ -617,9 +617,9 @@ tags:
     \ Requirements\n\n1. Java 1.7+\n2. Maven/Gradle\n\n## Installation\n\n### Maven\n\
     \nAdd this dependency to your project's POM:\n```xml\n<dependencies>\n    <dependency>\n\
     \        <groupId>com.textmagic.sdk</groupId>\n        <artifactId>textmagic-java-sdk</artifactId>\n\
-    \        <version>2.0.1588</version>\n    </dependency>\n</dependencies>\n```\n\
+    \        <version>2.0.2453</version>\n    </dependency>\n</dependencies>\n```\n\
     \n### Gradle\n\nAdd this dependency to your project’s build file:\n```groovy\n\
-    compile \"com.textmagic.sdk:textmagic-java-sdk:2.0.1588\"\n```\n\n## Usage Example\n\
+    compile \"com.textmagic.sdk:textmagic-java-sdk:2.0.2453\"\n```\n\n## Usage Example\n\
     \n```java\nimport com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
     import com.textmagic.sdk.auth.*;\nimport com.textmagic.sdk.model.*;\n\npublic\
     \ class App {\n\n    public static void main(String[] args) {\n        ApiClient\
@@ -634,7 +634,7 @@ tags:
     \ calling ping\");\n            e.printStackTrace();\n        }\n\n        //\
     \ Send a new message request example\n        SendMessageInputObject sendMessageInputObject\
     \ = new SendMessageInputObject();\n        sendMessageInputObject.setText(\"I\
-    \ love Textmagic!\");\n        sendMessageInputObject.setPhones(\"+19998887766\"\
+    \ love Textmagic!\");\n        sendMessageInputObject.setPhones(\"+19997776655\"\
     );\n\n        try {\n            SendMessageResponse response = apiInstance.sendMessage(sendMessageInputObject,\
     \ true);\n            System.out.println(response.getId());\n        } catch (ApiException\
     \ e) {\n            System.err.println(\"Exception when calling sendMessage\"\
@@ -656,16 +656,16 @@ tags:
     \ by integrating TextMagic SMS Gateway into your C# / VB.NET application.\n\n\
     [Get it now on GitHub](https://github.com/textmagic/textmagic-rest-csharp-v2)\n\
     \n## Frameworks supported\n- .NET 4.0 or later\n- Windows Phone 7.1 (Mango)\n\n\
-    ## Dependencies\n- [RestSharp](https://www.nuget.org/packages/RestSharp) - 105.1.0\
-    \ or later\n- [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/) - 7.0.0\
-    \ or later\n- [JsonSubTypes](https://www.nuget.org/packages/JsonSubTypes/) - 1.2.0\
-    \ or later\n\nThe DLLs included in the package may not be the latest versions.\
-    \ We recommend using [NuGet](https://docs.nuget.org/consume/installing-nuget)\
-    \ to obtain the latest version of the packages:\n```\nInstall-Package RestSharp\n\
-    Install-Package Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp\
-    \ versions later than 105.1.0 have a bug which causes file uploads to fail. See\
-    \ [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\n## Installation\n\
-    Add the library to your project references or install it as a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.1588/).\n\
+    ## Dependencies\n- [RestSharp](https://www.nuget.org/packages/RestSharp) - 105.1.0\n\
+    - [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/) - 7.0.0 or later\n\
+    - [JsonSubTypes](https://www.nuget.org/packages/JsonSubTypes/) - 1.2.0 or later\n\
+    \nThe DLLs included in the package may not be the latest versions. We recommend\
+    \ using [NuGet](https://docs.nuget.org/consume/installing-nuget) to obtain the\
+    \ latest version of the packages:\n```\nInstall-Package RestSharp\nInstall-Package\
+    \ Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp versions\
+    \ later than 105.1.0 have a bug which causes file uploads to fail. See [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\
+    \n## Installation\nAdd the library to your project references or install it as\
+    \ a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.2453/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -867,7 +867,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Go application.\n\n[Get it now\
     \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n## Installation\n\
-    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.1816\n\
+    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.2456\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
