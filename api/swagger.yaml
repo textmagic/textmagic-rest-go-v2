@@ -617,9 +617,9 @@ tags:
     \ Requirements\n\n1. Java 1.7+\n2. Maven/Gradle\n\n## Installation\n\n### Maven\n\
     \nAdd this dependency to your project's POM:\n```xml\n<dependencies>\n    <dependency>\n\
     \        <groupId>com.textmagic.sdk</groupId>\n        <artifactId>textmagic-java-sdk</artifactId>\n\
-    \        <version>2.0.2453</version>\n    </dependency>\n</dependencies>\n```\n\
+    \        <version>2.0.2457</version>\n    </dependency>\n</dependencies>\n```\n\
     \n### Gradle\n\nAdd this dependency to your project’s build file:\n```groovy\n\
-    compile \"com.textmagic.sdk:textmagic-java-sdk:2.0.2453\"\n```\n\n## Usage Example\n\
+    compile \"com.textmagic.sdk:textmagic-java-sdk:2.0.2457\"\n```\n\n## Usage Example\n\
     \n```java\nimport com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
     import com.textmagic.sdk.auth.*;\nimport com.textmagic.sdk.model.*;\n\npublic\
     \ class App {\n\n    public static void main(String[] args) {\n        ApiClient\
@@ -634,7 +634,7 @@ tags:
     \ calling ping\");\n            e.printStackTrace();\n        }\n\n        //\
     \ Send a new message request example\n        SendMessageInputObject sendMessageInputObject\
     \ = new SendMessageInputObject();\n        sendMessageInputObject.setText(\"I\
-    \ love Textmagic!\");\n        sendMessageInputObject.setPhones(\"+19997776655\"\
+    \ love TextMagic!\");\n        sendMessageInputObject.setPhones(\"+19998887766\"\
     );\n\n        try {\n            SendMessageResponse response = apiInstance.sendMessage(sendMessageInputObject,\
     \ true);\n            System.out.println(response.getId());\n        } catch (ApiException\
     \ e) {\n            System.err.println(\"Exception when calling sendMessage\"\
@@ -867,7 +867,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Go application.\n\n[Get it now\
     \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n## Installation\n\
-    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.2456\n\
+    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.2457\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
