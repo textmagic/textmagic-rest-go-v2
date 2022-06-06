@@ -10,7 +10,7 @@
 package TextMagic
 
 type GetVersionsResponse struct {
-	Ios int32 `json:"ios"`
-	Android int32 `json:"android"`
-	Desktop int32 `json:"desktop"`
+	Ios string `json:"ios"`
+	Android string `json:"android"`
+	Desktop string `json:"desktop"`
 }

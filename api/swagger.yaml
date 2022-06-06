@@ -617,9 +617,9 @@ tags:
     \ Requirements\n\n1. Java 1.7+\n2. Maven/Gradle\n\n## Installation\n\n### Maven\n\
     \nAdd this dependency to your project's POM:\n```xml\n<dependencies>\n    <dependency>\n\
     \        <groupId>com.textmagic.sdk</groupId>\n        <artifactId>textmagic-java-sdk</artifactId>\n\
-    \        <version>2.0.2457</version>\n    </dependency>\n</dependencies>\n```\n\
+    \        <version>2.0.2456</version>\n    </dependency>\n</dependencies>\n```\n\
     \n### Gradle\n\nAdd this dependency to your project’s build file:\n```groovy\n\
-    compile \"com.textmagic.sdk:textmagic-java-sdk:2.0.2457\"\n```\n\n## Usage Example\n\
+    compile \"com.textmagic.sdk:textmagic-java-sdk:2.0.2456\"\n```\n\n## Usage Example\n\
     \n```java\nimport com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
     import com.textmagic.sdk.auth.*;\nimport com.textmagic.sdk.model.*;\n\npublic\
     \ class App {\n\n    public static void main(String[] args) {\n        ApiClient\
@@ -867,7 +867,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Go application.\n\n[Get it now\
     \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n## Installation\n\
-    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.2457\n\
+    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.3361\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -26654,14 +26654,14 @@ definitions:
     - "ios"
     properties:
       ios:
-        type: "integer"
-        example: 1
+        type: "string"
+        example: "1"
       android:
-        type: "integer"
-        example: 2
+        type: "string"
+        example: "2"
       desktop:
-        type: "integer"
-        example: 3
+        type: "string"
+        example: "3"
   DoAuthResponse:
     required:
     - "disallowedRules"
@@ -35940,8 +35940,9 @@ definitions:
       sendingDateTime:
         type: "string"
         example: "2020-05-27 13:02:33"
-        description: "Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33).\
-          \ This time is relative to **sendingTimezone**."
+        description: "Sending time in Y-m-d H:i:s format (e.g. 2022-05-27 13:05:10).\
+          \ This time is relative to **sendingTimezone**. Note: for correct operation,\
+          \ the value of seconds must not be less than 10."
       sendingTimezone:
         type: "string"
         example: "America/Buenos_Aires"
@@ -36396,14 +36397,14 @@ definitions:
     - "ios"
     properties:
       ios:
-        type: "integer"
-        example: 0
+        type: "string"
+        example: "0"
       android:
-        type: "integer"
-        example: 0
+        type: "string"
+        example: "0"
       desktop:
-        type: "integer"
-        example: 0
+        type: "string"
+        example: "0"
   MessagesIcs_parameters_recipients:
     required:
     - "contacts"
