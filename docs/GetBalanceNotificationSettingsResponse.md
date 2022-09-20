@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LowBalanceNotification** | **bool** | Should user receive low balance notification. | [default to null]
-**AlertBalance** | **string** | If balance is below this value, user receive low balance notification. | [default to null]
+**AlertBalance** | **float32** | If balance is below this value, user receive low balance notification. | [default to null]
 **AlertPhone** | **string** | Low balance notification phone number. | [default to null]
 **AlertEmail1** | **string** | Low balance notification email 1. | [default to null]
 **AlertEmail2** | **string** | Low balance notification email 2. | [default to null]

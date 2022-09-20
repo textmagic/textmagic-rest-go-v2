@@ -12,6 +12,6 @@ package TextMagic
 type DeleteContactsByIdsInputObject struct {
 	// Entity ID(s), separated by comma.
 	Ids string `json:"ids,omitempty"`
-	// Entity ID(s), separated by comma.
-	All bool `json:"all,omitempty"`
+	// Optional. Default is 0 (false). If set to 1 all the entities will be removed.
+	All int32 `json:"all,omitempty"`
 }

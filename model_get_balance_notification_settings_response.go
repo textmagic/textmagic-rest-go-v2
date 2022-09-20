@@ -13,7 +13,7 @@ type GetBalanceNotificationSettingsResponse struct {
 	// Should user receive low balance notification.
 	LowBalanceNotification bool `json:"lowBalanceNotification"`
 	// If balance is below this value, user receive low balance notification.
-	AlertBalance string `json:"alertBalance"`
+	AlertBalance float32 `json:"alertBalance"`
 	// Low balance notification phone number.
 	AlertPhone string `json:"alertPhone"`
 	// Low balance notification email 1.

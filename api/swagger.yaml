@@ -563,7 +563,7 @@ tags:
     \n```javascript\n{\n    \"repositories\": [\n        {\n            \"type\":\
     \ \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
     \n        }\n    ],\n    \"require\": {\n        \"textmagic/textmagic-rest-php-v2\"\
-    : \"dev-master#v2.0.1588\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
+    : \"dev-master#v2.0.4420\"\n    }\n}\n```\n\nThen run `composer install`\n\n###\
     \ Manual Installation\n\nDownload the files and include `autoload.php`:\n\n```php\n\
     require_once(__DIR__.'/vendor/autoload.php');\n```\n\n## Usage Example\n\nPlease\
     \ follow the [installation](#installation) instructions and execute the following\
@@ -592,7 +592,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Node.js application.\n\n[Get\
     \ it now on GitHub](https://github.com/textmagic/textmagic-rest-nodejs-v2)\n##\
-    \ Installation\n\n```shell\nnpm install textmagic-client@2.0.1588 --save\n```\n\
+    \ Installation\n\n```shell\nnpm install textmagic-client@2.0.4420 --save\n```\n\
     \n## Usage Example\n\nPlease follow the [installation](#installation) instructions\
     \ and execute the following JS code:\n\n```javascript\nconst textmagicClient =\
     \ require('textmagic-client');\n\nconst fs = require('fs');\nconst client = textmagicClient.ApiClient.instance;\n\
@@ -617,9 +617,9 @@ tags:
     \ Requirements\n\n1. Java 1.7+\n2. Maven/Gradle\n\n## Installation\n\n### Maven\n\
     \nAdd this dependency to your project's POM:\n```xml\n<dependencies>\n    <dependency>\n\
     \        <groupId>com.textmagic.sdk</groupId>\n        <artifactId>textmagic-java-sdk</artifactId>\n\
-    \        <version>2.0.2456</version>\n    </dependency>\n</dependencies>\n```\n\
+    \        <version>2.0.4420</version>\n    </dependency>\n</dependencies>\n```\n\
     \n### Gradle\n\nAdd this dependency to your project’s build file:\n```groovy\n\
-    compile \"com.textmagic.sdk:textmagic-java-sdk:2.0.2456\"\n```\n\n## Usage Example\n\
+    compile \"com.textmagic.sdk:textmagic-java-sdk:2.0.4420\"\n```\n\n## Usage Example\n\
     \n```java\nimport com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
     import com.textmagic.sdk.auth.*;\nimport com.textmagic.sdk.model.*;\n\npublic\
     \ class App {\n\n    public static void main(String[] args) {\n        ApiClient\
@@ -665,7 +665,7 @@ tags:
     \ Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp versions\
     \ later than 105.1.0 have a bug which causes file uploads to fail. See [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\
     \n## Installation\nAdd the library to your project references or install it as\
-    \ a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.2453/).\n\
+    \ a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.4420/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -730,22 +730,22 @@ tags:
     \n* CMake 2.8 and later (https://cmake.org/)\n* cpprest (https://github.com/microsoft/cpprestsdk)\n\
     \nUbuntu dependencies quick installation example:\n```shell\napt-get install build-essential\
     \ cmake libcpprest-dev\n```\n\n## Installation\n\nDownload and extract lib archive:\n\
-    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.1588.tar.gz\
-    \ && \\\ntar zxf v2.0.1588.tar.gz && \\\nrm -f v2.0.1588.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.1588\n\
+    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.4420.tar.gz\
+    \ && \\\ntar zxf v2.0.4420.tar.gz && \\\nrm -f v2.0.4420.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.4420\n\
     ```\nBuild using cmake\n```shell\ncmake . && cmake --build .\n```\nThe output\
-    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.1588/lib` directory:\n\
+    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.4420/lib` directory:\n\
     \n## Usage Example\nIn the example below, we assume that you moved the library\
-    \ sources `textmagic-rest-cpp-v2-2.0.1588` directory to your test project root\
+    \ sources `textmagic-rest-cpp-v2-2.0.4420` directory to your test project root\
     \ directory.\n\nConfigure your `CMakeLists.txt` as shown here:\n```shell\ncmake_minimum_required(VERSION\
     \ 2.8)\nproject(test)\n\nset(CMAKE_CXX_STANDARD 14)\n\nadd_executable(app main.cpp)\n\
     \nadd_library(textmagic_client SHARED IMPORTED)\nset_property(TARGET textmagic_client\
-    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.1588/lib/libtextmagic_client.so\"\
-    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.1588\
-    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.1588/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.1588/api)\n\
+    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.4420/lib/libtextmagic_client.so\"\
+    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.4420\
+    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.4420/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.4420/api)\n\
     target_link_libraries(app boost_system cpprest crypto textmagic_client )\n```\n\
     \n`main.cpp` file example:\n```cpp\n#include <iostream>\n#include <fstream>\n\
-    #include \"textmagic-rest-cpp-v2-2.0.1588/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.1588/ApiConfiguration.h\"\
-    \n#include \"textmagic-rest-cpp-v2-2.0.1588/api/TextMagicApi.h\"\n\nusing namespace\
+    #include \"textmagic-rest-cpp-v2-2.0.4420/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.4420/ApiConfiguration.h\"\
+    \n#include \"textmagic-rest-cpp-v2-2.0.4420/api/TextMagicApi.h\"\n\nusing namespace\
     \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
     \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
     \ ApiConfiguration);\n\n    // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
@@ -785,7 +785,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Python application.\n\n[Get it\
     \ now on GitHub](https://github.com/textmagic/textmagic-rest-python-v2)\n## Requirements\n\
-    Python 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.1588\n\
+    Python 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.4420\n\
     ```\n\n## Usage Example\n\n```python\nimport TextMagic\nfrom TextMagic.rest import\
     \ ApiException\n\n# put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
     \ page.\nconfiguration = TextMagic.Configuration()\nconfiguration.username = 'YOUR_USERNAME'\n\
@@ -810,8 +810,8 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Perl application.\n\n[Get it\
     \ now on GitHub](https://github.com/textmagic/textmagic-rest-perl-v2)\n## Installation\n\
-    \n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.1588.tar.gz\
-    \ && \\\ntar zxf v2.0.1588.tar.gz && \\\nrm -f v2.0.1588.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.1588\
+    \n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.4420.tar.gz\
+    \ && \\\ntar zxf v2.0.4420.tar.gz && \\\nrm -f v2.0.4420.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.4420\
     \ && \\\nperl Makefile.pl && \\\nmake && \\\nmake install && \\\ncpanm --installdeps\
     \ .\n```\\\n\n## Usage Example\n\nPlease follow the [installation](#installation)\
     \ instructions and execute the following Perl code:\n\n```perl\nuse 5.010;\nuse\
@@ -841,7 +841,7 @@ tags:
     \ by integrating TextMagic SMS Gateway into your Ruby application.\n\n[Get it\
     \ now on GitHub](https://github.com/textmagic/textmagic-rest-ruby-v2)\n## Installation\n\
     \nAdd these lines into your Gemfile\n```ruby\ngem 'textmagic_rest_client', :git\
-    \ => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.1700'\n\
+    \ => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.4420'\n\
     ```\n\nRun the bundler install command\n``` shell\nbundle install\n```\n\n## Usage\
     \ Example\n\nCreate the test file `test.rb` and put the following code:\n```ruby\n\
     \ # Load the gem\nrequire 'textmagic_rest_client'\n\n # Setup authorization\n\
@@ -867,7 +867,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Go application.\n\n[Get it now\
     \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n## Installation\n\
-    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.3361\n\
+    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.4420\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -8123,7 +8123,7 @@ paths:
           \    ->setPassword('YOUR_API_KEY');\n\n$api = new TextMagicApi(\n    new\
           \ GuzzleHttp\\Client(),\n    $config\n);\n\n$input = new DeleteContactsByIdsInputObject();\n\
           \n// Optional parameters, you can skip these setters calls\n$input->setIds(\"\
-          1,2,3\");\n$input->setAll(false);\n\ntry {\n    $api->deleteContactsByIds($input);\n\
+          1,2,3\");\n$input->setAll(0);\n\ntry {\n    $api->deleteContactsByIds($input);\n\
           } catch (Exception $e) {\n    echo 'Exception when calling TextMagicApi->deleteContactsByIds:\
           \ ', $e->getMessage(), PHP_EOL;\n}"
       - lang: "Java"
@@ -8139,7 +8139,7 @@ paths:
           \ = new TextMagicApi();\n\n        DeleteContactsByIdsInputObject input\
           \ = new DeleteContactsByIdsInputObject();\n\n        // Optional parameters,\
           \ you can skip these setters calls\n        input.setIds(\"1,2,3\");\n \
-          \       input.setAll(false);\n\n        try {\n            apiInstance.deleteContactsByIds(input);\n\
+          \       input.setAll(0);\n\n        try {\n            apiInstance.deleteContactsByIds(input);\n\
           \        } catch (ApiException e) {\n            System.err.println(\"Exception\
           \ when calling deleteContactsByIds\");\n            e.printStackTrace();\n\
           \        }\n    }\n}"
@@ -8150,8 +8150,8 @@ paths:
           \n// put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
           \ page.\nauth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\
           \nconst input = {\n    // Optional parameters\n    ids: \"1,2,3\",\n   \
-          \ all: false,\n}\n\n\napi.deleteContactsByIds(input).then(function (data)\
-          \ {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          \ all: 0,\n}\n\n\napi.deleteContactsByIds(input).then(function (data) {\n\
+          \    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
       - lang: "Ruby"
         source: "# How to install SDK see here https://docs.textmagic.com/#section/Ruby\n\
@@ -8160,9 +8160,8 @@ paths:
           \ do |config|\n    config.username = 'YOUR_USERNAME'\n    config.password\
           \ = 'YOUR_API_KEY'\nend\n\napi = TextMagic::TextMagicApi.new\n\nobj = new\
           \ TextMagic::DeleteContactsByIdsInputObject.new\n# Optional parameters,\
-          \ you can skip them\nobj.ids = \"1,2,3\"\nobj.all = false\n\nbegin\n   \
-          \ api.delete_contacts_by_ids(input)\nrescue TextMagic::ApiError => e\n \
-          \   puts \"Exception when calling TextMagicApi->delete_contacts_by_ids:\
+          \ you can skip them\nobj.ids = \"1,2,3\"\nobj.all = 0\n\nbegin\n    api.delete_contacts_by_ids(input)\n\
+          rescue TextMagic::ApiError => e\n    puts \"Exception when calling TextMagicApi->delete_contacts_by_ids:\
           \ #{e}\"\nend"
       - lang: "C#"
         source: "// How to install SDK see here https://docs.textmagic.com/#section/C-VB.NET\n\
@@ -8175,7 +8174,7 @@ paths:
           \          var apiInstance = new TextMagicApi();\n\n            var obj\
           \ = new DeleteContactsByIdsInputObject();\n\n            // Optional parameters,\
           \ you can skip these setters calls\n            obj.Ids = \"1,2,3\";\n \
-          \           obj.All = false;\n\n            try {\n                apiInstance.DeleteContactsByIds(obj);\n\
+          \           obj.All = 0;\n\n            try {\n                apiInstance.DeleteContactsByIds(obj);\n\
           \            } catch (Exception e) {\n                Console.WriteLine(\"\
           Exception when calling deleteContactsByIds: \"+e.Message);\n           \
           \ }\n        }\n    }\n}"
@@ -8188,7 +8187,7 @@ paths:
           \ Configuration.Default.Username = \"YOUR_USERNAME\"\n        Configuration.Default.Password\
           \ = \"YOUR_API_KEY\"\n\n        Dim apiInstance = New TextMagicApi()\n\n\
           \        Dim obj = New DeleteContactsByIdsInputObject With {\n         \
-          \   .Ids = \"1,2,3\",\n            .All = false\n        }\n\n        Try\n\
+          \   .Ids = \"1,2,3\",\n            .All = 0\n        }\n\n        Try\n\
           \            apiInstance.DeleteContactsByIds(obj)\n            ' ...\n \
           \       Catch e As Exception\n            Console.WriteLine(\"Exception\
           \ when calling deleteContactsByIds: \" + e.Message)\n        End Try\n \
@@ -8204,7 +8203,7 @@ paths:
           \ := context.WithValue(context.Background(), tm.ContextBasicAuth, tm.BasicAuth{\n\
           \        UserName: \"YOUR_USERNAME\",\n        Password: \"YOUR_API_KEY\"\
           ,\n    })\n\n    input := tm.SendMessageInputObject{\n        // Optional\
-          \ parameters, you can skip them\n        Ids: \"1,2,3\",\n        All: false,\n\
+          \ parameters, you can skip them\n        Ids: \"1,2,3\",\n        All: 0,\n\
           \    }\n\n    client.TextMagicApi.DeleteContactsByIds(auth, input)\n\n \
           \   if err != nil {\n        log.Fatal(err)\n    } else {\n        // ...\n\
           \    }\n}\n"
@@ -8221,7 +8220,7 @@ paths:
           YOUR_NAME\", \"YOUR_API_KEY\"));\n    apiClient->setConfiguration(apiConfig);\n\
           \n    TextMagicApi api(apiClient);\n\n    std::shared_ptr<DeleteContactsByIdsInputObject>\
           \ input(new DeleteContactsByIdsInputObject);\n    // Optional parameters,\
-          \ you can skip them\n    input->setIds(\"1,2,3\");\n    input->setAll(false);\n\
+          \ you can skip them\n    input->setIds(\"1,2,3\");\n    input->setAll(0);\n\
           \n    try {\n        pplx::task result = api.deleteContactsByIds(input);\n\
           \        result.wait();\n    } catch(const std::exception& e) {\n      \
           \  std::cout << \"deleteContactsByIds() exception: \" << e.what() << '\\\
@@ -8234,7 +8233,7 @@ paths:
           \ = \"YOUR_API_KEY\"\n\n# create an instance of the API class\napi_instance\
           \ = TextMagic.TextMagicApi(TextMagic.ApiClient(configuration))\n\ninput\
           \ = TextMagic.DeleteContactsByIdsInputObject()\n# Optional parameters, you\
-          \ can skip them\ninput.ids = \"1,2,3\"\ninput.all = false\n\ntry:\n    api_instance.delete_contacts_by_ids(delete_contacts_by_ids_input_object=input)\n\
+          \ can skip them\ninput.ids = \"1,2,3\"\ninput.all = 0\n\ntry:\n    api_instance.delete_contacts_by_ids(delete_contacts_by_ids_input_object=input)\n\
           except ApiException as e:\n    print(\"Exception when calling TextMagicApi->delete_contacts_by_ids:\
           \ %s\\n\" % e)\n"
       - lang: "Perl"
@@ -27215,8 +27214,8 @@ definitions:
         example: true
         description: "Should user receive low balance notification."
       alertBalance:
-        type: "string"
-        example: "50"
+        type: "number"
+        example: 50.0
         description: "If balance is below this value, user receive low balance notification."
       alertPhone:
         type: "string"
@@ -27235,7 +27234,7 @@ definitions:
         example: "test@test.com"
         description: "Low balance notification email 3."
     example:
-      alertBalance: "50"
+      alertBalance: 50.0
       alertPhone: "447860021130"
       alertEmail1: "test@test.com"
       alertEmail2: "test@test.com"
@@ -35674,11 +35673,12 @@ definitions:
         example: "1,2,3"
         description: "Entity ID(s), separated by comma."
       all:
-        type: "boolean"
-        example: false
-        description: "Entity ID(s), separated by comma."
+        type: "integer"
+        example: 0
+        description: "Optional. Default is 0 (false). If set to 1 all the entities\
+          \ will be removed."
     example:
-      all: false
+      all: 0
       ids: "1,2,3"
   UnsubscribeContactInputObject:
     properties:
