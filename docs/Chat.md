@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Mute** | **int32** | Indicates when the chat is muted. | [default to null]
 **LastMessage** | **string** | The last message content of a chat. | [default to null]
 **Direction** | **string** | Last message type: * **ci** - incoming call; * **co** - outgoing call; * **i** - incoming message; * **o** - outgoing message.  | [default to null]
+**ReplyOptionsType** | **string** | Used for chats prices. | [default to null]
 **From** | **string** | If filled, the value will be used as a sender number for all outgoing messages of a chat. | [default to null]
 **MutedUntil** | **string** | Date and time until the chat will be muted. | [default to null]
 **TimeLeftMute** | **int32** | Time left untill the chat will be unmuted (seconds). | [default to null]

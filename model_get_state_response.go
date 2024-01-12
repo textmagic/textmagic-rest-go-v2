@@ -14,6 +14,9 @@ type GetStateResponse struct {
 	SystemExit int32 `json:"systemExit"`
 	SystemAlert int32 `json:"systemAlert"`
 	SystemAccountStateChanged int32 `json:"systemAccountStateChanged"`
+	SystemAccountAdditionalFields int32 `json:"systemAccountAdditionalFields"`
+	SystemAccountPermissionsChanged int32 `json:"systemAccountPermissionsChanged"`
+	UserBalanceChanged int32 `json:"userBalanceChanged"`
 	MessageDeleted int32 `json:"messageDeleted"`
 	MessageIncoming int32 `json:"messageIncoming"`
 	MessageIncomingDeleted int32 `json:"messageIncomingDeleted"`
@@ -27,6 +30,7 @@ type GetStateResponse struct {
 	MessageScheduleAdded int32 `json:"messageScheduleAdded"`
 	MessageScheduleStateChanged int32 `json:"messageScheduleStateChanged"`
 	MessageScheduleDeleted int32 `json:"messageScheduleDeleted"`
+	MessageScheduleNotSentStateChanged int32 `json:"messageScheduleNotSentStateChanged"`
 	MessageScheduleCacheClear int32 `json:"messageScheduleCacheClear"`
 	MessageTemplateCacheClear int32 `json:"messageTemplateCacheClear"`
 	CallFinished int32 `json:"callFinished"`
@@ -40,6 +44,8 @@ type GetStateResponse struct {
 	ChatClosed int32 `json:"chatClosed"`
 	ChatReopened int32 `json:"chatReopened"`
 	ChatCacheClear int32 `json:"chatCacheClear"`
+	ChatRead int32 `json:"chatRead"`
+	ChatUnread int32 `json:"chatUnread"`
 	ContactAdded int32 `json:"contactAdded"`
 	ContactDeleted int32 `json:"contactDeleted"`
 	ContactStateChanged int32 `json:"contactStateChanged"`
@@ -51,4 +57,12 @@ type GetStateResponse struct {
 	ContactCacheClear int32 `json:"contactCacheClear"`
 	ListCacheClear int32 `json:"listCacheClear"`
 	CustomFieldsCacheClear int32 `json:"customFieldsCacheClear"`
+	ProgressCarrierBulkLookup int32 `json:"progressCarrierBulkLookup"`
+	ProgressEmailBulkLookup int32 `json:"progressEmailBulkLookup"`
+	ProgressSubAccountBulkImport int32 `json:"progressSubAccountBulkImport"`
+	ProgressContactBulkImport int32 `json:"progressContactBulkImport"`
+	ForceRefreshWebApp int32 `json:"forceRefreshWebApp"`
+	ChatSenderSettingsChanged int32 `json:"chatSenderSettingsChanged"`
+	CountrySenderSettingsChanged int32 `json:"countrySenderSettingsChanged"`
+	ChatSuggestedReplyChunk int32 `json:"chatSuggestedReplyChunk"`
 }

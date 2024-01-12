@@ -30,6 +30,8 @@ type Chat struct {
 	LastMessage string `json:"lastMessage"`
 	// Last message type: * **ci** - incoming call; * **co** - outgoing call; * **i** - incoming message; * **o** - outgoing message. 
 	Direction string `json:"direction"`
+	// Used for chats prices.
+	ReplyOptionsType string `json:"replyOptionsType"`
 	// If filled, the value will be used as a sender number for all outgoing messages of a chat.
 	From string `json:"from"`
 	// Date and time until the chat will be muted.

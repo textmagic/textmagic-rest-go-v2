@@ -18,4 +18,8 @@ type GetAvailableSenderSettingOptionsResponse struct {
 	Shared []string `json:"shared"`
 	// Array of alphanumeric sender IDs.
 	SenderIds []string `json:"senderIds"`
+	// Array of alphanumeric sender IDs.
+	UserCarrierTwilio []string `json:"userCarrierTwilio"`
+	// Array of alphanumeric sender IDs.
+	UserCarrierVonage []string `json:"userCarrierVonage"`
 }
