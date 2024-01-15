@@ -665,7 +665,7 @@ tags:
     \ Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp versions\
     \ later than 105.1.0 have a bug which causes file uploads to fail. See [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\
     \n## Installation\nAdd the library to your project references or install it as\
-    \ a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.4420/).\n\
+    \ a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.17551/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -867,7 +867,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Go application.\n\n[Get it now\
     \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n## Installation\n\
-    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.17428\n\
+    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.17551\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -27544,9 +27544,11 @@ definitions:
     - "chatReopened"
     - "chatSenderSettingsChanged"
     - "chatSuggestedReplyChunk"
+    - "chatSummaryChunk"
     - "chatUnmuted"
     - "chatUnpinned"
     - "chatUnread"
+    - "chatWaysToReplyChunk"
     - "contactAdded"
     - "contactCacheClear"
     - "contactDeleted"
@@ -27748,6 +27750,12 @@ definitions:
         type: "integer"
         example: 1
       countrySenderSettingsChanged:
+        type: "integer"
+        example: 1
+      chatSummaryChunk:
+        type: "integer"
+        example: 1
+      chatWaysToReplyChunk:
         type: "integer"
         example: 1
       chatSuggestedReplyChunk:

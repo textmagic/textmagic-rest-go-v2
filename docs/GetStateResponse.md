@@ -57,6 +57,8 @@ Name | Type | Description | Notes
 **ForceRefreshWebApp** | **int32** |  | [default to null]
 **ChatSenderSettingsChanged** | **int32** |  | [default to null]
 **CountrySenderSettingsChanged** | **int32** |  | [default to null]
+**ChatSummaryChunk** | **int32** |  | [default to null]
+**ChatWaysToReplyChunk** | **int32** |  | [default to null]
 **ChatSuggestedReplyChunk** | **int32** |  | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -64,5 +64,7 @@ type GetStateResponse struct {
 	ForceRefreshWebApp int32 `json:"forceRefreshWebApp"`
 	ChatSenderSettingsChanged int32 `json:"chatSenderSettingsChanged"`
 	CountrySenderSettingsChanged int32 `json:"countrySenderSettingsChanged"`
+	ChatSummaryChunk int32 `json:"chatSummaryChunk"`
+	ChatWaysToReplyChunk int32 `json:"chatWaysToReplyChunk"`
 	ChatSuggestedReplyChunk int32 `json:"chatSuggestedReplyChunk"`
 }
