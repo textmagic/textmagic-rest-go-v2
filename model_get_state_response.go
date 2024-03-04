@@ -14,6 +14,7 @@ type GetStateResponse struct {
 	SystemExit int32 `json:"systemExit"`
 	SystemAlert int32 `json:"systemAlert"`
 	SystemAccountStateChanged int32 `json:"systemAccountStateChanged"`
+	SystemAccountClosed int32 `json:"systemAccountClosed"`
 	SystemAccountAdditionalFields int32 `json:"systemAccountAdditionalFields"`
 	SystemAccountPermissionsChanged int32 `json:"systemAccountPermissionsChanged"`
 	UserBalanceChanged int32 `json:"userBalanceChanged"`

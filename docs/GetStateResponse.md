@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **SystemExit** | **int32** |  | [default to null]
 **SystemAlert** | **int32** |  | [default to null]
 **SystemAccountStateChanged** | **int32** |  | [default to null]
+**SystemAccountClosed** | **int32** |  | [default to null]
 **SystemAccountAdditionalFields** | **int32** |  | [default to null]
 **SystemAccountPermissionsChanged** | **int32** |  | [default to null]
 **UserBalanceChanged** | **int32** |  | [default to null]

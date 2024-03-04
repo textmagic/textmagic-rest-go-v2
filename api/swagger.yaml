@@ -558,16 +558,16 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your PHP application.\n\n[Get it now\
     \ on GitHub](https://github.com/textmagic/textmagic-rest-php-v2)\n## Requirements\n\
-    \nPHP 5.5 and later.\n\n## Installation\n### Composer\n\nTo install the bindings\
-    \ via [Composer](http://getcomposer.org/), add the following to `composer.json`:\n\
-    \n```javascript\n{\n    \"repositories\": [\n        {\n            \"type\":\
-    \ \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
+    \nPHP 5.5 and later.\n\n## Installation\n### Composer\n\n7.2+ PHP version is required\
+    \ to use Composer.\n\nTo install the bindings via [Composer](http://getcomposer.org/),\
+    \ add the following to `composer.json`:\n\n```javascript\n{\n    \"repositories\"\
+    : [\n        {\n            \"type\": \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
     \n        }\n    ],\n    \"require\": {\n        \"textmagic/textmagic-rest-php-v2\"\
-    : \"dev-master#v2.0.18991\"\n    }\n}\n```\n\nThen run `composer install`\n\n\
-    ### Manual Installation\n\nDownload the files and include `autoload.php`:\n\n\
-    ```php\nrequire_once(__DIR__.'/vendor/autoload.php');\n```\n\n## Usage Example\n\
-    \nPlease follow the [installation](#installation) instructions and execute the\
-    \ following PHP code:\n\n```php\nrequire_once(__DIR__ . '/vendor/autoload.php');\n\
+    : \"dev-master#v2.0.20604\"\n    }\n}\n```\n\nThen run `composer install`\n\n\
+    ### Manual Installation\n\n5.5+ PHP version is required for manual installation.\n\
+    \nDownload the files and include `autoload.php`:\n\n```php\nrequire_once(__DIR__.'/vendor/autoload.php');\n\
+    ```\n\n## Usage Example\n\nPlease follow the [installation](#installation) instructions\
+    \ and execute the following PHP code:\n\n```php\nrequire_once(__DIR__ . '/vendor/autoload.php');\n\
     \nuse TextMagic\\Models\\SendMessageInputObject;\nuse TextMagic\\Api\\TextMagicApi;\n\
     use TextMagic\\Configuration;\n\n// put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
     \ page.\n$config = Configuration::getDefaultConfiguration()\n    ->setUsername('YOUR_USERNAME')\n\
@@ -592,7 +592,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Node.js application.\n\n[Get\
     \ it now on GitHub](https://github.com/textmagic/textmagic-rest-nodejs-v2)\n##\
-    \ Installation\n\n```shell\nnpm install textmagic-client@2.0.18991 --save\n```\n\
+    \ Installation\n\n```shell\nnpm install textmagic-client@2.0.17551 --save\n```\n\
     \n## Usage Example\n\nPlease follow the [installation](#installation) instructions\
     \ and execute the following JS code:\n\n```javascript\nconst textmagicClient =\
     \ require('textmagic-client');\n\nconst fs = require('fs');\nconst client = textmagicClient.ApiClient.instance;\n\
@@ -617,9 +617,9 @@ tags:
     \ Requirements\n\n1. Java 1.7+\n2. Maven/Gradle\n\n## Installation\n\n### Maven\n\
     \nAdd this dependency to your project's POM:\n```xml\n<dependencies>\n    <dependency>\n\
     \        <groupId>com.textmagic.sdk</groupId>\n        <artifactId>textmagic-java-sdk</artifactId>\n\
-    \        <version>2.0.18991</version>\n    </dependency>\n</dependencies>\n```\n\
+    \        <version>2.0.17551</version>\n    </dependency>\n</dependencies>\n```\n\
     \n### Gradle\n\nAdd this dependency to your project’s build file:\n```groovy\n\
-    compile \"com.textmagic.sdk:textmagic-java-sdk:2.0.18991\"\n```\n\n## Usage Example\n\
+    compile \"com.textmagic.sdk:textmagic-java-sdk:2.0.17551\"\n```\n\n## Usage Example\n\
     \n```java\nimport com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
     import com.textmagic.sdk.auth.*;\nimport com.textmagic.sdk.model.*;\n\npublic\
     \ class App {\n\n    public static void main(String[] args) {\n        ApiClient\
@@ -665,7 +665,7 @@ tags:
     \ Newtonsoft.Json\nInstall-Package JsonSubTypes\n```\n\nNOTE: RestSharp versions\
     \ later than 105.1.0 have a bug which causes file uploads to fail. See [RestSharp#742](https://github.com/restsharp/RestSharp/issues/742)\n\
     \n## Installation\nAdd the library to your project references or install it as\
-    \ a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.18991/).\n\
+    \ a [NuGet package](https://www.nuget.org/packages/TextMagicClient/2.0.17551/).\n\
     \n## C# usage example\n```csharp\nusing System;\nusing System.IO;\nusing TextMagicClient.Api;\n\
     using TextMagicClient.Client;\nusing TextMagicClient.Model;\n\nnamespace ExampleApp\n\
     {\n    class Program\n    {\n        static void Main(string[] args)\n       \
@@ -730,22 +730,22 @@ tags:
     \n* CMake 2.8 and later (https://cmake.org/)\n* cpprest (https://github.com/microsoft/cpprestsdk)\n\
     \nUbuntu dependencies quick installation example:\n```shell\napt-get install build-essential\
     \ cmake libcpprest-dev\n```\n\n## Installation\n\nDownload and extract lib archive:\n\
-    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.18991.tar.gz\
-    \ && \\\ntar zxf v2.0.18991.tar.gz && \\\nrm -f v2.0.18991.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.18991\n\
+    ```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v2.0.17551.tar.gz\
+    \ && \\\ntar zxf v2.0.17551.tar.gz && \\\nrm -f v2.0.17551.tar.gz && \\\ncd textmagic-rest-cpp-v2-2.0.17551\n\
     ```\nBuild using cmake\n```shell\ncmake . && cmake --build .\n```\nThe output\
-    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.18991/lib` directory:\n\
+    \ library file will be placed in the `textmagic-rest-cpp-v2-2.0.17551/lib` directory:\n\
     \n## Usage Example\nIn the example below, we assume that you moved the library\
-    \ sources `textmagic-rest-cpp-v2-2.0.18991` directory to your test project root\
+    \ sources `textmagic-rest-cpp-v2-2.0.17551` directory to your test project root\
     \ directory.\n\nConfigure your `CMakeLists.txt` as shown here:\n```shell\ncmake_minimum_required(VERSION\
     \ 2.8)\nproject(test)\n\nset(CMAKE_CXX_STANDARD 14)\n\nadd_executable(app main.cpp)\n\
     \nadd_library(textmagic_client SHARED IMPORTED)\nset_property(TARGET textmagic_client\
-    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.18991/lib/libtextmagic_client.so\"\
-    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.18991\
-    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.18991/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.18991/api)\n\
+    \ PROPERTY IMPORTED_LOCATION \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.17551/lib/libtextmagic_client.so\"\
+    )\n\ntarget_include_directories (app PRIVATE ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.17551\
+    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.17551/model ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-2.0.17551/api)\n\
     target_link_libraries(app boost_system cpprest crypto textmagic_client )\n```\n\
     \n`main.cpp` file example:\n```cpp\n#include <iostream>\n#include <fstream>\n\
-    #include \"textmagic-rest-cpp-v2-2.0.18991/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.18991/ApiConfiguration.h\"\
-    \n#include \"textmagic-rest-cpp-v2-2.0.18991/api/TextMagicApi.h\"\n\nusing namespace\
+    #include \"textmagic-rest-cpp-v2-2.0.17551/ApiClient.h\"\n#include \"textmagic-rest-cpp-v2-2.0.17551/ApiConfiguration.h\"\
+    \n#include \"textmagic-rest-cpp-v2-2.0.17551/api/TextMagicApi.h\"\n\nusing namespace\
     \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
     \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
     \ ApiConfiguration);\n\n    // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
@@ -785,7 +785,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Python application.\n\n[Get it\
     \ now on GitHub](https://github.com/textmagic/textmagic-rest-python-v2)\n## Requirements\n\
-    Python 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.18991\n\
+    Python 2.7 and 3.4+\n\n## Installation\n\n```shell\npip install git+https://github.com/textmagic/textmagic-rest-python-v2.git@v2.0.17551\n\
     ```\n\n## Usage Example\n\n```python\nimport TextMagic\nfrom TextMagic.rest import\
     \ ApiException\n\n# put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
     \ page.\nconfiguration = TextMagic.Configuration()\nconfiguration.username = 'YOUR_USERNAME'\n\
@@ -810,8 +810,8 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Perl application.\n\n[Get it\
     \ now on GitHub](https://github.com/textmagic/textmagic-rest-perl-v2)\n## Installation\n\
-    \n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.18991.tar.gz\
-    \ && \\\ntar zxf v2.0.18991.tar.gz && \\\nrm -f v2.0.18991.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.18991\
+    \n```bash\nwget https://github.com/textmagic/textmagic-rest-perl-v2/archive/v2.0.17551.tar.gz\
+    \ && \\\ntar zxf v2.0.17551.tar.gz && \\\nrm -f v2.0.17551.tar.gz && \\\ncd textmagic-rest-perl-v2-2.0.17551\
     \ && \\\nperl Makefile.pl && \\\nmake && \\\nmake install && \\\ncpanm --installdeps\
     \ .\n```\\\n\n## Usage Example\n\nPlease follow the [installation](#installation)\
     \ instructions and execute the following Perl code:\n\n```perl\nuse 5.010;\nuse\
@@ -841,7 +841,7 @@ tags:
     \ by integrating TextMagic SMS Gateway into your Ruby application.\n\n[Get it\
     \ now on GitHub](https://github.com/textmagic/textmagic-rest-ruby-v2)\n## Installation\n\
     \nAdd these lines into your Gemfile\n```ruby\ngem 'textmagic_rest_client', :git\
-    \ => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.18991'\n\
+    \ => 'https://github.com/textmagic/textmagic-rest-ruby-v2.git', :tag => 'v2.0.17551'\n\
     ```\n\nRun the bundler install command\n``` shell\nbundle install\n```\n\n## Usage\
     \ Example\n\nCreate the test file `test.rb` and put the following code:\n```ruby\n\
     \ # Load the gem\nrequire 'textmagic_rest_client'\n\n # Setup authorization\n\
@@ -867,7 +867,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Go application.\n\n[Get it now\
     \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n## Installation\n\
-    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.18991\n\
+    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.20604\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -27583,6 +27583,7 @@ definitions:
     - "progressEmailBulkLookup"
     - "progressSubAccountBulkImport"
     - "systemAccountAdditionalFields"
+    - "systemAccountClosed"
     - "systemAccountPermissionsChanged"
     - "systemAccountStateChanged"
     - "systemAlert"
@@ -27600,6 +27601,9 @@ definitions:
         type: "integer"
         example: 1
       systemAccountStateChanged:
+        type: "integer"
+        example: 1
+      systemAccountClosed:
         type: "integer"
         example: 1
       systemAccountAdditionalFields:
@@ -28930,6 +28934,12 @@ definitions:
         example: "charles@example.com"
         description: "Sender email."
         x-nullable: true
+      contactUserId:
+        type: "integer"
+        x-nullable: true
+      userId:
+        type: "integer"
+        x-nullable: true
     example:
       messageTime: "2012-11-28T18:38:28+0000"
       firstName: "Charles"
@@ -28937,9 +28947,11 @@ definitions:
       receiver: "447624800500"
       sender: "447860021130"
       contactId: 1
+      contactUserId: 0
       id: 1782832
       text: "I Love TextMagic!"
       avatar: "avatars/dummy_avatar.png"
+      userId: 6
       email: "charles@example.com"
   MessageSession:
     type: "object"
@@ -33316,9 +33328,11 @@ definitions:
         receiver: "447624800500"
         sender: "447860021130"
         contactId: 1
+        contactUserId: 0
         id: 1782832
         text: "I Love TextMagic!"
         avatar: "avatars/dummy_avatar.png"
+        userId: 6
         email: "charles@example.com"
       - messageTime: "2012-11-28T18:38:28+0000"
         firstName: "Charles"
@@ -33326,9 +33340,11 @@ definitions:
         receiver: "447624800500"
         sender: "447860021130"
         contactId: 1
+        contactUserId: 0
         id: 1782832
         text: "I Love TextMagic!"
         avatar: "avatars/dummy_avatar.png"
+        userId: 6
         email: "charles@example.com"
       page: 1
   SearchInboundMessagesPaginatedResponse:
@@ -33363,9 +33379,11 @@ definitions:
         receiver: "447624800500"
         sender: "447860021130"
         contactId: 1
+        contactUserId: 0
         id: 1782832
         text: "I Love TextMagic!"
         avatar: "avatars/dummy_avatar.png"
+        userId: 6
         email: "charles@example.com"
       - messageTime: "2012-11-28T18:38:28+0000"
         firstName: "Charles"
@@ -33373,9 +33391,11 @@ definitions:
         receiver: "447624800500"
         sender: "447860021130"
         contactId: 1
+        contactUserId: 0
         id: 1782832
         text: "I Love TextMagic!"
         avatar: "avatars/dummy_avatar.png"
+        userId: 6
         email: "charles@example.com"
       page: 1
   GetSpendingStatPaginatedResponse:

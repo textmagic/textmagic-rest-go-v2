@@ -29,4 +29,6 @@ type MessageIn struct {
 	Avatar string `json:"avatar"`
 	// Sender email.
 	Email string `json:"email,omitempty"`
+	ContactUserId int32 `json:"contactUserId,omitempty"`
+	UserId int32 `json:"userId,omitempty"`
 }
