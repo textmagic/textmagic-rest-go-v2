@@ -10,7 +10,9 @@ Name | Type | Description | Notes
 **SystemAccountClosed** | **int32** |  | [default to null]
 **SystemAccountAdditionalFields** | **int32** |  | [default to null]
 **SystemAccountPermissionsChanged** | **int32** |  | [default to null]
+**UserProfileChanged** | **int32** |  | [default to null]
 **UserBalanceChanged** | **int32** |  | [default to null]
+**UserImpersonationEnd** | **int32** |  | [default to null]
 **MessageDeleted** | **int32** |  | [default to null]
 **MessageIncoming** | **int32** |  | [default to null]
 **MessageIncomingDeleted** | **int32** |  | [default to null]
@@ -61,6 +63,8 @@ Name | Type | Description | Notes
 **ChatSummaryChunk** | **int32** |  | [default to null]
 **ChatWaysToReplyChunk** | **int32** |  | [default to null]
 **ChatSuggestedReplyChunk** | **int32** |  | [default to null]
+**UserSubscriptionChanged** | **int32** |  | [default to null]
+**UserSubscriptionDeleted** | **int32** |  | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

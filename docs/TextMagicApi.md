@@ -2685,7 +2685,7 @@ Name | Type | Description  | Notes
  **lists** | **optional.String**| Comma-separated array of list resources id message will be sent to. | 
  **phones** | **optional.String**| Comma-separated array of E.164 phone numbers message will be sent to. | 
  **cutExtra** | **optional.Int32**| Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. | [default to 0]
- **partsCount** | **optional.Int32**| Maximum message parts count (TextMagic allows sending of 1 to 6 message parts). | [default to 6]
+ **partsCount** | **optional.Int32**| Maximum message parts count (Textmagic allows sending of 1 to 6 message parts). | [default to 6]
  **referenceId** | **optional.Int32**| Custom message reference id which can be used in your application infrastructure. | 
  **from** | **optional.String**| One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](https://docs.textmagic.com/#tag/Sender-IDs). | 
  **rule** | **optional.String**| An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. | 
@@ -2737,7 +2737,7 @@ Name | Type | Description  | Notes
  **lists** | **optional.String**| Comma-separated array of list resources id message will be sent to. | 
  **phones** | **optional.String**| Comma-separated array of E.164 phone numbers message will be sent to. | 
  **cutExtra** | **optional.Int32**| Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. | [default to 0]
- **partsCount** | **optional.Int32**| Maximum message parts count (TextMagic allows sending 1 to 6 message parts). | [default to 6]
+ **partsCount** | **optional.Int32**| Maximum message parts count (Textmagic allows sending 1 to 6 message parts). | [default to 6]
  **referenceId** | **optional.Int32**| Custom message reference id which can be used in your application infrastructure. | 
  **from** | **optional.String**| One of the allowed Sender ID (phone number or alphanumeric sender ID). If the specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](https://docs.textmagic.com/#tag/Sender-IDs). | 
  **rule** | **optional.String**| An iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as the start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. | 

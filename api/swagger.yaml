@@ -2,10 +2,10 @@
 swagger: "2.0"
 info:
   version: "2"
-  title: "TextMagic API"
+  title: "Textmagic API"
   x-logo:
-    url: "https://www.textmagic.com/wp-content/themes/textmagic-new/assets/img/logo_blue.svg"
-    altText: "TextMagic"
+    url: "https://www.textmagic.com/wp-content/uploads/2024/04/tm-logo.svg"
+    altText: "Textmagic"
 host: "rest.textmagic.com"
 tags:
 - name: "Getting started"
@@ -563,7 +563,7 @@ tags:
     \ add the following to `composer.json`:\n\n```javascript\n{\n    \"repositories\"\
     : [\n        {\n            \"type\": \"git\",\n            \"url\": \"https://github.com/textmagic/textmagic-rest-php-v2.git\"\
     \n        }\n    ],\n    \"require\": {\n        \"textmagic/textmagic-rest-php-v2\"\
-    : \"dev-master#v2.0.20670\"\n    }\n}\n```\n\nThen run `composer install`\n\n\
+    : \"dev-master#v2.0.20669\"\n    }\n}\n```\n\nThen run `composer install`\n\n\
     ### Manual Installation\n\n5.5+ PHP version is required for manual installation.\n\
     \nDownload the files and include `autoload.php`:\n\n```php\nrequire_once(__DIR__.'/vendor/autoload.php');\n\
     ```\n\n## Usage Example\n\nPlease follow the [installation](#installation) instructions\
@@ -867,7 +867,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Go application.\n\n[Get it now\
     \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n## Installation\n\
-    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.20670\n\
+    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.23575\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -16791,7 +16791,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "partsCount"
         in: "query"
-        description: "Maximum message parts count (TextMagic allows sending 1 to 6\
+        description: "Maximum message parts count (Textmagic allows sending 1 to 6\
           \ message parts)."
         required: false
         type: "integer"
@@ -17223,7 +17223,7 @@ paths:
         x-optionalDataType: "Int32"
       - name: "partsCount"
         in: "query"
-        description: "Maximum message parts count (TextMagic allows sending of 1 to\
+        description: "Maximum message parts count (Textmagic allows sending of 1 to\
           \ 6 message parts)."
         required: false
         type: "integer"
@@ -25994,9 +25994,9 @@ paths:
           \    ->setPassword('YOUR_API_KEY');\n\n$api = new TextMagicApi(\n    new\
           \ GuzzleHttp\\Client(),\n    $config\n);\n\n$input = new SendPhoneVerificationCodeTFAInputObject();\n\
           \n// Required parameters\n$input->setPhone(\"447860021130\");\n$input->setBrand(\"\
-          TextMagic\");\n$input->setCodeLength(4);\n\n// Optional parameters, you\
+          Textmagic\");\n$input->setCodeLength(4);\n\n// Optional parameters, you\
           \ can skip these setters calls\n$input->setWorkflowId(\"6\");\n$input->setLanguage(\"\
-          en-gb\");\n$input->setSenderId(\"TextMagic\");\n$input->setCountry(\"US\"\
+          en-gb\");\n$input->setSenderId(\"Textmagic\");\n$input->setCountry(\"US\"\
           );\n\ntry {\n    // SendPhoneVerificationCodeResponse class object\n   \
           \ $result = $api->sendPhoneVerificationCodeTFA($input);\n    // ...\n} catch\
           \ (Exception $e) {\n    echo 'Exception when calling TextMagicApi->sendPhoneVerificationCodeTFA:\
@@ -26014,9 +26014,9 @@ paths:
           \ = new TextMagicApi();\n\n        SendPhoneVerificationCodeTFAInputObject\
           \ input = new SendPhoneVerificationCodeTFAInputObject();\n\n        // Required\
           \ parameters\n        input.setPhone(\"447860021130\");\n        input.setBrand(\"\
-          TextMagic\");\n        input.setCodeLength(4);\n\n        // Optional parameters,\
+          Textmagic\");\n        input.setCodeLength(4);\n\n        // Optional parameters,\
           \ you can skip these setters calls\n        input.setWorkflowId(\"6\");\n\
-          \        input.setLanguage(\"en-gb\");\n        input.setSenderId(\"TextMagic\"\
+          \        input.setLanguage(\"en-gb\");\n        input.setSenderId(\"Textmagic\"\
           );\n        input.setCountry(\"US\");\n\n        try {\n            // SendPhoneVerificationCodeResponse\
           \ class object\n            SendPhoneVerificationCodeResponse obj = apiInstance.sendPhoneVerificationCodeTFA(input);\n\
           \            // ...\n        } catch (ApiException e) {\n            System.err.println(\"\
@@ -26028,9 +26028,9 @@ paths:
           const auth = client.authentications['BasicAuth'];\nconst api = new textmagicClient.TextMagicApi();\n\
           \n// put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
           \ page.\nauth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\
-          \nconst input = {\n    phone: \"447860021130\",\n    brand: \"TextMagic\"\
+          \nconst input = {\n    phone: \"447860021130\",\n    brand: \"Textmagic\"\
           ,\n    codeLength: 4,\n    // Optional parameters\n    workflowId: \"6\"\
-          ,\n    language: \"en-gb\",\n    senderId: \"TextMagic\",\n    country:\
+          ,\n    language: \"en-gb\",\n    senderId: \"Textmagic\",\n    country:\
           \ \"US\",\n}\n\n\napi.sendPhoneVerificationCodeTFA(input).then(function\
           \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
           });"
@@ -26041,9 +26041,9 @@ paths:
           \ do |config|\n    config.username = 'YOUR_USERNAME'\n    config.password\
           \ = 'YOUR_API_KEY'\nend\n\napi = TextMagic::TextMagicApi.new\n\nobj = new\
           \ TextMagic::SendPhoneVerificationCodeTFAInputObject.new\n\n# Required parameters\n\
-          obj.phone = \"447860021130\"\nobj.brand = \"TextMagic\"\nobj.code_length\
+          obj.phone = \"447860021130\"\nobj.brand = \"Textmagic\"\nobj.code_length\
           \ = 4\n# Optional parameters, you can skip them\nobj.workflow_id = \"6\"\
-          \nobj.language = \"en-gb\"\nobj.sender_id = \"TextMagic\"\nobj.country =\
+          \nobj.language = \"en-gb\"\nobj.sender_id = \"Textmagic\"\nobj.country =\
           \ \"US\"\n\nbegin\n    # SendPhoneVerificationCodeResponse object\n    result\
           \ = api.send_phone_verification_code_t_f_a(input)\n    # ...\nrescue TextMagic::ApiError\
           \ => e\n    puts \"Exception when calling TextMagicApi->send_phone_verification_code_t_f_a:\
@@ -26059,10 +26059,10 @@ paths:
           \          var apiInstance = new TextMagicApi();\n\n            var obj\
           \ = new SendPhoneVerificationCodeTFAInputObject();\n\n            // Required\
           \ parameters\n            obj.Phone = \"447860021130\";\n            obj.Brand\
-          \ = \"TextMagic\";\n            obj.CodeLength = 4;\n\n            // Optional\
+          \ = \"Textmagic\";\n            obj.CodeLength = 4;\n\n            // Optional\
           \ parameters, you can skip these setters calls\n            obj.WorkflowId\
           \ = \"6\";\n            obj.Language = \"en-gb\";\n            obj.SenderId\
-          \ = \"TextMagic\";\n            obj.Country = \"US\";\n\n            try\
+          \ = \"Textmagic\";\n            obj.Country = \"US\";\n\n            try\
           \ {\n                // SendPhoneVerificationCodeResponse class object\n\
           \                var result = apiInstance.SendPhoneVerificationCodeTFA(obj);\n\
           \                // ...\n            } catch (Exception e) {\n         \
@@ -26078,8 +26078,8 @@ paths:
           \ = \"YOUR_API_KEY\"\n\n        Dim apiInstance = New TextMagicApi()\n\n\
           \        Dim obj = New SendPhoneVerificationCodeTFAInputObject With {\n\
           \            .Phone = \"447860021130\",\n            .WorkflowId = \"6\"\
-          ,\n            .Brand = \"TextMagic\",\n            .CodeLength = 4,\n \
-          \           .Language = \"en-gb\",\n            .SenderId = \"TextMagic\"\
+          ,\n            .Brand = \"Textmagic\",\n            .CodeLength = 4,\n \
+          \           .Language = \"en-gb\",\n            .SenderId = \"Textmagic\"\
           ,\n            .Country = \"US\"\n        }\n\n        Try\n           \
           \ ' SendPhoneVerificationCodeResponse class object\n            Dim result\
           \ = apiInstance.SendPhoneVerificationCodeTFA(obj)\n            ' ...\n \
@@ -26097,10 +26097,10 @@ paths:
           \ := context.WithValue(context.Background(), tm.ContextBasicAuth, tm.BasicAuth{\n\
           \        UserName: \"YOUR_USERNAME\",\n        Password: \"YOUR_API_KEY\"\
           ,\n    })\n\n    input := tm.SendMessageInputObject{\n        // Required\
-          \ parameters\n        Phone: \"447860021130\",\n        Brand: \"TextMagic\"\
+          \ parameters\n        Phone: \"447860021130\",\n        Brand: \"Textmagic\"\
           ,\n        CodeLength: 4,\n        // Optional parameters, you can skip\
           \ them\n        WorkflowId: \"6\",\n        Language: \"en-gb\",\n     \
-          \   SenderId: \"TextMagic\",\n        Country: \"US\",\n    }\n\n    //\
+          \   SenderId: \"Textmagic\",\n        Country: \"US\",\n    }\n\n    //\
           \ tm.SendPhoneVerificationCodeResponse struct\n    result, _, err := client.TextMagicApi.SendPhoneVerificationCodeTFA(auth,\
           \ input)\n\n    if err != nil {\n        log.Fatal(err)\n    } else {\n\
           \        fmt.Printf(\"%+v\\n\", result)\n        // ...\n    }\n}\n"
@@ -26117,10 +26117,10 @@ paths:
           YOUR_NAME\", \"YOUR_API_KEY\"));\n    apiClient->setConfiguration(apiConfig);\n\
           \n    TextMagicApi api(apiClient);\n\n    std::shared_ptr<SendPhoneVerificationCodeTFAInputObject>\
           \ input(new SendPhoneVerificationCodeTFAInputObject);\n    // Required parameters\n\
-          \    input->setPhone(\"447860021130\");\n    input->setBrand(\"TextMagic\"\
+          \    input->setPhone(\"447860021130\");\n    input->setBrand(\"Textmagic\"\
           );\n    input->setCodeLength(4);\n    // Optional parameters, you can skip\
           \ them\n    input->setWorkflowId(\"6\");\n    input->setLanguage(\"en-gb\"\
-          );\n    input->setSenderId(\"TextMagic\");\n    input->setCountry(\"US\"\
+          );\n    input->setSenderId(\"Textmagic\");\n    input->setCountry(\"US\"\
           );\n\n    try {\n        pplx::task<std::shared_ptr<SendPhoneVerificationCodeResponse>>\
           \ result = api.sendPhoneVerificationCodeTFA(input);\n        result.wait();\n\
           \        // put operations with result here...\n    } catch(const std::exception&\
@@ -26134,9 +26134,9 @@ paths:
           \ = \"YOUR_API_KEY\"\n\n# create an instance of the API class\napi_instance\
           \ = TextMagic.TextMagicApi(TextMagic.ApiClient(configuration))\n\ninput\
           \ = TextMagic.SendPhoneVerificationCodeTFAInputObject()\n\n# Required parameters\n\
-          input.phone = \"447860021130\"\ninput.brand = \"TextMagic\"\ninput.code_length\
+          input.phone = \"447860021130\"\ninput.brand = \"Textmagic\"\ninput.code_length\
           \ = 4\n# Optional parameters, you can skip them\ninput.workflow_id = \"\
-          6\"\ninput.language = \"en-gb\"\ninput.sender_id = \"TextMagic\"\ninput.country\
+          6\"\ninput.language = \"en-gb\"\ninput.sender_id = \"Textmagic\"\ninput.country\
           \ = \"US\"\n\ntry:\n    # SendPhoneVerificationCodeResponse object\n   \
           \ result = api_instance.send_phone_verification_code_t_f_a(send_phone_verification_code_t_f_a_input_object=input)\n\
           \    # ...\nexcept ApiException as e:\n    print(\"Exception when calling\
@@ -26150,9 +26150,9 @@ paths:
           \ username   => 'YOUR_USERNAME',\n    password   => 'YOUR_API_KEY'\n);\n\
           \nmy $api_instance = Net::Sms::TextMagicClient::TextMagicApi::->new($client);\n\
           \nmy $input = Net::Sms::TextMagicClient::Object::SendPhoneVerificationCodeTFAInputObject->new(\n\
-          \    # Required parameters\n    phone => '447860021130',\n    brand => 'TextMagic',\n\
+          \    # Required parameters\n    phone => '447860021130',\n    brand => 'Textmagic',\n\
           \    codeLength => 4,\n    # Optional parameters, you can skip them\n  \
-          \  workflowId => '6',\n    language => 'en-gb',\n    senderId => 'TextMagic',\n\
+          \  workflowId => '6',\n    language => 'en-gb',\n    senderId => 'Textmagic',\n\
           \    country => 'US',\n);\n\neval {\n    # SendPhoneVerificationCodeResponse\
           \ object\n    my $result = $api_instance->send_phone_verification_code_t_f_a(send_phone_verification_code_t_f_a_input_object\
           \ => $input);\n    # ...\n};\n\nif ($@) {\n    warn \"Exception when calling\
@@ -27048,11 +27048,11 @@ definitions:
       isInWhiteList:
         type: "boolean"
         example: false
-        description: "`true` if the email address exists in the TextMagic whitelist.\n"
+        description: "`true` if the email address exists in the Textmagic whitelist.\n"
       isInBlackList:
         type: "boolean"
         example: false
-        description: "`true` if the email address exists in the TextMagic blacklist.\n"
+        description: "`true` if the email address exists in the Textmagic blacklist.\n"
       hasMx:
         type: "boolean"
         example: true
@@ -27327,7 +27327,7 @@ definitions:
         phone: "447624800500"
         price: 0.025
         id: 4991
-        text: "I love TextMagic!"
+        text: "I love Textmagic!"
         charsetLabel: "ISO-8859-1"
         status: "d"
       - messageTime: "2019-08-12T11:43:37+0000"
@@ -27347,7 +27347,7 @@ definitions:
         phone: "447624800500"
         price: 0.025
         id: 4991
-        text: "I love TextMagic!"
+        text: "I love Textmagic!"
         charsetLabel: "ISO-8859-1"
         status: "d"
   SendMessageResponse:
@@ -27590,6 +27590,10 @@ definitions:
     - "systemCacheClear"
     - "systemExit"
     - "userBalanceChanged"
+    - "userImpersonationEnd"
+    - "userProfileChanged"
+    - "userSubscriptionChanged"
+    - "userSubscriptionDeleted"
     properties:
       systemCacheClear:
         type: "integer"
@@ -27612,7 +27616,13 @@ definitions:
       systemAccountPermissionsChanged:
         type: "integer"
         example: 1
+      userProfileChanged:
+        type: "integer"
+        example: 1
       userBalanceChanged:
+        type: "integer"
+        example: 1
+      userImpersonationEnd:
         type: "integer"
         example: 1
       messageDeleted:
@@ -27763,6 +27773,12 @@ definitions:
         type: "integer"
         example: 1
       chatSuggestedReplyChunk:
+        type: "integer"
+        example: 1
+      userSubscriptionChanged:
+        type: "integer"
+        example: 1
+      userSubscriptionDeleted:
         type: "integer"
         example: 1
   CallPriceResponse:
@@ -28615,7 +28631,7 @@ definitions:
         description: "Recipient`s phone number."
       text:
         type: "string"
-        example: "I love TextMagic!"
+        example: "I love Textmagic!"
       status:
         type: "string"
         example: "d"
@@ -28732,7 +28748,7 @@ definitions:
       phone: "447624800500"
       price: 0.025
       id: 4991
-      text: "I love TextMagic!"
+      text: "I love Textmagic!"
       charsetLabel: "ISO-8859-1"
       status: "d"
   MessagesIcs:
@@ -28877,7 +28893,7 @@ definitions:
           contacts:
           - 39318
           - 39318
-        text: "I Love TextMagic!"
+        text: "I Love Textmagic!"
   MessageIn:
     type: "object"
     required:
@@ -28905,10 +28921,10 @@ definitions:
       messageTime:
         type: "string"
         example: "2012-11-28T18:38:28+0000"
-        description: "The time when the message reached the TextMagic API endpoint."
+        description: "The time when the message reached the Textmagic API endpoint."
       text:
         type: "string"
-        example: "I Love TextMagic!"
+        example: "I Love Textmagic!"
         description: "The text from the received message."
       contactId:
         type: "integer"
@@ -28949,7 +28965,7 @@ definitions:
       contactId: 1
       contactUserId: 0
       id: 1782832
-      text: "I Love TextMagic!"
+      text: "I Love Textmagic!"
       avatar: "avatars/dummy_avatar.png"
       userId: 6
       email: "charles@example.com"
@@ -28984,8 +29000,8 @@ definitions:
       source:
         type: "string"
         example: "O"
-        description: "*   **O** – for TextMagic Online;\n*   **A** – for API;\n* \
-          \  **M** – for TextMagic Messenger;\n*   **E** – for [Email to SMS](https://docs.textmagic.com/#tag/Send-Email-to-SMS);\n\
+        description: "*   **O** – for Textmagic Online;\n*   **A** – for API;\n* \
+          \  **M** – for Textmagic Messenger;\n*   **E** – for [Email to SMS](https://docs.textmagic.com/#tag/Send-Email-to-SMS);\n\
           *   **X** – for [Distribution Lists](https://docs.textmagic.com/#tag/Distribution-Lists).\n"
         x-nullable: true
       referenceId:
@@ -29068,7 +29084,7 @@ definitions:
         $ref: "#/definitions/MessageSession"
       text:
         type: "string"
-        example: "I Love TextMagic!"
+        example: "I Love Textmagic!"
         description: "Message text of a Bulk Session."
         x-nullable: true
     example:
@@ -29085,7 +29101,7 @@ definitions:
         source: "O"
         referenceId: "my_reference_id_4991"
       id: 599
-      text: "I Love TextMagic!"
+      text: "I Love Textmagic!"
       status: "n"
   UserStatement:
     type: "object"
@@ -29545,7 +29561,7 @@ definitions:
       messageTime:
         type: "string"
         example: "2012-11-28T18:38:28+0000"
-        description: "Time when  the message arrived at TextMagic."
+        description: "Time when  the message arrived at Textmagic."
       text:
         type: "string"
         example: "This is a sample message"
@@ -29573,12 +29589,18 @@ definitions:
         description: "Session ID of a message. See [message sessions](https://docs.textmagic.com/#tag/Outbound-Message-Sessions)\
           \ for details."
         x-nullable: true
+      initiatorId:
+        type: "integer"
+        description: "Initiator ID of a message. See [message sessions](https://docs.textmagic.com/#tag/Outbound-Message-Sessions)\
+          \ for details."
+        x-nullable: true
     example:
       messageTime: "2012-11-28T18:38:28+0000"
       firstName: "Charles"
       lastName: "Conway"
       receiver: "447624800500"
       sender: "447860021130"
+      initiatorId: 6
       id: 1
       text: "This is a sample message"
       sessionId: 0
@@ -32741,7 +32763,7 @@ definitions:
         phone: "447624800500"
         price: 0.025
         id: 4991
-        text: "I love TextMagic!"
+        text: "I love Textmagic!"
         charsetLabel: "ISO-8859-1"
         status: "d"
       - messageTime: "2019-08-12T11:43:37+0000"
@@ -32761,7 +32783,7 @@ definitions:
         phone: "447624800500"
         price: 0.025
         id: 4991
-        text: "I love TextMagic!"
+        text: "I love Textmagic!"
         charsetLabel: "ISO-8859-1"
         status: "d"
       page: 1
@@ -32808,7 +32830,7 @@ definitions:
         phone: "447624800500"
         price: 0.025
         id: 4991
-        text: "I love TextMagic!"
+        text: "I love Textmagic!"
         charsetLabel: "ISO-8859-1"
         status: "d"
       - messageTime: "2019-08-12T11:43:37+0000"
@@ -32828,7 +32850,7 @@ definitions:
         phone: "447624800500"
         price: 0.025
         id: 4991
-        text: "I love TextMagic!"
+        text: "I love Textmagic!"
         charsetLabel: "ISO-8859-1"
         status: "d"
       page: 1
@@ -32875,7 +32897,7 @@ definitions:
         phone: "447624800500"
         price: 0.025
         id: 4991
-        text: "I love TextMagic!"
+        text: "I love Textmagic!"
         charsetLabel: "ISO-8859-1"
         status: "d"
       - messageTime: "2019-08-12T11:43:37+0000"
@@ -32895,7 +32917,7 @@ definitions:
         phone: "447624800500"
         price: 0.025
         id: 4991
-        text: "I love TextMagic!"
+        text: "I love Textmagic!"
         charsetLabel: "ISO-8859-1"
         status: "d"
       nextLastId: 1
@@ -32938,7 +32960,7 @@ definitions:
           source: "O"
           referenceId: "my_reference_id_4991"
         id: 599
-        text: "I Love TextMagic!"
+        text: "I Love Textmagic!"
         status: "n"
       - createdAt: "2015-01-08T06:13:21+0000"
         itemsProcessed: 564
@@ -32953,7 +32975,7 @@ definitions:
           source: "O"
           referenceId: "my_reference_id_4991"
         id: 599
-        text: "I Love TextMagic!"
+        text: "I Love Textmagic!"
         status: "n"
       page: 1
   GetAllMessageSessionsPaginatedResponse:
@@ -33042,7 +33064,7 @@ definitions:
         phone: "447624800500"
         price: 0.025
         id: 4991
-        text: "I love TextMagic!"
+        text: "I love Textmagic!"
         charsetLabel: "ISO-8859-1"
         status: "d"
       - messageTime: "2019-08-12T11:43:37+0000"
@@ -33062,7 +33084,7 @@ definitions:
         phone: "447624800500"
         price: 0.025
         id: 4991
-        text: "I love TextMagic!"
+        text: "I love Textmagic!"
         charsetLabel: "ISO-8859-1"
         status: "d"
       page: 1
@@ -33135,7 +33157,7 @@ definitions:
             contacts:
             - 39318
             - 39318
-          text: "I Love TextMagic!"
+          text: "I Love Textmagic!"
       - summary: "Every 2 weeks on Monday, Tuesday, Thursday at 10:30 (UTC+03:00)"
         session:
           numbersCount: 18
@@ -33179,7 +33201,7 @@ definitions:
             contacts:
             - 39318
             - 39318
-          text: "I Love TextMagic!"
+          text: "I Love Textmagic!"
       page: 1
   SearchScheduledMessagesPaginatedResponse:
     required:
@@ -33250,7 +33272,7 @@ definitions:
             contacts:
             - 39318
             - 39318
-          text: "I Love TextMagic!"
+          text: "I Love Textmagic!"
       - summary: "Every 2 weeks on Monday, Tuesday, Thursday at 10:30 (UTC+03:00)"
         session:
           numbersCount: 18
@@ -33294,7 +33316,7 @@ definitions:
             contacts:
             - 39318
             - 39318
-          text: "I Love TextMagic!"
+          text: "I Love Textmagic!"
       page: 1
   GetAllInboundMessagesPaginatedResponse:
     required:
@@ -33330,7 +33352,7 @@ definitions:
         contactId: 1
         contactUserId: 0
         id: 1782832
-        text: "I Love TextMagic!"
+        text: "I Love Textmagic!"
         avatar: "avatars/dummy_avatar.png"
         userId: 6
         email: "charles@example.com"
@@ -33342,7 +33364,7 @@ definitions:
         contactId: 1
         contactUserId: 0
         id: 1782832
-        text: "I Love TextMagic!"
+        text: "I Love Textmagic!"
         avatar: "avatars/dummy_avatar.png"
         userId: 6
         email: "charles@example.com"
@@ -33381,7 +33403,7 @@ definitions:
         contactId: 1
         contactUserId: 0
         id: 1782832
-        text: "I Love TextMagic!"
+        text: "I Love Textmagic!"
         avatar: "avatars/dummy_avatar.png"
         userId: 6
         email: "charles@example.com"
@@ -33393,7 +33415,7 @@ definitions:
         contactId: 1
         contactUserId: 0
         id: 1782832
-        text: "I Love TextMagic!"
+        text: "I Love Textmagic!"
         avatar: "avatars/dummy_avatar.png"
         userId: 6
         email: "charles@example.com"
@@ -33970,6 +33992,7 @@ definitions:
         lastName: "Conway"
         receiver: "447624800500"
         sender: "447860021130"
+        initiatorId: 6
         id: 1
         text: "This is a sample message"
         sessionId: 0
@@ -33980,6 +34003,7 @@ definitions:
         lastName: "Conway"
         receiver: "447624800500"
         sender: "447860021130"
+        initiatorId: 6
         id: 1
         text: "This is a sample message"
         sessionId: 0
@@ -36098,7 +36122,7 @@ definitions:
       partsCount:
         type: "integer"
         example: 6
-        description: "Maximum message parts count (TextMagic allows sending 1 to 6\
+        description: "Maximum message parts count (Textmagic allows sending 1 to 6\
           \ message parts)."
       referenceId:
         type: "integer"
@@ -36453,10 +36477,10 @@ definitions:
           \nRequest expires after 300 seconds\n"
       brand:
         type: "string"
-        example: "TextMagic"
+        example: "Textmagic"
         description: "An alphanumeric string with up to 18 characters you can use\
           \ to personalize the verification text message body, to help users identify\
-          \ your company or application name. For example: “Your TextMagic PIN is\
+          \ your company or application name. For example: “Your Textmagic PIN is\
           \ …”\n"
       codeLength:
         type: "integer"
@@ -36476,9 +36500,9 @@ definitions:
           \ `pt-br`, `ro-ro`, `ru-ru`, `sv-se`, `tr-tr`, `zh-cn` or `zh-tw`.\n"
       senderId:
         type: "string"
-        example: "TextMagic"
+        example: "Textmagic"
         description: "One of the available [sender settings](https://my.textmagic.com/online/reply-options/)\
-          \ on your TextMagic account. If the specified sender setting type is not\
+          \ on your Textmagic account. If the specified sender setting type is not\
           \ allowed for some destinations, a fallback default sender will be used\
           \ to ensure message delivery. More info about known restrictions can be\
           \ found [here](https://support.textmagic.com/article/how-to-understand-sender-setting-restrictions/).\n"
@@ -36569,7 +36593,7 @@ definitions:
     properties:
       text:
         type: "string"
-        example: "I Love TextMagic!"
+        example: "I Love Textmagic!"
         description: "Scheduled message text."
       recipients:
         $ref: "#/definitions/MessagesIcs_parameters_recipients"
@@ -36584,7 +36608,7 @@ definitions:
         contacts:
         - 39318
         - 39318
-      text: "I Love TextMagic!"
+      text: "I Love Textmagic!"
   MessagesIcs_textParameters:
     required:
     - "chars"
