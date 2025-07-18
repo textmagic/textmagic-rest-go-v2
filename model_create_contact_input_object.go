@@ -33,4 +33,8 @@ type CreateContactInputObject struct {
 	Local int32 `json:"local,omitempty"`
 	// The 2-letter ISO country code for local phone numbers, used when local is  set to true. Default is the account country.
 	Country string `json:"country,omitempty"`
+	// Contact [list](https://docs.textmagic.com/#tag/Tag) ID. Each contact must be assigned to at least one list.
+	Tags string `json:"tags,omitempty"`
+	// Contact Owner ID
+	Owner int32 `json:"owner,omitempty"`
 }

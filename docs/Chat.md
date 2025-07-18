@@ -20,6 +20,10 @@ Name | Type | Description | Notes
 **TimeLeftMute** | **int32** | Time left untill the chat will be unmuted (seconds). | [default to null]
 **Country** | [***Country**](Country.md) |  | [default to null]
 **Pinned** | **bool** | Indicates when the chat is pinned. | [default to null]
+**Type_** | **string** | Chat type. | [default to null]
+**SmsPrice** | **float32** |  | [default to null]
+**MmsPrice** | **float32** |  | [default to null]
+**Tags** | [**[]Tag**](Tag.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

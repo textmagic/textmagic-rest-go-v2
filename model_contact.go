@@ -28,12 +28,16 @@ type Contact struct {
 	Email string `json:"email"`
 	// Contact country.
 	Country *Country `json:"country"`
-	// See the [Custom Fields](https://docs.textmagic.com/#tag/Custom-Fields) section.
-	CustomFields []ContactCustomField `json:"customFields"`
+	CustomFields []CustomFieldListItem `json:"customFields"`
 	User *User `json:"user"`
 	Lists []List `json:"lists"`
+	// Contact Owner User ID.
+	Owner *User `json:"owner,omitempty"`
+	Tags []Tag `json:"tags,omitempty"`
 	// Phone number type: * **0** if it is fixed-line; * **1** if it is mobile; * **2** if it is mobile or fixed-line (in case we cannot distingush between fixed-line or mobile); * **3** if it is toll-free; * **4** if it is a premium rate phone; * **5** if it is a shared cost phone; * **6** if it is a VoIP; * **7** if it is a [Personal Number](); * **8** if it is a pager; * **9** if it is a Universal Access Number; * **10** if the phone type is unknown; * **-1** if the phone type is not yet processed or cannot be determined. 
 	PhoneType string `json:"phoneType"`
 	Avatar *ContactImage `json:"avatar"`
 	Notes []ContactNote `json:"notes"`
+	// Whatsapp phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+	WhatsappPhone string `json:"whatsappPhone,omitempty"`
 }

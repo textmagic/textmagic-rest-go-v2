@@ -41,4 +41,9 @@ type Chat struct {
 	Country *Country `json:"country"`
 	// Indicates when the chat is pinned.
 	Pinned bool `json:"pinned"`
+	// Chat type.
+	Type_ string `json:"type"`
+	SmsPrice float32 `json:"smsPrice"`
+	MmsPrice float32 `json:"mmsPrice"`
+	Tags []Tag `json:"tags,omitempty"`
 }

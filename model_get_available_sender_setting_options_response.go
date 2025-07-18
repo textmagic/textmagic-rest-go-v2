@@ -22,4 +22,10 @@ type GetAvailableSenderSettingOptionsResponse struct {
 	UserCarrierTwilio []string `json:"userCarrierTwilio"`
 	// Array of alphanumeric sender IDs.
 	UserCarrierVonage []string `json:"userCarrierVonage"`
+	// Array of alphanumeric sender IDs.
+	UserCarrierSinch []string `json:"userCarrierSinch"`
+	// Array of alphanumeric sender IDs.
+	UCarrierBandwidth []string `json:"uCarrierBandwidth,omitempty"`
+	// Array of alphanumeric sender IDs.
+	UcTwilioSenderId []string `json:"ucTwilioSenderId,omitempty"`
 }

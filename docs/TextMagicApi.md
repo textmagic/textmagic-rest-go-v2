@@ -7,8 +7,6 @@ Method | HTTP request | Description
 [**AssignContactsToList**](TextMagicApi.md#AssignContactsToList) | **Put** /api/v2/lists/{id}/contacts | Assign contacts to a list
 [**BlockContact**](TextMagicApi.md#BlockContact) | **Post** /api/v2/contacts/block | Block a contact by phone number
 [**BuyDedicatedNumber**](TextMagicApi.md#BuyDedicatedNumber) | **Post** /api/v2/numbers | Buy a dedicated number
-[**CancelVerification**](TextMagicApi.md#CancelVerification) | **Delete** /api/v2/verify/{verifyId} | Cancel verification process
-[**CheckPhoneVerificationCodeTFA**](TextMagicApi.md#CheckPhoneVerificationCodeTFA) | **Put** /api/v2/verify | Step 2: Check the verification code 
 [**ClearAndAssignContactsToList**](TextMagicApi.md#ClearAndAssignContactsToList) | **Post** /api/v2/lists/{id}/contacts | Reset list members to the specified contacts
 [**CloseChatsBulk**](TextMagicApi.md#CloseChatsBulk) | **Post** /api/v2/chats/close/bulk | Close chats (bulk)
 [**CloseReadChats**](TextMagicApi.md#CloseReadChats) | **Post** /api/v2/chats/close/read | Close read chats
@@ -129,7 +127,6 @@ Method | HTTP request | Description
 [**SearchScheduledMessages**](TextMagicApi.md#SearchScheduledMessages) | **Get** /api/v2/schedules/search | Find scheduled messages
 [**SearchTemplates**](TextMagicApi.md#SearchTemplates) | **Get** /api/v2/templates/search | Find templates by criteria
 [**SendMessage**](TextMagicApi.md#SendMessage) | **Post** /api/v2/messages | Send message
-[**SendPhoneVerificationCodeTFA**](TextMagicApi.md#SendPhoneVerificationCodeTFA) | **Post** /api/v2/verify | Step 1: Send a verification code 
 [**SetChatStatus**](TextMagicApi.md#SetChatStatus) | **Post** /api/v2/chats/status | Change chat status
 [**UnblockContact**](TextMagicApi.md#UnblockContact) | **Post** /api/v2/contacts/unblock | Unblock a contact by phone number
 [**UnblockContactsBulk**](TextMagicApi.md#UnblockContactsBulk) | **Post** /api/v2/contacts/unblock/bulk | Unblock contacts (bulk)
@@ -218,62 +215,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **buyDedicatedNumberInputObject** | [**BuyDedicatedNumberInputObject**](BuyDedicatedNumberInputObject.md)|  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **CancelVerification**
-> CancelVerification(ctx, verifyId)
-Cancel verification process
-
-You can cancel the verification not earlier than 30 seconds after the initial request.
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **verifyId** | **string**| The verifyId that you received in Step 1. | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **CheckPhoneVerificationCodeTFA**
-> CheckPhoneVerificationCodeTFA(ctx, checkPhoneVerificationCodeTFAInputObject)
-Step 2: Check the verification code 
-
-Check received code from user with the code which was actually sent.
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **checkPhoneVerificationCodeTFAInputObject** | [**CheckPhoneVerificationCodeTfaInputObject**](CheckPhoneVerificationCodeTfaInputObject.md)|  | 
 
 ### Return type
 
@@ -1948,6 +1889,7 @@ Name | Type | Description  | Notes
  **end** | **optional.String**| Return messages up to specified timestamp only. Required when &#x60;start&#x60; parameter specified. | 
  **direction** | **optional.String**| Order direction. Default is desc. | [default to desc]
  **voice** | **optional.Int32**| Fetch results with voice calls. | [default to 0]
+ **includeNotes** | **optional.Int32**| Fetch results with messenger notes. | [default to 0]
 
 ### Return type
 
@@ -2662,7 +2604,7 @@ Name | Type | Description  | Notes
 > GetMessagePreviewResponse GetMessagePreview(ctx, optional)
 Preview message
 
-Get a messages preview (with tags merged) of up to 100 messages per session.
+Get a messages preview (with dynamic fields merged) of up to 100 messages per session. 
 
 ### Required Parameters
 
@@ -4076,34 +4018,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SendMessageResponse**](SendMessageResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **SendPhoneVerificationCodeTFA**
-> SendPhoneVerificationCodeResponse SendPhoneVerificationCodeTFA(ctx, sendPhoneVerificationCodeTFAInputObject)
-Step 1: Send a verification code 
-
-Sends a verification code to a specified phone number.
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **sendPhoneVerificationCodeTFAInputObject** | [**SendPhoneVerificationCodeTfaInputObject**](SendPhoneVerificationCodeTfaInputObject.md)|  | 
-
-### Return type
-
-[**SendPhoneVerificationCodeResponse**](SendPhoneVerificationCodeResponse.md)
 
 ### Authorization
 

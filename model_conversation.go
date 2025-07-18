@@ -31,4 +31,18 @@ type Conversation struct {
 	SessionId int32 `json:"sessionId"`
 	// Initiator ID of a message. See [message sessions](https://docs.textmagic.com/#tag/Outbound-Message-Sessions) for details.
 	InitiatorId int32 `json:"initiatorId,omitempty"`
+	// Message file id.
+	MessageFileId int32 `json:"messageFileId,omitempty"`
+	// Message type.
+	Type_ string `json:"type,omitempty"`
+	// Chat type.
+	ChatType string `json:"chatType,omitempty"`
+	// Chat id.
+	ChatId int32 `json:"chatId,omitempty"`
+	IsEdited bool `json:"isEdited,omitempty"`
+	// Error code.
+	ErrorCode string `json:"errorCode,omitempty"`
+	Files []*os.File `json:"files,omitempty"`
+	Payload *MessagePayload `json:"payload,omitempty"`
+	Avatar string `json:"avatar,omitempty"`
 }

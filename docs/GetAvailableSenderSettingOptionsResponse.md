@@ -9,6 +9,9 @@ Name | Type | Description | Notes
 **SenderIds** | **[]string** | Array of alphanumeric sender IDs. | [default to null]
 **UserCarrierTwilio** | **[]string** | Array of alphanumeric sender IDs. | [default to null]
 **UserCarrierVonage** | **[]string** | Array of alphanumeric sender IDs. | [default to null]
+**UserCarrierSinch** | **[]string** | Array of alphanumeric sender IDs. | [default to null]
+**UCarrierBandwidth** | **[]string** | Array of alphanumeric sender IDs. | [optional] [default to null]
+**UcTwilioSenderId** | **[]string** | Array of alphanumeric sender IDs. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

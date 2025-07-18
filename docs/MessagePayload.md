@@ -1,12 +1,10 @@
-# MessagesIcsParametersRecipients
+# MessagePayload
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Contacts** | **[]int32** |  | [default to null]
-**Groups** | **[]int32** |  | [default to null]
-**Numbers** | **[]string** |  | [default to null]
-**FilteredViews** | **[]int32** |  | [default to null]
+**Type_** | **string** | Payload type. | [default to null]
+**MediaPreview** | **string** | Media preview link. | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

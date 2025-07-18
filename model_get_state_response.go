@@ -14,11 +14,13 @@ type GetStateResponse struct {
 	SystemExit int32 `json:"systemExit"`
 	SystemAlert int32 `json:"systemAlert"`
 	SystemAccountStateChanged int32 `json:"systemAccountStateChanged"`
+	SystemAccountAcceptTermsUpdate int32 `json:"systemAccountAcceptTermsUpdate"`
 	SystemAccountClosed int32 `json:"systemAccountClosed"`
 	SystemAccountAdditionalFields int32 `json:"systemAccountAdditionalFields"`
 	SystemAccountPermissionsChanged int32 `json:"systemAccountPermissionsChanged"`
 	UserProfileChanged int32 `json:"userProfileChanged"`
 	UserBalanceChanged int32 `json:"userBalanceChanged"`
+	UserPresenceStatusChanged int32 `json:"userPresenceStatusChanged"`
 	UserImpersonationEnd int32 `json:"userImpersonationEnd"`
 	MessageDeleted int32 `json:"messageDeleted"`
 	MessageIncoming int32 `json:"messageIncoming"`
@@ -27,6 +29,10 @@ type GetStateResponse struct {
 	MessageBulkEnd int32 `json:"messageBulkEnd"`
 	MessageWipeEnd int32 `json:"messageWipeEnd"`
 	MessageSent int32 `json:"messageSent"`
+	MessageLog int32 `json:"messageLog"`
+	MessageNote int32 `json:"messageNote"`
+	MessageInitial int32 `json:"messageInitial"`
+	LastMessageSet int32 `json:"lastMessageSet"`
 	MessageSessionDeleted int32 `json:"messageSessionDeleted"`
 	MessageCacheClear int32 `json:"messageCacheClear"`
 	MessageIncomingCacheClear int32 `json:"messageIncomingCacheClear"`
@@ -46,15 +52,31 @@ type GetStateResponse struct {
 	ChatDeleted int32 `json:"chatDeleted"`
 	ChatClosed int32 `json:"chatClosed"`
 	ChatReopened int32 `json:"chatReopened"`
+	ChatActivated int32 `json:"chatActivated"`
 	ChatCacheClear int32 `json:"chatCacheClear"`
 	ChatRead int32 `json:"chatRead"`
 	ChatUnread int32 `json:"chatUnread"`
+	ChatAssigneeChanged int32 `json:"chatAssigneeChanged"`
+	ChatTagsChanged int32 `json:"chatTagsChanged"`
+	ChatConversationEnded int32 `json:"chatConversationEnded"`
+	ChatUpdated int32 `json:"chatUpdated"`
+	LiveChatAgentChanged int32 `json:"liveChatAgentChanged"`
+	LiveChatRated int32 `json:"liveChatRated"`
+	WebWidgetUpdated int32 `json:"webWidgetUpdated"`
+	WebWidgetDeleted int32 `json:"webWidgetDeleted"`
 	ContactAdded int32 `json:"contactAdded"`
 	ContactDeleted int32 `json:"contactDeleted"`
+	ContactBulkUpdated int32 `json:"contactBulkUpdated"`
 	ContactStateChanged int32 `json:"contactStateChanged"`
+	ContactUnsubscribed int32 `json:"contactUnsubscribed"`
+	ContactResubscribed int32 `json:"contactResubscribed"`
+	ContactNoteAdded int32 `json:"contactNoteAdded"`
+	ContactNoteDeleted int32 `json:"contactNoteDeleted"`
+	ContactNoteStateChanged int32 `json:"contactNoteStateChanged"`
 	ListAdded int32 `json:"listAdded"`
 	ListDeleted int32 `json:"listDeleted"`
 	ListStateChanged int32 `json:"listStateChanged"`
+	ListCountMembersUpdated int32 `json:"listCountMembersUpdated"`
 	ContactWipeEnd int32 `json:"contactWipeEnd"`
 	ContactImportEnd int32 `json:"contactImportEnd"`
 	ContactCacheClear int32 `json:"contactCacheClear"`
@@ -63,7 +85,7 @@ type GetStateResponse struct {
 	ProgressCarrierBulkLookup int32 `json:"progressCarrierBulkLookup"`
 	ProgressEmailBulkLookup int32 `json:"progressEmailBulkLookup"`
 	ProgressSubAccountBulkImport int32 `json:"progressSubAccountBulkImport"`
-	ProgressContactBulkImport int32 `json:"progressContactBulkImport"`
+	ImportProgressState int32 `json:"importProgressState"`
 	ForceRefreshWebApp int32 `json:"forceRefreshWebApp"`
 	ChatSenderSettingsChanged int32 `json:"chatSenderSettingsChanged"`
 	CountrySenderSettingsChanged int32 `json:"countrySenderSettingsChanged"`
@@ -72,4 +94,106 @@ type GetStateResponse struct {
 	ChatSuggestedReplyChunk int32 `json:"chatSuggestedReplyChunk"`
 	UserSubscriptionChanged int32 `json:"userSubscriptionChanged"`
 	UserSubscriptionDeleted int32 `json:"userSubscriptionDeleted"`
+	TaskCreated int32 `json:"taskCreated"`
+	TaskUpdated int32 `json:"taskUpdated"`
+	TaskReordered int32 `json:"taskReordered"`
+	TaskDeleted int32 `json:"taskDeleted"`
+	TaskMovedAll int32 `json:"taskMovedAll"`
+	TaskStageCreated int32 `json:"taskStageCreated"`
+	TaskStageUpdated int32 `json:"taskStageUpdated"`
+	TaskStageDeleted int32 `json:"taskStageDeleted"`
+	TaskBoardCreated int32 `json:"taskBoardCreated"`
+	TaskBoardUpdated int32 `json:"taskBoardUpdated"`
+	TaskBoardReordered int32 `json:"taskBoardReordered"`
+	TaskBoardDeleted int32 `json:"taskBoardDeleted"`
+	TaskBoardArchived int32 `json:"taskBoardArchived"`
+	TaskChecklistCreated int32 `json:"taskChecklistCreated"`
+	TaskChecklistUpdated int32 `json:"taskChecklistUpdated"`
+	TaskChecklistDeleted int32 `json:"taskChecklistDeleted"`
+	TaskChecklistBulkMarked int32 `json:"taskChecklistBulkMarked"`
+	TaskChecklistItemCreated int32 `json:"taskChecklistItemCreated"`
+	TaskChecklistItemUpdated int32 `json:"taskChecklistItemUpdated"`
+	TaskChecklistItemDeleted int32 `json:"taskChecklistItemDeleted"`
+	TaskCommentCreated int32 `json:"taskCommentCreated"`
+	TaskCommentDeleted int32 `json:"taskCommentDeleted"`
+	PinnedContactAdded int32 `json:"pinnedContactAdded"`
+	PinnedContactRemoved int32 `json:"pinnedContactRemoved"`
+	PinnedContactReordered int32 `json:"pinnedContactReordered"`
+	PinnedContactStateChanged int32 `json:"pinnedContactStateChanged"`
+	WhatsappAccountAdded int32 `json:"whatsappAccountAdded"`
+	WhatsappAccountRemoved int32 `json:"whatsappAccountRemoved"`
+	WhatsappAccountChanged int32 `json:"whatsappAccountChanged"`
+	FacebookPageAdded int32 `json:"facebookPageAdded"`
+	FacebookPageRemoved int32 `json:"facebookPageRemoved"`
+	FacebookPageChanged int32 `json:"facebookPageChanged"`
+	InstagramAccountAdded int32 `json:"instagramAccountAdded"`
+	InstagramAccountRemoved int32 `json:"instagramAccountRemoved"`
+	InstagramAccountChanged int32 `json:"instagramAccountChanged"`
+	UnreadTicketsCountUpdated int32 `json:"unreadTicketsCountUpdated"`
+	TicketDeleted int32 `json:"ticketDeleted"`
+	TicketUpdated int32 `json:"ticketUpdated"`
+	TicketCreated int32 `json:"ticketCreated"`
+	TicketBulkUpdated int32 `json:"ticketBulkUpdated"`
+	TicketBulkDeleted int32 `json:"ticketBulkDeleted"`
+	TicketMessageCreated int32 `json:"ticketMessageCreated"`
+	TicketMessageUpdated int32 `json:"ticketMessageUpdated"`
+	TicketMessageDeleted int32 `json:"ticketMessageDeleted"`
+	SubAccountsClosed int32 `json:"subAccountsClosed"`
+	UserInvited int32 `json:"userInvited"`
+	FilteredViewCreated int32 `json:"filteredViewCreated"`
+	FilteredViewCountUpdated int32 `json:"filteredViewCountUpdated"`
+	FilteredViewDeleted int32 `json:"filteredViewDeleted"`
+	ForwardingInboxWasVerified int32 `json:"forwardingInboxWasVerified"`
+	ForwardingInboxCheckWasFailed int32 `json:"forwardingInboxCheckWasFailed"`
+	ForwardingInboxVerificationLinkWasParsed int32 `json:"forwardingInboxVerificationLinkWasParsed"`
+	TendlcLinkNumberStatusUpdated int32 `json:"tendlcLinkNumberStatusUpdated"`
+	ChannelPresence int32 `json:"channelPresence"`
+	DealCreated int32 `json:"dealCreated"`
+	DealUpdated int32 `json:"dealUpdated"`
+	DealDeleted int32 `json:"dealDeleted"`
+	DealMoved int32 `json:"dealMoved"`
+	DealStageCreated int32 `json:"dealStageCreated"`
+	DealStageUpdated int32 `json:"dealStageUpdated"`
+	DealStageDeleted int32 `json:"dealStageDeleted"`
+	DealPipelineCreated int32 `json:"dealPipelineCreated"`
+	DealPipelineUpdated int32 `json:"dealPipelineUpdated"`
+	DealPipelineDeleted int32 `json:"dealPipelineDeleted"`
+	DealPipelineArchived int32 `json:"dealPipelineArchived"`
+	DealPipelineReordered int32 `json:"dealPipelineReordered"`
+	DealActivityUpdated int32 `json:"dealActivityUpdated"`
+	DealActivityItemCreated int32 `json:"dealActivityItemCreated"`
+	DealActivityItemUpdated int32 `json:"dealActivityItemUpdated"`
+	DealActivityItemDeleted int32 `json:"dealActivityItemDeleted"`
+	DealActivityItemBulkMarked int32 `json:"dealActivityItemBulkMarked"`
+	DealTimelineItemDeleted int32 `json:"dealTimelineItemDeleted"`
+	DealTimelineItemCreated int32 `json:"dealTimelineItemCreated"`
+	AIAssistantCreated int32 `json:"AIAssistantCreated"`
+	AIAssistantState int32 `json:"AIAssistantState"`
+	AIAssistantDeleted int32 `json:"AIAssistantDeleted"`
+	AIAssistantLinkDeleted int32 `json:"AIAssistantLinkDeleted"`
+	AIAssistantLinkState int32 `json:"AIAssistantLinkState"`
+	AIAssistantLinkCreated int32 `json:"AIAssistantLinkCreated"`
+	AIAssistantSubLinkState int32 `json:"AIAssistantSubLinkState"`
+	AIAssistantSubLinkCreated int32 `json:"AIAssistantSubLinkCreated"`
+	EmailCampaignEmailSenderCreated int32 `json:"emailCampaignEmailSenderCreated"`
+	EmailCampaignEmailSenderUpdated int32 `json:"emailCampaignEmailSenderUpdated"`
+	EmailCampaignEmailSenderDeleted int32 `json:"emailCampaignEmailSenderDeleted"`
+	EmailCampaignDomainCreated int32 `json:"emailCampaignDomainCreated"`
+	EmailCampaignDomainDeleted int32 `json:"emailCampaignDomainDeleted"`
+	EmailCampaignDomainVerified int32 `json:"emailCampaignDomainVerified"`
+	EmailCampaignDomainStatusChanged int32 `json:"emailCampaignDomainStatusChanged"`
+	EmailCampaignDomainDkimVerified int32 `json:"emailCampaignDomainDkimVerified"`
+	EmailCampaignDomainReturnPathVerified int32 `json:"emailCampaignDomainReturnPathVerified"`
+	EmailCampaignDomainDmarcVerified int32 `json:"emailCampaignDomainDmarcVerified"`
+	EmailCampaignDomainEntryVerificationChanged int32 `json:"emailCampaignDomainEntryVerificationChanged"`
+	EmailCampaignProgressState int32 `json:"emailCampaignProgressState"`
+	EmailCampaignUpdated int32 `json:"emailCampaignUpdated"`
+	SmsCampaignInvalidated int32 `json:"smsCampaignInvalidated"`
+	ScheduledEmailCampaignCreated int32 `json:"scheduledEmailCampaignCreated"`
+	ScheduledEmailCampaignUpdated int32 `json:"scheduledEmailCampaignUpdated"`
+	ScheduledEmailCampaignStatusUpdated int32 `json:"scheduledEmailCampaignStatusUpdated"`
+	ScheduledEmailCampaignDeleted int32 `json:"scheduledEmailCampaignDeleted"`
+	EmailCampaignFailedAttemptCreated int32 `json:"emailCampaignFailedAttemptCreated"`
+	EmailCampaignFailedAttemptDeleted int32 `json:"emailCampaignFailedAttemptDeleted"`
+	EmailCampaignFailedAttemptStateUpdated int32 `json:"emailCampaignFailedAttemptStateUpdated"`
 }

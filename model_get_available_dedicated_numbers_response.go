@@ -14,4 +14,5 @@ type GetAvailableDedicatedNumbersResponse struct {
 	Numbers []string `json:"numbers"`
 	// Dedicated number monthly fee for this country. Returned in the current [account](https://docs.textmagic.com/#tag/User) currency.
 	Price float32 `json:"price"`
+	GiftType string `json:"giftType"`
 }

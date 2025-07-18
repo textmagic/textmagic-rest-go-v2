@@ -14,6 +14,15 @@ Name | Type | Description | Notes
 **LastName** | **string** | Contact last name. | [default to null]
 **SessionId** | **int32** | Session ID of a message. See [message sessions](https://docs.textmagic.com/#tag/Outbound-Message-Sessions) for details. | [default to null]
 **InitiatorId** | **int32** | Initiator ID of a message. See [message sessions](https://docs.textmagic.com/#tag/Outbound-Message-Sessions) for details. | [optional] [default to null]
+**MessageFileId** | **int32** | Message file id. | [optional] [default to null]
+**Type_** | **string** | Message type. | [optional] [default to null]
+**ChatType** | **string** | Chat type. | [optional] [default to null]
+**ChatId** | **int32** | Chat id. | [optional] [default to null]
+**IsEdited** | **bool** |  | [optional] [default to null]
+**ErrorCode** | **string** | Error code. | [optional] [default to null]
+**Files** | [**[]*os.File**](*os.File.md) |  | [optional] [default to null]
+**Payload** | [***MessagePayload**](MessagePayload.md) |  | [optional] [default to null]
+**Avatar** | **string** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

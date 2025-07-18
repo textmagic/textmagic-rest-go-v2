@@ -26,4 +26,7 @@ type MessageSession struct {
 	NumbersCount int32 `json:"numbersCount"`
 	// Destination type of a Message Session: * **t** – text SMS; * **s** – text-to-speech; * **v** – voice broadcast. 
 	Destination string `json:"destination"`
+	// Initiator ID.
+	InitiatorId int32 `json:"initiatorId"`
+	Title string `json:"title"`
 }

@@ -9,15 +9,16 @@
 
 package TextMagic
 
-type CustomFieldListItem struct {
-	// Custom Field ID.
+type File struct {
 	Id int32 `json:"id"`
-	// Old property custom Field ID.
-	UserCustomFieldId int32 `json:"userCustomFieldId"`
-	// Custom Field name.
 	Name string `json:"name"`
-	// Custom Field value.
-	Value string `json:"value"`
-	// Custom field creation time.
+	OriginalName string `json:"originalName"`
+	MimeType string `json:"mimeType"`
+	Size int32 `json:"size"`
+	// File type.
+	Type_ string `json:"type"`
 	CreatedAt string `json:"createdAt"`
+	PreviewUrl string `json:"previewUrl,omitempty"`
+	Url string `json:"url,omitempty"`
+	Metadata *FileMetadata `json:"metadata,omitempty"`
 }

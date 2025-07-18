@@ -9,9 +9,9 @@
 
 package TextMagic
 
-type MessagesIcsParametersRecipients struct {
-	Contacts []int32 `json:"contacts"`
-	Groups []int32 `json:"groups"`
-	Numbers []string `json:"numbers"`
-	FilteredViews []int32 `json:"filteredViews"`
+type Tag struct {
+	// Tag ID.
+	Id int32 `json:"id"`
+	// Tag title.
+	Title string `json:"title"`
 }

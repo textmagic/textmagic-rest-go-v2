@@ -9,9 +9,9 @@
 
 package TextMagic
 
-type MessagesIcsParametersRecipients struct {
-	Contacts []int32 `json:"contacts"`
-	Groups []int32 `json:"groups"`
-	Numbers []string `json:"numbers"`
-	FilteredViews []int32 `json:"filteredViews"`
+type MessagePayload struct {
+	// Payload type.
+	Type_ string `json:"type"`
+	// Media preview link.
+	MediaPreview string `json:"mediaPreview"`
 }

@@ -9,9 +9,10 @@
 
 package TextMagic
 
-type MessagesIcsParametersRecipients struct {
-	Contacts []int32 `json:"contacts"`
-	Groups []int32 `json:"groups"`
-	Numbers []string `json:"numbers"`
-	FilteredViews []int32 `json:"filteredViews"`
+type FileMetadata struct {
+	// File metadata type.
+	Type_ string `json:"type"`
+	Height int32 `json:"height"`
+	Width int32 `json:"width"`
+	Preview *FileMetadataPreview `json:"preview"`
 }

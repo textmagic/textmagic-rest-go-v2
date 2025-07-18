@@ -12,6 +12,6 @@ package TextMagic
 type UpdateTemplateInputObject struct {
 	// Template name.
 	Name string `json:"name,omitempty"`
-	// Template text. May contain tags inside braces. See [Custom fields list](https://docs.textmagic.com/#section/Custom-fields-list-(Merge-tags)).
+	// Template text. May contain dynamic fields inside braces. See [Custom fields list](https://docs.textmagic.com/#tag/Templates/Custom-fields-list-(Merge-dynamic-fields)).
 	Content string `json:"content,omitempty"`
 }

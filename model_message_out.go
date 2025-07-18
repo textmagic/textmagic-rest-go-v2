@@ -19,6 +19,8 @@ type MessageOut struct {
 	Text string `json:"text"`
 	// Delivery status of the message. See [message delivery statuses](https://docs.textmagic.com/#section/Delivery-status-codes) for details. 
 	Status string `json:"status"`
+	// Rejection reason.
+	RejectReason string `json:"rejectReason,omitempty"`
 	// Recipient contact ID.
 	ContactId int32 `json:"contactId"`
 	// Message Session ID of a message.
@@ -48,4 +50,6 @@ type MessageOut struct {
 	FromEmail string `json:"fromEmail,omitempty"`
 	// The Phone number used to send the SMS.
 	FromNumber string `json:"fromNumber,omitempty"`
+	SenderSource *MessageOutSenderSource `json:"senderSource,omitempty"`
+	Session *MessageOutSession `json:"session,omitempty"`
 }
