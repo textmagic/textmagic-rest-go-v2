@@ -17,6 +17,7 @@ type GetStateResponse struct {
 	SystemAccountAcceptTermsUpdate int32 `json:"systemAccountAcceptTermsUpdate"`
 	SystemAccountClosed int32 `json:"systemAccountClosed"`
 	SystemAccountAdditionalFields int32 `json:"systemAccountAdditionalFields"`
+	SystemAccountNumbersListChange int32 `json:"systemAccountNumbersListChange"`
 	SystemAccountPermissionsChanged int32 `json:"systemAccountPermissionsChanged"`
 	UserProfileChanged int32 `json:"userProfileChanged"`
 	UserBalanceChanged int32 `json:"userBalanceChanged"`
@@ -83,8 +84,8 @@ type GetStateResponse struct {
 	ListCacheClear int32 `json:"listCacheClear"`
 	CustomFieldsCacheClear int32 `json:"customFieldsCacheClear"`
 	ProgressCarrierBulkLookup int32 `json:"progressCarrierBulkLookup"`
-	ProgressEmailBulkLookup int32 `json:"progressEmailBulkLookup"`
 	ProgressSubAccountBulkImport int32 `json:"progressSubAccountBulkImport"`
+	EmailLookupProgressState int32 `json:"emailLookupProgressState"`
 	ImportProgressState int32 `json:"importProgressState"`
 	ForceRefreshWebApp int32 `json:"forceRefreshWebApp"`
 	ChatSenderSettingsChanged int32 `json:"chatSenderSettingsChanged"`
@@ -188,6 +189,8 @@ type GetStateResponse struct {
 	EmailCampaignDomainEntryVerificationChanged int32 `json:"emailCampaignDomainEntryVerificationChanged"`
 	EmailCampaignProgressState int32 `json:"emailCampaignProgressState"`
 	EmailCampaignUpdated int32 `json:"emailCampaignUpdated"`
+	EmailTemplateImproved int32 `json:"emailTemplateImproved"`
+	EmailTemplateImprovingFailed int32 `json:"emailTemplateImprovingFailed"`
 	SmsCampaignInvalidated int32 `json:"smsCampaignInvalidated"`
 	ScheduledEmailCampaignCreated int32 `json:"scheduledEmailCampaignCreated"`
 	ScheduledEmailCampaignUpdated int32 `json:"scheduledEmailCampaignUpdated"`

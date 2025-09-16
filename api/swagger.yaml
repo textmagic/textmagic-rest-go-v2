@@ -676,9 +676,9 @@ tags:
     \ Requirements\n\n1. Java 1.7+\n2. Maven/Gradle\n\n## Installation\n\n### Maven\n\
     \nAdd this dependency to your project's POM:\n```xml\n<dependencies>\n    <dependency>\n\
     \        <groupId>com.textmagic.sdk</groupId>\n        <artifactId>textmagic-java-sdk</artifactId>\n\
-    \        <version>2.0.43648</version>\n    </dependency>\n</dependencies>\n```\n\
+    \        <version>2.0.43665</version>\n    </dependency>\n</dependencies>\n```\n\
     \n### Gradle\n\nAdd this dependency to your project’s build file:\n```groovy\n\
-    compile \"com.textmagic.sdk:textmagic-java-sdk:2.0.43648\"\n```\n\n## Usage Example\n\
+    compile \"com.textmagic.sdk:textmagic-java-sdk:2.0.43665\"\n```\n\n## Usage Example\n\
     \n```java\nimport com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
     import com.textmagic.sdk.auth.*;\nimport com.textmagic.sdk.model.*;\n\npublic\
     \ class App {\n\n    public static void main(String[] args) {\n        ApiClient\
@@ -926,7 +926,7 @@ tags:
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Go application.\n\n[Get it now\
     \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n## Installation\n\
-    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.43649\n\
+    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v2.0.43753\n\
     ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
     ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
     \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
@@ -1015,6 +1015,59 @@ tags:
   description: "To get more details about a number or to check whether it is a valid\
     \ number or not, you can use the Carrier Lookup command. To upload and check numbers\
     \ in bulk, please use our [Web app](https://my.textmagic.com/online/carrier-lookup/)."
+- name: "Email Campaigns"
+  description: "# Email Campaign API\n\nThe Email Campaign API allows you to create\
+    \ and manage email marketing campaigns through the TextMagic platform. This API\
+    \ provides functionality to send immediate and scheduled bulk emails to your contacts\
+    \ and groups with advanced tracking and analytics.\n\n## Key Features\n\n- **Immediate\
+    \ Email Sending**: Send emails to multiple recipients right away\n- **Scheduled\
+    \ Campaigns**: Schedule emails for future delivery with one-time or recurring\
+    \ schedules\n- **Contact Integration**: Send to existing contacts, groups, or\
+    \ direct email addresses\n- **Email Sender Management**: Configure and manage\
+    \ verified email sender addresses\n- **Custom Sender Settings**: Use your configured\
+    \ email sender IDs for branded communications\n- **Advanced Tracking**: Monitor\
+    \ delivery, opens, clicks, and other engagement metrics\n- **Cost Management**:\
+    \ Real-time cost calculation and balance validation\n- **Team Collaboration**:\
+    \ Support for team workflows and impersonation\n- **Recurring Campaigns**: Set\
+    \ up automated email sequences with flexible scheduling\n\n## Authentication\n\
+    \nAll Email Campaign API endpoints require authentication using your TextMagic\
+    \ API credentials. Include your authentication token in the request headers.\n\
+    \n## Rate Limits\n\nEmail campaigns are subject to rate limiting and sending quotas\
+    \ based on your account plan. Monitor your usage through the API responses and\
+    \ account dashboard.\n\n## Supported Recipients\n\nYou can send email campaigns\
+    \ to:\n- **Contacts**: Use contact IDs from your TextMagic contact list\n- **Groups**:\
+    \ Target entire contact groups by group ID\n- **Direct Emails**: Send to specific\
+    \ email addresses not in your contact list\n- **Mixed Recipients**: Combine contacts,\
+    \ groups, and direct emails in a single campaign\n\n## Cost Calculation\n\nEmail\
+    \ campaign costs are calculated based on:\n- Number of recipients\n- Your account's\
+    \ email pricing tier\n- Additional features used (tracking, analytics, etc.)\n\
+    \nThe API will validate your account balance before creating campaigns and return\
+    \ cost estimates in responses.\n\n## Error Handling\n\nThe API returns detailed\
+    \ error information for common scenarios:\n- Insufficient account balance\n- Invalid\
+    \ recipient data\n- Missing or invalid sender configuration\n- Validation errors\
+    \ in campaign content\n\n## Campaign Types\n\n### Immediate Campaigns\nSend emails\
+    \ immediately to your recipients. Perfect for:\n- Breaking news and urgent announcements\n\
+    - Time-sensitive promotions\n- One-off communications\n\n### Scheduled Campaigns\n\
+    Schedule emails for future delivery with flexible timing options:\n- **One-time\
+    \ scheduled**: Send at a specific date and time\n- **Recurring campaigns**: Automated\
+    \ sending with daily, weekly, monthly, or custom schedules\n- **Timezone support**:\
+    \ Schedule in recipient's local timezone or specific timezone\n\n## Getting Started\n\
+    \n### Email Sender Setup\n1. Configure your email sender settings and verify your\
+    \ domains in your TextMagic account\n2. Use the Get Email Senders endpoint to\
+    \ retrieve available verified senders\n3. Note the sender IDs for use in campaign\
+    \ creation\n\n### For Immediate Campaigns\n1. Get your verified email senders\
+    \ using the Email Senders endpoint\n2. Prepare your recipient lists (contacts,\
+    \ groups, or email addresses)\n3. Create your email content with subject and HTML\
+    \ message\n4. Use the Create Email Campaign endpoint with a verified sender ID\
+    \ to send immediately\n5. Monitor campaign progress and analytics through the\
+    \ response data\n\n### For Scheduled Campaigns\n1. Get your verified email senders\
+    \ using the Email Senders endpoint\n2. Prepare your recipient lists (contacts,\
+    \ groups, or email addresses)\n3. Create your email content with subject and HTML\
+    \ message\n4. Define your schedule parameters (date, time, timezone, recurrence\
+    \ rules)\n5. Use the Schedule Email Campaign endpoint with a verified sender ID\n\
+    6. Monitor scheduled campaigns and their execution through the API\n\nFor detailed\
+    \ endpoint documentation, see the individual endpoint descriptions below.\n"
+  x-displayName: "Email Campaigns"
 schemes:
 - "https"
 consumes:
@@ -26050,6 +26103,636 @@ paths:
   /api/v2/surveys/{id}/nodes: {}
   /api/v2/surveys/nodes/{id}: {}
   /api/v2/surveys/nodes/merge: {}
+  /api/v2/email-campaigns:
+    post:
+      tags:
+      - "TextMagic"
+      summary: "Create new email campaign"
+      description: "Creates a new email campaign and sends it to the specified recipients.\n\
+        \nThis endpoint allows you to create and immediately send an email marketing\
+        \ campaign to your contacts, groups, or direct email addresses. The campaign\
+        \ will be processed asynchronously, and you'll receive a campaign object with\
+        \ tracking information.\n\n## Request Requirements\n\n- **Email Sender ID**:\
+        \ Must be a valid, configured email sender from your account\n- **Recipients**:\
+        \ At least one recipient type must be specified (contacts, groups, or emails)\n\
+        - **Content**: Subject and HTML message content are required\n- **Balance**:\
+        \ Sufficient account balance for the estimated campaign cost\n\n## Recipient\
+        \ Types\n\nYou can target multiple recipient types in a single campaign:\n\
+        \n- **Contact IDs**: Send to specific contacts from your contact list\n- **Group\
+        \ IDs**: Send to all contacts within specified groups  \n- **Direct Emails**:\
+        \ Send to email addresses not in your contact list\n\n## Content Guidelines\n\
+        \n- **Subject**: Maximum 998 characters, should be engaging and relevant\n\
+        - **Message**: HTML content supported, including images, links, and formatting\n\
+        - **From Name**: Optional custom sender name (max 500 characters)\n- **Reply-To**:\
+        \ Optional custom reply-to email address\n\n## Cost and Balance\n\nThe API\
+        \ automatically calculates campaign costs based on:\n- Total number of unique\
+        \ recipients across all specified groups, contacts, and emails\n- Your account's\
+        \ email pricing tier\n- Any additional features or premium content\n\nIf your\
+        \ account balance is insufficient, the request will be rejected with a low\
+        \ balance error.\n\n## Response Information\n\nSuccessful campaigns return:\n\
+        - Campaign ID for tracking and analytics\n- Current campaign status and progress\n\
+        - Cost breakdown and recipient counts\n- Sender information and content preview\n\
+        - Statistical totals and engagement metrics\n\n## Error Scenarios\n\nCommon\
+        \ error conditions include:\n- **Validation Errors**: Invalid email addresses,\
+        \ missing required fields, or content that exceeds limits\n- **Insufficient\
+        \ Balance**: Account balance too low for campaign cost\n- **Invalid Recipients**:\
+        \ Non-existent contact/group IDs or invalid email formats\n- **Sender Configuration**:\
+        \ Invalid or unconfigured email sender ID\n- **No Recipients**: All recipient\
+        \ arrays are empty or invalid\n"
+      operationId: "createEmailCampaign"
+      parameters:
+      - in: "body"
+        name: "CreateEmailCampaignInputObject"
+        required: true
+        schema:
+          $ref: "#/definitions/CreateEmailCampaignInputObject"
+        x-exportParamName: "CreateEmailCampaignInputObject"
+      responses:
+        201:
+          description: "Email campaign created successfully."
+          schema:
+            $ref: "#/definitions/CreateEmailCampaignResponse"
+        400:
+          description: "Bad request - validation errors or insufficient balance."
+          schema:
+            $ref: "#/definitions/BadRequestResponse"
+        401:
+          description: "Unauthorized request."
+          schema:
+            $ref: "#/definitions/UnauthorizedResponse"
+        403:
+          description: "Forbidden - insufficient permissions (requires ComposeEmail\
+            \ access)."
+      x-code-samples:
+      - lang: "PHP"
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/PHP\n\
+          require_once(__DIR__ . '/vendor/autoload.php');\n\nuse TextMagic\\Models\\\
+          ;\nuse TextMagic\\Api\\TextMagicApi;\nuse TextMagic\\Configuration;\n\n\
+          // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\n$config = Configuration::getDefaultConfiguration()\n    ->setUsername('YOUR_USERNAME')\n\
+          \    ->setPassword('YOUR_API_KEY');\n\n$api = new TextMagicApi(\n    new\
+          \ GuzzleHttp\\Client(),\n    $config\n);\n\n$input = new CreateEmailCampaignInputObject();\n\
+          \n// Required parameters\n$input->setEmailSenderId(123);\n$input->setSubject(\"\
+          Special Offer - 50% Off Today Only!\");\n$input->setMessage(\"<html><body><h1>Special\
+          \ Offer!</h1><p>Get 50% off all products today only!</p></body></html>\"\
+          );\n$input->setRecipients();\n\n// Optional parameters, you can skip these\
+          \ setters calls\n$input->setFromName(\"John Smith\");\n$input->setReplyToEmail(\"\
+          support@example.com\");\n\ntry {\n    // CreateEmailCampaignResponse class\
+          \ object\n    $result = $api->createEmailCampaign($input);\n    // ...\n\
+          } catch (Exception $e) {\n    echo 'Exception when calling TextMagicApi->createEmailCampaign:\
+          \ ', $e->getMessage(), PHP_EOL;\n}"
+      - lang: "Java"
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/Java\n\
+          import com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
+          import com.textmagic.sdk.auth.*;\nimport com.textmagic.sdk.model.*;\n\n\
+          public class App {\n    public static void main(String[] args) {\n     \
+          \   ApiClient defaultClient = Configuration.getDefaultApiClient();\n\n \
+          \       // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\n        HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication(\"\
+          BasicAuth\");\n        BasicAuth.setUsername(\"YOUR_USERNAME\");\n     \
+          \   BasicAuth.setPassword(\"YOUR_API_KEY\");\n\n        TextMagicApi apiInstance\
+          \ = new TextMagicApi();\n\n        CreateEmailCampaignInputObject input\
+          \ = new CreateEmailCampaignInputObject();\n\n        // Required parameters\n\
+          \        input.setEmailSenderId(123);\n        input.setSubject(\"Special\
+          \ Offer - 50% Off Today Only!\");\n        input.setMessage(\"<html><body><h1>Special\
+          \ Offer!</h1><p>Get 50% off all products today only!</p></body></html>\"\
+          );\n        input.setRecipients();\n\n        // Optional parameters, you\
+          \ can skip these setters calls\n        input.setFromName(\"John Smith\"\
+          );\n        input.setReplyToEmail(\"support@example.com\");\n\n        try\
+          \ {\n            // CreateEmailCampaignResponse class object\n         \
+          \   CreateEmailCampaignResponse obj = apiInstance.createEmailCampaign(input);\n\
+          \            // ...\n        } catch (ApiException e) {\n            System.err.println(\"\
+          Exception when calling createEmailCampaign\");\n            e.printStackTrace();\n\
+          \        }\n    }\n}"
+      - lang: "JavaScript"
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/Node.js\n\
+          const textmagicClient = require('textmagic-client');\n\nconst client = textmagicClient.ApiClient.instance;\n\
+          const auth = client.authentications['BasicAuth'];\nconst api = new textmagicClient.TextMagicApi();\n\
+          \n// put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\nauth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\
+          \nconst input = {\n    emailSenderId: 123,\n    subject: \"Special Offer\
+          \ - 50% Off Today Only!\",\n    message: \"<html><body><h1>Special Offer!</h1><p>Get\
+          \ 50% off all products today only!</p></body></html>\",\n    recipients:\
+          \ ,\n    // Optional parameters\n    fromName: \"John Smith\",\n    replyToEmail:\
+          \ \"support@example.com\",\n}\n\n\napi.createEmailCampaign(input).then(function\
+          \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          });"
+      - lang: "Ruby"
+        source: "# How to install SDK see here https://docs.textmagic.com/#section/Ruby\n\
+          require 'textmagic_rest_client'\n\n# put your Username and API Key from\
+          \ https://my.textmagic.com/online/api/rest-api/keys page.\nTextMagic.configure\
+          \ do |config|\n    config.username = 'YOUR_USERNAME'\n    config.password\
+          \ = 'YOUR_API_KEY'\nend\n\napi = TextMagic::TextMagicApi.new\n\nobj = new\
+          \ TextMagic::CreateEmailCampaignInputObject.new\n\n# Required parameters\n\
+          obj.email_sender_id = 123\nobj.subject = \"Special Offer - 50% Off Today\
+          \ Only!\"\nobj.message = \"<html><body><h1>Special Offer!</h1><p>Get 50%\
+          \ off all products today only!</p></body></html>\"\nobj.recipients = \n\
+          # Optional parameters, you can skip them\nobj.from_name = \"John Smith\"\
+          \nobj.reply_to_email = \"support@example.com\"\n\nbegin\n    # CreateEmailCampaignResponse\
+          \ object\n    result = api.create_email_campaign(input)\n    # ...\nrescue\
+          \ TextMagic::ApiError => e\n    puts \"Exception when calling TextMagicApi->create_email_campaign:\
+          \ #{e}\"\nend"
+      - lang: "C#"
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/C-VB.NET\n\
+          using System;\nusing System.IO;\nusing TextMagicClient.Api;\nusing TextMagicClient.Client;\n\
+          using TextMagicClient.Model;\n\nnamespace ExampleApp\n{\n    class Program\n\
+          \    {\n        static void Main(string[] args)\n        {\n           \
+          \ // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\n            Configuration.Default.Username = \"YOUR_USERNAME\"\
+          ;\n            Configuration.Default.Password = \"YOUR_API_KEY\";\n\n  \
+          \          var apiInstance = new TextMagicApi();\n\n            var obj\
+          \ = new CreateEmailCampaignInputObject();\n\n            // Required parameters\n\
+          \            obj.EmailSenderId = 123;\n            obj.Subject = \"Special\
+          \ Offer - 50% Off Today Only!\";\n            obj.Message = \"<html><body><h1>Special\
+          \ Offer!</h1><p>Get 50% off all products today only!</p></body></html>\"\
+          ;\n            obj.Recipients = ;\n\n            // Optional parameters,\
+          \ you can skip these setters calls\n            obj.FromName = \"John Smith\"\
+          ;\n            obj.ReplyToEmail = \"support@example.com\";\n\n         \
+          \   try {\n                // CreateEmailCampaignResponse class object\n\
+          \                var result = apiInstance.CreateEmailCampaign(obj);\n  \
+          \              // ...\n            } catch (Exception e) {\n           \
+          \     Console.WriteLine(\"Exception when calling createEmailCampaign: \"\
+          +e.Message);\n            }\n        }\n    }\n}"
+      - lang: "VB.Net"
+        source: "' How to install SDK see here https://docs.textmagic.com/#section/C-VB.NET\n\
+          Imports System\nImports System.IO\nImports TextMagicClient.Api\nImports\
+          \ TextMagicClient.Client\nImports TextMagicClient.Model\n\nModule Program\n\
+          \    Sub Main(args As String())\n        ' put your Username and API Key\
+          \ from https://my.textmagic.com/online/api/rest-api/keys page.\n       \
+          \ Configuration.Default.Username = \"YOUR_USERNAME\"\n        Configuration.Default.Password\
+          \ = \"YOUR_API_KEY\"\n\n        Dim apiInstance = New TextMagicApi()\n\n\
+          \        Dim obj = New CreateEmailCampaignInputObject With {\n         \
+          \   .EmailSenderId = 123,\n            .Subject = \"Special Offer - 50%\
+          \ Off Today Only!\",\n            .Message = \"<html><body><h1>Special Offer!</h1><p>Get\
+          \ 50% off all products today only!</p></body></html>\",\n            .FromName\
+          \ = \"John Smith\",\n            .ReplyToEmail = \"support@example.com\"\
+          ,\n            .Recipients = \n        }\n\n        Try\n            ' CreateEmailCampaignResponse\
+          \ class object\n            Dim result = apiInstance.CreateEmailCampaign(obj)\n\
+          \            ' ...\n        Catch e As Exception\n            Console.WriteLine(\"\
+          Exception when calling createEmailCampaign: \" + e.Message)\n        End\
+          \ Try\n    End Sub\nEnd Module"
+      - lang: "Go"
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/Go\n\
+          package main\n\nimport (\n    \"context\"\n    \"fmt\"\n    \"github.com/antihax/optional\"\
+          \n    // If you're using go.mod use line below to import our module\n  \
+          \  // \ttm \"github.com/imissyouso/textmagic-rest-go/v2\"\n    tm \"github.com/imissyouso/textmagic-rest-go\"\
+          \n    \"log\"\n)\n\nfunc main() {\n    cfg := tm.NewConfiguration()\n  \
+          \  client := tm.NewAPIClient(cfg)\n\n    // put your Username and API Key\
+          \ from https://my.textmagic.com/online/api/rest-api/keys page.\n    auth\
+          \ := context.WithValue(context.Background(), tm.ContextBasicAuth, tm.BasicAuth{\n\
+          \        UserName: \"YOUR_USERNAME\",\n        Password: \"YOUR_API_KEY\"\
+          ,\n    })\n\n    input := tm.SendMessageInputObject{\n        // Required\
+          \ parameters\n        EmailSenderId: 123,\n        Subject: \"Special Offer\
+          \ - 50% Off Today Only!\",\n        Message: \"<html><body><h1>Special Offer!</h1><p>Get\
+          \ 50% off all products today only!</p></body></html>\",\n        Recipients:\
+          \ ,\n        // Optional parameters, you can skip them\n        FromName:\
+          \ \"John Smith\",\n        ReplyToEmail: \"support@example.com\",\n    }\n\
+          \n    // tm.CreateEmailCampaignResponse struct\n    result, _, err := client.TextMagicApi.CreateEmailCampaign(auth,\
+          \ input)\n\n    if err != nil {\n        log.Fatal(err)\n    } else {\n\
+          \        fmt.Printf(\"%+v\\n\", result)\n        // ...\n    }\n}\n"
+      - lang: "Cpp"
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/C++\n\
+          #include <iostream>\n#include <fstream>\n// Change paths to directory where\
+          \ SDK lib is installed. See C++ SDK installation instructions for more details\n\
+          #include \"textmagic-rest-cpp/ApiClient.h\"\n#include \"textmagic-rest-cpp/ApiConfiguration.h\"\
+          \n#include \"textmagic-rest-cpp/api/TextMagicApi.h\"\n\nusing namespace\
+          \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
+          \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
+          \ ApiConfiguration);\n\n    // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\n    apiConfig->getHttpConfig().set_credentials(web::credentials(\"\
+          YOUR_NAME\", \"YOUR_API_KEY\"));\n    apiClient->setConfiguration(apiConfig);\n\
+          \n    TextMagicApi api(apiClient);\n\n    std::shared_ptr<CreateEmailCampaignInputObject>\
+          \ input(new CreateEmailCampaignInputObject);\n    // Required parameters\n\
+          \    input->setEmailSenderId(123);\n    input->setSubject(\"Special Offer\
+          \ - 50% Off Today Only!\");\n    input->setMessage(\"<html><body><h1>Special\
+          \ Offer!</h1><p>Get 50% off all products today only!</p></body></html>\"\
+          );\n    input->setRecipients();\n    // Optional parameters, you can skip\
+          \ them\n    input->setFromName(\"John Smith\");\n    input->setReplyToEmail(\"\
+          support@example.com\");\n\n    try {\n        pplx::task<std::shared_ptr<CreateEmailCampaignResponse>>\
+          \ result = api.createEmailCampaign(input);\n        result.wait();\n   \
+          \     // put operations with result here...\n    } catch(const std::exception&\
+          \ e) {\n        std::cout << \"createEmailCampaign() exception: \" << e.what()\
+          \ << '\\n';\n    }\n\n    return 0;\n}"
+      - lang: "Python"
+        source: "# How to install SDK see here https://docs.textmagic.com/#section/Python\n\
+          import TextMagic\nfrom TextMagic.rest import ApiException\n\nconfiguration\
+          \ = TextMagic.Configuration()\n# put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\nconfiguration.username = \"YOUR_USERNAME\"\nconfiguration.password\
+          \ = \"YOUR_API_KEY\"\n\n# create an instance of the API class\napi_instance\
+          \ = TextMagic.TextMagicApi(TextMagic.ApiClient(configuration))\n\ninput\
+          \ = TextMagic.CreateEmailCampaignInputObject()\n\n# Required parameters\n\
+          input.email_sender_id = 123\ninput.subject = \"Special Offer - 50% Off Today\
+          \ Only!\"\ninput.message = \"<html><body><h1>Special Offer!</h1><p>Get 50%\
+          \ off all products today only!</p></body></html>\"\ninput.recipients = \n\
+          # Optional parameters, you can skip them\ninput.from_name = \"John Smith\"\
+          \ninput.reply_to_email = \"support@example.com\"\n\ntry:\n    # CreateEmailCampaignResponse\
+          \ object\n    result = api_instance.create_email_campaign(create_email_campaign_input_object=input)\n\
+          \    # ...\nexcept ApiException as e:\n    print(\"Exception when calling\
+          \ TextMagicApi->create_email_campaign: %s\\n\" % e)\n"
+      - lang: "Perl"
+        source: "# How to install SDK see here https://docs.textmagic.com/#section/Perl\n\
+          use 5.010;\nuse strict;\nuse warnings;\nuse Net::Sms::TextMagicClient::ApiClient;\n\
+          use Net::Sms::TextMagicClient::TextMagicApi;\nuse Net::Sms::TextMagicClient::Object::CreateEmailCampaignInputObject;\n\
+          \n# put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\nmy $client = Net::Sms::TextMagicClient::ApiClient::->new(\n   \
+          \ username   => 'YOUR_USERNAME',\n    password   => 'YOUR_API_KEY'\n);\n\
+          \nmy $api_instance = Net::Sms::TextMagicClient::TextMagicApi::->new($client);\n\
+          \nmy $input = Net::Sms::TextMagicClient::Object::CreateEmailCampaignInputObject->new(\n\
+          \    # Required parameters\n    emailSenderId => 123,\n    subject => 'Special\
+          \ Offer - 50% Off Today Only!',\n    message => '<html><body><h1>Special\
+          \ Offer!</h1><p>Get 50% off all products today only!</p></body></html>',\n\
+          \    recipients => ,\n    # Optional parameters, you can skip them\n   \
+          \ fromName => 'John Smith',\n    replyToEmail => 'support@example.com',\n\
+          );\n\neval {\n    # CreateEmailCampaignResponse object\n    my $result =\
+          \ $api_instance->create_email_campaign(create_email_campaign_input_object\
+          \ => $input);\n    # ...\n};\n\nif ($@) {\n    warn \"Exception when calling\
+          \ TextMagicApi->create_email_campaign: $@\\n\";\n}"
+  /api/v2/email-campaigns/schedule:
+    post:
+      tags:
+      - "TextMagic"
+      summary: "Schedule new email campaign"
+      description: "Creates a new scheduled email campaign that will be sent at a\
+        \ specified time or according to a recurring schedule."
+      operationId: "scheduleEmailCampaign"
+      parameters:
+      - in: "body"
+        name: "ScheduleEmailCampaignInputObject"
+        required: true
+        schema:
+          $ref: "#/definitions/ScheduleEmailCampaignInputObject"
+        x-exportParamName: "ScheduleEmailCampaignInputObject"
+      responses:
+        201:
+          description: "Email campaign scheduled successfully."
+          schema:
+            $ref: "#/definitions/ScheduleEmailCampaignResponse"
+        400:
+          description: "Bad request - validation errors, invalid schedule, or insufficient\
+            \ balance."
+          schema:
+            $ref: "#/definitions/BadRequestResponse"
+        401:
+          description: "Unauthorized request."
+          schema:
+            $ref: "#/definitions/UnauthorizedResponse"
+        403:
+          description: "Forbidden - insufficient permissions (requires ComposeEmail\
+            \ access)."
+      x-code-samples:
+      - lang: "PHP"
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/PHP\n\
+          require_once(__DIR__ . '/vendor/autoload.php');\n\nuse TextMagic\\Models\\\
+          ;\nuse TextMagic\\Api\\TextMagicApi;\nuse TextMagic\\Configuration;\n\n\
+          // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\n$config = Configuration::getDefaultConfiguration()\n    ->setUsername('YOUR_USERNAME')\n\
+          \    ->setPassword('YOUR_API_KEY');\n\n$api = new TextMagicApi(\n    new\
+          \ GuzzleHttp\\Client(),\n    $config\n);\n\n$input = new ScheduleEmailCampaignInputObject();\n\
+          \n// Required parameters\n$input->setEmailSenderId(123);\n$input->setSubject(\"\
+          Weekly Newsletter - Week of December 4th\");\n$input->setMessage(\"<html><body><h1>This\
+          \ Week's Updates</h1><p>Here are the latest news and updates...</p></body></html>\"\
+          );\n$input->setRecipients();\n$input->setScheduleParams();\n\n// Optional\
+          \ parameters, you can skip these setters calls\n$input->setFromName(\"Newsletter\
+          \ Team\");\n$input->setReplyToEmail(\"newsletter@company.com\");\n\ntry\
+          \ {\n    // ScheduleEmailCampaignResponse class object\n    $result = $api->scheduleEmailCampaign($input);\n\
+          \    // ...\n} catch (Exception $e) {\n    echo 'Exception when calling\
+          \ TextMagicApi->scheduleEmailCampaign: ', $e->getMessage(), PHP_EOL;\n}"
+      - lang: "Java"
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/Java\n\
+          import com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
+          import com.textmagic.sdk.auth.*;\nimport com.textmagic.sdk.model.*;\n\n\
+          public class App {\n    public static void main(String[] args) {\n     \
+          \   ApiClient defaultClient = Configuration.getDefaultApiClient();\n\n \
+          \       // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\n        HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication(\"\
+          BasicAuth\");\n        BasicAuth.setUsername(\"YOUR_USERNAME\");\n     \
+          \   BasicAuth.setPassword(\"YOUR_API_KEY\");\n\n        TextMagicApi apiInstance\
+          \ = new TextMagicApi();\n\n        ScheduleEmailCampaignInputObject input\
+          \ = new ScheduleEmailCampaignInputObject();\n\n        // Required parameters\n\
+          \        input.setEmailSenderId(123);\n        input.setSubject(\"Weekly\
+          \ Newsletter - Week of December 4th\");\n        input.setMessage(\"<html><body><h1>This\
+          \ Week's Updates</h1><p>Here are the latest news and updates...</p></body></html>\"\
+          );\n        input.setRecipients();\n        input.setScheduleParams();\n\
+          \n        // Optional parameters, you can skip these setters calls\n   \
+          \     input.setFromName(\"Newsletter Team\");\n        input.setReplyToEmail(\"\
+          newsletter@company.com\");\n\n        try {\n            // ScheduleEmailCampaignResponse\
+          \ class object\n            ScheduleEmailCampaignResponse obj = apiInstance.scheduleEmailCampaign(input);\n\
+          \            // ...\n        } catch (ApiException e) {\n            System.err.println(\"\
+          Exception when calling scheduleEmailCampaign\");\n            e.printStackTrace();\n\
+          \        }\n    }\n}"
+      - lang: "JavaScript"
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/Node.js\n\
+          const textmagicClient = require('textmagic-client');\n\nconst client = textmagicClient.ApiClient.instance;\n\
+          const auth = client.authentications['BasicAuth'];\nconst api = new textmagicClient.TextMagicApi();\n\
+          \n// put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\nauth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\
+          \nconst input = {\n    emailSenderId: 123,\n    subject: \"Weekly Newsletter\
+          \ - Week of December 4th\",\n    message: \"<html><body><h1>This Week's\
+          \ Updates</h1><p>Here are the latest news and updates...</p></body></html>\"\
+          ,\n    recipients: ,\n    scheduleParams: ,\n    // Optional parameters\n\
+          \    fromName: \"Newsletter Team\",\n    replyToEmail: \"newsletter@company.com\"\
+          ,\n}\n\n\napi.scheduleEmailCampaign(input).then(function (data) {\n    console.log(data);\n\
+          }).catch(function(err){\n    console.error(err);\n});"
+      - lang: "Ruby"
+        source: "# How to install SDK see here https://docs.textmagic.com/#section/Ruby\n\
+          require 'textmagic_rest_client'\n\n# put your Username and API Key from\
+          \ https://my.textmagic.com/online/api/rest-api/keys page.\nTextMagic.configure\
+          \ do |config|\n    config.username = 'YOUR_USERNAME'\n    config.password\
+          \ = 'YOUR_API_KEY'\nend\n\napi = TextMagic::TextMagicApi.new\n\nobj = new\
+          \ TextMagic::ScheduleEmailCampaignInputObject.new\n\n# Required parameters\n\
+          obj.email_sender_id = 123\nobj.subject = \"Weekly Newsletter - Week of December\
+          \ 4th\"\nobj.message = \"<html><body><h1>This Week's Updates</h1><p>Here\
+          \ are the latest news and updates...</p></body></html>\"\nobj.recipients\
+          \ = \nobj.schedule_params = \n# Optional parameters, you can skip them\n\
+          obj.from_name = \"Newsletter Team\"\nobj.reply_to_email = \"newsletter@company.com\"\
+          \n\nbegin\n    # ScheduleEmailCampaignResponse object\n    result = api.schedule_email_campaign(input)\n\
+          \    # ...\nrescue TextMagic::ApiError => e\n    puts \"Exception when calling\
+          \ TextMagicApi->schedule_email_campaign: #{e}\"\nend"
+      - lang: "C#"
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/C-VB.NET\n\
+          using System;\nusing System.IO;\nusing TextMagicClient.Api;\nusing TextMagicClient.Client;\n\
+          using TextMagicClient.Model;\n\nnamespace ExampleApp\n{\n    class Program\n\
+          \    {\n        static void Main(string[] args)\n        {\n           \
+          \ // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\n            Configuration.Default.Username = \"YOUR_USERNAME\"\
+          ;\n            Configuration.Default.Password = \"YOUR_API_KEY\";\n\n  \
+          \          var apiInstance = new TextMagicApi();\n\n            var obj\
+          \ = new ScheduleEmailCampaignInputObject();\n\n            // Required parameters\n\
+          \            obj.EmailSenderId = 123;\n            obj.Subject = \"Weekly\
+          \ Newsletter - Week of December 4th\";\n            obj.Message = \"<html><body><h1>This\
+          \ Week's Updates</h1><p>Here are the latest news and updates...</p></body></html>\"\
+          ;\n            obj.Recipients = ;\n            obj.ScheduleParams = ;\n\n\
+          \            // Optional parameters, you can skip these setters calls\n\
+          \            obj.FromName = \"Newsletter Team\";\n            obj.ReplyToEmail\
+          \ = \"newsletter@company.com\";\n\n            try {\n                //\
+          \ ScheduleEmailCampaignResponse class object\n                var result\
+          \ = apiInstance.ScheduleEmailCampaign(obj);\n                // ...\n  \
+          \          } catch (Exception e) {\n                Console.WriteLine(\"\
+          Exception when calling scheduleEmailCampaign: \"+e.Message);\n         \
+          \   }\n        }\n    }\n}"
+      - lang: "VB.Net"
+        source: "' How to install SDK see here https://docs.textmagic.com/#section/C-VB.NET\n\
+          Imports System\nImports System.IO\nImports TextMagicClient.Api\nImports\
+          \ TextMagicClient.Client\nImports TextMagicClient.Model\n\nModule Program\n\
+          \    Sub Main(args As String())\n        ' put your Username and API Key\
+          \ from https://my.textmagic.com/online/api/rest-api/keys page.\n       \
+          \ Configuration.Default.Username = \"YOUR_USERNAME\"\n        Configuration.Default.Password\
+          \ = \"YOUR_API_KEY\"\n\n        Dim apiInstance = New TextMagicApi()\n\n\
+          \        Dim obj = New ScheduleEmailCampaignInputObject With {\n       \
+          \     .EmailSenderId = 123,\n            .Subject = \"Weekly Newsletter\
+          \ - Week of December 4th\",\n            .Message = \"<html><body><h1>This\
+          \ Week's Updates</h1><p>Here are the latest news and updates...</p></body></html>\"\
+          ,\n            .FromName = \"Newsletter Team\",\n            .ReplyToEmail\
+          \ = \"newsletter@company.com\",\n            .Recipients = ,\n         \
+          \   .ScheduleParams = \n        }\n\n        Try\n            ' ScheduleEmailCampaignResponse\
+          \ class object\n            Dim result = apiInstance.ScheduleEmailCampaign(obj)\n\
+          \            ' ...\n        Catch e As Exception\n            Console.WriteLine(\"\
+          Exception when calling scheduleEmailCampaign: \" + e.Message)\n        End\
+          \ Try\n    End Sub\nEnd Module"
+      - lang: "Go"
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/Go\n\
+          package main\n\nimport (\n    \"context\"\n    \"fmt\"\n    \"github.com/antihax/optional\"\
+          \n    // If you're using go.mod use line below to import our module\n  \
+          \  // \ttm \"github.com/imissyouso/textmagic-rest-go/v2\"\n    tm \"github.com/imissyouso/textmagic-rest-go\"\
+          \n    \"log\"\n)\n\nfunc main() {\n    cfg := tm.NewConfiguration()\n  \
+          \  client := tm.NewAPIClient(cfg)\n\n    // put your Username and API Key\
+          \ from https://my.textmagic.com/online/api/rest-api/keys page.\n    auth\
+          \ := context.WithValue(context.Background(), tm.ContextBasicAuth, tm.BasicAuth{\n\
+          \        UserName: \"YOUR_USERNAME\",\n        Password: \"YOUR_API_KEY\"\
+          ,\n    })\n\n    input := tm.SendMessageInputObject{\n        // Required\
+          \ parameters\n        EmailSenderId: 123,\n        Subject: \"Weekly Newsletter\
+          \ - Week of December 4th\",\n        Message: \"<html><body><h1>This Week's\
+          \ Updates</h1><p>Here are the latest news and updates...</p></body></html>\"\
+          ,\n        Recipients: ,\n        ScheduleParams: ,\n        // Optional\
+          \ parameters, you can skip them\n        FromName: \"Newsletter Team\",\n\
+          \        ReplyToEmail: \"newsletter@company.com\",\n    }\n\n    // tm.ScheduleEmailCampaignResponse\
+          \ struct\n    result, _, err := client.TextMagicApi.ScheduleEmailCampaign(auth,\
+          \ input)\n\n    if err != nil {\n        log.Fatal(err)\n    } else {\n\
+          \        fmt.Printf(\"%+v\\n\", result)\n        // ...\n    }\n}\n"
+      - lang: "Cpp"
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/C++\n\
+          #include <iostream>\n#include <fstream>\n// Change paths to directory where\
+          \ SDK lib is installed. See C++ SDK installation instructions for more details\n\
+          #include \"textmagic-rest-cpp/ApiClient.h\"\n#include \"textmagic-rest-cpp/ApiConfiguration.h\"\
+          \n#include \"textmagic-rest-cpp/api/TextMagicApi.h\"\n\nusing namespace\
+          \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
+          \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
+          \ ApiConfiguration);\n\n    // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\n    apiConfig->getHttpConfig().set_credentials(web::credentials(\"\
+          YOUR_NAME\", \"YOUR_API_KEY\"));\n    apiClient->setConfiguration(apiConfig);\n\
+          \n    TextMagicApi api(apiClient);\n\n    std::shared_ptr<ScheduleEmailCampaignInputObject>\
+          \ input(new ScheduleEmailCampaignInputObject);\n    // Required parameters\n\
+          \    input->setEmailSenderId(123);\n    input->setSubject(\"Weekly Newsletter\
+          \ - Week of December 4th\");\n    input->setMessage(\"<html><body><h1>This\
+          \ Week's Updates</h1><p>Here are the latest news and updates...</p></body></html>\"\
+          );\n    input->setRecipients();\n    input->setScheduleParams();\n    //\
+          \ Optional parameters, you can skip them\n    input->setFromName(\"Newsletter\
+          \ Team\");\n    input->setReplyToEmail(\"newsletter@company.com\");\n\n\
+          \    try {\n        pplx::task<std::shared_ptr<ScheduleEmailCampaignResponse>>\
+          \ result = api.scheduleEmailCampaign(input);\n        result.wait();\n \
+          \       // put operations with result here...\n    } catch(const std::exception&\
+          \ e) {\n        std::cout << \"scheduleEmailCampaign() exception: \" <<\
+          \ e.what() << '\\n';\n    }\n\n    return 0;\n}"
+      - lang: "Python"
+        source: "# How to install SDK see here https://docs.textmagic.com/#section/Python\n\
+          import TextMagic\nfrom TextMagic.rest import ApiException\n\nconfiguration\
+          \ = TextMagic.Configuration()\n# put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\nconfiguration.username = \"YOUR_USERNAME\"\nconfiguration.password\
+          \ = \"YOUR_API_KEY\"\n\n# create an instance of the API class\napi_instance\
+          \ = TextMagic.TextMagicApi(TextMagic.ApiClient(configuration))\n\ninput\
+          \ = TextMagic.ScheduleEmailCampaignInputObject()\n\n# Required parameters\n\
+          input.email_sender_id = 123\ninput.subject = \"Weekly Newsletter - Week\
+          \ of December 4th\"\ninput.message = \"<html><body><h1>This Week's Updates</h1><p>Here\
+          \ are the latest news and updates...</p></body></html>\"\ninput.recipients\
+          \ = \ninput.schedule_params = \n# Optional parameters, you can skip them\n\
+          input.from_name = \"Newsletter Team\"\ninput.reply_to_email = \"newsletter@company.com\"\
+          \n\ntry:\n    # ScheduleEmailCampaignResponse object\n    result = api_instance.schedule_email_campaign(schedule_email_campaign_input_object=input)\n\
+          \    # ...\nexcept ApiException as e:\n    print(\"Exception when calling\
+          \ TextMagicApi->schedule_email_campaign: %s\\n\" % e)\n"
+      - lang: "Perl"
+        source: "# How to install SDK see here https://docs.textmagic.com/#section/Perl\n\
+          use 5.010;\nuse strict;\nuse warnings;\nuse Net::Sms::TextMagicClient::ApiClient;\n\
+          use Net::Sms::TextMagicClient::TextMagicApi;\nuse Net::Sms::TextMagicClient::Object::ScheduleEmailCampaignInputObject;\n\
+          \n# put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\nmy $client = Net::Sms::TextMagicClient::ApiClient::->new(\n   \
+          \ username   => 'YOUR_USERNAME',\n    password   => 'YOUR_API_KEY'\n);\n\
+          \nmy $api_instance = Net::Sms::TextMagicClient::TextMagicApi::->new($client);\n\
+          \nmy $input = Net::Sms::TextMagicClient::Object::ScheduleEmailCampaignInputObject->new(\n\
+          \    # Required parameters\n    emailSenderId => 123,\n    subject => 'Weekly\
+          \ Newsletter - Week of December 4th',\n    message => '<html><body><h1>This\
+          \ Week's Updates</h1><p>Here are the latest news and updates...</p></body></html>',\n\
+          \    recipients => ,\n    scheduleParams => ,\n    # Optional parameters,\
+          \ you can skip them\n    fromName => 'Newsletter Team',\n    replyToEmail\
+          \ => 'newsletter@company.com',\n);\n\neval {\n    # ScheduleEmailCampaignResponse\
+          \ object\n    my $result = $api_instance->schedule_email_campaign(schedule_email_campaign_input_object\
+          \ => $input);\n    # ...\n};\n\nif ($@) {\n    warn \"Exception when calling\
+          \ TextMagicApi->schedule_email_campaign: $@\\n\";\n}"
+  /api/v2/email-campaigns/email-senders:
+    get:
+      tags:
+      - "TextMagic"
+      summary: "Get list of email senders"
+      description: "Retrieves a list of configured email senders available for creating\
+        \ email campaigns."
+      operationId: "getEmailSenders"
+      parameters:
+      - name: "domainId"
+        in: "query"
+        description: "Filter email senders by specific domain ID."
+        required: false
+        type: "integer"
+        x-exportParamName: "DomainId"
+        x-optionalDataType: "Int32"
+      responses:
+        200:
+          description: "Email senders retrieved successfully."
+          schema:
+            $ref: "#/definitions/GetEmailSendersResponse"
+        400:
+          description: "Bad request - invalid query parameters."
+          schema:
+            $ref: "#/definitions/BadRequestResponse"
+        401:
+          description: "Unauthorized request."
+          schema:
+            $ref: "#/definitions/UnauthorizedResponse"
+      x-code-samples:
+      - lang: "PHP"
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/PHP\n\
+          require_once(__DIR__ . '/vendor/autoload.php');\n\nuse TextMagic\\Api\\\
+          TextMagicApi;\nuse TextMagic\\Configuration;\n\n// put your Username and\
+          \ API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
+          $config = Configuration::getDefaultConfiguration()\n    ->setUsername('YOUR_USERNAME')\n\
+          \    ->setPassword('YOUR_API_KEY');\n\n$api = new TextMagicApi(\n    new\
+          \ GuzzleHttp\\Client(),\n    $config\n);\n\n// Optional, you can pass them\
+          \ as null values to getEmailSenders method below, default values will be\
+          \ used\n$domainId = 1;\n\ntry {\n    // GetEmailSendersResponse class object\n\
+          \    $result = $api->getEmailSenders($domainId);\n    // ...\n} catch (Exception\
+          \ $e) {\n    echo 'Exception when calling TextMagicApi->getEmailSenders:\
+          \ ', $e->getMessage(), PHP_EOL;\n}"
+      - lang: "Java"
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/Java\n\
+          import com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
+          import com.textmagic.sdk.auth.*;\nimport com.textmagic.sdk.model.*;\n\n\
+          public class App {\n    public static void main(String[] args) {\n     \
+          \   ApiClient defaultClient = Configuration.getDefaultApiClient();\n\n \
+          \       // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\n        HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication(\"\
+          BasicAuth\");\n        BasicAuth.setUsername(\"YOUR_USERNAME\");\n     \
+          \   BasicAuth.setPassword(\"YOUR_API_KEY\");\n\n        TextMagicApi apiInstance\
+          \ = new TextMagicApi();\n\n        // Optional, you can pass them as null\
+          \ values to getEmailSenders method below, default values will be used\n\
+          \        int domainId = 1;\n\n        try {\n            // GetEmailSendersResponse\
+          \ class object\n            GetEmailSendersResponse obj = apiInstance.getEmailSenders(domainId);\n\
+          \            // ...\n        } catch (ApiException e) {\n            System.err.println(\"\
+          Exception when calling getEmailSenders\");\n            e.printStackTrace();\n\
+          \        }\n    }\n}"
+      - lang: "JavaScript"
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/Node.js\n\
+          const textmagicClient = require('textmagic-client');\n\nconst client = textmagicClient.ApiClient.instance;\n\
+          const auth = client.authentications['BasicAuth'];\nconst api = new textmagicClient.TextMagicApi();\n\
+          \n// put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\nauth.username = 'YOUR_USERNAME';\nauth.password = 'YOUR_API_KEY';\n\
+          \n\n// Optional parameters\nconst opts = {\n    domainId: 1,\n};\n\napi.getEmailSenders(opts).then(function\
+          \ (data) {\n    console.log(data);\n}).catch(function(err){\n    console.error(err);\n\
+          });"
+      - lang: "Ruby"
+        source: "# How to install SDK see here https://docs.textmagic.com/#section/Ruby\n\
+          require 'textmagic_rest_client'\n\n# put your Username and API Key from\
+          \ https://my.textmagic.com/online/api/rest-api/keys page.\nTextMagic.configure\
+          \ do |config|\n    config.username = 'YOUR_USERNAME'\n    config.password\
+          \ = 'YOUR_API_KEY'\nend\n\napi = TextMagic::TextMagicApi.new\n\nparams =\
+          \ {\n  # Optional parameters\n  domain_id: 1,\n}\n\nbegin\n    # GetEmailSendersResponse\
+          \ object\n    result = api.get_email_senders(params)\n    # ...\nrescue\
+          \ TextMagic::ApiError => e\n    puts \"Exception when calling TextMagicApi->get_email_senders:\
+          \ #{e}\"\nend"
+      - lang: "C#"
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/C-VB.NET\n\
+          using System;\nusing System.IO;\nusing TextMagicClient.Api;\nusing TextMagicClient.Client;\n\
+          using TextMagicClient.Model;\n\nnamespace ExampleApp\n{\n    class Program\n\
+          \    {\n        static void Main(string[] args)\n        {\n           \
+          \ // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\n            Configuration.Default.Username = \"YOUR_USERNAME\"\
+          ;\n            Configuration.Default.Password = \"YOUR_API_KEY\";\n\n  \
+          \          var apiInstance = new TextMagicApi();\n\n            // Optional,\
+          \ you can pass them as null values to getEmailSenders method below, default\
+          \ values will be used\n            int domainId = 1;\n\n            try\
+          \ {\n                // GetEmailSendersResponse class object\n         \
+          \       var result = apiInstance.GetEmailSenders(domainId);\n          \
+          \      // ...\n            } catch (Exception e) {\n                Console.WriteLine(\"\
+          Exception when calling getEmailSenders: \"+e.Message);\n            }\n\
+          \        }\n    }\n}"
+      - lang: "VB.Net"
+        source: "' How to install SDK see here https://docs.textmagic.com/#section/C-VB.NET\n\
+          Imports System\nImports System.IO\nImports TextMagicClient.Api\nImports\
+          \ TextMagicClient.Client\nImports TextMagicClient.Model\n\nModule Program\n\
+          \    Sub Main(args As String())\n        ' put your Username and API Key\
+          \ from https://my.textmagic.com/online/api/rest-api/keys page.\n       \
+          \ Configuration.Default.Username = \"YOUR_USERNAME\"\n        Configuration.Default.Password\
+          \ = \"YOUR_API_KEY\"\n\n        Dim apiInstance = New TextMagicApi()\n\n\
+          \        ' Optional, you can pass them as null values to getEmailSenders\
+          \ method below, default values will be used\n        Dim domainId As Integer\
+          \ = 1\n\n        Try\n            ' GetEmailSendersResponse class object\n\
+          \            Dim result = apiInstance.GetEmailSenders(domainId)\n      \
+          \      ' ...\n        Catch e As Exception\n            Console.WriteLine(\"\
+          Exception when calling getEmailSenders: \" + e.Message)\n        End Try\n\
+          \    End Sub\nEnd Module"
+      - lang: "Go"
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/Go\n\
+          package main\n\nimport (\n    \"context\"\n    \"fmt\"\n    \"github.com/antihax/optional\"\
+          \n    // If you're using go.mod use line below to import our module\n  \
+          \  // \ttm \"github.com/imissyouso/textmagic-rest-go/v2\"\n    tm \"github.com/imissyouso/textmagic-rest-go\"\
+          \n    \"log\"\n)\n\nfunc main() {\n    cfg := tm.NewConfiguration()\n  \
+          \  client := tm.NewAPIClient(cfg)\n\n    // put your Username and API Key\
+          \ from https://my.textmagic.com/online/api/rest-api/keys page.\n    auth\
+          \ := context.WithValue(context.Background(), tm.ContextBasicAuth, tm.BasicAuth{\n\
+          \        UserName: \"YOUR_USERNAME\",\n        Password: \"YOUR_API_KEY\"\
+          ,\n    })\n\n    opts := tm.GetEmailSendersOpts{\n        // Optional parameters\n\
+          \        DomainId: optional.NewInt32(1),\n    }\n\n    // tm.GetEmailSendersResponse\
+          \ struct\n    result, _, err := client.TextMagicApi.GetEmailSenders(auth,\
+          \ &opts)\n\n    if err != nil {\n        log.Fatal(err)\n    } else {\n\
+          \        fmt.Printf(\"%+v\\n\", result)\n        // ...\n    }\n}\n"
+      - lang: "Cpp"
+        source: "// How to install SDK see here https://docs.textmagic.com/#section/C++\n\
+          #include <iostream>\n#include <fstream>\n// Change paths to directory where\
+          \ SDK lib is installed. See C++ SDK installation instructions for more details\n\
+          #include \"textmagic-rest-cpp/ApiClient.h\"\n#include \"textmagic-rest-cpp/ApiConfiguration.h\"\
+          \n#include \"textmagic-rest-cpp/api/TextMagicApi.h\"\n\nusing namespace\
+          \ com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
+          \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
+          \ ApiConfiguration);\n\n    // put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\n    apiConfig->getHttpConfig().set_credentials(web::credentials(\"\
+          YOUR_NAME\", \"YOUR_API_KEY\"));\n    apiClient->setConfiguration(apiConfig);\n\
+          \n    TextMagicApi api(apiClient);\n\n    // Optional parameters. Important:\
+          \ if you want to use default value then pass boost::none value\n    int\
+          \ domainId = 1;\n\n    try {\n        pplx::task<std::shared_ptr<GetEmailSendersResponse>>\
+          \ result = api.getEmailSenders(domainId);\n        result.wait();\n    \
+          \    // put operations with result here...\n    } catch(const std::exception&\
+          \ e) {\n        std::cout << \"getEmailSenders() exception: \" << e.what()\
+          \ << '\\n';\n    }\n\n    return 0;\n}"
+      - lang: "Python"
+        source: "# How to install SDK see here https://docs.textmagic.com/#section/Python\n\
+          import TextMagic\nfrom TextMagic.rest import ApiException\n\nconfiguration\
+          \ = TextMagic.Configuration()\n# put your Username and API Key from https://my.textmagic.com/online/api/rest-api/keys\
+          \ page.\nconfiguration.username = \"YOUR_USERNAME\"\nconfiguration.password\
+          \ = \"YOUR_API_KEY\"\n\n# create an instance of the API class\napi_instance\
+          \ = TextMagic.TextMagicApi(TextMagic.ApiClient(configuration))\n\n# Optional\
+          \ params, you can skip them\ndomain_id = 1\n\ntry:\n    # GetEmailSendersResponse\
+          \ object\n    result = api_instance.get_email_senders(domain_id=domain_id)\n\
+          \    # ...\nexcept ApiException as e:\n    print(\"Exception when calling\
+          \ TextMagicApi->get_email_senders: %s\\n\" % e)\n"
+      - lang: "Perl"
+        source: "# How to install SDK see here https://docs.textmagic.com/#section/Perl\n\
+          use 5.010;\nuse strict;\nuse warnings;\nuse Net::Sms::TextMagicClient::ApiClient;\n\
+          use Net::Sms::TextMagicClient::TextMagicApi;\n\n# put your Username and\
+          \ API Key from https://my.textmagic.com/online/api/rest-api/keys page.\n\
+          my $client = Net::Sms::TextMagicClient::ApiClient::->new(\n    username\
+          \   => 'YOUR_USERNAME',\n    password   => 'YOUR_API_KEY'\n);\n\nmy $api_instance\
+          \ = Net::Sms::TextMagicClient::TextMagicApi::->new($client);\n\n# Optional\
+          \ params, you can skip them\nmy $domainId = 1;\n\neval {\n    # GetEmailSendersResponse\
+          \ object\n    my $result = $api_instance->get_email_senders(domainId =>\
+          \ $domainId);\n    # ...\n};\n\nif ($@) {\n    warn \"Exception when calling\
+          \ TextMagicApi->get_email_senders: $@\\n\";\n}"
 securityDefinitions:
   BasicAuth:
     type: "basic"
@@ -26133,6 +26816,602 @@ definitions:
         example: 0.05
         description: "An amount of credit which will be deducted from your account\
           \ balance when this verification is successfully completed."
+  CreateEmailCampaignResponse:
+    type: "object"
+    required:
+    - "cost"
+    - "createdBy"
+    - "fromEmail"
+    - "html"
+    - "id"
+    - "replyToEmail"
+    - "startAt"
+    - "status"
+    - "subject"
+    - "totals"
+    properties:
+      id:
+        type: "integer"
+        example: 12345
+        description: "Unique campaign ID."
+      status:
+        type: "string"
+        example: "in_progress"
+        description: "Current campaign status."
+        enum:
+        - "idle"
+        - "sent"
+        - "in_progress"
+        - "failed"
+        - "delivered"
+        - "rejected"
+        - "error"
+        - "scheduledError"
+      emailSenderId:
+        type: "integer"
+        example: 123
+        description: "Email sender ID used for this campaign."
+        x-nullable: true
+      startAt:
+        type: "string"
+        example: "2023-12-01T10:00:00Z"
+        description: "Campaign start timestamp."
+      createdBy:
+        $ref: "#/definitions/UserPersonalInfo"
+      fromName:
+        type: "string"
+        example: "John Smith"
+        description: "Sender name displayed in recipient's inbox."
+        x-nullable: true
+      fromEmail:
+        type: "string"
+        format: "email"
+        example: "noreply@example.com"
+        description: "Sender email address."
+      replyToEmail:
+        type: "string"
+        format: "email"
+        example: "support@example.com"
+        description: "Reply-to email address."
+      subject:
+        type: "string"
+        example: "Special Offer - 50% Off Today Only!"
+        description: "Email subject line."
+      html:
+        type: "string"
+        example: "<html><body><h1>Special Offer!</h1><p>Get 50% off all products today\
+          \ only!</p></body></html>"
+        description: "HTML email content."
+      cost:
+        type: "number"
+        format: "float"
+        example: 15.75
+        description: "Total campaign cost."
+      totals:
+        $ref: "#/definitions/EmailCampaignStatisticTotals"
+      outboundEmail:
+        $ref: "#/definitions/OutboundEmailResponse"
+      failedReason:
+        type: "string"
+        example: "lowBalance"
+        description: "Reason for campaign failure if applicable."
+        enum:
+        - "lowBalance"
+        - "noRecipients"
+        - "noEmailSender"
+        - "unhandled"
+        x-nullable: true
+    example:
+      cost: 15.75
+      subject: "Special Offer - 50% Off Today Only!"
+      outboundEmail:
+        cost: 0.012
+        contactId: 123
+        initiatorId: 456
+        source: "emailCampaign"
+        emailSubject: "Special Offer - 50% Off Today Only!"
+        replyToEmail: "support@example.com"
+        sendTime: "2023-12-01T10:05:00Z"
+        fromEmail: "noreply@example.com"
+        statusReason: "Successfully delivered"
+        emailContent: "<html><body><h1>Special Offer!</h1><p>Get 50% off all products\
+          \ today only!</p></body></html>"
+        fromName: "John Smith"
+        recipientFullName: "Jane Doe"
+        id: 78901
+        recipientEmail: "jane.doe@example.com"
+        status: "delivered"
+      totals:
+        unsubscribed: 5
+        spamReports: 2
+        rejected: 20
+        recipients: 1250
+        delivered: 1180
+        opened: 590
+        failed: 50
+        clicked: 118
+      replyToEmail: "support@example.com"
+      fromEmail: "noreply@example.com"
+      createdBy:
+        firstName: "John"
+        lastName: "Smith"
+        avatarUrl: "https://example.com/avatar.jpg"
+        id: 456
+        email: "john.smith@example.com"
+      fromName: "John Smith"
+      html: "<html><body><h1>Special Offer!</h1><p>Get 50% off all products today\
+        \ only!</p></body></html>"
+      id: 12345
+      emailSenderId: 123
+      startAt: "2023-12-01T10:00:00Z"
+      status: "in_progress"
+      failedReason: "lowBalance"
+  ScheduleEmailCampaignResponse:
+    type: "object"
+    required:
+    - "campaign"
+    - "cost"
+    properties:
+      campaign:
+        $ref: "#/definitions/ScheduledEmailCampaignDetails"
+      cost:
+        type: "number"
+        format: "float"
+        example: 12.5
+        description: "Estimated cost for sending this campaign."
+    example:
+      cost: 12.5
+      campaign:
+        occurrenceSummary: "Weekly on Monday"
+        subject: "Weekly Newsletter - Week of December 4th"
+        endAt: "2024-12-04T14:00:00Z"
+        type: "weekly"
+        replyToEmail: "newsletter@company.com"
+        fromEmail: "noreply@company.com"
+        createdAt: "2023-12-01T10:30:00Z"
+        rrule: "FREQ=WEEKLY;BYDAY=MO"
+        sendingTimezone: "America/New_York"
+        recipientsCount: 1250
+        createdBy:
+          firstName: "John"
+          lastName: "Smith"
+          avatarUrl: "https://example.com/avatar.jpg"
+          id: 456
+          email: "john.smith@example.com"
+        fromName: "Newsletter Team"
+        html: "<html><body><h1>This Week's Updates</h1><p>Here are the latest news\
+          \ and updates...</p></body></html>"
+        id: 12345
+        emailSenderId: 123
+        nextSendAt: "2023-12-04T14:00:00Z"
+        startAt: "2023-12-04T14:00:00Z"
+        status: "scheduled"
+        updatedAt: "2023-12-01T10:30:00Z"
+  ScheduledEmailCampaignDetails:
+    type: "object"
+    required:
+    - "createdAt"
+    - "createdBy"
+    - "fromEmail"
+    - "html"
+    - "id"
+    - "recipientsCount"
+    - "replyToEmail"
+    - "sendingTimezone"
+    - "startAt"
+    - "status"
+    - "subject"
+    - "type"
+    - "updatedAt"
+    properties:
+      id:
+        type: "integer"
+        example: 12345
+        description: "Unique scheduled campaign ID."
+      status:
+        type: "string"
+        example: "scheduled"
+        description: "Current scheduled campaign status."
+        enum:
+        - "scheduled"
+        - "active"
+        - "paused"
+        - "completed"
+        - "cancelled"
+        - "failed"
+      emailSenderId:
+        type: "integer"
+        example: 123
+        description: "Email sender ID used for this campaign."
+        x-nullable: true
+      startAt:
+        type: "string"
+        example: "2023-12-04T14:00:00Z"
+        description: "Scheduled start timestamp (UTC)."
+      endAt:
+        type: "string"
+        example: "2024-12-04T14:00:00Z"
+        description: "End timestamp for recurring campaigns (UTC)."
+        x-nullable: true
+      nextSendAt:
+        type: "string"
+        example: "2023-12-04T14:00:00Z"
+        description: "Next scheduled send timestamp (UTC)."
+        x-nullable: true
+      createdBy:
+        $ref: "#/definitions/UserPersonalInfo"
+      createdAt:
+        type: "string"
+        example: "2023-12-01T10:30:00Z"
+        description: "Campaign creation timestamp."
+      updatedAt:
+        type: "string"
+        example: "2023-12-01T10:30:00Z"
+        description: "Last update timestamp."
+      type:
+        type: "string"
+        example: "weekly"
+        description: "Campaign recurrence type."
+        enum:
+        - "once"
+        - "hourly"
+        - "daily"
+        - "weekly"
+        - "monthly"
+        - "yearly"
+        - "follow-up"
+      fromName:
+        type: "string"
+        example: "Newsletter Team"
+        description: "Sender name displayed in recipient's inbox."
+        x-nullable: true
+      fromEmail:
+        type: "string"
+        format: "email"
+        example: "noreply@company.com"
+        description: "Sender email address."
+      replyToEmail:
+        type: "string"
+        format: "email"
+        example: "newsletter@company.com"
+        description: "Reply-to email address."
+      subject:
+        type: "string"
+        example: "Weekly Newsletter - Week of December 4th"
+        description: "Email subject line."
+      html:
+        type: "string"
+        example: "<html><body><h1>This Week's Updates</h1><p>Here are the latest news\
+          \ and updates...</p></body></html>"
+        description: "HTML email content."
+      recipientsCount:
+        type: "integer"
+        example: 1250
+        description: "Number of recipients for this campaign."
+      sendingTimezone:
+        type: "string"
+        example: "America/New_York"
+        description: "Timezone for sending the campaign."
+      rrule:
+        type: "string"
+        example: "FREQ=WEEKLY;BYDAY=MO"
+        description: "RFC 5545 recurrence rule for recurring campaigns."
+        x-nullable: true
+      occurrenceSummary:
+        type: "string"
+        example: "Weekly on Monday"
+        description: "Human-readable schedule description."
+        x-nullable: true
+    example:
+      occurrenceSummary: "Weekly on Monday"
+      subject: "Weekly Newsletter - Week of December 4th"
+      endAt: "2024-12-04T14:00:00Z"
+      type: "weekly"
+      replyToEmail: "newsletter@company.com"
+      fromEmail: "noreply@company.com"
+      createdAt: "2023-12-01T10:30:00Z"
+      rrule: "FREQ=WEEKLY;BYDAY=MO"
+      sendingTimezone: "America/New_York"
+      recipientsCount: 1250
+      createdBy:
+        firstName: "John"
+        lastName: "Smith"
+        avatarUrl: "https://example.com/avatar.jpg"
+        id: 456
+        email: "john.smith@example.com"
+      fromName: "Newsletter Team"
+      html: "<html><body><h1>This Week's Updates</h1><p>Here are the latest news and\
+        \ updates...</p></body></html>"
+      id: 12345
+      emailSenderId: 123
+      nextSendAt: "2023-12-04T14:00:00Z"
+      startAt: "2023-12-04T14:00:00Z"
+      status: "scheduled"
+      updatedAt: "2023-12-01T10:30:00Z"
+  GetEmailSendersResponse:
+    type: "object"
+    required:
+    - "items"
+    properties:
+      items:
+        type: "array"
+        description: "Array of email sender objects."
+        items:
+          $ref: "#/definitions/EmailSenderItem"
+    example:
+      items:
+      - createdAt: "2023-12-01T10:00:00Z"
+        fromName: "Company Newsletter"
+        replyTo: "support@company.com"
+        domainStatus: "verified"
+        id: 456
+        domainId: 123
+        email: "noreply@company.com"
+      - createdAt: "2023-12-01T10:00:00Z"
+        fromName: "Company Newsletter"
+        replyTo: "support@company.com"
+        domainStatus: "verified"
+        id: 456
+        domainId: 123
+        email: "noreply@company.com"
+  EmailSenderItem:
+    type: "object"
+    required:
+    - "createdAt"
+    - "domainId"
+    - "domainStatus"
+    - "email"
+    - "id"
+    properties:
+      id:
+        type: "integer"
+        example: 456
+        description: "Unique email sender identifier."
+      domainId:
+        type: "integer"
+        example: 123
+        description: "ID of the associated domain."
+      email:
+        type: "string"
+        format: "email"
+        example: "noreply@company.com"
+        description: "Email address of the sender."
+      createdAt:
+        type: "string"
+        example: "2023-12-01T10:00:00Z"
+        description: "When the email sender was created."
+      domainStatus:
+        type: "string"
+        example: "verified"
+        description: "Current verification status of the associated domain."
+        enum:
+        - "not_verified"
+        - "pending"
+        - "manual_review"
+        - "rejected"
+        - "verified"
+      fromName:
+        type: "string"
+        example: "Company Newsletter"
+        description: "Display name for the sender."
+        x-nullable: true
+      replyTo:
+        type: "string"
+        format: "email"
+        example: "support@company.com"
+        description: "Reply-to email address."
+        x-nullable: true
+    example:
+      createdAt: "2023-12-01T10:00:00Z"
+      fromName: "Company Newsletter"
+      replyTo: "support@company.com"
+      domainStatus: "verified"
+      id: 456
+      domainId: 123
+      email: "noreply@company.com"
+  UserPersonalInfo:
+    type: "object"
+    required:
+    - "id"
+    properties:
+      id:
+        type: "integer"
+        example: 456
+        description: "User ID."
+      firstName:
+        type: "string"
+        example: "John"
+        description: "User's first name."
+        x-nullable: true
+      lastName:
+        type: "string"
+        example: "Smith"
+        description: "User's last name."
+        x-nullable: true
+      avatarUrl:
+        type: "string"
+        example: "https://example.com/avatar.jpg"
+        description: "URL to user's avatar image."
+        x-nullable: true
+      email:
+        type: "string"
+        format: "email"
+        example: "john.smith@example.com"
+        description: "User's email address."
+        x-nullable: true
+    example:
+      firstName: "John"
+      lastName: "Smith"
+      avatarUrl: "https://example.com/avatar.jpg"
+      id: 456
+      email: "john.smith@example.com"
+  EmailCampaignStatisticTotals:
+    type: "object"
+    required:
+    - "clicked"
+    - "delivered"
+    - "failed"
+    - "opened"
+    - "recipients"
+    - "rejected"
+    - "spamReports"
+    - "unsubscribed"
+    properties:
+      recipients:
+        type: "integer"
+        example: 1250
+        description: "Total number of recipients."
+      delivered:
+        type: "integer"
+        example: 1180
+        description: "Number of emails delivered."
+      rejected:
+        type: "integer"
+        example: 20
+        description: "Number of emails rejected."
+      failed:
+        type: "integer"
+        example: 50
+        description: "Number of emails failed to send."
+      opened:
+        type: "integer"
+        example: 590
+        description: "Number of emails opened."
+      clicked:
+        type: "integer"
+        example: 118
+        description: "Number of emails with clicks."
+      spamReports:
+        type: "integer"
+        example: 2
+        description: "Number of spam reports."
+      unsubscribed:
+        type: "integer"
+        example: 5
+        description: "Number of unsubscribes."
+    example:
+      unsubscribed: 5
+      spamReports: 2
+      rejected: 20
+      recipients: 1250
+      delivered: 1180
+      opened: 590
+      failed: 50
+      clicked: 118
+  OutboundEmailResponse:
+    type: "object"
+    required:
+    - "cost"
+    - "emailContent"
+    - "emailSubject"
+    - "fromEmail"
+    - "id"
+    - "initiatorId"
+    - "replyToEmail"
+    - "sendTime"
+    - "source"
+    - "status"
+    properties:
+      id:
+        type: "integer"
+        example: 78901
+        description: "Outbound email ID."
+      sendTime:
+        type: "string"
+        example: "2023-12-01T10:05:00Z"
+        description: "Email send timestamp."
+      fromName:
+        type: "string"
+        example: "John Smith"
+        description: "Sender name."
+        x-nullable: true
+      fromEmail:
+        type: "string"
+        format: "email"
+        example: "noreply@example.com"
+        description: "Sender email address."
+      replyToEmail:
+        type: "string"
+        format: "email"
+        example: "support@example.com"
+        description: "Reply-to email address."
+      recipientFullName:
+        type: "string"
+        example: "Jane Doe"
+        description: "Recipient's full name."
+        x-nullable: true
+      recipientEmail:
+        type: "string"
+        format: "email"
+        example: "jane.doe@example.com"
+        description: "Recipient's email address."
+        x-nullable: true
+      emailSubject:
+        type: "string"
+        example: "Special Offer - 50% Off Today Only!"
+        description: "Email subject line."
+      emailContent:
+        type: "string"
+        example: "<html><body><h1>Special Offer!</h1><p>Get 50% off all products today\
+          \ only!</p></body></html>"
+        description: "HTML email content."
+      source:
+        type: "string"
+        example: "emailCampaign"
+        description: "Source of the outbound email."
+        enum:
+        - "emailCampaign"
+        - "ticket"
+      status:
+        type: "string"
+        example: "delivered"
+        description: "Current email status."
+        enum:
+        - "pending"
+        - "sent"
+        - "delivered"
+        - "rejected"
+        - "failed"
+        - "opened"
+        - "clicked"
+        - "unsubscribed"
+        - "spam"
+      cost:
+        type: "number"
+        format: "float"
+        example: 0.012
+        description: "Cost of sending this email."
+      statusReason:
+        type: "string"
+        example: "Successfully delivered"
+        description: "Detailed status reason."
+        x-nullable: true
+      contactId:
+        type: "integer"
+        example: 123
+        description: "Associated contact ID."
+        x-nullable: true
+      initiatorId:
+        type: "integer"
+        example: 456
+        description: "ID of user who initiated the email."
+    example:
+      cost: 0.012
+      contactId: 123
+      initiatorId: 456
+      source: "emailCampaign"
+      emailSubject: "Special Offer - 50% Off Today Only!"
+      replyToEmail: "support@example.com"
+      sendTime: "2023-12-01T10:05:00Z"
+      fromEmail: "noreply@example.com"
+      statusReason: "Successfully delivered"
+      emailContent: "<html><body><h1>Special Offer!</h1><p>Get 50% off all products\
+        \ today only!</p></body></html>"
+      fromName: "John Smith"
+      recipientFullName: "Jane Doe"
+      id: 78901
+      recipientEmail: "jane.doe@example.com"
+      status: "delivered"
   PingResponse:
     type: "object"
     required:
@@ -27275,6 +28554,9 @@ definitions:
     - "emailCampaignFailedAttemptStateUpdated"
     - "emailCampaignProgressState"
     - "emailCampaignUpdated"
+    - "emailLookupProgressState"
+    - "emailTemplateImproved"
+    - "emailTemplateImprovingFailed"
     - "facebookPageAdded"
     - "facebookPageChanged"
     - "facebookPageRemoved"
@@ -27321,7 +28603,6 @@ definitions:
     - "pinnedContactReordered"
     - "pinnedContactStateChanged"
     - "progressCarrierBulkLookup"
-    - "progressEmailBulkLookup"
     - "progressSubAccountBulkImport"
     - "scheduledEmailCampaignCreated"
     - "scheduledEmailCampaignDeleted"
@@ -27332,6 +28613,7 @@ definitions:
     - "systemAccountAcceptTermsUpdate"
     - "systemAccountAdditionalFields"
     - "systemAccountClosed"
+    - "systemAccountNumbersListChange"
     - "systemAccountPermissionsChanged"
     - "systemAccountStateChanged"
     - "systemAlert"
@@ -27395,6 +28677,8 @@ definitions:
       systemAccountClosed:
         type: "integer"
       systemAccountAdditionalFields:
+        type: "integer"
+      systemAccountNumbersListChange:
         type: "integer"
       systemAccountPermissionsChanged:
         type: "integer"
@@ -27528,9 +28812,9 @@ definitions:
         type: "integer"
       progressCarrierBulkLookup:
         type: "integer"
-      progressEmailBulkLookup:
-        type: "integer"
       progressSubAccountBulkImport:
+        type: "integer"
+      emailLookupProgressState:
         type: "integer"
       importProgressState:
         type: "integer"
@@ -27737,6 +29021,10 @@ definitions:
       emailCampaignProgressState:
         type: "integer"
       emailCampaignUpdated:
+        type: "integer"
+      emailTemplateImproved:
+        type: "integer"
+      emailTemplateImprovingFailed:
         type: "integer"
       smsCampaignInvalidated:
         type: "integer"
@@ -37747,6 +39035,222 @@ definitions:
       all: false
       calls_ids: "1,2,3,4"
       inbound_ids: "1,2,3,4"
+  apiv2emailcampaigns_recipients:
+    required:
+    - "contactIds"
+    - "emails"
+    - "groupIds"
+    properties:
+      contactIds:
+        type: "array"
+        example:
+        - 1
+        - 2
+        - 3
+        description: "Array of contact IDs to send to."
+        items:
+          type: "integer"
+      emails:
+        type: "array"
+        example:
+        - "user1@example.com"
+        - "user2@example.com"
+        description: "Array of email addresses to send to."
+        items:
+          type: "string"
+          format: "email"
+      groupIds:
+        type: "array"
+        example:
+        - 10
+        - 20
+        description: "Array of group IDs to send to."
+        items:
+          type: "integer"
+    description: "Campaign recipients configuration."
+    example:
+      emails:
+      - "user1@example.com"
+      - "user2@example.com"
+      groupIds:
+      - 10
+      - 20
+      contactIds:
+      - 1
+      - 2
+      - 3
+  CreateEmailCampaignInputObject:
+    type: "object"
+    properties:
+      emailSenderId:
+        type: "integer"
+        example: 123
+        description: "Email sender ID from your configured senders."
+      subject:
+        type: "string"
+        example: "Special Offer - 50% Off Today Only!"
+        description: "Email subject line."
+        maxLength: 998
+      message:
+        type: "string"
+        example: "<html><body><h1>Special Offer!</h1><p>Get 50% off all products today\
+          \ only!</p></body></html>"
+        description: "HTML email content."
+      fromName:
+        type: "string"
+        example: "John Smith"
+        description: "Optional custom sender name."
+        maxLength: 500
+        x-nullable: true
+      replyToEmail:
+        type: "string"
+        format: "email"
+        example: "support@example.com"
+        description: "Optional custom reply-to email address."
+        x-nullable: true
+      recipients:
+        $ref: "#/definitions/apiv2emailcampaigns_recipients"
+    example:
+      subject: "Special Offer - 50% Off Today Only!"
+      recipients:
+        emails:
+        - "user1@example.com"
+        - "user2@example.com"
+        groupIds:
+        - 10
+        - 20
+        contactIds:
+        - 1
+        - 2
+        - 3
+      fromName: "John Smith"
+      emailSenderId: 123
+      message: "<html><body><h1>Special Offer!</h1><p>Get 50% off all products today\
+        \ only!</p></body></html>"
+      replyToEmail: "support@example.com"
+  apiv2emailcampaignsschedule_recipients:
+    required:
+    - "contactIds"
+    - "emails"
+    - "groupIds"
+    properties:
+      contactIds:
+        type: "array"
+        example:
+        - 101
+        - 102
+        - 103
+        description: "Array of contact IDs to send to."
+        items:
+          type: "integer"
+      emails:
+        type: "array"
+        example:
+        - "user1@example.com"
+        - "user2@example.com"
+        description: "Array of email addresses to send to."
+        items:
+          type: "string"
+          format: "email"
+      groupIds:
+        type: "array"
+        example:
+        - 456
+        - 789
+        description: "Array of group IDs to send to."
+        items:
+          type: "integer"
+    description: "Campaign recipients configuration."
+    example:
+      emails:
+      - "user1@example.com"
+      - "user2@example.com"
+      groupIds:
+      - 456
+      - 789
+      contactIds:
+      - 101
+      - 102
+      - 103
+  apiv2emailcampaignsschedule_scheduleParams:
+    required:
+    - "startDateTime"
+    - "timezone"
+    properties:
+      startDateTime:
+        type: "string"
+        format: "date-time"
+        example: "2023-12-04T09:00:00Z"
+        description: "When to start sending the campaign (ISO 8601 format)."
+      timezone:
+        type: "string"
+        example: "America/New_York"
+        description: "Timezone for the schedule (e.g., \"America/New_York\")."
+      rrule:
+        type: "string"
+        example: "FREQ=WEEKLY;BYDAY=MO"
+        description: "RFC 5545 recurrence rule for recurring campaigns."
+        x-nullable: true
+    description: "Scheduling configuration for the campaign."
+    example:
+      rrule: "FREQ=WEEKLY;BYDAY=MO"
+      startDateTime: "2023-12-04T09:00:00Z"
+      timezone: "America/New_York"
+  ScheduleEmailCampaignInputObject:
+    type: "object"
+    properties:
+      emailSenderId:
+        type: "integer"
+        example: 123
+        description: "Email sender ID from your configured senders."
+      subject:
+        type: "string"
+        example: "Weekly Newsletter - Week of December 4th"
+        description: "Email subject line."
+        maxLength: 998
+      message:
+        type: "string"
+        example: "<html><body><h1>This Week's Updates</h1><p>Here are the latest news\
+          \ and updates...</p></body></html>"
+        description: "HTML email content."
+      fromName:
+        type: "string"
+        example: "Newsletter Team"
+        description: "Optional custom sender name."
+        maxLength: 500
+        x-nullable: true
+      replyToEmail:
+        type: "string"
+        format: "email"
+        example: "newsletter@company.com"
+        description: "Optional custom reply-to email address."
+        x-nullable: true
+      recipients:
+        $ref: "#/definitions/apiv2emailcampaignsschedule_recipients"
+      scheduleParams:
+        $ref: "#/definitions/apiv2emailcampaignsschedule_scheduleParams"
+    example:
+      scheduleParams:
+        rrule: "FREQ=WEEKLY;BYDAY=MO"
+        startDateTime: "2023-12-04T09:00:00Z"
+        timezone: "America/New_York"
+      subject: "Weekly Newsletter - Week of December 4th"
+      recipients:
+        emails:
+        - "user1@example.com"
+        - "user2@example.com"
+        groupIds:
+        - 456
+        - 789
+        contactIds:
+        - 101
+        - 102
+        - 103
+      fromName: "Newsletter Team"
+      emailSenderId: 123
+      message: "<html><body><h1>This Week's Updates</h1><p>Here are the latest news\
+        \ and updates...</p></body></html>"
+      replyToEmail: "newsletter@company.com"
   BadRequestResponse_errors:
     properties:
       common:
@@ -38007,6 +39511,11 @@ x-tagGroups:
   - "Chats"
   - "Outbound Message Sessions"
   - "Templates"
+- name: "Email Campaigns"
+  tags:
+  - "Email Campaigns"
+  - "Scheduled Email Campaigns"
+  - "Email campaign senders"
 - name: "Contacts"
   tags:
   - "Lists"

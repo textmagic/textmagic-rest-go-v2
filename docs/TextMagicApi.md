@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**CreateContact**](TextMagicApi.md#CreateContact) | **Post** /api/v2/contacts/normalized | Add a new contact
 [**CreateContactNote**](TextMagicApi.md#CreateContactNote) | **Post** /api/v2/contacts/{id}/notes | Create a new contact note
 [**CreateCustomField**](TextMagicApi.md#CreateCustomField) | **Post** /api/v2/customfields | Add a new custom field
+[**CreateEmailCampaign**](TextMagicApi.md#CreateEmailCampaign) | **Post** /api/v2/email-campaigns | Create new email campaign
 [**CreateList**](TextMagicApi.md#CreateList) | **Post** /api/v2/lists | Create a new list
 [**CreateTemplate**](TextMagicApi.md#CreateTemplate) | **Post** /api/v2/templates | Create a template
 [**DeleteAllContacts**](TextMagicApi.md#DeleteAllContacts) | **Delete** /api/v2/contact/all | Delete contacts (bulk)
@@ -77,6 +78,7 @@ Method | HTTP request | Description
 [**GetCustomField**](TextMagicApi.md#GetCustomField) | **Get** /api/v2/customfields/{id} | Get the details of a specific custom field
 [**GetCustomFields**](TextMagicApi.md#GetCustomFields) | **Get** /api/v2/customfields | Get all custom fields
 [**GetDedicatedNumber**](TextMagicApi.md#GetDedicatedNumber) | **Get** /api/v2/numbers/{id} | Get the details of a specific dedicated number
+[**GetEmailSenders**](TextMagicApi.md#GetEmailSenders) | **Get** /api/v2/email-campaigns/email-senders | Get list of email senders
 [**GetFavorites**](TextMagicApi.md#GetFavorites) | **Get** /api/v2/contacts/favorite | Get favorite contacts and lists
 [**GetInboundMessage**](TextMagicApi.md#GetInboundMessage) | **Get** /api/v2/replies/{id} | Get a single inbound message
 [**GetInboundMessagesNotificationSettings**](TextMagicApi.md#GetInboundMessagesNotificationSettings) | **Get** /api/v2/user/notification/inbound | Get inbound messages notification settings
@@ -117,6 +119,7 @@ Method | HTTP request | Description
 [**ReopenChatsBulk**](TextMagicApi.md#ReopenChatsBulk) | **Post** /api/v2/chats/reopen/bulk | Reopen chats (bulk)
 [**RequestNewSubaccountToken**](TextMagicApi.md#RequestNewSubaccountToken) | **Post** /api/v2/subaccounts/tokens | Request a new REST API token for sub-account
 [**RequestSenderId**](TextMagicApi.md#RequestSenderId) | **Post** /api/v2/senderids | Apply for a new Sender ID
+[**ScheduleEmailCampaign**](TextMagicApi.md#ScheduleEmailCampaign) | **Post** /api/v2/email-campaigns/schedule | Schedule new email campaign
 [**SearchChats**](TextMagicApi.md#SearchChats) | **Get** /api/v2/chats/search | Find chats by message text
 [**SearchChatsByIds**](TextMagicApi.md#SearchChatsByIds) | **Get** /api/v2/chats/search/ids | Find chats (bulk)
 [**SearchChatsByReceipent**](TextMagicApi.md#SearchChatsByReceipent) | **Get** /api/v2/chats/search/recipients | Find chats by recipient
@@ -413,6 +416,34 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ResourceLinkResponse**](ResourceLinkResponse.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **CreateEmailCampaign**
+> CreateEmailCampaignResponse CreateEmailCampaign(ctx, createEmailCampaignInputObject)
+Create new email campaign
+
+Creates a new email campaign and sends it to the specified recipients.  This endpoint allows you to create and immediately send an email marketing campaign to your contacts, groups, or direct email addresses. The campaign will be processed asynchronously, and you'll receive a campaign object with tracking information.  ## Request Requirements  - **Email Sender ID**: Must be a valid, configured email sender from your account - **Recipients**: At least one recipient type must be specified (contacts, groups, or emails) - **Content**: Subject and HTML message content are required - **Balance**: Sufficient account balance for the estimated campaign cost  ## Recipient Types  You can target multiple recipient types in a single campaign:  - **Contact IDs**: Send to specific contacts from your contact list - **Group IDs**: Send to all contacts within specified groups   - **Direct Emails**: Send to email addresses not in your contact list  ## Content Guidelines  - **Subject**: Maximum 998 characters, should be engaging and relevant - **Message**: HTML content supported, including images, links, and formatting - **From Name**: Optional custom sender name (max 500 characters) - **Reply-To**: Optional custom reply-to email address  ## Cost and Balance  The API automatically calculates campaign costs based on: - Total number of unique recipients across all specified groups, contacts, and emails - Your account's email pricing tier - Any additional features or premium content  If your account balance is insufficient, the request will be rejected with a low balance error.  ## Response Information  Successful campaigns return: - Campaign ID for tracking and analytics - Current campaign status and progress - Cost breakdown and recipient counts - Sender information and content preview - Statistical totals and engagement metrics  ## Error Scenarios  Common error conditions include: - **Validation Errors**: Invalid email addresses, missing required fields, or content that exceeds limits - **Insufficient Balance**: Account balance too low for campaign cost - **Invalid Recipients**: Non-existent contact/group IDs or invalid email formats - **Sender Configuration**: Invalid or unconfigured email sender ID - **No Recipients**: All recipient arrays are empty or invalid 
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **createEmailCampaignInputObject** | [**CreateEmailCampaignInputObject**](CreateEmailCampaignInputObject.md)|  | 
+
+### Return type
+
+[**CreateEmailCampaignResponse**](CreateEmailCampaignResponse.md)
 
 ### Authorization
 
@@ -2341,6 +2372,41 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **GetEmailSenders**
+> GetEmailSendersResponse GetEmailSenders(ctx, optional)
+Get list of email senders
+
+Retrieves a list of configured email senders available for creating email campaigns.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***GetEmailSendersOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a GetEmailSendersOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **domainId** | **optional.Int32**| Filter email senders by specific domain ID. | 
+
+### Return type
+
+[**GetEmailSendersResponse**](GetEmailSendersResponse.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **GetFavorites**
 > GetFavoritesPaginatedResponse GetFavorites(ctx, optional)
 Get favorite contacts and lists
@@ -3627,6 +3693,34 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ResourceLinkResponse**](ResourceLinkResponse.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ScheduleEmailCampaign**
+> ScheduleEmailCampaignResponse ScheduleEmailCampaign(ctx, scheduleEmailCampaignInputObject)
+Schedule new email campaign
+
+Creates a new scheduled email campaign that will be sent at a specified time or according to a recurring schedule.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **scheduleEmailCampaignInputObject** | [**ScheduleEmailCampaignInputObject**](ScheduleEmailCampaignInputObject.md)|  | 
+
+### Return type
+
+[**ScheduleEmailCampaignResponse**](ScheduleEmailCampaignResponse.md)
 
 ### Authorization
 
