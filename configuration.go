@@ -62,7 +62,7 @@ func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		BasePath:      "https://rest.textmagic.com",
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "textmagic client go",
+		UserAgent:     "textmagic client SDK Go",
 	}
 	return cfg
 }

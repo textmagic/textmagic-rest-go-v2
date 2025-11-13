@@ -93,8 +93,8 @@ type GetStateResponse struct {
 	ChatSummaryChunk int32 `json:"chatSummaryChunk"`
 	ChatWaysToReplyChunk int32 `json:"chatWaysToReplyChunk"`
 	ChatSuggestedReplyChunk int32 `json:"chatSuggestedReplyChunk"`
-	UserSubscriptionChanged int32 `json:"userSubscriptionChanged"`
-	UserSubscriptionDeleted int32 `json:"userSubscriptionDeleted"`
+	UserSubscriptionChanged int32 `json:"userSubscriptionChanged,omitempty"`
+	UserSubscriptionDeleted int32 `json:"userSubscriptionDeleted,omitempty"`
 	TaskCreated int32 `json:"taskCreated"`
 	TaskUpdated int32 `json:"taskUpdated"`
 	TaskReordered int32 `json:"taskReordered"`
@@ -191,6 +191,7 @@ type GetStateResponse struct {
 	EmailCampaignUpdated int32 `json:"emailCampaignUpdated"`
 	EmailTemplateImproved int32 `json:"emailTemplateImproved"`
 	EmailTemplateImprovingFailed int32 `json:"emailTemplateImprovingFailed"`
+	EmailBonusUpdated int32 `json:"emailBonusUpdated"`
 	SmsCampaignInvalidated int32 `json:"smsCampaignInvalidated"`
 	ScheduledEmailCampaignCreated int32 `json:"scheduledEmailCampaignCreated"`
 	ScheduledEmailCampaignUpdated int32 `json:"scheduledEmailCampaignUpdated"`
