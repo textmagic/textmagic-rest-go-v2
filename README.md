@@ -28,7 +28,7 @@ go get -u github.com/textmagic/textmagic-rest-go-v2/v3@latest
 
 Add to your `go.mod`:
 ```go
-require github.com/textmagic/textmagic-rest-go-v2/v3 v3.0.43884
+require github.com/textmagic/textmagic-rest-go-v2/v3 v3.0.43885
 ```
 
 Then run:

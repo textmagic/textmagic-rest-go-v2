@@ -1259,34 +1259,134 @@ tags:
     \ frameborder=\"0\" scrolling=\"0\" width=\"170px\" height=\"20px\"></iframe>\n\
     \nThis library provides you with an easy way of sending SMS and receiving replies\
     \ by integrating TextMagic SMS Gateway into your Go application.\n\n[Get it now\
-    \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n## Installation\n\
-    \nWith go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v2@v3.0.43884\n\
-    ```\n\nWithout go.mod:\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2\n\
-    ```\n\n## Dependencies:\n\n- https://github.com/antihax/optional - this library\
-    \ is used to provide optional argument types for API calls. See the `GetAllOutboundMessages`\
-    \ call example below.\n\n## Usage Example\n\n```go\npackage main\n\nimport (\n\
-    \    \"context\"\n    \"fmt\"\n    \"github.com/antihax/optional\"\n    // If\
-    \ you're using go.mod use line below to import our module\n    // \ttm \"github.com/textmagic/textmagic-rest-go-v2/v2\"\
-    \n    tm \"github.com/textmagic/textmagic-rest-go-v2\"\n    \"log\"\n)\n\nfunc\
-    \ main() {\n\n    cfg := tm.NewConfiguration()\n    cfg.BasePath = \"https://rest.textmagic.com\"\
-    \n    client := tm.NewAPIClient(cfg)\n\n    // put your Username and API Key from\
-    \ https://my.textmagic.com/online/api/rest-api/keys page.\n    auth := context.WithValue(context.Background(),\
-    \ tm.ContextBasicAuth, tm.BasicAuth{\n        UserName: \"YOUR_USERNAME\",\n \
-    \       Password: \"YOUR_API_KEY\",\n    })\n\n    // Simple ping request example\n\
-    \    pingResponse, _, err := client.TextMagicApi.Ping(auth)\n\n    if err != nil\
-    \ {\n        log.Fatal(err)\n    } else {\n        fmt.Println(pingResponse.Ping)\n\
-    \    }\n\n    // Send a new message request example\n    sendMessageResponse,\
-    \ _, err := client.TextMagicApi.SendMessage(auth, tm.SendMessageInputObject{\n\
-    \        Text: \"I love TextMagic!\",\n        Phones: \"+19998887766\",\n   \
-    \ }, &tm.SendMessageOpts{})\n\n    if err != nil {\n        log.Fatal(err)\n \
-    \   } else {\n        fmt.Println(sendMessageResponse.Id)\n    }\n\n    // Get\
-    \ all outgoing messages request example\n    getAllOutboundMessageResponse, _,\
-    \ err := client.TextMagicApi.GetAllOutboundMessages(auth, &tm.GetAllOutboundMessagesOpts{\n\
-    \        Page: optional.NewInt32(1),\n        Limit: optional.NewInt32(250),\n\
-    \    })\n\n    if err != nil {\n        log.Fatal(err)\n    } else {\n       \
-    \ fmt.Println(getAllOutboundMessageResponse.Resources[0].Id)\n    }\n}\n```\n\n\
-    ## Limitations\nDue to the issue at https://github.com/swagger-api/swagger-codegen/issues/7311,\
-    \ the current version of Go SDK does not support any file uploading API calls.\n\
+    \ on GitHub](https://github.com/textmagic/textmagic-rest-go-v2)\n\n## Requirements\n\
+    \n- **Go 1.23** or higher\n- Go modules support\n\n## Installation\n\n### Via\
+    \ go get (Recommended)\n\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v3@latest\n\
+    ```\n\n### Via go.mod\n\nAdd to your `go.mod`:\n```go\nrequire github.com/textmagic/textmagic-rest-go-v2/v3\
+    \ v3.0.43885\n```\n\nThen run:\n```bash\ngo mod download\n```\n\n### Package Registry\n\
+    \nThis package is available on [pkg.go.dev](https://pkg.go.dev/github.com/textmagic/textmagic-rest-go-v2/v3)\
+    \ - the official Go package registry.\n\n## Usage Example\n\n```go\npackage main\n\
+    \nimport (\n    \"context\"\n    \"fmt\"\n    \"log\"\n\n    tm \"github.com/textmagic/textmagic-rest-go-v2/v3\"\
+    \n)\n\nfunc main() {\n    // Create configuration\n    cfg := tm.NewConfiguration()\n\
+    \    cfg.Servers = tm.ServerConfigurations{\n        {\n            URL: \"https://rest.textmagic.com\"\
+    ,\n            Description: \"TextMagic REST API\",\n        },\n    }\n\n   \
+    \ client := tm.NewAPIClient(cfg)\n\n    // Set up authentication\n    // Get your\
+    \ credentials from https://my.textmagic.com/online/api/rest-api/keys\n    auth\
+    \ := context.WithValue(context.Background(), tm.ContextBasicAuth, tm.BasicAuth{\n\
+    \        UserName: \"YOUR_USERNAME\",\n        Password: \"YOUR_API_KEY\",\n \
+    \   })\n\n    // Simple ping request example\n    pingResponse, _, err := client.TextMagicAPI.Ping(auth).Execute()\n\
+    \    if err != nil {\n        log.Fatal(err)\n    }\n    fmt.Println(\"Ping:\"\
+    , pingResponse.Ping)\n\n    // Send a new message request example\n    sendMessageInput\
+    \ := tm.SendMessageInputObject{\n        Text:   \"I love TextMagic!\",\n    \
+    \    Phones: \"+19998887766\",\n    }\n\n    sendMessageResponse, _, err := client.TextMagicAPI.SendMessage(auth).SendMessageInputObject(sendMessageInput).Execute()\n\
+    \    if err != nil {\n        log.Fatal(err)\n    }\n    fmt.Println(\"Message\
+    \ ID:\", sendMessageResponse.Id)\n\n    // Get all outgoing messages request example\n\
+    \    page := int32(1)\n    limit := int32(250)\n\n    getAllOutboundMessageResponse,\
+    \ _, err := client.TextMagicAPI.GetAllOutboundMessages(auth).\n        Page(page).\n\
+    \        Limit(limit).\n        Execute()\n\n    if err != nil {\n        log.Fatal(err)\n\
+    \    }\n\n    if len(getAllOutboundMessageResponse.Resources) > 0 {\n        fmt.Println(\"\
+    First message ID:\", getAllOutboundMessageResponse.Resources[0].Id)\n    }\n}\n\
+    ```\n\n## Features\n\n- ✅ Full TextMagic API support\n- ✅ Type-safe API calls\n\
+    - ✅ Context-based authentication\n- ✅ File upload support\n- ✅ Comprehensive error\
+    \ handling\n- ✅ Modern Go idioms (Go 1.23+)\n- ✅ No external dependencies for\
+    \ optional parameters\n- ✅ Fluent API for method chaining\n\n## Error Handling\n\
+    \nThe SDK returns standard Go errors that should be properly handled:\n\n```go\n\
+    package main\n\nimport (\n    \"context\"\n    \"fmt\"\n    \"log\"\n    \n  \
+    \  tm \"github.com/textmagic/textmagic-rest-go-v2/v3\"\n)\n\nfunc main() {\n \
+    \   cfg := tm.NewConfiguration()\n    cfg.Servers = tm.ServerConfigurations{\n\
+    \        {\n            URL: \"https://rest.textmagic.com\",\n            Description:\
+    \ \"TextMagic REST API\",\n        },\n    }\n    \n    client := tm.NewAPIClient(cfg)\n\
+    \    auth := context.WithValue(context.Background(), tm.ContextBasicAuth, tm.BasicAuth{\n\
+    \        UserName: \"YOUR_USERNAME\",\n        Password: \"YOUR_API_KEY\",\n \
+    \   })\n\n    sendMessageInput := tm.SendMessageInputObject{\n        Text:  \
+    \ \"Test message\",\n        Phones: \"+1234567890\",\n    }\n    \n    response,\
+    \ httpResp, err := client.TextMagicAPI.SendMessage(auth).\n        SendMessageInputObject(sendMessageInput).\n\
+    \        Execute()\n        \n    if err != nil {\n        // Handle different\
+    \ types of errors\n        if httpResp != nil {\n            switch httpResp.StatusCode\
+    \ {\n            case 401:\n                log.Fatal(\"Authentication failed:\
+    \ Invalid credentials\")\n            case 400:\n                log.Fatal(\"\
+    Bad request: Invalid parameters\")\n            case 404:\n                log.Fatal(\"\
+    Resource not found\")\n            case 429:\n                log.Fatal(\"Rate\
+    \ limit exceeded\")\n            default:\n                log.Fatalf(\"API error\
+    \ (status %d): %v\", httpResp.StatusCode, err)\n            }\n        } else\
+    \ {\n            log.Fatalf(\"Network error: %v\", err)\n        }\n    }\n  \
+    \  \n    fmt.Printf(\"Message sent successfully! ID: %s\\n\", response.Id)\n}\n\
+    ```\n\n### Common Error Codes\n\n- **401 Unauthorized** - Invalid credentials\n\
+    - **400 Bad Request** - Invalid parameters\n- **404 Not Found** - Resource not\
+    \ found\n- **429 Too Many Requests** - Rate limit exceeded\n- **500 Internal Server\
+    \ Error** - Server error\n\n## API Documentation\n\nFor complete API documentation,\
+    \ including all available methods, parameters, and response formats, please visit:\n\
+    \n- 📖 **[TextMagic API Documentation](https://docs.textmagic.com/)**\n- 🔗 **[API\
+    \ Reference](https://docs.textmagic.com/#tag/TextMagic-API)**\n- 📦 **[Go Package\
+    \ Documentation](https://pkg.go.dev/github.com/textmagic/textmagic-rest-go-v2/v3)**\
+    \ - Official Go package registry with full SDK reference\n\n### Available API\
+    \ Methods\n\nThe SDK provides access to all TextMagic API endpoints through the\
+    \ `TextMagicAPI` interface. Some commonly used methods include:\n\n**Messaging:**\n\
+    - `SendMessage(ctx)` - Send SMS messages\n- `GetAllOutboundMessages(ctx)` - Get\
+    \ sent messages\n- `GetAllInboundMessages(ctx)` - Get received messages\n- `DeleteMessage(ctx,\
+    \ id)` - Delete a message\n- `GetMessagesBySessionId(ctx, id)` - Get messages\
+    \ by session ID\n\n**Contacts:**\n- `CreateContact(ctx)` - Create a new contact\n\
+    - `GetContact(ctx, id)` - Get contact details\n- `UpdateContact(ctx, id)` - Update\
+    \ contact information\n- `DeleteContact(ctx, id)` - Delete a contact\n- `GetAllContacts(ctx)`\
+    \ - Get all contacts\n\n**Lists:**\n- `CreateList(ctx)` - Create a contact list\n\
+    - `GetList(ctx, id)` - Get list details\n- `GetAllLists(ctx)` - Get all lists\n\
+    - `AssignContactsToList(ctx, id)` - Add contacts to a list\n\n**Account:**\n-\
+    \ `Ping(ctx)` - Test API connection\n- `GetUser(ctx)` - Get account information\n\
+    - `GetUserBalance(ctx)` - Get account balance\n\nFor a complete list of available\
+    \ methods, please refer to the generated SDK documentation in the `docs/` directory.\n\
+    \n## Migration Guide from v1.x to v2.x\n\n### Breaking Changes\n\n#### Go Version\
+    \ Requirement\n\n**v1.x (Swagger Codegen):**\n```go\ngo 1.13\n```\n\n**v2.x (OpenAPI\
+    \ Generator):**\n```go\ngo 1.23\n```\n\n**Action Required:** Upgrade your Go version\
+    \ to 1.23 or later.\n\n```bash\n# Check your Go version\ngo version\n\n# Should\
+    \ output: go1.23.x or higher\n```\n\n#### Dependencies Update\n\n**v1.x (Swagger\
+    \ Codegen):**\n```go\nimport (\n    \"github.com/antihax/optional\"\n    tm \"\
+    github.com/textmagic/textmagic-rest-go-v2\"\n)\n\n// Optional parameters required\
+    \ antihax/optional\npage := optional.NewInt32(1)\nlimit := optional.NewInt32(10)\n\
+    ```\n\n**v2.x (OpenAPI Generator):**\n```go\nimport (\n    tm \"github.com/textmagic/textmagic-rest-go-v2/v3\"\
+    \n)\n\n// Optional parameters use fluent API\npage := int32(1)\nlimit := int32(10)\n\
+    ```\n\n**Note:**\n- The `antihax/optional` dependency is **no longer required**\n\
+    - OpenAPI Generator 7.x uses built-in Go types for optional parameters\n- Fluent\
+    \ API for method chaining\n\n#### Import Path Change\n\n**v1.x:**\n```go\nimport\
+    \ tm \"github.com/textmagic/textmagic-rest-go-v2\"\n```\n\n**v2.x:**\n```go\n\
+    import tm \"github.com/textmagic/textmagic-rest-go-v2/v3\"\n```\n\n**Note:** The\
+    \ `/v3` suffix is required for Go modules compatibility.\n\n#### API Usage Changes\n\
+    \n**v1.x (Swagger Codegen):**\n```go\napi := tm.NewAPIClient(cfg)\n\n// Optional\
+    \ parameters with antihax/optional\nopts := &tm.GetAllOutboundMessagesOpts{\n\
+    \    Page:  optional.NewInt32(1),\n    Limit: optional.NewInt32(10),\n}\n\nresult,\
+    \ _, err := api.TextMagicApi.GetAllOutboundMessages(ctx, opts)\n```\n\n**v2.x\
+    \ (OpenAPI Generator):**\n```go\nclient := tm.NewAPIClient(cfg)\n\n// Fluent API\
+    \ with method chaining\nresult, _, err := client.TextMagicAPI.GetAllOutboundMessages(ctx).\n\
+    \    Page(1).\n    Limit(10).\n    Execute()\n```\n\n### What Stays the Same\n\
+    \n✅ **Authentication** - Configuration remains the same:\n```go\nauth := context.WithValue(context.Background(),\
+    \ tm.ContextBasicAuth, tm.BasicAuth{\n    UserName: \"YOUR_USERNAME\",\n    Password:\
+    \ \"YOUR_API_KEY\",\n})\n```\n\n✅ **API Methods** - All methods remain the same\
+    \ (with improved syntax)\n✅ **Models** - All data structures remain compatible\n\
+    ✅ **Error Handling** - Standard Go error handling\n\n### Step-by-Step Migration\n\
+    \n1. **Upgrade Go to 1.23+**\n   ```bash\n   # Download and install Go 1.23\n\
+    \   # https://go.dev/dl/\n   \n   # Verify\n   go version\n   ```\n\n2. **Update\
+    \ Import Path**\n   ```bash\n   # Update go.mod\n   go get -u github.com/textmagic/textmagic-rest-go-v2/v3@latest\n\
+    \   \n   # Remove old version\n   go mod tidy\n   ```\n\n3. **Update Your Code**\n\
+    \n   **Before (v1.x):**\n   ```go\n   import (\n       \"github.com/antihax/optional\"\
+    \n       tm \"github.com/textmagic/textmagic-rest-go-v2\"\n   )\n   \n   opts\
+    \ := &tm.GetAllOutboundMessagesOpts{\n       Page:  optional.NewInt32(1),\n  \
+    \     Limit: optional.NewInt32(10),\n   }\n   result, _, err := api.TextMagicApi.GetAllOutboundMessages(ctx,\
+    \ opts)\n   ```\n\n   **After (v2.x):**\n   ```go\n   import tm \"github.com/textmagic/textmagic-rest-go-v2/v3\"\
+    \n   \n   result, _, err := client.TextMagicAPI.GetAllOutboundMessages(ctx).\n\
+    \       Page(1).\n       Limit(10).\n       Execute()\n   ```\n\n4. **Remove antihax/optional**\n\
+    \   ```bash\n   # Remove from imports and code\n   # Run go mod tidy to clean\
+    \ up\n   go mod tidy\n   ```\n\n5. **Test Your Application**\n   ```bash\n   #\
+    \ Run your tests\n   go test ./...\n   \n   # Build your application\n   go build\n\
+    \   ```\n\n### Compatibility Matrix\n\n|    Feature    | v1.x (Swagger) | v2.x\
+    \ (OpenAPI) | Compatible? |\n|---------------|----------------|----------------|-------------|\n\
+    | Go 1.13-1.22  |       ✅       |       ❌       |    ❌ No    |\n| Go 1.23+   \
+    \   |       ✅       |       ✅       |    ✅ Yes   |\n| API Methods   |      Same\
+    \      |      Same      |    ✅ Yes   |\n| Models        |      Same      |   \
+    \   Same      |    ✅ Yes   |\n| Authentication|      Same      |      Same   \
+    \   |    ✅ Yes   |\n| File Upload   |       ❌       |       ✅       |    ⚠️ New\
+    \   |\n| Optional Params| antihax/optional | Fluent API   |    ⚠️ Changed |\n\
+    | Import Path   | `/textmagic-rest-go-v2` | `/textmagic-rest-go-v2/v3` | ⚠️ Changed\
+    \ |\n\n### Need Help?\n\n- 📖 [Full Documentation](https://docs.textmagic.com/)\n\
+    - 💬 [Support](https://www.textmagic.com/support/)\n- 🐛 [Report Issues](https://github.com/textmagic/textmagic-rest-go-v2/issues)\n\
     \n\n# Delphi\n\n<iframe src=\"https://ghbtns.com/github-btn.html?user=textmagic&repo=textmagic-rest-object-pascal&type=star&count=true\"\
     \ frameborder=\"0\" scrolling=\"0\" width=\"170px\" height=\"20px\"></iframe>\n\
     \nThis library provides you with an easy way of sending SMS and receiving replies\
