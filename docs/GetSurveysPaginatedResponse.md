@@ -1,12 +1,113 @@
 # GetSurveysPaginatedResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Page** | **int32** |  | [default to null]
-**PageCount** | **int32** | The total number of pages. | [default to null]
-**Limit** | **int32** | The number of results per page. | [default to null]
-**Resources** | [**[]Survey**](Survey.md) |  | [default to null]
+**Page** | **int32** |  | 
+**PageCount** | **int32** | The total number of pages. | 
+**Limit** | **int32** | The number of results per page. | 
+**Resources** | [**[]Survey**](Survey.md) |  | 
+
+## Methods
+
+### NewGetSurveysPaginatedResponse
+
+`func NewGetSurveysPaginatedResponse(page int32, pageCount int32, limit int32, resources []Survey, ) *GetSurveysPaginatedResponse`
+
+NewGetSurveysPaginatedResponse instantiates a new GetSurveysPaginatedResponse object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewGetSurveysPaginatedResponseWithDefaults
+
+`func NewGetSurveysPaginatedResponseWithDefaults() *GetSurveysPaginatedResponse`
+
+NewGetSurveysPaginatedResponseWithDefaults instantiates a new GetSurveysPaginatedResponse object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetPage
+
+`func (o *GetSurveysPaginatedResponse) GetPage() int32`
+
+GetPage returns the Page field if non-nil, zero value otherwise.
+
+### GetPageOk
+
+`func (o *GetSurveysPaginatedResponse) GetPageOk() (*int32, bool)`
+
+GetPageOk returns a tuple with the Page field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPage
+
+`func (o *GetSurveysPaginatedResponse) SetPage(v int32)`
+
+SetPage sets Page field to given value.
+
+
+### GetPageCount
+
+`func (o *GetSurveysPaginatedResponse) GetPageCount() int32`
+
+GetPageCount returns the PageCount field if non-nil, zero value otherwise.
+
+### GetPageCountOk
+
+`func (o *GetSurveysPaginatedResponse) GetPageCountOk() (*int32, bool)`
+
+GetPageCountOk returns a tuple with the PageCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPageCount
+
+`func (o *GetSurveysPaginatedResponse) SetPageCount(v int32)`
+
+SetPageCount sets PageCount field to given value.
+
+
+### GetLimit
+
+`func (o *GetSurveysPaginatedResponse) GetLimit() int32`
+
+GetLimit returns the Limit field if non-nil, zero value otherwise.
+
+### GetLimitOk
+
+`func (o *GetSurveysPaginatedResponse) GetLimitOk() (*int32, bool)`
+
+GetLimitOk returns a tuple with the Limit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLimit
+
+`func (o *GetSurveysPaginatedResponse) SetLimit(v int32)`
+
+SetLimit sets Limit field to given value.
+
+
+### GetResources
+
+`func (o *GetSurveysPaginatedResponse) GetResources() []Survey`
+
+GetResources returns the Resources field if non-nil, zero value otherwise.
+
+### GetResourcesOk
+
+`func (o *GetSurveysPaginatedResponse) GetResourcesOk() (*[]Survey, bool)`
+
+GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResources
+
+`func (o *GetSurveysPaginatedResponse) SetResources(v []Survey)`
+
+SetResources sets Resources field to given value.
+
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
