@@ -59,7 +59,7 @@ type Chat struct {
 	MmsPrice float32 `json:"mmsPrice"`
 	Tags []Tag `json:"tags,omitempty"`
 	AssigneeId NullableInt32 `json:"assigneeId"`
-	UpdatedBy NullableUserPersonalInfo `json:"updatedBy,omitempty"`
+	UpdatedBy NullableNullableUserPersonalInfo `json:"updatedBy,omitempty"`
 	// Chat creation date and time.
 	CreatedAt time.Time `json:"createdAt"`
 	// Chat last message date and time.
@@ -694,7 +694,7 @@ func (o *Chat) HasUpdatedBy() bool {
 	return false
 }
 
-// SetUpdatedBy gets a reference to the given NullableUserPersonalInfo and assigns it to the UpdatedBy field.
+// SetUpdatedBy gets a reference to the given NullableNullableUserPersonalInfo and assigns it to the UpdatedBy field.
 func (o *Chat) SetUpdatedBy(v NullableUserPersonalInfo) {
 	o.UpdatedBy.Set(&v)
 }

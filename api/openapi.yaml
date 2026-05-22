@@ -1905,7 +1905,7 @@ tags:
     \n- **Go 1.23** or higher\n- Go modules support\n\n## Installation\n\n### Via\
     \ go get (Recommended)\n\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v3@latest\n\
     ```\n\n### Via go.mod\n\nAdd to your `go.mod`:\n```go\nrequire github.com/textmagic/textmagic-rest-go-v2/v3\
-    \ v3.0.50043\n```\n\nThen run:\n```bash\ngo mod download\n```\n\n### Package Registry\n\
+    \ v3.0.50044\n```\n\nThen run:\n```bash\ngo mod download\n```\n\n### Package Registry\n\
     \nThis package is available on [pkg.go.dev](https://pkg.go.dev/github.com/textmagic/textmagic-rest-go-v2/v3)\
     \ - the official Go package registry.\n\n## Usage Example\n\n```go\npackage main\n\
     \nimport (\n    \"context\"\n    \"fmt\"\n    \"log\"\n\n    tm \"github.com/textmagic/textmagic-rest-go-v2/v3\"\

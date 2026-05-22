@@ -12,17 +12,15 @@ package TextMagic
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
-// checks if the UserPersonalInfo type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &UserPersonalInfo{}
+// checks if the NullableUserPersonalInfo type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &NullableUserPersonalInfo{}
 
-// UserPersonalInfo struct for UserPersonalInfo
-type UserPersonalInfo struct {
+// NullableUserPersonalInfo struct for NullableUserPersonalInfo
+type NullableUserPersonalInfo struct {
 	// User ID.
-	Id int32 `json:"id"`
+	Id *int32 `json:"id,omitempty"`
 	// User's first name.
 	FirstName NullableString `json:"firstName,omitempty"`
 	// User's last name.
@@ -33,52 +31,57 @@ type UserPersonalInfo struct {
 	Email NullableString `json:"email,omitempty"`
 }
 
-type _UserPersonalInfo UserPersonalInfo
-
-// NewUserPersonalInfo instantiates a new UserPersonalInfo object
+// NewNullableUserPersonalInfo instantiates a new NullableUserPersonalInfo object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUserPersonalInfo(id int32) *UserPersonalInfo {
-	this := UserPersonalInfo{}
-	this.Id = id
+func NewNullableUserPersonalInfo() *NullableUserPersonalInfo {
+	this := NullableUserPersonalInfo{}
 	return &this
 }
 
-// NewUserPersonalInfoWithDefaults instantiates a new UserPersonalInfo object
+// NewNullableUserPersonalInfoWithDefaults instantiates a new NullableUserPersonalInfo object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewUserPersonalInfoWithDefaults() *UserPersonalInfo {
-	this := UserPersonalInfo{}
+func NewNullableUserPersonalInfoWithDefaults() *NullableUserPersonalInfo {
+	this := NullableUserPersonalInfo{}
 	return &this
 }
 
-// GetId returns the Id field value
-func (o *UserPersonalInfo) GetId() int32 {
-	if o == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *NullableUserPersonalInfo) GetId() int32 {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
-
-	return o.Id
+	return *o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserPersonalInfo) GetIdOk() (*int32, bool) {
-	if o == nil {
+func (o *NullableUserPersonalInfo) GetIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return &o.Id, true
+	return o.Id, true
 }
 
-// SetId sets field value
-func (o *UserPersonalInfo) SetId(v int32) {
-	o.Id = v
+// HasId returns a boolean if a field has been set.
+func (o *NullableUserPersonalInfo) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given int32 and assigns it to the Id field.
+func (o *NullableUserPersonalInfo) SetId(v int32) {
+	o.Id = &v
 }
 
 // GetFirstName returns the FirstName field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UserPersonalInfo) GetFirstName() string {
+func (o *NullableUserPersonalInfo) GetFirstName() string {
 	if o == nil || IsNil(o.FirstName.Get()) {
 		var ret string
 		return ret
@@ -89,7 +92,7 @@ func (o *UserPersonalInfo) GetFirstName() string {
 // GetFirstNameOk returns a tuple with the FirstName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UserPersonalInfo) GetFirstNameOk() (*string, bool) {
+func (o *NullableUserPersonalInfo) GetFirstNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -97,7 +100,7 @@ func (o *UserPersonalInfo) GetFirstNameOk() (*string, bool) {
 }
 
 // HasFirstName returns a boolean if a field has been set.
-func (o *UserPersonalInfo) HasFirstName() bool {
+func (o *NullableUserPersonalInfo) HasFirstName() bool {
 	if o != nil && o.FirstName.IsSet() {
 		return true
 	}
@@ -106,21 +109,21 @@ func (o *UserPersonalInfo) HasFirstName() bool {
 }
 
 // SetFirstName gets a reference to the given NullableString and assigns it to the FirstName field.
-func (o *UserPersonalInfo) SetFirstName(v string) {
+func (o *NullableUserPersonalInfo) SetFirstName(v string) {
 	o.FirstName.Set(&v)
 }
 // SetFirstNameNil sets the value for FirstName to be an explicit nil
-func (o *UserPersonalInfo) SetFirstNameNil() {
+func (o *NullableUserPersonalInfo) SetFirstNameNil() {
 	o.FirstName.Set(nil)
 }
 
 // UnsetFirstName ensures that no value is present for FirstName, not even an explicit nil
-func (o *UserPersonalInfo) UnsetFirstName() {
+func (o *NullableUserPersonalInfo) UnsetFirstName() {
 	o.FirstName.Unset()
 }
 
 // GetLastName returns the LastName field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UserPersonalInfo) GetLastName() string {
+func (o *NullableUserPersonalInfo) GetLastName() string {
 	if o == nil || IsNil(o.LastName.Get()) {
 		var ret string
 		return ret
@@ -131,7 +134,7 @@ func (o *UserPersonalInfo) GetLastName() string {
 // GetLastNameOk returns a tuple with the LastName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UserPersonalInfo) GetLastNameOk() (*string, bool) {
+func (o *NullableUserPersonalInfo) GetLastNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -139,7 +142,7 @@ func (o *UserPersonalInfo) GetLastNameOk() (*string, bool) {
 }
 
 // HasLastName returns a boolean if a field has been set.
-func (o *UserPersonalInfo) HasLastName() bool {
+func (o *NullableUserPersonalInfo) HasLastName() bool {
 	if o != nil && o.LastName.IsSet() {
 		return true
 	}
@@ -148,21 +151,21 @@ func (o *UserPersonalInfo) HasLastName() bool {
 }
 
 // SetLastName gets a reference to the given NullableString and assigns it to the LastName field.
-func (o *UserPersonalInfo) SetLastName(v string) {
+func (o *NullableUserPersonalInfo) SetLastName(v string) {
 	o.LastName.Set(&v)
 }
 // SetLastNameNil sets the value for LastName to be an explicit nil
-func (o *UserPersonalInfo) SetLastNameNil() {
+func (o *NullableUserPersonalInfo) SetLastNameNil() {
 	o.LastName.Set(nil)
 }
 
 // UnsetLastName ensures that no value is present for LastName, not even an explicit nil
-func (o *UserPersonalInfo) UnsetLastName() {
+func (o *NullableUserPersonalInfo) UnsetLastName() {
 	o.LastName.Unset()
 }
 
 // GetAvatarUrl returns the AvatarUrl field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UserPersonalInfo) GetAvatarUrl() string {
+func (o *NullableUserPersonalInfo) GetAvatarUrl() string {
 	if o == nil || IsNil(o.AvatarUrl.Get()) {
 		var ret string
 		return ret
@@ -173,7 +176,7 @@ func (o *UserPersonalInfo) GetAvatarUrl() string {
 // GetAvatarUrlOk returns a tuple with the AvatarUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UserPersonalInfo) GetAvatarUrlOk() (*string, bool) {
+func (o *NullableUserPersonalInfo) GetAvatarUrlOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -181,7 +184,7 @@ func (o *UserPersonalInfo) GetAvatarUrlOk() (*string, bool) {
 }
 
 // HasAvatarUrl returns a boolean if a field has been set.
-func (o *UserPersonalInfo) HasAvatarUrl() bool {
+func (o *NullableUserPersonalInfo) HasAvatarUrl() bool {
 	if o != nil && o.AvatarUrl.IsSet() {
 		return true
 	}
@@ -190,21 +193,21 @@ func (o *UserPersonalInfo) HasAvatarUrl() bool {
 }
 
 // SetAvatarUrl gets a reference to the given NullableString and assigns it to the AvatarUrl field.
-func (o *UserPersonalInfo) SetAvatarUrl(v string) {
+func (o *NullableUserPersonalInfo) SetAvatarUrl(v string) {
 	o.AvatarUrl.Set(&v)
 }
 // SetAvatarUrlNil sets the value for AvatarUrl to be an explicit nil
-func (o *UserPersonalInfo) SetAvatarUrlNil() {
+func (o *NullableUserPersonalInfo) SetAvatarUrlNil() {
 	o.AvatarUrl.Set(nil)
 }
 
 // UnsetAvatarUrl ensures that no value is present for AvatarUrl, not even an explicit nil
-func (o *UserPersonalInfo) UnsetAvatarUrl() {
+func (o *NullableUserPersonalInfo) UnsetAvatarUrl() {
 	o.AvatarUrl.Unset()
 }
 
 // GetEmail returns the Email field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UserPersonalInfo) GetEmail() string {
+func (o *NullableUserPersonalInfo) GetEmail() string {
 	if o == nil || IsNil(o.Email.Get()) {
 		var ret string
 		return ret
@@ -215,7 +218,7 @@ func (o *UserPersonalInfo) GetEmail() string {
 // GetEmailOk returns a tuple with the Email field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UserPersonalInfo) GetEmailOk() (*string, bool) {
+func (o *NullableUserPersonalInfo) GetEmailOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -223,7 +226,7 @@ func (o *UserPersonalInfo) GetEmailOk() (*string, bool) {
 }
 
 // HasEmail returns a boolean if a field has been set.
-func (o *UserPersonalInfo) HasEmail() bool {
+func (o *NullableUserPersonalInfo) HasEmail() bool {
 	if o != nil && o.Email.IsSet() {
 		return true
 	}
@@ -232,20 +235,20 @@ func (o *UserPersonalInfo) HasEmail() bool {
 }
 
 // SetEmail gets a reference to the given NullableString and assigns it to the Email field.
-func (o *UserPersonalInfo) SetEmail(v string) {
+func (o *NullableUserPersonalInfo) SetEmail(v string) {
 	o.Email.Set(&v)
 }
 // SetEmailNil sets the value for Email to be an explicit nil
-func (o *UserPersonalInfo) SetEmailNil() {
+func (o *NullableUserPersonalInfo) SetEmailNil() {
 	o.Email.Set(nil)
 }
 
 // UnsetEmail ensures that no value is present for Email, not even an explicit nil
-func (o *UserPersonalInfo) UnsetEmail() {
+func (o *NullableUserPersonalInfo) UnsetEmail() {
 	o.Email.Unset()
 }
 
-func (o UserPersonalInfo) MarshalJSON() ([]byte, error) {
+func (o NullableUserPersonalInfo) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -253,9 +256,11 @@ func (o UserPersonalInfo) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o UserPersonalInfo) ToMap() (map[string]interface{}, error) {
+func (o NullableUserPersonalInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
 	if o.FirstName.IsSet() {
 		toSerialize["firstName"] = o.FirstName.Get()
 	}
@@ -271,40 +276,40 @@ func (o UserPersonalInfo) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-func (o *UserPersonalInfo) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"id",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUserPersonalInfo := _UserPersonalInfo{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUserPersonalInfo)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UserPersonalInfo(varUserPersonalInfo)
-
-	return err
+type NullableNullableUserPersonalInfo struct {
+	value *NullableUserPersonalInfo
+	isSet bool
 }
+
+func (v NullableNullableUserPersonalInfo) Get() *NullableUserPersonalInfo {
+	return v.value
+}
+
+func (v *NullableNullableUserPersonalInfo) Set(val *NullableUserPersonalInfo) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNullableUserPersonalInfo) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNullableUserPersonalInfo) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNullableUserPersonalInfo(val *NullableUserPersonalInfo) *NullableNullableUserPersonalInfo {
+	return &NullableNullableUserPersonalInfo{value: val, isSet: true}
+}
+
+func (v NullableNullableUserPersonalInfo) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNullableUserPersonalInfo) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 
