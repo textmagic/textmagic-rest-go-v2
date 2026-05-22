@@ -946,7 +946,7 @@ tags:
     \n### Migration Steps\n\n1. **Update Java version to 11+**\n   ```bash\n   java\
     \ -version  # Verify Java 11 or higher\n   ```\n\n2. **Update SDK version in pom.xml**\n\
     \   ```xml\n   <dependency>\n       <groupId>com.textmagic.sdk</groupId>\n   \
-    \    <artifactId>textmagic-java-sdk</artifactId>\n       <version>3.0.50042</version>\n\
+    \    <artifactId>textmagic-java-sdk</artifactId>\n       <version>3.0.50038</version>\n\
     \   </dependency>\n   ```\n\n3. **Update imports**\n   - Replace `java.util.Date`\
     \ → `java.time.OffsetDateTime`\n   - Replace `java.util.Calendar` → `java.time.ZonedDateTime`\n\
     \   - Replace `com.textmagic.sdk.model.ContactList` → `com.textmagic.sdk.model.ModelList`\n\
@@ -985,9 +985,9 @@ tags:
     - Review the [API Documentation]()\n- Contact support at support@textmagic.com\n\
     \n## Installation\n\n### Maven\n\nAdd this dependency to your project's POM:\n\
     ```xml\n<dependencies>\n    <dependency>\n        <groupId>com.textmagic.sdk</groupId>\n\
-    \        <artifactId>textmagic-java-sdk</artifactId>\n        <version>3.0.50042</version>\n\
+    \        <artifactId>textmagic-java-sdk</artifactId>\n        <version>3.0.50038</version>\n\
     \    </dependency>\n</dependencies>\n\n### Gradle\n\nAdd this dependency to your\
-    \ project's build file:\n```groovy\nimplementation \"com.textmagic.sdk:textmagic-java-sdk:3.0.50042\"\
+    \ project's build file:\n```groovy\nimplementation \"com.textmagic.sdk:textmagic-java-sdk:3.0.50038\"\
     \n```\n\n## Usage Example\n\n```java\nimport com.textmagic.sdk.*;\nimport com.textmagic.sdk.api.TextMagicApi;\n\
     import com.textmagic.sdk.auth.*;\nimport com.textmagic.sdk.model.*;\nimport java.io.File;\n\
     \npublic class App {\n\n    public static void main(String[] args) {\n       \
@@ -1034,7 +1034,7 @@ tags:
     \n#### Using Package Manager Console\n```powershell\nInstall-Package TextMagicClient\n\
     ```\n\n#### Using .NET CLI\n```bash\ndotnet add package TextMagicClient\n```\n\
     \n#### Using PackageReference\nAdd this to your `.csproj` file:\n```xml\n<PackageReference\
-    \ Include=\"TextMagicClient\" Version=\"3.0.50042\" />\n```\n\n### Install from\
+    \ Include=\"TextMagicClient\" Version=\"3.0.50038\" />\n```\n\n### Install from\
     \ GitHub\n\n```bash\ngit clone https://github.com/textmagic/textmagic-rest-csharp-v2.git\n\
     cd textmagic-rest-csharp-v2/src/TextMagicClient\ndotnet build\n```\n\n## Quick\
     \ Start\n\n### Basic Usage\n\n```csharp\nusing System;\nusing TextMagicClient.Api;\n\
@@ -1191,8 +1191,8 @@ tags:
     \ Old SDK\n```powershell\n# Using Package Manager Console\nUninstall-Package TextMagicClient\n\
     \n# Or using .NET CLI\ndotnet remove package TextMagicClient\n```\n\n#### Step\
     \ 4: Install New SDK\n```powershell\n# Using Package Manager Console\nInstall-Package\
-    \ TextMagicClient -Version 3.0.50042\n\n# Or using .NET CLI\ndotnet add package\
-    \ TextMagicClient --version 3.0.50042\n```\n\n#### Step 5: Update Dependencies\
+    \ TextMagicClient -Version 3.0.50038\n\n# Or using .NET CLI\ndotnet add package\
+    \ TextMagicClient --version 3.0.50038\n```\n\n#### Step 5: Update Dependencies\
     \ (if needed)\nThe new SDK will automatically install compatible versions of:\n\
     - RestSharp >= 112.0.0\n- Newtonsoft.Json >= 13.0.3\n- JsonSubTypes >= 2.0.1\n\
     \n#### Step 6: Rebuild Your Project\n```bash\ndotnet build\n```\n\n#### Step 7:\
@@ -1301,25 +1301,25 @@ tags:
     \ time: \"\n                  << pingResponse.get()->getPing() << std::endl;\n\
     \    } catch(const std::exception& e) {\n        std::cout << \"❌ Error: \" <<\
     \ e.what() << std::endl;\n    }\n\n    return 0;\n}\n```\n\n## Installation\n\n\
-    Download and extract the library archive:\n```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v3.0.50042.tar.gz\
-    \ && \\\ntar zxf v3.0.50042.tar.gz && \\\nrm -f v3.0.50042.tar.gz && \\\ncd textmagic-rest-cpp-v2-3.0.50042\n\
+    Download and extract the library archive:\n```shell\nwget https://github.com/textmagic/textmagic-rest-cpp-v2/archive/v3.0.50038.tar.gz\
+    \ && \\\ntar zxf v3.0.50038.tar.gz && \\\nrm -f v3.0.50038.tar.gz && \\\ncd textmagic-rest-cpp-v2-3.0.50038\n\
     ```\nBuild using CMake:\n```shell\ncmake . && cmake --build .\n```\nThe output\
-    \ library file will be placed in the `textmagic-rest-cpp-v2-3.0.50042/lib` directory.\n\
+    \ library file will be placed in the `textmagic-rest-cpp-v2-3.0.50038/lib` directory.\n\
     \n## Usage Example\nIn the example below, we assume that you moved the library\
-    \ sources `textmagic-rest-cpp-v2-3.0.50042` directory to your test project root\
+    \ sources `textmagic-rest-cpp-v2-3.0.50038` directory to your test project root\
     \ directory.\n\nConfigure your `CMakeLists.txt` as shown here:\n```cmake\ncmake_minimum_required(VERSION\
     \ 3.15)\nproject(test)\n\n# Set C++17 standard\nset(CMAKE_CXX_STANDARD 17)\nset(CMAKE_CXX_STANDARD_REQUIRED\
     \ ON)\n\n# Find dependencies\nfind_package(cpprestsdk REQUIRED)\nfind_package(Boost\
     \ REQUIRED)\n\n# Create executable\nadd_executable(app main.cpp)\n\n# Import TextMagic\
     \ library\nadd_library(TextMagic SHARED IMPORTED)\nset_property(TARGET TextMagic\n\
-    \    PROPERTY IMPORTED_LOCATION\n    \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-3.0.50042/lib/libTextMagic.so\"\
+    \    PROPERTY IMPORTED_LOCATION\n    \"${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-3.0.50038/lib/libTextMagic.so\"\
     \n)\n\n# Set include directories\ntarget_include_directories(app PRIVATE\n   \
-    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-3.0.50042/include\n)\n\n# Link libraries\n\
+    \ ${PROJECT_SOURCE_DIR}/textmagic-rest-cpp-v2-3.0.50038/include\n)\n\n# Link libraries\n\
     target_link_libraries(app\n    Boost::headers\n    cpprestsdk::cpprest\n    TextMagic\n\
     )\n```\n\n`main.cpp` file example:\n```cpp\n#include <iostream>\n#include <fstream>\n\
-    #include \"textmagic-rest-cpp-v2-3.0.50042/include/TextMagic/ApiClient.h\"\n#include\
-    \ \"textmagic-rest-cpp-v2-3.0.50042/include/TextMagic/ApiConfiguration.h\"\n#include\
-    \ \"textmagic-rest-cpp-v2-3.0.50042/include/TextMagic/api/TextMagicApi.h\"\n\n\
+    #include \"textmagic-rest-cpp-v2-3.0.50038/include/TextMagic/ApiClient.h\"\n#include\
+    \ \"textmagic-rest-cpp-v2-3.0.50038/include/TextMagic/ApiConfiguration.h\"\n#include\
+    \ \"textmagic-rest-cpp-v2-3.0.50038/include/TextMagic/api/TextMagicApi.h\"\n\n\
     using namespace com::textmagic::client::api;\n\nint main() {\n    std::shared_ptr<ApiClient>\
     \ apiClient(new ApiClient);\n    std::shared_ptr<ApiConfiguration> apiConfig(new\
     \ ApiConfiguration);\n\n    // Put your Username and API Key from https://app.textmagic.com/settings/api\
@@ -1463,7 +1463,7 @@ tags:
     \n- **Python** >= 3.9\n- **urllib3** >= 2.1.0, < 3.0.0,\n- **python-dateutil**\
     \ >= 2.8.2,\n- **pydantic** >= 2,\n- **typing-extensions** >= 4.7.1,\n\n## Installation\n\
     \n### Install from PyPI (Recommended)\n\n```bash\npip install TextMagic\n```\n\
-    \n### Install from GitHub\n\n```bash\npip install git+https://github.com/textmagic/textmagic-rest-python-v2.git@v3.0.50042\n\
+    \n### Install from GitHub\n\n```bash\npip install git+https://github.com/textmagic/textmagic-rest-python-v2.git@v3.0.50038\n\
     ```\n\n### Install from source\n\n```bash\ngit clone https://github.com/textmagic/textmagic-rest-python-v2.git\n\
     cd textmagic-rest-python-v2\npython setup.py install\n```\n\n## Quick Start\n\n\
     ### Basic Usage\n\n```python\nimport TextMagic\nfrom TextMagic.rest import ApiException\n\
@@ -1905,7 +1905,7 @@ tags:
     \n- **Go 1.23** or higher\n- Go modules support\n\n## Installation\n\n### Via\
     \ go get (Recommended)\n\n```bash\ngo get -u github.com/textmagic/textmagic-rest-go-v2/v3@latest\n\
     ```\n\n### Via go.mod\n\nAdd to your `go.mod`:\n```go\nrequire github.com/textmagic/textmagic-rest-go-v2/v3\
-    \ v3.0.50042\n```\n\nThen run:\n```bash\ngo mod download\n```\n\n### Package Registry\n\
+    \ v3.0.50043\n```\n\nThen run:\n```bash\ngo mod download\n```\n\n### Package Registry\n\
     \nThis package is available on [pkg.go.dev](https://pkg.go.dev/github.com/textmagic/textmagic-rest-go-v2/v3)\
     \ - the official Go package registry.\n\n## Usage Example\n\n```go\npackage main\n\
     \nimport (\n    \"context\"\n    \"fmt\"\n    \"log\"\n\n    tm \"github.com/textmagic/textmagic-rest-go-v2/v3\"\
