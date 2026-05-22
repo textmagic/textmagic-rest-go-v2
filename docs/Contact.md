@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Email** | **NullableString** | Contact email address. | 
 **Country** | [**NullableCountry**](Country.md) |  | 
 **CustomFields** | [**[]CustomFieldListItem**](CustomFieldListItem.md) |  | 
+**CustomFieldValues** | [**[]CustomFieldValues**](CustomFieldValues.md) |  | 
 **User** | [**NullableUser**](User.md) |  | 
 **Lists** | [**[]List**](List.md) |  | 
 **Owner** | Pointer to [**NullableUser**](User.md) |  | [optional] 
@@ -27,7 +28,7 @@ Name | Type | Description | Notes
 
 ### NewContact
 
-`func NewContact(id int32, favorited bool, blocked bool, firstName NullableString, lastName NullableString, companyName NullableString, phone NullableString, email NullableString, country NullableCountry, customFields []CustomFieldListItem, user NullableUser, lists []List, phoneType NullableString, avatar NullableContactImage, notes []ContactNote, ) *Contact`
+`func NewContact(id int32, favorited bool, blocked bool, firstName NullableString, lastName NullableString, companyName NullableString, phone NullableString, email NullableString, country NullableCountry, customFields []CustomFieldListItem, customFieldValues []CustomFieldValues, user NullableUser, lists []List, phoneType NullableString, avatar NullableContactImage, notes []ContactNote, ) *Contact`
 
 NewContact instantiates a new Contact object
 This constructor will assign default values to properties that have it defined,
@@ -300,6 +301,26 @@ and a boolean to check if the value has been set.
 `func (o *Contact) SetCustomFields(v []CustomFieldListItem)`
 
 SetCustomFields sets CustomFields field to given value.
+
+
+### GetCustomFieldValues
+
+`func (o *Contact) GetCustomFieldValues() []CustomFieldValues`
+
+GetCustomFieldValues returns the CustomFieldValues field if non-nil, zero value otherwise.
+
+### GetCustomFieldValuesOk
+
+`func (o *Contact) GetCustomFieldValuesOk() (*[]CustomFieldValues, bool)`
+
+GetCustomFieldValuesOk returns a tuple with the CustomFieldValues field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFieldValues
+
+`func (o *Contact) SetCustomFieldValues(v []CustomFieldValues)`
+
+SetCustomFieldValues sets CustomFieldValues field to given value.
 
 
 ### GetUser

@@ -59,6 +59,7 @@ Name | Type | Description | Notes
 **LiveChatRated** | **int32** |  | 
 **WebWidgetUpdated** | **int32** |  | 
 **WebWidgetDeleted** | **int32** |  | 
+**WebWidgetCreated** | **int32** |  | 
 **ContactAdded** | **int32** |  | 
 **ContactDeleted** | **int32** |  | 
 **ContactBulkUpdated** | **int32** |  | 
@@ -194,12 +195,24 @@ Name | Type | Description | Notes
 **EmailCampaignFailedAttemptCreated** | **int32** |  | 
 **EmailCampaignFailedAttemptDeleted** | **int32** |  | 
 **EmailCampaignFailedAttemptStateUpdated** | **int32** |  | 
+**TollFreePreFillCompleted** | **int32** |  | 
+**TollFreePreFillFailed** | **int32** |  | 
+**TollFreeComplianceCheckCompleted** | **int32** |  | 
+**TollFreeComplianceCheckFailed** | **int32** |  | 
+**TenDlcPreFillCompleted** | **int32** |  | 
+**TenDlcPreFillFailed** | **int32** |  | 
+**TenDlcComplianceCheckCompleted** | **int32** |  | 
+**TenDlcComplianceCheckFailed** | **int32** |  | 
+**MarketingDataModalChanged** | **int32** |  | 
+**IntegrationStatusChanged** | **int32** |  | 
+**IntegrationCustomerSyncProgressState** | **int32** |  | 
+**IntegrationCustomerSyncEnd** | **int32** |  | 
 
 ## Methods
 
 ### NewGetStateResponse
 
-`func NewGetStateResponse(systemCacheClear int32, systemExit int32, systemAlert int32, systemAccountStateChanged int32, systemAccountAcceptTermsUpdate int32, systemAccountClosed int32, systemAccountAdditionalFields int32, systemAccountNumbersListChange int32, systemAccountPermissionsChanged int32, userProfileChanged int32, userBalanceChanged int32, userPresenceStatusChanged int32, userImpersonationEnd int32, messageDeleted int32, messageIncoming int32, messageIncomingDeleted int32, messageStateChanged int32, messageBulkEnd int32, messageWipeEnd int32, messageSent int32, messageLog int32, messageNote int32, messageInitial int32, lastMessageSet int32, messageSessionDeleted int32, messageCacheClear int32, messageIncomingCacheClear int32, messageScheduleAdded int32, messageScheduleStateChanged int32, messageScheduleDeleted int32, messageScheduleNotSentStateChanged int32, messageScheduleCacheClear int32, messageTemplateCacheClear int32, callFinished int32, chatCreated int32, chatMarkedAsRead int32, chatMuted int32, chatUnmuted int32, chatPinned int32, chatUnpinned int32, chatDeleted int32, chatClosed int32, chatReopened int32, chatActivated int32, chatCacheClear int32, chatRead int32, chatUnread int32, chatAssigneeChanged int32, chatTagsChanged int32, chatConversationEnded int32, chatUpdated int32, liveChatAgentChanged int32, liveChatRated int32, webWidgetUpdated int32, webWidgetDeleted int32, contactAdded int32, contactDeleted int32, contactBulkUpdated int32, contactStateChanged int32, contactUnsubscribed int32, contactResubscribed int32, contactNoteAdded int32, contactNoteDeleted int32, contactNoteStateChanged int32, listAdded int32, listDeleted int32, listStateChanged int32, listCountMembersUpdated int32, contactWipeEnd int32, contactImportEnd int32, contactCacheClear int32, listCacheClear int32, customFieldsCacheClear int32, progressCarrierBulkLookup int32, progressSubAccountBulkImport int32, emailLookupProgressState int32, importProgressState int32, forceRefreshWebApp int32, chatSenderSettingsChanged int32, countrySenderSettingsChanged int32, chatSummaryChunk int32, chatWaysToReplyChunk int32, chatSuggestedReplyChunk int32, taskCreated int32, taskUpdated int32, taskReordered int32, taskDeleted int32, taskMovedAll int32, taskStageCreated int32, taskStageUpdated int32, taskStageDeleted int32, taskBoardCreated int32, taskBoardUpdated int32, taskBoardReordered int32, taskBoardDeleted int32, taskBoardArchived int32, taskChecklistCreated int32, taskChecklistUpdated int32, taskChecklistDeleted int32, taskChecklistBulkMarked int32, taskChecklistItemCreated int32, taskChecklistItemUpdated int32, taskChecklistItemDeleted int32, taskCommentCreated int32, taskCommentDeleted int32, pinnedContactAdded int32, pinnedContactRemoved int32, pinnedContactReordered int32, pinnedContactStateChanged int32, whatsappAccountAdded int32, whatsappAccountRemoved int32, whatsappAccountChanged int32, facebookPageAdded int32, facebookPageRemoved int32, facebookPageChanged int32, instagramAccountAdded int32, instagramAccountRemoved int32, instagramAccountChanged int32, unreadTicketsCountUpdated int32, ticketDeleted int32, ticketUpdated int32, ticketCreated int32, ticketBulkUpdated int32, ticketBulkDeleted int32, ticketMessageCreated int32, ticketMessageUpdated int32, ticketMessageDeleted int32, subAccountsClosed int32, userInvited int32, filteredViewCreated int32, filteredViewCountUpdated int32, filteredViewDeleted int32, forwardingInboxWasVerified int32, forwardingInboxCheckWasFailed int32, forwardingInboxVerificationLinkWasParsed int32, tendlcLinkNumberStatusUpdated int32, channelPresence int32, dealCreated int32, dealUpdated int32, dealDeleted int32, dealMoved int32, dealStageCreated int32, dealStageUpdated int32, dealStageDeleted int32, dealPipelineCreated int32, dealPipelineUpdated int32, dealPipelineDeleted int32, dealPipelineArchived int32, dealPipelineReordered int32, dealActivityUpdated int32, dealActivityItemCreated int32, dealActivityItemUpdated int32, dealActivityItemDeleted int32, dealActivityItemBulkMarked int32, dealTimelineItemDeleted int32, dealTimelineItemCreated int32, aIAssistantCreated int32, aIAssistantState int32, aIAssistantDeleted int32, aIAssistantLinkDeleted int32, aIAssistantLinkState int32, aIAssistantLinkCreated int32, aIAssistantSubLinkState int32, aIAssistantSubLinkCreated int32, emailCampaignEmailSenderCreated int32, emailCampaignEmailSenderUpdated int32, emailCampaignEmailSenderDeleted int32, emailCampaignDomainCreated int32, emailCampaignDomainDeleted int32, emailCampaignDomainVerified int32, emailCampaignDomainStatusChanged int32, emailCampaignDomainDkimVerified int32, emailCampaignDomainReturnPathVerified int32, emailCampaignDomainDmarcVerified int32, emailCampaignDomainEntryVerificationChanged int32, emailCampaignProgressState int32, emailCampaignUpdated int32, emailTemplateImproved int32, emailTemplateImprovingFailed int32, emailBonusUpdated int32, smsCampaignInvalidated int32, scheduledEmailCampaignCreated int32, scheduledEmailCampaignUpdated int32, scheduledEmailCampaignStatusUpdated int32, scheduledEmailCampaignDeleted int32, emailCampaignFailedAttemptCreated int32, emailCampaignFailedAttemptDeleted int32, emailCampaignFailedAttemptStateUpdated int32, ) *GetStateResponse`
+`func NewGetStateResponse(systemCacheClear int32, systemExit int32, systemAlert int32, systemAccountStateChanged int32, systemAccountAcceptTermsUpdate int32, systemAccountClosed int32, systemAccountAdditionalFields int32, systemAccountNumbersListChange int32, systemAccountPermissionsChanged int32, userProfileChanged int32, userBalanceChanged int32, userPresenceStatusChanged int32, userImpersonationEnd int32, messageDeleted int32, messageIncoming int32, messageIncomingDeleted int32, messageStateChanged int32, messageBulkEnd int32, messageWipeEnd int32, messageSent int32, messageLog int32, messageNote int32, messageInitial int32, lastMessageSet int32, messageSessionDeleted int32, messageCacheClear int32, messageIncomingCacheClear int32, messageScheduleAdded int32, messageScheduleStateChanged int32, messageScheduleDeleted int32, messageScheduleNotSentStateChanged int32, messageScheduleCacheClear int32, messageTemplateCacheClear int32, callFinished int32, chatCreated int32, chatMarkedAsRead int32, chatMuted int32, chatUnmuted int32, chatPinned int32, chatUnpinned int32, chatDeleted int32, chatClosed int32, chatReopened int32, chatActivated int32, chatCacheClear int32, chatRead int32, chatUnread int32, chatAssigneeChanged int32, chatTagsChanged int32, chatConversationEnded int32, chatUpdated int32, liveChatAgentChanged int32, liveChatRated int32, webWidgetUpdated int32, webWidgetDeleted int32, webWidgetCreated int32, contactAdded int32, contactDeleted int32, contactBulkUpdated int32, contactStateChanged int32, contactUnsubscribed int32, contactResubscribed int32, contactNoteAdded int32, contactNoteDeleted int32, contactNoteStateChanged int32, listAdded int32, listDeleted int32, listStateChanged int32, listCountMembersUpdated int32, contactWipeEnd int32, contactImportEnd int32, contactCacheClear int32, listCacheClear int32, customFieldsCacheClear int32, progressCarrierBulkLookup int32, progressSubAccountBulkImport int32, emailLookupProgressState int32, importProgressState int32, forceRefreshWebApp int32, chatSenderSettingsChanged int32, countrySenderSettingsChanged int32, chatSummaryChunk int32, chatWaysToReplyChunk int32, chatSuggestedReplyChunk int32, taskCreated int32, taskUpdated int32, taskReordered int32, taskDeleted int32, taskMovedAll int32, taskStageCreated int32, taskStageUpdated int32, taskStageDeleted int32, taskBoardCreated int32, taskBoardUpdated int32, taskBoardReordered int32, taskBoardDeleted int32, taskBoardArchived int32, taskChecklistCreated int32, taskChecklistUpdated int32, taskChecklistDeleted int32, taskChecklistBulkMarked int32, taskChecklistItemCreated int32, taskChecklistItemUpdated int32, taskChecklistItemDeleted int32, taskCommentCreated int32, taskCommentDeleted int32, pinnedContactAdded int32, pinnedContactRemoved int32, pinnedContactReordered int32, pinnedContactStateChanged int32, whatsappAccountAdded int32, whatsappAccountRemoved int32, whatsappAccountChanged int32, facebookPageAdded int32, facebookPageRemoved int32, facebookPageChanged int32, instagramAccountAdded int32, instagramAccountRemoved int32, instagramAccountChanged int32, unreadTicketsCountUpdated int32, ticketDeleted int32, ticketUpdated int32, ticketCreated int32, ticketBulkUpdated int32, ticketBulkDeleted int32, ticketMessageCreated int32, ticketMessageUpdated int32, ticketMessageDeleted int32, subAccountsClosed int32, userInvited int32, filteredViewCreated int32, filteredViewCountUpdated int32, filteredViewDeleted int32, forwardingInboxWasVerified int32, forwardingInboxCheckWasFailed int32, forwardingInboxVerificationLinkWasParsed int32, tendlcLinkNumberStatusUpdated int32, channelPresence int32, dealCreated int32, dealUpdated int32, dealDeleted int32, dealMoved int32, dealStageCreated int32, dealStageUpdated int32, dealStageDeleted int32, dealPipelineCreated int32, dealPipelineUpdated int32, dealPipelineDeleted int32, dealPipelineArchived int32, dealPipelineReordered int32, dealActivityUpdated int32, dealActivityItemCreated int32, dealActivityItemUpdated int32, dealActivityItemDeleted int32, dealActivityItemBulkMarked int32, dealTimelineItemDeleted int32, dealTimelineItemCreated int32, aIAssistantCreated int32, aIAssistantState int32, aIAssistantDeleted int32, aIAssistantLinkDeleted int32, aIAssistantLinkState int32, aIAssistantLinkCreated int32, aIAssistantSubLinkState int32, aIAssistantSubLinkCreated int32, emailCampaignEmailSenderCreated int32, emailCampaignEmailSenderUpdated int32, emailCampaignEmailSenderDeleted int32, emailCampaignDomainCreated int32, emailCampaignDomainDeleted int32, emailCampaignDomainVerified int32, emailCampaignDomainStatusChanged int32, emailCampaignDomainDkimVerified int32, emailCampaignDomainReturnPathVerified int32, emailCampaignDomainDmarcVerified int32, emailCampaignDomainEntryVerificationChanged int32, emailCampaignProgressState int32, emailCampaignUpdated int32, emailTemplateImproved int32, emailTemplateImprovingFailed int32, emailBonusUpdated int32, smsCampaignInvalidated int32, scheduledEmailCampaignCreated int32, scheduledEmailCampaignUpdated int32, scheduledEmailCampaignStatusUpdated int32, scheduledEmailCampaignDeleted int32, emailCampaignFailedAttemptCreated int32, emailCampaignFailedAttemptDeleted int32, emailCampaignFailedAttemptStateUpdated int32, tollFreePreFillCompleted int32, tollFreePreFillFailed int32, tollFreeComplianceCheckCompleted int32, tollFreeComplianceCheckFailed int32, tenDlcPreFillCompleted int32, tenDlcPreFillFailed int32, tenDlcComplianceCheckCompleted int32, tenDlcComplianceCheckFailed int32, marketingDataModalChanged int32, integrationStatusChanged int32, integrationCustomerSyncProgressState int32, integrationCustomerSyncEnd int32, ) *GetStateResponse`
 
 NewGetStateResponse instantiates a new GetStateResponse object
 This constructor will assign default values to properties that have it defined,
@@ -1312,6 +1325,26 @@ and a boolean to check if the value has been set.
 `func (o *GetStateResponse) SetWebWidgetDeleted(v int32)`
 
 SetWebWidgetDeleted sets WebWidgetDeleted field to given value.
+
+
+### GetWebWidgetCreated
+
+`func (o *GetStateResponse) GetWebWidgetCreated() int32`
+
+GetWebWidgetCreated returns the WebWidgetCreated field if non-nil, zero value otherwise.
+
+### GetWebWidgetCreatedOk
+
+`func (o *GetStateResponse) GetWebWidgetCreatedOk() (*int32, bool)`
+
+GetWebWidgetCreatedOk returns a tuple with the WebWidgetCreated field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebWidgetCreated
+
+`func (o *GetStateResponse) SetWebWidgetCreated(v int32)`
+
+SetWebWidgetCreated sets WebWidgetCreated field to given value.
 
 
 ### GetContactAdded
@@ -4022,6 +4055,246 @@ and a boolean to check if the value has been set.
 `func (o *GetStateResponse) SetEmailCampaignFailedAttemptStateUpdated(v int32)`
 
 SetEmailCampaignFailedAttemptStateUpdated sets EmailCampaignFailedAttemptStateUpdated field to given value.
+
+
+### GetTollFreePreFillCompleted
+
+`func (o *GetStateResponse) GetTollFreePreFillCompleted() int32`
+
+GetTollFreePreFillCompleted returns the TollFreePreFillCompleted field if non-nil, zero value otherwise.
+
+### GetTollFreePreFillCompletedOk
+
+`func (o *GetStateResponse) GetTollFreePreFillCompletedOk() (*int32, bool)`
+
+GetTollFreePreFillCompletedOk returns a tuple with the TollFreePreFillCompleted field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTollFreePreFillCompleted
+
+`func (o *GetStateResponse) SetTollFreePreFillCompleted(v int32)`
+
+SetTollFreePreFillCompleted sets TollFreePreFillCompleted field to given value.
+
+
+### GetTollFreePreFillFailed
+
+`func (o *GetStateResponse) GetTollFreePreFillFailed() int32`
+
+GetTollFreePreFillFailed returns the TollFreePreFillFailed field if non-nil, zero value otherwise.
+
+### GetTollFreePreFillFailedOk
+
+`func (o *GetStateResponse) GetTollFreePreFillFailedOk() (*int32, bool)`
+
+GetTollFreePreFillFailedOk returns a tuple with the TollFreePreFillFailed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTollFreePreFillFailed
+
+`func (o *GetStateResponse) SetTollFreePreFillFailed(v int32)`
+
+SetTollFreePreFillFailed sets TollFreePreFillFailed field to given value.
+
+
+### GetTollFreeComplianceCheckCompleted
+
+`func (o *GetStateResponse) GetTollFreeComplianceCheckCompleted() int32`
+
+GetTollFreeComplianceCheckCompleted returns the TollFreeComplianceCheckCompleted field if non-nil, zero value otherwise.
+
+### GetTollFreeComplianceCheckCompletedOk
+
+`func (o *GetStateResponse) GetTollFreeComplianceCheckCompletedOk() (*int32, bool)`
+
+GetTollFreeComplianceCheckCompletedOk returns a tuple with the TollFreeComplianceCheckCompleted field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTollFreeComplianceCheckCompleted
+
+`func (o *GetStateResponse) SetTollFreeComplianceCheckCompleted(v int32)`
+
+SetTollFreeComplianceCheckCompleted sets TollFreeComplianceCheckCompleted field to given value.
+
+
+### GetTollFreeComplianceCheckFailed
+
+`func (o *GetStateResponse) GetTollFreeComplianceCheckFailed() int32`
+
+GetTollFreeComplianceCheckFailed returns the TollFreeComplianceCheckFailed field if non-nil, zero value otherwise.
+
+### GetTollFreeComplianceCheckFailedOk
+
+`func (o *GetStateResponse) GetTollFreeComplianceCheckFailedOk() (*int32, bool)`
+
+GetTollFreeComplianceCheckFailedOk returns a tuple with the TollFreeComplianceCheckFailed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTollFreeComplianceCheckFailed
+
+`func (o *GetStateResponse) SetTollFreeComplianceCheckFailed(v int32)`
+
+SetTollFreeComplianceCheckFailed sets TollFreeComplianceCheckFailed field to given value.
+
+
+### GetTenDlcPreFillCompleted
+
+`func (o *GetStateResponse) GetTenDlcPreFillCompleted() int32`
+
+GetTenDlcPreFillCompleted returns the TenDlcPreFillCompleted field if non-nil, zero value otherwise.
+
+### GetTenDlcPreFillCompletedOk
+
+`func (o *GetStateResponse) GetTenDlcPreFillCompletedOk() (*int32, bool)`
+
+GetTenDlcPreFillCompletedOk returns a tuple with the TenDlcPreFillCompleted field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTenDlcPreFillCompleted
+
+`func (o *GetStateResponse) SetTenDlcPreFillCompleted(v int32)`
+
+SetTenDlcPreFillCompleted sets TenDlcPreFillCompleted field to given value.
+
+
+### GetTenDlcPreFillFailed
+
+`func (o *GetStateResponse) GetTenDlcPreFillFailed() int32`
+
+GetTenDlcPreFillFailed returns the TenDlcPreFillFailed field if non-nil, zero value otherwise.
+
+### GetTenDlcPreFillFailedOk
+
+`func (o *GetStateResponse) GetTenDlcPreFillFailedOk() (*int32, bool)`
+
+GetTenDlcPreFillFailedOk returns a tuple with the TenDlcPreFillFailed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTenDlcPreFillFailed
+
+`func (o *GetStateResponse) SetTenDlcPreFillFailed(v int32)`
+
+SetTenDlcPreFillFailed sets TenDlcPreFillFailed field to given value.
+
+
+### GetTenDlcComplianceCheckCompleted
+
+`func (o *GetStateResponse) GetTenDlcComplianceCheckCompleted() int32`
+
+GetTenDlcComplianceCheckCompleted returns the TenDlcComplianceCheckCompleted field if non-nil, zero value otherwise.
+
+### GetTenDlcComplianceCheckCompletedOk
+
+`func (o *GetStateResponse) GetTenDlcComplianceCheckCompletedOk() (*int32, bool)`
+
+GetTenDlcComplianceCheckCompletedOk returns a tuple with the TenDlcComplianceCheckCompleted field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTenDlcComplianceCheckCompleted
+
+`func (o *GetStateResponse) SetTenDlcComplianceCheckCompleted(v int32)`
+
+SetTenDlcComplianceCheckCompleted sets TenDlcComplianceCheckCompleted field to given value.
+
+
+### GetTenDlcComplianceCheckFailed
+
+`func (o *GetStateResponse) GetTenDlcComplianceCheckFailed() int32`
+
+GetTenDlcComplianceCheckFailed returns the TenDlcComplianceCheckFailed field if non-nil, zero value otherwise.
+
+### GetTenDlcComplianceCheckFailedOk
+
+`func (o *GetStateResponse) GetTenDlcComplianceCheckFailedOk() (*int32, bool)`
+
+GetTenDlcComplianceCheckFailedOk returns a tuple with the TenDlcComplianceCheckFailed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTenDlcComplianceCheckFailed
+
+`func (o *GetStateResponse) SetTenDlcComplianceCheckFailed(v int32)`
+
+SetTenDlcComplianceCheckFailed sets TenDlcComplianceCheckFailed field to given value.
+
+
+### GetMarketingDataModalChanged
+
+`func (o *GetStateResponse) GetMarketingDataModalChanged() int32`
+
+GetMarketingDataModalChanged returns the MarketingDataModalChanged field if non-nil, zero value otherwise.
+
+### GetMarketingDataModalChangedOk
+
+`func (o *GetStateResponse) GetMarketingDataModalChangedOk() (*int32, bool)`
+
+GetMarketingDataModalChangedOk returns a tuple with the MarketingDataModalChanged field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMarketingDataModalChanged
+
+`func (o *GetStateResponse) SetMarketingDataModalChanged(v int32)`
+
+SetMarketingDataModalChanged sets MarketingDataModalChanged field to given value.
+
+
+### GetIntegrationStatusChanged
+
+`func (o *GetStateResponse) GetIntegrationStatusChanged() int32`
+
+GetIntegrationStatusChanged returns the IntegrationStatusChanged field if non-nil, zero value otherwise.
+
+### GetIntegrationStatusChangedOk
+
+`func (o *GetStateResponse) GetIntegrationStatusChangedOk() (*int32, bool)`
+
+GetIntegrationStatusChangedOk returns a tuple with the IntegrationStatusChanged field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIntegrationStatusChanged
+
+`func (o *GetStateResponse) SetIntegrationStatusChanged(v int32)`
+
+SetIntegrationStatusChanged sets IntegrationStatusChanged field to given value.
+
+
+### GetIntegrationCustomerSyncProgressState
+
+`func (o *GetStateResponse) GetIntegrationCustomerSyncProgressState() int32`
+
+GetIntegrationCustomerSyncProgressState returns the IntegrationCustomerSyncProgressState field if non-nil, zero value otherwise.
+
+### GetIntegrationCustomerSyncProgressStateOk
+
+`func (o *GetStateResponse) GetIntegrationCustomerSyncProgressStateOk() (*int32, bool)`
+
+GetIntegrationCustomerSyncProgressStateOk returns a tuple with the IntegrationCustomerSyncProgressState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIntegrationCustomerSyncProgressState
+
+`func (o *GetStateResponse) SetIntegrationCustomerSyncProgressState(v int32)`
+
+SetIntegrationCustomerSyncProgressState sets IntegrationCustomerSyncProgressState field to given value.
+
+
+### GetIntegrationCustomerSyncEnd
+
+`func (o *GetStateResponse) GetIntegrationCustomerSyncEnd() int32`
+
+GetIntegrationCustomerSyncEnd returns the IntegrationCustomerSyncEnd field if non-nil, zero value otherwise.
+
+### GetIntegrationCustomerSyncEndOk
+
+`func (o *GetStateResponse) GetIntegrationCustomerSyncEndOk() (*int32, bool)`
+
+GetIntegrationCustomerSyncEndOk returns a tuple with the IntegrationCustomerSyncEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIntegrationCustomerSyncEnd
+
+`func (o *GetStateResponse) SetIntegrationCustomerSyncEnd(v int32)`
+
+SetIntegrationCustomerSyncEnd sets IntegrationCustomerSyncEnd field to given value.
 
 
 

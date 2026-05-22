@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **MessageTime** | **time.Time** | Sending time. | 
 **Avatar** | **NullableString** |  | 
 **Deleted** | Pointer to **bool** | Indicates that the message has been deleted. | [optional] 
+**DeliveredAt** | Pointer to **NullableTime** | Time when message was delivered. | [optional] 
 **Charset** | **NullableString** | Message charset. Could be: *   **ISO-8859-1** for plaintext SMS; *   **UTF-16BE** for Unicode SMS.  | 
 **CharsetLabel** | **NullableString** | Human-readable message charset label. Could be: *   **ISO-8859-1** for plaintext SMS; *   **UTF-16BE** for Unicode SMS; *   **Voice** for voice services (Text-to-Speech or Voice Broadcast) messages.  | 
 **FirstName** | **NullableString** | Contact first name. Could be substituted from your [Contacts](https://docs.textmagic.com/#tag/Contacts) (even if you submitted the phone number instead of the contact ID).  | 
@@ -327,6 +328,41 @@ SetDeleted sets Deleted field to given value.
 
 HasDeleted returns a boolean if a field has been set.
 
+### GetDeliveredAt
+
+`func (o *MessageOut) GetDeliveredAt() time.Time`
+
+GetDeliveredAt returns the DeliveredAt field if non-nil, zero value otherwise.
+
+### GetDeliveredAtOk
+
+`func (o *MessageOut) GetDeliveredAtOk() (*time.Time, bool)`
+
+GetDeliveredAtOk returns a tuple with the DeliveredAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeliveredAt
+
+`func (o *MessageOut) SetDeliveredAt(v time.Time)`
+
+SetDeliveredAt sets DeliveredAt field to given value.
+
+### HasDeliveredAt
+
+`func (o *MessageOut) HasDeliveredAt() bool`
+
+HasDeliveredAt returns a boolean if a field has been set.
+
+### SetDeliveredAtNil
+
+`func (o *MessageOut) SetDeliveredAtNil(b bool)`
+
+ SetDeliveredAtNil sets the value for DeliveredAt to be an explicit nil
+
+### UnsetDeliveredAt
+`func (o *MessageOut) UnsetDeliveredAt()`
+
+UnsetDeliveredAt ensures that no value is present for DeliveredAt, not even an explicit nil
 ### GetCharset
 
 `func (o *MessageOut) GetCharset() string`

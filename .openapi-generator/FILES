@@ -32,6 +32,7 @@ docs/CreateTagResponse.md
 docs/CreateTemplateRequest.md
 docs/Currency.md
 docs/CustomFieldListItem.md
+docs/CustomFieldValues.md
 docs/DeleteChatMessagesRequest.md
 docs/DeleteChatsBulkRequest.md
 docs/DeleteContactNotesBulkRequest.md
@@ -116,6 +117,7 @@ docs/MessagingStatItem.md
 docs/MuteChatRequest.md
 docs/MuteChatsBulkRequest.md
 docs/NotFoundResponse.md
+docs/NullableUserPersonalInfo.md
 docs/OutboundEmailResponse.md
 docs/PingResponse.md
 docs/PushToken.md
@@ -203,6 +205,7 @@ model_create_tag_response.go
 model_create_template_request.go
 model_currency.go
 model_custom_field_list_item.go
+model_custom_field_values.go
 model_delete_chat_messages_request.go
 model_delete_chats_bulk_request.go
 model_delete_contact_notes_bulk_request.go
@@ -287,6 +290,7 @@ model_messaging_stat_item.go
 model_mute_chat_request.go
 model_mute_chats_bulk_request.go
 model_not_found_response.go
+model_nullable_user_personal_info.go
 model_outbound_email_response.go
 model_ping_response.go
 model_push_token.go

@@ -25,12 +25,16 @@ Name | Type | Description | Notes
 **SmsPrice** | **float32** |  | 
 **MmsPrice** | **float32** |  | 
 **Tags** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
+**AssigneeId** | **NullableInt32** |  | 
+**UpdatedBy** | Pointer to [**NullableNullableUserPersonalInfo**](NullableUserPersonalInfo.md) |  | [optional] 
+**CreatedAt** | **time.Time** | Chat creation date and time. | 
+**MessageTime** | **time.Time** | Chat last message date and time. | 
 
 ## Methods
 
 ### NewChat
 
-`func NewChat(id int32, originalId NullableInt32, phone string, contact NullableContact, unsubscribedContactId NullableInt32, unread int32, updatedAt time.Time, status string, mute int32, lastMessage NullableString, direction NullableString, replyOptionsType NullableString, from NullableString, mutedUntil NullableTime, timeLeftMute int32, country NullableCountry, pinned NullableBool, type_ string, smsPrice float32, mmsPrice float32, ) *Chat`
+`func NewChat(id int32, originalId NullableInt32, phone string, contact NullableContact, unsubscribedContactId NullableInt32, unread int32, updatedAt time.Time, status string, mute int32, lastMessage NullableString, direction NullableString, replyOptionsType NullableString, from NullableString, mutedUntil NullableTime, timeLeftMute int32, country NullableCountry, pinned NullableBool, type_ string, smsPrice float32, mmsPrice float32, assigneeId NullableInt32, createdAt time.Time, messageTime time.Time, ) *Chat`
 
 NewChat instantiates a new Chat object
 This constructor will assign default values to properties that have it defined,
@@ -569,6 +573,111 @@ SetTags sets Tags field to given value.
 `func (o *Chat) HasTags() bool`
 
 HasTags returns a boolean if a field has been set.
+
+### GetAssigneeId
+
+`func (o *Chat) GetAssigneeId() int32`
+
+GetAssigneeId returns the AssigneeId field if non-nil, zero value otherwise.
+
+### GetAssigneeIdOk
+
+`func (o *Chat) GetAssigneeIdOk() (*int32, bool)`
+
+GetAssigneeIdOk returns a tuple with the AssigneeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAssigneeId
+
+`func (o *Chat) SetAssigneeId(v int32)`
+
+SetAssigneeId sets AssigneeId field to given value.
+
+
+### SetAssigneeIdNil
+
+`func (o *Chat) SetAssigneeIdNil(b bool)`
+
+ SetAssigneeIdNil sets the value for AssigneeId to be an explicit nil
+
+### UnsetAssigneeId
+`func (o *Chat) UnsetAssigneeId()`
+
+UnsetAssigneeId ensures that no value is present for AssigneeId, not even an explicit nil
+### GetUpdatedBy
+
+`func (o *Chat) GetUpdatedBy() NullableUserPersonalInfo`
+
+GetUpdatedBy returns the UpdatedBy field if non-nil, zero value otherwise.
+
+### GetUpdatedByOk
+
+`func (o *Chat) GetUpdatedByOk() (*NullableUserPersonalInfo, bool)`
+
+GetUpdatedByOk returns a tuple with the UpdatedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedBy
+
+`func (o *Chat) SetUpdatedBy(v NullableUserPersonalInfo)`
+
+SetUpdatedBy sets UpdatedBy field to given value.
+
+### HasUpdatedBy
+
+`func (o *Chat) HasUpdatedBy() bool`
+
+HasUpdatedBy returns a boolean if a field has been set.
+
+### SetUpdatedByNil
+
+`func (o *Chat) SetUpdatedByNil(b bool)`
+
+ SetUpdatedByNil sets the value for UpdatedBy to be an explicit nil
+
+### UnsetUpdatedBy
+`func (o *Chat) UnsetUpdatedBy()`
+
+UnsetUpdatedBy ensures that no value is present for UpdatedBy, not even an explicit nil
+### GetCreatedAt
+
+`func (o *Chat) GetCreatedAt() time.Time`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *Chat) GetCreatedAtOk() (*time.Time, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *Chat) SetCreatedAt(v time.Time)`
+
+SetCreatedAt sets CreatedAt field to given value.
+
+
+### GetMessageTime
+
+`func (o *Chat) GetMessageTime() time.Time`
+
+GetMessageTime returns the MessageTime field if non-nil, zero value otherwise.
+
+### GetMessageTimeOk
+
+`func (o *Chat) GetMessageTimeOk() (*time.Time, bool)`
+
+GetMessageTimeOk returns a tuple with the MessageTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMessageTime
+
+`func (o *Chat) SetMessageTime(v time.Time)`
+
+SetMessageTime sets MessageTime field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
